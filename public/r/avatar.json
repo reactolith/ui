@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar",
+  "title": "Avatar",
+  "description": "Reactolith Avatar component family. Installs avatar, avatar-image, avatar-fallback.",
+  "registryDependencies": [
+    "avatar",
+    "@reactolith/avatar-image",
+    "@reactolith/avatar-fallback"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/avatar/avatar.tsx",
+      "content": "import { Avatar } from \"@/components/ui/avatar\"\nexport default Avatar\n",
+      "type": "registry:file",
+      "target": "components/reactolith/avatar/avatar.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

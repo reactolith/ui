@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "title": "Button",
+  "description": "Reactolith wrapper for shadcn Button. Adds href prop for link-buttons and ensures default export for Reactolith lazy loading.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/button/button.tsx",
+      "content": "import React from \"react\"\nimport { Button as ShadcnButton, type buttonVariants } from \"@/components/ui/button\"\nimport type { VariantProps } from \"class-variance-authority\"\n\nexport interface ReactolithButtonProps\n  extends React.ButtonHTMLAttributes<HTMLButtonElement>,\n    VariantProps<typeof buttonVariants> {\n  href?: string\n  asChild?: boolean\n}\n\nconst Button = React.forwardRef<HTMLButtonElement, ReactolithButtonProps>(\n  ({ href, children, ...props }, ref) => {\n    if (href) {\n      return (\n        <ShadcnButton asChild ref={ref} {...props}>\n          <a href={href}>{children}</a>\n        </ShadcnButton>\n      )\n    }\n    return <ShadcnButton ref={ref} {...props}>{children}</ShadcnButton>\n  }\n)\nButton.displayName = \"Button\"\n\nexport default Button\n",
+      "type": "registry:file",
+      "target": "components/reactolith/button/button.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

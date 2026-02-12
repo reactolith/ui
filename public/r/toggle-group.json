@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group",
+  "title": "Toggle Group",
+  "description": "Reactolith Toggle Group component family. Installs toggle-group and toggle-group-item.",
+  "registryDependencies": [
+    "toggle-group",
+    "@reactolith/toggle-group-item"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/toggle-group/toggle-group.tsx",
+      "content": "import { ToggleGroup } from \"@/components/ui/toggle-group\"\nexport default ToggleGroup\n",
+      "type": "registry:file",
+      "target": "components/reactolith/toggle-group/toggle-group.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

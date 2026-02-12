@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label",
+  "title": "Label",
+  "description": "Reactolith wrapper for shadcn Label with default export.",
+  "registryDependencies": [
+    "label"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/label/label.tsx",
+      "content": "import { Label } from \"@/components/ui/label\"\nexport default Label\n",
+      "type": "registry:file",
+      "target": "components/reactolith/label/label.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

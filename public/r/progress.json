@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "title": "Progress",
+  "description": "Reactolith wrapper for shadcn Progress with default export.",
+  "registryDependencies": [
+    "progress"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/progress/progress.tsx",
+      "content": "import { Progress } from \"@/components/ui/progress\"\nexport default Progress\n",
+      "type": "registry:file",
+      "target": "components/reactolith/progress/progress.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

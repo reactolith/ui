@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle",
+  "title": "Toggle",
+  "description": "Reactolith wrapper for shadcn Toggle with default export.",
+  "registryDependencies": [
+    "toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/toggle/toggle.tsx",
+      "content": "import { Toggle } from \"@/components/ui/toggle\"\nexport default Toggle\n",
+      "type": "registry:file",
+      "target": "components/reactolith/toggle/toggle.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

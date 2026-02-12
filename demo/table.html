@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reactolith UI - Table Demo</title>
+  <script type="module" src="./app.ts"></script>
+</head>
+<body>
+  <div id="reactolith">
+    <h1>Table</h1>
+    <p><a href="./index.html">← Back to demos</a></p>
+
+    <h2>Basic Table</h2>
+    <ui-table>
+      <ui-table-header>
+        <ui-table-row>
+          <ui-table-head>Name</ui-table-head>
+          <ui-table-head>Email</ui-table-head>
+          <ui-table-head>Role</ui-table-head>
+          <ui-table-head>Status</ui-table-head>
+        </ui-table-row>
+      </ui-table-header>
+      <ui-table-body>
+        <ui-table-row>
+          <ui-table-cell>Alice Johnson</ui-table-cell>
+          <ui-table-cell>alice@example.com</ui-table-cell>
+          <ui-table-cell>Admin</ui-table-cell>
+          <ui-table-cell><ui-badge>Active</ui-badge></ui-table-cell>
+        </ui-table-row>
+        <ui-table-row>
+          <ui-table-cell>Bob Smith</ui-table-cell>
+          <ui-table-cell>bob@example.com</ui-table-cell>
+          <ui-table-cell>Editor</ui-table-cell>
+          <ui-table-cell><ui-badge variant="secondary">Inactive</ui-badge></ui-table-cell>
+        </ui-table-row>
+        <ui-table-row>
+          <ui-table-cell>Carol Williams</ui-table-cell>
+          <ui-table-cell>carol@example.com</ui-table-cell>
+          <ui-table-cell>Viewer</ui-table-cell>
+          <ui-table-cell><ui-badge>Active</ui-badge></ui-table-cell>
+        </ui-table-row>
+      </ui-table-body>
+    </ui-table>
+  </div>
+</body>
+</html>

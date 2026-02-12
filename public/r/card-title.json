@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-title",
+  "title": "Card Title",
+  "description": "Reactolith wrapper for shadcn CardTitle.",
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/card/card-title.tsx",
+      "content": "import { CardTitle } from \"@/components/ui/card\"\nexport default CardTitle\n",
+      "type": "registry:file",
+      "target": "components/reactolith/card/card-title.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

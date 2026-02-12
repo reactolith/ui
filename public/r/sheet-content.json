@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet-content",
+  "title": "Sheet Content",
+  "description": "Reactolith wrapper for shadcn SheetContent.",
+  "registryDependencies": [
+    "sheet"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/sheet/sheet-content.tsx",
+      "content": "import { SheetContent } from \"@/components/ui/sheet\"\nexport default SheetContent\n",
+      "type": "registry:file",
+      "target": "components/reactolith/sheet/sheet-content.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

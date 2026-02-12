@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-trigger",
+  "title": "Dialog Trigger",
+  "description": "Reactolith wrapper for shadcn DialogTrigger.",
+  "registryDependencies": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/dialog/dialog-trigger.tsx",
+      "content": "import { DialogTrigger } from \"@/components/ui/dialog\"\nexport default DialogTrigger\n",
+      "type": "registry:file",
+      "target": "components/reactolith/dialog/dialog-trigger.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

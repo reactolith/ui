@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-trigger",
+  "title": "Tabs Trigger",
+  "description": "Reactolith wrapper for shadcn TabsTrigger.",
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/tabs/tabs-trigger.tsx",
+      "content": "import { TabsTrigger } from \"@/components/ui/tabs\"\nexport default TabsTrigger\n",
+      "type": "registry:file",
+      "target": "components/reactolith/tabs/tabs-trigger.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

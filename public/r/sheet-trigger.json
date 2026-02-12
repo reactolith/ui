@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet-trigger",
+  "title": "Sheet Trigger",
+  "description": "Reactolith wrapper for shadcn SheetTrigger.",
+  "registryDependencies": [
+    "sheet"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/sheet/sheet-trigger.tsx",
+      "content": "import { SheetTrigger } from \"@/components/ui/sheet\"\nexport default SheetTrigger\n",
+      "type": "registry:file",
+      "target": "components/reactolith/sheet/sheet-trigger.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

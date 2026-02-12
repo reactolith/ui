@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-content",
+  "title": "Dropdown Menu Content",
+  "description": "Reactolith wrapper for shadcn DropdownMenuContent.",
+  "registryDependencies": [
+    "dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/dropdown-menu/dropdown-menu-content.tsx",
+      "content": "import { DropdownMenuContent } from \"@/components/ui/dropdown-menu\"\nexport default DropdownMenuContent\n",
+      "type": "registry:file",
+      "target": "components/reactolith/dropdown-menu/dropdown-menu-content.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

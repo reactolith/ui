@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-separator",
+  "title": "Dropdown Menu Separator",
+  "description": "Reactolith wrapper for shadcn DropdownMenuSeparator.",
+  "registryDependencies": [
+    "dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/dropdown-menu/dropdown-menu-separator.tsx",
+      "content": "import { DropdownMenuSeparator } from \"@/components/ui/dropdown-menu\"\nexport default DropdownMenuSeparator\n",
+      "type": "registry:file",
+      "target": "components/reactolith/dropdown-menu/dropdown-menu-separator.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

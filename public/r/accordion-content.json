@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-content",
+  "title": "Accordion Content",
+  "description": "Reactolith wrapper for shadcn AccordionContent.",
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/accordion/accordion-content.tsx",
+      "content": "import { AccordionContent } from \"@/components/ui/accordion\"\nexport default AccordionContent\n",
+      "type": "registry:file",
+      "target": "components/reactolith/accordion/accordion-content.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

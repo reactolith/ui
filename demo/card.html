@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reactolith UI - Card Demo</title>
+  <script type="module" src="./app.ts"></script>
+</head>
+<body>
+  <div id="reactolith">
+    <h1>Card</h1>
+    <p><a href="./index.html">← Back to demos</a></p>
+
+    <h2>Basic Card</h2>
+    <ui-card>
+      <ui-card-header>
+        <ui-card-title>Card Title</ui-card-title>
+        <ui-card-description>Card description goes here.</ui-card-description>
+      </ui-card-header>
+      <ui-card-content>
+        <p>This is the card content. You can put any HTML here.</p>
+      </ui-card-content>
+      <ui-card-footer>
+        <ui-button>Action</ui-button>
+      </ui-card-footer>
+    </ui-card>
+
+    <h2>Multiple Cards</h2>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 600px;">
+      <ui-card>
+        <ui-card-header>
+          <ui-card-title>Feature 1</ui-card-title>
+          <ui-card-description>Description of feature 1.</ui-card-description>
+        </ui-card-header>
+        <ui-card-content>
+          <p>Content for feature 1.</p>
+        </ui-card-content>
+      </ui-card>
+      <ui-card>
+        <ui-card-header>
+          <ui-card-title>Feature 2</ui-card-title>
+          <ui-card-description>Description of feature 2.</ui-card-description>
+        </ui-card-header>
+        <ui-card-content>
+          <p>Content for feature 2.</p>
+        </ui-card-content>
+      </ui-card>
+    </div>
+  </div>
+</body>
+</html>

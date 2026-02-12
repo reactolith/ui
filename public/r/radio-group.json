@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group",
+  "title": "Radio Group",
+  "description": "Reactolith Radio Group component family. Installs radio-group and radio-group-item.",
+  "registryDependencies": [
+    "radio-group",
+    "@reactolith/radio-group-item"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/radio-group/radio-group.tsx",
+      "content": "import { RadioGroup } from \"@/components/ui/radio-group\"\nexport default RadioGroup\n",
+      "type": "registry:file",
+      "target": "components/reactolith/radio-group/radio-group.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

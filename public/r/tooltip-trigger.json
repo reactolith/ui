@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-trigger",
+  "title": "Tooltip Trigger",
+  "description": "Reactolith wrapper for shadcn TooltipTrigger.",
+  "registryDependencies": [
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/tooltip/tooltip-trigger.tsx",
+      "content": "import { TooltipTrigger } from \"@/components/ui/tooltip\"\nexport default TooltipTrigger\n",
+      "type": "registry:file",
+      "target": "components/reactolith/tooltip/tooltip-trigger.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

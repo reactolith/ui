@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-title",
+  "title": "Dialog Title",
+  "description": "Reactolith wrapper for shadcn DialogTitle.",
+  "registryDependencies": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/dialog/dialog-title.tsx",
+      "content": "import { DialogTitle } from \"@/components/ui/dialog\"\nexport default DialogTitle\n",
+      "type": "registry:file",
+      "target": "components/reactolith/dialog/dialog-title.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

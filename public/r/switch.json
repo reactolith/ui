@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch",
+  "title": "Switch",
+  "description": "Reactolith wrapper for shadcn Switch with default export.",
+  "registryDependencies": [
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/switch/switch.tsx",
+      "content": "import { Switch } from \"@/components/ui/switch\"\nexport default Switch\n",
+      "type": "registry:file",
+      "target": "components/reactolith/switch/switch.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

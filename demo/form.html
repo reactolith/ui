@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reactolith UI - Form Demo</title>
+  <script type="module" src="./app.ts"></script>
+</head>
+<body>
+  <div id="reactolith">
+    <h1>Form Components</h1>
+    <p><a href="./index.html">← Back to demos</a></p>
+
+    <ui-card>
+      <ui-card-header>
+        <ui-card-title>Contact Form</ui-card-title>
+        <ui-card-description>A demo form showing various input types.</ui-card-description>
+      </ui-card-header>
+      <ui-card-content>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+          <div>
+            <ui-label>Name</ui-label>
+            <ui-input placeholder="Enter your name" />
+          </div>
+
+          <div>
+            <ui-label>Email</ui-label>
+            <ui-input type="email" placeholder="Enter your email" />
+          </div>
+
+          <div>
+            <ui-label>Message</ui-label>
+            <ui-textarea placeholder="Type your message here..." />
+          </div>
+
+          <div>
+            <ui-label>Category</ui-label>
+            <ui-select>
+              <ui-select-trigger>
+                <ui-select-value placeholder="Select a category" />
+              </ui-select-trigger>
+              <ui-select-content>
+                <ui-select-item value="general">General</ui-select-item>
+                <ui-select-item value="support">Support</ui-select-item>
+                <ui-select-item value="feedback">Feedback</ui-select-item>
+                <ui-select-item value="bug">Bug Report</ui-select-item>
+              </ui-select-content>
+            </ui-select>
+          </div>
+
+          <div>
+            <ui-label>Priority</ui-label>
+            <ui-radio-group defaultValue="normal">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <ui-radio-group-item value="low" id="low" />
+                <ui-label htmlFor="low">Low</ui-label>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <ui-radio-group-item value="normal" id="normal" />
+                <ui-label htmlFor="normal">Normal</ui-label>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <ui-radio-group-item value="high" id="high" />
+                <ui-label htmlFor="high">High</ui-label>
+              </div>
+            </ui-radio-group>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <ui-checkbox id="terms" />
+            <ui-label htmlFor="terms">I agree to the terms and conditions</ui-label>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <ui-switch id="notifications" />
+            <ui-label htmlFor="notifications">Enable email notifications</ui-label>
+          </div>
+
+        </div>
+      </ui-card-content>
+      <ui-card-footer>
+        <ui-button>Submit</ui-button>
+      </ui-card-footer>
+    </ui-card>
+  </div>
+</body>
+</html>

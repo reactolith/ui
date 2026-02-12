@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet-description",
+  "title": "Sheet Description",
+  "description": "Reactolith wrapper for shadcn SheetDescription.",
+  "registryDependencies": [
+    "sheet"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/sheet/sheet-description.tsx",
+      "content": "import { SheetDescription } from \"@/components/ui/sheet\"\nexport default SheetDescription\n",
+      "type": "registry:file",
+      "target": "components/reactolith/sheet/sheet-description.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

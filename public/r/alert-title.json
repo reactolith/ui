@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-title",
+  "title": "Alert Title",
+  "description": "Reactolith wrapper for shadcn AlertTitle.",
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/alert/alert-title.tsx",
+      "content": "import { AlertTitle } from \"@/components/ui/alert\"\nexport default AlertTitle\n",
+      "type": "registry:file",
+      "target": "components/reactolith/alert/alert-title.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

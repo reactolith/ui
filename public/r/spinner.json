@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner",
+  "title": "Spinner",
+  "description": "Reactolith Spinner component with default export.",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/spinner/spinner.tsx",
+      "content": "import { Spinner } from \"@/components/ui/spinner\"\nexport default Spinner\n",
+      "type": "registry:file",
+      "target": "components/reactolith/spinner/spinner.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

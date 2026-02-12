@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reactolith UI - Tabs Demo</title>
+  <script type="module" src="./app.ts"></script>
+</head>
+<body>
+  <div id="reactolith">
+    <h1>Tabs</h1>
+    <p><a href="./index.html">← Back to demos</a></p>
+
+    <h2>Basic Tabs</h2>
+    <ui-tabs defaultValue="account">
+      <ui-tabs-list>
+        <ui-tabs-trigger value="account">Account</ui-tabs-trigger>
+        <ui-tabs-trigger value="password">Password</ui-tabs-trigger>
+        <ui-tabs-trigger value="settings">Settings</ui-tabs-trigger>
+      </ui-tabs-list>
+      <ui-tabs-content value="account">
+        <ui-card>
+          <ui-card-header>
+            <ui-card-title>Account</ui-card-title>
+            <ui-card-description>Manage your account settings.</ui-card-description>
+          </ui-card-header>
+          <ui-card-content>
+            <p>Account settings content goes here.</p>
+          </ui-card-content>
+        </ui-card>
+      </ui-tabs-content>
+      <ui-tabs-content value="password">
+        <ui-card>
+          <ui-card-header>
+            <ui-card-title>Password</ui-card-title>
+            <ui-card-description>Change your password.</ui-card-description>
+          </ui-card-header>
+          <ui-card-content>
+            <p>Password change form goes here.</p>
+          </ui-card-content>
+        </ui-card>
+      </ui-tabs-content>
+      <ui-tabs-content value="settings">
+        <ui-card>
+          <ui-card-header>
+            <ui-card-title>Settings</ui-card-title>
+            <ui-card-description>Configure your preferences.</ui-card-description>
+          </ui-card-header>
+          <ui-card-content>
+            <p>Settings content goes here.</p>
+          </ui-card-content>
+        </ui-card>
+      </ui-tabs-content>
+    </ui-tabs>
+  </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-trigger",
+  "title": "Select Trigger",
+  "description": "Reactolith wrapper for shadcn SelectTrigger.",
+  "registryDependencies": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/select/select-trigger.tsx",
+      "content": "import { SelectTrigger } from \"@/components/ui/select\"\nexport default SelectTrigger\n",
+      "type": "registry:file",
+      "target": "components/reactolith/select/select-trigger.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

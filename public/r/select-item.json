@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-item",
+  "title": "Select Item",
+  "description": "Reactolith wrapper for shadcn SelectItem.",
+  "registryDependencies": [
+    "select"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/select/select-item.tsx",
+      "content": "import { SelectItem } from \"@/components/ui/select\"\nexport default SelectItem\n",
+      "type": "registry:file",
+      "target": "components/reactolith/select/select-item.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

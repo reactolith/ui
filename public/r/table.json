@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table",
+  "title": "Table",
+  "description": "Reactolith Table component family. Installs table, table-header, table-body, table-row, table-head, table-cell.",
+  "registryDependencies": [
+    "table",
+    "@reactolith/table-header",
+    "@reactolith/table-body",
+    "@reactolith/table-row",
+    "@reactolith/table-head",
+    "@reactolith/table-cell"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/table/table.tsx",
+      "content": "import { Table } from \"@/components/ui/table\"\nexport default Table\n",
+      "type": "registry:file",
+      "target": "components/reactolith/table/table.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

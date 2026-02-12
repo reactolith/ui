@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-footer",
+  "title": "Dialog Footer",
+  "description": "Reactolith wrapper for shadcn DialogFooter.",
+  "registryDependencies": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/dialog/dialog-footer.tsx",
+      "content": "import { DialogFooter } from \"@/components/ui/dialog\"\nexport default DialogFooter\n",
+      "type": "registry:file",
+      "target": "components/reactolith/dialog/dialog-footer.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

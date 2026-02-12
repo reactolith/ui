@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton",
+  "title": "Skeleton",
+  "description": "Reactolith wrapper for shadcn Skeleton with default export.",
+  "registryDependencies": [
+    "skeleton"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/skeleton/skeleton.tsx",
+      "content": "import { Skeleton } from \"@/components/ui/skeleton\"\nexport default Skeleton\n",
+      "type": "registry:file",
+      "target": "components/reactolith/skeleton/skeleton.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

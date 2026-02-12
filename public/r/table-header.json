@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-header",
+  "title": "Table Header",
+  "description": "Reactolith wrapper for shadcn TableHeader.",
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/table/table-header.tsx",
+      "content": "import { TableHeader } from \"@/components/ui/table\"\nexport default TableHeader\n",
+      "type": "registry:file",
+      "target": "components/reactolith/table/table-header.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

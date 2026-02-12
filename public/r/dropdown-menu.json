@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu",
+  "title": "Dropdown Menu",
+  "description": "Reactolith Dropdown Menu component family. Installs dropdown-menu, dropdown-menu-trigger, dropdown-menu-content, dropdown-menu-item, dropdown-menu-separator, dropdown-menu-label.",
+  "registryDependencies": [
+    "dropdown-menu",
+    "@reactolith/dropdown-menu-trigger",
+    "@reactolith/dropdown-menu-content",
+    "@reactolith/dropdown-menu-item",
+    "@reactolith/dropdown-menu-separator",
+    "@reactolith/dropdown-menu-label"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/reactolith/dropdown-menu/dropdown-menu.tsx",
+      "content": "import { DropdownMenu } from \"@/components/ui/dropdown-menu\"\nexport default DropdownMenu\n",
+      "type": "registry:file",
+      "target": "components/reactolith/dropdown-menu/dropdown-menu.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
