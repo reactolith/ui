@@ -1,15 +1,13 @@
-import { App } from "react-htx"
-import loadable from "@loadable/component"
+import "./index.css";
+import loadable from "@loadable/component";
+import { App } from "reactolith";
+import type { ComponentType } from "react";
 
-const component = loadable(
-  async ({ is }: { is: string }) => {
-    const name = is.substring(3) // removes "ui-" prefix
-    return import(`../registry/new-york/reactolith/${name}/${name}.tsx`)
-  },
-  {
-    cacheKey: ({ is }) => is,
-    resolveComponent: (mod) => mod.default || mod[Object.keys(mod)[0]],
-  }
-)
-
-new App(component)
+new App(
+    loadable(({ is }: { is: string }) => {
+        const name = is.substring(3)
+        return import(`@/registry/default/app/${name}/${name}.tsx`);
+    }, {
+        cacheKey: ({ is }: { is: string }) => is,
+    }) as unknown as ComponentType<any>,
+);
