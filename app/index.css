@@ -4,6 +4,7 @@
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
 @import "shadcn/tailwind.css";
+@import "./style-vega.css";
 @import "@fontsource-variable/inter";
 
 @custom-variant dark (&:is(.dark *));
