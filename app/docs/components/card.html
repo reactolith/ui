@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card - Reactolith UI</title>
+    <script type="module" src="../../app.ts"></script>
+</head>
+<body>
+<div id="reactolith-app" class="style-vega">
+    
+    <header class="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto flex h-14 items-center justify-between px-6">
+        <div class="flex items-center gap-6">
+          <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
+          <nav class="hidden md:flex items-center gap-4 text-sm">
+            <a href="../introduction.html" class="text-muted-foreground hover:text-foreground">Docs</a>
+            <a href="button.html" class="text-muted-foreground hover:text-foreground">Components</a>
+          </nav>
+        </div>
+        <nav class="flex items-center gap-2">
+          <a href="https://github.com/reactolith/ui" class="text-sm text-muted-foreground hover:text-foreground">GitHub</a>
+        </nav>
+      </div>
+    </header>
+    <div class="max-w-7xl mx-auto px-6 flex gap-8">
+        
+    <aside class="hidden lg:block w-64 shrink-0">
+      <div class="sticky top-14 h-[calc(100vh-3.5rem)] overflow-y-auto py-8 pr-4">
+        <nav class="space-y-6">
+          <div>
+            <h3 class="text-sm font-semibold mb-2">Getting Started</h3>
+            <ul class="space-y-1">
+              <li><a href="../introduction.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Introduction</a></li>
+              <li><a href="../installation.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Installation</a></li>
+              <li><a href="../usage.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Usage</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold mb-2">Layout</h3>
+            <ul class="space-y-1">
+              <li><a href="aspect-ratio.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Aspect Ratio</a></li>
+              <li><a href="card.html" class="block text-sm py-1 text-foreground font-medium">Card</a></li>
+              <li><a href="resizable.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Resizable</a></li>
+              <li><a href="scroll-area.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Scroll Area</a></li>
+              <li><a href="separator.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Separator</a></li>
+              <li><a href="direction-provider.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Direction Provider</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold mb-2">Forms</h3>
+            <ul class="space-y-1">
+              <li><a href="button.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Button</a></li>
+              <li><a href="button-group.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Button Group</a></li>
+              <li><a href="calendar.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Calendar</a></li>
+              <li><a href="checkbox.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Checkbox</a></li>
+              <li><a href="combobox.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Combobox</a></li>
+              <li><a href="field.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Field</a></li>
+              <li><a href="input.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Input</a></li>
+              <li><a href="input-group.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Input Group</a></li>
+              <li><a href="input-otp.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Input OTP</a></li>
+              <li><a href="label.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Label</a></li>
+              <li><a href="native-select.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Native Select</a></li>
+              <li><a href="radio-group.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Radio Group</a></li>
+              <li><a href="select.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Select</a></li>
+              <li><a href="slider.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Slider</a></li>
+              <li><a href="switch.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Switch</a></li>
+              <li><a href="textarea.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Textarea</a></li>
+              <li><a href="toggle.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Toggle</a></li>
+              <li><a href="toggle-group.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Toggle Group</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold mb-2">Data Display</h3>
+            <ul class="space-y-1">
+              <li><a href="accordion.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Accordion</a></li>
+              <li><a href="avatar.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Avatar</a></li>
+              <li><a href="badge.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Badge</a></li>
+              <li><a href="carousel.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Carousel</a></li>
+              <li><a href="chart.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Chart</a></li>
+              <li><a href="collapsible.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Collapsible</a></li>
+              <li><a href="item.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Item</a></li>
+              <li><a href="kbd.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Kbd</a></li>
+              <li><a href="table.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Table</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold mb-2">Feedback</h3>
+            <ul class="space-y-1">
+              <li><a href="alert.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Alert</a></li>
+              <li><a href="empty.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Empty</a></li>
+              <li><a href="progress.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Progress</a></li>
+              <li><a href="skeleton.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Skeleton</a></li>
+              <li><a href="sonner.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Sonner</a></li>
+              <li><a href="spinner.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Spinner</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold mb-2">Overlay</h3>
+            <ul class="space-y-1">
+              <li><a href="alert-dialog.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Alert Dialog</a></li>
+              <li><a href="context-menu.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Context Menu</a></li>
+              <li><a href="dialog.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Dialog</a></li>
+              <li><a href="drawer.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Drawer</a></li>
+              <li><a href="dropdown-menu.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Dropdown Menu</a></li>
+              <li><a href="hover-card.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Hover Card</a></li>
+              <li><a href="popover.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Popover</a></li>
+              <li><a href="sheet.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Sheet</a></li>
+              <li><a href="tooltip.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Tooltip</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold mb-2">Navigation</h3>
+            <ul class="space-y-1">
+              <li><a href="breadcrumb.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Breadcrumb</a></li>
+              <li><a href="command.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Command</a></li>
+              <li><a href="menubar.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Menubar</a></li>
+              <li><a href="navigation-menu.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Navigation Menu</a></li>
+              <li><a href="pagination.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Pagination</a></li>
+              <li><a href="sidebar.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Sidebar</a></li>
+              <li><a href="tabs.html" class="block text-sm py-1 text-muted-foreground hover:text-foreground">Tabs</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </aside>
+        <main class="flex-1 min-w-0 py-8 max-w-3xl">
+            
+            <div class="space-y-2 mb-8">
+              <div class="flex items-center gap-3">
+                <h1 class="text-3xl font-bold tracking-tight">Card</h1>
+                <a href="https://ui.shadcn.com/docs/components/base/card" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1">shadcn/ui docs</a>
+              </div>
+              <p class="text-lg text-muted-foreground">Displays a card with header, content, and footer.</p>
+            </div>
+
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Preview</h2>
+              <div class="rounded-lg border p-6 bg-background">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <ui-card>
+    <ui-card-header>
+      <ui-card-title>Notifications</ui-card-title>
+      <ui-card-description>You have 3 unread messages.</ui-card-description>
+    </ui-card-header>
+    <ui-card-content>
+      <p class="text-sm text-muted-foreground">Your recent activity shows new notifications.</p>
+    </ui-card-content>
+    <ui-card-footer class="flex justify-end">
+      <ui-button size="sm">View All</ui-button>
+    </ui-card-footer>
+  </ui-card>
+  <ui-card size="sm">
+    <ui-card-header>
+      <ui-card-title>Small Card</ui-card-title>
+      <ui-card-description>A compact card variant.</ui-card-description>
+    </ui-card-header>
+    <ui-card-content>
+      <p class="text-sm text-muted-foreground">This card uses size="sm" for tighter spacing.</p>
+    </ui-card-content>
+  </ui-card>
+</div>
+              </div>
+            </section>
+
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Usage</h2>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto">
+                <pre class="p-4 text-sm"><code>&lt;div class=&quot;grid grid-cols-1 md:grid-cols-2 gap-6&quot;&gt;
+  &lt;ui-card&gt;
+    &lt;ui-card-header&gt;
+      &lt;ui-card-title&gt;Notifications&lt;/ui-card-title&gt;
+      &lt;ui-card-description&gt;You have 3 unread messages.&lt;/ui-card-description&gt;
+    &lt;/ui-card-header&gt;
+    &lt;ui-card-content&gt;
+      &lt;p class=&quot;text-sm text-muted-foreground&quot;&gt;Your recent activity shows new notifications.&lt;/p&gt;
+    &lt;/ui-card-content&gt;
+    &lt;ui-card-footer class=&quot;flex justify-end&quot;&gt;
+      &lt;ui-button size=&quot;sm&quot;&gt;View All&lt;/ui-button&gt;
+    &lt;/ui-card-footer&gt;
+  &lt;/ui-card&gt;
+  &lt;ui-card size=&quot;sm&quot;&gt;
+    &lt;ui-card-header&gt;
+      &lt;ui-card-title&gt;Small Card&lt;/ui-card-title&gt;
+      &lt;ui-card-description&gt;A compact card variant.&lt;/ui-card-description&gt;
+    &lt;/ui-card-header&gt;
+    &lt;ui-card-content&gt;
+      &lt;p class=&quot;text-sm text-muted-foreground&quot;&gt;This card uses size=&quot;sm&quot; for tighter spacing.&lt;/p&gt;
+    &lt;/ui-card-content&gt;
+  &lt;/ui-card&gt;
+&lt;/div&gt;</code></pre>
+              </div>
+            </section>
+
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Sub-components</h2>
+              <div class="flex flex-wrap gap-2">
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-card&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-card-header&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-card-title&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-card-description&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-card-action&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-card-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-card-footer&gt;</code>
+              </div>
+            </section>
+
+            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-card&gt;</code></h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                  <thead>
+                    <tr class="border-b">
+                      <th class="text-left py-2 pr-4 font-medium">Prop</th>
+                      <th class="text-left py-2 pr-4 font-medium">Type</th>
+                      <th class="text-left py-2 pr-4 font-medium">Default</th>
+                      <th class="text-left py-2 font-medium">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b">
+                      <td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">size</code></td>
+                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;default&quot; | &quot;sm&quot;</code></td>
+                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;default&quot;</code></td>
+                      <td class="py-2 text-muted-foreground">The size of the card.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div></section>
+
+            <section class="mb-10">
+              <p class="text-sm text-muted-foreground">
+                All components also accept standard HTML attributes (class, id, style, data-*, aria-*, etc.) which are passed through to the underlying element.
+              </p>
+            </section>
+        </main>
+    </div>
+</div>
+</body>
+</html>
