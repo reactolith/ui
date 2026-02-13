@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "title": "Button",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/button/button.tsx",
+      "content": "import * as React from \"react\";\nimport { Button } from \"@/components/ui/button\";\n\ntype UiButtonProps =\n    Omit<React.ComponentProps<typeof Button>, \"render\"> & {\n    href?: string | null;\n    children: React.ReactNode;\n};\n\nconst UiButton = React.forwardRef<\n    HTMLAnchorElement | HTMLButtonElement,\n    UiButtonProps\n>(({ href, children, ...props }, ref) => {\n    if (href) {\n        return (\n            <Button\n                {...props}\n                render={(buttonProps) => (\n                    <a\n                        {...buttonProps}\n                        ref={ref as React.Ref<HTMLAnchorElement>}\n                        href={href}\n                    >\n                        {children}\n                    </a>\n                )}\n            />\n        );\n    }\n\n    return (\n        <Button ref={ref as React.Ref<HTMLButtonElement>} {...props}>\n            {children}\n        </Button>\n    );\n});\n\nUiButton.displayName = \"UiButton\";\nexport default UiButton;\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

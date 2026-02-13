@@ -5,12 +5,14 @@ import { defineConfig } from "vite"
 
 // https://vite.dev/config/
 export default defineConfig(() => {
+    const base = process.env.GITHUB_PAGES ? "/ui/" : "/"
     return {
+        base,
         plugins: [
             react(),
             tailwindcss(),
         ],
-        root: 'demo',
+        root: 'app',
         resolve: {
             alias: {
                 "@": path.resolve(__dirname, "./"),

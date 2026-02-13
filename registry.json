@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "reactolith",
-  "homepage": "https://acme.com",
+  "homepage": "https://reactolith.github.io/ui",
   "items": [
     {
       "name": "button",
