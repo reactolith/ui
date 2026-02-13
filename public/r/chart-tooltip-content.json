@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/chart-tooltip-content/chart-tooltip-content.tsx",
+      "path": "registry/default/app/chart/chart-tooltip-content.tsx",
       "content": "import { ChartTooltipContent } from \"@/components/ui/chart\"\n\nexport default ChartTooltipContent\n",
       "type": "registry:component"
     }

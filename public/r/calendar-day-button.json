@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/calendar-day-button/calendar-day-button.tsx",
+      "path": "registry/default/app/calendar/calendar-day-button.tsx",
       "content": "import { CalendarDayButton } from \"@/components/ui/calendar\"\n\nexport default CalendarDayButton\n",
       "type": "registry:component"
     }

@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/chart-container/chart-container.tsx",
+      "path": "registry/default/app/chart/chart-container.tsx",
       "content": "import { ChartContainer } from \"@/components/ui/chart\"\n\nexport default ChartContainer\n",
       "type": "registry:component"
     }

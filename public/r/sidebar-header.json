@@ -4,7 +4,7 @@
   "title": "Sidebar Header",
   "files": [
     {
-      "path": "registry/default/app/sidebar-header/sidebar-header.tsx",
+      "path": "registry/default/app/sidebar/sidebar-header.tsx",
       "content": "import { SidebarHeader } from \"@/components/ui/sidebar\"\n\nexport default SidebarHeader\n",
       "type": "registry:component"
     }

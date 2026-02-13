@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/avatar-group-count/avatar-group-count.tsx",
+      "path": "registry/default/app/avatar/avatar-group-count.tsx",
       "content": "import { AvatarGroupCount } from \"@/components/ui/avatar\"\n\nexport default AvatarGroupCount\n",
       "type": "registry:component"
     }

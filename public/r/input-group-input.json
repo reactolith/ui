@@ -4,7 +4,7 @@
   "title": "Input Group Input",
   "files": [
     {
-      "path": "registry/default/app/input-group-input/input-group-input.tsx",
+      "path": "registry/default/app/input-group/input-group-input.tsx",
       "content": "import { InputGroupInput } from \"@/components/ui/input-group\"\n\nexport default InputGroupInput\n",
       "type": "registry:component"
     }

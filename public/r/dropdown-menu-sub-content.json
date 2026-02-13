@@ -4,7 +4,7 @@
   "title": "Dropdown Menu Sub Content",
   "files": [
     {
-      "path": "registry/default/app/dropdown-menu-sub-content/dropdown-menu-sub-content.tsx",
+      "path": "registry/default/app/dropdown-menu/dropdown-menu-sub-content.tsx",
       "content": "import { DropdownMenuSubContent } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuSubContent\n",
       "type": "registry:component"
     }

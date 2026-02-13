@@ -4,7 +4,7 @@
   "title": "Drawer Overlay",
   "files": [
     {
-      "path": "registry/default/app/drawer-overlay/drawer-overlay.tsx",
+      "path": "registry/default/app/drawer/drawer-overlay.tsx",
       "content": "import { DrawerOverlay } from \"@/components/ui/drawer\"\n\nexport default DrawerOverlay\n",
       "type": "registry:component"
     }

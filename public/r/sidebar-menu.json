@@ -4,7 +4,7 @@
   "title": "Sidebar Menu",
   "files": [
     {
-      "path": "registry/default/app/sidebar-menu/sidebar-menu.tsx",
+      "path": "registry/default/app/sidebar/sidebar-menu.tsx",
       "content": "import { SidebarMenu } from \"@/components/ui/sidebar\"\n\nexport default SidebarMenu\n",
       "type": "registry:component"
     }

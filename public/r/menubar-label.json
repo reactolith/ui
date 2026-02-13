@@ -4,7 +4,7 @@
   "title": "Menubar Label",
   "files": [
     {
-      "path": "registry/default/app/menubar-label/menubar-label.tsx",
+      "path": "registry/default/app/menubar/menubar-label.tsx",
       "content": "import { MenubarLabel } from \"@/components/ui/menubar\"\n\nexport default MenubarLabel\n",
       "type": "registry:component"
     }

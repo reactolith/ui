@@ -4,7 +4,7 @@
   "title": "Combobox Collection",
   "files": [
     {
-      "path": "registry/default/app/combobox-collection/combobox-collection.tsx",
+      "path": "registry/default/app/combobox/combobox-collection.tsx",
       "content": "import { ComboboxCollection } from \"@/components/ui/combobox\"\n\nexport default ComboboxCollection\n",
       "type": "registry:component"
     }

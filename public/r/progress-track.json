@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/progress-track/progress-track.tsx",
+      "path": "registry/default/app/progress/progress-track.tsx",
       "content": "import { ProgressTrack } from \"@/components/ui/progress\"\n\nexport default ProgressTrack\n",
       "type": "registry:component"
     }

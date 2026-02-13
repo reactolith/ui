@@ -4,7 +4,7 @@
   "title": "Sidebar Footer",
   "files": [
     {
-      "path": "registry/default/app/sidebar-footer/sidebar-footer.tsx",
+      "path": "registry/default/app/sidebar/sidebar-footer.tsx",
       "content": "import { SidebarFooter } from \"@/components/ui/sidebar\"\n\nexport default SidebarFooter\n",
       "type": "registry:component"
     }

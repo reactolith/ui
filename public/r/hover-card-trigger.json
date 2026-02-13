@@ -4,7 +4,7 @@
   "title": "Hover Card Trigger",
   "files": [
     {
-      "path": "registry/default/app/hover-card-trigger/hover-card-trigger.tsx",
+      "path": "registry/default/app/hover-card/hover-card-trigger.tsx",
       "content": "import { HoverCardTrigger } from \"@/components/ui/hover-card\"\n\nexport default HoverCardTrigger\n",
       "type": "registry:component"
     }

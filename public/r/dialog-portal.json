@@ -4,7 +4,7 @@
   "title": "Dialog Portal",
   "files": [
     {
-      "path": "registry/default/app/dialog-portal/dialog-portal.tsx",
+      "path": "registry/default/app/dialog/dialog-portal.tsx",
       "content": "import { DialogPortal } from \"@/components/ui/dialog\"\n\nexport default DialogPortal\n",
       "type": "registry:component"
     }

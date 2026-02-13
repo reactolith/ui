@@ -4,7 +4,7 @@
   "title": "Input Otp Separator",
   "files": [
     {
-      "path": "registry/default/app/input-otp-separator/input-otp-separator.tsx",
+      "path": "registry/default/app/input-otp/input-otp-separator.tsx",
       "content": "import { InputOTPSeparator } from \"@/components/ui/input-otp\"\n\nexport default InputOTPSeparator\n",
       "type": "registry:component"
     }

@@ -4,7 +4,7 @@
   "title": "Select Value",
   "files": [
     {
-      "path": "registry/default/app/select-value/select-value.tsx",
+      "path": "registry/default/app/select/select-value.tsx",
       "content": "import { SelectValue } from \"@/components/ui/select\"\n\nexport default SelectValue\n",
       "type": "registry:component"
     }

@@ -4,7 +4,7 @@
   "title": "Context Menu Shortcut",
   "files": [
     {
-      "path": "registry/default/app/context-menu-shortcut/context-menu-shortcut.tsx",
+      "path": "registry/default/app/context-menu/context-menu-shortcut.tsx",
       "content": "import { ContextMenuShortcut } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuShortcut\n",
       "type": "registry:component"
     }

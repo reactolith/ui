@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/tooltip-trigger/tooltip-trigger.tsx",
+      "path": "registry/default/app/tooltip/tooltip-trigger.tsx",
       "content": "import { TooltipTrigger } from \"@/components/ui/tooltip\"\n\nexport default TooltipTrigger\n",
       "type": "registry:component"
     }

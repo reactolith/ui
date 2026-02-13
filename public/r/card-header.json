@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/card-header/card-header.tsx",
+      "path": "registry/default/app/card/card-header.tsx",
       "content": "import { CardHeader } from \"@/components/ui/card\"\n\nexport default CardHeader\n",
       "type": "registry:component"
     }

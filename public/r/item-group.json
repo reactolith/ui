@@ -4,7 +4,7 @@
   "title": "Item Group",
   "files": [
     {
-      "path": "registry/default/app/item-group/item-group.tsx",
+      "path": "registry/default/app/item/item-group.tsx",
       "content": "import { ItemGroup } from \"@/components/ui/item\"\n\nexport default ItemGroup\n",
       "type": "registry:component"
     }

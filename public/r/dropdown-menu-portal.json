@@ -4,7 +4,7 @@
   "title": "Dropdown Menu Portal",
   "files": [
     {
-      "path": "registry/default/app/dropdown-menu-portal/dropdown-menu-portal.tsx",
+      "path": "registry/default/app/dropdown-menu/dropdown-menu-portal.tsx",
       "content": "import { DropdownMenuPortal } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuPortal\n",
       "type": "registry:component"
     }

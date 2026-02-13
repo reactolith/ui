@@ -4,7 +4,7 @@
   "title": "Popover Title",
   "files": [
     {
-      "path": "registry/default/app/popover-title/popover-title.tsx",
+      "path": "registry/default/app/popover/popover-title.tsx",
       "content": "import { PopoverTitle } from \"@/components/ui/popover\"\n\nexport default PopoverTitle\n",
       "type": "registry:component"
     }

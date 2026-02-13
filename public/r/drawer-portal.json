@@ -4,7 +4,7 @@
   "title": "Drawer Portal",
   "files": [
     {
-      "path": "registry/default/app/drawer-portal/drawer-portal.tsx",
+      "path": "registry/default/app/drawer/drawer-portal.tsx",
       "content": "import { DrawerPortal } from \"@/components/ui/drawer\"\n\nexport default DrawerPortal\n",
       "type": "registry:component"
     }

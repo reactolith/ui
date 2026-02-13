@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/progress-value/progress-value.tsx",
+      "path": "registry/default/app/progress/progress-value.tsx",
       "content": "import { ProgressValue } from \"@/components/ui/progress\"\n\nexport default ProgressValue\n",
       "type": "registry:component"
     }

@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/button-group-separator/button-group-separator.tsx",
+      "path": "registry/default/app/button-group/button-group-separator.tsx",
       "content": "import { ButtonGroupSeparator } from \"@/components/ui/button-group\"\n\nexport default ButtonGroupSeparator\n",
       "type": "registry:component"
     }

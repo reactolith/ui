@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/tabs-list/tabs-list.tsx",
+      "path": "registry/default/app/tabs/tabs-list.tsx",
       "content": "import { TabsList } from \"@/components/ui/tabs\"\n\nexport default TabsList\n",
       "type": "registry:component"
     }

@@ -4,7 +4,7 @@
   "title": "Dropdown Menu Shortcut",
   "files": [
     {
-      "path": "registry/default/app/dropdown-menu-shortcut/dropdown-menu-shortcut.tsx",
+      "path": "registry/default/app/dropdown-menu/dropdown-menu-shortcut.tsx",
       "content": "import { DropdownMenuShortcut } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuShortcut\n",
       "type": "registry:component"
     }

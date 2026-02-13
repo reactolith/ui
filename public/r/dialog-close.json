@@ -4,7 +4,7 @@
   "title": "Dialog Close",
   "files": [
     {
-      "path": "registry/default/app/dialog-close/dialog-close.tsx",
+      "path": "registry/default/app/dialog/dialog-close.tsx",
       "content": "import { DialogClose } from \"@/components/ui/dialog\"\n\nexport default DialogClose\n",
       "type": "registry:component"
     }

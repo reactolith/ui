@@ -4,7 +4,7 @@
   "title": "Sheet Trigger",
   "files": [
     {
-      "path": "registry/default/app/sheet-trigger/sheet-trigger.tsx",
+      "path": "registry/default/app/sheet/sheet-trigger.tsx",
       "content": "import { SheetTrigger } from \"@/components/ui/sheet\"\n\nexport default SheetTrigger\n",
       "type": "registry:component"
     }

@@ -4,7 +4,7 @@
   "title": "Field Title",
   "files": [
     {
-      "path": "registry/default/app/field-title/field-title.tsx",
+      "path": "registry/default/app/field/field-title.tsx",
       "content": "import { FieldTitle } from \"@/components/ui/field\"\n\nexport default FieldTitle\n",
       "type": "registry:component"
     }

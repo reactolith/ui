@@ -4,7 +4,7 @@
   "title": "Navigation Menu Link",
   "files": [
     {
-      "path": "registry/default/app/navigation-menu-link/navigation-menu-link.tsx",
+      "path": "registry/default/app/navigation-menu/navigation-menu-link.tsx",
       "content": "import { NavigationMenuLink } from \"@/components/ui/navigation-menu\"\n\nexport default NavigationMenuLink\n",
       "type": "registry:component"
     }

@@ -4,7 +4,7 @@
   "title": "Item Actions",
   "files": [
     {
-      "path": "registry/default/app/item-actions/item-actions.tsx",
+      "path": "registry/default/app/item/item-actions.tsx",
       "content": "import { ItemActions } from \"@/components/ui/item\"\n\nexport default ItemActions\n",
       "type": "registry:component"
     }

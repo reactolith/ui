@@ -4,7 +4,7 @@
   "title": "Field Error",
   "files": [
     {
-      "path": "registry/default/app/field-error/field-error.tsx",
+      "path": "registry/default/app/field/field-error.tsx",
       "content": "import { FieldError } from \"@/components/ui/field\"\n\nexport default FieldError\n",
       "type": "registry:component"
     }

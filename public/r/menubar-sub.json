@@ -4,7 +4,7 @@
   "title": "Menubar Sub",
   "files": [
     {
-      "path": "registry/default/app/menubar-sub/menubar-sub.tsx",
+      "path": "registry/default/app/menubar/menubar-sub.tsx",
       "content": "import { MenubarSub } from \"@/components/ui/menubar\"\n\nexport default MenubarSub\n",
       "type": "registry:component"
     }

@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/accordion-trigger/accordion-trigger.tsx",
+      "path": "registry/default/app/accordion/accordion-trigger.tsx",
       "content": "import { AccordionTrigger } from \"@/components/ui/accordion\"\n\nexport default AccordionTrigger\n",
       "type": "registry:component"
     }

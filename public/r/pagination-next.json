@@ -4,7 +4,7 @@
   "title": "Pagination Next",
   "files": [
     {
-      "path": "registry/default/app/pagination-next/pagination-next.tsx",
+      "path": "registry/default/app/pagination/pagination-next.tsx",
       "content": "import { PaginationNext } from \"@/components/ui/pagination\"\n\nexport default PaginationNext\n",
       "type": "registry:component"
     }

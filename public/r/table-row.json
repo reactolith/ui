@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/table-row/table-row.tsx",
+      "path": "registry/default/app/table/table-row.tsx",
       "content": "import { TableRow } from \"@/components/ui/table\"\n\nexport default TableRow\n",
       "type": "registry:component"
     }

@@ -4,7 +4,7 @@
   "title": "Dropdown Menu Trigger",
   "files": [
     {
-      "path": "registry/default/app/dropdown-menu-trigger/dropdown-menu-trigger.tsx",
+      "path": "registry/default/app/dropdown-menu/dropdown-menu-trigger.tsx",
       "content": "import { DropdownMenuTrigger } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuTrigger\n",
       "type": "registry:component"
     }

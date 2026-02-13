@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/table-footer/table-footer.tsx",
+      "path": "registry/default/app/table/table-footer.tsx",
       "content": "import { TableFooter } from \"@/components/ui/table\"\n\nexport default TableFooter\n",
       "type": "registry:component"
     }

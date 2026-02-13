@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/avatar-fallback/avatar-fallback.tsx",
+      "path": "registry/default/app/avatar/avatar-fallback.tsx",
       "content": "import { AvatarFallback } from \"@/components/ui/avatar\"\n\nexport default AvatarFallback\n",
       "type": "registry:component"
     }

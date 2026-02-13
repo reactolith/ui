@@ -4,7 +4,7 @@
   "title": "Drawer Title",
   "files": [
     {
-      "path": "registry/default/app/drawer-title/drawer-title.tsx",
+      "path": "registry/default/app/drawer/drawer-title.tsx",
       "content": "import { DrawerTitle } from \"@/components/ui/drawer\"\n\nexport default DrawerTitle\n",
       "type": "registry:component"
     }

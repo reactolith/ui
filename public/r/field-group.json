@@ -4,7 +4,7 @@
   "title": "Field Group",
   "files": [
     {
-      "path": "registry/default/app/field-group/field-group.tsx",
+      "path": "registry/default/app/field/field-group.tsx",
       "content": "import { FieldGroup } from \"@/components/ui/field\"\n\nexport default FieldGroup\n",
       "type": "registry:component"
     }

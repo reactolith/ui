@@ -4,7 +4,7 @@
   "title": "Sidebar Menu Button",
   "files": [
     {
-      "path": "registry/default/app/sidebar-menu-button/sidebar-menu-button.tsx",
+      "path": "registry/default/app/sidebar/sidebar-menu-button.tsx",
       "content": "import { SidebarMenuButton } from \"@/components/ui/sidebar\"\n\nexport default SidebarMenuButton\n",
       "type": "registry:component"
     }

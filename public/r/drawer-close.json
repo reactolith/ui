@@ -4,7 +4,7 @@
   "title": "Drawer Close",
   "files": [
     {
-      "path": "registry/default/app/drawer-close/drawer-close.tsx",
+      "path": "registry/default/app/drawer/drawer-close.tsx",
       "content": "import { DrawerClose } from \"@/components/ui/drawer\"\n\nexport default DrawerClose\n",
       "type": "registry:component"
     }

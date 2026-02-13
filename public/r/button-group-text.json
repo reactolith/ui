@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/button-group-text/button-group-text.tsx",
+      "path": "registry/default/app/button-group/button-group-text.tsx",
       "content": "import { ButtonGroupText } from \"@/components/ui/button-group\"\n\nexport default ButtonGroupText\n",
       "type": "registry:component"
     }

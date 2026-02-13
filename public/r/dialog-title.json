@@ -4,7 +4,7 @@
   "title": "Dialog Title",
   "files": [
     {
-      "path": "registry/default/app/dialog-title/dialog-title.tsx",
+      "path": "registry/default/app/dialog/dialog-title.tsx",
       "content": "import { DialogTitle } from \"@/components/ui/dialog\"\n\nexport default DialogTitle\n",
       "type": "registry:component"
     }

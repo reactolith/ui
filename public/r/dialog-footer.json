@@ -4,7 +4,7 @@
   "title": "Dialog Footer",
   "files": [
     {
-      "path": "registry/default/app/dialog-footer/dialog-footer.tsx",
+      "path": "registry/default/app/dialog/dialog-footer.tsx",
       "content": "import { DialogFooter } from \"@/components/ui/dialog\"\n\nexport default DialogFooter\n",
       "type": "registry:component"
     }

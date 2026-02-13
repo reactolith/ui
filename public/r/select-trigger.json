@@ -4,7 +4,7 @@
   "title": "Select Trigger",
   "files": [
     {
-      "path": "registry/default/app/select-trigger/select-trigger.tsx",
+      "path": "registry/default/app/select/select-trigger.tsx",
       "content": "import { SelectTrigger } from \"@/components/ui/select\"\n\nexport default SelectTrigger\n",
       "type": "registry:component"
     }

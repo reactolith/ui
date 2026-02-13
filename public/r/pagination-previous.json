@@ -4,7 +4,7 @@
   "title": "Pagination Previous",
   "files": [
     {
-      "path": "registry/default/app/pagination-previous/pagination-previous.tsx",
+      "path": "registry/default/app/pagination/pagination-previous.tsx",
       "content": "import { PaginationPrevious } from \"@/components/ui/pagination\"\n\nexport default PaginationPrevious\n",
       "type": "registry:component"
     }

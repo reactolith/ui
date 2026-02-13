@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/collapsible-content/collapsible-content.tsx",
+      "path": "registry/default/app/collapsible/collapsible-content.tsx",
       "content": "import { CollapsibleContent } from \"@/components/ui/collapsible\"\n\nexport default CollapsibleContent\n",
       "type": "registry:component"
     }

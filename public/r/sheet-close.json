@@ -4,7 +4,7 @@
   "title": "Sheet Close",
   "files": [
     {
-      "path": "registry/default/app/sheet-close/sheet-close.tsx",
+      "path": "registry/default/app/sheet/sheet-close.tsx",
       "content": "import { SheetClose } from \"@/components/ui/sheet\"\n\nexport default SheetClose\n",
       "type": "registry:component"
     }

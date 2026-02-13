@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/breadcrumb-list/breadcrumb-list.tsx",
+      "path": "registry/default/app/breadcrumb/breadcrumb-list.tsx",
       "content": "import { BreadcrumbList } from \"@/components/ui/breadcrumb\"\n\nexport default BreadcrumbList\n",
       "type": "registry:component"
     }

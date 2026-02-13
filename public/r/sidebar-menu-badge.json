@@ -4,7 +4,7 @@
   "title": "Sidebar Menu Badge",
   "files": [
     {
-      "path": "registry/default/app/sidebar-menu-badge/sidebar-menu-badge.tsx",
+      "path": "registry/default/app/sidebar/sidebar-menu-badge.tsx",
       "content": "import { SidebarMenuBadge } from \"@/components/ui/sidebar\"\n\nexport default SidebarMenuBadge\n",
       "type": "registry:component"
     }

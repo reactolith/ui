@@ -4,7 +4,7 @@
   "title": "Input Otp Group",
   "files": [
     {
-      "path": "registry/default/app/input-otp-group/input-otp-group.tsx",
+      "path": "registry/default/app/input-otp/input-otp-group.tsx",
       "content": "import { InputOTPGroup } from \"@/components/ui/input-otp\"\n\nexport default InputOTPGroup\n",
       "type": "registry:component"
     }

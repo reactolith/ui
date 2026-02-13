@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/accordion-item/accordion-item.tsx",
+      "path": "registry/default/app/accordion/accordion-item.tsx",
       "content": "import { AccordionItem } from \"@/components/ui/accordion\"\n\nexport default AccordionItem\n",
       "type": "registry:component"
     }
