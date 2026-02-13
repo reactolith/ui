@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/alert-dialog-header/alert-dialog-header.tsx",
+      "path": "registry/default/app/alert-dialog/alert-dialog-header.tsx",
       "content": "import { AlertDialogHeader } from \"@/components/ui/alert-dialog\"\n\nexport default AlertDialogHeader\n",
       "type": "registry:component"
     }

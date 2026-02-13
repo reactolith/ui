@@ -4,7 +4,7 @@
   "title": "Sheet Footer",
   "files": [
     {
-      "path": "registry/default/app/sheet-footer/sheet-footer.tsx",
+      "path": "registry/default/app/sheet/sheet-footer.tsx",
       "content": "import { SheetFooter } from \"@/components/ui/sheet\"\n\nexport default SheetFooter\n",
       "type": "registry:component"
     }

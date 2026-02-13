@@ -4,7 +4,7 @@
   "title": "Kbd Group",
   "files": [
     {
-      "path": "registry/default/app/kbd-group/kbd-group.tsx",
+      "path": "registry/default/app/kbd/kbd-group.tsx",
       "content": "import { KbdGroup } from \"@/components/ui/kbd\"\n\nexport default KbdGroup\n",
       "type": "registry:component"
     }

@@ -4,7 +4,7 @@
   "title": "Menubar Content",
   "files": [
     {
-      "path": "registry/default/app/menubar-content/menubar-content.tsx",
+      "path": "registry/default/app/menubar/menubar-content.tsx",
       "content": "import { MenubarContent } from \"@/components/ui/menubar\"\n\nexport default MenubarContent\n",
       "type": "registry:component"
     }

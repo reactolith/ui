@@ -4,7 +4,7 @@
   "title": "Select Label",
   "files": [
     {
-      "path": "registry/default/app/select-label/select-label.tsx",
+      "path": "registry/default/app/select/select-label.tsx",
       "content": "import { SelectLabel } from \"@/components/ui/select\"\n\nexport default SelectLabel\n",
       "type": "registry:component"
     }

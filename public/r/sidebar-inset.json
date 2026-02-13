@@ -4,7 +4,7 @@
   "title": "Sidebar Inset",
   "files": [
     {
-      "path": "registry/default/app/sidebar-inset/sidebar-inset.tsx",
+      "path": "registry/default/app/sidebar/sidebar-inset.tsx",
       "content": "import { SidebarInset } from \"@/components/ui/sidebar\"\n\nexport default SidebarInset\n",
       "type": "registry:component"
     }

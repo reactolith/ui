@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/carousel-content/carousel-content.tsx",
+      "path": "registry/default/app/carousel/carousel-content.tsx",
       "content": "import { CarouselContent } from \"@/components/ui/carousel\"\n\nexport default CarouselContent\n",
       "type": "registry:component"
     }

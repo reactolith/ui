@@ -4,7 +4,7 @@
   "title": "Combobox Trigger",
   "files": [
     {
-      "path": "registry/default/app/combobox-trigger/combobox-trigger.tsx",
+      "path": "registry/default/app/combobox/combobox-trigger.tsx",
       "content": "import { ComboboxTrigger } from \"@/components/ui/combobox\"\n\nexport default ComboboxTrigger\n",
       "type": "registry:component"
     }

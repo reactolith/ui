@@ -4,7 +4,7 @@
   "title": "Empty Description",
   "files": [
     {
-      "path": "registry/default/app/empty-description/empty-description.tsx",
+      "path": "registry/default/app/empty/empty-description.tsx",
       "content": "import { EmptyDescription } from \"@/components/ui/empty\"\n\nexport default EmptyDescription\n",
       "type": "registry:component"
     }

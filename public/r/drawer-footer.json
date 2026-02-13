@@ -4,7 +4,7 @@
   "title": "Drawer Footer",
   "files": [
     {
-      "path": "registry/default/app/drawer-footer/drawer-footer.tsx",
+      "path": "registry/default/app/drawer/drawer-footer.tsx",
       "content": "import { DrawerFooter } from \"@/components/ui/drawer\"\n\nexport default DrawerFooter\n",
       "type": "registry:component"
     }

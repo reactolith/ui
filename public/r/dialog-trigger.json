@@ -4,7 +4,7 @@
   "title": "Dialog Trigger",
   "files": [
     {
-      "path": "registry/default/app/dialog-trigger/dialog-trigger.tsx",
+      "path": "registry/default/app/dialog/dialog-trigger.tsx",
       "content": "import { DialogTrigger } from \"@/components/ui/dialog\"\n\nexport default DialogTrigger\n",
       "type": "registry:component"
     }

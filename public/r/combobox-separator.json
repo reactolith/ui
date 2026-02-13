@@ -4,7 +4,7 @@
   "title": "Combobox Separator",
   "files": [
     {
-      "path": "registry/default/app/combobox-separator/combobox-separator.tsx",
+      "path": "registry/default/app/combobox/combobox-separator.tsx",
       "content": "import { ComboboxSeparator } from \"@/components/ui/combobox\"\n\nexport default ComboboxSeparator\n",
       "type": "registry:component"
     }

@@ -4,7 +4,7 @@
   "title": "Hover Card Content",
   "files": [
     {
-      "path": "registry/default/app/hover-card-content/hover-card-content.tsx",
+      "path": "registry/default/app/hover-card/hover-card-content.tsx",
       "content": "import { HoverCardContent } from \"@/components/ui/hover-card\"\n\nexport default HoverCardContent\n",
       "type": "registry:component"
     }

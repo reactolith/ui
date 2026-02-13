@@ -4,7 +4,7 @@
   "title": "Input Otp Slot",
   "files": [
     {
-      "path": "registry/default/app/input-otp-slot/input-otp-slot.tsx",
+      "path": "registry/default/app/input-otp/input-otp-slot.tsx",
       "content": "import { InputOTPSlot } from \"@/components/ui/input-otp\"\n\nexport default InputOTPSlot\n",
       "type": "registry:component"
     }

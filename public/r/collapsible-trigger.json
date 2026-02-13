@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/collapsible-trigger/collapsible-trigger.tsx",
+      "path": "registry/default/app/collapsible/collapsible-trigger.tsx",
       "content": "import { CollapsibleTrigger } from \"@/components/ui/collapsible\"\n\nexport default CollapsibleTrigger\n",
       "type": "registry:component"
     }

@@ -4,7 +4,7 @@
   "title": "Combobox Label",
   "files": [
     {
-      "path": "registry/default/app/combobox-label/combobox-label.tsx",
+      "path": "registry/default/app/combobox/combobox-label.tsx",
       "content": "import { ComboboxLabel } from \"@/components/ui/combobox\"\n\nexport default ComboboxLabel\n",
       "type": "registry:component"
     }

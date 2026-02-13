@@ -4,7 +4,7 @@
   "title": "Sidebar Group Label",
   "files": [
     {
-      "path": "registry/default/app/sidebar-group-label/sidebar-group-label.tsx",
+      "path": "registry/default/app/sidebar/sidebar-group-label.tsx",
       "content": "import { SidebarGroupLabel } from \"@/components/ui/sidebar\"\n\nexport default SidebarGroupLabel\n",
       "type": "registry:component"
     }

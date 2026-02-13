@@ -4,7 +4,7 @@
   "title": "Dialog Overlay",
   "files": [
     {
-      "path": "registry/default/app/dialog-overlay/dialog-overlay.tsx",
+      "path": "registry/default/app/dialog/dialog-overlay.tsx",
       "content": "import { DialogOverlay } from \"@/components/ui/dialog\"\n\nexport default DialogOverlay\n",
       "type": "registry:component"
     }

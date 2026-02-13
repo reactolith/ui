@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/alert-title/alert-title.tsx",
+      "path": "registry/default/app/alert/alert-title.tsx",
       "content": "import { AlertTitle } from \"@/components/ui/alert\"\n\nexport default AlertTitle\n",
       "type": "registry:component"
     }

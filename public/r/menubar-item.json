@@ -4,7 +4,7 @@
   "title": "Menubar Item",
   "files": [
     {
-      "path": "registry/default/app/menubar-item/menubar-item.tsx",
+      "path": "registry/default/app/menubar/menubar-item.tsx",
       "content": "import { MenubarItem } from \"@/components/ui/menubar\"\n\nexport default MenubarItem\n",
       "type": "registry:component"
     }

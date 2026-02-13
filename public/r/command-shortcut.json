@@ -4,7 +4,7 @@
   "title": "Command Shortcut",
   "files": [
     {
-      "path": "registry/default/app/command-shortcut/command-shortcut.tsx",
+      "path": "registry/default/app/command/command-shortcut.tsx",
       "content": "import { CommandShortcut } from \"@/components/ui/command\"\n\nexport default CommandShortcut\n",
       "type": "registry:component"
     }

@@ -4,7 +4,7 @@
   "title": "Resizable Panel",
   "files": [
     {
-      "path": "registry/default/app/resizable-panel/resizable-panel.tsx",
+      "path": "registry/default/app/resizable/resizable-panel.tsx",
       "content": "import { ResizablePanel } from \"@/components/ui/resizable\"\n\nexport default ResizablePanel\n",
       "type": "registry:component"
     }

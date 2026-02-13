@@ -4,7 +4,7 @@
   "title": "Menubar Trigger",
   "files": [
     {
-      "path": "registry/default/app/menubar-trigger/menubar-trigger.tsx",
+      "path": "registry/default/app/menubar/menubar-trigger.tsx",
       "content": "import { MenubarTrigger } from \"@/components/ui/menubar\"\n\nexport default MenubarTrigger\n",
       "type": "registry:component"
     }

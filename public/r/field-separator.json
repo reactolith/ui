@@ -4,7 +4,7 @@
   "title": "Field Separator",
   "files": [
     {
-      "path": "registry/default/app/field-separator/field-separator.tsx",
+      "path": "registry/default/app/field/field-separator.tsx",
       "content": "import { FieldSeparator } from \"@/components/ui/field\"\n\nexport default FieldSeparator\n",
       "type": "registry:component"
     }

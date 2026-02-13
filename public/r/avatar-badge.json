@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/avatar-badge/avatar-badge.tsx",
+      "path": "registry/default/app/avatar/avatar-badge.tsx",
       "content": "import { AvatarBadge } from \"@/components/ui/avatar\"\n\nexport default AvatarBadge\n",
       "type": "registry:component"
     }

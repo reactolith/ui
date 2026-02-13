@@ -4,7 +4,7 @@
   "title": "Context Menu Sub",
   "files": [
     {
-      "path": "registry/default/app/context-menu-sub/context-menu-sub.tsx",
+      "path": "registry/default/app/context-menu/context-menu-sub.tsx",
       "content": "import { ContextMenuSub } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuSub\n",
       "type": "registry:component"
     }

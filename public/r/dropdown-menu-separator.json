@@ -4,7 +4,7 @@
   "title": "Dropdown Menu Separator",
   "files": [
     {
-      "path": "registry/default/app/dropdown-menu-separator/dropdown-menu-separator.tsx",
+      "path": "registry/default/app/dropdown-menu/dropdown-menu-separator.tsx",
       "content": "import { DropdownMenuSeparator } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuSeparator\n",
       "type": "registry:component"
     }

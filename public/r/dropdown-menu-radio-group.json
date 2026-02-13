@@ -4,7 +4,7 @@
   "title": "Dropdown Menu Radio Group",
   "files": [
     {
-      "path": "registry/default/app/dropdown-menu-radio-group/dropdown-menu-radio-group.tsx",
+      "path": "registry/default/app/dropdown-menu/dropdown-menu-radio-group.tsx",
       "content": "import { DropdownMenuRadioGroup } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuRadioGroup\n",
       "type": "registry:component"
     }

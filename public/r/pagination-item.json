@@ -4,7 +4,7 @@
   "title": "Pagination Item",
   "files": [
     {
-      "path": "registry/default/app/pagination-item/pagination-item.tsx",
+      "path": "registry/default/app/pagination/pagination-item.tsx",
       "content": "import { PaginationItem } from \"@/components/ui/pagination\"\n\nexport default PaginationItem\n",
       "type": "registry:component"
     }

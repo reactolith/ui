@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/table-caption/table-caption.tsx",
+      "path": "registry/default/app/table/table-caption.tsx",
       "content": "import { TableCaption } from \"@/components/ui/table\"\n\nexport default TableCaption\n",
       "type": "registry:component"
     }

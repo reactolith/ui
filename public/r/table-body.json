@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/table-body/table-body.tsx",
+      "path": "registry/default/app/table/table-body.tsx",
       "content": "import { TableBody } from \"@/components/ui/table\"\n\nexport default TableBody\n",
       "type": "registry:component"
     }

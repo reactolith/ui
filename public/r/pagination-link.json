@@ -4,7 +4,7 @@
   "title": "Pagination Link",
   "files": [
     {
-      "path": "registry/default/app/pagination-link/pagination-link.tsx",
+      "path": "registry/default/app/pagination/pagination-link.tsx",
       "content": "import { PaginationLink } from \"@/components/ui/pagination\"\n\nexport default PaginationLink\n",
       "type": "registry:component"
     }

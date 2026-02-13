@@ -4,7 +4,7 @@
   "title": "Select Content",
   "files": [
     {
-      "path": "registry/default/app/select-content/select-content.tsx",
+      "path": "registry/default/app/select/select-content.tsx",
       "content": "import { SelectContent } from \"@/components/ui/select\"\n\nexport default SelectContent\n",
       "type": "registry:component"
     }

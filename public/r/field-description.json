@@ -4,7 +4,7 @@
   "title": "Field Description",
   "files": [
     {
-      "path": "registry/default/app/field-description/field-description.tsx",
+      "path": "registry/default/app/field/field-description.tsx",
       "content": "import { FieldDescription } from \"@/components/ui/field\"\n\nexport default FieldDescription\n",
       "type": "registry:component"
     }

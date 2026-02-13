@@ -4,7 +4,7 @@
   "title": "Navigation Menu Item",
   "files": [
     {
-      "path": "registry/default/app/navigation-menu-item/navigation-menu-item.tsx",
+      "path": "registry/default/app/navigation-menu/navigation-menu-item.tsx",
       "content": "import { NavigationMenuItem } from \"@/components/ui/navigation-menu\"\n\nexport default NavigationMenuItem\n",
       "type": "registry:component"
     }

@@ -4,7 +4,7 @@
   "title": "Sidebar Menu Action",
   "files": [
     {
-      "path": "registry/default/app/sidebar-menu-action/sidebar-menu-action.tsx",
+      "path": "registry/default/app/sidebar/sidebar-menu-action.tsx",
       "content": "import { SidebarMenuAction } from \"@/components/ui/sidebar\"\n\nexport default SidebarMenuAction\n",
       "type": "registry:component"
     }

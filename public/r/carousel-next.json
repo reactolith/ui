@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/carousel-next/carousel-next.tsx",
+      "path": "registry/default/app/carousel/carousel-next.tsx",
       "content": "import { CarouselNext } from \"@/components/ui/carousel\"\n\nexport default CarouselNext\n",
       "type": "registry:component"
     }

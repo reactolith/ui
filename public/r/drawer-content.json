@@ -4,7 +4,7 @@
   "title": "Drawer Content",
   "files": [
     {
-      "path": "registry/default/app/drawer-content/drawer-content.tsx",
+      "path": "registry/default/app/drawer/drawer-content.tsx",
       "content": "import { DrawerContent } from \"@/components/ui/drawer\"\n\nexport default DrawerContent\n",
       "type": "registry:component"
     }

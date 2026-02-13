@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/chart-legend/chart-legend.tsx",
+      "path": "registry/default/app/chart/chart-legend.tsx",
       "content": "import { ChartLegend } from \"@/components/ui/chart\"\n\nexport default ChartLegend\n",
       "type": "registry:component"
     }

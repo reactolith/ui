@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/breadcrumb-ellipsis/breadcrumb-ellipsis.tsx",
+      "path": "registry/default/app/breadcrumb/breadcrumb-ellipsis.tsx",
       "content": "import { BreadcrumbEllipsis } from \"@/components/ui/breadcrumb\"\n\nexport default BreadcrumbEllipsis\n",
       "type": "registry:component"
     }

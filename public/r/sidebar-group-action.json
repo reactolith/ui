@@ -4,7 +4,7 @@
   "title": "Sidebar Group Action",
   "files": [
     {
-      "path": "registry/default/app/sidebar-group-action/sidebar-group-action.tsx",
+      "path": "registry/default/app/sidebar/sidebar-group-action.tsx",
       "content": "import { SidebarGroupAction } from \"@/components/ui/sidebar\"\n\nexport default SidebarGroupAction\n",
       "type": "registry:component"
     }

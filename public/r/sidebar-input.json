@@ -4,7 +4,7 @@
   "title": "Sidebar Input",
   "files": [
     {
-      "path": "registry/default/app/sidebar-input/sidebar-input.tsx",
+      "path": "registry/default/app/sidebar/sidebar-input.tsx",
       "content": "import { SidebarInput } from \"@/components/ui/sidebar\"\n\nexport default SidebarInput\n",
       "type": "registry:component"
     }

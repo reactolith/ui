@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/tabs-trigger/tabs-trigger.tsx",
+      "path": "registry/default/app/tabs/tabs-trigger.tsx",
       "content": "import { TabsTrigger } from \"@/components/ui/tabs\"\n\nexport default TabsTrigger\n",
       "type": "registry:component"
     }

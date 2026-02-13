@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/avatar-image/avatar-image.tsx",
+      "path": "registry/default/app/avatar/avatar-image.tsx",
       "content": "import { AvatarImage } from \"@/components/ui/avatar\"\n\nexport default AvatarImage\n",
       "type": "registry:component"
     }

@@ -4,7 +4,7 @@
   "title": "Command Item",
   "files": [
     {
-      "path": "registry/default/app/command-item/command-item.tsx",
+      "path": "registry/default/app/command/command-item.tsx",
       "content": "import { CommandItem } from \"@/components/ui/command\"\n\nexport default CommandItem\n",
       "type": "registry:component"
     }

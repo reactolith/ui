@@ -4,7 +4,7 @@
   "title": "Combobox Chip",
   "files": [
     {
-      "path": "registry/default/app/combobox-chip/combobox-chip.tsx",
+      "path": "registry/default/app/combobox/combobox-chip.tsx",
       "content": "import { ComboboxChip } from \"@/components/ui/combobox\"\n\nexport default ComboboxChip\n",
       "type": "registry:component"
     }

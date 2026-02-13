@@ -4,7 +4,7 @@
   "title": "Sidebar Menu Sub",
   "files": [
     {
-      "path": "registry/default/app/sidebar-menu-sub/sidebar-menu-sub.tsx",
+      "path": "registry/default/app/sidebar/sidebar-menu-sub.tsx",
       "content": "import { SidebarMenuSub } from \"@/components/ui/sidebar\"\n\nexport default SidebarMenuSub\n",
       "type": "registry:component"
     }

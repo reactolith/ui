@@ -4,7 +4,7 @@
   "title": "Drawer Trigger",
   "files": [
     {
-      "path": "registry/default/app/drawer-trigger/drawer-trigger.tsx",
+      "path": "registry/default/app/drawer/drawer-trigger.tsx",
       "content": "import { DrawerTrigger } from \"@/components/ui/drawer\"\n\nexport default DrawerTrigger\n",
       "type": "registry:component"
     }

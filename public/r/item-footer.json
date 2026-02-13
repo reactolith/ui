@@ -4,7 +4,7 @@
   "title": "Item Footer",
   "files": [
     {
-      "path": "registry/default/app/item-footer/item-footer.tsx",
+      "path": "registry/default/app/item/item-footer.tsx",
       "content": "import { ItemFooter } from \"@/components/ui/item\"\n\nexport default ItemFooter\n",
       "type": "registry:component"
     }

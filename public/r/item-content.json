@@ -4,7 +4,7 @@
   "title": "Item Content",
   "files": [
     {
-      "path": "registry/default/app/item-content/item-content.tsx",
+      "path": "registry/default/app/item/item-content.tsx",
       "content": "import { ItemContent } from \"@/components/ui/item\"\n\nexport default ItemContent\n",
       "type": "registry:component"
     }

@@ -4,7 +4,7 @@
   "title": "Menubar Checkbox Item",
   "files": [
     {
-      "path": "registry/default/app/menubar-checkbox-item/menubar-checkbox-item.tsx",
+      "path": "registry/default/app/menubar/menubar-checkbox-item.tsx",
       "content": "import { MenubarCheckboxItem } from \"@/components/ui/menubar\"\n\nexport default MenubarCheckboxItem\n",
       "type": "registry:component"
     }

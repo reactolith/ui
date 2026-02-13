@@ -7,7 +7,7 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/avatar-group/avatar-group.tsx",
+      "path": "registry/default/app/avatar/avatar-group.tsx",
       "content": "import { AvatarGroup } from \"@/components/ui/avatar\"\n\nexport default AvatarGroup\n",
       "type": "registry:component"
     }

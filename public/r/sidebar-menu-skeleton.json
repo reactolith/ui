@@ -4,7 +4,7 @@
   "title": "Sidebar Menu Skeleton",
   "files": [
     {
-      "path": "registry/default/app/sidebar-menu-skeleton/sidebar-menu-skeleton.tsx",
+      "path": "registry/default/app/sidebar/sidebar-menu-skeleton.tsx",
       "content": "import { SidebarMenuSkeleton } from \"@/components/ui/sidebar\"\n\nexport default SidebarMenuSkeleton\n",
       "type": "registry:component"
     }

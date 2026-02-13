@@ -4,7 +4,7 @@
   "title": "Command List",
   "files": [
     {
-      "path": "registry/default/app/command-list/command-list.tsx",
+      "path": "registry/default/app/command/command-list.tsx",
       "content": "import { CommandList } from \"@/components/ui/command\"\n\nexport default CommandList\n",
       "type": "registry:component"
     }
