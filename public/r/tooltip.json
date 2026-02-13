@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip",
+  "title": "Tooltip",
+  "registryDependencies": [
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/tooltip/tooltip.tsx",
+      "content": "import { Tooltip } from \"@/components/ui/tooltip\"\n\nexport default Tooltip\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

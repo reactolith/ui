@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-item",
+  "title": "Command Item",
+  "files": [
+    {
+      "path": "registry/default/app/command-item/command-item.tsx",
+      "content": "import { CommandItem } from \"@/components/ui/command\"\n\nexport default CommandItem\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

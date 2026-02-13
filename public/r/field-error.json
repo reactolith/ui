@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-error",
+  "title": "Field Error",
+  "files": [
+    {
+      "path": "registry/default/app/field-error/field-error.tsx",
+      "content": "import { FieldError } from \"@/components/ui/field\"\n\nexport default FieldError\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

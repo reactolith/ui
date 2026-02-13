@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-legend",
+  "title": "Field Legend",
+  "files": [
+    {
+      "path": "registry/default/app/field-legend/field-legend.tsx",
+      "content": "import { FieldLegend } from \"@/components/ui/field\"\n\nexport default FieldLegend\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

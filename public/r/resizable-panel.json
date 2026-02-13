@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "resizable-panel",
+  "title": "Resizable Panel",
+  "files": [
+    {
+      "path": "registry/default/app/resizable-panel/resizable-panel.tsx",
+      "content": "import { ResizablePanel } from \"@/components/ui/resizable\"\n\nexport default ResizablePanel\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

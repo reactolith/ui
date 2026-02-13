@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-title",
+  "title": "Dialog Title",
+  "files": [
+    {
+      "path": "registry/default/app/dialog-title/dialog-title.tsx",
+      "content": "import { DialogTitle } from \"@/components/ui/dialog\"\n\nexport default DialogTitle\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

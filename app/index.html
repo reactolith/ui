@@ -2,12 +2,443 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Reactolith UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactolith UI - Component Library</title>
     <script type="module" src="/app.ts"></script>
 </head>
 <body>
 <div id="reactolith-app">
-    <ui-button>Hello World!</ui-button>
+
+    <!-- Header -->
+    <header class="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex h-14 items-center justify-between px-6">
+            <div class="flex items-center gap-2">
+                <span class="text-lg font-bold tracking-tight">Reactolith UI</span>
+                <ui-badge variant="secondary">v0.1.0</ui-badge>
+            </div>
+            <nav class="flex items-center gap-2">
+                <ui-button variant="ghost" size="sm" href="https://github.com/reactolith/ui">GitHub</ui-button>
+                <ui-button variant="ghost" size="sm" href="https://reactolith.github.io/ui">Docs</ui-button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12">
+
+        <!-- Hero -->
+        <section class="text-center mb-16">
+            <h1 class="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
+                Build with Web Components.
+                <br>
+                <span class="text-muted-foreground">Style with shadcn.</span>
+            </h1>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+                A complete component library powered by Reactolith, shadcn/ui, and Base UI.
+                Use standard HTML custom elements with world-class design.
+            </p>
+            <div class="flex items-center justify-center gap-3">
+                <ui-button size="lg" href="https://github.com/reactolith/ui">Get Started</ui-button>
+                <ui-button variant="outline" size="lg" href="https://github.com/reactolith/ui">View on GitHub</ui-button>
+            </div>
+        </section>
+
+        <!-- Component Showcase -->
+        <div class="space-y-16">
+
+            <!-- Buttons Section -->
+            <section>
+                <div class="mb-6">
+                    <h2 class="text-2xl font-semibold tracking-tight mb-1">Buttons</h2>
+                    <p class="text-muted-foreground">Interactive button components with multiple variants and sizes.</p>
+                </div>
+                <ui-card>
+                    <ui-card-content class="p-6">
+                        <div class="space-y-6">
+                            <div>
+                                <p class="text-sm font-medium text-muted-foreground mb-3">Variants</p>
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <ui-button variant="default">Default</ui-button>
+                                    <ui-button variant="secondary">Secondary</ui-button>
+                                    <ui-button variant="outline">Outline</ui-button>
+                                    <ui-button variant="ghost">Ghost</ui-button>
+                                    <ui-button variant="destructive">Destructive</ui-button>
+                                    <ui-button variant="link">Link</ui-button>
+                                </div>
+                            </div>
+                            <ui-separator></ui-separator>
+                            <div>
+                                <p class="text-sm font-medium text-muted-foreground mb-3">Sizes</p>
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <ui-button size="xs">Extra Small</ui-button>
+                                    <ui-button size="sm">Small</ui-button>
+                                    <ui-button size="default">Default</ui-button>
+                                    <ui-button size="lg">Large</ui-button>
+                                </div>
+                            </div>
+                            <ui-separator></ui-separator>
+                            <div>
+                                <p class="text-sm font-medium text-muted-foreground mb-3">States</p>
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <ui-button>Enabled</ui-button>
+                                    <ui-button disabled>Disabled</ui-button>
+                                    <ui-button href="https://github.com/reactolith/ui">As Link</ui-button>
+                                </div>
+                            </div>
+                        </div>
+                    </ui-card-content>
+                </ui-card>
+            </section>
+
+            <!-- Cards Section -->
+            <section>
+                <div class="mb-6">
+                    <h2 class="text-2xl font-semibold tracking-tight mb-1">Cards</h2>
+                    <p class="text-muted-foreground">Containers for grouping related content and actions.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <ui-card>
+                        <ui-card-header>
+                            <ui-card-title>Notifications</ui-card-title>
+                            <ui-card-description>You have 3 unread messages.</ui-card-description>
+                        </ui-card-header>
+                        <ui-card-content>
+                            <p class="text-sm text-muted-foreground">Your recent activity shows new notifications waiting for your review.</p>
+                        </ui-card-content>
+                        <ui-card-footer class="flex justify-end">
+                            <ui-button size="sm">View All</ui-button>
+                        </ui-card-footer>
+                    </ui-card>
+
+                    <ui-card>
+                        <ui-card-header>
+                            <ui-card-title>Analytics</ui-card-title>
+                            <ui-card-description>Monthly performance overview.</ui-card-description>
+                        </ui-card-header>
+                        <ui-card-content>
+                            <div class="text-3xl font-bold">+2,350</div>
+                            <p class="text-xs text-muted-foreground mt-1">+12.5% from last month</p>
+                        </ui-card-content>
+                    </ui-card>
+
+                    <ui-card>
+                        <ui-card-header>
+                            <ui-card-title>Team</ui-card-title>
+                            <ui-card-description>Manage your team members.</ui-card-description>
+                        </ui-card-header>
+                        <ui-card-content class="space-y-2">
+                            <div class="flex items-center gap-2">
+                                <ui-skeleton class="h-8 w-8 rounded-full"></ui-skeleton>
+                                <div class="flex-1 space-y-1">
+                                    <ui-skeleton class="h-3 w-24"></ui-skeleton>
+                                    <ui-skeleton class="h-3 w-32"></ui-skeleton>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <ui-skeleton class="h-8 w-8 rounded-full"></ui-skeleton>
+                                <div class="flex-1 space-y-1">
+                                    <ui-skeleton class="h-3 w-20"></ui-skeleton>
+                                    <ui-skeleton class="h-3 w-28"></ui-skeleton>
+                                </div>
+                            </div>
+                        </ui-card-content>
+                    </ui-card>
+                </div>
+            </section>
+
+            <!-- Form Elements Section -->
+            <section>
+                <div class="mb-6">
+                    <h2 class="text-2xl font-semibold tracking-tight mb-1">Form Elements</h2>
+                    <p class="text-muted-foreground">Input fields, checkboxes, switches, and more.</p>
+                </div>
+                <ui-card>
+                    <ui-card-content class="p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-4">
+                                <div class="space-y-2">
+                                    <ui-label>Email</ui-label>
+                                    <ui-input type="email" placeholder="name@example.com"></ui-input>
+                                </div>
+                                <div class="space-y-2">
+                                    <ui-label>Password</ui-label>
+                                    <ui-input type="password" placeholder="Enter your password"></ui-input>
+                                </div>
+                                <div class="space-y-2">
+                                    <ui-label>Message</ui-label>
+                                    <ui-textarea placeholder="Type your message here..."></ui-textarea>
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-3">
+                                    <ui-checkbox id="terms"></ui-checkbox>
+                                    <ui-label>Accept terms and conditions</ui-label>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <ui-switch></ui-switch>
+                                    <ui-label>Enable notifications</ui-label>
+                                </div>
+                                <div class="space-y-2">
+                                    <ui-label>Volume</ui-label>
+                                    <ui-slider value="65"></ui-slider>
+                                </div>
+                                <div class="space-y-2">
+                                    <ui-label>Progress</ui-label>
+                                    <ui-progress value="60"></ui-progress>
+                                </div>
+                            </div>
+                        </div>
+                    </ui-card-content>
+                </ui-card>
+            </section>
+
+            <!-- Badges & Alerts Section -->
+            <section>
+                <div class="mb-6">
+                    <h2 class="text-2xl font-semibold tracking-tight mb-1">Badges & Alerts</h2>
+                    <p class="text-muted-foreground">Status indicators and notification banners.</p>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <p class="text-sm font-medium text-muted-foreground mb-3">Badges</p>
+                        <div class="flex flex-wrap items-center gap-2">
+                            <ui-badge>Default</ui-badge>
+                            <ui-badge variant="secondary">Secondary</ui-badge>
+                            <ui-badge variant="outline">Outline</ui-badge>
+                            <ui-badge variant="destructive">Destructive</ui-badge>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <p class="text-sm font-medium text-muted-foreground">Alerts</p>
+                        <ui-alert>
+                            <ui-alert-title>Heads up!</ui-alert-title>
+                            <ui-alert-description>You can add components to your app using the CLI.</ui-alert-description>
+                        </ui-alert>
+                        <ui-alert variant="destructive">
+                            <ui-alert-title>Error</ui-alert-title>
+                            <ui-alert-description>Your session has expired. Please log in again.</ui-alert-description>
+                        </ui-alert>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Display Section -->
+            <section>
+                <div class="mb-6">
+                    <h2 class="text-2xl font-semibold tracking-tight mb-1">Data Display</h2>
+                    <p class="text-muted-foreground">Tables, separators, and content organization.</p>
+                </div>
+                <ui-card>
+                    <ui-card-content class="p-0">
+                        <ui-table>
+                            <ui-table-header>
+                                <ui-table-row>
+                                    <ui-table-head class="w-[200px]">Component</ui-table-head>
+                                    <ui-table-head>Description</ui-table-head>
+                                    <ui-table-head class="text-right">Status</ui-table-head>
+                                </ui-table-row>
+                            </ui-table-header>
+                            <ui-table-body>
+                                <ui-table-row>
+                                    <ui-table-cell class="font-medium">Button</ui-table-cell>
+                                    <ui-table-cell class="text-muted-foreground">Interactive button with variants</ui-table-cell>
+                                    <ui-table-cell class="text-right"><ui-badge variant="default">Stable</ui-badge></ui-table-cell>
+                                </ui-table-row>
+                                <ui-table-row>
+                                    <ui-table-cell class="font-medium">Card</ui-table-cell>
+                                    <ui-table-cell class="text-muted-foreground">Content container with header/footer</ui-table-cell>
+                                    <ui-table-cell class="text-right"><ui-badge variant="default">Stable</ui-badge></ui-table-cell>
+                                </ui-table-row>
+                                <ui-table-row>
+                                    <ui-table-cell class="font-medium">Dialog</ui-table-cell>
+                                    <ui-table-cell class="text-muted-foreground">Modal dialog with overlay</ui-table-cell>
+                                    <ui-table-cell class="text-right"><ui-badge variant="default">Stable</ui-badge></ui-table-cell>
+                                </ui-table-row>
+                                <ui-table-row>
+                                    <ui-table-cell class="font-medium">Sidebar</ui-table-cell>
+                                    <ui-table-cell class="text-muted-foreground">Application sidebar navigation</ui-table-cell>
+                                    <ui-table-cell class="text-right"><ui-badge variant="secondary">New</ui-badge></ui-table-cell>
+                                </ui-table-row>
+                                <ui-table-row>
+                                    <ui-table-cell class="font-medium">Combobox</ui-table-cell>
+                                    <ui-table-cell class="text-muted-foreground">Searchable select with autocomplete</ui-table-cell>
+                                    <ui-table-cell class="text-right"><ui-badge variant="secondary">New</ui-badge></ui-table-cell>
+                                </ui-table-row>
+                            </ui-table-body>
+                        </ui-table>
+                    </ui-card-content>
+                </ui-card>
+            </section>
+
+            <!-- Tabs Section -->
+            <section>
+                <div class="mb-6">
+                    <h2 class="text-2xl font-semibold tracking-tight mb-1">Tabs</h2>
+                    <p class="text-muted-foreground">Organize content into switchable panels.</p>
+                </div>
+                <ui-card>
+                    <ui-card-content class="p-6">
+                        <ui-tabs defaultValue="overview">
+                            <ui-tabs-list>
+                                <ui-tabs-trigger value="overview">Overview</ui-tabs-trigger>
+                                <ui-tabs-trigger value="analytics">Analytics</ui-tabs-trigger>
+                                <ui-tabs-trigger value="reports">Reports</ui-tabs-trigger>
+                            </ui-tabs-list>
+                            <ui-tabs-content value="overview" class="mt-4">
+                                <p class="text-sm text-muted-foreground">
+                                    Overview of your application metrics and key performance indicators. Track your progress and identify areas for improvement.
+                                </p>
+                            </ui-tabs-content>
+                            <ui-tabs-content value="analytics" class="mt-4">
+                                <p class="text-sm text-muted-foreground">
+                                    Detailed analytics showing user engagement, traffic patterns, and conversion rates across all channels.
+                                </p>
+                            </ui-tabs-content>
+                            <ui-tabs-content value="reports" class="mt-4">
+                                <p class="text-sm text-muted-foreground">
+                                    Generated reports summarizing weekly, monthly, and quarterly performance data for stakeholder review.
+                                </p>
+                            </ui-tabs-content>
+                        </ui-tabs>
+                    </ui-card-content>
+                </ui-card>
+            </section>
+
+            <!-- Keyboard Shortcuts -->
+            <section>
+                <div class="mb-6">
+                    <h2 class="text-2xl font-semibold tracking-tight mb-1">Keyboard Shortcuts</h2>
+                    <p class="text-muted-foreground">Display keyboard shortcuts and key combinations.</p>
+                </div>
+                <ui-card>
+                    <ui-card-content class="p-6">
+                        <div class="flex flex-wrap items-center gap-4">
+                            <div class="flex items-center gap-1">
+                                <ui-kbd>Ctrl</ui-kbd>
+                                <span class="text-muted-foreground text-sm">+</span>
+                                <ui-kbd>C</ui-kbd>
+                                <span class="text-sm text-muted-foreground ml-2">Copy</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <ui-kbd>Ctrl</ui-kbd>
+                                <span class="text-muted-foreground text-sm">+</span>
+                                <ui-kbd>V</ui-kbd>
+                                <span class="text-sm text-muted-foreground ml-2">Paste</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <ui-kbd>Ctrl</ui-kbd>
+                                <span class="text-muted-foreground text-sm">+</span>
+                                <ui-kbd>Z</ui-kbd>
+                                <span class="text-sm text-muted-foreground ml-2">Undo</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <ui-kbd>Esc</ui-kbd>
+                                <span class="text-sm text-muted-foreground ml-2">Close</span>
+                            </div>
+                        </div>
+                    </ui-card-content>
+                </ui-card>
+            </section>
+
+            <!-- Skeleton Loading -->
+            <section>
+                <div class="mb-6">
+                    <h2 class="text-2xl font-semibold tracking-tight mb-1">Skeleton</h2>
+                    <p class="text-muted-foreground">Placeholder loading states for content.</p>
+                </div>
+                <ui-card>
+                    <ui-card-content class="p-6">
+                        <div class="flex items-center space-x-4">
+                            <ui-skeleton class="h-12 w-12 rounded-full"></ui-skeleton>
+                            <div class="space-y-2">
+                                <ui-skeleton class="h-4 w-[250px]"></ui-skeleton>
+                                <ui-skeleton class="h-4 w-[200px]"></ui-skeleton>
+                            </div>
+                        </div>
+                    </ui-card-content>
+                </ui-card>
+            </section>
+
+            <!-- Component List -->
+            <section>
+                <div class="mb-6">
+                    <h2 class="text-2xl font-semibold tracking-tight mb-1">All Components</h2>
+                    <p class="text-muted-foreground">55 components available, built with Base UI and styled with Tailwind CSS.</p>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Accordion</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Alert</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Alert Dialog</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Aspect Ratio</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Avatar</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Badge</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Breadcrumb</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Button</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Button Group</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Calendar</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Card</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Carousel</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Chart</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Checkbox</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Collapsible</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Combobox</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Command</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Context Menu</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Dialog</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Drawer</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Dropdown Menu</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Empty</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Field</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Hover Card</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Input</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Input Group</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Input OTP</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Item</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Kbd</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Label</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Menubar</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Native Select</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Navigation Menu</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Pagination</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Popover</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Progress</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Radio Group</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Resizable</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Scroll Area</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Select</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Separator</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Sheet</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Sidebar</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Skeleton</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Slider</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Sonner (Toast)</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Spinner</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Switch</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Table</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Tabs</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Textarea</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Toggle</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Toggle Group</span></ui-card-content></ui-card>
+                    <ui-card class="text-center"><ui-card-content class="p-3"><span class="text-sm">Tooltip</span></ui-card-content></ui-card>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-24 border-t border-border pt-8 pb-12">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-muted-foreground">
+                    Built with Reactolith, shadcn/ui, Base UI, and Tailwind CSS v4.
+                </p>
+                <div class="flex items-center gap-4">
+                    <ui-button variant="ghost" size="sm" href="https://github.com/reactolith/ui">GitHub</ui-button>
+                    <ui-button variant="ghost" size="sm" href="https://ui.shadcn.com">shadcn/ui</ui-button>
+                    <ui-button variant="ghost" size="sm" href="https://base-ui.com">Base UI</ui-button>
+                </div>
+            </div>
+        </footer>
+
+    </main>
 </div>
 </body>
 </html>

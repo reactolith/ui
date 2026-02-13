@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-group",
+  "title": "Command Group",
+  "files": [
+    {
+      "path": "registry/default/app/command-group/command-group.tsx",
+      "content": "import { CommandGroup } from \"@/components/ui/command\"\n\nexport default CommandGroup\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-trigger",
+  "title": "Tooltip Trigger",
+  "registryDependencies": [
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/tooltip-trigger/tooltip-trigger.tsx",
+      "content": "import { TooltipTrigger } from \"@/components/ui/tooltip\"\n\nexport default TooltipTrigger\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-media",
+  "title": "Empty Media",
+  "files": [
+    {
+      "path": "registry/default/app/empty-media/empty-media.tsx",
+      "content": "import { EmptyMedia } from \"@/components/ui/empty\"\n\nexport default EmptyMedia\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

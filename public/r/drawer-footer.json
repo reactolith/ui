@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer-footer",
+  "title": "Drawer Footer",
+  "files": [
+    {
+      "path": "registry/default/app/drawer-footer/drawer-footer.tsx",
+      "content": "import { DrawerFooter } from \"@/components/ui/drawer\"\n\nexport default DrawerFooter\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

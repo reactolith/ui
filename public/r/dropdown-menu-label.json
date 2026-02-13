@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-label",
+  "title": "Dropdown Menu Label",
+  "files": [
+    {
+      "path": "registry/default/app/dropdown-menu-label/dropdown-menu-label.tsx",
+      "content": "import { DropdownMenuLabel } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuLabel\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-footer",
+  "title": "Table Footer",
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/table-footer/table-footer.tsx",
+      "content": "import { TableFooter } from \"@/components/ui/table\"\n\nexport default TableFooter\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

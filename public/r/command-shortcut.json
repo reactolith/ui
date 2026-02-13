@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-shortcut",
+  "title": "Command Shortcut",
+  "files": [
+    {
+      "path": "registry/default/app/command-shortcut/command-shortcut.tsx",
+      "content": "import { CommandShortcut } from \"@/components/ui/command\"\n\nexport default CommandShortcut\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

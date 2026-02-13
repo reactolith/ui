@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-inset",
+  "title": "Sidebar Inset",
+  "files": [
+    {
+      "path": "registry/default/app/sidebar-inset/sidebar-inset.tsx",
+      "content": "import { SidebarInset } from \"@/components/ui/sidebar\"\n\nexport default SidebarInset\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

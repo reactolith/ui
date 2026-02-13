@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle",
+  "title": "Toggle",
+  "registryDependencies": [
+    "toggle"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/toggle/toggle.tsx",
+      "content": "import { Toggle } from \"@/components/ui/toggle\"\n\nexport default Toggle\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

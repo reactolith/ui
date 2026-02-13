@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-track",
+  "title": "Progress Track",
+  "registryDependencies": [
+    "progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/progress-track/progress-track.tsx",
+      "content": "import { ProgressTrack } from \"@/components/ui/progress\"\n\nexport default ProgressTrack\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

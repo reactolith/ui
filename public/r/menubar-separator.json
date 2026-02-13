@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menubar-separator",
+  "title": "Menubar Separator",
+  "files": [
+    {
+      "path": "registry/default/app/menubar-separator/menubar-separator.tsx",
+      "content": "import { MenubarSeparator } from \"@/components/ui/menubar\"\n\nexport default MenubarSeparator\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

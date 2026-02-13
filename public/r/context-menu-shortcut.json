@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu-shortcut",
+  "title": "Context Menu Shortcut",
+  "files": [
+    {
+      "path": "registry/default/app/context-menu-shortcut/context-menu-shortcut.tsx",
+      "content": "import { ContextMenuShortcut } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuShortcut\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "resizable-handle",
+  "title": "Resizable Handle",
+  "files": [
+    {
+      "path": "registry/default/app/resizable-handle/resizable-handle.tsx",
+      "content": "import { ResizableHandle } from \"@/components/ui/resizable\"\n\nexport default ResizableHandle\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

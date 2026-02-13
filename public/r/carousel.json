@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "carousel",
+  "title": "Carousel",
+  "registryDependencies": [
+    "carousel"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/carousel/carousel.tsx",
+      "content": "import { Carousel } from \"@/components/ui/carousel\"\n\nexport default Carousel\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

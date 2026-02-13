@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-rail",
+  "title": "Sidebar Rail",
+  "files": [
+    {
+      "path": "registry/default/app/sidebar-rail/sidebar-rail.tsx",
+      "content": "import { SidebarRail } from \"@/components/ui/sidebar\"\n\nexport default SidebarRail\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

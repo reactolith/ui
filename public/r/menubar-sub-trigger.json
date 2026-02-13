@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menubar-sub-trigger",
+  "title": "Menubar Sub Trigger",
+  "files": [
+    {
+      "path": "registry/default/app/menubar-sub-trigger/menubar-sub-trigger.tsx",
+      "content": "import { MenubarSubTrigger } from \"@/components/ui/menubar\"\n\nexport default MenubarSubTrigger\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

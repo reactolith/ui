@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group-textarea",
+  "title": "Input Group Textarea",
+  "files": [
+    {
+      "path": "registry/default/app/input-group-textarea/input-group-textarea.tsx",
+      "content": "import { InputGroupTextarea } from \"@/components/ui/input-group\"\n\nexport default InputGroupTextarea\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

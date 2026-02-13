@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "title": "Textarea",
+  "registryDependencies": [
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/textarea/textarea.tsx",
+      "content": "import { Textarea } from \"@/components/ui/textarea\"\n\nexport default Textarea\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

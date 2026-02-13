@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select",
+  "title": "Select",
+  "files": [
+    {
+      "path": "registry/default/app/select/select.tsx",
+      "content": "import { Select } from \"@/components/ui/select\"\n\nexport default Select\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

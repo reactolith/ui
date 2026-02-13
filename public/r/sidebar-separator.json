@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-separator",
+  "title": "Sidebar Separator",
+  "files": [
+    {
+      "path": "registry/default/app/sidebar-separator/sidebar-separator.tsx",
+      "content": "import { SidebarSeparator } from \"@/components/ui/sidebar\"\n\nexport default SidebarSeparator\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

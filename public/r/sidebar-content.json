@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-content",
+  "title": "Sidebar Content",
+  "files": [
+    {
+      "path": "registry/default/app/sidebar-content/sidebar-content.tsx",
+      "content": "import { SidebarContent } from \"@/components/ui/sidebar\"\n\nexport default SidebarContent\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

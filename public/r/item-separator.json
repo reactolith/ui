@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-separator",
+  "title": "Item Separator",
+  "files": [
+    {
+      "path": "registry/default/app/item-separator/item-separator.tsx",
+      "content": "import { ItemSeparator } from \"@/components/ui/item\"\n\nexport default ItemSeparator\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

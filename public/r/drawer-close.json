@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer-close",
+  "title": "Drawer Close",
+  "files": [
+    {
+      "path": "registry/default/app/drawer-close/drawer-close.tsx",
+      "content": "import { DrawerClose } from \"@/components/ui/drawer\"\n\nexport default DrawerClose\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-row",
+  "title": "Table Row",
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/table-row/table-row.tsx",
+      "content": "import { TableRow } from \"@/components/ui/table\"\n\nexport default TableRow\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

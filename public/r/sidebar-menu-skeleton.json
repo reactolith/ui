@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-menu-skeleton",
+  "title": "Sidebar Menu Skeleton",
+  "files": [
+    {
+      "path": "registry/default/app/sidebar-menu-skeleton/sidebar-menu-skeleton.tsx",
+      "content": "import { SidebarMenuSkeleton } from \"@/components/ui/sidebar\"\n\nexport default SidebarMenuSkeleton\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

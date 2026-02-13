@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-label",
+  "title": "Progress Label",
+  "registryDependencies": [
+    "progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/progress-label/progress-label.tsx",
+      "content": "import { ProgressLabel } from \"@/components/ui/progress\"\n\nexport default ProgressLabel\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

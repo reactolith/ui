@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd",
+  "title": "Kbd",
+  "files": [
+    {
+      "path": "registry/default/app/kbd/kbd.tsx",
+      "content": "import { Kbd } from \"@/components/ui/kbd\"\n\nexport default Kbd\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

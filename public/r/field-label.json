@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-label",
+  "title": "Field Label",
+  "files": [
+    {
+      "path": "registry/default/app/field-label/field-label.tsx",
+      "content": "import { FieldLabel } from \"@/components/ui/field\"\n\nexport default FieldLabel\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-separator",
+  "title": "Dropdown Menu Separator",
+  "files": [
+    {
+      "path": "registry/default/app/dropdown-menu-separator/dropdown-menu-separator.tsx",
+      "content": "import { DropdownMenuSeparator } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuSeparator\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

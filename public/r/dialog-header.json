@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-header",
+  "title": "Dialog Header",
+  "files": [
+    {
+      "path": "registry/default/app/dialog-header/dialog-header.tsx",
+      "content": "import { DialogHeader } from \"@/components/ui/dialog\"\n\nexport default DialogHeader\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

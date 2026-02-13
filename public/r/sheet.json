@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet",
+  "title": "Sheet",
+  "files": [
+    {
+      "path": "registry/default/app/sheet/sheet.tsx",
+      "content": "import { Sheet } from \"@/components/ui/sheet\"\n\nexport default Sheet\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

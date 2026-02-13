@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-input",
+  "title": "Command Input",
+  "files": [
+    {
+      "path": "registry/default/app/command-input/command-input.tsx",
+      "content": "import { CommandInput } from \"@/components/ui/command\"\n\nexport default CommandInput\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menubar-group",
+  "title": "Menubar Group",
+  "files": [
+    {
+      "path": "registry/default/app/menubar-group/menubar-group.tsx",
+      "content": "import { MenubarGroup } from \"@/components/ui/menubar\"\n\nexport default MenubarGroup\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

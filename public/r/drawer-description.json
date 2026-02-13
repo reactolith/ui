@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer-description",
+  "title": "Drawer Description",
+  "files": [
+    {
+      "path": "registry/default/app/drawer-description/drawer-description.tsx",
+      "content": "import { DrawerDescription } from \"@/components/ui/drawer\"\n\nexport default DrawerDescription\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

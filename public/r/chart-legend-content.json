@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-legend-content",
+  "title": "Chart Legend Content",
+  "registryDependencies": [
+    "chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/chart-legend-content/chart-legend-content.tsx",
+      "content": "import { ChartLegendContent } from \"@/components/ui/chart\"\n\nexport default ChartLegendContent\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

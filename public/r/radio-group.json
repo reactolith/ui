@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group",
+  "title": "Radio Group",
+  "registryDependencies": [
+    "radio-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/radio-group/radio-group.tsx",
+      "content": "import { RadioGroup } from \"@/components/ui/radio-group\"\n\nexport default RadioGroup\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

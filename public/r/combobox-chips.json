@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-chips",
+  "title": "Combobox Chips",
+  "files": [
+    {
+      "path": "registry/default/app/combobox-chips/combobox-chips.tsx",
+      "content": "import { ComboboxChips } from \"@/components/ui/combobox\"\n\nexport default ComboboxChips\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

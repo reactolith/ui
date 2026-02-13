@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-content",
+  "title": "Pagination Content",
+  "files": [
+    {
+      "path": "registry/default/app/pagination-content/pagination-content.tsx",
+      "content": "import { PaginationContent } from \"@/components/ui/pagination\"\n\nexport default PaginationContent\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

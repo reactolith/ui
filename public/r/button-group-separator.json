@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-separator",
+  "title": "Button Group Separator",
+  "registryDependencies": [
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/button-group-separator/button-group-separator.tsx",
+      "content": "import { ButtonGroupSeparator } from \"@/components/ui/button-group\"\n\nexport default ButtonGroupSeparator\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

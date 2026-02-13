@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-sub-content",
+  "title": "Dropdown Menu Sub Content",
+  "files": [
+    {
+      "path": "registry/default/app/dropdown-menu-sub-content/dropdown-menu-sub-content.tsx",
+      "content": "import { DropdownMenuSubContent } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuSubContent\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-content",
+  "title": "Dialog Content",
+  "files": [
+    {
+      "path": "registry/default/app/dialog-content/dialog-content.tsx",
+      "content": "import { DialogContent } from \"@/components/ui/dialog\"\n\nexport default DialogContent\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

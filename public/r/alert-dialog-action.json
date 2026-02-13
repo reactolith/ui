@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-action",
+  "title": "Alert Dialog Action",
+  "registryDependencies": [
+    "alert-dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/alert-dialog-action/alert-dialog-action.tsx",
+      "content": "import { AlertDialogAction } from \"@/components/ui/alert-dialog\"\n\nexport default AlertDialogAction\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-description",
+  "title": "Empty Description",
+  "files": [
+    {
+      "path": "registry/default/app/empty-description/empty-description.tsx",
+      "content": "import { EmptyDescription } from \"@/components/ui/empty\"\n\nexport default EmptyDescription\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

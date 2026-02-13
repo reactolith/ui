@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-footer",
+  "title": "Alert Dialog Footer",
+  "registryDependencies": [
+    "alert-dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/alert-dialog-footer/alert-dialog-footer.tsx",
+      "content": "import { AlertDialogFooter } from \"@/components/ui/alert-dialog\"\n\nexport default AlertDialogFooter\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-title",
+  "title": "Popover Title",
+  "files": [
+    {
+      "path": "registry/default/app/popover-title/popover-title.tsx",
+      "content": "import { PopoverTitle } from \"@/components/ui/popover\"\n\nexport default PopoverTitle\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

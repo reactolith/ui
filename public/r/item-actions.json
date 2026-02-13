@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-actions",
+  "title": "Item Actions",
+  "files": [
+    {
+      "path": "registry/default/app/item-actions/item-actions.tsx",
+      "content": "import { ItemActions } from \"@/components/ui/item\"\n\nexport default ItemActions\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-close",
+  "title": "Dialog Close",
+  "files": [
+    {
+      "path": "registry/default/app/dialog-close/dialog-close.tsx",
+      "content": "import { DialogClose } from \"@/components/ui/dialog\"\n\nexport default DialogClose\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

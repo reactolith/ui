@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-cancel",
+  "title": "Alert Dialog Cancel",
+  "registryDependencies": [
+    "alert-dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/alert-dialog-cancel/alert-dialog-cancel.tsx",
+      "content": "import { AlertDialogCancel } from \"@/components/ui/alert-dialog\"\n\nexport default AlertDialogCancel\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

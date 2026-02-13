@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-description",
+  "title": "Card Description",
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/card-description/card-description.tsx",
+      "content": "import { CardDescription } from \"@/components/ui/card\"\n\nexport default CardDescription\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

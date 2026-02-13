@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-content",
+  "title": "Tabs Content",
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/tabs-content/tabs-content.tsx",
+      "content": "import { TabsContent } from \"@/components/ui/tabs\"\n\nexport default TabsContent\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

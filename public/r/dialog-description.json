@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-description",
+  "title": "Dialog Description",
+  "files": [
+    {
+      "path": "registry/default/app/dialog-description/dialog-description.tsx",
+      "content": "import { DialogDescription } from \"@/components/ui/dialog\"\n\nexport default DialogDescription\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

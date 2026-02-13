@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu-separator",
+  "title": "Context Menu Separator",
+  "files": [
+    {
+      "path": "registry/default/app/context-menu-separator/context-menu-separator.tsx",
+      "content": "import { ContextMenuSeparator } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuSeparator\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

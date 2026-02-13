@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-checkbox-item",
+  "title": "Dropdown Menu Checkbox Item",
+  "files": [
+    {
+      "path": "registry/default/app/dropdown-menu-checkbox-item/dropdown-menu-checkbox-item.tsx",
+      "content": "import { DropdownMenuCheckboxItem } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuCheckboxItem\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

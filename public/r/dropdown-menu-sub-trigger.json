@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-sub-trigger",
+  "title": "Dropdown Menu Sub Trigger",
+  "files": [
+    {
+      "path": "registry/default/app/dropdown-menu-sub-trigger/dropdown-menu-sub-trigger.tsx",
+      "content": "import { DropdownMenuSubTrigger } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuSubTrigger\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

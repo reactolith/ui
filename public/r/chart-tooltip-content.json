@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-tooltip-content",
+  "title": "Chart Tooltip Content",
+  "registryDependencies": [
+    "chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/chart-tooltip-content/chart-tooltip-content.tsx",
+      "content": "import { ChartTooltipContent } from \"@/components/ui/chart\"\n\nexport default ChartTooltipContent\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

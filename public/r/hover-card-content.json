@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hover-card-content",
+  "title": "Hover Card Content",
+  "files": [
+    {
+      "path": "registry/default/app/hover-card-content/hover-card-content.tsx",
+      "content": "import { HoverCardContent } from \"@/components/ui/hover-card\"\n\nexport default HoverCardContent\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider",
+  "title": "Slider",
+  "registryDependencies": [
+    "slider"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/slider/slider.tsx",
+      "content": "import { Slider } from \"@/components/ui/slider\"\n\nexport default Slider\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

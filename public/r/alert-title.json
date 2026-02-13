@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-title",
+  "title": "Alert Title",
+  "registryDependencies": [
+    "alert"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/alert-title/alert-title.tsx",
+      "content": "import { AlertTitle } from \"@/components/ui/alert\"\n\nexport default AlertTitle\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

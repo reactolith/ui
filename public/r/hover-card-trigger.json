@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hover-card-trigger",
+  "title": "Hover Card Trigger",
+  "files": [
+    {
+      "path": "registry/default/app/hover-card-trigger/hover-card-trigger.tsx",
+      "content": "import { HoverCardTrigger } from \"@/components/ui/hover-card\"\n\nexport default HoverCardTrigger\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

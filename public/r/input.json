@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input",
+  "title": "Input",
+  "registryDependencies": [
+    "input"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/input/input.tsx",
+      "content": "import { Input } from \"@/components/ui/input\"\n\nexport default Input\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

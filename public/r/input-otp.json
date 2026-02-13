@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-otp",
+  "title": "Input Otp",
+  "files": [
+    {
+      "path": "registry/default/app/input-otp/input-otp.tsx",
+      "content": "import { InputOTP } from \"@/components/ui/input-otp\"\n\nexport default InputOTP\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

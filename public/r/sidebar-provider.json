@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-provider",
+  "title": "Sidebar Provider",
+  "files": [
+    {
+      "path": "registry/default/app/sidebar-provider/sidebar-provider.tsx",
+      "content": "import { SidebarProvider } from \"@/components/ui/sidebar\"\n\nexport default SidebarProvider\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

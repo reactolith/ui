@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menubar-radio-group",
+  "title": "Menubar Radio Group",
+  "files": [
+    {
+      "path": "registry/default/app/menubar-radio-group/menubar-radio-group.tsx",
+      "content": "import { MenubarRadioGroup } from \"@/components/ui/menubar\"\n\nexport default MenubarRadioGroup\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

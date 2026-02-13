@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-header",
+  "title": "Popover Header",
+  "files": [
+    {
+      "path": "registry/default/app/popover-header/popover-header.tsx",
+      "content": "import { PopoverHeader } from \"@/components/ui/popover\"\n\nexport default PopoverHeader\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}
