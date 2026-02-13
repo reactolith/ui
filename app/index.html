@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reactolith UI - Component Library</title>
     <script type="module" src="/app.ts"></script>
+    <script>
+      (function() {
+        var t = localStorage.getItem('theme') || 'system';
+        if (t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
 </head>
 <body class="style-vega">
 <div id="reactolith-app">
@@ -20,6 +28,7 @@
         </div>
         <nav class="flex items-center gap-2">
           <a href="https://github.com/reactolith/ui" class="text-sm text-muted-foreground hover:text-foreground">GitHub</a>
+          <ui-theme-switch></ui-theme-switch>
         </nav>
       </div>
     </header>

@@ -1507,6 +1507,15 @@ function sidebarHtml(activeSlug = "", depth = 0) {
   return html;
 }
 
+const themeInitScript = `<script>
+      (function() {
+        var t = localStorage.getItem('theme') || 'system';
+        if (t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>`;
+
 // depth: 0 = app/index.html, 1 = app/docs/*.html, 2 = app/docs/components/*.html
 function headerHtml(depth = 0) {
   const rootPrefix = depth === 0 ? "" : depth === 1 ? "../" : "../../";
@@ -1525,6 +1534,7 @@ function headerHtml(depth = 0) {
         </div>
         <nav class="flex items-center gap-2">
           <a href="https://github.com/reactolith/ui" class="text-sm text-muted-foreground hover:text-foreground">GitHub</a>
+          <ui-theme-switch></ui-theme-switch>
         </nav>
       </div>
     </header>`;
@@ -1532,6 +1542,7 @@ function headerHtml(depth = 0) {
 
 function pageShell(title, activeSlug, content, depth = 0) {
   const scriptPath = depth === 0 ? "./app.ts" : depth === 1 ? "../app.ts" : "../../app.ts";
+  const base = depth === 0 ? "." : depth === 1 ? ".." : "../..";
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1539,17 +1550,12 @@ function pageShell(title, activeSlug, content, depth = 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title} - Reactolith UI</title>
     <script type="module" src="${scriptPath}"></script>
+    ${themeInitScript}
 </head>
 <body class="style-vega">
-<div id="reactolith-app">
-    ${headerHtml(depth)}
-    <div class="max-w-7xl mx-auto px-6 flex gap-8">
-        ${sidebarHtml(activeSlug, depth)}
-        <main class="flex-1 min-w-0 py-8 max-w-3xl">
-            ${content}
-        </main>
-    </div>
-</div>
+<ui-docs-layout page="${activeSlug}" base="${base}">
+    ${content}
+</ui-docs-layout>
 </body>
 </html>
 `;
@@ -1889,6 +1895,7 @@ function landingPage() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reactolith UI - Component Library</title>
     <script type="module" src="/app.ts"></script>
+    ${themeInitScript}
 </head>
 <body class="style-vega">
 <div id="reactolith-app">
