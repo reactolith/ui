@@ -1540,8 +1540,8 @@ function pageShell(title, activeSlug, content, depth = 0) {
     <title>${title} - Reactolith UI</title>
     <script type="module" src="${scriptPath}"></script>
 </head>
-<body>
-<div id="reactolith-app" class="style-vega">
+<body class="style-vega">
+<div id="reactolith-app">
     ${headerHtml(depth)}
     <div class="max-w-7xl mx-auto px-6 flex gap-8">
         ${sidebarHtml(activeSlug, depth)}
@@ -1890,9 +1890,9 @@ function landingPage() {
     <title>Reactolith UI - Component Library</title>
     <script type="module" src="/app.ts"></script>
 </head>
-<body>
-<div id="reactolith-app" class="style-vega">
-    ${headerHtml()}
+<body class="style-vega">
+<div id="reactolith-app">
+    ${headerHtml(0)}
 
     <main class="max-w-5xl mx-auto px-6 py-16">
 
