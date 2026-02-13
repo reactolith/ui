@@ -1,4 +1,4 @@
-name: Deploy Registry to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -23,10 +23,21 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+
+      # Build the demo app
       - run: npm run build
+        env:
+          GITHUB_PAGES: true
+
+      # Build the shadcn registry
+      - run: npm run registry:build
+
+      # Copy registry files into the demo build output
+      - run: cp -r public/r demo/dist/r
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: public/
+          path: demo/dist
 
   deploy:
     environment:
