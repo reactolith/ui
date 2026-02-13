@@ -24,7 +24,7 @@ jobs:
           cache: npm
       - run: npm ci
 
-      # Build the demo app
+      # Build the app
       - run: npm run build
         env:
           GITHUB_PAGES: true
@@ -32,12 +32,12 @@ jobs:
       # Build the shadcn registry
       - run: npm run registry:build
 
-      # Copy registry files into the demo build output
-      - run: cp -r public/r demo/dist/r
+      # Copy registry files into the app build output
+      - run: cp -r public/r app/dist/r
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: demo/dist
+          path: app/dist
 
   deploy:
     environment:

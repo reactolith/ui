@@ -12,7 +12,7 @@ export default defineConfig(() => {
             react(),
             tailwindcss(),
         ],
-        root: 'demo',
+        root: 'app',
         resolve: {
             alias: {
                 "@": path.resolve(__dirname, "./"),
