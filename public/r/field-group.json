@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-group",
+  "title": "Field Group",
+  "files": [
+    {
+      "path": "registry/default/app/field-group/field-group.tsx",
+      "content": "import { FieldGroup } from \"@/components/ui/field\"\n\nexport default FieldGroup\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

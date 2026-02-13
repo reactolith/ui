@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menubar-trigger",
+  "title": "Menubar Trigger",
+  "files": [
+    {
+      "path": "registry/default/app/menubar-trigger/menubar-trigger.tsx",
+      "content": "import { MenubarTrigger } from \"@/components/ui/menubar\"\n\nexport default MenubarTrigger\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

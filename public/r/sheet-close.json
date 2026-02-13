@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet-close",
+  "title": "Sheet Close",
+  "files": [
+    {
+      "path": "registry/default/app/sheet-close/sheet-close.tsx",
+      "content": "import { SheetClose } from \"@/components/ui/sheet\"\n\nexport default SheetClose\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

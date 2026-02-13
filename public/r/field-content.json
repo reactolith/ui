@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-content",
+  "title": "Field Content",
+  "files": [
+    {
+      "path": "registry/default/app/field-content/field-content.tsx",
+      "content": "import { FieldContent } from \"@/components/ui/field\"\n\nexport default FieldContent\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

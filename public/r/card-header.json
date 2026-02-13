@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-header",
+  "title": "Card Header",
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/card-header/card-header.tsx",
+      "content": "import { CardHeader } from \"@/components/ui/card\"\n\nexport default CardHeader\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

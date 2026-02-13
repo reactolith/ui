@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-menu-badge",
+  "title": "Sidebar Menu Badge",
+  "files": [
+    {
+      "path": "registry/default/app/sidebar-menu-badge/sidebar-menu-badge.tsx",
+      "content": "import { SidebarMenuBadge } from \"@/components/ui/sidebar\"\n\nexport default SidebarMenuBadge\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

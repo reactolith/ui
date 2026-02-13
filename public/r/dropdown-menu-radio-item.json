@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dropdown-menu-radio-item",
+  "title": "Dropdown Menu Radio Item",
+  "files": [
+    {
+      "path": "registry/default/app/dropdown-menu-radio-item/dropdown-menu-radio-item.tsx",
+      "content": "import { DropdownMenuRadioItem } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuRadioItem\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu-radio-group",
+  "title": "Context Menu Radio Group",
+  "files": [
+    {
+      "path": "registry/default/app/context-menu-radio-group/context-menu-radio-group.tsx",
+      "content": "import { ContextMenuRadioGroup } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuRadioGroup\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

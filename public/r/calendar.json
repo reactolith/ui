@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar",
+  "title": "Calendar",
+  "registryDependencies": [
+    "calendar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/calendar/calendar.tsx",
+      "content": "import { Calendar } from \"@/components/ui/calendar\"\n\nexport default Calendar\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

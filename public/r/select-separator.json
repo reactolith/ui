@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-separator",
+  "title": "Select Separator",
+  "files": [
+    {
+      "path": "registry/default/app/select-separator/select-separator.tsx",
+      "content": "import { SelectSeparator } from \"@/components/ui/select\"\n\nexport default SelectSeparator\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

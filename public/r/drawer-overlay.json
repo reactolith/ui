@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer-overlay",
+  "title": "Drawer Overlay",
+  "files": [
+    {
+      "path": "registry/default/app/drawer-overlay/drawer-overlay.tsx",
+      "content": "import { DrawerOverlay } from \"@/components/ui/drawer\"\n\nexport default DrawerOverlay\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

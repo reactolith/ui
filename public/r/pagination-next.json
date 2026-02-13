@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-next",
+  "title": "Pagination Next",
+  "files": [
+    {
+      "path": "registry/default/app/pagination-next/pagination-next.tsx",
+      "content": "import { PaginationNext } from \"@/components/ui/pagination\"\n\nexport default PaginationNext\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

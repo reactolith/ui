@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-item",
+  "title": "Breadcrumb Item",
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/breadcrumb-item/breadcrumb-item.tsx",
+      "content": "import { BreadcrumbItem } from \"@/components/ui/breadcrumb\"\n\nexport default BreadcrumbItem\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

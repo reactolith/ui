@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-trigger",
+  "title": "Select Trigger",
+  "files": [
+    {
+      "path": "registry/default/app/select-trigger/select-trigger.tsx",
+      "content": "import { SelectTrigger } from \"@/components/ui/select\"\n\nexport default SelectTrigger\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

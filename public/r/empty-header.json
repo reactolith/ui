@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-header",
+  "title": "Empty Header",
+  "files": [
+    {
+      "path": "registry/default/app/empty-header/empty-header.tsx",
+      "content": "import { EmptyHeader } from \"@/components/ui/empty\"\n\nexport default EmptyHeader\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

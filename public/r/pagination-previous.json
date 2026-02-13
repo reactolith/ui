@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-previous",
+  "title": "Pagination Previous",
+  "files": [
+    {
+      "path": "registry/default/app/pagination-previous/pagination-previous.tsx",
+      "content": "import { PaginationPrevious } from \"@/components/ui/pagination\"\n\nexport default PaginationPrevious\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

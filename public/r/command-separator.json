@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-separator",
+  "title": "Command Separator",
+  "files": [
+    {
+      "path": "registry/default/app/command-separator/command-separator.tsx",
+      "content": "import { CommandSeparator } from \"@/components/ui/command\"\n\nexport default CommandSeparator\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer-content",
+  "title": "Drawer Content",
+  "files": [
+    {
+      "path": "registry/default/app/drawer-content/drawer-content.tsx",
+      "content": "import { DrawerContent } from \"@/components/ui/drawer\"\n\nexport default DrawerContent\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

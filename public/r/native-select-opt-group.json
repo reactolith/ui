@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-select-opt-group",
+  "title": "Native Select Opt Group",
+  "files": [
+    {
+      "path": "registry/default/app/native-select-opt-group/native-select-opt-group.tsx",
+      "content": "import { NativeSelectOptGroup } from \"@/components/ui/native-select\"\n\nexport default NativeSelectOptGroup\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label",
+  "title": "Label",
+  "registryDependencies": [
+    "label"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/label/label.tsx",
+      "content": "import { Label } from \"@/components/ui/label\"\n\nexport default Label\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

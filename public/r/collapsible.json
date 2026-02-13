@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "collapsible",
+  "title": "Collapsible",
+  "registryDependencies": [
+    "collapsible"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/collapsible/collapsible.tsx",
+      "content": "import { Collapsible } from \"@/components/ui/collapsible\"\n\nexport default Collapsible\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

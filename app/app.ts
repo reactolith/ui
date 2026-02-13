@@ -9,5 +9,5 @@ new App(
         return import(`@/registry/default/app/${name}/${name}.tsx`);
     }, {
         cacheKey: ({ is }: { is: string }) => is,
-    }) as unknown as ComponentType<any>,
+    }) as unknown as ComponentType<Record<string, unknown>>,
 );

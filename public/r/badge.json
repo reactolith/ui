@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "title": "Badge",
+  "registryDependencies": [
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/badge/badge.tsx",
+      "content": "import { Badge } from \"@/components/ui/badge\"\n\nexport default Badge\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

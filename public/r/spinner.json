@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner",
+  "title": "Spinner",
+  "registryDependencies": [
+    "spinner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/spinner/spinner.tsx",
+      "content": "import { Spinner } from \"@/components/ui/spinner\"\n\nexport default Spinner\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

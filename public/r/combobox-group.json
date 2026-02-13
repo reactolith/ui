@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-group",
+  "title": "Combobox Group",
+  "files": [
+    {
+      "path": "registry/default/app/combobox-group/combobox-group.tsx",
+      "content": "import { ComboboxGroup } from \"@/components/ui/combobox\"\n\nexport default ComboboxGroup\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

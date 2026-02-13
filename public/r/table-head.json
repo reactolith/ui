@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-head",
+  "title": "Table Head",
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/table-head/table-head.tsx",
+      "content": "import { TableHead } from \"@/components/ui/table\"\n\nexport default TableHead\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

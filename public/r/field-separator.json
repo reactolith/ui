@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-separator",
+  "title": "Field Separator",
+  "files": [
+    {
+      "path": "registry/default/app/field-separator/field-separator.tsx",
+      "content": "import { FieldSeparator } from \"@/components/ui/field\"\n\nexport default FieldSeparator\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

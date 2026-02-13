@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover-trigger",
+  "title": "Popover Trigger",
+  "files": [
+    {
+      "path": "registry/default/app/popover-trigger/popover-trigger.tsx",
+      "content": "import { PopoverTrigger } from \"@/components/ui/popover\"\n\nexport default PopoverTrigger\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

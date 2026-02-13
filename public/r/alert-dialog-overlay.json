@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog-overlay",
+  "title": "Alert Dialog Overlay",
+  "registryDependencies": [
+    "alert-dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/alert-dialog-overlay/alert-dialog-overlay.tsx",
+      "content": "import { AlertDialogOverlay } from \"@/components/ui/alert-dialog\"\n\nexport default AlertDialogOverlay\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

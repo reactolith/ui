@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "drawer-portal",
+  "title": "Drawer Portal",
+  "files": [
+    {
+      "path": "registry/default/app/drawer-portal/drawer-portal.tsx",
+      "content": "import { DrawerPortal } from \"@/components/ui/drawer\"\n\nexport default DrawerPortal\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

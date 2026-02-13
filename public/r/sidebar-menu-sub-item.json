@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-menu-sub-item",
+  "title": "Sidebar Menu Sub Item",
+  "files": [
+    {
+      "path": "registry/default/app/sidebar-menu-sub-item/sidebar-menu-sub-item.tsx",
+      "content": "import { SidebarMenuSubItem } from \"@/components/ui/sidebar\"\n\nexport default SidebarMenuSubItem\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "context-menu-sub-content",
+  "title": "Context Menu Sub Content",
+  "files": [
+    {
+      "path": "registry/default/app/context-menu-sub-content/context-menu-sub-content.tsx",
+      "content": "import { ContextMenuSubContent } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuSubContent\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

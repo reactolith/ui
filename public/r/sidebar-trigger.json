@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-trigger",
+  "title": "Sidebar Trigger",
+  "files": [
+    {
+      "path": "registry/default/app/sidebar-trigger/sidebar-trigger.tsx",
+      "content": "import { SidebarTrigger } from \"@/components/ui/sidebar\"\n\nexport default SidebarTrigger\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

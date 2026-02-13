@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-scroll-down-button",
+  "title": "Select Scroll Down Button",
+  "files": [
+    {
+      "path": "registry/default/app/select-scroll-down-button/select-scroll-down-button.tsx",
+      "content": "import { SelectScrollDownButton } from \"@/components/ui/select\"\n\nexport default SelectScrollDownButton\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-footer",
+  "title": "Card Footer",
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/card-footer/card-footer.tsx",
+      "content": "import { CardFooter } from \"@/components/ui/card\"\n\nexport default CardFooter\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

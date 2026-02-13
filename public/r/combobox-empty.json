@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-empty",
+  "title": "Combobox Empty",
+  "files": [
+    {
+      "path": "registry/default/app/combobox-empty/combobox-empty.tsx",
+      "content": "import { ComboboxEmpty } from \"@/components/ui/combobox\"\n\nexport default ComboboxEmpty\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

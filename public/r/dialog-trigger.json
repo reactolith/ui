@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-trigger",
+  "title": "Dialog Trigger",
+  "files": [
+    {
+      "path": "registry/default/app/dialog-trigger/dialog-trigger.tsx",
+      "content": "import { DialogTrigger } from \"@/components/ui/dialog\"\n\nexport default DialogTrigger\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

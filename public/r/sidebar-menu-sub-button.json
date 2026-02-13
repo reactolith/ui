@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-menu-sub-button",
+  "title": "Sidebar Menu Sub Button",
+  "files": [
+    {
+      "path": "registry/default/app/sidebar-menu-sub-button/sidebar-menu-sub-button.tsx",
+      "content": "import { SidebarMenuSubButton } from \"@/components/ui/sidebar\"\n\nexport default SidebarMenuSubButton\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

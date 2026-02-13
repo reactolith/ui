@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-separator",
+  "title": "Breadcrumb Separator",
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/breadcrumb-separator/breadcrumb-separator.tsx",
+      "content": "import { BreadcrumbSeparator } from \"@/components/ui/breadcrumb\"\n\nexport default BreadcrumbSeparator\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

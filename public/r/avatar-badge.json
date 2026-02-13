@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-badge",
+  "title": "Avatar Badge",
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/avatar-badge/avatar-badge.tsx",
+      "content": "import { AvatarBadge } from \"@/components/ui/avatar\"\n\nexport default AvatarBadge\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

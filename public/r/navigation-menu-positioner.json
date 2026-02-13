@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navigation-menu-positioner",
+  "title": "Navigation Menu Positioner",
+  "files": [
+    {
+      "path": "registry/default/app/navigation-menu-positioner/navigation-menu-positioner.tsx",
+      "content": "import { NavigationMenuPositioner } from \"@/components/ui/navigation-menu\"\n\nexport default NavigationMenuPositioner\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

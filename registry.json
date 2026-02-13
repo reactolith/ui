@@ -4,15 +4,3583 @@
   "homepage": "https://reactolith.github.io/ui",
   "items": [
     {
+      "name": "accordion",
+      "type": "registry:component",
+      "title": "Accordion",
+      "files": [
+        {
+          "path": "registry/default/app/accordion/accordion.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "accordion"
+      ]
+    },
+    {
+      "name": "accordion-content",
+      "type": "registry:component",
+      "title": "Accordion Content",
+      "files": [
+        {
+          "path": "registry/default/app/accordion-content/accordion-content.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "accordion"
+      ]
+    },
+    {
+      "name": "accordion-item",
+      "type": "registry:component",
+      "title": "Accordion Item",
+      "files": [
+        {
+          "path": "registry/default/app/accordion-item/accordion-item.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "accordion"
+      ]
+    },
+    {
+      "name": "accordion-trigger",
+      "type": "registry:component",
+      "title": "Accordion Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/accordion-trigger/accordion-trigger.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "accordion"
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:component",
+      "title": "Alert",
+      "files": [
+        {
+          "path": "registry/default/app/alert/alert.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "alert"
+      ]
+    },
+    {
+      "name": "alert-action",
+      "type": "registry:component",
+      "title": "Alert Action",
+      "files": [
+        {
+          "path": "registry/default/app/alert-action/alert-action.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "alert"
+      ]
+    },
+    {
+      "name": "alert-description",
+      "type": "registry:component",
+      "title": "Alert Description",
+      "files": [
+        {
+          "path": "registry/default/app/alert-description/alert-description.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "alert"
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:component",
+      "title": "Alert Dialog",
+      "files": [
+        {
+          "path": "registry/default/app/alert-dialog/alert-dialog.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "alert-dialog"
+      ]
+    },
+    {
+      "name": "alert-dialog-action",
+      "type": "registry:component",
+      "title": "Alert Dialog Action",
+      "files": [
+        {
+          "path": "registry/default/app/alert-dialog-action/alert-dialog-action.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "alert-dialog"
+      ]
+    },
+    {
+      "name": "alert-dialog-cancel",
+      "type": "registry:component",
+      "title": "Alert Dialog Cancel",
+      "files": [
+        {
+          "path": "registry/default/app/alert-dialog-cancel/alert-dialog-cancel.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "alert-dialog"
+      ]
+    },
+    {
+      "name": "alert-dialog-content",
+      "type": "registry:component",
+      "title": "Alert Dialog Content",
+      "files": [
+        {
+          "path": "registry/default/app/alert-dialog-content/alert-dialog-content.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "alert-dialog"
+      ]
+    },
+    {
+      "name": "alert-dialog-description",
+      "type": "registry:component",
+      "title": "Alert Dialog Description",
+      "files": [
+        {
+          "path": "registry/default/app/alert-dialog-description/alert-dialog-description.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "alert-dialog"
+      ]
+    },
+    {
+      "name": "alert-dialog-footer",
+      "type": "registry:component",
+      "title": "Alert Dialog Footer",
+      "files": [
+        {
+          "path": "registry/default/app/alert-dialog-footer/alert-dialog-footer.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "alert-dialog"
+      ]
+    },
+    {
+      "name": "alert-dialog-header",
+      "type": "registry:component",
+      "title": "Alert Dialog Header",
+      "files": [
+        {
+          "path": "registry/default/app/alert-dialog-header/alert-dialog-header.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "alert-dialog"
+      ]
+    },
+    {
+      "name": "alert-dialog-media",
+      "type": "registry:component",
+      "title": "Alert Dialog Media",
+      "files": [
+        {
+          "path": "registry/default/app/alert-dialog-media/alert-dialog-media.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "alert-dialog"
+      ]
+    },
+    {
+      "name": "alert-dialog-overlay",
+      "type": "registry:component",
+      "title": "Alert Dialog Overlay",
+      "files": [
+        {
+          "path": "registry/default/app/alert-dialog-overlay/alert-dialog-overlay.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "alert-dialog"
+      ]
+    },
+    {
+      "name": "alert-dialog-portal",
+      "type": "registry:component",
+      "title": "Alert Dialog Portal",
+      "files": [
+        {
+          "path": "registry/default/app/alert-dialog-portal/alert-dialog-portal.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "alert-dialog"
+      ]
+    },
+    {
+      "name": "alert-dialog-title",
+      "type": "registry:component",
+      "title": "Alert Dialog Title",
+      "files": [
+        {
+          "path": "registry/default/app/alert-dialog-title/alert-dialog-title.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "alert-dialog"
+      ]
+    },
+    {
+      "name": "alert-dialog-trigger",
+      "type": "registry:component",
+      "title": "Alert Dialog Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/alert-dialog-trigger/alert-dialog-trigger.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "alert-dialog"
+      ]
+    },
+    {
+      "name": "alert-title",
+      "type": "registry:component",
+      "title": "Alert Title",
+      "files": [
+        {
+          "path": "registry/default/app/alert-title/alert-title.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "alert"
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:component",
+      "title": "Aspect Ratio",
+      "files": [
+        {
+          "path": "registry/default/app/aspect-ratio/aspect-ratio.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "aspect-ratio"
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:component",
+      "title": "Avatar",
+      "files": [
+        {
+          "path": "registry/default/app/avatar/avatar.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "avatar"
+      ]
+    },
+    {
+      "name": "avatar-badge",
+      "type": "registry:component",
+      "title": "Avatar Badge",
+      "files": [
+        {
+          "path": "registry/default/app/avatar-badge/avatar-badge.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "avatar"
+      ]
+    },
+    {
+      "name": "avatar-fallback",
+      "type": "registry:component",
+      "title": "Avatar Fallback",
+      "files": [
+        {
+          "path": "registry/default/app/avatar-fallback/avatar-fallback.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "avatar"
+      ]
+    },
+    {
+      "name": "avatar-group",
+      "type": "registry:component",
+      "title": "Avatar Group",
+      "files": [
+        {
+          "path": "registry/default/app/avatar-group/avatar-group.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "avatar"
+      ]
+    },
+    {
+      "name": "avatar-group-count",
+      "type": "registry:component",
+      "title": "Avatar Group Count",
+      "files": [
+        {
+          "path": "registry/default/app/avatar-group-count/avatar-group-count.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "avatar"
+      ]
+    },
+    {
+      "name": "avatar-image",
+      "type": "registry:component",
+      "title": "Avatar Image",
+      "files": [
+        {
+          "path": "registry/default/app/avatar-image/avatar-image.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "avatar"
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:component",
+      "title": "Badge",
+      "files": [
+        {
+          "path": "registry/default/app/badge/badge.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "badge"
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:component",
+      "title": "Breadcrumb",
+      "files": [
+        {
+          "path": "registry/default/app/breadcrumb/breadcrumb.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "breadcrumb"
+      ]
+    },
+    {
+      "name": "breadcrumb-ellipsis",
+      "type": "registry:component",
+      "title": "Breadcrumb Ellipsis",
+      "files": [
+        {
+          "path": "registry/default/app/breadcrumb-ellipsis/breadcrumb-ellipsis.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "breadcrumb"
+      ]
+    },
+    {
+      "name": "breadcrumb-item",
+      "type": "registry:component",
+      "title": "Breadcrumb Item",
+      "files": [
+        {
+          "path": "registry/default/app/breadcrumb-item/breadcrumb-item.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "breadcrumb"
+      ]
+    },
+    {
+      "name": "breadcrumb-link",
+      "type": "registry:component",
+      "title": "Breadcrumb Link",
+      "files": [
+        {
+          "path": "registry/default/app/breadcrumb-link/breadcrumb-link.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "breadcrumb"
+      ]
+    },
+    {
+      "name": "breadcrumb-list",
+      "type": "registry:component",
+      "title": "Breadcrumb List",
+      "files": [
+        {
+          "path": "registry/default/app/breadcrumb-list/breadcrumb-list.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "breadcrumb"
+      ]
+    },
+    {
+      "name": "breadcrumb-page",
+      "type": "registry:component",
+      "title": "Breadcrumb Page",
+      "files": [
+        {
+          "path": "registry/default/app/breadcrumb-page/breadcrumb-page.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "breadcrumb"
+      ]
+    },
+    {
+      "name": "breadcrumb-separator",
+      "type": "registry:component",
+      "title": "Breadcrumb Separator",
+      "files": [
+        {
+          "path": "registry/default/app/breadcrumb-separator/breadcrumb-separator.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "breadcrumb"
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:component",
       "title": "Button",
-      "registryDependencies": ["button"],
       "files": [
         {
           "path": "registry/default/app/button/button.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "button"
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:component",
+      "title": "Button Group",
+      "files": [
+        {
+          "path": "registry/default/app/button-group/button-group.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "button-group"
+      ]
+    },
+    {
+      "name": "button-group-separator",
+      "type": "registry:component",
+      "title": "Button Group Separator",
+      "files": [
+        {
+          "path": "registry/default/app/button-group-separator/button-group-separator.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "button-group"
+      ]
+    },
+    {
+      "name": "button-group-text",
+      "type": "registry:component",
+      "title": "Button Group Text",
+      "files": [
+        {
+          "path": "registry/default/app/button-group-text/button-group-text.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "button-group"
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:component",
+      "title": "Calendar",
+      "files": [
+        {
+          "path": "registry/default/app/calendar/calendar.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "calendar"
+      ]
+    },
+    {
+      "name": "calendar-day-button",
+      "type": "registry:component",
+      "title": "Calendar Day Button",
+      "files": [
+        {
+          "path": "registry/default/app/calendar-day-button/calendar-day-button.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "calendar"
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:component",
+      "title": "Card",
+      "files": [
+        {
+          "path": "registry/default/app/card/card.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "card"
+      ]
+    },
+    {
+      "name": "card-action",
+      "type": "registry:component",
+      "title": "Card Action",
+      "files": [
+        {
+          "path": "registry/default/app/card-action/card-action.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "card"
+      ]
+    },
+    {
+      "name": "card-content",
+      "type": "registry:component",
+      "title": "Card Content",
+      "files": [
+        {
+          "path": "registry/default/app/card-content/card-content.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "card"
+      ]
+    },
+    {
+      "name": "card-description",
+      "type": "registry:component",
+      "title": "Card Description",
+      "files": [
+        {
+          "path": "registry/default/app/card-description/card-description.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "card"
+      ]
+    },
+    {
+      "name": "card-footer",
+      "type": "registry:component",
+      "title": "Card Footer",
+      "files": [
+        {
+          "path": "registry/default/app/card-footer/card-footer.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "card"
+      ]
+    },
+    {
+      "name": "card-header",
+      "type": "registry:component",
+      "title": "Card Header",
+      "files": [
+        {
+          "path": "registry/default/app/card-header/card-header.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "card"
+      ]
+    },
+    {
+      "name": "card-title",
+      "type": "registry:component",
+      "title": "Card Title",
+      "files": [
+        {
+          "path": "registry/default/app/card-title/card-title.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "card"
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:component",
+      "title": "Carousel",
+      "files": [
+        {
+          "path": "registry/default/app/carousel/carousel.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "carousel"
+      ]
+    },
+    {
+      "name": "carousel-content",
+      "type": "registry:component",
+      "title": "Carousel Content",
+      "files": [
+        {
+          "path": "registry/default/app/carousel-content/carousel-content.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "carousel"
+      ]
+    },
+    {
+      "name": "carousel-item",
+      "type": "registry:component",
+      "title": "Carousel Item",
+      "files": [
+        {
+          "path": "registry/default/app/carousel-item/carousel-item.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "carousel"
+      ]
+    },
+    {
+      "name": "carousel-next",
+      "type": "registry:component",
+      "title": "Carousel Next",
+      "files": [
+        {
+          "path": "registry/default/app/carousel-next/carousel-next.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "carousel"
+      ]
+    },
+    {
+      "name": "carousel-previous",
+      "type": "registry:component",
+      "title": "Carousel Previous",
+      "files": [
+        {
+          "path": "registry/default/app/carousel-previous/carousel-previous.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "carousel"
+      ]
+    },
+    {
+      "name": "chart-container",
+      "type": "registry:component",
+      "title": "Chart Container",
+      "files": [
+        {
+          "path": "registry/default/app/chart-container/chart-container.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "chart"
+      ]
+    },
+    {
+      "name": "chart-legend",
+      "type": "registry:component",
+      "title": "Chart Legend",
+      "files": [
+        {
+          "path": "registry/default/app/chart-legend/chart-legend.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "chart"
+      ]
+    },
+    {
+      "name": "chart-legend-content",
+      "type": "registry:component",
+      "title": "Chart Legend Content",
+      "files": [
+        {
+          "path": "registry/default/app/chart-legend-content/chart-legend-content.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "chart"
+      ]
+    },
+    {
+      "name": "chart-tooltip",
+      "type": "registry:component",
+      "title": "Chart Tooltip",
+      "files": [
+        {
+          "path": "registry/default/app/chart-tooltip/chart-tooltip.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "chart"
+      ]
+    },
+    {
+      "name": "chart-tooltip-content",
+      "type": "registry:component",
+      "title": "Chart Tooltip Content",
+      "files": [
+        {
+          "path": "registry/default/app/chart-tooltip-content/chart-tooltip-content.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "chart"
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:component",
+      "title": "Checkbox",
+      "files": [
+        {
+          "path": "registry/default/app/checkbox/checkbox.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "checkbox"
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:component",
+      "title": "Collapsible",
+      "files": [
+        {
+          "path": "registry/default/app/collapsible/collapsible.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "collapsible"
+      ]
+    },
+    {
+      "name": "collapsible-content",
+      "type": "registry:component",
+      "title": "Collapsible Content",
+      "files": [
+        {
+          "path": "registry/default/app/collapsible-content/collapsible-content.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "collapsible"
+      ]
+    },
+    {
+      "name": "collapsible-trigger",
+      "type": "registry:component",
+      "title": "Collapsible Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/collapsible-trigger/collapsible-trigger.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "collapsible"
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:component",
+      "title": "Combobox",
+      "files": [
+        {
+          "path": "registry/default/app/combobox/combobox.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "combobox-chip",
+      "type": "registry:component",
+      "title": "Combobox Chip",
+      "files": [
+        {
+          "path": "registry/default/app/combobox-chip/combobox-chip.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "combobox-chips",
+      "type": "registry:component",
+      "title": "Combobox Chips",
+      "files": [
+        {
+          "path": "registry/default/app/combobox-chips/combobox-chips.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "combobox-chips-input",
+      "type": "registry:component",
+      "title": "Combobox Chips Input",
+      "files": [
+        {
+          "path": "registry/default/app/combobox-chips-input/combobox-chips-input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "combobox-collection",
+      "type": "registry:component",
+      "title": "Combobox Collection",
+      "files": [
+        {
+          "path": "registry/default/app/combobox-collection/combobox-collection.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "combobox-content",
+      "type": "registry:component",
+      "title": "Combobox Content",
+      "files": [
+        {
+          "path": "registry/default/app/combobox-content/combobox-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "combobox-empty",
+      "type": "registry:component",
+      "title": "Combobox Empty",
+      "files": [
+        {
+          "path": "registry/default/app/combobox-empty/combobox-empty.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "combobox-group",
+      "type": "registry:component",
+      "title": "Combobox Group",
+      "files": [
+        {
+          "path": "registry/default/app/combobox-group/combobox-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "combobox-input",
+      "type": "registry:component",
+      "title": "Combobox Input",
+      "files": [
+        {
+          "path": "registry/default/app/combobox-input/combobox-input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "combobox-item",
+      "type": "registry:component",
+      "title": "Combobox Item",
+      "files": [
+        {
+          "path": "registry/default/app/combobox-item/combobox-item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "combobox-label",
+      "type": "registry:component",
+      "title": "Combobox Label",
+      "files": [
+        {
+          "path": "registry/default/app/combobox-label/combobox-label.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "combobox-list",
+      "type": "registry:component",
+      "title": "Combobox List",
+      "files": [
+        {
+          "path": "registry/default/app/combobox-list/combobox-list.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "combobox-separator",
+      "type": "registry:component",
+      "title": "Combobox Separator",
+      "files": [
+        {
+          "path": "registry/default/app/combobox-separator/combobox-separator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "combobox-trigger",
+      "type": "registry:component",
+      "title": "Combobox Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/combobox-trigger/combobox-trigger.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "combobox-value",
+      "type": "registry:component",
+      "title": "Combobox Value",
+      "files": [
+        {
+          "path": "registry/default/app/combobox-value/combobox-value.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:component",
+      "title": "Command",
+      "files": [
+        {
+          "path": "registry/default/app/command/command.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "command-dialog",
+      "type": "registry:component",
+      "title": "Command Dialog",
+      "files": [
+        {
+          "path": "registry/default/app/command-dialog/command-dialog.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "command-empty",
+      "type": "registry:component",
+      "title": "Command Empty",
+      "files": [
+        {
+          "path": "registry/default/app/command-empty/command-empty.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "command-group",
+      "type": "registry:component",
+      "title": "Command Group",
+      "files": [
+        {
+          "path": "registry/default/app/command-group/command-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "command-input",
+      "type": "registry:component",
+      "title": "Command Input",
+      "files": [
+        {
+          "path": "registry/default/app/command-input/command-input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "command-item",
+      "type": "registry:component",
+      "title": "Command Item",
+      "files": [
+        {
+          "path": "registry/default/app/command-item/command-item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "command-list",
+      "type": "registry:component",
+      "title": "Command List",
+      "files": [
+        {
+          "path": "registry/default/app/command-list/command-list.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "command-separator",
+      "type": "registry:component",
+      "title": "Command Separator",
+      "files": [
+        {
+          "path": "registry/default/app/command-separator/command-separator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "command-shortcut",
+      "type": "registry:component",
+      "title": "Command Shortcut",
+      "files": [
+        {
+          "path": "registry/default/app/command-shortcut/command-shortcut.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:component",
+      "title": "Context Menu",
+      "files": [
+        {
+          "path": "registry/default/app/context-menu/context-menu.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-checkbox-item",
+      "type": "registry:component",
+      "title": "Context Menu Checkbox Item",
+      "files": [
+        {
+          "path": "registry/default/app/context-menu-checkbox-item/context-menu-checkbox-item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-content",
+      "type": "registry:component",
+      "title": "Context Menu Content",
+      "files": [
+        {
+          "path": "registry/default/app/context-menu-content/context-menu-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-group",
+      "type": "registry:component",
+      "title": "Context Menu Group",
+      "files": [
+        {
+          "path": "registry/default/app/context-menu-group/context-menu-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-item",
+      "type": "registry:component",
+      "title": "Context Menu Item",
+      "files": [
+        {
+          "path": "registry/default/app/context-menu-item/context-menu-item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-label",
+      "type": "registry:component",
+      "title": "Context Menu Label",
+      "files": [
+        {
+          "path": "registry/default/app/context-menu-label/context-menu-label.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-portal",
+      "type": "registry:component",
+      "title": "Context Menu Portal",
+      "files": [
+        {
+          "path": "registry/default/app/context-menu-portal/context-menu-portal.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-radio-group",
+      "type": "registry:component",
+      "title": "Context Menu Radio Group",
+      "files": [
+        {
+          "path": "registry/default/app/context-menu-radio-group/context-menu-radio-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-radio-item",
+      "type": "registry:component",
+      "title": "Context Menu Radio Item",
+      "files": [
+        {
+          "path": "registry/default/app/context-menu-radio-item/context-menu-radio-item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-separator",
+      "type": "registry:component",
+      "title": "Context Menu Separator",
+      "files": [
+        {
+          "path": "registry/default/app/context-menu-separator/context-menu-separator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-shortcut",
+      "type": "registry:component",
+      "title": "Context Menu Shortcut",
+      "files": [
+        {
+          "path": "registry/default/app/context-menu-shortcut/context-menu-shortcut.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-sub",
+      "type": "registry:component",
+      "title": "Context Menu Sub",
+      "files": [
+        {
+          "path": "registry/default/app/context-menu-sub/context-menu-sub.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-sub-content",
+      "type": "registry:component",
+      "title": "Context Menu Sub Content",
+      "files": [
+        {
+          "path": "registry/default/app/context-menu-sub-content/context-menu-sub-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-sub-trigger",
+      "type": "registry:component",
+      "title": "Context Menu Sub Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/context-menu-sub-trigger/context-menu-sub-trigger.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "context-menu-trigger",
+      "type": "registry:component",
+      "title": "Context Menu Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/context-menu-trigger/context-menu-trigger.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:component",
+      "title": "Dialog",
+      "files": [
+        {
+          "path": "registry/default/app/dialog/dialog.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dialog-close",
+      "type": "registry:component",
+      "title": "Dialog Close",
+      "files": [
+        {
+          "path": "registry/default/app/dialog-close/dialog-close.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dialog-content",
+      "type": "registry:component",
+      "title": "Dialog Content",
+      "files": [
+        {
+          "path": "registry/default/app/dialog-content/dialog-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dialog-description",
+      "type": "registry:component",
+      "title": "Dialog Description",
+      "files": [
+        {
+          "path": "registry/default/app/dialog-description/dialog-description.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dialog-footer",
+      "type": "registry:component",
+      "title": "Dialog Footer",
+      "files": [
+        {
+          "path": "registry/default/app/dialog-footer/dialog-footer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dialog-header",
+      "type": "registry:component",
+      "title": "Dialog Header",
+      "files": [
+        {
+          "path": "registry/default/app/dialog-header/dialog-header.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dialog-overlay",
+      "type": "registry:component",
+      "title": "Dialog Overlay",
+      "files": [
+        {
+          "path": "registry/default/app/dialog-overlay/dialog-overlay.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dialog-portal",
+      "type": "registry:component",
+      "title": "Dialog Portal",
+      "files": [
+        {
+          "path": "registry/default/app/dialog-portal/dialog-portal.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dialog-title",
+      "type": "registry:component",
+      "title": "Dialog Title",
+      "files": [
+        {
+          "path": "registry/default/app/dialog-title/dialog-title.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dialog-trigger",
+      "type": "registry:component",
+      "title": "Dialog Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/dialog-trigger/dialog-trigger.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "direction-provider",
+      "type": "registry:component",
+      "title": "Direction Provider",
+      "files": [
+        {
+          "path": "registry/default/app/direction-provider/direction-provider.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:component",
+      "title": "Drawer",
+      "files": [
+        {
+          "path": "registry/default/app/drawer/drawer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "drawer-close",
+      "type": "registry:component",
+      "title": "Drawer Close",
+      "files": [
+        {
+          "path": "registry/default/app/drawer-close/drawer-close.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "drawer-content",
+      "type": "registry:component",
+      "title": "Drawer Content",
+      "files": [
+        {
+          "path": "registry/default/app/drawer-content/drawer-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "drawer-description",
+      "type": "registry:component",
+      "title": "Drawer Description",
+      "files": [
+        {
+          "path": "registry/default/app/drawer-description/drawer-description.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "drawer-footer",
+      "type": "registry:component",
+      "title": "Drawer Footer",
+      "files": [
+        {
+          "path": "registry/default/app/drawer-footer/drawer-footer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "drawer-header",
+      "type": "registry:component",
+      "title": "Drawer Header",
+      "files": [
+        {
+          "path": "registry/default/app/drawer-header/drawer-header.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "drawer-overlay",
+      "type": "registry:component",
+      "title": "Drawer Overlay",
+      "files": [
+        {
+          "path": "registry/default/app/drawer-overlay/drawer-overlay.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "drawer-portal",
+      "type": "registry:component",
+      "title": "Drawer Portal",
+      "files": [
+        {
+          "path": "registry/default/app/drawer-portal/drawer-portal.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "drawer-title",
+      "type": "registry:component",
+      "title": "Drawer Title",
+      "files": [
+        {
+          "path": "registry/default/app/drawer-title/drawer-title.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "drawer-trigger",
+      "type": "registry:component",
+      "title": "Drawer Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/drawer-trigger/drawer-trigger.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:component",
+      "title": "Dropdown Menu",
+      "files": [
+        {
+          "path": "registry/default/app/dropdown-menu/dropdown-menu.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-checkbox-item",
+      "type": "registry:component",
+      "title": "Dropdown Menu Checkbox Item",
+      "files": [
+        {
+          "path": "registry/default/app/dropdown-menu-checkbox-item/dropdown-menu-checkbox-item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-content",
+      "type": "registry:component",
+      "title": "Dropdown Menu Content",
+      "files": [
+        {
+          "path": "registry/default/app/dropdown-menu-content/dropdown-menu-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-group",
+      "type": "registry:component",
+      "title": "Dropdown Menu Group",
+      "files": [
+        {
+          "path": "registry/default/app/dropdown-menu-group/dropdown-menu-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-item",
+      "type": "registry:component",
+      "title": "Dropdown Menu Item",
+      "files": [
+        {
+          "path": "registry/default/app/dropdown-menu-item/dropdown-menu-item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-label",
+      "type": "registry:component",
+      "title": "Dropdown Menu Label",
+      "files": [
+        {
+          "path": "registry/default/app/dropdown-menu-label/dropdown-menu-label.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-portal",
+      "type": "registry:component",
+      "title": "Dropdown Menu Portal",
+      "files": [
+        {
+          "path": "registry/default/app/dropdown-menu-portal/dropdown-menu-portal.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-radio-group",
+      "type": "registry:component",
+      "title": "Dropdown Menu Radio Group",
+      "files": [
+        {
+          "path": "registry/default/app/dropdown-menu-radio-group/dropdown-menu-radio-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-radio-item",
+      "type": "registry:component",
+      "title": "Dropdown Menu Radio Item",
+      "files": [
+        {
+          "path": "registry/default/app/dropdown-menu-radio-item/dropdown-menu-radio-item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-separator",
+      "type": "registry:component",
+      "title": "Dropdown Menu Separator",
+      "files": [
+        {
+          "path": "registry/default/app/dropdown-menu-separator/dropdown-menu-separator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-shortcut",
+      "type": "registry:component",
+      "title": "Dropdown Menu Shortcut",
+      "files": [
+        {
+          "path": "registry/default/app/dropdown-menu-shortcut/dropdown-menu-shortcut.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-sub",
+      "type": "registry:component",
+      "title": "Dropdown Menu Sub",
+      "files": [
+        {
+          "path": "registry/default/app/dropdown-menu-sub/dropdown-menu-sub.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-sub-content",
+      "type": "registry:component",
+      "title": "Dropdown Menu Sub Content",
+      "files": [
+        {
+          "path": "registry/default/app/dropdown-menu-sub-content/dropdown-menu-sub-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-sub-trigger",
+      "type": "registry:component",
+      "title": "Dropdown Menu Sub Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/dropdown-menu-sub-trigger/dropdown-menu-sub-trigger.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu-trigger",
+      "type": "registry:component",
+      "title": "Dropdown Menu Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/dropdown-menu-trigger/dropdown-menu-trigger.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:component",
+      "title": "Empty",
+      "files": [
+        {
+          "path": "registry/default/app/empty/empty.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "empty-content",
+      "type": "registry:component",
+      "title": "Empty Content",
+      "files": [
+        {
+          "path": "registry/default/app/empty-content/empty-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "empty-description",
+      "type": "registry:component",
+      "title": "Empty Description",
+      "files": [
+        {
+          "path": "registry/default/app/empty-description/empty-description.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "empty-header",
+      "type": "registry:component",
+      "title": "Empty Header",
+      "files": [
+        {
+          "path": "registry/default/app/empty-header/empty-header.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "empty-media",
+      "type": "registry:component",
+      "title": "Empty Media",
+      "files": [
+        {
+          "path": "registry/default/app/empty-media/empty-media.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "empty-title",
+      "type": "registry:component",
+      "title": "Empty Title",
+      "files": [
+        {
+          "path": "registry/default/app/empty-title/empty-title.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:component",
+      "title": "Field",
+      "files": [
+        {
+          "path": "registry/default/app/field/field.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-content",
+      "type": "registry:component",
+      "title": "Field Content",
+      "files": [
+        {
+          "path": "registry/default/app/field-content/field-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-description",
+      "type": "registry:component",
+      "title": "Field Description",
+      "files": [
+        {
+          "path": "registry/default/app/field-description/field-description.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-error",
+      "type": "registry:component",
+      "title": "Field Error",
+      "files": [
+        {
+          "path": "registry/default/app/field-error/field-error.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-group",
+      "type": "registry:component",
+      "title": "Field Group",
+      "files": [
+        {
+          "path": "registry/default/app/field-group/field-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-label",
+      "type": "registry:component",
+      "title": "Field Label",
+      "files": [
+        {
+          "path": "registry/default/app/field-label/field-label.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-legend",
+      "type": "registry:component",
+      "title": "Field Legend",
+      "files": [
+        {
+          "path": "registry/default/app/field-legend/field-legend.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-separator",
+      "type": "registry:component",
+      "title": "Field Separator",
+      "files": [
+        {
+          "path": "registry/default/app/field-separator/field-separator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-set",
+      "type": "registry:component",
+      "title": "Field Set",
+      "files": [
+        {
+          "path": "registry/default/app/field-set/field-set.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "field-title",
+      "type": "registry:component",
+      "title": "Field Title",
+      "files": [
+        {
+          "path": "registry/default/app/field-title/field-title.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:component",
+      "title": "Hover Card",
+      "files": [
+        {
+          "path": "registry/default/app/hover-card/hover-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hover-card-content",
+      "type": "registry:component",
+      "title": "Hover Card Content",
+      "files": [
+        {
+          "path": "registry/default/app/hover-card-content/hover-card-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "hover-card-trigger",
+      "type": "registry:component",
+      "title": "Hover Card Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/hover-card-trigger/hover-card-trigger.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:component",
+      "title": "Input",
+      "files": [
+        {
+          "path": "registry/default/app/input/input.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "input"
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:component",
+      "title": "Input Group",
+      "files": [
+        {
+          "path": "registry/default/app/input-group/input-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "input-group-addon",
+      "type": "registry:component",
+      "title": "Input Group Addon",
+      "files": [
+        {
+          "path": "registry/default/app/input-group-addon/input-group-addon.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "input-group-button",
+      "type": "registry:component",
+      "title": "Input Group Button",
+      "files": [
+        {
+          "path": "registry/default/app/input-group-button/input-group-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "input-group-input",
+      "type": "registry:component",
+      "title": "Input Group Input",
+      "files": [
+        {
+          "path": "registry/default/app/input-group-input/input-group-input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "input-group-text",
+      "type": "registry:component",
+      "title": "Input Group Text",
+      "files": [
+        {
+          "path": "registry/default/app/input-group-text/input-group-text.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "input-group-textarea",
+      "type": "registry:component",
+      "title": "Input Group Textarea",
+      "files": [
+        {
+          "path": "registry/default/app/input-group-textarea/input-group-textarea.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:component",
+      "title": "Input Otp",
+      "files": [
+        {
+          "path": "registry/default/app/input-otp/input-otp.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-group",
+      "type": "registry:component",
+      "title": "Input Otp Group",
+      "files": [
+        {
+          "path": "registry/default/app/input-otp-group/input-otp-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-separator",
+      "type": "registry:component",
+      "title": "Input Otp Separator",
+      "files": [
+        {
+          "path": "registry/default/app/input-otp-separator/input-otp-separator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "input-otp-slot",
+      "type": "registry:component",
+      "title": "Input Otp Slot",
+      "files": [
+        {
+          "path": "registry/default/app/input-otp-slot/input-otp-slot.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:component",
+      "title": "Item",
+      "files": [
+        {
+          "path": "registry/default/app/item/item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "item-actions",
+      "type": "registry:component",
+      "title": "Item Actions",
+      "files": [
+        {
+          "path": "registry/default/app/item-actions/item-actions.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "item-content",
+      "type": "registry:component",
+      "title": "Item Content",
+      "files": [
+        {
+          "path": "registry/default/app/item-content/item-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "item-description",
+      "type": "registry:component",
+      "title": "Item Description",
+      "files": [
+        {
+          "path": "registry/default/app/item-description/item-description.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "item-footer",
+      "type": "registry:component",
+      "title": "Item Footer",
+      "files": [
+        {
+          "path": "registry/default/app/item-footer/item-footer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "item-group",
+      "type": "registry:component",
+      "title": "Item Group",
+      "files": [
+        {
+          "path": "registry/default/app/item-group/item-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "item-header",
+      "type": "registry:component",
+      "title": "Item Header",
+      "files": [
+        {
+          "path": "registry/default/app/item-header/item-header.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "item-media",
+      "type": "registry:component",
+      "title": "Item Media",
+      "files": [
+        {
+          "path": "registry/default/app/item-media/item-media.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "item-separator",
+      "type": "registry:component",
+      "title": "Item Separator",
+      "files": [
+        {
+          "path": "registry/default/app/item-separator/item-separator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "item-title",
+      "type": "registry:component",
+      "title": "Item Title",
+      "files": [
+        {
+          "path": "registry/default/app/item-title/item-title.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:component",
+      "title": "Kbd",
+      "files": [
+        {
+          "path": "registry/default/app/kbd/kbd.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "kbd-group",
+      "type": "registry:component",
+      "title": "Kbd Group",
+      "files": [
+        {
+          "path": "registry/default/app/kbd-group/kbd-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:component",
+      "title": "Label",
+      "files": [
+        {
+          "path": "registry/default/app/label/label.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "label"
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:component",
+      "title": "Menubar",
+      "files": [
+        {
+          "path": "registry/default/app/menubar/menubar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menubar-checkbox-item",
+      "type": "registry:component",
+      "title": "Menubar Checkbox Item",
+      "files": [
+        {
+          "path": "registry/default/app/menubar-checkbox-item/menubar-checkbox-item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menubar-content",
+      "type": "registry:component",
+      "title": "Menubar Content",
+      "files": [
+        {
+          "path": "registry/default/app/menubar-content/menubar-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menubar-group",
+      "type": "registry:component",
+      "title": "Menubar Group",
+      "files": [
+        {
+          "path": "registry/default/app/menubar-group/menubar-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menubar-item",
+      "type": "registry:component",
+      "title": "Menubar Item",
+      "files": [
+        {
+          "path": "registry/default/app/menubar-item/menubar-item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menubar-label",
+      "type": "registry:component",
+      "title": "Menubar Label",
+      "files": [
+        {
+          "path": "registry/default/app/menubar-label/menubar-label.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menubar-menu",
+      "type": "registry:component",
+      "title": "Menubar Menu",
+      "files": [
+        {
+          "path": "registry/default/app/menubar-menu/menubar-menu.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menubar-portal",
+      "type": "registry:component",
+      "title": "Menubar Portal",
+      "files": [
+        {
+          "path": "registry/default/app/menubar-portal/menubar-portal.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menubar-radio-group",
+      "type": "registry:component",
+      "title": "Menubar Radio Group",
+      "files": [
+        {
+          "path": "registry/default/app/menubar-radio-group/menubar-radio-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menubar-radio-item",
+      "type": "registry:component",
+      "title": "Menubar Radio Item",
+      "files": [
+        {
+          "path": "registry/default/app/menubar-radio-item/menubar-radio-item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menubar-separator",
+      "type": "registry:component",
+      "title": "Menubar Separator",
+      "files": [
+        {
+          "path": "registry/default/app/menubar-separator/menubar-separator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menubar-shortcut",
+      "type": "registry:component",
+      "title": "Menubar Shortcut",
+      "files": [
+        {
+          "path": "registry/default/app/menubar-shortcut/menubar-shortcut.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menubar-sub",
+      "type": "registry:component",
+      "title": "Menubar Sub",
+      "files": [
+        {
+          "path": "registry/default/app/menubar-sub/menubar-sub.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menubar-sub-content",
+      "type": "registry:component",
+      "title": "Menubar Sub Content",
+      "files": [
+        {
+          "path": "registry/default/app/menubar-sub-content/menubar-sub-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menubar-sub-trigger",
+      "type": "registry:component",
+      "title": "Menubar Sub Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/menubar-sub-trigger/menubar-sub-trigger.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "menubar-trigger",
+      "type": "registry:component",
+      "title": "Menubar Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/menubar-trigger/menubar-trigger.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "type": "registry:component",
+      "title": "Native Select",
+      "files": [
+        {
+          "path": "registry/default/app/native-select/native-select.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "native-select-opt-group",
+      "type": "registry:component",
+      "title": "Native Select Opt Group",
+      "files": [
+        {
+          "path": "registry/default/app/native-select-opt-group/native-select-opt-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "native-select-option",
+      "type": "registry:component",
+      "title": "Native Select Option",
+      "files": [
+        {
+          "path": "registry/default/app/native-select-option/native-select-option.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:component",
+      "title": "Navigation Menu",
+      "files": [
+        {
+          "path": "registry/default/app/navigation-menu/navigation-menu.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu-content",
+      "type": "registry:component",
+      "title": "Navigation Menu Content",
+      "files": [
+        {
+          "path": "registry/default/app/navigation-menu-content/navigation-menu-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu-indicator",
+      "type": "registry:component",
+      "title": "Navigation Menu Indicator",
+      "files": [
+        {
+          "path": "registry/default/app/navigation-menu-indicator/navigation-menu-indicator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu-item",
+      "type": "registry:component",
+      "title": "Navigation Menu Item",
+      "files": [
+        {
+          "path": "registry/default/app/navigation-menu-item/navigation-menu-item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu-link",
+      "type": "registry:component",
+      "title": "Navigation Menu Link",
+      "files": [
+        {
+          "path": "registry/default/app/navigation-menu-link/navigation-menu-link.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu-list",
+      "type": "registry:component",
+      "title": "Navigation Menu List",
+      "files": [
+        {
+          "path": "registry/default/app/navigation-menu-list/navigation-menu-list.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu-positioner",
+      "type": "registry:component",
+      "title": "Navigation Menu Positioner",
+      "files": [
+        {
+          "path": "registry/default/app/navigation-menu-positioner/navigation-menu-positioner.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu-trigger",
+      "type": "registry:component",
+      "title": "Navigation Menu Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/navigation-menu-trigger/navigation-menu-trigger.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:component",
+      "title": "Pagination",
+      "files": [
+        {
+          "path": "registry/default/app/pagination/pagination.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "pagination-content",
+      "type": "registry:component",
+      "title": "Pagination Content",
+      "files": [
+        {
+          "path": "registry/default/app/pagination-content/pagination-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "pagination-ellipsis",
+      "type": "registry:component",
+      "title": "Pagination Ellipsis",
+      "files": [
+        {
+          "path": "registry/default/app/pagination-ellipsis/pagination-ellipsis.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "pagination-item",
+      "type": "registry:component",
+      "title": "Pagination Item",
+      "files": [
+        {
+          "path": "registry/default/app/pagination-item/pagination-item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "pagination-link",
+      "type": "registry:component",
+      "title": "Pagination Link",
+      "files": [
+        {
+          "path": "registry/default/app/pagination-link/pagination-link.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "pagination-next",
+      "type": "registry:component",
+      "title": "Pagination Next",
+      "files": [
+        {
+          "path": "registry/default/app/pagination-next/pagination-next.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "pagination-previous",
+      "type": "registry:component",
+      "title": "Pagination Previous",
+      "files": [
+        {
+          "path": "registry/default/app/pagination-previous/pagination-previous.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:component",
+      "title": "Popover",
+      "files": [
+        {
+          "path": "registry/default/app/popover/popover.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "popover-content",
+      "type": "registry:component",
+      "title": "Popover Content",
+      "files": [
+        {
+          "path": "registry/default/app/popover-content/popover-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "popover-description",
+      "type": "registry:component",
+      "title": "Popover Description",
+      "files": [
+        {
+          "path": "registry/default/app/popover-description/popover-description.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "popover-header",
+      "type": "registry:component",
+      "title": "Popover Header",
+      "files": [
+        {
+          "path": "registry/default/app/popover-header/popover-header.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "popover-title",
+      "type": "registry:component",
+      "title": "Popover Title",
+      "files": [
+        {
+          "path": "registry/default/app/popover-title/popover-title.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "popover-trigger",
+      "type": "registry:component",
+      "title": "Popover Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/popover-trigger/popover-trigger.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:component",
+      "title": "Progress",
+      "files": [
+        {
+          "path": "registry/default/app/progress/progress.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "progress"
+      ]
+    },
+    {
+      "name": "progress-indicator",
+      "type": "registry:component",
+      "title": "Progress Indicator",
+      "files": [
+        {
+          "path": "registry/default/app/progress-indicator/progress-indicator.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "progress"
+      ]
+    },
+    {
+      "name": "progress-label",
+      "type": "registry:component",
+      "title": "Progress Label",
+      "files": [
+        {
+          "path": "registry/default/app/progress-label/progress-label.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "progress"
+      ]
+    },
+    {
+      "name": "progress-track",
+      "type": "registry:component",
+      "title": "Progress Track",
+      "files": [
+        {
+          "path": "registry/default/app/progress-track/progress-track.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "progress"
+      ]
+    },
+    {
+      "name": "progress-value",
+      "type": "registry:component",
+      "title": "Progress Value",
+      "files": [
+        {
+          "path": "registry/default/app/progress-value/progress-value.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "progress"
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:component",
+      "title": "Radio Group",
+      "files": [
+        {
+          "path": "registry/default/app/radio-group/radio-group.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "radio-group"
+      ]
+    },
+    {
+      "name": "radio-group-item",
+      "type": "registry:component",
+      "title": "Radio Group Item",
+      "files": [
+        {
+          "path": "registry/default/app/radio-group-item/radio-group-item.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "radio-group"
+      ]
+    },
+    {
+      "name": "resizable-handle",
+      "type": "registry:component",
+      "title": "Resizable Handle",
+      "files": [
+        {
+          "path": "registry/default/app/resizable-handle/resizable-handle.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "resizable-panel",
+      "type": "registry:component",
+      "title": "Resizable Panel",
+      "files": [
+        {
+          "path": "registry/default/app/resizable-panel/resizable-panel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "resizable-panel-group",
+      "type": "registry:component",
+      "title": "Resizable Panel Group",
+      "files": [
+        {
+          "path": "registry/default/app/resizable-panel-group/resizable-panel-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:component",
+      "title": "Scroll Area",
+      "files": [
+        {
+          "path": "registry/default/app/scroll-area/scroll-area.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "scroll-bar",
+      "type": "registry:component",
+      "title": "Scroll Bar",
+      "files": [
+        {
+          "path": "registry/default/app/scroll-bar/scroll-bar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:component",
+      "title": "Select",
+      "files": [
+        {
+          "path": "registry/default/app/select/select.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "select-content",
+      "type": "registry:component",
+      "title": "Select Content",
+      "files": [
+        {
+          "path": "registry/default/app/select-content/select-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "select-group",
+      "type": "registry:component",
+      "title": "Select Group",
+      "files": [
+        {
+          "path": "registry/default/app/select-group/select-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "select-item",
+      "type": "registry:component",
+      "title": "Select Item",
+      "files": [
+        {
+          "path": "registry/default/app/select-item/select-item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "select-label",
+      "type": "registry:component",
+      "title": "Select Label",
+      "files": [
+        {
+          "path": "registry/default/app/select-label/select-label.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "select-scroll-down-button",
+      "type": "registry:component",
+      "title": "Select Scroll Down Button",
+      "files": [
+        {
+          "path": "registry/default/app/select-scroll-down-button/select-scroll-down-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "select-scroll-up-button",
+      "type": "registry:component",
+      "title": "Select Scroll Up Button",
+      "files": [
+        {
+          "path": "registry/default/app/select-scroll-up-button/select-scroll-up-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "select-separator",
+      "type": "registry:component",
+      "title": "Select Separator",
+      "files": [
+        {
+          "path": "registry/default/app/select-separator/select-separator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "select-trigger",
+      "type": "registry:component",
+      "title": "Select Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/select-trigger/select-trigger.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "select-value",
+      "type": "registry:component",
+      "title": "Select Value",
+      "files": [
+        {
+          "path": "registry/default/app/select-value/select-value.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:component",
+      "title": "Separator",
+      "files": [
+        {
+          "path": "registry/default/app/separator/separator.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "separator"
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:component",
+      "title": "Sheet",
+      "files": [
+        {
+          "path": "registry/default/app/sheet/sheet.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sheet-close",
+      "type": "registry:component",
+      "title": "Sheet Close",
+      "files": [
+        {
+          "path": "registry/default/app/sheet-close/sheet-close.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sheet-content",
+      "type": "registry:component",
+      "title": "Sheet Content",
+      "files": [
+        {
+          "path": "registry/default/app/sheet-content/sheet-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sheet-description",
+      "type": "registry:component",
+      "title": "Sheet Description",
+      "files": [
+        {
+          "path": "registry/default/app/sheet-description/sheet-description.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sheet-footer",
+      "type": "registry:component",
+      "title": "Sheet Footer",
+      "files": [
+        {
+          "path": "registry/default/app/sheet-footer/sheet-footer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sheet-header",
+      "type": "registry:component",
+      "title": "Sheet Header",
+      "files": [
+        {
+          "path": "registry/default/app/sheet-header/sheet-header.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sheet-title",
+      "type": "registry:component",
+      "title": "Sheet Title",
+      "files": [
+        {
+          "path": "registry/default/app/sheet-title/sheet-title.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sheet-trigger",
+      "type": "registry:component",
+      "title": "Sheet Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/sheet-trigger/sheet-trigger.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:component",
+      "title": "Sidebar",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar/sidebar.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-content",
+      "type": "registry:component",
+      "title": "Sidebar Content",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-content/sidebar-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-footer",
+      "type": "registry:component",
+      "title": "Sidebar Footer",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-footer/sidebar-footer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-group",
+      "type": "registry:component",
+      "title": "Sidebar Group",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-group/sidebar-group.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-group-action",
+      "type": "registry:component",
+      "title": "Sidebar Group Action",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-group-action/sidebar-group-action.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-group-content",
+      "type": "registry:component",
+      "title": "Sidebar Group Content",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-group-content/sidebar-group-content.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-group-label",
+      "type": "registry:component",
+      "title": "Sidebar Group Label",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-group-label/sidebar-group-label.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-header",
+      "type": "registry:component",
+      "title": "Sidebar Header",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-header/sidebar-header.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-input",
+      "type": "registry:component",
+      "title": "Sidebar Input",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-input/sidebar-input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-inset",
+      "type": "registry:component",
+      "title": "Sidebar Inset",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-inset/sidebar-inset.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-menu",
+      "type": "registry:component",
+      "title": "Sidebar Menu",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-menu/sidebar-menu.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-menu-action",
+      "type": "registry:component",
+      "title": "Sidebar Menu Action",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-menu-action/sidebar-menu-action.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-menu-badge",
+      "type": "registry:component",
+      "title": "Sidebar Menu Badge",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-menu-badge/sidebar-menu-badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-menu-button",
+      "type": "registry:component",
+      "title": "Sidebar Menu Button",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-menu-button/sidebar-menu-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-menu-item",
+      "type": "registry:component",
+      "title": "Sidebar Menu Item",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-menu-item/sidebar-menu-item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-menu-skeleton",
+      "type": "registry:component",
+      "title": "Sidebar Menu Skeleton",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-menu-skeleton/sidebar-menu-skeleton.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-menu-sub",
+      "type": "registry:component",
+      "title": "Sidebar Menu Sub",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-menu-sub/sidebar-menu-sub.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-menu-sub-button",
+      "type": "registry:component",
+      "title": "Sidebar Menu Sub Button",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-menu-sub-button/sidebar-menu-sub-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-menu-sub-item",
+      "type": "registry:component",
+      "title": "Sidebar Menu Sub Item",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-menu-sub-item/sidebar-menu-sub-item.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-provider",
+      "type": "registry:component",
+      "title": "Sidebar Provider",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-provider/sidebar-provider.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-rail",
+      "type": "registry:component",
+      "title": "Sidebar Rail",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-rail/sidebar-rail.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-separator",
+      "type": "registry:component",
+      "title": "Sidebar Separator",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-separator/sidebar-separator.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-trigger",
+      "type": "registry:component",
+      "title": "Sidebar Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/sidebar-trigger/sidebar-trigger.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:component",
+      "title": "Skeleton",
+      "files": [
+        {
+          "path": "registry/default/app/skeleton/skeleton.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "skeleton"
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:component",
+      "title": "Slider",
+      "files": [
+        {
+          "path": "registry/default/app/slider/slider.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "slider"
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:component",
+      "title": "Sonner",
+      "files": [
+        {
+          "path": "registry/default/app/sonner/sonner.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "sonner"
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:component",
+      "title": "Spinner",
+      "files": [
+        {
+          "path": "registry/default/app/spinner/spinner.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "spinner"
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:component",
+      "title": "Switch",
+      "files": [
+        {
+          "path": "registry/default/app/switch/switch.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "switch"
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:component",
+      "title": "Table",
+      "files": [
+        {
+          "path": "registry/default/app/table/table.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "table"
+      ]
+    },
+    {
+      "name": "table-body",
+      "type": "registry:component",
+      "title": "Table Body",
+      "files": [
+        {
+          "path": "registry/default/app/table-body/table-body.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "table"
+      ]
+    },
+    {
+      "name": "table-caption",
+      "type": "registry:component",
+      "title": "Table Caption",
+      "files": [
+        {
+          "path": "registry/default/app/table-caption/table-caption.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "table"
+      ]
+    },
+    {
+      "name": "table-cell",
+      "type": "registry:component",
+      "title": "Table Cell",
+      "files": [
+        {
+          "path": "registry/default/app/table-cell/table-cell.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "table"
+      ]
+    },
+    {
+      "name": "table-footer",
+      "type": "registry:component",
+      "title": "Table Footer",
+      "files": [
+        {
+          "path": "registry/default/app/table-footer/table-footer.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "table"
+      ]
+    },
+    {
+      "name": "table-head",
+      "type": "registry:component",
+      "title": "Table Head",
+      "files": [
+        {
+          "path": "registry/default/app/table-head/table-head.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "table"
+      ]
+    },
+    {
+      "name": "table-header",
+      "type": "registry:component",
+      "title": "Table Header",
+      "files": [
+        {
+          "path": "registry/default/app/table-header/table-header.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "table"
+      ]
+    },
+    {
+      "name": "table-row",
+      "type": "registry:component",
+      "title": "Table Row",
+      "files": [
+        {
+          "path": "registry/default/app/table-row/table-row.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "table"
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:component",
+      "title": "Tabs",
+      "files": [
+        {
+          "path": "registry/default/app/tabs/tabs.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "tabs"
+      ]
+    },
+    {
+      "name": "tabs-content",
+      "type": "registry:component",
+      "title": "Tabs Content",
+      "files": [
+        {
+          "path": "registry/default/app/tabs-content/tabs-content.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "tabs"
+      ]
+    },
+    {
+      "name": "tabs-list",
+      "type": "registry:component",
+      "title": "Tabs List",
+      "files": [
+        {
+          "path": "registry/default/app/tabs-list/tabs-list.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "tabs"
+      ]
+    },
+    {
+      "name": "tabs-trigger",
+      "type": "registry:component",
+      "title": "Tabs Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/tabs-trigger/tabs-trigger.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "tabs"
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:component",
+      "title": "Textarea",
+      "files": [
+        {
+          "path": "registry/default/app/textarea/textarea.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "textarea"
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:component",
+      "title": "Toggle",
+      "files": [
+        {
+          "path": "registry/default/app/toggle/toggle.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "toggle"
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:component",
+      "title": "Toggle Group",
+      "files": [
+        {
+          "path": "registry/default/app/toggle-group/toggle-group.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "toggle-group"
+      ]
+    },
+    {
+      "name": "toggle-group-item",
+      "type": "registry:component",
+      "title": "Toggle Group Item",
+      "files": [
+        {
+          "path": "registry/default/app/toggle-group-item/toggle-group-item.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "toggle-group"
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:component",
+      "title": "Tooltip",
+      "files": [
+        {
+          "path": "registry/default/app/tooltip/tooltip.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "tooltip"
+      ]
+    },
+    {
+      "name": "tooltip-content",
+      "type": "registry:component",
+      "title": "Tooltip Content",
+      "files": [
+        {
+          "path": "registry/default/app/tooltip-content/tooltip-content.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "tooltip"
+      ]
+    },
+    {
+      "name": "tooltip-provider",
+      "type": "registry:component",
+      "title": "Tooltip Provider",
+      "files": [
+        {
+          "path": "registry/default/app/tooltip-provider/tooltip-provider.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "tooltip"
+      ]
+    },
+    {
+      "name": "tooltip-trigger",
+      "type": "registry:component",
+      "title": "Tooltip Trigger",
+      "files": [
+        {
+          "path": "registry/default/app/tooltip-trigger/tooltip-trigger.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "tooltip"
       ]
     }
   ]

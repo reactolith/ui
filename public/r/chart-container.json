@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "chart-container",
+  "title": "Chart Container",
+  "registryDependencies": [
+    "chart"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/chart-container/chart-container.tsx",
+      "content": "import { ChartContainer } from \"@/components/ui/chart\"\n\nexport default ChartContainer\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

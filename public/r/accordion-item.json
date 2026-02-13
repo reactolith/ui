@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-item",
+  "title": "Accordion Item",
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/accordion-item/accordion-item.tsx",
+      "content": "import { AccordionItem } from \"@/components/ui/accordion\"\n\nexport default AccordionItem\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-content",
+  "title": "Combobox Content",
+  "files": [
+    {
+      "path": "registry/default/app/combobox-content/combobox-content.tsx",
+      "content": "import { ComboboxContent } from \"@/components/ui/combobox\"\n\nexport default ComboboxContent\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

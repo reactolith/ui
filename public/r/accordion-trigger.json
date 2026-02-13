@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-trigger",
+  "title": "Accordion Trigger",
+  "registryDependencies": [
+    "accordion"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/accordion-trigger/accordion-trigger.tsx",
+      "content": "import { AccordionTrigger } from \"@/components/ui/accordion\"\n\nexport default AccordionTrigger\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sheet-trigger",
+  "title": "Sheet Trigger",
+  "files": [
+    {
+      "path": "registry/default/app/sheet-trigger/sheet-trigger.tsx",
+      "content": "import { SheetTrigger } from \"@/components/ui/sheet\"\n\nexport default SheetTrigger\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

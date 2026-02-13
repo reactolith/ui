@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "aspect-ratio",
+  "title": "Aspect Ratio",
+  "registryDependencies": [
+    "aspect-ratio"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/aspect-ratio/aspect-ratio.tsx",
+      "content": "import { AspectRatio } from \"@/components/ui/aspect-ratio\"\n\nexport default AspectRatio\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

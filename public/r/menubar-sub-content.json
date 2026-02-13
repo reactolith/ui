@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menubar-sub-content",
+  "title": "Menubar Sub Content",
+  "files": [
+    {
+      "path": "registry/default/app/menubar-sub-content/menubar-sub-content.tsx",
+      "content": "import { MenubarSubContent } from \"@/components/ui/menubar\"\n\nexport default MenubarSubContent\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

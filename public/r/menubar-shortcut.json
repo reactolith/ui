@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menubar-shortcut",
+  "title": "Menubar Shortcut",
+  "files": [
+    {
+      "path": "registry/default/app/menubar-shortcut/menubar-shortcut.tsx",
+      "content": "import { MenubarShortcut } from \"@/components/ui/menubar\"\n\nexport default MenubarShortcut\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

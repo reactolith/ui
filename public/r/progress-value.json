@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-value",
+  "title": "Progress Value",
+  "registryDependencies": [
+    "progress"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/progress-value/progress-value.tsx",
+      "content": "import { ProgressValue } from \"@/components/ui/progress\"\n\nexport default ProgressValue\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar-image",
+  "title": "Avatar Image",
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/avatar-image/avatar-image.tsx",
+      "content": "import { AvatarImage } from \"@/components/ui/avatar\"\n\nexport default AvatarImage\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

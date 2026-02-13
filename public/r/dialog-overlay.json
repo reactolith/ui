@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog-overlay",
+  "title": "Dialog Overlay",
+  "files": [
+    {
+      "path": "registry/default/app/dialog-overlay/dialog-overlay.tsx",
+      "content": "import { DialogOverlay } from \"@/components/ui/dialog\"\n\nexport default DialogOverlay\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

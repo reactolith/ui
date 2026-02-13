@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumb-ellipsis",
+  "title": "Breadcrumb Ellipsis",
+  "registryDependencies": [
+    "breadcrumb"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/breadcrumb-ellipsis/breadcrumb-ellipsis.tsx",
+      "content": "import { BreadcrumbEllipsis } from \"@/components/ui/breadcrumb\"\n\nexport default BreadcrumbEllipsis\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

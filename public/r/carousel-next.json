@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "carousel-next",
+  "title": "Carousel Next",
+  "registryDependencies": [
+    "carousel"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/carousel-next/carousel-next.tsx",
+      "content": "import { CarouselNext } from \"@/components/ui/carousel\"\n\nexport default CarouselNext\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

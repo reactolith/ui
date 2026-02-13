@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip-provider",
+  "title": "Tooltip Provider",
+  "registryDependencies": [
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/tooltip-provider/tooltip-provider.tsx",
+      "content": "import { TooltipProvider } from \"@/components/ui/tooltip\"\n\nexport default TooltipProvider\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

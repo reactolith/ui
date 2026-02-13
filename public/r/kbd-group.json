@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-group",
+  "title": "Kbd Group",
+  "files": [
+    {
+      "path": "registry/default/app/kbd-group/kbd-group.tsx",
+      "content": "import { KbdGroup } from \"@/components/ui/kbd\"\n\nexport default KbdGroup\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

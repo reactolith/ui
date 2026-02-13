@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-body",
+  "title": "Table Body",
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/table-body/table-body.tsx",
+      "content": "import { TableBody } from \"@/components/ui/table\"\n\nexport default TableBody\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

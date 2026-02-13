@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-set",
+  "title": "Field Set",
+  "files": [
+    {
+      "path": "registry/default/app/field-set/field-set.tsx",
+      "content": "import { FieldSet } from \"@/components/ui/field\"\n\nexport default FieldSet\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

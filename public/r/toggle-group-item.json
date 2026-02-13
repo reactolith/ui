@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle-group-item",
+  "title": "Toggle Group Item",
+  "registryDependencies": [
+    "toggle-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/toggle-group-item/toggle-group-item.tsx",
+      "content": "import { ToggleGroupItem } from \"@/components/ui/toggle-group\"\n\nexport default ToggleGroupItem\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

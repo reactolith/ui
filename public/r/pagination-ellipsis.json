@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination-ellipsis",
+  "title": "Pagination Ellipsis",
+  "files": [
+    {
+      "path": "registry/default/app/pagination-ellipsis/pagination-ellipsis.tsx",
+      "content": "import { PaginationEllipsis } from \"@/components/ui/pagination\"\n\nexport default PaginationEllipsis\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

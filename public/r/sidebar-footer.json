@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-footer",
+  "title": "Sidebar Footer",
+  "files": [
+    {
+      "path": "registry/default/app/sidebar-footer/sidebar-footer.tsx",
+      "content": "import { SidebarFooter } from \"@/components/ui/sidebar\"\n\nexport default SidebarFooter\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

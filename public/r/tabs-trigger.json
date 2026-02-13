@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs-trigger",
+  "title": "Tabs Trigger",
+  "registryDependencies": [
+    "tabs"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/tabs-trigger/tabs-trigger.tsx",
+      "content": "import { TabsTrigger } from \"@/components/ui/tabs\"\n\nexport default TabsTrigger\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

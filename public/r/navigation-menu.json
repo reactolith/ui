@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "navigation-menu",
+  "title": "Navigation Menu",
+  "files": [
+    {
+      "path": "registry/default/app/navigation-menu/navigation-menu.tsx",
+      "content": "import { NavigationMenu } from \"@/components/ui/navigation-menu\"\n\nexport default NavigationMenu\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "carousel-previous",
+  "title": "Carousel Previous",
+  "registryDependencies": [
+    "carousel"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/carousel-previous/carousel-previous.tsx",
+      "content": "import { CarouselPrevious } from \"@/components/ui/carousel\"\n\nexport default CarouselPrevious\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

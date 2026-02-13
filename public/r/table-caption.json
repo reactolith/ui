@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-caption",
+  "title": "Table Caption",
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/table-caption/table-caption.tsx",
+      "content": "import { TableCaption } from \"@/components/ui/table\"\n\nexport default TableCaption\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

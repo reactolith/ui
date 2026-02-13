@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-text",
+  "title": "Button Group Text",
+  "registryDependencies": [
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/button-group-text/button-group-text.tsx",
+      "content": "import { ButtonGroupText } from \"@/components/ui/button-group\"\n\nexport default ButtonGroupText\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

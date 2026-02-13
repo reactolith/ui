@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "scroll-area",
+  "title": "Scroll Area",
+  "files": [
+    {
+      "path": "registry/default/app/scroll-area/scroll-area.tsx",
+      "content": "import { ScrollArea } from \"@/components/ui/scroll-area\"\n\nexport default ScrollArea\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

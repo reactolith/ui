@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-group-action",
+  "title": "Sidebar Group Action",
+  "files": [
+    {
+      "path": "registry/default/app/sidebar-group-action/sidebar-group-action.tsx",
+      "content": "import { SidebarGroupAction } from \"@/components/ui/sidebar\"\n\nexport default SidebarGroupAction\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

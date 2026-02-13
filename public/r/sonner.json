@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sonner",
+  "title": "Sonner",
+  "registryDependencies": [
+    "sonner"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/sonner/sonner.tsx",
+      "content": "import { Toaster } from \"@/components/ui/sonner\"\n\nexport default Toaster\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-media",
+  "title": "Item Media",
+  "files": [
+    {
+      "path": "registry/default/app/item-media/item-media.tsx",
+      "content": "import { ItemMedia } from \"@/components/ui/item\"\n\nexport default ItemMedia\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "command-dialog",
+  "title": "Command Dialog",
+  "files": [
+    {
+      "path": "registry/default/app/command-dialog/command-dialog.tsx",
+      "content": "import { CommandDialog } from \"@/components/ui/command\"\n\nexport default CommandDialog\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

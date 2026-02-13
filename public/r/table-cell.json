@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-cell",
+  "title": "Table Cell",
+  "registryDependencies": [
+    "table"
+  ],
+  "files": [
+    {
+      "path": "registry/default/app/table-cell/table-cell.tsx",
+      "content": "import { TableCell } from \"@/components/ui/table\"\n\nexport default TableCell\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

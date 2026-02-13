@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-title",
+  "title": "Item Title",
+  "files": [
+    {
+      "path": "registry/default/app/item-title/item-title.tsx",
+      "content": "import { ItemTitle } from \"@/components/ui/item\"\n\nexport default ItemTitle\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}
