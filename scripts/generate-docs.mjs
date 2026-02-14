@@ -1217,8 +1217,8 @@ const components = [
       { tag: "ui-slider", props: [{ name: "value", type: "number[]", default: "—", description: "Controlled value." }, { name: "defaultValue", type: "number[]", default: "[0]", description: "Default value." }, { name: "min", type: "number", default: "0", description: "Minimum value." }, { name: "max", type: "number", default: "100", description: "Maximum value." }, { name: "step", type: "number", default: "1", description: "Step increment." }] },
     ],
     example: `<div class="space-y-4 max-w-md">
-  <ui-slider value="33"></ui-slider>
-  <ui-slider value="66"></ui-slider>
+  <ui-slider json-default-value="[33]"></ui-slider>
+  <ui-slider json-default-value="[66]"></ui-slider>
 </div>`,
   },
   {
@@ -1617,7 +1617,7 @@ function componentPage(comp) {
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
-              <div class="rounded-lg border p-6 bg-background">
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto">
                 ${comp.example}
               </div>
             </section>
