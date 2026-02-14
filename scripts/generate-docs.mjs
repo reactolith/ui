@@ -1553,9 +1553,11 @@ function pageShell(title, activeSlug, content, depth = 0) {
     ${themeInitScript}
 </head>
 <body class="style-vega">
+<div id="reactolith-app">
 <ui-docs-layout page="${activeSlug}" base="${base}">
     ${content}
 </ui-docs-layout>
+</div>
 </body>
 </html>
 `;
