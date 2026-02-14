@@ -1,5 +1,6 @@
 import * as React from "react";
 import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
+import { useCloseOverlay } from "@/registry/default/lib/close-overlay";
 
 type UiDropdownMenuItemProps =
     Omit<React.ComponentProps<typeof DropdownMenuItem>, "render"> & {
@@ -11,6 +12,8 @@ const UiDropdownMenuItem = React.forwardRef<
     HTMLAnchorElement | HTMLDivElement,
     UiDropdownMenuItemProps
 >(({ href, children, ...props }, ref) => {
+    const closeOverlay = useCloseOverlay();
+
     if (href) {
         return (
             <DropdownMenuItem
@@ -20,6 +23,10 @@ const UiDropdownMenuItem = React.forwardRef<
                         {...itemProps}
                         ref={ref as React.Ref<HTMLAnchorElement>}
                         href={href}
+                        onClick={(e) => {
+                            (itemProps as Record<string, unknown>).onClick?.(e);
+                            closeOverlay?.();
+                        }}
                     >
                         {children}
                     </a>
