@@ -30,11 +30,13 @@ function Toggle({
   className,
   variant = "default",
   size = "default",
+  href,
   ...props
-}: TogglePrimitive.Props & VariantProps<typeof toggleVariants>) {
+}: TogglePrimitive.Props & VariantProps<typeof toggleVariants> & { href?: string }) {
   return (
     <TogglePrimitive
       data-slot="toggle"
+      {...(href != null ? { render: <a href={href} /> } : {})}
       className={cn(toggleVariants({ variant, size, className }))}
       {...props}
     />

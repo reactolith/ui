@@ -147,8 +147,15 @@ function CommandSeparator({
 function CommandItem({
   className,
   children,
+  href,
   ...props
-}: React.ComponentProps<typeof CommandPrimitive.Item>) {
+}: React.ComponentProps<typeof CommandPrimitive.Item> & { href?: string }) {
+  const content = (
+    <>
+      {children}
+      <CheckIcon className="cn-command-item-indicator ml-auto opacity-0 group-has-data-[slot=command-shortcut]/command-item:hidden group-data-[checked=true]/command-item:opacity-100" />
+    </>
+  )
   return (
     <CommandPrimitive.Item
       data-slot="command-item"
@@ -158,8 +165,13 @@ function CommandItem({
       )}
       {...props}
     >
-      {children}
-      <CheckIcon className="cn-command-item-indicator ml-auto opacity-0 group-has-data-[slot=command-shortcut]/command-item:hidden group-data-[checked=true]/command-item:opacity-100" />
+      {href != null ? (
+        <a href={href} data-slot="command-item-link" className="cn-command-item-link contents">
+          {content}
+        </a>
+      ) : (
+        content
+      )}
     </CommandPrimitive.Item>
   )
 }
