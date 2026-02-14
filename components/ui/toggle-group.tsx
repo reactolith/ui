@@ -61,15 +61,13 @@ function ToggleGroupItem({
   children,
   variant = "default",
   size = "default",
-  href,
   ...props
-}: TogglePrimitive.Props & VariantProps<typeof toggleVariants> & { href?: string }) {
+}: TogglePrimitive.Props & VariantProps<typeof toggleVariants>) {
   const context = React.useContext(ToggleGroupContext)
 
   return (
     <TogglePrimitive
       data-slot="toggle-group-item"
-      {...(href != null ? { render: <a href={href} /> } : {})}
       data-variant={context.variant || variant}
       data-size={context.size || size}
       data-spacing={context.spacing}
