@@ -511,12 +511,15 @@ function SidebarMenuButton({
     isActive?: boolean
     tooltip?: string | React.ComponentProps<typeof TooltipContent>
   } & VariantProps<typeof sidebarMenuButtonVariants>) {
-  const { isMobile, state } = useSidebar()
+  const { isMobile, state, setOpenMobile } = useSidebar()
   const comp = useRender({
     defaultTagName: "button",
     props: mergeProps<"button">(
       {
         className: cn(sidebarMenuButtonVariants({ variant, size }), className),
+        onClick: () => {
+          if (isMobile) setOpenMobile(false)
+        },
       },
       props
     ),
@@ -673,6 +676,7 @@ function SidebarMenuSubButton({
     size?: "sm" | "md"
     isActive?: boolean
   }) {
+  const { isMobile, setOpenMobile } = useSidebar()
   return useRender({
     defaultTagName: "a",
     props: mergeProps<"a">(
@@ -681,6 +685,9 @@ function SidebarMenuSubButton({
           "cn-sidebar-menu-sub-button flex min-w-0 -translate-x-px items-center overflow-hidden outline-hidden group-data-[collapsible=icon]:hidden disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 [&>span:last-child]:truncate [&>svg]:shrink-0",
           className
         ),
+        onClick: () => {
+          if (isMobile) setOpenMobile(false)
+        },
       },
       props
     ),
