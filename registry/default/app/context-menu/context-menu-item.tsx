@@ -1,5 +1,6 @@
 import * as React from "react";
 import { ContextMenuItem } from "@/components/ui/context-menu";
+import { useCloseOverlay } from "@/registry/default/lib/close-overlay";
 
 type UiContextMenuItemProps =
     Omit<React.ComponentProps<typeof ContextMenuItem>, "render"> & {
@@ -11,6 +12,8 @@ const UiContextMenuItem = React.forwardRef<
     HTMLAnchorElement | HTMLDivElement,
     UiContextMenuItemProps
 >(({ href, children, ...props }, ref) => {
+    const closeOverlay = useCloseOverlay();
+
     if (href) {
         return (
             <ContextMenuItem
@@ -20,6 +23,10 @@ const UiContextMenuItem = React.forwardRef<
                         {...itemProps}
                         ref={ref as React.Ref<HTMLAnchorElement>}
                         href={href}
+                        onClick={(e) => {
+                            (itemProps as Record<string, unknown>).onClick?.(e);
+                            closeOverlay?.();
+                        }}
                     >
                         {children}
                     </a>
