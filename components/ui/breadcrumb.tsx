@@ -10,7 +10,7 @@ function Breadcrumb({ className, ...props }: React.ComponentProps<"nav">) {
     <nav
       aria-label="breadcrumb"
       data-slot="breadcrumb"
-      className={cn("cn-breadcrumb", className)}
+      className={cn(className)}
       {...props}
     />
   )
@@ -21,7 +21,7 @@ function BreadcrumbList({ className, ...props }: React.ComponentProps<"ol">) {
     <ol
       data-slot="breadcrumb-list"
       className={cn(
-        "cn-breadcrumb-list flex flex-wrap items-center wrap-break-word",
+        "text-muted-foreground gap-1.5 text-sm sm:gap-2.5 flex flex-wrap items-center wrap-break-word",
         className
       )}
       {...props}
@@ -33,7 +33,7 @@ function BreadcrumbItem({ className, ...props }: React.ComponentProps<"li">) {
   return (
     <li
       data-slot="breadcrumb-item"
-      className={cn("cn-breadcrumb-item inline-flex items-center", className)}
+      className={cn("gap-1.5 inline-flex items-center", className)}
       {...props}
     />
   )
@@ -48,7 +48,7 @@ function BreadcrumbLink({
     defaultTagName: "a",
     props: mergeProps<"a">(
       {
-        className: cn("cn-breadcrumb-link", className),
+        className: cn("hover:text-foreground transition-colors", className),
       },
       props
     ),
@@ -66,7 +66,7 @@ function BreadcrumbPage({ className, ...props }: React.ComponentProps<"span">) {
       role="link"
       aria-disabled="true"
       aria-current="page"
-      className={cn("cn-breadcrumb-page", className)}
+      className={cn("text-foreground font-normal", className)}
       {...props}
     />
   )
@@ -82,11 +82,11 @@ function BreadcrumbSeparator({
       data-slot="breadcrumb-separator"
       role="presentation"
       aria-hidden="true"
-      className={cn("cn-breadcrumb-separator", className)}
+      className={cn("[&>svg]:size-3.5", className)}
       {...props}
     >
       {children ?? (
-        <ChevronRightIcon className="cn-rtl-flip" />
+        <ChevronRightIcon />
       )}
     </li>
   )
@@ -102,12 +102,13 @@ function BreadcrumbEllipsis({
       role="presentation"
       aria-hidden="true"
       className={cn(
-        "cn-breadcrumb-ellipsis flex items-center justify-center",
+        "size-5 [&>svg]:size-4 flex items-center justify-center",
         className
       )}
       {...props}
     >
-      <MoreHorizontalIcon />
+      <MoreHorizontalIcon
+      />
       <span className="sr-only">More</span>
     </span>
   )
