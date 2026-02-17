@@ -31,13 +31,13 @@
               <div class="rounded-lg border p-6 bg-background overflow-x-auto">
                 <ui-chart-container json-config='{"desktop":{"label":"Desktop","color":"hsl(var(--chart-1))"},"mobile":{"label":"Mobile","color":"hsl(var(--chart-2))"}}'>
   <ui-bar-chart json-data='[{"month":"Jan","desktop":186,"mobile":80},{"month":"Feb","desktop":305,"mobile":200},{"month":"Mar","desktop":237,"mobile":120}]'>
-    <ui-cartesian-grid vertical="false" />
-    <ui-x-axis dataKey="month" tickLine="false" axisLine="false" tickMargin="8" />
+    <ui-cartesian-grid json-vertical="false" />
+    <ui-x-axis dataKey="month" json-tickLine="false" json-axisLine="false" json-tickMargin="8" />
     <ui-chart-tooltip>
-      <ui-chart-tooltip-content slot="content" />
+      <ui-chart-tooltip-content />
     </ui-chart-tooltip>
-    <ui-bar dataKey="desktop" fill="var(--color-desktop)" radius="4" />
-    <ui-bar dataKey="mobile" fill="var(--color-mobile)" radius="4" />
+    <ui-bar dataKey="desktop" fill="var(--color-desktop)" json-radius="4" />
+    <ui-bar dataKey="mobile" fill="var(--color-mobile)" json-radius="4" />
   </ui-bar-chart>
 </ui-chart-container>
               </div>
@@ -48,13 +48,13 @@
               <div class="rounded-lg border bg-muted/30 overflow-x-auto">
                 <pre class="p-4 text-sm"><code>&lt;ui-chart-container json-config='{&quot;desktop&quot;:{&quot;label&quot;:&quot;Desktop&quot;,&quot;color&quot;:&quot;hsl(var(--chart-1))&quot;},&quot;mobile&quot;:{&quot;label&quot;:&quot;Mobile&quot;,&quot;color&quot;:&quot;hsl(var(--chart-2))&quot;}}'&gt;
   &lt;ui-bar-chart json-data='[{&quot;month&quot;:&quot;Jan&quot;,&quot;desktop&quot;:186,&quot;mobile&quot;:80},{&quot;month&quot;:&quot;Feb&quot;,&quot;desktop&quot;:305,&quot;mobile&quot;:200},{&quot;month&quot;:&quot;Mar&quot;,&quot;desktop&quot;:237,&quot;mobile&quot;:120}]'&gt;
-    &lt;ui-cartesian-grid vertical=&quot;false&quot; /&gt;
-    &lt;ui-x-axis dataKey=&quot;month&quot; tickLine=&quot;false&quot; axisLine=&quot;false&quot; tickMargin=&quot;8&quot; /&gt;
+    &lt;ui-cartesian-grid json-vertical=&quot;false&quot; /&gt;
+    &lt;ui-x-axis dataKey=&quot;month&quot; json-tickLine=&quot;false&quot; json-axisLine=&quot;false&quot; json-tickMargin=&quot;8&quot; /&gt;
     &lt;ui-chart-tooltip&gt;
-      &lt;ui-chart-tooltip-content slot=&quot;content&quot; /&gt;
+      &lt;ui-chart-tooltip-content /&gt;
     &lt;/ui-chart-tooltip&gt;
-    &lt;ui-bar dataKey=&quot;desktop&quot; fill=&quot;var(--color-desktop)&quot; radius=&quot;4&quot; /&gt;
-    &lt;ui-bar dataKey=&quot;mobile&quot; fill=&quot;var(--color-mobile)&quot; radius=&quot;4&quot; /&gt;
+    &lt;ui-bar dataKey=&quot;desktop&quot; fill=&quot;var(--color-desktop)&quot; json-radius=&quot;4&quot; /&gt;
+    &lt;ui-bar dataKey=&quot;mobile&quot; fill=&quot;var(--color-mobile)&quot; json-radius=&quot;4&quot; /&gt;
   &lt;/ui-bar-chart&gt;
 &lt;/ui-chart-container&gt;</code></pre>
               </div>
