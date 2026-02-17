@@ -34,3 +34,8 @@ Navigation links inside overlays (sidebars, sheets, dropdowns, popovers, drawers
 - If the component is an **overlay container**: wrap children with `<CloseOverlayProvider onClose={...}>` using the `onOpenChange` prop.
 - If the component is an **item with `href`**: call `useCloseOverlay()` and invoke it in the click handler.
 - Import from `@/registry/default/lib/close-overlay`.
+
+## When working on registry components
+
+- Execute `npx generate-web-types --components registry/default/app/ --prefix ui-` to generate a web-types-json for all components with all props
+

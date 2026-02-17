@@ -29,14 +29,26 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto">
-                <p class="text-sm text-muted-foreground">Combobox requires JavaScript for data binding. See the <a href="https://ui.shadcn.com/docs/components/base/combobox" class="underline">shadcn/ui combobox docs</a> for examples.</p>
+                <ui-combobox json-items='[{"value":"react","label":"React"},{"value":"vue","label":"Vue.js"},{"value":"angular","label":"Angular"},{"value":"svelte","label":"Svelte"}]'>
+  <ui-combobox-input placeholder="Select framework..." showClear></ui-combobox-input>
+  <ui-combobox-content>
+    <ui-combobox-empty>No framework found.</ui-combobox-empty>
+    <ui-combobox-list></ui-combobox-list>
+  </ui-combobox-content>
+</ui-combobox>
               </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto">
-                <pre class="p-4 text-sm"><code>&lt;p class=&quot;text-sm text-muted-foreground&quot;&gt;Combobox requires JavaScript for data binding. See the &lt;a href=&quot;https://ui.shadcn.com/docs/components/base/combobox&quot; class=&quot;underline&quot;&gt;shadcn/ui combobox docs&lt;/a&gt; for examples.&lt;/p&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;ui-combobox json-items='[{&quot;value&quot;:&quot;react&quot;,&quot;label&quot;:&quot;React&quot;},{&quot;value&quot;:&quot;vue&quot;,&quot;label&quot;:&quot;Vue.js&quot;},{&quot;value&quot;:&quot;angular&quot;,&quot;label&quot;:&quot;Angular&quot;},{&quot;value&quot;:&quot;svelte&quot;,&quot;label&quot;:&quot;Svelte&quot;}]'&gt;
+  &lt;ui-combobox-input placeholder=&quot;Select framework...&quot; showClear&gt;&lt;/ui-combobox-input&gt;
+  &lt;ui-combobox-content&gt;
+    &lt;ui-combobox-empty&gt;No framework found.&lt;/ui-combobox-empty&gt;
+    &lt;ui-combobox-list&gt;&lt;/ui-combobox-list&gt;
+  &lt;/ui-combobox-content&gt;
+&lt;/ui-combobox&gt;</code></pre>
               </div>
             </section>
 
@@ -51,99 +63,25 @@
             <div class="mt-6">
               <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-combobox&gt;</code></h3>
               <div class="overflow-x-auto">
-                <table class="w-full text-sm">
-                  <thead>
-                    <tr class="border-b">
-                      <th class="text-left py-2 pr-4 font-medium">Prop</th>
-                      <th class="text-left py-2 pr-4 font-medium">Type</th>
-                      <th class="text-left py-2 pr-4 font-medium">Default</th>
-                      <th class="text-left py-2 font-medium">Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b">
-                      <td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">open</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td>
-                      <td class="py-2 text-muted-foreground">Controlled open state.</td>
-                    </tr>
-                    <tr class="border-b">
-                      <td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td>
-                      <td class="py-2 text-muted-foreground">The selected value.</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">open</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Controlled open state.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The selected value.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">items</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string[] | {value: string, label: string}[]</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Items for filtering/search. Use json-items in HTML. When provided, ui-combobox-list auto-renders filtered items.</td></tr></tbody></table>
               </div>
             </div>
             <div class="mt-6">
               <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-combobox-value&gt;</code></h3>
               <div class="overflow-x-auto">
-                <table class="w-full text-sm">
-                  <thead>
-                    <tr class="border-b">
-                      <th class="text-left py-2 pr-4 font-medium">Prop</th>
-                      <th class="text-left py-2 pr-4 font-medium">Type</th>
-                      <th class="text-left py-2 pr-4 font-medium">Default</th>
-                      <th class="text-left py-2 font-medium">Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b">
-                      <td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">placeholder</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td>
-                      <td class="py-2 text-muted-foreground">Placeholder text when no value is selected.</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">placeholder</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Placeholder text when no value is selected.</td></tr></tbody></table>
               </div>
             </div>
             <div class="mt-6">
               <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-combobox-input&gt;</code></h3>
               <div class="overflow-x-auto">
-                <table class="w-full text-sm">
-                  <thead>
-                    <tr class="border-b">
-                      <th class="text-left py-2 pr-4 font-medium">Prop</th>
-                      <th class="text-left py-2 pr-4 font-medium">Type</th>
-                      <th class="text-left py-2 pr-4 font-medium">Default</th>
-                      <th class="text-left py-2 font-medium">Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b">
-                      <td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">placeholder</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td>
-                      <td class="py-2 text-muted-foreground">Input placeholder text.</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">placeholder</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Input placeholder text.</td></tr></tbody></table>
               </div>
             </div>
             <div class="mt-6">
               <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-combobox-item&gt;</code></h3>
               <div class="overflow-x-auto">
-                <table class="w-full text-sm">
-                  <thead>
-                    <tr class="border-b">
-                      <th class="text-left py-2 pr-4 font-medium">Prop</th>
-                      <th class="text-left py-2 pr-4 font-medium">Type</th>
-                      <th class="text-left py-2 pr-4 font-medium">Default</th>
-                      <th class="text-left py-2 font-medium">Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b">
-                      <td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td>
-                      <td class="py-2 text-muted-foreground">The value of the item.</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The value of the item.</td></tr></tbody></table>
               </div>
             </div></section>
 

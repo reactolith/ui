@@ -333,13 +333,33 @@ const components = [
     category: "Data Display",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/chart",
     subComponents: [
-      { tag: "ui-chart-container", props: [{ name: "config", type: "ChartConfig", default: "—", description: "Chart configuration object." }] },
+      { tag: "ui-chart-container", props: [{ name: "config", type: "ChartConfig", default: "—", description: "Chart configuration object. Use json-config for HTML." }] },
       { tag: "ui-chart-tooltip", props: [] },
       { tag: "ui-chart-tooltip-content", props: [{ name: "hideLabel", type: "boolean", default: "false", description: "Hide the label in the tooltip." }, { name: "hideIndicator", type: "boolean", default: "false", description: "Hide the indicator in the tooltip." }] },
       { tag: "ui-chart-legend", props: [] },
       { tag: "ui-chart-legend-content", props: [] },
+      { tag: "ui-bar-chart", props: [{ name: "data", type: "object[]", default: "—", description: "Chart data array. Use json-data for HTML." }] },
+      { tag: "ui-line-chart", props: [{ name: "data", type: "object[]", default: "—", description: "Chart data array. Use json-data for HTML." }] },
+      { tag: "ui-area-chart", props: [{ name: "data", type: "object[]", default: "—", description: "Chart data array. Use json-data for HTML." }] },
+      { tag: "ui-pie-chart", props: [] },
+      { tag: "ui-radar-chart", props: [] },
+      { tag: "ui-radial-bar-chart", props: [] },
+      { tag: "ui-bar", props: [{ name: "dataKey", type: "string", default: "—", description: "The key of data for the bar." }, { name: "fill", type: "string", default: "—", description: "Fill color." }, { name: "radius", type: "number", default: "—", description: "Border radius." }] },
+      { tag: "ui-line", props: [{ name: "dataKey", type: "string", default: "—", description: "The key of data for the line." }, { name: "stroke", type: "string", default: "—", description: "Stroke color." }] },
+      { tag: "ui-area", props: [{ name: "dataKey", type: "string", default: "—", description: "The key of data for the area." }, { name: "fill", type: "string", default: "—", description: "Fill color." }, { name: "stroke", type: "string", default: "—", description: "Stroke color." }] },
+      { tag: "ui-pie", props: [{ name: "dataKey", type: "string", default: "—", description: "The key of data for the pie." }, { name: "data", type: "object[]", default: "—", description: "Pie data array. Use json-data for HTML." }] },
+      { tag: "ui-radar", props: [{ name: "dataKey", type: "string", default: "—", description: "The key of data for the radar." }] },
+      { tag: "ui-radial-bar", props: [{ name: "dataKey", type: "string", default: "—", description: "The key of data for the radial bar." }] },
+      { tag: "ui-x-axis", props: [{ name: "dataKey", type: "string", default: "—", description: "The key for axis labels." }] },
+      { tag: "ui-y-axis", props: [] },
+      { tag: "ui-cartesian-grid", props: [{ name: "vertical", type: "boolean", default: "true", description: "Show vertical grid lines." }, { name: "horizontal", type: "boolean", default: "true", description: "Show horizontal grid lines." }] },
+      { tag: "ui-polar-grid", props: [] },
+      { tag: "ui-polar-angle-axis", props: [{ name: "dataKey", type: "string", default: "—", description: "The key for angle axis labels." }] },
+      { tag: "ui-polar-radius-axis", props: [] },
+      { tag: "ui-cell", props: [{ name: "fill", type: "string", default: "—", description: "Fill color for the cell." }] },
+      { tag: "ui-label-list", props: [{ name: "dataKey", type: "string", default: "—", description: "The key of data for labels." }, { name: "position", type: "string", default: "—", description: "Label position." }] },
     ],
-    example: `<p class="text-sm text-muted-foreground">Charts require JavaScript configuration with Recharts. See the <a href="https://ui.shadcn.com/docs/components/base/chart" class="underline">shadcn/ui chart docs</a> for full examples.</p>`,
+    example: `<ui-chart-container json-config='{"desktop":{"label":"Desktop","color":"hsl(var(--chart-1))"},"mobile":{"label":"Mobile","color":"hsl(var(--chart-2))"}}'>\n  <ui-bar-chart json-data='[{"month":"Jan","desktop":186,"mobile":80},{"month":"Feb","desktop":305,"mobile":200},{"month":"Mar","desktop":237,"mobile":120}]'>\n    <ui-cartesian-grid vertical="false" />\n    <ui-x-axis dataKey="month" tickLine="false" axisLine="false" tickMargin="8" />\n    <ui-chart-tooltip>\n      <ui-chart-tooltip-content slot="content" />\n    </ui-chart-tooltip>\n    <ui-bar dataKey="desktop" fill="var(--color-desktop)" radius="4" />\n    <ui-bar dataKey="mobile" fill="var(--color-mobile)" radius="4" />\n  </ui-bar-chart>\n</ui-chart-container>`,
   },
   {
     name: "Checkbox",
@@ -353,15 +373,15 @@ const components = [
     example: `<div class="space-y-4">
   <div class="flex items-center gap-3">
     <ui-checkbox id="terms"></ui-checkbox>
-    <ui-label>Accept terms and conditions</ui-label>
+    <ui-label for="terms">Accept terms and conditions</ui-label>
   </div>
   <div class="flex items-center gap-3">
     <ui-checkbox id="newsletter" defaultChecked></ui-checkbox>
-    <ui-label>Subscribe to newsletter</ui-label>
+    <ui-label for="newsletter">Subscribe to newsletter</ui-label>
   </div>
   <div class="flex items-center gap-3">
-    <ui-checkbox disabled></ui-checkbox>
-    <ui-label>Disabled checkbox</ui-label>
+    <ui-checkbox id="disabled-cb" disabled></ui-checkbox>
+    <ui-label for="disabled-cb">Disabled checkbox</ui-label>
   </div>
 </div>`,
   },
@@ -397,7 +417,7 @@ const components = [
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/combobox",
     subComponents: [
-      { tag: "ui-combobox", props: [{ name: "open", type: "boolean", default: "—", description: "Controlled open state." }, { name: "value", type: "string", default: "—", description: "The selected value." }] },
+      { tag: "ui-combobox", props: [{ name: "open", type: "boolean", default: "—", description: "Controlled open state." }, { name: "value", type: "string", default: "—", description: "The selected value." }, { name: "items", type: 'string[] | {value: string, label: string}[]', default: "—", description: "Items for filtering/search. Use json-items in HTML. When provided, ui-combobox-list auto-renders filtered items." }] },
       { tag: "ui-combobox-trigger", props: [] },
       { tag: "ui-combobox-value", props: [{ name: "placeholder", type: "string", default: "—", description: "Placeholder text when no value is selected." }] },
       { tag: "ui-combobox-input", props: [{ name: "placeholder", type: "string", default: "—", description: "Input placeholder text." }] },
@@ -413,7 +433,13 @@ const components = [
       { tag: "ui-combobox-chips-input", props: [] },
       { tag: "ui-combobox-chip", props: [] },
     ],
-    example: `<p class="text-sm text-muted-foreground">Combobox requires JavaScript for data binding. See the <a href="https://ui.shadcn.com/docs/components/base/combobox" class="underline">shadcn/ui combobox docs</a> for examples.</p>`,
+    example: `<ui-combobox json-items='[{"value":"react","label":"React"},{"value":"vue","label":"Vue.js"},{"value":"angular","label":"Angular"},{"value":"svelte","label":"Svelte"}]'>
+  <ui-combobox-input placeholder="Select framework..." showClear></ui-combobox-input>
+  <ui-combobox-content>
+    <ui-combobox-empty>No framework found.</ui-combobox-empty>
+    <ui-combobox-list></ui-combobox-list>
+  </ui-combobox-content>
+</ui-combobox>`,
   },
   {
     name: "Command",
@@ -1050,15 +1076,33 @@ const components = [
     <h4 class="mb-4 text-sm font-medium leading-none">Tags</h4>
     <div class="text-sm">v1.0.0</div>
     <ui-separator class="my-2"></ui-separator>
+    <div class="text-sm">v1.0.1</div>
+    <ui-separator class="my-2"></ui-separator>
     <div class="text-sm">v1.1.0</div>
     <ui-separator class="my-2"></ui-separator>
     <div class="text-sm">v1.2.0</div>
+    <ui-separator class="my-2"></ui-separator>
+    <div class="text-sm">v1.2.1</div>
     <ui-separator class="my-2"></ui-separator>
     <div class="text-sm">v1.3.0</div>
     <ui-separator class="my-2"></ui-separator>
     <div class="text-sm">v1.4.0</div>
     <ui-separator class="my-2"></ui-separator>
+    <div class="text-sm">v1.4.1</div>
+    <ui-separator class="my-2"></ui-separator>
+    <div class="text-sm">v1.5.0</div>
+    <ui-separator class="my-2"></ui-separator>
+    <div class="text-sm">v1.5.1</div>
+    <ui-separator class="my-2"></ui-separator>
+    <div class="text-sm">v1.5.2</div>
+    <ui-separator class="my-2"></ui-separator>
     <div class="text-sm">v2.0.0</div>
+    <ui-separator class="my-2"></ui-separator>
+    <div class="text-sm">v2.0.1</div>
+    <ui-separator class="my-2"></ui-separator>
+    <div class="text-sm">v2.1.0</div>
+    <ui-separator class="my-2"></ui-separator>
+    <div class="text-sm">v2.1.1</div>
   </div>
 </ui-scroll-area>`,
   },
@@ -1576,28 +1620,11 @@ function componentPage(comp) {
             <div class="mt-6">
               <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;${sub.tag}&gt;</code>${sub.custom ? ' <span class="text-xs bg-primary text-primary-foreground px-1.5 py-0.5 rounded ml-2">Custom wrapper</span>' : ""}</h3>
               <div class="overflow-x-auto">
-                <table class="w-full text-sm">
-                  <thead>
-                    <tr class="border-b">
-                      <th class="text-left py-2 pr-4 font-medium">Prop</th>
-                      <th class="text-left py-2 pr-4 font-medium">Type</th>
-                      <th class="text-left py-2 pr-4 font-medium">Default</th>
-                      <th class="text-left py-2 font-medium">Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>`;
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody>`;
     for (const prop of sub.props) {
-      propsHtml += `
-                    <tr class="border-b">
-                      <td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">${prop.name}</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">${escapeHtml(prop.type)}</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">${escapeHtml(prop.default)}</code></td>
-                      <td class="py-2 text-muted-foreground">${prop.description}</td>
-                    </tr>`;
+      propsHtml += `<tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">${prop.name}</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">${escapeHtml(prop.type)}</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">${escapeHtml(prop.default)}</code></td><td class="py-2 text-muted-foreground">${prop.description}</td></tr>`;
     }
-    propsHtml += `
-                  </tbody>
-                </table>
+    propsHtml += `</tbody></table>
               </div>
             </div>`;
   }

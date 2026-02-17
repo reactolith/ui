@@ -32,15 +32,15 @@
                 <div class="space-y-4">
   <div class="flex items-center gap-3">
     <ui-checkbox id="terms"></ui-checkbox>
-    <ui-label>Accept terms and conditions</ui-label>
+    <ui-label for="terms">Accept terms and conditions</ui-label>
   </div>
   <div class="flex items-center gap-3">
     <ui-checkbox id="newsletter" defaultChecked></ui-checkbox>
-    <ui-label>Subscribe to newsletter</ui-label>
+    <ui-label for="newsletter">Subscribe to newsletter</ui-label>
   </div>
   <div class="flex items-center gap-3">
-    <ui-checkbox disabled></ui-checkbox>
-    <ui-label>Disabled checkbox</ui-label>
+    <ui-checkbox id="disabled-cb" disabled></ui-checkbox>
+    <ui-label for="disabled-cb">Disabled checkbox</ui-label>
   </div>
 </div>
               </div>
@@ -52,15 +52,15 @@
                 <pre class="p-4 text-sm"><code>&lt;div class=&quot;space-y-4&quot;&gt;
   &lt;div class=&quot;flex items-center gap-3&quot;&gt;
     &lt;ui-checkbox id=&quot;terms&quot;&gt;&lt;/ui-checkbox&gt;
-    &lt;ui-label&gt;Accept terms and conditions&lt;/ui-label&gt;
+    &lt;ui-label for=&quot;terms&quot;&gt;Accept terms and conditions&lt;/ui-label&gt;
   &lt;/div&gt;
   &lt;div class=&quot;flex items-center gap-3&quot;&gt;
     &lt;ui-checkbox id=&quot;newsletter&quot; defaultChecked&gt;&lt;/ui-checkbox&gt;
-    &lt;ui-label&gt;Subscribe to newsletter&lt;/ui-label&gt;
+    &lt;ui-label for=&quot;newsletter&quot;&gt;Subscribe to newsletter&lt;/ui-label&gt;
   &lt;/div&gt;
   &lt;div class=&quot;flex items-center gap-3&quot;&gt;
-    &lt;ui-checkbox disabled&gt;&lt;/ui-checkbox&gt;
-    &lt;ui-label&gt;Disabled checkbox&lt;/ui-label&gt;
+    &lt;ui-checkbox id=&quot;disabled-cb&quot; disabled&gt;&lt;/ui-checkbox&gt;
+    &lt;ui-label for=&quot;disabled-cb&quot;&gt;Disabled checkbox&lt;/ui-label&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
               </div>
@@ -77,42 +77,7 @@
             <div class="mt-6">
               <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-checkbox&gt;</code></h3>
               <div class="overflow-x-auto">
-                <table class="w-full text-sm">
-                  <thead>
-                    <tr class="border-b">
-                      <th class="text-left py-2 pr-4 font-medium">Prop</th>
-                      <th class="text-left py-2 pr-4 font-medium">Type</th>
-                      <th class="text-left py-2 pr-4 font-medium">Default</th>
-                      <th class="text-left py-2 font-medium">Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b">
-                      <td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">checked</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td>
-                      <td class="py-2 text-muted-foreground">Controlled checked state.</td>
-                    </tr>
-                    <tr class="border-b">
-                      <td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">defaultChecked</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td>
-                      <td class="py-2 text-muted-foreground">Default checked state.</td>
-                    </tr>
-                    <tr class="border-b">
-                      <td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">disabled</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td>
-                      <td class="py-2 text-muted-foreground">Whether the checkbox is disabled.</td>
-                    </tr>
-                    <tr class="border-b">
-                      <td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td>
-                      <td class="py-2 text-muted-foreground">The name for form submission.</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">checked</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Controlled checked state.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">defaultChecked</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Default checked state.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">disabled</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Whether the checkbox is disabled.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The name for form submission.</td></tr></tbody></table>
               </div>
             </div></section>
 

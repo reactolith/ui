@@ -29,21 +29,41 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto">
-                <p class="text-sm text-muted-foreground">Charts require JavaScript configuration with Recharts. See the <a href="https://ui.shadcn.com/docs/components/base/chart" class="underline">shadcn/ui chart docs</a> for full examples.</p>
+                <ui-chart-container json-config='{"desktop":{"label":"Desktop","color":"hsl(var(--chart-1))"},"mobile":{"label":"Mobile","color":"hsl(var(--chart-2))"}}'>
+  <ui-bar-chart json-data='[{"month":"Jan","desktop":186,"mobile":80},{"month":"Feb","desktop":305,"mobile":200},{"month":"Mar","desktop":237,"mobile":120}]'>
+    <ui-cartesian-grid vertical="false" />
+    <ui-x-axis dataKey="month" tickLine="false" axisLine="false" tickMargin="8" />
+    <ui-chart-tooltip>
+      <ui-chart-tooltip-content slot="content" />
+    </ui-chart-tooltip>
+    <ui-bar dataKey="desktop" fill="var(--color-desktop)" radius="4" />
+    <ui-bar dataKey="mobile" fill="var(--color-mobile)" radius="4" />
+  </ui-bar-chart>
+</ui-chart-container>
               </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto">
-                <pre class="p-4 text-sm"><code>&lt;p class=&quot;text-sm text-muted-foreground&quot;&gt;Charts require JavaScript configuration with Recharts. See the &lt;a href=&quot;https://ui.shadcn.com/docs/components/base/chart&quot; class=&quot;underline&quot;&gt;shadcn/ui chart docs&lt;/a&gt; for full examples.&lt;/p&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;ui-chart-container json-config='{&quot;desktop&quot;:{&quot;label&quot;:&quot;Desktop&quot;,&quot;color&quot;:&quot;hsl(var(--chart-1))&quot;},&quot;mobile&quot;:{&quot;label&quot;:&quot;Mobile&quot;,&quot;color&quot;:&quot;hsl(var(--chart-2))&quot;}}'&gt;
+  &lt;ui-bar-chart json-data='[{&quot;month&quot;:&quot;Jan&quot;,&quot;desktop&quot;:186,&quot;mobile&quot;:80},{&quot;month&quot;:&quot;Feb&quot;,&quot;desktop&quot;:305,&quot;mobile&quot;:200},{&quot;month&quot;:&quot;Mar&quot;,&quot;desktop&quot;:237,&quot;mobile&quot;:120}]'&gt;
+    &lt;ui-cartesian-grid vertical=&quot;false&quot; /&gt;
+    &lt;ui-x-axis dataKey=&quot;month&quot; tickLine=&quot;false&quot; axisLine=&quot;false&quot; tickMargin=&quot;8&quot; /&gt;
+    &lt;ui-chart-tooltip&gt;
+      &lt;ui-chart-tooltip-content slot=&quot;content&quot; /&gt;
+    &lt;/ui-chart-tooltip&gt;
+    &lt;ui-bar dataKey=&quot;desktop&quot; fill=&quot;var(--color-desktop)&quot; radius=&quot;4&quot; /&gt;
+    &lt;ui-bar dataKey=&quot;mobile&quot; fill=&quot;var(--color-mobile)&quot; radius=&quot;4&quot; /&gt;
+  &lt;/ui-bar-chart&gt;
+&lt;/ui-chart-container&gt;</code></pre>
               </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Sub-components</h2>
               <div class="flex flex-wrap gap-2">
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-chart-container&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-chart-tooltip&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-chart-tooltip-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-chart-legend&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-chart-legend-content&gt;</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-chart-container&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-chart-tooltip&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-chart-tooltip-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-chart-legend&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-chart-legend-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-bar-chart&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-line-chart&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-area-chart&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-pie-chart&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-radar-chart&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-radial-bar-chart&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-bar&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-line&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-area&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-pie&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-radar&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-radial-bar&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-x-axis&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-y-axis&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-cartesian-grid&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-polar-grid&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-polar-angle-axis&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-polar-radius-axis&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-cell&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-label-list&gt;</code>
               </div>
             </section>
 
@@ -51,53 +71,97 @@
             <div class="mt-6">
               <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-chart-container&gt;</code></h3>
               <div class="overflow-x-auto">
-                <table class="w-full text-sm">
-                  <thead>
-                    <tr class="border-b">
-                      <th class="text-left py-2 pr-4 font-medium">Prop</th>
-                      <th class="text-left py-2 pr-4 font-medium">Type</th>
-                      <th class="text-left py-2 pr-4 font-medium">Default</th>
-                      <th class="text-left py-2 font-medium">Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b">
-                      <td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">config</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">ChartConfig</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td>
-                      <td class="py-2 text-muted-foreground">Chart configuration object.</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">config</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">ChartConfig</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Chart configuration object. Use json-config for HTML.</td></tr></tbody></table>
               </div>
             </div>
             <div class="mt-6">
               <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-chart-tooltip-content&gt;</code></h3>
               <div class="overflow-x-auto">
-                <table class="w-full text-sm">
-                  <thead>
-                    <tr class="border-b">
-                      <th class="text-left py-2 pr-4 font-medium">Prop</th>
-                      <th class="text-left py-2 pr-4 font-medium">Type</th>
-                      <th class="text-left py-2 pr-4 font-medium">Default</th>
-                      <th class="text-left py-2 font-medium">Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b">
-                      <td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">hideLabel</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td>
-                      <td class="py-2 text-muted-foreground">Hide the label in the tooltip.</td>
-                    </tr>
-                    <tr class="border-b">
-                      <td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">hideIndicator</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td>
-                      <td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td>
-                      <td class="py-2 text-muted-foreground">Hide the indicator in the tooltip.</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">hideLabel</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Hide the label in the tooltip.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">hideIndicator</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Hide the indicator in the tooltip.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-bar-chart&gt;</code></h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">data</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">object[]</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Chart data array. Use json-data for HTML.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-line-chart&gt;</code></h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">data</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">object[]</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Chart data array. Use json-data for HTML.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-area-chart&gt;</code></h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">data</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">object[]</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Chart data array. Use json-data for HTML.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-bar&gt;</code></h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">dataKey</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The key of data for the bar.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">fill</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Fill color.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">radius</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Border radius.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-line&gt;</code></h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">dataKey</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The key of data for the line.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">stroke</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Stroke color.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-area&gt;</code></h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">dataKey</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The key of data for the area.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">fill</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Fill color.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">stroke</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Stroke color.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-pie&gt;</code></h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">dataKey</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The key of data for the pie.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">data</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">object[]</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Pie data array. Use json-data for HTML.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-radar&gt;</code></h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">dataKey</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The key of data for the radar.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-radial-bar&gt;</code></h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">dataKey</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The key of data for the radial bar.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-x-axis&gt;</code></h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">dataKey</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The key for axis labels.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-cartesian-grid&gt;</code></h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">vertical</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">true</code></td><td class="py-2 text-muted-foreground">Show vertical grid lines.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">horizontal</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">true</code></td><td class="py-2 text-muted-foreground">Show horizontal grid lines.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-polar-angle-axis&gt;</code></h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">dataKey</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The key for angle axis labels.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-cell&gt;</code></h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">fill</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Fill color for the cell.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-label-list&gt;</code></h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">dataKey</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The key of data for labels.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">position</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Label position.</td></tr></tbody></table>
               </div>
             </div></section>
 
