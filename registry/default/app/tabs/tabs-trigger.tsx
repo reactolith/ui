@@ -1,5 +1,6 @@
 import * as React from "react";
 import { TabsTrigger } from "@/components/ui/tabs";
+import { useCloseOverlay } from "@/registry/default/lib/close-overlay";
 
 type UiTabsTriggerProps =
     Omit<React.ComponentProps<typeof TabsTrigger>, "render"> & {
@@ -11,6 +12,8 @@ const UiTabsTrigger = React.forwardRef<
     HTMLAnchorElement | HTMLButtonElement,
     UiTabsTriggerProps
 >(({ href, children, ...props }, ref) => {
+    const closeOverlay = useCloseOverlay();
+
     if (href) {
         return (
             <TabsTrigger
@@ -20,6 +23,10 @@ const UiTabsTrigger = React.forwardRef<
                         {...triggerProps}
                         ref={ref as React.Ref<HTMLAnchorElement>}
                         href={href}
+                        onClick={(e) => {
+                            (triggerProps as Record<string, unknown>).onClick?.(e);
+                            closeOverlay?.();
+                        }}
                     >
                         {children}
                     </a>

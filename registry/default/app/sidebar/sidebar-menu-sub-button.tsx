@@ -1,5 +1,6 @@
 import * as React from "react";
 import { SidebarMenuSubButton, useSidebar } from "@/components/ui/sidebar";
+import { useCloseOverlay } from "@/registry/default/lib/close-overlay";
 
 type UiSidebarMenuSubButtonProps = React.ComponentProps<typeof SidebarMenuSubButton>;
 
@@ -8,13 +9,15 @@ const UiSidebarMenuSubButton = React.forwardRef<
     UiSidebarMenuSubButtonProps
 >(({ onClick, ...props }, ref) => {
     const { isMobile, setOpenMobile } = useSidebar();
+    const closeOverlay = useCloseOverlay();
 
     const handleClick = React.useCallback(
         (e: React.MouseEvent<HTMLAnchorElement>) => {
             if (isMobile) setOpenMobile(false);
+            closeOverlay?.();
             onClick?.(e);
         },
-        [isMobile, setOpenMobile, onClick]
+        [isMobile, setOpenMobile, closeOverlay, onClick]
     );
 
     return (
