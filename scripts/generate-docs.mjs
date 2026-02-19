@@ -1189,7 +1189,44 @@ const components = [
       { tag: "ui-sidebar-input", props: [] },
       { tag: "ui-sidebar-separator", props: [] },
     ],
-    example: `<p class="text-sm text-muted-foreground">The Sidebar is a complex component requiring SidebarProvider context. See the <a href="https://ui.shadcn.com/docs/components/base/sidebar" class="underline">shadcn/ui sidebar docs</a> for full usage examples.</p>`,
+    iframeExample: `../examples/sidebar-inset.html`,
+    example: `<!-- See iframe preview above -->`,
+    readableExample: `<ui-sidebar-provider>
+  <ui-sidebar variant="inset" collapsible="icon">
+    <ui-sidebar-header>
+      <ui-sidebar-menu>
+        <ui-sidebar-menu-item>
+          <ui-sidebar-menu-button size="lg">
+            <span>Acme Inc</span>
+          </ui-sidebar-menu-button>
+        </ui-sidebar-menu-item>
+      </ui-sidebar-menu>
+    </ui-sidebar-header>
+    <ui-sidebar-content>
+      <ui-sidebar-group>
+        <ui-sidebar-group-label>Platform</ui-sidebar-group-label>
+        <ui-sidebar-group-content>
+          <ui-sidebar-menu>
+            <ui-sidebar-menu-item>
+              <ui-sidebar-menu-button is-active>Dashboard</ui-sidebar-menu-button>
+            </ui-sidebar-menu-item>
+            <ui-sidebar-menu-item>
+              <ui-sidebar-menu-button>Projects</ui-sidebar-menu-button>
+            </ui-sidebar-menu-item>
+          </ui-sidebar-menu>
+        </ui-sidebar-group-content>
+      </ui-sidebar-group>
+    </ui-sidebar-content>
+    <ui-sidebar-footer>...</ui-sidebar-footer>
+  </ui-sidebar>
+  <ui-sidebar-inset>reactolith
+    <header>
+      <ui-sidebar-trigger></ui-sidebar-trigger>
+      <ui-breadcrumb>...</ui-breadcrumb>
+    </header>
+    <main>Your page content</main>
+  </ui-sidebar-inset>
+</ui-sidebar-provider>`,
   },
   {
     name: "Skeleton",
@@ -1229,9 +1266,21 @@ const components = [
     category: "Feedback",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/sonner",
     subComponents: [
-      { tag: "ui-sonner", props: [{ name: "position", type: '"top-left" | "top-right" | "bottom-left" | "bottom-right" | "top-center" | "bottom-center"', default: '"bottom-right"', description: "Toast position." }, { name: "richColors", type: "boolean", default: "false", description: "Use rich colors." }] },
+      { tag: "ui-sonner", props: [{ name: "position", type: '"top-left" | "top-right" | "bottom-left" | "bottom-right" | "top-center" | "bottom-center"', default: '"bottom-right"', description: "Toast position." }, { name: "richColors", type: "boolean", default: "false", description: "Use rich colors." }, { name: "json-toasts", type: "InitialToast[]", default: "[]", description: 'Initial toasts to show on mount. Each toast: { id?, kind?: "message" | "success" | "error" | "warning" | "info", message, description? }. Toasts are deduplicated by id.' }] },
     ],
-    example: `<p class="text-sm text-muted-foreground">Sonner requires the toast() function from the sonner package. Place &lt;ui-sonner&gt; once in your layout. See the <a href="https://ui.shadcn.com/docs/components/base/sonner" class="underline">shadcn/ui sonner docs</a> for examples.</p>`,
+    example: `<ui-sonner rich-colors json-toasts='[{"kind":"success","message":"Profile saved","description":"Your changes have been saved successfully."},{"kind":"info","message":"Welcome back!"}]'></ui-sonner>`,
+    readableExample: `<!-- Place once in your layout -->
+<ui-sonner rich-colors json-toasts='[
+  {
+    "kind": "success",
+    "message": "Profile saved",
+    "description": "Your changes have been saved successfully."
+  },
+  {
+    "kind": "info",
+    "message": "Welcome back!"
+  }
+]'></ui-sonner>`,
   },
   {
     name: "Spinner",
@@ -1560,6 +1609,7 @@ function pageShell(title, activeSlug, content, depth = 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title} - Reactolith UI</title>
+    <link rel="icon" href="${rootPrefix}icon.svg" type="image/svg+xml">
     <script type="module" src="${scriptPath}"></script>
     ${themeInitScript}
 </head>
@@ -1635,9 +1685,14 @@ function componentPage(comp) {
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
-              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                ${comp.example}
-              </div>
+              ${comp.iframeExample
+                ? `<div class="rounded-lg border bg-background overflow-hidden max-w-full">
+                    <iframe src="${comp.iframeExample}" class="w-full h-[600px] border-0"></iframe>
+                  </div>`
+                : `<div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
+                    ${comp.example}
+                  </div>`
+              }
             </section>
 
             <section class="mb-10">
@@ -1914,6 +1969,7 @@ function landingPage() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reactolith UI - Component Library</title>
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
     <script type="module" src="/app.ts"></script>
     ${themeInitScript}
 </head>
@@ -2006,6 +2062,139 @@ function landingPage() {
 // GENERATE FILES
 // ============================================================================
 
+// ============================================================================
+// EXAMPLE PAGES
+// ============================================================================
+
+function sidebarInsetExample() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Inset Example</title>
+    <script type="module" src="../../app.ts"></script>
+    ${themeInitScript}
+</head>
+<body class="style-vega">
+<div id="reactolith-app">
+  <ui-sidebar-provider>
+    <ui-sidebar variant="inset" collapsible="icon">
+      <ui-sidebar-header>
+        <ui-sidebar-menu>
+          <ui-sidebar-menu-item>
+            <ui-sidebar-menu-button size="lg">
+              <div class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+              </div>
+              <div class="grid flex-1 text-left text-sm leading-tight">
+                <span class="truncate font-semibold">Acme Inc</span>
+                <span class="truncate text-xs text-muted-foreground">Enterprise</span>
+              </div>
+            </ui-sidebar-menu-button>
+          </ui-sidebar-menu-item>
+        </ui-sidebar-menu>
+      </ui-sidebar-header>
+      <ui-sidebar-content>
+        <ui-sidebar-group>
+          <ui-sidebar-group-label>Platform</ui-sidebar-group-label>
+          <ui-sidebar-group-content>
+            <ui-sidebar-menu>
+              <ui-sidebar-menu-item>
+                <ui-sidebar-menu-button is-active>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                  <span>Dashboard</span>
+                </ui-sidebar-menu-button>
+              </ui-sidebar-menu-item>
+              <ui-sidebar-menu-item>
+                <ui-sidebar-menu-button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+                  <span>Projects</span>
+                </ui-sidebar-menu-button>
+              </ui-sidebar-menu-item>
+              <ui-sidebar-menu-item>
+                <ui-sidebar-menu-button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                  <span>Help Center</span>
+                </ui-sidebar-menu-button>
+              </ui-sidebar-menu-item>
+            </ui-sidebar-menu>
+          </ui-sidebar-group-content>
+        </ui-sidebar-group>
+        <ui-sidebar-group>
+          <ui-sidebar-group-label>Settings</ui-sidebar-group-label>
+          <ui-sidebar-group-content>
+            <ui-sidebar-menu>
+              <ui-sidebar-menu-item>
+                <ui-sidebar-menu-button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+                  <span>General</span>
+                </ui-sidebar-menu-button>
+              </ui-sidebar-menu-item>
+              <ui-sidebar-menu-item>
+                <ui-sidebar-menu-button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  <span>Team</span>
+                </ui-sidebar-menu-button>
+              </ui-sidebar-menu-item>
+              <ui-sidebar-menu-item>
+                <ui-sidebar-menu-button>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                  <span>Billing</span>
+                </ui-sidebar-menu-button>
+              </ui-sidebar-menu-item>
+            </ui-sidebar-menu>
+          </ui-sidebar-group-content>
+        </ui-sidebar-group>
+      </ui-sidebar-content>
+      <ui-sidebar-footer>
+        <ui-sidebar-menu>
+          <ui-sidebar-menu-item>
+            <ui-sidebar-menu-button>
+              <ui-avatar class="h-8 w-8 rounded-lg">
+                <ui-avatar-fallback class="rounded-lg">JD</ui-avatar-fallback>
+              </ui-avatar>
+              <div class="grid flex-1 text-left text-sm leading-tight">
+                <span class="truncate font-semibold">John Doe</span>
+                <span class="truncate text-xs text-muted-foreground">john@acme.com</span>
+              </div>
+            </ui-sidebar-menu-button>
+          </ui-sidebar-menu-item>
+        </ui-sidebar-menu>
+      </ui-sidebar-footer>
+      <ui-sidebar-rail></ui-sidebar-rail>
+    </ui-sidebar>
+    <ui-sidebar-inset>
+      <header class="flex h-14 shrink-0 items-center gap-2 border-b px-4">
+        <ui-sidebar-trigger></ui-sidebar-trigger>
+        <ui-separator orientation="vertical" class="mr-2 h-4 data-vertical:self-auto"></ui-separator>
+        <ui-breadcrumb>
+          <ui-breadcrumb-list>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-link href="#">Acme Inc</ui-breadcrumb-link>
+            </ui-breadcrumb-item>
+            <ui-breadcrumb-separator></ui-breadcrumb-separator>
+            <ui-breadcrumb-item>
+              <ui-breadcrumb-page>Dashboard</ui-breadcrumb-page>
+            </ui-breadcrumb-item>
+          </ui-breadcrumb-list>
+        </ui-breadcrumb>
+      </header>
+      <div class="flex flex-1 flex-col gap-4 p-4">
+        <div class="grid auto-rows-min gap-4 md:grid-cols-3">
+          <div class="aspect-video rounded-xl bg-muted/50"></div>
+          <div class="aspect-video rounded-xl bg-muted/50"></div>
+          <div class="aspect-video rounded-xl bg-muted/50"></div>
+        </div>
+        <div class="min-h-[50vh] flex-1 rounded-xl bg-muted/50"></div>
+      </div>
+    </ui-sidebar-inset>
+  </ui-sidebar-provider>
+</div>
+</body>
+</html>`;
+}
+
 const BASE_DIR = "app";
 
 function ensureDir(filePath) {
@@ -2028,6 +2217,9 @@ writeFile(`${BASE_DIR}/index.html`, landingPage());
 writeFile(`${BASE_DIR}/docs/introduction.html`, introductionPage());
 writeFile(`${BASE_DIR}/docs/installation.html`, installationPage());
 writeFile(`${BASE_DIR}/docs/usage.html`, usagePage());
+
+// Example pages
+writeFile(`${BASE_DIR}/docs/examples/sidebar-inset.html`, sidebarInsetExample());
 
 // Component pages
 for (const comp of components) {

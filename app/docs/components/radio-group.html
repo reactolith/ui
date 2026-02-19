@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radio Group - Reactolith UI</title>
+    <link rel="icon" href="../../icon.svg" type="image/svg+xml">
     <script type="module" src="../../app.ts"></script>
     <script>
       (function() {
@@ -245,7 +246,7 @@
           </ui-sidebar-group>
       </ui-sidebar-content>
     </ui-sidebar>
-    <ui-sidebar-inset>
+    <ui-sidebar-inset class="min-w-0 overflow-x-hidden">
       <header class="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div class="flex h-14 items-center gap-2 px-4">
           <ui-sidebar-trigger></ui-sidebar-trigger>
@@ -270,7 +271,7 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                <ui-radio-group defaultValue="option-1">
+                    <ui-radio-group defaultValue="option-1">
   <div class="flex items-center space-x-2">
     <ui-radio-group-item value="option-1" id="option-1"></ui-radio-group-item>
     <ui-label for="option-1">Option 1</ui-label>
@@ -284,7 +285,7 @@
     <ui-label for="option-3">Option 3</ui-label>
   </div>
 </ui-radio-group>
-              </div>
+                  </div>
             </section>
 
             <section class="mb-10">

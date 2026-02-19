@@ -18,7 +18,9 @@
       "Bash(npx vite build:*)",
       "Bash(npx generate-web-types:*)",
       "Bash(npm uninstall:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl:*)"
     ]
   }
 }

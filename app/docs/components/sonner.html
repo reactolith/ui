@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sonner - Reactolith UI</title>
+    <link rel="icon" href="../../icon.svg" type="image/svg+xml">
     <script type="module" src="../../app.ts"></script>
     <script>
       (function() {
@@ -245,7 +246,7 @@
           </ui-sidebar-group>
       </ui-sidebar-content>
     </ui-sidebar>
-    <ui-sidebar-inset>
+    <ui-sidebar-inset class="min-w-0 overflow-x-hidden">
       <header class="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div class="flex h-14 items-center gap-2 px-4">
           <ui-sidebar-trigger></ui-sidebar-trigger>
@@ -270,14 +271,25 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                <p class="text-sm text-muted-foreground">Sonner requires the toast() function from the sonner package. Place &lt;ui-sonner&gt; once in your layout. See the <a href="https://ui.shadcn.com/docs/components/base/sonner" class="underline">shadcn/ui sonner docs</a> for examples.</p>
-              </div>
+                    <ui-sonner rich-colors json-toasts='[{"kind":"success","message":"Profile saved","description":"Your changes have been saved successfully."},{"kind":"info","message":"Welcome back!"}]'></ui-sonner>
+                  </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;p class=&quot;text-sm text-muted-foreground&quot;&gt;Sonner requires the toast() function from the sonner package. Place &amp;lt;ui-sonner&amp;gt; once in your layout. See the &lt;a href=&quot;https://ui.shadcn.com/docs/components/base/sonner&quot; class=&quot;underline&quot;&gt;shadcn/ui sonner docs&lt;/a&gt; for examples.&lt;/p&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;!-- Place once in your layout --&gt;
+&lt;ui-sonner rich-colors json-toasts='[
+  {
+    &quot;kind&quot;: &quot;success&quot;,
+    &quot;message&quot;: &quot;Profile saved&quot;,
+    &quot;description&quot;: &quot;Your changes have been saved successfully.&quot;
+  },
+  {
+    &quot;kind&quot;: &quot;info&quot;,
+    &quot;message&quot;: &quot;Welcome back!&quot;
+  }
+]'&gt;&lt;/ui-sonner&gt;</code></pre>
               </div>
             </section>
 
@@ -292,7 +304,7 @@
             <div class="mt-6">
               <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-sonner&gt;</code></h3>
               <div class="overflow-x-auto max-w-full">
-                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">position</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;top-left&quot; | &quot;top-right&quot; | &quot;bottom-left&quot; | &quot;bottom-right&quot; | &quot;top-center&quot; | &quot;bottom-center&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;bottom-right&quot;</code></td><td class="py-2 text-muted-foreground">Toast position.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">richColors</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Use rich colors.</td></tr></tbody></table>
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">position</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;top-left&quot; | &quot;top-right&quot; | &quot;bottom-left&quot; | &quot;bottom-right&quot; | &quot;top-center&quot; | &quot;bottom-center&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;bottom-right&quot;</code></td><td class="py-2 text-muted-foreground">Toast position.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">richColors</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Use rich colors.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">json-toasts</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">InitialToast[]</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">[]</code></td><td class="py-2 text-muted-foreground">Initial toasts to show on mount. Each toast: { id?, kind?: "message" | "success" | "error" | "warning" | "info", message, description? }. Toasts are deduplicated by id.</td></tr></tbody></table>
               </div>
             </div></section>
 

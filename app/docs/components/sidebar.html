@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidebar - Reactolith UI</title>
+    <link rel="icon" href="../../icon.svg" type="image/svg+xml">
     <script type="module" src="../../app.ts"></script>
     <script>
       (function() {
@@ -245,7 +246,7 @@
           </ui-sidebar-group>
       </ui-sidebar-content>
     </ui-sidebar>
-    <ui-sidebar-inset>
+    <ui-sidebar-inset class="min-w-0 overflow-x-hidden">
       <header class="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
         <div class="flex h-14 items-center gap-2 px-4">
           <ui-sidebar-trigger></ui-sidebar-trigger>
@@ -269,15 +270,50 @@
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
-              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                <p class="text-sm text-muted-foreground">The Sidebar is a complex component requiring SidebarProvider context. See the <a href="https://ui.shadcn.com/docs/components/base/sidebar" class="underline">shadcn/ui sidebar docs</a> for full usage examples.</p>
-              </div>
+              <div class="rounded-lg border bg-background overflow-hidden max-w-full">
+                    <iframe src="../examples/sidebar-inset.html" class="w-full h-[600px] border-0"></iframe>
+                  </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;p class=&quot;text-sm text-muted-foreground&quot;&gt;The Sidebar is a complex component requiring SidebarProvider context. See the &lt;a href=&quot;https://ui.shadcn.com/docs/components/base/sidebar&quot; class=&quot;underline&quot;&gt;shadcn/ui sidebar docs&lt;/a&gt; for full usage examples.&lt;/p&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;ui-sidebar-provider&gt;
+  &lt;ui-sidebar variant=&quot;inset&quot; collapsible=&quot;icon&quot;&gt;
+    &lt;ui-sidebar-header&gt;
+      &lt;ui-sidebar-menu&gt;
+        &lt;ui-sidebar-menu-item&gt;
+          &lt;ui-sidebar-menu-button size=&quot;lg&quot;&gt;
+            &lt;span&gt;Acme Inc&lt;/span&gt;
+          &lt;/ui-sidebar-menu-button&gt;
+        &lt;/ui-sidebar-menu-item&gt;
+      &lt;/ui-sidebar-menu&gt;
+    &lt;/ui-sidebar-header&gt;
+    &lt;ui-sidebar-content&gt;
+      &lt;ui-sidebar-group&gt;
+        &lt;ui-sidebar-group-label&gt;Platform&lt;/ui-sidebar-group-label&gt;
+        &lt;ui-sidebar-group-content&gt;
+          &lt;ui-sidebar-menu&gt;
+            &lt;ui-sidebar-menu-item&gt;
+              &lt;ui-sidebar-menu-button is-active&gt;Dashboard&lt;/ui-sidebar-menu-button&gt;
+            &lt;/ui-sidebar-menu-item&gt;
+            &lt;ui-sidebar-menu-item&gt;
+              &lt;ui-sidebar-menu-button&gt;Projects&lt;/ui-sidebar-menu-button&gt;
+            &lt;/ui-sidebar-menu-item&gt;
+          &lt;/ui-sidebar-menu&gt;
+        &lt;/ui-sidebar-group-content&gt;
+      &lt;/ui-sidebar-group&gt;
+    &lt;/ui-sidebar-content&gt;
+    &lt;ui-sidebar-footer&gt;...&lt;/ui-sidebar-footer&gt;
+  &lt;/ui-sidebar&gt;
+  &lt;ui-sidebar-inset&gt;reactolith
+    &lt;header&gt;
+      &lt;ui-sidebar-trigger&gt;&lt;/ui-sidebar-trigger&gt;
+      &lt;ui-breadcrumb&gt;...&lt;/ui-breadcrumb&gt;
+    &lt;/header&gt;
+    &lt;main&gt;Your page content&lt;/main&gt;
+  &lt;/ui-sidebar-inset&gt;
+&lt;/ui-sidebar-provider&gt;</code></pre>
               </div>
             </section>
 
