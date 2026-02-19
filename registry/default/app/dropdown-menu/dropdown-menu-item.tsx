@@ -1,46 +1,20 @@
-import * as React from "react";
-import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
-import { useCloseOverlay } from "@/registry/default/lib/close-overlay";
+import { type ComponentProps, type ReactNode, type Ref } from "react"
+import { DropdownMenuItem } from "@/components/ui/dropdown-menu"
+import { useCloseOverlay } from "@/registry/default/lib/close-overlay"
+import { renderLinkable } from "@/registry/default/lib/render-element"
 
-type UiDropdownMenuItemProps =
-    Omit<React.ComponentProps<typeof DropdownMenuItem>, "render"> & {
-    href?: string | null;
-    children: React.ReactNode;
-};
-
-const UiDropdownMenuItem = React.forwardRef<
-    HTMLAnchorElement | HTMLDivElement,
-    UiDropdownMenuItemProps
->(({ href, children, ...props }, ref) => {
-    const closeOverlay = useCloseOverlay();
-
-    if (href) {
-        return (
-            <DropdownMenuItem
-                {...props}
-                render={(itemProps) => (
-                    <a
-                        {...itemProps}
-                        ref={ref as React.Ref<HTMLAnchorElement>}
-                        href={href}
-                        onClick={(e) => {
-                            (itemProps as Record<string, unknown>).onClick?.(e);
-                            closeOverlay?.();
-                        }}
-                    >
-                        {children}
-                    </a>
-                )}
-            />
-        );
-    }
-
-    return (
-        <DropdownMenuItem ref={ref as React.Ref<HTMLDivElement>} {...props}>
-            {children}
-        </DropdownMenuItem>
-    );
-});
-
-UiDropdownMenuItem.displayName = "UiDropdownMenuItem";
-export default UiDropdownMenuItem;
+export default function DropdownMenuItemWrapper({
+  href,
+  children,
+  ref,
+  is,
+  ...props
+}: ComponentProps<typeof DropdownMenuItem> & {
+  href?: string | null
+  children: ReactNode
+  ref?: Ref<HTMLAnchorElement | HTMLDivElement>
+  is?: string
+}) {
+  const closeOverlay = useCloseOverlay()
+  return renderLinkable(DropdownMenuItem, props, { href, ref, children, onNavigate: closeOverlay })
+}

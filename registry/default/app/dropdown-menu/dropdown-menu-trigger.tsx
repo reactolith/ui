@@ -1,28 +1,11 @@
-import * as React from "react"
-import { Menu as MenuPrimitive } from "@base-ui/react/menu"
-import { getSingleElement } from "@/registry/default/lib/render-element"
+import { type ComponentProps, type ReactNode } from "react"
+import { DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { renderTrigger } from "@/registry/default/lib/render-element"
 
-export default function DropdownMenuTrigger({
+export default function DropdownMenuTriggerWrapper({
   children,
   is,
   ...props
-}: MenuPrimitive.Trigger.Props & { is?: string }) {
-  const singleChild = getSingleElement(children)
-  if (singleChild) {
-    return (
-      <MenuPrimitive.Trigger
-        data-slot="dropdown-menu-trigger"
-        {...props}
-        render={singleChild}
-      />
-    )
-  }
-  return (
-    <MenuPrimitive.Trigger
-      data-slot="dropdown-menu-trigger"
-      {...props}
-    >
-      {children}
-    </MenuPrimitive.Trigger>
-  )
+}: ComponentProps<typeof DropdownMenuTrigger> & { children?: ReactNode; is?: string }) {
+    return renderTrigger(DropdownMenuTrigger, props, children)
 }

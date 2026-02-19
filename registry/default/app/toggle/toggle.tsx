@@ -1,39 +1,18 @@
-import * as React from "react";
-import { Toggle } from "@/components/ui/toggle";
+import { type ComponentProps, type ReactNode, type Ref } from "react"
+import { Toggle } from "@/components/ui/toggle"
+import { renderLinkable } from "@/registry/default/lib/render-element"
 
-type UiToggleProps =
-    Omit<React.ComponentProps<typeof Toggle>, "render"> & {
-    href?: string | null;
-    children: React.ReactNode;
-};
-
-const UiToggle = React.forwardRef<
-    HTMLAnchorElement | HTMLButtonElement,
-    UiToggleProps
->(({ href, children, ...props }, ref) => {
-    if (href) {
-        return (
-            <Toggle
-                {...props}
-                render={(toggleProps) => (
-                    <a
-                        {...toggleProps}
-                        ref={ref as React.Ref<HTMLAnchorElement>}
-                        href={href}
-                    >
-                        {children}
-                    </a>
-                )}
-            />
-        );
-    }
-
-    return (
-        <Toggle ref={ref as React.Ref<HTMLButtonElement>} {...props}>
-            {children}
-        </Toggle>
-    );
-});
-
-UiToggle.displayName = "UiToggle";
-export default UiToggle;
+export default function ToggleWrapper({
+  href,
+  children,
+  ref,
+  is,
+  ...props
+}: ComponentProps<typeof Toggle> & {
+  href?: string | null
+  children: ReactNode
+  ref?: Ref<HTMLAnchorElement | HTMLButtonElement>
+  is?: string
+}) {
+  return renderLinkable(Toggle, props, { href, ref, children })
+}

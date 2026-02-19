@@ -1,46 +1,20 @@
-import * as React from "react";
-import { TabsTrigger } from "@/components/ui/tabs";
-import { useCloseOverlay } from "@/registry/default/lib/close-overlay";
+import { type ComponentProps, type ReactNode, type Ref } from "react"
+import { TabsTrigger } from "@/components/ui/tabs"
+import { useCloseOverlay } from "@/registry/default/lib/close-overlay"
+import { renderLinkable } from "@/registry/default/lib/render-element"
 
-type UiTabsTriggerProps =
-    Omit<React.ComponentProps<typeof TabsTrigger>, "render"> & {
-    href?: string | null;
-    children: React.ReactNode;
-};
-
-const UiTabsTrigger = React.forwardRef<
-    HTMLAnchorElement | HTMLButtonElement,
-    UiTabsTriggerProps
->(({ href, children, ...props }, ref) => {
-    const closeOverlay = useCloseOverlay();
-
-    if (href) {
-        return (
-            <TabsTrigger
-                {...props}
-                render={(triggerProps) => (
-                    <a
-                        {...triggerProps}
-                        ref={ref as React.Ref<HTMLAnchorElement>}
-                        href={href}
-                        onClick={(e) => {
-                            (triggerProps as Record<string, unknown>).onClick?.(e);
-                            closeOverlay?.();
-                        }}
-                    >
-                        {children}
-                    </a>
-                )}
-            />
-        );
-    }
-
-    return (
-        <TabsTrigger ref={ref as React.Ref<HTMLButtonElement>} {...props}>
-            {children}
-        </TabsTrigger>
-    );
-});
-
-UiTabsTrigger.displayName = "UiTabsTrigger";
-export default UiTabsTrigger;
+export default function TabsTriggerWrapper({
+  href,
+  children,
+  ref,
+  is,
+  ...props
+}: ComponentProps<typeof TabsTrigger> & {
+  href?: string | null
+  children: ReactNode
+  ref?: Ref<HTMLAnchorElement | HTMLButtonElement>
+  is?: string
+}) {
+  const closeOverlay = useCloseOverlay()
+  return renderLinkable(TabsTrigger, props, { href, ref, children, onNavigate: closeOverlay })
+}

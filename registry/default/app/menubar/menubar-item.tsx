@@ -1,46 +1,20 @@
-import * as React from "react";
-import { MenubarItem } from "@/components/ui/menubar";
-import { useCloseOverlay } from "@/registry/default/lib/close-overlay";
+import { type ComponentProps, type ReactNode, type Ref } from "react"
+import { MenubarItem } from "@/components/ui/menubar"
+import { useCloseOverlay } from "@/registry/default/lib/close-overlay"
+import { renderLinkable } from "@/registry/default/lib/render-element"
 
-type UiMenubarItemProps =
-    Omit<React.ComponentProps<typeof MenubarItem>, "render"> & {
-    href?: string | null;
-    children: React.ReactNode;
-};
-
-const UiMenubarItem = React.forwardRef<
-    HTMLAnchorElement | HTMLDivElement,
-    UiMenubarItemProps
->(({ href, children, ...props }, ref) => {
-    const closeOverlay = useCloseOverlay();
-
-    if (href) {
-        return (
-            <MenubarItem
-                {...props}
-                render={(itemProps) => (
-                    <a
-                        {...itemProps}
-                        ref={ref as React.Ref<HTMLAnchorElement>}
-                        href={href}
-                        onClick={(e) => {
-                            (itemProps as Record<string, unknown>).onClick?.(e);
-                            closeOverlay?.();
-                        }}
-                    >
-                        {children}
-                    </a>
-                )}
-            />
-        );
-    }
-
-    return (
-        <MenubarItem ref={ref as React.Ref<HTMLDivElement>} {...props}>
-            {children}
-        </MenubarItem>
-    );
-});
-
-UiMenubarItem.displayName = "UiMenubarItem";
-export default UiMenubarItem;
+export default function MenubarItemWrapper({
+  href,
+  children,
+  ref,
+  is,
+  ...props
+}: ComponentProps<typeof MenubarItem> & {
+  href?: string | null
+  children: ReactNode
+  ref?: Ref<HTMLAnchorElement | HTMLDivElement>
+  is?: string
+}) {
+  const closeOverlay = useCloseOverlay()
+  return renderLinkable(MenubarItem, props, { href, ref, children, onNavigate: closeOverlay })
+}

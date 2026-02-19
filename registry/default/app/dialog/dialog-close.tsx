@@ -1,28 +1,11 @@
-import * as React from "react"
-import { Dialog as DialogPrimitive } from "@base-ui/react/dialog"
-import { getSingleElement } from "@/registry/default/lib/render-element"
+import { DialogClose } from "@/components/ui/dialog"
+import { renderTrigger } from "@/registry/default/lib/render-element"
+import type {ComponentProps, ReactNode} from "react";
 
-export default function DialogClose({
+export default function DialogCloseWrapper({
   children,
   is,
   ...props
-}: DialogPrimitive.Close.Props & { is?: string }) {
-  const singleChild = getSingleElement(children)
-  if (singleChild) {
-    return (
-      <DialogPrimitive.Close
-        data-slot="dialog-close"
-        {...props}
-        render={singleChild}
-      />
-    )
-  }
-  return (
-    <DialogPrimitive.Close
-      data-slot="dialog-close"
-      {...props}
-    >
-      {children}
-    </DialogPrimitive.Close>
-  )
+}: ComponentProps<typeof DialogClose> & { children?: ReactNode; is?: string }) {
+  return renderTrigger(DialogClose, props, children)
 }

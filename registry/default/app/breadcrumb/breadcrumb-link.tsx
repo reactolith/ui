@@ -1,42 +1,20 @@
-import * as React from "react";
-import { BreadcrumbLink } from "@/components/ui/breadcrumb";
-import { useCloseOverlay } from "@/registry/default/lib/close-overlay";
+import { type ComponentProps, type ReactNode, type Ref } from "react"
+import { BreadcrumbLink } from "@/components/ui/breadcrumb"
+import { useCloseOverlay } from "@/registry/default/lib/close-overlay"
+import { renderLinkable } from "@/registry/default/lib/render-element"
 
-type UiBreadcrumbLinkProps =
-    React.ComponentProps<typeof BreadcrumbLink> & {
-    href?: string;
-    children?: React.ReactNode;
-};
-
-const UiBreadcrumbLink = React.forwardRef<
-    HTMLAnchorElement,
-    UiBreadcrumbLinkProps
->(({ href, children, ...props }, ref) => {
-    const closeOverlay = useCloseOverlay();
-
-    if (href) {
-        return (
-            <BreadcrumbLink
-                {...props}
-                render={
-                    <a
-                        ref={ref}
-                        href={href}
-                        onClick={() => closeOverlay?.()}
-                    />
-                }
-            >
-                {children}
-            </BreadcrumbLink>
-        );
-    }
-
-    return (
-        <BreadcrumbLink ref={ref} {...props}>
-            {children}
-        </BreadcrumbLink>
-    );
-})
-
-UiBreadcrumbLink.displayName = "UiBreadcrumbLink"
-export default UiBreadcrumbLink
+export default function BreadcrumbLinkWrapper({
+  href,
+  children,
+  ref,
+  is,
+  ...props
+}: ComponentProps<typeof BreadcrumbLink> & {
+  href?: string
+  children?: ReactNode
+  ref?: Ref<HTMLAnchorElement>
+  is?: string
+}) {
+  const closeOverlay = useCloseOverlay()
+  return renderLinkable(BreadcrumbLink, props, { href, ref, children, onNavigate: closeOverlay })
+}

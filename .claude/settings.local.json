@@ -21,7 +21,8 @@
       "Bash(python3:*)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(curl:*)",
-      "Bash(gh api:*)"
+      "Bash(gh api:*)",
+      "Bash(find:*)"
     ]
   }
 }
