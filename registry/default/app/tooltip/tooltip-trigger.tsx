@@ -1,21 +1,16 @@
 import * as React from "react"
 import { Tooltip as TooltipPrimitive } from "@base-ui/react/tooltip"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { TooltipTrigger } from '@/components/ui/tooltip'
+import {getSingleElement} from "@/registry/default/lib/render-element"
 
-export default function TooltipTrigger({
-  className,
-  variant = "outline",
-  size = "default",
+export default function TooltipTriggerWrapper({
+  children,
+  is,
   ...props
-}: TooltipPrimitive.Trigger.Props &
-  Pick<React.ComponentProps<typeof Button>, "variant" | "size">) {
-  return (
-    <TooltipPrimitive.Trigger
-      data-slot="tooltip-trigger"
-      className={cn(className)}
-      render={<Button variant={variant} size={size} />}
-      {...props}
-    />
-  )
+}: TooltipPrimitive.Trigger.Props & { is?: string }) {
+  const singleChild = getSingleElement(children)
+  if (singleChild) {
+      return <TooltipTrigger {...props} render={singleChild} />
+  }
+  return <TooltipTrigger {...props}>{children}</TooltipTrigger>
 }

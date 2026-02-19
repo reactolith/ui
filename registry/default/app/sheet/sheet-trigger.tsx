@@ -1,21 +1,28 @@
 import * as React from "react"
 import { Dialog as SheetPrimitive } from "@base-ui/react/dialog"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { useSingleElement } from "@/registry/default/lib/render-element"
 
 export default function SheetTrigger({
-  className,
-  variant = "outline",
-  size = "default",
+  children,
+  is,
   ...props
-}: SheetPrimitive.Trigger.Props &
-  Pick<React.ComponentProps<typeof Button>, "variant" | "size">) {
+}: SheetPrimitive.Trigger.Props & { is?: string }) {
+  const singleChild = useSingleElement(children)
+  if (singleChild) {
+    return (
+      <SheetPrimitive.Trigger
+        data-slot="sheet-trigger"
+        {...props}
+        render={singleChild}
+      />
+    )
+  }
   return (
     <SheetPrimitive.Trigger
       data-slot="sheet-trigger"
-      className={cn(className)}
-      render={<Button variant={variant} size={size} />}
       {...props}
-    />
+    >
+      {children}
+    </SheetPrimitive.Trigger>
   )
 }

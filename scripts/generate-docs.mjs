@@ -1468,14 +1468,38 @@ const components = [
       { tag: "ui-tooltip-trigger", props: [] },
       { tag: "ui-tooltip-content", props: [{ name: "side", type: '"top" | "right" | "bottom" | "left"', default: '"top"', description: "Preferred side." }] },
     ],
-    example: `<ui-tooltip-provider>
-  <ui-tooltip>
-    <ui-tooltip-trigger>Hover me</ui-tooltip-trigger>
-    <ui-tooltip-content>
-      <p>Add to library</p>
-    </ui-tooltip-content>
-  </ui-tooltip>
-</ui-tooltip-provider>`,
+    example: `<div class="flex items-center gap-4">
+  <ui-tooltip-provider>
+    <ui-tooltip>
+      <ui-tooltip-trigger>
+            <span>
+                <ui-button variant="outline">With Button</ui-button>
+            </span>
+      </ui-tooltip-trigger>
+      <ui-tooltip-content>
+        <p>Tooltip on a button</p>
+      </ui-tooltip-content>
+    </ui-tooltip>
+  </ui-tooltip-provider>
+  <ui-tooltip-provider>
+    <ui-tooltip>
+      <ui-tooltip-trigger>
+        <span class="underline cursor-pointer">With custom element</span>
+      </ui-tooltip-trigger>
+      <ui-tooltip-content>
+        <p>Tooltip on a span</p>
+      </ui-tooltip-content>
+    </ui-tooltip>
+  </ui-tooltip-provider>
+  <ui-tooltip-provider>
+    <ui-tooltip>
+      <ui-tooltip-trigger>Plain text trigger</ui-tooltip-trigger>
+      <ui-tooltip-content>
+        <p>Tooltip on plain text</p>
+      </ui-tooltip-content>
+    </ui-tooltip>
+  </ui-tooltip-provider>
+</div>`,
   },
   {
     name: "Direction Provider",

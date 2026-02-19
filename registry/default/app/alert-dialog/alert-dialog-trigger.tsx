@@ -1,21 +1,28 @@
 import * as React from "react"
 import { AlertDialog as AlertDialogPrimitive } from "@base-ui/react/alert-dialog"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { useSingleElement } from "@/registry/default/lib/render-element"
 
 export default function AlertDialogTrigger({
-  className,
-  variant = "outline",
-  size = "default",
+  children,
+  is,
   ...props
-}: AlertDialogPrimitive.Trigger.Props &
-  Pick<React.ComponentProps<typeof Button>, "variant" | "size">) {
+}: AlertDialogPrimitive.Trigger.Props & { is?: string }) {
+  const singleChild = useSingleElement(children)
+  if (singleChild) {
+    return (
+      <AlertDialogPrimitive.Trigger
+        data-slot="alert-dialog-trigger"
+        {...props}
+        render={singleChild}
+      />
+    )
+  }
   return (
     <AlertDialogPrimitive.Trigger
       data-slot="alert-dialog-trigger"
-      className={cn(className)}
-      render={<Button variant={variant} size={size} />}
       {...props}
-    />
+    >
+      {children}
+    </AlertDialogPrimitive.Trigger>
   )
 }

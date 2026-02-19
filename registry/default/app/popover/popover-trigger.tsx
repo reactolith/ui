@@ -1,21 +1,28 @@
 import * as React from "react"
 import { Popover as PopoverPrimitive } from "@base-ui/react/popover"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { useSingleElement } from "@/registry/default/lib/render-element"
 
 export default function PopoverTrigger({
-  className,
-  variant = "outline",
-  size = "default",
+  children,
+  is,
   ...props
-}: PopoverPrimitive.Trigger.Props &
-  Pick<React.ComponentProps<typeof Button>, "variant" | "size">) {
+}: PopoverPrimitive.Trigger.Props & { is?: string }) {
+  const singleChild = useSingleElement(children)
+  if (singleChild) {
+    return (
+      <PopoverPrimitive.Trigger
+        data-slot="popover-trigger"
+        {...props}
+        render={singleChild}
+      />
+    )
+  }
   return (
     <PopoverPrimitive.Trigger
       data-slot="popover-trigger"
-      className={cn(className)}
-      render={<Button variant={variant} size={size} />}
       {...props}
-    />
+    >
+      {children}
+    </PopoverPrimitive.Trigger>
   )
 }

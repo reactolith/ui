@@ -20,7 +20,8 @@
       "Bash(npm uninstall:*)",
       "Bash(python3:*)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(gh api:*)"
     ]
   }
 }

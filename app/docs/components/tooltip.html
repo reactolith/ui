@@ -23,7 +23,7 @@
         <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
       </ui-sidebar-header>
       <ui-sidebar-content>
-        
+
           <ui-sidebar-group>
             <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
             <ui-sidebar-group-content>
@@ -259,7 +259,7 @@
       </header>
       <div class="flex-1 overflow-y-auto min-w-0">
         <div class="max-w-3xl mx-auto px-6 py-8 overflow-hidden">
-          
+
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
                 <a href="https://ui.shadcn.com/docs/components/base/tooltip" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">shadcn/ui docs</a>
@@ -271,28 +271,72 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <ui-tooltip-provider>
-  <ui-tooltip>
-    <ui-tooltip-trigger>Hover me</ui-tooltip-trigger>
-    <ui-tooltip-content>
-      <p>Add to library</p>
-    </ui-tooltip-content>
-  </ui-tooltip>
-</ui-tooltip-provider>
+                    <div class="flex items-center gap-4">
+  <ui-tooltip-provider>
+    <ui-tooltip>
+      <ui-tooltip-trigger>
+        <ui-button variant="outline">With Button</ui-button>
+      </ui-tooltip-trigger>
+      <ui-tooltip-content>
+        <p>Tooltip on a button</p>
+      </ui-tooltip-content>
+    </ui-tooltip>
+  </ui-tooltip-provider>
+  <ui-tooltip-provider>
+    <ui-tooltip>
+      <ui-tooltip-trigger>
+        <span class="underline cursor-pointer">With custom element</span>
+      </ui-tooltip-trigger>
+      <ui-tooltip-content>
+        <p>Tooltip on a span</p>
+      </ui-tooltip-content>
+    </ui-tooltip>
+  </ui-tooltip-provider>
+  <ui-tooltip-provider>
+    <ui-tooltip>
+      <ui-tooltip-trigger>Plain text trigger</ui-tooltip-trigger>
+      <ui-tooltip-content>
+        <p>Tooltip on plain text</p>
+      </ui-tooltip-content>
+    </ui-tooltip>
+  </ui-tooltip-provider>
+</div>
                   </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-tooltip-provider&gt;
-  &lt;ui-tooltip&gt;
-    &lt;ui-tooltip-trigger&gt;Hover me&lt;/ui-tooltip-trigger&gt;
-    &lt;ui-tooltip-content&gt;
-      &lt;p&gt;Add to library&lt;/p&gt;
-    &lt;/ui-tooltip-content&gt;
-  &lt;/ui-tooltip&gt;
-&lt;/ui-tooltip-provider&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;div class=&quot;flex items-center gap-4&quot;&gt;
+  &lt;ui-tooltip-provider&gt;
+    &lt;ui-tooltip&gt;
+      &lt;ui-tooltip-trigger&gt;
+        &lt;ui-button variant=&quot;outline&quot;&gt;With Button&lt;/ui-button&gt;
+      &lt;/ui-tooltip-trigger&gt;
+      &lt;ui-tooltip-content&gt;
+        &lt;p&gt;Tooltip on a button&lt;/p&gt;
+      &lt;/ui-tooltip-content&gt;
+    &lt;/ui-tooltip&gt;
+  &lt;/ui-tooltip-provider&gt;
+  &lt;ui-tooltip-provider&gt;
+    &lt;ui-tooltip&gt;
+      &lt;ui-tooltip-trigger&gt;
+        &lt;span class=&quot;underline cursor-pointer&quot;&gt;With custom element&lt;/span&gt;
+      &lt;/ui-tooltip-trigger&gt;
+      &lt;ui-tooltip-content&gt;
+        &lt;p&gt;Tooltip on a span&lt;/p&gt;
+      &lt;/ui-tooltip-content&gt;
+    &lt;/ui-tooltip&gt;
+  &lt;/ui-tooltip-provider&gt;
+  &lt;ui-tooltip-provider&gt;
+    &lt;ui-tooltip&gt;
+      &lt;ui-tooltip-trigger&gt;Plain text trigger&lt;/ui-tooltip-trigger&gt;
+      &lt;ui-tooltip-content&gt;
+        &lt;p&gt;Tooltip on plain text&lt;/p&gt;
+      &lt;/ui-tooltip-content&gt;
+    &lt;/ui-tooltip&gt;
+  &lt;/ui-tooltip-provider&gt;
+&lt;/div&gt;</code></pre>
               </div>
             </section>
 
