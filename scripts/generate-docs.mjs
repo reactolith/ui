@@ -17,7 +17,7 @@ const components = [
     subComponents: [
       { tag: "ui-accordion", props: [{ name: "type", type: '"single" | "multiple"', default: '"single"', description: "Whether one or multiple items can be opened at the same time." }, { name: "defaultValue", type: "string | string[]", default: "—", description: "The default open item(s)." }, { name: "collapsible", type: "boolean", default: "false", description: "Whether an open item can be collapsed." }] },
       { tag: "ui-accordion-item", props: [{ name: "value", type: "string", default: "—", description: "A unique value for the item." }] },
-      { tag: "ui-accordion-trigger", props: [] },
+      { tag: "ui-accordion-trigger", props: [{ name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }], custom: true },
       { tag: "ui-accordion-content", props: [] },
     ],
     example: `<ui-accordion type="single" collapsible>
@@ -79,9 +79,7 @@ const components = [
       { tag: "ui-alert-dialog-cancel", props: [] },
     ],
     example: `<ui-alert-dialog>
-  <ui-alert-dialog-trigger>
-    <ui-button variant="outline">Delete Account</ui-button>
-  </ui-alert-dialog-trigger>
+  <ui-alert-dialog-trigger>Delete Account</ui-alert-dialog-trigger>
   <ui-alert-dialog-content>
     <ui-alert-dialog-header>
       <ui-alert-dialog-title>Are you absolutely sure?</ui-alert-dialog-title>
@@ -90,8 +88,8 @@ const components = [
       </ui-alert-dialog-description>
     </ui-alert-dialog-header>
     <ui-alert-dialog-footer>
-      <ui-alert-dialog-cancel><ui-button variant="outline">Cancel</ui-button></ui-alert-dialog-cancel>
-      <ui-alert-dialog-action><ui-button variant="destructive">Delete</ui-button></ui-alert-dialog-action>
+      <ui-alert-dialog-cancel>Cancel</ui-alert-dialog-cancel>
+      <ui-alert-dialog-action variant="destructive">Delete</ui-alert-dialog-action>
     </ui-alert-dialog-footer>
   </ui-alert-dialog-content>
 </ui-alert-dialog>`,
@@ -105,7 +103,7 @@ const components = [
     subComponents: [
       { tag: "ui-aspect-ratio", props: [{ name: "ratio", type: "number", default: "1", description: "The desired aspect ratio (e.g. 16/9)." }] },
     ],
-    example: `<div class="w-[450px]">
+    example: `<div class="max-w-[450px] w-full">
   <ui-aspect-ratio ratio="16/9">
     <div class="bg-muted flex items-center justify-center rounded-md h-full w-full">
       <span class="text-muted-foreground text-sm">16:9 Aspect Ratio</span>
@@ -396,7 +394,7 @@ const components = [
       { tag: "ui-collapsible-trigger", props: [] },
       { tag: "ui-collapsible-content", props: [] },
     ],
-    example: `<ui-collapsible class="w-[350px] space-y-2">
+    example: `<ui-collapsible class="max-w-[350px] w-full space-y-2">
   <div class="flex items-center justify-between">
     <h4 class="text-sm font-semibold">Starred repositories</h4>
     <ui-collapsible-trigger>
@@ -454,7 +452,7 @@ const components = [
       { tag: "ui-command-list", props: [] },
       { tag: "ui-command-empty", props: [] },
       { tag: "ui-command-group", props: [{ name: "heading", type: "string", default: "—", description: "Group heading text." }] },
-      { tag: "ui-command-item", props: [{ name: "value", type: "string", default: "—", description: "The value of the item." }] },
+      { tag: "ui-command-item", props: [{ name: "value", type: "string", default: "—", description: "The value of the item." }, { name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }], custom: true },
       { tag: "ui-command-separator", props: [] },
       { tag: "ui-command-shortcut", props: [] },
     ],
@@ -480,7 +478,7 @@ const components = [
       { tag: "ui-context-menu", props: [] },
       { tag: "ui-context-menu-trigger", props: [] },
       { tag: "ui-context-menu-content", props: [] },
-      { tag: "ui-context-menu-item", props: [] },
+      { tag: "ui-context-menu-item", props: [{ name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }], custom: true },
       { tag: "ui-context-menu-checkbox-item", props: [] },
       { tag: "ui-context-menu-radio-group", props: [] },
       { tag: "ui-context-menu-radio-item", props: [] },
@@ -495,7 +493,7 @@ const components = [
     ],
     example: `<ui-context-menu>
   <ui-context-menu-trigger>
-    <div class="flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed text-sm">
+    <div class="flex h-[150px] max-w-[300px] w-full items-center justify-center rounded-md border border-dashed text-sm">
       Right click here
     </div>
   </ui-context-menu-trigger>
@@ -528,9 +526,7 @@ const components = [
       { tag: "ui-dialog-close", props: [] },
     ],
     example: `<ui-dialog>
-  <ui-dialog-trigger>
-    <ui-button variant="outline">Open Dialog</ui-button>
-  </ui-dialog-trigger>
+  <ui-dialog-trigger>Open Dialog</ui-dialog-trigger>
   <ui-dialog-content>
     <ui-dialog-header>
       <ui-dialog-title>Edit Profile</ui-dialog-title>
@@ -547,48 +543,11 @@ const components = [
       </div>
     </div>
     <ui-dialog-footer>
-      <ui-dialog-close><ui-button variant="outline">Cancel</ui-button></ui-dialog-close>
+      <ui-dialog-close>Cancel</ui-dialog-close>
       <ui-button>Save changes</ui-button>
     </ui-dialog-footer>
   </ui-dialog-content>
 </ui-dialog>`,
-  },
-  {
-    name: "Drawer",
-    slug: "drawer",
-    description: "A panel that slides in from the edge of the screen, built on top of Vaul.",
-    category: "Overlay",
-    shadcnUrl: "https://ui.shadcn.com/docs/components/base/drawer",
-    subComponents: [
-      { tag: "ui-drawer", props: [{ name: "direction", type: '"top" | "bottom" | "left" | "right"', default: '"bottom"', description: "The direction the drawer slides from." }] },
-      { tag: "ui-drawer-trigger", props: [] },
-      { tag: "ui-drawer-portal", props: [] },
-      { tag: "ui-drawer-overlay", props: [] },
-      { tag: "ui-drawer-content", props: [] },
-      { tag: "ui-drawer-header", props: [] },
-      { tag: "ui-drawer-title", props: [] },
-      { tag: "ui-drawer-description", props: [] },
-      { tag: "ui-drawer-footer", props: [] },
-      { tag: "ui-drawer-close", props: [] },
-    ],
-    example: `<ui-drawer>
-  <ui-drawer-trigger>
-    <ui-button variant="outline">Open Drawer</ui-button>
-  </ui-drawer-trigger>
-  <ui-drawer-content>
-    <ui-drawer-header>
-      <ui-drawer-title>Move Goal</ui-drawer-title>
-      <ui-drawer-description>Set your daily activity goal.</ui-drawer-description>
-    </ui-drawer-header>
-    <div class="p-4">
-      <p class="text-sm text-muted-foreground">Adjust your settings below.</p>
-    </div>
-    <ui-drawer-footer>
-      <ui-button>Submit</ui-button>
-      <ui-drawer-close><ui-button variant="outline">Cancel</ui-button></ui-drawer-close>
-    </ui-drawer-footer>
-  </ui-drawer-content>
-</ui-drawer>`,
   },
   {
     name: "Dropdown Menu",
@@ -600,7 +559,7 @@ const components = [
       { tag: "ui-dropdown-menu", props: [] },
       { tag: "ui-dropdown-menu-trigger", props: [] },
       { tag: "ui-dropdown-menu-content", props: [{ name: "align", type: '"start" | "center" | "end"', default: '"start"', description: "Alignment of the content." }] },
-      { tag: "ui-dropdown-menu-item", props: [] },
+      { tag: "ui-dropdown-menu-item", props: [{ name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }], custom: true },
       { tag: "ui-dropdown-menu-checkbox-item", props: [] },
       { tag: "ui-dropdown-menu-radio-group", props: [] },
       { tag: "ui-dropdown-menu-radio-item", props: [] },
@@ -614,13 +573,10 @@ const components = [
       { tag: "ui-dropdown-menu-sub-content", props: [] },
     ],
     example: `<ui-dropdown-menu>
-  <ui-dropdown-menu-trigger>
-    <ui-button variant="outline">Open Menu</ui-button>
-  </ui-dropdown-menu-trigger>
+  <ui-dropdown-menu-trigger>Open Menu</ui-dropdown-menu-trigger>
   <ui-dropdown-menu-content class="w-56">
-    <ui-dropdown-menu-label>My Account</ui-dropdown-menu-label>
-    <ui-dropdown-menu-separator></ui-dropdown-menu-separator>
     <ui-dropdown-menu-group>
+      <ui-dropdown-menu-label>My Account</ui-dropdown-menu-label>
       <ui-dropdown-menu-item>Profile</ui-dropdown-menu-item>
       <ui-dropdown-menu-item>Settings</ui-dropdown-menu-item>
       <ui-dropdown-menu-item>Billing</ui-dropdown-menu-item>
@@ -673,9 +629,9 @@ const components = [
       { tag: "ui-field-title", props: [] },
     ],
     example: `<ui-field>
-  <ui-field-label>Email</ui-field-label>
+  <ui-field-label html-for="field-email">Email</ui-field-label>
   <ui-field-content>
-    <ui-input type="email" placeholder="you@example.com"></ui-input>
+    <ui-input id="field-email" type="email" placeholder="you@example.com"></ui-input>
   </ui-field-content>
   <ui-field-description>We'll never share your email.</ui-field-description>
 </ui-field>`,
@@ -734,8 +690,13 @@ const components = [
       { tag: "ui-input-group-textarea", props: [] },
     ],
     example: `<ui-input-group>
-  <ui-input-group-text>https://</ui-input-group-text>
+  <ui-input-group-addon>
+    <ui-input-group-text>https://</ui-input-group-text>
+  </ui-input-group-addon>
   <ui-input-group-input placeholder="example.com"></ui-input-group-input>
+  <ui-input-group-addon align="inline-end">
+    <ui-input-group-text>.com</ui-input-group-text>
+  </ui-input-group-addon>
 </ui-input-group>`,
   },
   {
@@ -745,12 +706,12 @@ const components = [
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/input-otp",
     subComponents: [
-      { tag: "ui-input-otp", props: [{ name: "maxLength", type: "number", default: "—", description: "Maximum number of characters." }] },
+      { tag: "ui-input-otp", props: [{ name: "max-length", type: "number", default: "—", description: "Maximum number of characters." }] },
       { tag: "ui-input-otp-group", props: [] },
       { tag: "ui-input-otp-slot", props: [{ name: "index", type: "number", default: "—", description: "The slot index." }] },
       { tag: "ui-input-otp-separator", props: [] },
     ],
-    example: `<ui-input-otp maxLength="6">
+    example: `<ui-input-otp max-length="6">
   <ui-input-otp-group>
     <ui-input-otp-slot index="0"></ui-input-otp-slot>
     <ui-input-otp-slot index="1"></ui-input-otp-slot>
@@ -846,7 +807,7 @@ const components = [
       { tag: "ui-menubar-menu", props: [] },
       { tag: "ui-menubar-trigger", props: [] },
       { tag: "ui-menubar-content", props: [] },
-      { tag: "ui-menubar-item", props: [] },
+      { tag: "ui-menubar-item", props: [{ name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }], custom: true },
       { tag: "ui-menubar-checkbox-item", props: [] },
       { tag: "ui-menubar-radio-group", props: [] },
       { tag: "ui-menubar-radio-item", props: [] },
@@ -912,20 +873,20 @@ const components = [
       { tag: "ui-navigation-menu-item", props: [] },
       { tag: "ui-navigation-menu-trigger", props: [] },
       { tag: "ui-navigation-menu-content", props: [] },
-      { tag: "ui-navigation-menu-link", props: [] },
+      { tag: "ui-navigation-menu-link", props: [{ name: "href", type: "string", default: "—", description: "URL the link points to. (Custom prop)" }], custom: true },
       { tag: "ui-navigation-menu-indicator", props: [] },
       { tag: "ui-navigation-menu-positioner", props: [] },
     ],
     example: `<ui-navigation-menu>
   <ui-navigation-menu-list>
     <ui-navigation-menu-item>
-      <ui-navigation-menu-link>Documentation</ui-navigation-menu-link>
+      <ui-navigation-menu-link href="/docs">Documentation</ui-navigation-menu-link>
     </ui-navigation-menu-item>
     <ui-navigation-menu-item>
-      <ui-navigation-menu-link>Components</ui-navigation-menu-link>
+      <ui-navigation-menu-link href="/components">Components</ui-navigation-menu-link>
     </ui-navigation-menu-item>
     <ui-navigation-menu-item>
-      <ui-navigation-menu-link>Examples</ui-navigation-menu-link>
+      <ui-navigation-menu-link href="/examples">Examples</ui-navigation-menu-link>
     </ui-navigation-menu-item>
   </ui-navigation-menu-list>
 </ui-navigation-menu>`,
@@ -940,7 +901,7 @@ const components = [
       { tag: "ui-pagination", props: [] },
       { tag: "ui-pagination-content", props: [] },
       { tag: "ui-pagination-item", props: [] },
-      { tag: "ui-pagination-link", props: [{ name: "isActive", type: "boolean", default: "false", description: "Whether this page is active." }] },
+      { tag: "ui-pagination-link", props: [{ name: "href", type: "string", default: "—", description: "URL the link points to. (Custom prop)" }, { name: "isActive", type: "boolean", default: "false", description: "Whether this page is active." }], custom: true },
       { tag: "ui-pagination-previous", props: [] },
       { tag: "ui-pagination-next", props: [] },
       { tag: "ui-pagination-ellipsis", props: [] },
@@ -948,9 +909,9 @@ const components = [
     example: `<ui-pagination>
   <ui-pagination-content>
     <ui-pagination-item><ui-pagination-previous></ui-pagination-previous></ui-pagination-item>
-    <ui-pagination-item><ui-pagination-link>1</ui-pagination-link></ui-pagination-item>
-    <ui-pagination-item><ui-pagination-link isActive>2</ui-pagination-link></ui-pagination-item>
-    <ui-pagination-item><ui-pagination-link>3</ui-pagination-link></ui-pagination-item>
+    <ui-pagination-item><ui-pagination-link href="?page=1">1</ui-pagination-link></ui-pagination-item>
+    <ui-pagination-item><ui-pagination-link href="?page=2" isActive>2</ui-pagination-link></ui-pagination-item>
+    <ui-pagination-item><ui-pagination-link href="?page=3">3</ui-pagination-link></ui-pagination-item>
     <ui-pagination-item><ui-pagination-ellipsis></ui-pagination-ellipsis></ui-pagination-item>
     <ui-pagination-item><ui-pagination-next></ui-pagination-next></ui-pagination-item>
   </ui-pagination-content>
@@ -971,9 +932,7 @@ const components = [
       { tag: "ui-popover-description", props: [] },
     ],
     example: `<ui-popover>
-  <ui-popover-trigger>
-    <ui-button variant="outline">Open Popover</ui-button>
-  </ui-popover-trigger>
+  <ui-popover-trigger>Open Popover</ui-popover-trigger>
   <ui-popover-content class="w-80">
     <ui-popover-header>
       <ui-popover-title>Dimensions</ui-popover-title>
@@ -1113,7 +1072,7 @@ const components = [
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/select",
     subComponents: [
-      { tag: "ui-select", props: [{ name: "value", type: "string", default: "—", description: "Controlled selected value." }, { name: "defaultValue", type: "string", default: "—", description: "Default selected value." }] },
+      { tag: "ui-select", props: [{ name: "value", type: "string", default: "—", description: "Controlled selected value." }, { name: "default-value", type: "string", default: "—", description: "Default selected value." }] },
       { tag: "ui-select-trigger", props: [] },
       { tag: "ui-select-value", props: [{ name: "placeholder", type: "string", default: "—", description: "Placeholder text." }] },
       { tag: "ui-select-content", props: [] },
@@ -1125,7 +1084,7 @@ const components = [
       { tag: "ui-select-scroll-down-button", props: [] },
     ],
     example: `<ui-select>
-  <ui-select-trigger class="w-[180px]">
+  <ui-select-trigger class="max-w-[180px] w-full">
     <ui-select-value placeholder="Select a fruit"></ui-select-value>
   </ui-select-trigger>
   <ui-select-content>
@@ -1180,22 +1139,20 @@ const components = [
       { tag: "ui-sheet-close", props: [] },
     ],
     example: `<ui-sheet>
-  <ui-sheet-trigger>
-    <ui-button variant="outline">Open Sheet</ui-button>
-  </ui-sheet-trigger>
+  <ui-sheet-trigger>Open Sheet</ui-sheet-trigger>
   <ui-sheet-content>
     <ui-sheet-header>
       <ui-sheet-title>Edit Profile</ui-sheet-title>
       <ui-sheet-description>Make changes to your profile. Click save when done.</ui-sheet-description>
     </ui-sheet-header>
-    <div class="space-y-4 py-4">
+    <div class="space-y-4 px-4 py-4">
       <div class="space-y-2">
         <ui-label>Name</ui-label>
         <ui-input placeholder="Your name"></ui-input>
       </div>
     </div>
     <ui-sheet-footer>
-      <ui-sheet-close><ui-button variant="outline">Cancel</ui-button></ui-sheet-close>
+      <ui-sheet-close>Cancel</ui-sheet-close>
       <ui-button>Save</ui-button>
     </ui-sheet-footer>
   </ui-sheet-content>
@@ -1219,7 +1176,7 @@ const components = [
       { tag: "ui-sidebar-group-content", props: [] },
       { tag: "ui-sidebar-menu", props: [] },
       { tag: "ui-sidebar-menu-item", props: [] },
-      { tag: "ui-sidebar-menu-button", props: [{ name: "isActive", type: "boolean", default: "false", description: "Whether active." }] },
+      { tag: "ui-sidebar-menu-button", props: [{ name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }, { name: "isActive", type: "boolean", default: "false", description: "Whether active." }], custom: true },
       { tag: "ui-sidebar-menu-action", props: [] },
       { tag: "ui-sidebar-menu-badge", props: [] },
       { tag: "ui-sidebar-menu-skeleton", props: [] },
@@ -1331,7 +1288,8 @@ const components = [
       { tag: "ui-table-cell", props: [] },
       { tag: "ui-table-caption", props: [] },
     ],
-    example: `<ui-table>
+    example: `<ui-table><ui-table-caption>A list of recent invoices.</ui-table-caption><ui-table-header><ui-table-row><ui-table-head class="w-[100px]">Invoice</ui-table-head><ui-table-head>Status</ui-table-head><ui-table-head>Method</ui-table-head><ui-table-head class="text-right">Amount</ui-table-head></ui-table-row></ui-table-header><ui-table-body><ui-table-row><ui-table-cell class="font-medium">INV001</ui-table-cell><ui-table-cell>Paid</ui-table-cell><ui-table-cell>Credit Card</ui-table-cell><ui-table-cell class="text-right">$250.00</ui-table-cell></ui-table-row><ui-table-row><ui-table-cell class="font-medium">INV002</ui-table-cell><ui-table-cell>Pending</ui-table-cell><ui-table-cell>PayPal</ui-table-cell><ui-table-cell class="text-right">$150.00</ui-table-cell></ui-table-row></ui-table-body></ui-table>`,
+    readableExample: `<ui-table>
   <ui-table-caption>A list of recent invoices.</ui-table-caption>
   <ui-table-header>
     <ui-table-row>
@@ -1366,10 +1324,10 @@ const components = [
     subComponents: [
       { tag: "ui-tabs", props: [{ name: "defaultValue", type: "string", default: "—", description: "The default active tab." }, { name: "value", type: "string", default: "—", description: "Controlled active tab." }] },
       { tag: "ui-tabs-list", props: [] },
-      { tag: "ui-tabs-trigger", props: [{ name: "value", type: "string", default: "—", description: "The tab value." }] },
+      { tag: "ui-tabs-trigger", props: [{ name: "value", type: "string", default: "—", description: "The tab value." }, { name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }], custom: true },
       { tag: "ui-tabs-content", props: [{ name: "value", type: "string", default: "—", description: "The content panel value." }] },
     ],
-    example: `<ui-tabs defaultValue="account" class="w-[400px]">
+    example: `<ui-tabs defaultValue="account" class="max-w-[400px] w-full">
   <ui-tabs-list>
     <ui-tabs-trigger value="account">Account</ui-tabs-trigger>
     <ui-tabs-trigger value="password">Password</ui-tabs-trigger>
@@ -1425,7 +1383,7 @@ const components = [
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/toggle",
     subComponents: [
-      { tag: "ui-toggle", props: [{ name: "variant", type: '"default" | "outline"', default: '"default"', description: "Visual variant." }, { name: "size", type: '"default" | "sm" | "lg"', default: '"default"', description: "Toggle size." }, { name: "pressed", type: "boolean", default: "—", description: "Controlled pressed state." }] },
+      { tag: "ui-toggle", props: [{ name: "variant", type: '"default" | "outline"', default: '"default"', description: "Visual variant." }, { name: "size", type: '"default" | "sm" | "lg"', default: '"default"', description: "Toggle size." }, { name: "pressed", type: "boolean", default: "—", description: "Controlled pressed state." }, { name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }], custom: true },
     ],
     example: `<div class="flex items-center gap-2">
   <ui-toggle>B</ui-toggle>
@@ -1441,7 +1399,7 @@ const components = [
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/toggle-group",
     subComponents: [
       { tag: "ui-toggle-group", props: [{ name: "type", type: '"single" | "multiple"', default: '"single"', description: "Single or multiple selection." }, { name: "variant", type: '"default" | "outline"', default: '"default"', description: "Visual variant." }] },
-      { tag: "ui-toggle-group-item", props: [{ name: "value", type: "string", default: "—", description: "The item value." }] },
+      { tag: "ui-toggle-group-item", props: [{ name: "value", type: "string", default: "—", description: "The item value." }, { name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }], custom: true },
     ],
     example: `<ui-toggle-group type="single">
   <ui-toggle-group-item value="left">Left</ui-toggle-group-item>
@@ -1463,9 +1421,7 @@ const components = [
     ],
     example: `<ui-tooltip-provider>
   <ui-tooltip>
-    <ui-tooltip-trigger>
-      <ui-button variant="outline">Hover me</ui-button>
-    </ui-tooltip-trigger>
+    <ui-tooltip-trigger>Hover me</ui-tooltip-trigger>
     <ui-tooltip-content>
       <p>Add to library</p>
     </ui-tooltip-content>
@@ -1510,44 +1466,54 @@ function escapeHtml(str) {
   return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 
+// Build the sidebar navigation groups HTML using ui-* custom elements.
 // depth: 0 = app/index.html, 1 = app/docs/*.html, 2 = app/docs/components/*.html
-function sidebarHtml(activeSlug = "", depth = 0) {
+function sidebarGroupsHtml(activeSlug = "", depth = 0) {
   const grouped = groupByCategory(components);
   const docsPrefix = depth === 0 ? "docs/" : depth === 1 ? "" : "../";
   const compPrefix = depth === 0 ? "docs/components/" : depth === 1 ? "components/" : "";
 
+  const gettingStarted = [
+    { name: "Introduction", slug: "introduction", href: `${docsPrefix}introduction.html` },
+    { name: "Installation", slug: "installation", href: `${docsPrefix}installation.html` },
+    { name: "Usage", slug: "usage", href: `${docsPrefix}usage.html` },
+  ];
+
   let html = `
-    <aside class="hidden lg:block w-64 shrink-0">
-      <div class="sticky top-14 h-[calc(100vh-3.5rem)] overflow-y-auto py-8 pr-4">
-        <nav class="space-y-6">
-          <div>
-            <h3 class="text-sm font-semibold mb-2">Getting Started</h3>
-            <ul class="space-y-1">
-              <li><a href="${docsPrefix}introduction.html" class="block text-sm py-1 ${activeSlug === 'introduction' ? 'text-foreground font-medium' : 'text-muted-foreground hover:text-foreground'}">Introduction</a></li>
-              <li><a href="${docsPrefix}installation.html" class="block text-sm py-1 ${activeSlug === 'installation' ? 'text-foreground font-medium' : 'text-muted-foreground hover:text-foreground'}">Installation</a></li>
-              <li><a href="${docsPrefix}usage.html" class="block text-sm py-1 ${activeSlug === 'usage' ? 'text-foreground font-medium' : 'text-muted-foreground hover:text-foreground'}">Usage</a></li>
-            </ul>
-          </div>`;
+          <ui-sidebar-group>
+            <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
+            <ui-sidebar-group-content>
+              <ui-sidebar-menu>`;
+  for (const item of gettingStarted) {
+    html += `
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button ${activeSlug === item.slug ? 'is-active' : ''} size="sm" href="${item.href}">${item.name}</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>`;
+  }
+  html += `
+              </ui-sidebar-menu>
+            </ui-sidebar-group-content>
+          </ui-sidebar-group>`;
 
   for (const [category, comps] of Object.entries(grouped)) {
     if (comps.length === 0) continue;
     html += `
-          <div>
-            <h3 class="text-sm font-semibold mb-2">${category}</h3>
-            <ul class="space-y-1">`;
+          <ui-sidebar-group>
+            <ui-sidebar-group-label>${category}</ui-sidebar-group-label>
+            <ui-sidebar-group-content>
+              <ui-sidebar-menu>`;
     for (const comp of comps) {
       html += `
-              <li><a href="${compPrefix}${comp.slug}.html" class="block text-sm py-1 ${activeSlug === comp.slug ? 'text-foreground font-medium' : 'text-muted-foreground hover:text-foreground'}">${comp.name}</a></li>`;
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button ${activeSlug === comp.slug ? 'is-active' : ''} size="sm" href="${compPrefix}${comp.slug}.html">${comp.name}</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>`;
     }
     html += `
-            </ul>
-          </div>`;
+              </ui-sidebar-menu>
+            </ui-sidebar-group-content>
+          </ui-sidebar-group>`;
   }
 
-  html += `
-        </nav>
-      </div>
-    </aside>`;
   return html;
 }
 
@@ -1586,7 +1552,8 @@ function headerHtml(depth = 0) {
 
 function pageShell(title, activeSlug, content, depth = 0) {
   const scriptPath = depth === 0 ? "./app.ts" : depth === 1 ? "../app.ts" : "../../app.ts";
-  const base = depth === 0 ? "." : depth === 1 ? ".." : "../..";
+  const rootPrefix = depth === 0 ? "" : depth === 1 ? "../" : "../../";
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1598,9 +1565,33 @@ function pageShell(title, activeSlug, content, depth = 0) {
 </head>
 <body class="style-vega">
 <div id="reactolith-app">
-<ui-docs-layout page="${activeSlug}" base="${base}">
-    ${content}
-</ui-docs-layout>
+  <ui-sidebar-provider>
+    <ui-sidebar>
+      <ui-sidebar-header class="p-4">
+        <a href="${rootPrefix}index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
+      </ui-sidebar-header>
+      <ui-sidebar-content>
+        ${sidebarGroupsHtml(activeSlug, depth)}
+      </ui-sidebar-content>
+    </ui-sidebar>
+    <ui-sidebar-inset class="min-w-0 overflow-x-hidden">
+      <header class="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+        <div class="flex h-14 items-center gap-2 px-4">
+          <ui-sidebar-trigger></ui-sidebar-trigger>
+          <div class="flex-1"></div>
+          <nav class="flex items-center gap-2">
+            <a href="https://github.com/reactolith/ui" class="text-sm text-muted-foreground hover:text-foreground">GitHub</a>
+            <ui-theme-switch></ui-theme-switch>
+          </nav>
+        </div>
+      </header>
+      <div class="flex-1 overflow-y-auto min-w-0">
+        <div class="max-w-3xl mx-auto px-6 py-8 overflow-hidden">
+          ${content}
+        </div>
+      </div>
+    </ui-sidebar-inset>
+  </ui-sidebar-provider>
 </div>
 </body>
 </html>
@@ -1619,7 +1610,7 @@ function componentPage(comp) {
     propsHtml += `
             <div class="mt-6">
               <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;${sub.tag}&gt;</code>${sub.custom ? ' <span class="text-xs bg-primary text-primary-foreground px-1.5 py-0.5 rounded ml-2">Custom wrapper</span>' : ""}</h3>
-              <div class="overflow-x-auto">
+              <div class="overflow-x-auto max-w-full">
                 <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody>`;
     for (const prop of sub.props) {
       propsHtml += `<tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">${prop.name}</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">${escapeHtml(prop.type)}</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">${escapeHtml(prop.default)}</code></td><td class="py-2 text-muted-foreground">${prop.description}</td></tr>`;
@@ -1635,24 +1626,24 @@ function componentPage(comp) {
 
   const content = `
             <div class="space-y-2 mb-8">
-              <div class="flex items-center gap-3">
-                <h1 class="text-3xl font-bold tracking-tight">${comp.name}</h1>
-                <a href="${comp.shadcnUrl}" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1">shadcn/ui docs</a>
+              <div class="flex items-start justify-end gap-3">
+                <a href="${comp.shadcnUrl}" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">shadcn/ui docs</a>
               </div>
+              <h1 class="text-3xl font-bold tracking-tight">${comp.name}</h1>
               <p class="text-lg text-muted-foreground">${comp.description}</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
-              <div class="rounded-lg border p-6 bg-background overflow-x-auto">
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
                 ${comp.example}
               </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
-              <div class="rounded-lg border bg-muted/30 overflow-x-auto">
-                <pre class="p-4 text-sm"><code>${escapeHtml(comp.example.trim())}</code></pre>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>${escapeHtml((comp.readableExample || comp.example).trim())}</code></pre>
               </div>
             </section>
 
@@ -1705,7 +1696,7 @@ function introductionPage() {
               <p>Props are passed as HTML attributes:</p>
             </div>
 
-            <div class="rounded-lg border bg-muted/30 overflow-x-auto mt-4 mb-6">
+            <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
               <pre class="p-4 text-sm"><code>${escapeHtml(`<!-- Instead of React JSX: -->
 <!-- <Button variant="outline" size="lg">Click me</Button> -->
 
@@ -1741,7 +1732,7 @@ function installationPage() {
               <p>Reactolith UI is distributed as a <a href="https://ui.shadcn.com/docs/registry">shadcn registry</a>. You can add individual components to your project using the shadcn CLI:</p>
             </div>
 
-            <div class="rounded-lg border bg-muted/30 overflow-x-auto mt-4 mb-6">
+            <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
               <pre class="p-4 text-sm"><code>npx shadcn@latest add https://reactolith.github.io/ui/r/button.json</code></pre>
             </div>
 
@@ -1759,7 +1750,7 @@ function installationPage() {
               <p>If you're starting a new project, set up the basic structure:</p>
             </div>
 
-            <div class="rounded-lg border bg-muted/30 overflow-x-auto mt-4 mb-6">
+            <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
               <pre class="p-4 text-sm"><code>${escapeHtml(`# 1. Create a new project
 mkdir my-app && cd my-app
 npm init -y
@@ -1782,7 +1773,7 @@ npx shadcn@latest add https://reactolith.github.io/ui/r/card.json
               <p>Make sure your main CSS file imports Tailwind and the shadcn styles:</p>
             </div>
 
-            <div class="rounded-lg border bg-muted/30 overflow-x-auto mt-4 mb-6">
+            <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
               <pre class="p-4 text-sm"><code>${escapeHtml(`@import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -1811,7 +1802,7 @@ function usagePage() {
               <p>Reactolith UI components are used as standard HTML custom elements. All custom element tags use the <code>ui-</code> prefix:</p>
             </div>
 
-            <div class="rounded-lg border bg-muted/30 overflow-x-auto mt-4 mb-6">
+            <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
               <pre class="p-4 text-sm"><code>${escapeHtml(`<ui-button>Click me</ui-button>
 <ui-input placeholder="Enter text..."></ui-input>
 <ui-badge variant="secondary">New</ui-badge>`)}</code></pre>
@@ -1822,7 +1813,7 @@ function usagePage() {
               <p>Props are passed as HTML attributes. String values work directly, and boolean attributes follow HTML conventions:</p>
             </div>
 
-            <div class="rounded-lg border bg-muted/30 overflow-x-auto mt-4 mb-6">
+            <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
               <pre class="p-4 text-sm"><code>${escapeHtml(`<!-- String props -->
 <ui-button variant="outline" size="lg">Large Outline</ui-button>
 
@@ -1839,7 +1830,7 @@ function usagePage() {
               <p>Complex components are built by nesting sub-components, just like in HTML:</p>
             </div>
 
-            <div class="rounded-lg border bg-muted/30 overflow-x-auto mt-4 mb-6">
+            <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
               <pre class="p-4 text-sm"><code>${escapeHtml(`<ui-card>
   <ui-card-header>
     <ui-card-title>My Card</ui-card-title>
@@ -1859,7 +1850,7 @@ function usagePage() {
               <p>You can add Tailwind CSS classes directly to any component using the <code>class</code> attribute:</p>
             </div>
 
-            <div class="rounded-lg border bg-muted/30 overflow-x-auto mt-4 mb-6">
+            <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
               <pre class="p-4 text-sm"><code>${escapeHtml(`<ui-button class="w-full">Full Width Button</ui-button>
 <ui-card class="max-w-md mx-auto">
   <ui-card-content class="p-8">Centered card</ui-card-content>
@@ -1876,7 +1867,7 @@ function usagePage() {
               </ul>
             </div>
 
-            <div class="rounded-lg border bg-muted/30 overflow-x-auto mt-4 mb-6">
+            <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
               <pre class="p-4 text-sm"><code>${escapeHtml(`<!-- Button as a link -->
 <ui-button href="https://example.com">Visit Site</ui-button>
 

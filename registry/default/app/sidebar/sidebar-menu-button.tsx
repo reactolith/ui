@@ -2,12 +2,15 @@ import * as React from "react";
 import { SidebarMenuButton, useSidebar } from "@/components/ui/sidebar";
 import { useCloseOverlay } from "@/registry/default/lib/close-overlay";
 
-type UiSidebarMenuButtonProps = React.ComponentProps<typeof SidebarMenuButton>;
+type UiSidebarMenuButtonProps =
+    Omit<React.ComponentProps<typeof SidebarMenuButton>, "render"> & {
+    href?: string | null;
+};
 
 const UiSidebarMenuButton = React.forwardRef<
-    HTMLButtonElement,
+    HTMLAnchorElement | HTMLButtonElement,
     UiSidebarMenuButtonProps
->(({ onClick, ...props }, ref) => {
+>(({ href, onClick, children, ...props }, ref) => {
     const { isMobile, setOpenMobile } = useSidebar();
     const closeOverlay = useCloseOverlay();
 
@@ -20,12 +23,32 @@ const UiSidebarMenuButton = React.forwardRef<
         [isMobile, setOpenMobile, closeOverlay, onClick]
     );
 
+    if (href) {
+        return (
+            <SidebarMenuButton
+                {...props}
+                onClick={handleClick}
+                render={(buttonProps) => (
+                    <a
+                        {...buttonProps}
+                        ref={ref as React.Ref<HTMLAnchorElement>}
+                        href={href}
+                    >
+                        {children}
+                    </a>
+                )}
+            />
+        );
+    }
+
     return (
         <SidebarMenuButton
-            ref={ref}
+            ref={ref as React.Ref<HTMLButtonElement>}
             onClick={handleClick}
             {...props}
-        />
+        >
+            {children}
+        </SidebarMenuButton>
     );
 });
 

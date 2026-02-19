@@ -17,11 +17,11 @@ The `registry/` directory contains wrapper components that extend and enhance th
 
 ## Close-on-Navigation Pattern
 
-Navigation links inside overlays (sidebars, sheets, dropdowns, popovers, drawers, command palettes, etc.) **must close the overlay when clicked**. This is standard UX — users expect menus to dismiss after selecting a link.
+Navigation links inside overlays (sidebars, sheets, dropdowns, popovers, command palettes, etc.) **must close the overlay when clicked**. This is standard UX — users expect menus to dismiss after selecting a link.
 
 ### How it works
 
-1. **Overlay containers** (`Sheet`, `Popover`, `Drawer`, `CommandDialog`) provide a `CloseOverlayProvider` context with their `onOpenChange(false)` callback.
+1. **Overlay containers** (`Sheet`, `Popover`, `CommandDialog`) provide a `CloseOverlayProvider` context with their `onOpenChange(false)` callback.
 
 2. **Item components with `href`** (`DropdownMenuItem`, `ContextMenuItem`, `MenubarItem`, `CommandItem`, `NavigationMenuLink`) consume the context via `useCloseOverlay()` and call the close function on click.
 

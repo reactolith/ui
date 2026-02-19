@@ -16,7 +16,9 @@
       "Bash(node:*)",
       "Bash(kill:*)",
       "Bash(npx vite build:*)",
-      "Bash(npx generate-web-types:*)"
+      "Bash(npx generate-web-types:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(python3:*)"
     ]
   }
 }

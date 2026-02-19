@@ -27,7 +27,6 @@ const groups = {
   "context-menu": ["context-menu", "context-menu-checkbox-item", "context-menu-content", "context-menu-group", "context-menu-item", "context-menu-label", "context-menu-portal", "context-menu-radio-group", "context-menu-radio-item", "context-menu-separator", "context-menu-shortcut", "context-menu-sub", "context-menu-sub-content", "context-menu-sub-trigger", "context-menu-trigger"],
   "dialog": ["dialog", "dialog-close", "dialog-content", "dialog-description", "dialog-footer", "dialog-header", "dialog-overlay", "dialog-portal", "dialog-title", "dialog-trigger"],
   "direction-provider": ["direction-provider"],
-  "drawer": ["drawer", "drawer-close", "drawer-content", "drawer-description", "drawer-footer", "drawer-header", "drawer-overlay", "drawer-portal", "drawer-title", "drawer-trigger"],
   "dropdown-menu": ["dropdown-menu", "dropdown-menu-checkbox-item", "dropdown-menu-content", "dropdown-menu-group", "dropdown-menu-item", "dropdown-menu-label", "dropdown-menu-portal", "dropdown-menu-radio-group", "dropdown-menu-radio-item", "dropdown-menu-separator", "dropdown-menu-shortcut", "dropdown-menu-sub", "dropdown-menu-sub-content", "dropdown-menu-sub-trigger", "dropdown-menu-trigger"],
   "empty": ["empty", "empty-content", "empty-description", "empty-header", "empty-media", "empty-title"],
   "field": ["field", "field-content", "field-description", "field-error", "field-group", "field-label", "field-legend", "field-separator", "field-set", "field-title"],

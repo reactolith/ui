@@ -2,28 +2,43 @@ import * as React from "react";
 import { NavigationMenuLink } from "@/components/ui/navigation-menu";
 import { useCloseOverlay } from "@/registry/default/lib/close-overlay";
 
-type UiNavigationMenuLinkProps = React.ComponentProps<typeof NavigationMenuLink>;
+type UiNavigationMenuLinkProps =
+    Omit<React.ComponentProps<typeof NavigationMenuLink>, "render"> & {
+    href?: string;
+    children: React.ReactNode;
+};
 
 const UiNavigationMenuLink = React.forwardRef<
     HTMLAnchorElement,
     UiNavigationMenuLinkProps
->(({ onClick, ...props }, ref) => {
+>(({ href, children, ...props }, ref) => {
     const closeOverlay = useCloseOverlay();
 
-    const handleClick = React.useCallback(
-        (e: React.MouseEvent<HTMLAnchorElement>) => {
-            closeOverlay?.();
-            onClick?.(e);
-        },
-        [closeOverlay, onClick]
-    );
+    if (href) {
+        return (
+            <NavigationMenuLink
+                {...props}
+                render={(linkProps) => (
+                    <a
+                        {...linkProps}
+                        ref={ref}
+                        href={href}
+                        onClick={(e) => {
+                            (linkProps as Record<string, unknown>).onClick?.(e);
+                            closeOverlay?.();
+                        }}
+                    >
+                        {children}
+                    </a>
+                )}
+            />
+        );
+    }
 
     return (
-        <NavigationMenuLink
-            ref={ref}
-            onClick={handleClick}
-            {...props}
-        />
+        <NavigationMenuLink ref={ref} {...props}>
+            {children}
+        </NavigationMenuLink>
     );
 });
 

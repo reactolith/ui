@@ -2,12 +2,14 @@ import * as React from "react";
 import { PaginationLink } from "@/components/ui/pagination";
 import { useCloseOverlay } from "@/registry/default/lib/close-overlay";
 
-type UiPaginationLinkProps = React.ComponentProps<typeof PaginationLink>;
+type UiPaginationLinkProps = React.ComponentProps<typeof PaginationLink> & {
+    href?: string;
+};
 
 const UiPaginationLink = React.forwardRef<
     HTMLAnchorElement,
     UiPaginationLinkProps
->(({ onClick, ...props }, ref) => {
+>(({ href, onClick, ...props }, ref) => {
     const closeOverlay = useCloseOverlay();
 
     const handleClick = React.useCallback(
@@ -21,6 +23,7 @@ const UiPaginationLink = React.forwardRef<
     return (
         <PaginationLink
             ref={ref}
+            href={href}
             onClick={handleClick}
             {...props}
         />
