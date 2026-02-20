@@ -3,7 +3,7 @@
   "name": "sidebar-menu-sub-button",
   "title": "Sidebar Menu Sub Button",
   "registryDependencies": [
-    "close-overlay"
+    "https://reactolith.github.io/ui/r/close-overlay.json"
   ],
   "files": [
     {

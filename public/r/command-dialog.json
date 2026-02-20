@@ -3,7 +3,7 @@
   "name": "command-dialog",
   "title": "Command Dialog",
   "registryDependencies": [
-    "close-overlay"
+    "https://reactolith.github.io/ui/r/close-overlay.json"
   ],
   "files": [
     {

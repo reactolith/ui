@@ -3,7 +3,7 @@
   "name": "tooltip-trigger",
   "title": "Tooltip Trigger",
   "registryDependencies": [
-    "render-element",
+    "https://reactolith.github.io/ui/r/render-element.json",
     "tooltip"
   ],
   "files": [

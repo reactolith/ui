@@ -4,7 +4,7 @@
   "title": "Accordion Trigger",
   "registryDependencies": [
     "accordion",
-    "render-element"
+    "https://reactolith.github.io/ui/r/render-element.json"
   ],
   "files": [
     {

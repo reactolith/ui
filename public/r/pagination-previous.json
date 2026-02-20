@@ -3,7 +3,7 @@
   "name": "pagination-previous",
   "title": "Pagination Previous",
   "registryDependencies": [
-    "close-overlay"
+    "https://reactolith.github.io/ui/r/close-overlay.json"
   ],
   "files": [
     {

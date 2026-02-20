@@ -97,7 +97,7 @@
       ],
       "registryDependencies": [
         "accordion",
-        "render-element"
+        "https://reactolith.github.io/ui/r/render-element.json"
       ]
     },
     {
@@ -323,7 +323,7 @@
       ],
       "registryDependencies": [
         "alert-dialog",
-        "render-element"
+        "https://reactolith.github.io/ui/r/render-element.json"
       ]
     },
     {
@@ -519,8 +519,8 @@
       ],
       "registryDependencies": [
         "breadcrumb",
-        "close-overlay",
-        "render-element"
+        "https://reactolith.github.io/ui/r/close-overlay.json",
+        "https://reactolith.github.io/ui/r/render-element.json"
       ]
     },
     {
@@ -581,7 +581,7 @@
       ],
       "registryDependencies": [
         "button",
-        "render-element"
+        "https://reactolith.github.io/ui/r/render-element.json"
       ]
     },
     {
@@ -972,7 +972,7 @@
       ],
       "registryDependencies": [
         "collapsible",
-        "render-element"
+        "https://reactolith.github.io/ui/r/render-element.json"
       ]
     },
     {
@@ -1179,7 +1179,7 @@
         }
       ],
       "registryDependencies": [
-        "close-overlay"
+        "https://reactolith.github.io/ui/r/close-overlay.json"
       ]
     },
     {
@@ -1230,7 +1230,7 @@
         }
       ],
       "registryDependencies": [
-        "close-overlay"
+        "https://reactolith.github.io/ui/r/close-overlay.json"
       ]
     },
     {
@@ -1329,8 +1329,8 @@
         }
       ],
       "registryDependencies": [
-        "close-overlay",
-        "render-element"
+        "https://reactolith.github.io/ui/r/close-overlay.json",
+        "https://reactolith.github.io/ui/r/render-element.json"
       ]
     },
     {
@@ -1465,7 +1465,7 @@
         }
       ],
       "registryDependencies": [
-        "close-overlay"
+        "https://reactolith.github.io/ui/r/close-overlay.json"
       ]
     },
     {
@@ -1480,7 +1480,7 @@
         }
       ],
       "registryDependencies": [
-        "render-element"
+        "https://reactolith.github.io/ui/r/render-element.json"
       ]
     },
     {
@@ -1579,7 +1579,7 @@
         }
       ],
       "registryDependencies": [
-        "render-element"
+        "https://reactolith.github.io/ui/r/render-element.json"
       ]
     },
     {
@@ -1654,8 +1654,8 @@
         }
       ],
       "registryDependencies": [
-        "close-overlay",
-        "render-element"
+        "https://reactolith.github.io/ui/r/close-overlay.json",
+        "https://reactolith.github.io/ui/r/render-element.json"
       ]
     },
     {
@@ -1778,7 +1778,7 @@
         }
       ],
       "registryDependencies": [
-        "render-element"
+        "https://reactolith.github.io/ui/r/render-element.json"
       ]
     },
     {
@@ -2363,8 +2363,8 @@
         }
       ],
       "registryDependencies": [
-        "close-overlay",
-        "render-element"
+        "https://reactolith.github.io/ui/r/close-overlay.json",
+        "https://reactolith.github.io/ui/r/render-element.json"
       ]
     },
     {
@@ -2595,8 +2595,8 @@
         }
       ],
       "registryDependencies": [
-        "close-overlay",
-        "render-element"
+        "https://reactolith.github.io/ui/r/close-overlay.json",
+        "https://reactolith.github.io/ui/r/render-element.json"
       ]
     },
     {
@@ -2695,7 +2695,7 @@
         }
       ],
       "registryDependencies": [
-        "close-overlay"
+        "https://reactolith.github.io/ui/r/close-overlay.json"
       ]
     },
     {
@@ -2710,7 +2710,7 @@
         }
       ],
       "registryDependencies": [
-        "close-overlay"
+        "https://reactolith.github.io/ui/r/close-overlay.json"
       ]
     },
     {
@@ -2725,7 +2725,7 @@
         }
       ],
       "registryDependencies": [
-        "close-overlay"
+        "https://reactolith.github.io/ui/r/close-overlay.json"
       ]
     },
     {
@@ -2740,7 +2740,7 @@
         }
       ],
       "registryDependencies": [
-        "close-overlay"
+        "https://reactolith.github.io/ui/r/close-overlay.json"
       ]
     },
     {
@@ -2803,7 +2803,7 @@
         }
       ],
       "registryDependencies": [
-        "render-element"
+        "https://reactolith.github.io/ui/r/render-element.json"
       ]
     },
     {
@@ -2983,7 +2983,7 @@
         }
       ],
       "registryDependencies": [
-        "select-items"
+        "https://reactolith.github.io/ui/r/select-items.json"
       ]
     },
     {
@@ -3022,7 +3022,7 @@
         }
       ],
       "registryDependencies": [
-        "select-items"
+        "https://reactolith.github.io/ui/r/select-items.json"
       ]
     },
     {
@@ -3124,7 +3124,7 @@
         }
       ],
       "registryDependencies": [
-        "close-overlay"
+        "https://reactolith.github.io/ui/r/close-overlay.json"
       ]
     },
     {
@@ -3139,7 +3139,7 @@
         }
       ],
       "registryDependencies": [
-        "render-element"
+        "https://reactolith.github.io/ui/r/render-element.json"
       ]
     },
     {
@@ -3214,7 +3214,7 @@
         }
       ],
       "registryDependencies": [
-        "render-element"
+        "https://reactolith.github.io/ui/r/render-element.json"
       ]
     },
     {
@@ -3385,8 +3385,8 @@
         }
       ],
       "registryDependencies": [
-        "close-overlay",
-        "render-element"
+        "https://reactolith.github.io/ui/r/close-overlay.json",
+        "https://reactolith.github.io/ui/r/render-element.json"
       ]
     },
     {
@@ -3437,7 +3437,7 @@
         }
       ],
       "registryDependencies": [
-        "close-overlay"
+        "https://reactolith.github.io/ui/r/close-overlay.json"
       ]
     },
     {
@@ -3752,8 +3752,8 @@
         }
       ],
       "registryDependencies": [
-        "close-overlay",
-        "render-element",
+        "https://reactolith.github.io/ui/r/close-overlay.json",
+        "https://reactolith.github.io/ui/r/render-element.json",
         "tabs"
       ]
     },
@@ -3784,7 +3784,7 @@
         }
       ],
       "registryDependencies": [
-        "render-element",
+        "https://reactolith.github.io/ui/r/render-element.json",
         "toggle"
       ]
     },
@@ -3815,7 +3815,7 @@
         }
       ],
       "registryDependencies": [
-        "render-element",
+        "https://reactolith.github.io/ui/r/render-element.json",
         "toggle-group"
       ]
     },
@@ -3876,7 +3876,7 @@
         }
       ],
       "registryDependencies": [
-        "render-element",
+        "https://reactolith.github.io/ui/r/render-element.json",
         "tooltip"
       ]
     }

@@ -3,7 +3,7 @@
   "name": "select",
   "title": "Select",
   "registryDependencies": [
-    "select-items"
+    "https://reactolith.github.io/ui/r/select-items.json"
   ],
   "files": [
     {

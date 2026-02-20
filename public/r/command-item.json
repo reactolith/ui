@@ -3,7 +3,7 @@
   "name": "command-item",
   "title": "Command Item",
   "registryDependencies": [
-    "close-overlay"
+    "https://reactolith.github.io/ui/r/close-overlay.json"
   ],
   "files": [
     {

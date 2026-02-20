@@ -3,7 +3,7 @@
   "name": "pagination-next",
   "title": "Pagination Next",
   "registryDependencies": [
-    "close-overlay"
+    "https://reactolith.github.io/ui/r/close-overlay.json"
   ],
   "files": [
     {

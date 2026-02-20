@@ -3,8 +3,8 @@
   "name": "sidebar-menu-button",
   "title": "Sidebar Menu Button",
   "registryDependencies": [
-    "close-overlay",
-    "render-element"
+    "https://reactolith.github.io/ui/r/close-overlay.json",
+    "https://reactolith.github.io/ui/r/render-element.json"
   ],
   "files": [
     {

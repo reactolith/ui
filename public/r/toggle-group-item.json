@@ -3,7 +3,7 @@
   "name": "toggle-group-item",
   "title": "Toggle Group Item",
   "registryDependencies": [
-    "render-element",
+    "https://reactolith.github.io/ui/r/render-element.json",
     "toggle-group"
   ],
   "files": [

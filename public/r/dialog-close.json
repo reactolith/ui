@@ -3,7 +3,7 @@
   "name": "dialog-close",
   "title": "Dialog Close",
   "registryDependencies": [
-    "render-element"
+    "https://reactolith.github.io/ui/r/render-element.json"
   ],
   "files": [
     {

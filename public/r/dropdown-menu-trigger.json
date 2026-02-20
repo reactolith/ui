@@ -3,7 +3,7 @@
   "name": "dropdown-menu-trigger",
   "title": "Dropdown Menu Trigger",
   "registryDependencies": [
-    "render-element"
+    "https://reactolith.github.io/ui/r/render-element.json"
   ],
   "files": [
     {

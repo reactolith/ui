@@ -3,7 +3,7 @@
   "name": "toggle",
   "title": "Toggle",
   "registryDependencies": [
-    "render-element",
+    "https://reactolith.github.io/ui/r/render-element.json",
     "toggle"
   ],
   "files": [
