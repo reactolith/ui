@@ -10,7 +10,7 @@
       "path": "registry/default/app/calendar/calendar.tsx",
       "content": "import { Calendar } from \"@/components/ui/calendar\"\n\nexport default Calendar\n",
       "type": "registry:component",
-      "target": "components/app/calendar/calendar.tsx"
+      "target": "@/components/app/calendar/calendar.tsx"
     }
   ],
   "type": "registry:component"

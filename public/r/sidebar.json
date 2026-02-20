@@ -7,7 +7,7 @@
       "path": "registry/default/app/sidebar/sidebar.tsx",
       "content": "import { Sidebar } from \"@/components/ui/sidebar\"\n\nexport default Sidebar\n",
       "type": "registry:component",
-      "target": "components/app/sidebar/sidebar.tsx"
+      "target": "@/components/app/sidebar/sidebar.tsx"
     }
   ],
   "type": "registry:component"

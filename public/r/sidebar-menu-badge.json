@@ -7,7 +7,7 @@
       "path": "registry/default/app/sidebar/sidebar-menu-badge.tsx",
       "content": "import { SidebarMenuBadge } from \"@/components/ui/sidebar\"\n\nexport default SidebarMenuBadge\n",
       "type": "registry:component",
-      "target": "components/app/sidebar/sidebar-menu-badge.tsx"
+      "target": "@/components/app/sidebar/sidebar-menu-badge.tsx"
     }
   ],
   "type": "registry:component"

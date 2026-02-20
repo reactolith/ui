@@ -10,7 +10,7 @@
       "path": "registry/default/app/table/table-cell.tsx",
       "content": "import { TableCell } from \"@/components/ui/table\"\n\nexport default TableCell\n",
       "type": "registry:component",
-      "target": "components/app/table/table-cell.tsx"
+      "target": "@/components/app/table/table-cell.tsx"
     }
   ],
   "type": "registry:component"

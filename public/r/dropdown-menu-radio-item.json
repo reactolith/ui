@@ -7,7 +7,7 @@
       "path": "registry/default/app/dropdown-menu/dropdown-menu-radio-item.tsx",
       "content": "import { DropdownMenuRadioItem } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuRadioItem\n",
       "type": "registry:component",
-      "target": "components/app/dropdown-menu/dropdown-menu-radio-item.tsx"
+      "target": "@/components/app/dropdown-menu/dropdown-menu-radio-item.tsx"
     }
   ],
   "type": "registry:component"

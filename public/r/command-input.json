@@ -7,7 +7,7 @@
       "path": "registry/default/app/command/command-input.tsx",
       "content": "import { CommandInput } from \"@/components/ui/command\"\n\nexport default CommandInput\n",
       "type": "registry:component",
-      "target": "components/app/command/command-input.tsx"
+      "target": "@/components/app/command/command-input.tsx"
     }
   ],
   "type": "registry:component"

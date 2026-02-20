@@ -7,7 +7,7 @@
       "path": "registry/default/app/empty/empty-header.tsx",
       "content": "import { EmptyHeader } from \"@/components/ui/empty\"\n\nexport default EmptyHeader\n",
       "type": "registry:component",
-      "target": "components/app/empty/empty-header.tsx"
+      "target": "@/components/app/empty/empty-header.tsx"
     }
   ],
   "type": "registry:component"

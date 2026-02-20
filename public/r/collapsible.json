@@ -10,7 +10,7 @@
       "path": "registry/default/app/collapsible/collapsible.tsx",
       "content": "import { Collapsible } from \"@/components/ui/collapsible\"\n\nexport default Collapsible\n",
       "type": "registry:component",
-      "target": "components/app/collapsible/collapsible.tsx"
+      "target": "@/components/app/collapsible/collapsible.tsx"
     }
   ],
   "type": "registry:component"

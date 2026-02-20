@@ -10,7 +10,7 @@
       "path": "registry/default/app/dialog/dialog-close.tsx",
       "content": "import { DialogClose } from \"@/components/ui/dialog\"\nimport { renderTrigger } from \"@/registry/default/lib/render-element\"\nimport type {ComponentProps, ReactNode} from \"react\";\n\nexport default function DialogCloseWrapper({\n  children,\n  is,\n  ...props\n}: ComponentProps<typeof DialogClose> & { children?: ReactNode; is?: string }) {\n  return renderTrigger(DialogClose, props, children)\n}\n",
       "type": "registry:component",
-      "target": "components/app/dialog/dialog-close.tsx"
+      "target": "@/components/app/dialog/dialog-close.tsx"
     }
   ],
   "type": "registry:component"

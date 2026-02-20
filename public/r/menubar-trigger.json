@@ -7,7 +7,7 @@
       "path": "registry/default/app/menubar/menubar-trigger.tsx",
       "content": "import { MenubarTrigger } from \"@/components/ui/menubar\"\n\nexport default MenubarTrigger\n",
       "type": "registry:component",
-      "target": "components/app/menubar/menubar-trigger.tsx"
+      "target": "@/components/app/menubar/menubar-trigger.tsx"
     }
   ],
   "type": "registry:component"

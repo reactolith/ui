@@ -7,7 +7,7 @@
       "path": "registry/default/app/command/command-empty.tsx",
       "content": "import { CommandEmpty } from \"@/components/ui/command\"\n\nexport default CommandEmpty\n",
       "type": "registry:component",
-      "target": "components/app/command/command-empty.tsx"
+      "target": "@/components/app/command/command-empty.tsx"
     }
   ],
   "type": "registry:component"

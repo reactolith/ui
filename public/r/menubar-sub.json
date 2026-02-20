@@ -7,7 +7,7 @@
       "path": "registry/default/app/menubar/menubar-sub.tsx",
       "content": "import { MenubarSub } from \"@/components/ui/menubar\"\n\nexport default MenubarSub\n",
       "type": "registry:component",
-      "target": "components/app/menubar/menubar-sub.tsx"
+      "target": "@/components/app/menubar/menubar-sub.tsx"
     }
   ],
   "type": "registry:component"

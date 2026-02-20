@@ -7,7 +7,7 @@
       "path": "registry/default/app/input-group/input-group-text.tsx",
       "content": "import { InputGroupText } from \"@/components/ui/input-group\"\n\nexport default InputGroupText\n",
       "type": "registry:component",
-      "target": "components/app/input-group/input-group-text.tsx"
+      "target": "@/components/app/input-group/input-group-text.tsx"
     }
   ],
   "type": "registry:component"

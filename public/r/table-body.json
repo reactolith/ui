@@ -10,7 +10,7 @@
       "path": "registry/default/app/table/table-body.tsx",
       "content": "import { TableBody } from \"@/components/ui/table\"\n\nexport default TableBody\n",
       "type": "registry:component",
-      "target": "components/app/table/table-body.tsx"
+      "target": "@/components/app/table/table-body.tsx"
     }
   ],
   "type": "registry:component"

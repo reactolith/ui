@@ -7,7 +7,7 @@
       "path": "registry/default/app/item/item-actions.tsx",
       "content": "import { ItemActions } from \"@/components/ui/item\"\n\nexport default ItemActions\n",
       "type": "registry:component",
-      "target": "components/app/item/item-actions.tsx"
+      "target": "@/components/app/item/item-actions.tsx"
     }
   ],
   "type": "registry:component"

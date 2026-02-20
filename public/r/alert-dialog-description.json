@@ -10,7 +10,7 @@
       "path": "registry/default/app/alert-dialog/alert-dialog-description.tsx",
       "content": "import { AlertDialogDescription } from \"@/components/ui/alert-dialog\"\n\nexport default AlertDialogDescription\n",
       "type": "registry:component",
-      "target": "components/app/alert-dialog/alert-dialog-description.tsx"
+      "target": "@/components/app/alert-dialog/alert-dialog-description.tsx"
     }
   ],
   "type": "registry:component"

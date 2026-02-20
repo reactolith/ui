@@ -10,7 +10,7 @@
       "path": "registry/default/app/popover/popover.tsx",
       "content": "import * as React from \"react\";\nimport { Popover } from \"@/components/ui/popover\";\nimport { CloseOverlayProvider } from \"@/registry/default/lib/close-overlay\";\n\ntype UiPopoverProps = React.ComponentProps<typeof Popover>;\n\nexport default function UiPopover({\n    onOpenChange,\n    children,\n    ...props\n}: UiPopoverProps) {\n    const handleClose = React.useCallback(() => {\n        onOpenChange?.(false);\n    }, [onOpenChange]);\n\n    return (\n        <Popover onOpenChange={onOpenChange} {...props}>\n            <CloseOverlayProvider onClose={handleClose}>\n                {children}\n            </CloseOverlayProvider>\n        </Popover>\n    );\n}\n",
       "type": "registry:component",
-      "target": "components/app/popover/popover.tsx"
+      "target": "@/components/app/popover/popover.tsx"
     }
   ],
   "type": "registry:component"

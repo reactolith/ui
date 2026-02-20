@@ -7,7 +7,7 @@
       "path": "registry/default/app/select/select-separator.tsx",
       "content": "import { SelectSeparator } from \"@/components/ui/select\"\n\nexport default SelectSeparator\n",
       "type": "registry:component",
-      "target": "components/app/select/select-separator.tsx"
+      "target": "@/components/app/select/select-separator.tsx"
     }
   ],
   "type": "registry:component"

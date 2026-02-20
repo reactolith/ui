@@ -7,7 +7,7 @@
       "path": "registry/default/app/menubar/menubar-separator.tsx",
       "content": "import { MenubarSeparator } from \"@/components/ui/menubar\"\n\nexport default MenubarSeparator\n",
       "type": "registry:component",
-      "target": "components/app/menubar/menubar-separator.tsx"
+      "target": "@/components/app/menubar/menubar-separator.tsx"
     }
   ],
   "type": "registry:component"

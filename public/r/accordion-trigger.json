@@ -11,7 +11,7 @@
       "path": "registry/default/app/accordion/accordion-trigger.tsx",
       "content": "import { type ComponentProps, type ReactNode, type Ref } from \"react\"\nimport { AccordionTrigger } from \"@/components/ui/accordion\"\nimport { renderLinkable } from \"@/registry/default/lib/render-element\"\n\nexport default function AccordionTriggerWrapper({\n  href,\n  children,\n  ref,\n  is,\n  ...props\n}: ComponentProps<typeof AccordionTrigger> & {\n  href?: string | null\n  children: ReactNode\n  ref?: Ref<HTMLAnchorElement | HTMLButtonElement>\n  is?: string\n}) {\n  return renderLinkable(AccordionTrigger, props, { href, ref, children })\n}\n",
       "type": "registry:component",
-      "target": "components/app/accordion/accordion-trigger.tsx"
+      "target": "@/components/app/accordion/accordion-trigger.tsx"
     }
   ],
   "type": "registry:component"

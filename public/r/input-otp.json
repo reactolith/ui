@@ -7,7 +7,7 @@
       "path": "registry/default/app/input-otp/input-otp.tsx",
       "content": "import { InputOTP } from \"@/components/ui/input-otp\"\n\nexport default InputOTP\n",
       "type": "registry:component",
-      "target": "components/app/input-otp/input-otp.tsx"
+      "target": "@/components/app/input-otp/input-otp.tsx"
     }
   ],
   "type": "registry:component"

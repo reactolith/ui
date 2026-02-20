@@ -7,7 +7,7 @@
       "path": "registry/default/app/pagination/pagination-ellipsis.tsx",
       "content": "import { PaginationEllipsis } from \"@/components/ui/pagination\"\n\nexport default PaginationEllipsis\n",
       "type": "registry:component",
-      "target": "components/app/pagination/pagination-ellipsis.tsx"
+      "target": "@/components/app/pagination/pagination-ellipsis.tsx"
     }
   ],
   "type": "registry:component"

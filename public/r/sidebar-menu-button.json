@@ -11,7 +11,7 @@
       "path": "registry/default/app/sidebar/sidebar-menu-button.tsx",
       "content": "import { type ComponentProps, type ReactNode, type Ref, type MouseEvent, useCallback } from \"react\"\nimport { SidebarMenuButton, useSidebar } from \"@/components/ui/sidebar\"\nimport { useCloseOverlay } from \"@/registry/default/lib/close-overlay\"\nimport { renderLinkable } from \"@/registry/default/lib/render-element\"\n\nexport default function SidebarMenuButtonWrapper({\n  href,\n  onClick,\n  children,\n  ref,\n  is,\n  ...props\n}: ComponentProps<typeof SidebarMenuButton> & {\n  href?: string | null\n  ref?: Ref<HTMLAnchorElement | HTMLButtonElement>\n  is?: string\n}) {\n  const { isMobile, setOpenMobile } = useSidebar()\n  const closeOverlay = useCloseOverlay()\n\n  const handleClick = useCallback(\n    (e: MouseEvent<HTMLButtonElement>) => {\n      if (isMobile) setOpenMobile(false)\n      closeOverlay?.()\n      onClick?.(e)\n    },\n    [isMobile, setOpenMobile, closeOverlay, onClick]\n  )\n\n  return renderLinkable(SidebarMenuButton, { ...props, onClick: handleClick }, { href, ref, children })\n}\n",
       "type": "registry:component",
-      "target": "components/app/sidebar/sidebar-menu-button.tsx"
+      "target": "@/components/app/sidebar/sidebar-menu-button.tsx"
     }
   ],
   "type": "registry:component"

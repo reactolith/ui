@@ -10,7 +10,7 @@
       "path": "registry/default/app/calendar/calendar-day-button.tsx",
       "content": "import { CalendarDayButton } from \"@/components/ui/calendar\"\n\nexport default CalendarDayButton\n",
       "type": "registry:component",
-      "target": "components/app/calendar/calendar-day-button.tsx"
+      "target": "@/components/app/calendar/calendar-day-button.tsx"
     }
   ],
   "type": "registry:component"

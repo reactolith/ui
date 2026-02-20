@@ -10,7 +10,7 @@
       "path": "registry/default/app/card/card-action.tsx",
       "content": "import { CardAction } from \"@/components/ui/card\"\n\nexport default CardAction\n",
       "type": "registry:component",
-      "target": "components/app/card/card-action.tsx"
+      "target": "@/components/app/card/card-action.tsx"
     }
   ],
   "type": "registry:component"

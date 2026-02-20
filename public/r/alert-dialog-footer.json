@@ -10,7 +10,7 @@
       "path": "registry/default/app/alert-dialog/alert-dialog-footer.tsx",
       "content": "import { AlertDialogFooter } from \"@/components/ui/alert-dialog\"\n\nexport default AlertDialogFooter\n",
       "type": "registry:component",
-      "target": "components/app/alert-dialog/alert-dialog-footer.tsx"
+      "target": "@/components/app/alert-dialog/alert-dialog-footer.tsx"
     }
   ],
   "type": "registry:component"

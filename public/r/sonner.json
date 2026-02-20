@@ -10,7 +10,7 @@
       "path": "registry/default/app/sonner/sonner.tsx",
       "content": "import { useEffect, useRef } from \"react\"\nimport { toast, type ExternalToast, type ToasterProps } from \"sonner\"\nimport { Toaster as ShadToaster } from \"@/components/ui/sonner\"\n\ntype ToastKind = \"message\" | \"success\" | \"error\" | \"warning\" | \"info\"\n\nexport type InitialToast = {\n  id?: string | number\n  kind?: ToastKind\n  message: string\n  description?: string\n} & Omit<ExternalToast, \"id\" | \"description\">\n\nexport type SonnerProps = ToasterProps & {\n  toasts?: InitialToast[]\n}\n\nfunction showToast({ id, kind = \"message\", message, description, ...options }: InitialToast) {\n  const key = id ?? `initial-${kind}-${message}`\n  const payload: ExternalToast = { ...options, id: key, description }\n\n  switch (kind) {\n    case \"success\":\n      toast.success(message, payload)\n      break\n    case \"error\":\n      toast.error(message, payload)\n      break\n    case \"warning\":\n      toast.warning(message, payload)\n      break\n    case \"info\":\n      toast.info(message, payload)\n      break\n    default:\n      toast(message, payload)\n  }\n}\n\nexport default function Toaster({ toasts, ...props }: SonnerProps) {\n  const firedRef = useRef(false)\n\n  useEffect(() => {\n    if (!toasts?.length || firedRef.current) return\n    firedRef.current = true\n    toasts.forEach(showToast)\n  }, [toasts])\n\n  return <ShadToaster {...props} />\n}\n",
       "type": "registry:component",
-      "target": "components/app/sonner/sonner.tsx"
+      "target": "@/components/app/sonner/sonner.tsx"
     }
   ],
   "type": "registry:component"

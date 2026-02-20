@@ -10,7 +10,7 @@
       "path": "registry/default/app/pagination/pagination-previous.tsx",
       "content": "import * as React from \"react\";\nimport { PaginationPrevious } from \"@/components/ui/pagination\";\nimport { useCloseOverlay } from \"@/registry/default/lib/close-overlay\";\n\ntype UiPaginationPreviousProps = React.ComponentProps<typeof PaginationPrevious>;\n\nconst UiPaginationPrevious = React.forwardRef<\n    HTMLAnchorElement,\n    UiPaginationPreviousProps\n>(({ onClick, ...props }, ref) => {\n    const closeOverlay = useCloseOverlay();\n\n    const handleClick = React.useCallback(\n        (e: React.MouseEvent<HTMLAnchorElement>) => {\n            closeOverlay?.();\n            onClick?.(e);\n        },\n        [closeOverlay, onClick]\n    );\n\n    return (\n        <PaginationPrevious\n            ref={ref}\n            onClick={handleClick}\n            {...props}\n        />\n    );\n});\n\nUiPaginationPrevious.displayName = \"UiPaginationPrevious\";\nexport default UiPaginationPrevious;\n",
       "type": "registry:component",
-      "target": "components/app/pagination/pagination-previous.tsx"
+      "target": "@/components/app/pagination/pagination-previous.tsx"
     }
   ],
   "type": "registry:component"

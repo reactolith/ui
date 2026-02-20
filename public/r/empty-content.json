@@ -7,7 +7,7 @@
       "path": "registry/default/app/empty/empty-content.tsx",
       "content": "import { EmptyContent } from \"@/components/ui/empty\"\n\nexport default EmptyContent\n",
       "type": "registry:component",
-      "target": "components/app/empty/empty-content.tsx"
+      "target": "@/components/app/empty/empty-content.tsx"
     }
   ],
   "type": "registry:component"

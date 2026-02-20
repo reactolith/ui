@@ -7,7 +7,7 @@
       "path": "registry/default/app/context-menu/context-menu-separator.tsx",
       "content": "import { ContextMenuSeparator } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuSeparator\n",
       "type": "registry:component",
-      "target": "components/app/context-menu/context-menu-separator.tsx"
+      "target": "@/components/app/context-menu/context-menu-separator.tsx"
     }
   ],
   "type": "registry:component"

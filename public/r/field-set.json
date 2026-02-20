@@ -7,7 +7,7 @@
       "path": "registry/default/app/field/field-set.tsx",
       "content": "import { FieldSet } from \"@/components/ui/field\"\n\nexport default FieldSet\n",
       "type": "registry:component",
-      "target": "components/app/field/field-set.tsx"
+      "target": "@/components/app/field/field-set.tsx"
     }
   ],
   "type": "registry:component"

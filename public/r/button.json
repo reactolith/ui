@@ -11,7 +11,7 @@
       "path": "registry/default/app/button/button.tsx",
       "content": "import { type ComponentProps, type ReactNode, type Ref } from \"react\"\nimport { Button } from \"@/components/ui/button\"\nimport { renderLinkable } from \"@/registry/default/lib/render-element\"\n\nexport default function ButtonWrapper({\n  href,\n  children,\n  ref,\n  is,\n  ...props\n}: ComponentProps<typeof Button> & {\n  href?: string | null\n  children: ReactNode\n  ref?: Ref<HTMLAnchorElement | HTMLButtonElement>\n  is?: string\n}) {\n  return renderLinkable(Button, props, { href, ref, children })\n}\n",
       "type": "registry:component",
-      "target": "components/app/button/button.tsx"
+      "target": "@/components/app/button/button.tsx"
     }
   ],
   "type": "registry:component"

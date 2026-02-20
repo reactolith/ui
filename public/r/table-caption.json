@@ -10,7 +10,7 @@
       "path": "registry/default/app/table/table-caption.tsx",
       "content": "import { TableCaption } from \"@/components/ui/table\"\n\nexport default TableCaption\n",
       "type": "registry:component",
-      "target": "components/app/table/table-caption.tsx"
+      "target": "@/components/app/table/table-caption.tsx"
     }
   ],
   "type": "registry:component"

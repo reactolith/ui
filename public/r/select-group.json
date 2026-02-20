@@ -7,7 +7,7 @@
       "path": "registry/default/app/select/select-group.tsx",
       "content": "import { SelectGroup } from \"@/components/ui/select\"\n\nexport default SelectGroup\n",
       "type": "registry:component",
-      "target": "components/app/select/select-group.tsx"
+      "target": "@/components/app/select/select-group.tsx"
     }
   ],
   "type": "registry:component"

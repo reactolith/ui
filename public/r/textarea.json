@@ -10,7 +10,7 @@
       "path": "registry/default/app/textarea/textarea.tsx",
       "content": "import { Textarea } from \"@/components/ui/textarea\"\n\nexport default Textarea\n",
       "type": "registry:component",
-      "target": "components/app/textarea/textarea.tsx"
+      "target": "@/components/app/textarea/textarea.tsx"
     }
   ],
   "type": "registry:component"

@@ -10,7 +10,7 @@
       "path": "registry/default/app/card/card-description.tsx",
       "content": "import { CardDescription } from \"@/components/ui/card\"\n\nexport default CardDescription\n",
       "type": "registry:component",
-      "target": "components/app/card/card-description.tsx"
+      "target": "@/components/app/card/card-description.tsx"
     }
   ],
   "type": "registry:component"

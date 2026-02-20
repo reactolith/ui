@@ -7,7 +7,7 @@
       "path": "registry/default/app/navigation-menu/navigation-menu.tsx",
       "content": "import { NavigationMenu } from \"@/components/ui/navigation-menu\"\n\nexport default NavigationMenu\n",
       "type": "registry:component",
-      "target": "components/app/navigation-menu/navigation-menu.tsx"
+      "target": "@/components/app/navigation-menu/navigation-menu.tsx"
     }
   ],
   "type": "registry:component"

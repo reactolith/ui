@@ -7,7 +7,7 @@
       "path": "registry/default/app/popover/popover-description.tsx",
       "content": "import { PopoverDescription } from \"@/components/ui/popover\"\n\nexport default PopoverDescription\n",
       "type": "registry:component",
-      "target": "components/app/popover/popover-description.tsx"
+      "target": "@/components/app/popover/popover-description.tsx"
     }
   ],
   "type": "registry:component"

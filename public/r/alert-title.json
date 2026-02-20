@@ -10,7 +10,7 @@
       "path": "registry/default/app/alert/alert-title.tsx",
       "content": "import { AlertTitle } from \"@/components/ui/alert\"\n\nexport default AlertTitle\n",
       "type": "registry:component",
-      "target": "components/app/alert/alert-title.tsx"
+      "target": "@/components/app/alert/alert-title.tsx"
     }
   ],
   "type": "registry:component"

@@ -10,7 +10,7 @@
       "path": "registry/default/app/avatar/avatar-image.tsx",
       "content": "import { AvatarImage } from \"@/components/ui/avatar\"\n\nexport default AvatarImage\n",
       "type": "registry:component",
-      "target": "components/app/avatar/avatar-image.tsx"
+      "target": "@/components/app/avatar/avatar-image.tsx"
     }
   ],
   "type": "registry:component"

@@ -10,7 +10,7 @@
       "path": "registry/default/app/label/label.tsx",
       "content": "import { Label } from \"@/components/ui/label\"\n\nexport default Label\n",
       "type": "registry:component",
-      "target": "components/app/label/label.tsx"
+      "target": "@/components/app/label/label.tsx"
     }
   ],
   "type": "registry:component"

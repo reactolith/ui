@@ -7,7 +7,7 @@
       "path": "registry/default/app/sheet/sheet-footer.tsx",
       "content": "import { SheetFooter } from \"@/components/ui/sheet\"\n\nexport default SheetFooter\n",
       "type": "registry:component",
-      "target": "components/app/sheet/sheet-footer.tsx"
+      "target": "@/components/app/sheet/sheet-footer.tsx"
     }
   ],
   "type": "registry:component"

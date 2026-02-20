@@ -7,7 +7,7 @@
       "path": "registry/default/app/empty/empty-title.tsx",
       "content": "import { EmptyTitle } from \"@/components/ui/empty\"\n\nexport default EmptyTitle\n",
       "type": "registry:component",
-      "target": "components/app/empty/empty-title.tsx"
+      "target": "@/components/app/empty/empty-title.tsx"
     }
   ],
   "type": "registry:component"

@@ -7,7 +7,7 @@
       "path": "registry/default/app/context-menu/context-menu-group.tsx",
       "content": "import { ContextMenuGroup } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuGroup\n",
       "type": "registry:component",
-      "target": "components/app/context-menu/context-menu-group.tsx"
+      "target": "@/components/app/context-menu/context-menu-group.tsx"
     }
   ],
   "type": "registry:component"

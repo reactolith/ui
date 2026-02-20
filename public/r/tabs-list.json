@@ -10,7 +10,7 @@
       "path": "registry/default/app/tabs/tabs-list.tsx",
       "content": "import { TabsList } from \"@/components/ui/tabs\"\n\nexport default TabsList\n",
       "type": "registry:component",
-      "target": "components/app/tabs/tabs-list.tsx"
+      "target": "@/components/app/tabs/tabs-list.tsx"
     }
   ],
   "type": "registry:component"

@@ -7,7 +7,7 @@
       "path": "registry/default/app/kbd/kbd.tsx",
       "content": "import { Kbd } from \"@/components/ui/kbd\"\n\nexport default Kbd\n",
       "type": "registry:component",
-      "target": "components/app/kbd/kbd.tsx"
+      "target": "@/components/app/kbd/kbd.tsx"
     }
   ],
   "type": "registry:component"

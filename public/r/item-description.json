@@ -7,7 +7,7 @@
       "path": "registry/default/app/item/item-description.tsx",
       "content": "import { ItemDescription } from \"@/components/ui/item\"\n\nexport default ItemDescription\n",
       "type": "registry:component",
-      "target": "components/app/item/item-description.tsx"
+      "target": "@/components/app/item/item-description.tsx"
     }
   ],
   "type": "registry:component"

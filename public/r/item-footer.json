@@ -7,7 +7,7 @@
       "path": "registry/default/app/item/item-footer.tsx",
       "content": "import { ItemFooter } from \"@/components/ui/item\"\n\nexport default ItemFooter\n",
       "type": "registry:component",
-      "target": "components/app/item/item-footer.tsx"
+      "target": "@/components/app/item/item-footer.tsx"
     }
   ],
   "type": "registry:component"

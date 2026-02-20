@@ -10,7 +10,7 @@
       "path": "registry/default/app/command/command-item.tsx",
       "content": "import * as React from \"react\";\nimport { CommandItem } from \"@/components/ui/command\";\nimport { useCloseOverlay } from \"@/registry/default/lib/close-overlay\";\n\ntype UiCommandItemProps =\n    React.ComponentProps<typeof CommandItem> & {\n    href?: string | null;\n};\n\nconst UiCommandItem = React.forwardRef<\n    HTMLDivElement,\n    UiCommandItemProps\n>(({ href, children, ...props }, ref) => {\n    const closeOverlay = useCloseOverlay();\n\n    if (href) {\n        return (\n            <CommandItem ref={ref} {...props}>\n                <a\n                    href={href}\n                    data-slot=\"command-item-link\"\n                    className=\"cn-command-item-link contents\"\n                    onClick={() => closeOverlay?.()}\n                >\n                    {children}\n                </a>\n            </CommandItem>\n        );\n    }\n\n    return (\n        <CommandItem ref={ref} {...props}>\n            {children}\n        </CommandItem>\n    );\n});\n\nUiCommandItem.displayName = \"UiCommandItem\";\nexport default UiCommandItem;\n",
       "type": "registry:component",
-      "target": "components/app/command/command-item.tsx"
+      "target": "@/components/app/command/command-item.tsx"
     }
   ],
   "type": "registry:component"

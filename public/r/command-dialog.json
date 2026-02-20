@@ -10,7 +10,7 @@
       "path": "registry/default/app/command/command-dialog.tsx",
       "content": "import * as React from \"react\";\nimport { CommandDialog } from \"@/components/ui/command\";\nimport { CloseOverlayProvider } from \"@/registry/default/lib/close-overlay\";\n\ntype UiCommandDialogProps = React.ComponentProps<typeof CommandDialog>;\n\nexport default function UiCommandDialog({\n    onOpenChange,\n    children,\n    ...props\n}: UiCommandDialogProps) {\n    const handleClose = React.useCallback(() => {\n        onOpenChange?.(false);\n    }, [onOpenChange]);\n\n    return (\n        <CommandDialog onOpenChange={onOpenChange} {...props}>\n            <CloseOverlayProvider onClose={handleClose}>\n                {children}\n            </CloseOverlayProvider>\n        </CommandDialog>\n    );\n}\n",
       "type": "registry:component",
-      "target": "components/app/command/command-dialog.tsx"
+      "target": "@/components/app/command/command-dialog.tsx"
     }
   ],
   "type": "registry:component"

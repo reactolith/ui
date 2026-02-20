@@ -7,7 +7,7 @@
       "path": "registry/default/app/combobox/combobox-label.tsx",
       "content": "import { ComboboxLabel } from \"@/components/ui/combobox\"\n\nexport default ComboboxLabel\n",
       "type": "registry:component",
-      "target": "components/app/combobox/combobox-label.tsx"
+      "target": "@/components/app/combobox/combobox-label.tsx"
     }
   ],
   "type": "registry:component"

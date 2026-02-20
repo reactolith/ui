@@ -7,7 +7,7 @@
       "path": "registry/default/app/field/field-description.tsx",
       "content": "import { FieldDescription } from \"@/components/ui/field\"\n\nexport default FieldDescription\n",
       "type": "registry:component",
-      "target": "components/app/field/field-description.tsx"
+      "target": "@/components/app/field/field-description.tsx"
     }
   ],
   "type": "registry:component"

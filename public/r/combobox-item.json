@@ -7,7 +7,7 @@
       "path": "registry/default/app/combobox/combobox-item.tsx",
       "content": "import { ComboboxItem } from \"@/components/ui/combobox\"\n\nexport default ComboboxItem\n",
       "type": "registry:component",
-      "target": "components/app/combobox/combobox-item.tsx"
+      "target": "@/components/app/combobox/combobox-item.tsx"
     }
   ],
   "type": "registry:component"

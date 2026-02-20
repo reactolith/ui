@@ -7,7 +7,7 @@
       "path": "registry/default/app/field/field.tsx",
       "content": "import { Field } from \"@/components/ui/field\"\n\nexport default Field\n",
       "type": "registry:component",
-      "target": "components/app/field/field.tsx"
+      "target": "@/components/app/field/field.tsx"
     }
   ],
   "type": "registry:component"

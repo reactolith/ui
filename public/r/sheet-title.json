@@ -7,7 +7,7 @@
       "path": "registry/default/app/sheet/sheet-title.tsx",
       "content": "import { SheetTitle } from \"@/components/ui/sheet\"\n\nexport default SheetTitle\n",
       "type": "registry:component",
-      "target": "components/app/sheet/sheet-title.tsx"
+      "target": "@/components/app/sheet/sheet-title.tsx"
     }
   ],
   "type": "registry:component"

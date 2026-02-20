@@ -7,7 +7,7 @@
       "path": "registry/default/app/command/command-group.tsx",
       "content": "import { CommandGroup } from \"@/components/ui/command\"\n\nexport default CommandGroup\n",
       "type": "registry:component",
-      "target": "components/app/command/command-group.tsx"
+      "target": "@/components/app/command/command-group.tsx"
     }
   ],
   "type": "registry:component"

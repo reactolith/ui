@@ -7,7 +7,7 @@
       "path": "registry/default/app/sidebar/sidebar-trigger.tsx",
       "content": "import { SidebarTrigger } from \"@/components/ui/sidebar\"\n\nexport default SidebarTrigger\n",
       "type": "registry:component",
-      "target": "components/app/sidebar/sidebar-trigger.tsx"
+      "target": "@/components/app/sidebar/sidebar-trigger.tsx"
     }
   ],
   "type": "registry:component"

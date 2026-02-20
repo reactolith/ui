@@ -7,7 +7,7 @@
       "path": "registry/default/app/combobox/combobox-chips-input.tsx",
       "content": "import { ComboboxChipsInput } from \"@/components/ui/combobox\"\n\nexport default ComboboxChipsInput\n",
       "type": "registry:component",
-      "target": "components/app/combobox/combobox-chips-input.tsx"
+      "target": "@/components/app/combobox/combobox-chips-input.tsx"
     }
   ],
   "type": "registry:component"

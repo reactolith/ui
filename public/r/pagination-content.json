@@ -7,7 +7,7 @@
       "path": "registry/default/app/pagination/pagination-content.tsx",
       "content": "import { PaginationContent } from \"@/components/ui/pagination\"\n\nexport default PaginationContent\n",
       "type": "registry:component",
-      "target": "components/app/pagination/pagination-content.tsx"
+      "target": "@/components/app/pagination/pagination-content.tsx"
     }
   ],
   "type": "registry:component"

@@ -10,7 +10,7 @@
       "path": "registry/default/app/breadcrumb/breadcrumb-separator.tsx",
       "content": "import { BreadcrumbSeparator } from \"@/components/ui/breadcrumb\"\n\nexport default BreadcrumbSeparator\n",
       "type": "registry:component",
-      "target": "components/app/breadcrumb/breadcrumb-separator.tsx"
+      "target": "@/components/app/breadcrumb/breadcrumb-separator.tsx"
     }
   ],
   "type": "registry:component"

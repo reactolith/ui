@@ -7,7 +7,7 @@
       "path": "registry/default/app/dropdown-menu/dropdown-menu-checkbox-item.tsx",
       "content": "import { DropdownMenuCheckboxItem } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuCheckboxItem\n",
       "type": "registry:component",
-      "target": "components/app/dropdown-menu/dropdown-menu-checkbox-item.tsx"
+      "target": "@/components/app/dropdown-menu/dropdown-menu-checkbox-item.tsx"
     }
   ],
   "type": "registry:component"

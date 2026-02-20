@@ -12,7 +12,7 @@
       "path": "registry/default/app/tabs/tabs-trigger.tsx",
       "content": "import { type ComponentProps, type ReactNode, type Ref } from \"react\"\nimport { TabsTrigger } from \"@/components/ui/tabs\"\nimport { useCloseOverlay } from \"@/registry/default/lib/close-overlay\"\nimport { renderLinkable } from \"@/registry/default/lib/render-element\"\n\nexport default function TabsTriggerWrapper({\n  href,\n  children,\n  ref,\n  is,\n  ...props\n}: ComponentProps<typeof TabsTrigger> & {\n  href?: string | null\n  children: ReactNode\n  ref?: Ref<HTMLAnchorElement | HTMLButtonElement>\n  is?: string\n}) {\n  const closeOverlay = useCloseOverlay()\n  return renderLinkable(TabsTrigger, props, { href, ref, children, onNavigate: closeOverlay })\n}\n",
       "type": "registry:component",
-      "target": "components/app/tabs/tabs-trigger.tsx"
+      "target": "@/components/app/tabs/tabs-trigger.tsx"
     }
   ],
   "type": "registry:component"

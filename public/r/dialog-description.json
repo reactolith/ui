@@ -7,7 +7,7 @@
       "path": "registry/default/app/dialog/dialog-description.tsx",
       "content": "import { DialogDescription } from \"@/components/ui/dialog\"\n\nexport default DialogDescription\n",
       "type": "registry:component",
-      "target": "components/app/dialog/dialog-description.tsx"
+      "target": "@/components/app/dialog/dialog-description.tsx"
     }
   ],
   "type": "registry:component"

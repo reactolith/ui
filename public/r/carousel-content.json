@@ -10,7 +10,7 @@
       "path": "registry/default/app/carousel/carousel-content.tsx",
       "content": "import { CarouselContent } from \"@/components/ui/carousel\"\n\nexport default CarouselContent\n",
       "type": "registry:component",
-      "target": "components/app/carousel/carousel-content.tsx"
+      "target": "@/components/app/carousel/carousel-content.tsx"
     }
   ],
   "type": "registry:component"

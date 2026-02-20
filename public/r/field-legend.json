@@ -7,7 +7,7 @@
       "path": "registry/default/app/field/field-legend.tsx",
       "content": "import { FieldLegend } from \"@/components/ui/field\"\n\nexport default FieldLegend\n",
       "type": "registry:component",
-      "target": "components/app/field/field-legend.tsx"
+      "target": "@/components/app/field/field-legend.tsx"
     }
   ],
   "type": "registry:component"

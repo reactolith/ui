@@ -7,7 +7,7 @@
       "path": "registry/default/app/sheet/sheet-header.tsx",
       "content": "import { SheetHeader } from \"@/components/ui/sheet\"\n\nexport default SheetHeader\n",
       "type": "registry:component",
-      "target": "components/app/sheet/sheet-header.tsx"
+      "target": "@/components/app/sheet/sheet-header.tsx"
     }
   ],
   "type": "registry:component"

@@ -10,7 +10,7 @@
       "path": "registry/default/app/sidebar/sidebar-menu-sub-button.tsx",
       "content": "import * as React from \"react\";\nimport { SidebarMenuSubButton, useSidebar } from \"@/components/ui/sidebar\";\nimport { useCloseOverlay } from \"@/registry/default/lib/close-overlay\";\n\ntype UiSidebarMenuSubButtonProps = React.ComponentProps<typeof SidebarMenuSubButton>;\n\nconst UiSidebarMenuSubButton = React.forwardRef<\n    HTMLAnchorElement,\n    UiSidebarMenuSubButtonProps\n>(({ onClick, ...props }, ref) => {\n    const { isMobile, setOpenMobile } = useSidebar();\n    const closeOverlay = useCloseOverlay();\n\n    const handleClick = React.useCallback(\n        (e: React.MouseEvent<HTMLAnchorElement>) => {\n            if (isMobile) setOpenMobile(false);\n            closeOverlay?.();\n            onClick?.(e);\n        },\n        [isMobile, setOpenMobile, closeOverlay, onClick]\n    );\n\n    return (\n        <SidebarMenuSubButton\n            ref={ref}\n            onClick={handleClick}\n            {...props}\n        />\n    );\n});\n\nUiSidebarMenuSubButton.displayName = \"UiSidebarMenuSubButton\";\nexport default UiSidebarMenuSubButton;\n",
       "type": "registry:component",
-      "target": "components/app/sidebar/sidebar-menu-sub-button.tsx"
+      "target": "@/components/app/sidebar/sidebar-menu-sub-button.tsx"
     }
   ],
   "type": "registry:component"

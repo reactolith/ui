@@ -7,7 +7,7 @@
       "path": "registry/default/app/context-menu/context-menu-shortcut.tsx",
       "content": "import { ContextMenuShortcut } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuShortcut\n",
       "type": "registry:component",
-      "target": "components/app/context-menu/context-menu-shortcut.tsx"
+      "target": "@/components/app/context-menu/context-menu-shortcut.tsx"
     }
   ],
   "type": "registry:component"

@@ -7,7 +7,7 @@
       "path": "registry/default/app/sheet/sheet-content.tsx",
       "content": "import { SheetContent } from \"@/components/ui/sheet\"\n\nexport default SheetContent\n",
       "type": "registry:component",
-      "target": "components/app/sheet/sheet-content.tsx"
+      "target": "@/components/app/sheet/sheet-content.tsx"
     }
   ],
   "type": "registry:component"

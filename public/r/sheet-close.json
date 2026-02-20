@@ -10,7 +10,7 @@
       "path": "registry/default/app/sheet/sheet-close.tsx",
       "content": "import { Dialog as SheetPrimitive } from \"@base-ui/react/dialog\"\nimport { renderTrigger } from \"@/registry/default/lib/render-element\"\n\nexport default function SheetClose({\n  children,\n  is,\n  ...props\n}: SheetPrimitive.Close.Props & { is?: string }) {\n  return renderTrigger(SheetPrimitive.Close, { \"data-slot\": \"sheet-close\", ...props }, children)\n}\n",
       "type": "registry:component",
-      "target": "components/app/sheet/sheet-close.tsx"
+      "target": "@/components/app/sheet/sheet-close.tsx"
     }
   ],
   "type": "registry:component"
