@@ -4,10 +4,9 @@
   "title": "Context Menu Sub Trigger",
   "files": [
     {
-      "path": "registry/default/app/context-menu/context-menu-sub-trigger.tsx",
+      "path": "components/app/context-menu/context-menu-sub-trigger.tsx",
       "content": "import { ContextMenuSubTrigger } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuSubTrigger\n",
-      "type": "registry:component",
-      "target": "@/components/app/context-menu/context-menu-sub-trigger.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

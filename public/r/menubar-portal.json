@@ -4,10 +4,9 @@
   "title": "Menubar Portal",
   "files": [
     {
-      "path": "registry/default/app/menubar/menubar-portal.tsx",
+      "path": "components/app/menubar/menubar-portal.tsx",
       "content": "import { MenubarPortal } from \"@/components/ui/menubar\"\n\nexport default MenubarPortal\n",
-      "type": "registry:component",
-      "target": "@/components/app/menubar/menubar-portal.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

@@ -4,10 +4,9 @@
   "title": "Resizable Handle",
   "files": [
     {
-      "path": "registry/default/app/resizable/resizable-handle.tsx",
+      "path": "components/app/resizable/resizable-handle.tsx",
       "content": "import { ResizableHandle } from \"@/components/ui/resizable\"\n\nexport default ResizableHandle\n",
-      "type": "registry:component",
-      "target": "@/components/app/resizable/resizable-handle.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

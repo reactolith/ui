@@ -3,14 +3,13 @@
   "name": "sheet-close",
   "title": "Sheet Close",
   "registryDependencies": [
-    "https://reactolith.github.io/ui/r/render-element.json"
+    "@reactolith/render-element"
   ],
   "files": [
     {
-      "path": "registry/default/app/sheet/sheet-close.tsx",
+      "path": "components/app/sheet/sheet-close.tsx",
       "content": "import { Dialog as SheetPrimitive } from \"@base-ui/react/dialog\"\nimport { renderTrigger } from \"@/registry/default/lib/render-element\"\n\nexport default function SheetClose({\n  children,\n  is,\n  ...props\n}: SheetPrimitive.Close.Props & { is?: string }) {\n  return renderTrigger(SheetPrimitive.Close, { \"data-slot\": \"sheet-close\", ...props }, children)\n}\n",
-      "type": "registry:component",
-      "target": "@/components/app/sheet/sheet-close.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

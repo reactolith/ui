@@ -4,10 +4,9 @@
   "title": "Native Select Option",
   "files": [
     {
-      "path": "registry/default/app/native-select/native-select-option.tsx",
+      "path": "components/app/native-select/native-select-option.tsx",
       "content": "import { NativeSelectOption } from \"@/components/ui/native-select\"\n\nexport default NativeSelectOption\n",
-      "type": "registry:component",
-      "target": "@/components/app/native-select/native-select-option.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

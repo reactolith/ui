@@ -4,10 +4,9 @@
   "title": "Item Separator",
   "files": [
     {
-      "path": "registry/default/app/item/item-separator.tsx",
+      "path": "components/app/item/item-separator.tsx",
       "content": "import { ItemSeparator } from \"@/components/ui/item\"\n\nexport default ItemSeparator\n",
-      "type": "registry:component",
-      "target": "@/components/app/item/item-separator.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

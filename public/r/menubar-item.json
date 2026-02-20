@@ -3,15 +3,14 @@
   "name": "menubar-item",
   "title": "Menubar Item",
   "registryDependencies": [
-    "https://reactolith.github.io/ui/r/close-overlay.json",
-    "https://reactolith.github.io/ui/r/render-element.json"
+    "@reactolith/close-overlay",
+    "@reactolith/render-element"
   ],
   "files": [
     {
-      "path": "registry/default/app/menubar/menubar-item.tsx",
+      "path": "components/app/menubar/menubar-item.tsx",
       "content": "import { type ComponentProps, type ReactNode, type Ref } from \"react\"\nimport { MenubarItem } from \"@/components/ui/menubar\"\nimport { useCloseOverlay } from \"@/registry/default/lib/close-overlay\"\nimport { renderLinkable } from \"@/registry/default/lib/render-element\"\n\nexport default function MenubarItemWrapper({\n  href,\n  children,\n  ref,\n  is,\n  ...props\n}: ComponentProps<typeof MenubarItem> & {\n  href?: string | null\n  children: ReactNode\n  ref?: Ref<HTMLAnchorElement | HTMLDivElement>\n  is?: string\n}) {\n  const closeOverlay = useCloseOverlay()\n  return renderLinkable(MenubarItem, props, { href, ref, children, onNavigate: closeOverlay })\n}\n",
-      "type": "registry:component",
-      "target": "@/components/app/menubar/menubar-item.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

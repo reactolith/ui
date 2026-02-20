@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/spinner/spinner.tsx",
+      "path": "components/app/spinner/spinner.tsx",
       "content": "import * as React from \"react\"\nimport { Spinner } from \"@/components/ui/spinner\"\n\nconst sizeMap: Record<string, string> = {\n  sm: \"size-3\",\n  default: \"size-4\",\n  lg: \"size-6\",\n}\n\ntype UiSpinnerProps = Omit<React.ComponentProps<typeof Spinner>, \"width\" | \"height\"> & {\n  size?: string\n}\n\nconst UiSpinner = React.forwardRef<SVGSVGElement, UiSpinnerProps>(\n  ({ size, className, ...props }, ref) => {\n    const sizeClass = size ? sizeMap[size] || undefined : undefined\n    return <Spinner ref={ref} className={[sizeClass, className].filter(Boolean).join(\" \")} {...props} />\n  }\n)\n\nUiSpinner.displayName = \"UiSpinner\"\nexport default UiSpinner\n",
-      "type": "registry:component",
-      "target": "@/components/app/spinner/spinner.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

@@ -10,8 +10,7 @@
       "files": [
         {
           "path": "registry/default/lib/select-items.tsx",
-          "type": "registry:lib",
-          "target": "@/lib/select-items.tsx"
+          "type": "registry:lib"
         }
       ]
     },
@@ -22,8 +21,7 @@
       "files": [
         {
           "path": "registry/default/lib/close-overlay.tsx",
-          "type": "registry:lib",
-          "target": "@/lib/close-overlay.tsx"
+          "type": "registry:lib"
         }
       ]
     },
@@ -34,8 +32,7 @@
       "files": [
         {
           "path": "registry/default/lib/render-element.tsx",
-          "type": "registry:lib",
-          "target": "@/lib/render-element.tsx"
+          "type": "registry:lib"
         }
       ]
     },
@@ -46,8 +43,7 @@
       "files": [
         {
           "path": "registry/default/app/accordion/accordion.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/accordion/accordion.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -61,8 +57,7 @@
       "files": [
         {
           "path": "registry/default/app/accordion/accordion-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/accordion/accordion-content.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -76,8 +71,7 @@
       "files": [
         {
           "path": "registry/default/app/accordion/accordion-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/accordion/accordion-item.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -91,13 +85,12 @@
       "files": [
         {
           "path": "registry/default/app/accordion/accordion-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/accordion/accordion-trigger.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
         "accordion",
-        "https://reactolith.github.io/ui/r/render-element.json"
+        "@reactolith/render-element"
       ]
     },
     {
@@ -107,8 +100,7 @@
       "files": [
         {
           "path": "registry/default/app/alert/alert.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/alert/alert.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -122,8 +114,7 @@
       "files": [
         {
           "path": "registry/default/app/alert/alert-action.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/alert/alert-action.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -137,8 +128,7 @@
       "files": [
         {
           "path": "registry/default/app/alert/alert-description.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/alert/alert-description.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -152,8 +142,7 @@
       "files": [
         {
           "path": "registry/default/app/alert-dialog/alert-dialog.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/alert-dialog/alert-dialog.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -167,8 +156,7 @@
       "files": [
         {
           "path": "registry/default/app/alert-dialog/alert-dialog-action.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/alert-dialog/alert-dialog-action.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -182,8 +170,7 @@
       "files": [
         {
           "path": "registry/default/app/alert-dialog/alert-dialog-cancel.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/alert-dialog/alert-dialog-cancel.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -197,8 +184,7 @@
       "files": [
         {
           "path": "registry/default/app/alert-dialog/alert-dialog-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/alert-dialog/alert-dialog-content.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -212,8 +198,7 @@
       "files": [
         {
           "path": "registry/default/app/alert-dialog/alert-dialog-description.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/alert-dialog/alert-dialog-description.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -227,8 +212,7 @@
       "files": [
         {
           "path": "registry/default/app/alert-dialog/alert-dialog-footer.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/alert-dialog/alert-dialog-footer.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -242,8 +226,7 @@
       "files": [
         {
           "path": "registry/default/app/alert-dialog/alert-dialog-header.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/alert-dialog/alert-dialog-header.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -257,8 +240,7 @@
       "files": [
         {
           "path": "registry/default/app/alert-dialog/alert-dialog-media.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/alert-dialog/alert-dialog-media.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -272,8 +254,7 @@
       "files": [
         {
           "path": "registry/default/app/alert-dialog/alert-dialog-overlay.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/alert-dialog/alert-dialog-overlay.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -287,8 +268,7 @@
       "files": [
         {
           "path": "registry/default/app/alert-dialog/alert-dialog-portal.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/alert-dialog/alert-dialog-portal.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -302,8 +282,7 @@
       "files": [
         {
           "path": "registry/default/app/alert-dialog/alert-dialog-title.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/alert-dialog/alert-dialog-title.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -317,13 +296,12 @@
       "files": [
         {
           "path": "registry/default/app/alert-dialog/alert-dialog-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/alert-dialog/alert-dialog-trigger.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
         "alert-dialog",
-        "https://reactolith.github.io/ui/r/render-element.json"
+        "@reactolith/render-element"
       ]
     },
     {
@@ -333,8 +311,7 @@
       "files": [
         {
           "path": "registry/default/app/alert/alert-title.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/alert/alert-title.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -348,8 +325,7 @@
       "files": [
         {
           "path": "registry/default/app/aspect-ratio/aspect-ratio.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/aspect-ratio/aspect-ratio.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -363,8 +339,7 @@
       "files": [
         {
           "path": "registry/default/app/avatar/avatar.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/avatar/avatar.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -378,8 +353,7 @@
       "files": [
         {
           "path": "registry/default/app/avatar/avatar-badge.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/avatar/avatar-badge.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -393,8 +367,7 @@
       "files": [
         {
           "path": "registry/default/app/avatar/avatar-fallback.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/avatar/avatar-fallback.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -408,8 +381,7 @@
       "files": [
         {
           "path": "registry/default/app/avatar/avatar-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/avatar/avatar-group.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -423,8 +395,7 @@
       "files": [
         {
           "path": "registry/default/app/avatar/avatar-group-count.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/avatar/avatar-group-count.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -438,8 +409,7 @@
       "files": [
         {
           "path": "registry/default/app/avatar/avatar-image.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/avatar/avatar-image.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -453,8 +423,7 @@
       "files": [
         {
           "path": "registry/default/app/badge/badge.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/badge/badge.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -468,8 +437,7 @@
       "files": [
         {
           "path": "registry/default/app/breadcrumb/breadcrumb.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/breadcrumb/breadcrumb.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -483,8 +451,7 @@
       "files": [
         {
           "path": "registry/default/app/breadcrumb/breadcrumb-ellipsis.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/breadcrumb/breadcrumb-ellipsis.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -498,8 +465,7 @@
       "files": [
         {
           "path": "registry/default/app/breadcrumb/breadcrumb-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/breadcrumb/breadcrumb-item.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -513,14 +479,13 @@
       "files": [
         {
           "path": "registry/default/app/breadcrumb/breadcrumb-link.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/breadcrumb/breadcrumb-link.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
         "breadcrumb",
-        "https://reactolith.github.io/ui/r/close-overlay.json",
-        "https://reactolith.github.io/ui/r/render-element.json"
+        "@reactolith/close-overlay",
+        "@reactolith/render-element"
       ]
     },
     {
@@ -530,8 +495,7 @@
       "files": [
         {
           "path": "registry/default/app/breadcrumb/breadcrumb-list.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/breadcrumb/breadcrumb-list.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -545,8 +509,7 @@
       "files": [
         {
           "path": "registry/default/app/breadcrumb/breadcrumb-page.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/breadcrumb/breadcrumb-page.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -560,8 +523,7 @@
       "files": [
         {
           "path": "registry/default/app/breadcrumb/breadcrumb-separator.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/breadcrumb/breadcrumb-separator.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -575,13 +537,12 @@
       "files": [
         {
           "path": "registry/default/app/button/button.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/button/button.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
         "button",
-        "https://reactolith.github.io/ui/r/render-element.json"
+        "@reactolith/render-element"
       ]
     },
     {
@@ -591,8 +552,7 @@
       "files": [
         {
           "path": "registry/default/app/button-group/button-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/button-group/button-group.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -606,8 +566,7 @@
       "files": [
         {
           "path": "registry/default/app/button-group/button-group-separator.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/button-group/button-group-separator.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -621,8 +580,7 @@
       "files": [
         {
           "path": "registry/default/app/button-group/button-group-text.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/button-group/button-group-text.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -636,8 +594,7 @@
       "files": [
         {
           "path": "registry/default/app/calendar/calendar.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/calendar/calendar.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -651,8 +608,7 @@
       "files": [
         {
           "path": "registry/default/app/calendar/calendar-day-button.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/calendar/calendar-day-button.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -666,8 +622,7 @@
       "files": [
         {
           "path": "registry/default/app/card/card.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/card/card.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -681,8 +636,7 @@
       "files": [
         {
           "path": "registry/default/app/card/card-action.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/card/card-action.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -696,8 +650,7 @@
       "files": [
         {
           "path": "registry/default/app/card/card-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/card/card-content.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -711,8 +664,7 @@
       "files": [
         {
           "path": "registry/default/app/card/card-description.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/card/card-description.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -726,8 +678,7 @@
       "files": [
         {
           "path": "registry/default/app/card/card-footer.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/card/card-footer.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -741,8 +692,7 @@
       "files": [
         {
           "path": "registry/default/app/card/card-header.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/card/card-header.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -756,8 +706,7 @@
       "files": [
         {
           "path": "registry/default/app/card/card-title.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/card/card-title.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -771,8 +720,7 @@
       "files": [
         {
           "path": "registry/default/app/carousel/carousel.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/carousel/carousel.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -786,8 +734,7 @@
       "files": [
         {
           "path": "registry/default/app/carousel/carousel-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/carousel/carousel-content.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -801,8 +748,7 @@
       "files": [
         {
           "path": "registry/default/app/carousel/carousel-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/carousel/carousel-item.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -816,8 +762,7 @@
       "files": [
         {
           "path": "registry/default/app/carousel/carousel-next.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/carousel/carousel-next.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -831,8 +776,7 @@
       "files": [
         {
           "path": "registry/default/app/carousel/carousel-previous.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/carousel/carousel-previous.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -846,8 +790,7 @@
       "files": [
         {
           "path": "registry/default/app/chart/chart-container.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/chart/chart-container.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -861,8 +804,7 @@
       "files": [
         {
           "path": "registry/default/app/chart/chart-legend.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/chart/chart-legend.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -876,8 +818,7 @@
       "files": [
         {
           "path": "registry/default/app/chart/chart-legend-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/chart/chart-legend-content.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -891,8 +832,7 @@
       "files": [
         {
           "path": "registry/default/app/chart/chart-tooltip.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/chart/chart-tooltip.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -906,8 +846,7 @@
       "files": [
         {
           "path": "registry/default/app/chart/chart-tooltip-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/chart/chart-tooltip-content.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -921,8 +860,7 @@
       "files": [
         {
           "path": "registry/default/app/checkbox/checkbox.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/checkbox/checkbox.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -936,8 +874,7 @@
       "files": [
         {
           "path": "registry/default/app/collapsible/collapsible.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/collapsible/collapsible.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -951,8 +888,7 @@
       "files": [
         {
           "path": "registry/default/app/collapsible/collapsible-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/collapsible/collapsible-content.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -966,13 +902,12 @@
       "files": [
         {
           "path": "registry/default/app/collapsible/collapsible-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/collapsible/collapsible-trigger.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
         "collapsible",
-        "https://reactolith.github.io/ui/r/render-element.json"
+        "@reactolith/render-element"
       ]
     },
     {
@@ -982,8 +917,7 @@
       "files": [
         {
           "path": "registry/default/app/combobox/combobox.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/combobox/combobox.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -994,8 +928,7 @@
       "files": [
         {
           "path": "registry/default/app/combobox/combobox-chip.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/combobox/combobox-chip.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1006,8 +939,7 @@
       "files": [
         {
           "path": "registry/default/app/combobox/combobox-chips.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/combobox/combobox-chips.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1018,8 +950,7 @@
       "files": [
         {
           "path": "registry/default/app/combobox/combobox-chips-input.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/combobox/combobox-chips-input.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1030,8 +961,7 @@
       "files": [
         {
           "path": "registry/default/app/combobox/combobox-collection.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/combobox/combobox-collection.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1042,8 +972,7 @@
       "files": [
         {
           "path": "registry/default/app/combobox/combobox-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/combobox/combobox-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1054,8 +983,7 @@
       "files": [
         {
           "path": "registry/default/app/combobox/combobox-empty.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/combobox/combobox-empty.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1066,8 +994,7 @@
       "files": [
         {
           "path": "registry/default/app/combobox/combobox-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/combobox/combobox-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1078,8 +1005,7 @@
       "files": [
         {
           "path": "registry/default/app/combobox/combobox-input.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/combobox/combobox-input.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1090,8 +1016,7 @@
       "files": [
         {
           "path": "registry/default/app/combobox/combobox-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/combobox/combobox-item.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1102,8 +1027,7 @@
       "files": [
         {
           "path": "registry/default/app/combobox/combobox-label.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/combobox/combobox-label.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1114,8 +1038,7 @@
       "files": [
         {
           "path": "registry/default/app/combobox/combobox-list.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/combobox/combobox-list.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1126,8 +1049,7 @@
       "files": [
         {
           "path": "registry/default/app/combobox/combobox-separator.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/combobox/combobox-separator.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1138,8 +1060,7 @@
       "files": [
         {
           "path": "registry/default/app/combobox/combobox-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/combobox/combobox-trigger.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1150,8 +1071,7 @@
       "files": [
         {
           "path": "registry/default/app/combobox/combobox-value.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/combobox/combobox-value.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1162,8 +1082,7 @@
       "files": [
         {
           "path": "registry/default/app/command/command.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/command/command.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1174,12 +1093,11 @@
       "files": [
         {
           "path": "registry/default/app/command/command-dialog.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/command/command-dialog.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/close-overlay.json"
+        "@reactolith/close-overlay"
       ]
     },
     {
@@ -1189,8 +1107,7 @@
       "files": [
         {
           "path": "registry/default/app/command/command-empty.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/command/command-empty.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1201,8 +1118,7 @@
       "files": [
         {
           "path": "registry/default/app/command/command-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/command/command-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1213,8 +1129,7 @@
       "files": [
         {
           "path": "registry/default/app/command/command-input.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/command/command-input.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1225,12 +1140,11 @@
       "files": [
         {
           "path": "registry/default/app/command/command-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/command/command-item.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/close-overlay.json"
+        "@reactolith/close-overlay"
       ]
     },
     {
@@ -1240,8 +1154,7 @@
       "files": [
         {
           "path": "registry/default/app/command/command-list.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/command/command-list.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1252,8 +1165,7 @@
       "files": [
         {
           "path": "registry/default/app/command/command-separator.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/command/command-separator.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1264,8 +1176,7 @@
       "files": [
         {
           "path": "registry/default/app/command/command-shortcut.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/command/command-shortcut.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1276,8 +1187,7 @@
       "files": [
         {
           "path": "registry/default/app/context-menu/context-menu.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/context-menu/context-menu.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1288,8 +1198,7 @@
       "files": [
         {
           "path": "registry/default/app/context-menu/context-menu-checkbox-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/context-menu/context-menu-checkbox-item.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1300,8 +1209,7 @@
       "files": [
         {
           "path": "registry/default/app/context-menu/context-menu-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/context-menu/context-menu-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1312,8 +1220,7 @@
       "files": [
         {
           "path": "registry/default/app/context-menu/context-menu-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/context-menu/context-menu-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1324,13 +1231,12 @@
       "files": [
         {
           "path": "registry/default/app/context-menu/context-menu-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/context-menu/context-menu-item.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/close-overlay.json",
-        "https://reactolith.github.io/ui/r/render-element.json"
+        "@reactolith/close-overlay",
+        "@reactolith/render-element"
       ]
     },
     {
@@ -1340,8 +1246,7 @@
       "files": [
         {
           "path": "registry/default/app/context-menu/context-menu-label.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/context-menu/context-menu-label.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1352,8 +1257,7 @@
       "files": [
         {
           "path": "registry/default/app/context-menu/context-menu-portal.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/context-menu/context-menu-portal.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1364,8 +1268,7 @@
       "files": [
         {
           "path": "registry/default/app/context-menu/context-menu-radio-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/context-menu/context-menu-radio-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1376,8 +1279,7 @@
       "files": [
         {
           "path": "registry/default/app/context-menu/context-menu-radio-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/context-menu/context-menu-radio-item.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1388,8 +1290,7 @@
       "files": [
         {
           "path": "registry/default/app/context-menu/context-menu-separator.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/context-menu/context-menu-separator.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1400,8 +1301,7 @@
       "files": [
         {
           "path": "registry/default/app/context-menu/context-menu-shortcut.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/context-menu/context-menu-shortcut.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1412,8 +1312,7 @@
       "files": [
         {
           "path": "registry/default/app/context-menu/context-menu-sub.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/context-menu/context-menu-sub.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1424,8 +1323,7 @@
       "files": [
         {
           "path": "registry/default/app/context-menu/context-menu-sub-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/context-menu/context-menu-sub-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1436,8 +1334,7 @@
       "files": [
         {
           "path": "registry/default/app/context-menu/context-menu-sub-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/context-menu/context-menu-sub-trigger.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1448,8 +1345,7 @@
       "files": [
         {
           "path": "registry/default/app/context-menu/context-menu-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/context-menu/context-menu-trigger.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1460,12 +1356,11 @@
       "files": [
         {
           "path": "registry/default/app/dialog/dialog.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dialog/dialog.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/close-overlay.json"
+        "@reactolith/close-overlay"
       ]
     },
     {
@@ -1475,12 +1370,11 @@
       "files": [
         {
           "path": "registry/default/app/dialog/dialog-close.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dialog/dialog-close.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/render-element.json"
+        "@reactolith/render-element"
       ]
     },
     {
@@ -1490,8 +1384,7 @@
       "files": [
         {
           "path": "registry/default/app/dialog/dialog-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dialog/dialog-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1502,8 +1395,7 @@
       "files": [
         {
           "path": "registry/default/app/dialog/dialog-description.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dialog/dialog-description.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1514,8 +1406,7 @@
       "files": [
         {
           "path": "registry/default/app/dialog/dialog-footer.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dialog/dialog-footer.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1526,8 +1417,7 @@
       "files": [
         {
           "path": "registry/default/app/dialog/dialog-header.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dialog/dialog-header.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1538,8 +1428,7 @@
       "files": [
         {
           "path": "registry/default/app/dialog/dialog-overlay.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dialog/dialog-overlay.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1550,8 +1439,7 @@
       "files": [
         {
           "path": "registry/default/app/dialog/dialog-portal.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dialog/dialog-portal.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1562,8 +1450,7 @@
       "files": [
         {
           "path": "registry/default/app/dialog/dialog-title.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dialog/dialog-title.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1574,12 +1461,11 @@
       "files": [
         {
           "path": "registry/default/app/dialog/dialog-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dialog/dialog-trigger.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/render-element.json"
+        "@reactolith/render-element"
       ]
     },
     {
@@ -1589,8 +1475,7 @@
       "files": [
         {
           "path": "registry/default/app/direction-provider/direction-provider.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/direction-provider/direction-provider.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1601,8 +1486,7 @@
       "files": [
         {
           "path": "registry/default/app/dropdown-menu/dropdown-menu.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dropdown-menu/dropdown-menu.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1613,8 +1497,7 @@
       "files": [
         {
           "path": "registry/default/app/dropdown-menu/dropdown-menu-checkbox-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dropdown-menu/dropdown-menu-checkbox-item.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1625,8 +1508,7 @@
       "files": [
         {
           "path": "registry/default/app/dropdown-menu/dropdown-menu-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dropdown-menu/dropdown-menu-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1637,8 +1519,7 @@
       "files": [
         {
           "path": "registry/default/app/dropdown-menu/dropdown-menu-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dropdown-menu/dropdown-menu-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1649,13 +1530,12 @@
       "files": [
         {
           "path": "registry/default/app/dropdown-menu/dropdown-menu-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dropdown-menu/dropdown-menu-item.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/close-overlay.json",
-        "https://reactolith.github.io/ui/r/render-element.json"
+        "@reactolith/close-overlay",
+        "@reactolith/render-element"
       ]
     },
     {
@@ -1665,8 +1545,7 @@
       "files": [
         {
           "path": "registry/default/app/dropdown-menu/dropdown-menu-label.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dropdown-menu/dropdown-menu-label.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1677,8 +1556,7 @@
       "files": [
         {
           "path": "registry/default/app/dropdown-menu/dropdown-menu-portal.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dropdown-menu/dropdown-menu-portal.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1689,8 +1567,7 @@
       "files": [
         {
           "path": "registry/default/app/dropdown-menu/dropdown-menu-radio-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dropdown-menu/dropdown-menu-radio-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1701,8 +1578,7 @@
       "files": [
         {
           "path": "registry/default/app/dropdown-menu/dropdown-menu-radio-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dropdown-menu/dropdown-menu-radio-item.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1713,8 +1589,7 @@
       "files": [
         {
           "path": "registry/default/app/dropdown-menu/dropdown-menu-separator.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dropdown-menu/dropdown-menu-separator.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1725,8 +1600,7 @@
       "files": [
         {
           "path": "registry/default/app/dropdown-menu/dropdown-menu-shortcut.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dropdown-menu/dropdown-menu-shortcut.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1737,8 +1611,7 @@
       "files": [
         {
           "path": "registry/default/app/dropdown-menu/dropdown-menu-sub.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dropdown-menu/dropdown-menu-sub.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1749,8 +1622,7 @@
       "files": [
         {
           "path": "registry/default/app/dropdown-menu/dropdown-menu-sub-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dropdown-menu/dropdown-menu-sub-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1761,8 +1633,7 @@
       "files": [
         {
           "path": "registry/default/app/dropdown-menu/dropdown-menu-sub-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dropdown-menu/dropdown-menu-sub-trigger.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1773,12 +1644,11 @@
       "files": [
         {
           "path": "registry/default/app/dropdown-menu/dropdown-menu-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/dropdown-menu/dropdown-menu-trigger.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/render-element.json"
+        "@reactolith/render-element"
       ]
     },
     {
@@ -1788,8 +1658,7 @@
       "files": [
         {
           "path": "registry/default/app/empty/empty.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/empty/empty.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1800,8 +1669,7 @@
       "files": [
         {
           "path": "registry/default/app/empty/empty-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/empty/empty-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1812,8 +1680,7 @@
       "files": [
         {
           "path": "registry/default/app/empty/empty-description.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/empty/empty-description.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1824,8 +1691,7 @@
       "files": [
         {
           "path": "registry/default/app/empty/empty-header.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/empty/empty-header.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1836,8 +1702,7 @@
       "files": [
         {
           "path": "registry/default/app/empty/empty-media.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/empty/empty-media.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1848,8 +1713,7 @@
       "files": [
         {
           "path": "registry/default/app/empty/empty-title.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/empty/empty-title.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1860,8 +1724,7 @@
       "files": [
         {
           "path": "registry/default/app/field/field.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/field/field.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1872,8 +1735,7 @@
       "files": [
         {
           "path": "registry/default/app/field/field-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/field/field-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1884,8 +1746,7 @@
       "files": [
         {
           "path": "registry/default/app/field/field-description.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/field/field-description.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1896,8 +1757,7 @@
       "files": [
         {
           "path": "registry/default/app/field/field-error.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/field/field-error.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1908,8 +1768,7 @@
       "files": [
         {
           "path": "registry/default/app/field/field-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/field/field-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1920,8 +1779,7 @@
       "files": [
         {
           "path": "registry/default/app/field/field-label.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/field/field-label.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1932,8 +1790,7 @@
       "files": [
         {
           "path": "registry/default/app/field/field-legend.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/field/field-legend.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1944,8 +1801,7 @@
       "files": [
         {
           "path": "registry/default/app/field/field-separator.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/field/field-separator.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1956,8 +1812,7 @@
       "files": [
         {
           "path": "registry/default/app/field/field-set.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/field/field-set.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1968,8 +1823,7 @@
       "files": [
         {
           "path": "registry/default/app/field/field-title.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/field/field-title.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1980,8 +1834,7 @@
       "files": [
         {
           "path": "registry/default/app/hover-card/hover-card.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/hover-card/hover-card.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -1992,8 +1845,7 @@
       "files": [
         {
           "path": "registry/default/app/hover-card/hover-card-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/hover-card/hover-card-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2004,8 +1856,7 @@
       "files": [
         {
           "path": "registry/default/app/hover-card/hover-card-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/hover-card/hover-card-trigger.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2016,8 +1867,7 @@
       "files": [
         {
           "path": "registry/default/app/input/input.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/input/input.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -2031,8 +1881,7 @@
       "files": [
         {
           "path": "registry/default/app/input-group/input-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/input-group/input-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2043,8 +1892,7 @@
       "files": [
         {
           "path": "registry/default/app/input-group/input-group-addon.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/input-group/input-group-addon.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2055,8 +1903,7 @@
       "files": [
         {
           "path": "registry/default/app/input-group/input-group-button.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/input-group/input-group-button.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2067,8 +1914,7 @@
       "files": [
         {
           "path": "registry/default/app/input-group/input-group-input.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/input-group/input-group-input.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2079,8 +1925,7 @@
       "files": [
         {
           "path": "registry/default/app/input-group/input-group-text.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/input-group/input-group-text.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2091,8 +1936,7 @@
       "files": [
         {
           "path": "registry/default/app/input-group/input-group-textarea.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/input-group/input-group-textarea.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2103,8 +1947,7 @@
       "files": [
         {
           "path": "registry/default/app/input-otp/input-otp.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/input-otp/input-otp.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2115,8 +1958,7 @@
       "files": [
         {
           "path": "registry/default/app/input-otp/input-otp-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/input-otp/input-otp-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2127,8 +1969,7 @@
       "files": [
         {
           "path": "registry/default/app/input-otp/input-otp-separator.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/input-otp/input-otp-separator.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2139,8 +1980,7 @@
       "files": [
         {
           "path": "registry/default/app/input-otp/input-otp-slot.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/input-otp/input-otp-slot.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2151,8 +1991,7 @@
       "files": [
         {
           "path": "registry/default/app/item/item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/item/item.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2163,8 +2002,7 @@
       "files": [
         {
           "path": "registry/default/app/item/item-actions.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/item/item-actions.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2175,8 +2013,7 @@
       "files": [
         {
           "path": "registry/default/app/item/item-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/item/item-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2187,8 +2024,7 @@
       "files": [
         {
           "path": "registry/default/app/item/item-description.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/item/item-description.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2199,8 +2035,7 @@
       "files": [
         {
           "path": "registry/default/app/item/item-footer.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/item/item-footer.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2211,8 +2046,7 @@
       "files": [
         {
           "path": "registry/default/app/item/item-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/item/item-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2223,8 +2057,7 @@
       "files": [
         {
           "path": "registry/default/app/item/item-header.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/item/item-header.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2235,8 +2068,7 @@
       "files": [
         {
           "path": "registry/default/app/item/item-media.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/item/item-media.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2247,8 +2079,7 @@
       "files": [
         {
           "path": "registry/default/app/item/item-separator.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/item/item-separator.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2259,8 +2090,7 @@
       "files": [
         {
           "path": "registry/default/app/item/item-title.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/item/item-title.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2271,8 +2101,7 @@
       "files": [
         {
           "path": "registry/default/app/kbd/kbd.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/kbd/kbd.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2283,8 +2112,7 @@
       "files": [
         {
           "path": "registry/default/app/kbd/kbd-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/kbd/kbd-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2295,8 +2123,7 @@
       "files": [
         {
           "path": "registry/default/app/label/label.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/label/label.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -2310,8 +2137,7 @@
       "files": [
         {
           "path": "registry/default/app/menubar/menubar.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/menubar/menubar.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2322,8 +2148,7 @@
       "files": [
         {
           "path": "registry/default/app/menubar/menubar-checkbox-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/menubar/menubar-checkbox-item.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2334,8 +2159,7 @@
       "files": [
         {
           "path": "registry/default/app/menubar/menubar-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/menubar/menubar-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2346,8 +2170,7 @@
       "files": [
         {
           "path": "registry/default/app/menubar/menubar-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/menubar/menubar-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2358,13 +2181,12 @@
       "files": [
         {
           "path": "registry/default/app/menubar/menubar-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/menubar/menubar-item.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/close-overlay.json",
-        "https://reactolith.github.io/ui/r/render-element.json"
+        "@reactolith/close-overlay",
+        "@reactolith/render-element"
       ]
     },
     {
@@ -2374,8 +2196,7 @@
       "files": [
         {
           "path": "registry/default/app/menubar/menubar-label.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/menubar/menubar-label.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2386,8 +2207,7 @@
       "files": [
         {
           "path": "registry/default/app/menubar/menubar-menu.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/menubar/menubar-menu.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2398,8 +2218,7 @@
       "files": [
         {
           "path": "registry/default/app/menubar/menubar-portal.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/menubar/menubar-portal.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2410,8 +2229,7 @@
       "files": [
         {
           "path": "registry/default/app/menubar/menubar-radio-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/menubar/menubar-radio-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2422,8 +2240,7 @@
       "files": [
         {
           "path": "registry/default/app/menubar/menubar-radio-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/menubar/menubar-radio-item.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2434,8 +2251,7 @@
       "files": [
         {
           "path": "registry/default/app/menubar/menubar-separator.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/menubar/menubar-separator.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2446,8 +2262,7 @@
       "files": [
         {
           "path": "registry/default/app/menubar/menubar-shortcut.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/menubar/menubar-shortcut.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2458,8 +2273,7 @@
       "files": [
         {
           "path": "registry/default/app/menubar/menubar-sub.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/menubar/menubar-sub.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2470,8 +2284,7 @@
       "files": [
         {
           "path": "registry/default/app/menubar/menubar-sub-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/menubar/menubar-sub-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2482,8 +2295,7 @@
       "files": [
         {
           "path": "registry/default/app/menubar/menubar-sub-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/menubar/menubar-sub-trigger.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2494,8 +2306,7 @@
       "files": [
         {
           "path": "registry/default/app/menubar/menubar-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/menubar/menubar-trigger.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2506,8 +2317,7 @@
       "files": [
         {
           "path": "registry/default/app/native-select/native-select.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/native-select/native-select.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2518,8 +2328,7 @@
       "files": [
         {
           "path": "registry/default/app/native-select/native-select-opt-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/native-select/native-select-opt-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2530,8 +2339,7 @@
       "files": [
         {
           "path": "registry/default/app/native-select/native-select-option.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/native-select/native-select-option.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2542,8 +2350,7 @@
       "files": [
         {
           "path": "registry/default/app/navigation-menu/navigation-menu.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/navigation-menu/navigation-menu.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2554,8 +2361,7 @@
       "files": [
         {
           "path": "registry/default/app/navigation-menu/navigation-menu-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/navigation-menu/navigation-menu-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2566,8 +2372,7 @@
       "files": [
         {
           "path": "registry/default/app/navigation-menu/navigation-menu-indicator.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/navigation-menu/navigation-menu-indicator.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2578,8 +2383,7 @@
       "files": [
         {
           "path": "registry/default/app/navigation-menu/navigation-menu-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/navigation-menu/navigation-menu-item.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2590,13 +2394,12 @@
       "files": [
         {
           "path": "registry/default/app/navigation-menu/navigation-menu-link.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/navigation-menu/navigation-menu-link.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/close-overlay.json",
-        "https://reactolith.github.io/ui/r/render-element.json"
+        "@reactolith/close-overlay",
+        "@reactolith/render-element"
       ]
     },
     {
@@ -2606,8 +2409,7 @@
       "files": [
         {
           "path": "registry/default/app/navigation-menu/navigation-menu-list.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/navigation-menu/navigation-menu-list.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2618,8 +2420,7 @@
       "files": [
         {
           "path": "registry/default/app/navigation-menu/navigation-menu-positioner.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/navigation-menu/navigation-menu-positioner.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2630,8 +2431,7 @@
       "files": [
         {
           "path": "registry/default/app/navigation-menu/navigation-menu-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/navigation-menu/navigation-menu-trigger.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2642,8 +2442,7 @@
       "files": [
         {
           "path": "registry/default/app/pagination/pagination.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/pagination/pagination.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2654,8 +2453,7 @@
       "files": [
         {
           "path": "registry/default/app/pagination/pagination-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/pagination/pagination-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2666,8 +2464,7 @@
       "files": [
         {
           "path": "registry/default/app/pagination/pagination-ellipsis.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/pagination/pagination-ellipsis.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2678,8 +2475,7 @@
       "files": [
         {
           "path": "registry/default/app/pagination/pagination-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/pagination/pagination-item.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2690,12 +2486,11 @@
       "files": [
         {
           "path": "registry/default/app/pagination/pagination-link.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/pagination/pagination-link.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/close-overlay.json"
+        "@reactolith/close-overlay"
       ]
     },
     {
@@ -2705,12 +2500,11 @@
       "files": [
         {
           "path": "registry/default/app/pagination/pagination-next.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/pagination/pagination-next.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/close-overlay.json"
+        "@reactolith/close-overlay"
       ]
     },
     {
@@ -2720,12 +2514,11 @@
       "files": [
         {
           "path": "registry/default/app/pagination/pagination-previous.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/pagination/pagination-previous.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/close-overlay.json"
+        "@reactolith/close-overlay"
       ]
     },
     {
@@ -2735,12 +2528,11 @@
       "files": [
         {
           "path": "registry/default/app/popover/popover.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/popover/popover.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/close-overlay.json"
+        "@reactolith/close-overlay"
       ]
     },
     {
@@ -2750,8 +2542,7 @@
       "files": [
         {
           "path": "registry/default/app/popover/popover-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/popover/popover-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2762,8 +2553,7 @@
       "files": [
         {
           "path": "registry/default/app/popover/popover-description.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/popover/popover-description.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2774,8 +2564,7 @@
       "files": [
         {
           "path": "registry/default/app/popover/popover-header.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/popover/popover-header.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2786,8 +2575,7 @@
       "files": [
         {
           "path": "registry/default/app/popover/popover-title.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/popover/popover-title.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2798,12 +2586,11 @@
       "files": [
         {
           "path": "registry/default/app/popover/popover-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/popover/popover-trigger.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/render-element.json"
+        "@reactolith/render-element"
       ]
     },
     {
@@ -2813,8 +2600,7 @@
       "files": [
         {
           "path": "registry/default/app/progress/progress.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/progress/progress.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -2828,8 +2614,7 @@
       "files": [
         {
           "path": "registry/default/app/progress/progress-indicator.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/progress/progress-indicator.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -2843,8 +2628,7 @@
       "files": [
         {
           "path": "registry/default/app/progress/progress-label.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/progress/progress-label.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -2858,8 +2642,7 @@
       "files": [
         {
           "path": "registry/default/app/progress/progress-track.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/progress/progress-track.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -2873,8 +2656,7 @@
       "files": [
         {
           "path": "registry/default/app/progress/progress-value.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/progress/progress-value.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -2888,8 +2670,7 @@
       "files": [
         {
           "path": "registry/default/app/radio-group/radio-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/radio-group/radio-group.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -2903,8 +2684,7 @@
       "files": [
         {
           "path": "registry/default/app/radio-group/radio-group-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/radio-group/radio-group-item.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -2918,8 +2698,7 @@
       "files": [
         {
           "path": "registry/default/app/resizable/resizable-handle.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/resizable/resizable-handle.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2930,8 +2709,7 @@
       "files": [
         {
           "path": "registry/default/app/resizable/resizable-panel.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/resizable/resizable-panel.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2942,8 +2720,7 @@
       "files": [
         {
           "path": "registry/default/app/resizable/resizable-panel-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/resizable/resizable-panel-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2954,8 +2731,7 @@
       "files": [
         {
           "path": "registry/default/app/scroll-area/scroll-area.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/scroll-area/scroll-area.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2966,8 +2742,7 @@
       "files": [
         {
           "path": "registry/default/app/scroll-area/scroll-bar.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/scroll-area/scroll-bar.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -2978,12 +2753,11 @@
       "files": [
         {
           "path": "registry/default/app/select/select.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/select/select.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/select-items.json"
+        "@reactolith/select-items"
       ]
     },
     {
@@ -2993,8 +2767,7 @@
       "files": [
         {
           "path": "registry/default/app/select/select-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/select/select-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3005,8 +2778,7 @@
       "files": [
         {
           "path": "registry/default/app/select/select-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/select/select-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3017,12 +2789,11 @@
       "files": [
         {
           "path": "registry/default/app/select/select-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/select/select-item.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/select-items.json"
+        "@reactolith/select-items"
       ]
     },
     {
@@ -3032,8 +2803,7 @@
       "files": [
         {
           "path": "registry/default/app/select/select-label.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/select/select-label.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3044,8 +2814,7 @@
       "files": [
         {
           "path": "registry/default/app/select/select-scroll-down-button.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/select/select-scroll-down-button.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3056,8 +2825,7 @@
       "files": [
         {
           "path": "registry/default/app/select/select-scroll-up-button.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/select/select-scroll-up-button.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3068,8 +2836,7 @@
       "files": [
         {
           "path": "registry/default/app/select/select-separator.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/select/select-separator.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3080,8 +2847,7 @@
       "files": [
         {
           "path": "registry/default/app/select/select-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/select/select-trigger.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3092,8 +2858,7 @@
       "files": [
         {
           "path": "registry/default/app/select/select-value.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/select/select-value.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3104,8 +2869,7 @@
       "files": [
         {
           "path": "registry/default/app/separator/separator.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/separator/separator.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3119,12 +2883,11 @@
       "files": [
         {
           "path": "registry/default/app/sheet/sheet.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sheet/sheet.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/close-overlay.json"
+        "@reactolith/close-overlay"
       ]
     },
     {
@@ -3134,12 +2897,11 @@
       "files": [
         {
           "path": "registry/default/app/sheet/sheet-close.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sheet/sheet-close.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/render-element.json"
+        "@reactolith/render-element"
       ]
     },
     {
@@ -3149,8 +2911,7 @@
       "files": [
         {
           "path": "registry/default/app/sheet/sheet-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sheet/sheet-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3161,8 +2922,7 @@
       "files": [
         {
           "path": "registry/default/app/sheet/sheet-description.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sheet/sheet-description.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3173,8 +2933,7 @@
       "files": [
         {
           "path": "registry/default/app/sheet/sheet-footer.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sheet/sheet-footer.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3185,8 +2944,7 @@
       "files": [
         {
           "path": "registry/default/app/sheet/sheet-header.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sheet/sheet-header.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3197,8 +2955,7 @@
       "files": [
         {
           "path": "registry/default/app/sheet/sheet-title.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sheet/sheet-title.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3209,12 +2966,11 @@
       "files": [
         {
           "path": "registry/default/app/sheet/sheet-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sheet/sheet-trigger.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/render-element.json"
+        "@reactolith/render-element"
       ]
     },
     {
@@ -3224,8 +2980,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3236,8 +2991,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3248,8 +3002,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-footer.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-footer.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3260,8 +3013,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-group.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3272,8 +3024,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-group-action.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-group-action.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3284,8 +3035,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-group-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-group-content.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3296,8 +3046,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-group-label.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-group-label.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3308,8 +3057,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-header.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-header.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3320,8 +3068,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-input.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-input.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3332,8 +3079,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-inset.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-inset.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3344,8 +3090,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-menu.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-menu.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3356,8 +3101,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-menu-action.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-menu-action.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3368,8 +3112,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-menu-badge.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-menu-badge.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3380,13 +3123,12 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-menu-button.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-menu-button.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/close-overlay.json",
-        "https://reactolith.github.io/ui/r/render-element.json"
+        "@reactolith/close-overlay",
+        "@reactolith/render-element"
       ]
     },
     {
@@ -3396,8 +3138,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-menu-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-menu-item.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3408,8 +3149,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-menu-skeleton.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-menu-skeleton.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3420,8 +3160,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-menu-sub.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-menu-sub.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3432,12 +3171,11 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-menu-sub-button.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-menu-sub-button.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/close-overlay.json"
+        "@reactolith/close-overlay"
       ]
     },
     {
@@ -3447,8 +3185,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-menu-sub-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-menu-sub-item.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3459,8 +3196,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-provider.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-provider.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3471,8 +3207,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-rail.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-rail.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3483,8 +3218,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-separator.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-separator.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3495,8 +3229,7 @@
       "files": [
         {
           "path": "registry/default/app/sidebar/sidebar-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sidebar/sidebar-trigger.tsx"
+          "type": "registry:component"
         }
       ]
     },
@@ -3507,8 +3240,7 @@
       "files": [
         {
           "path": "registry/default/app/skeleton/skeleton.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/skeleton/skeleton.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3522,8 +3254,7 @@
       "files": [
         {
           "path": "registry/default/app/slider/slider.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/slider/slider.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3537,8 +3268,7 @@
       "files": [
         {
           "path": "registry/default/app/sonner/sonner.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/sonner/sonner.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3552,8 +3282,7 @@
       "files": [
         {
           "path": "registry/default/app/spinner/spinner.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/spinner/spinner.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3567,8 +3296,7 @@
       "files": [
         {
           "path": "registry/default/app/switch/switch.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/switch/switch.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3582,8 +3310,7 @@
       "files": [
         {
           "path": "registry/default/app/table/table.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/table/table.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3597,8 +3324,7 @@
       "files": [
         {
           "path": "registry/default/app/table/table-body.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/table/table-body.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3612,8 +3338,7 @@
       "files": [
         {
           "path": "registry/default/app/table/table-caption.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/table/table-caption.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3627,8 +3352,7 @@
       "files": [
         {
           "path": "registry/default/app/table/table-cell.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/table/table-cell.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3642,8 +3366,7 @@
       "files": [
         {
           "path": "registry/default/app/table/table-footer.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/table/table-footer.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3657,8 +3380,7 @@
       "files": [
         {
           "path": "registry/default/app/table/table-head.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/table/table-head.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3672,8 +3394,7 @@
       "files": [
         {
           "path": "registry/default/app/table/table-header.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/table/table-header.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3687,8 +3408,7 @@
       "files": [
         {
           "path": "registry/default/app/table/table-row.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/table/table-row.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3702,8 +3422,7 @@
       "files": [
         {
           "path": "registry/default/app/tabs/tabs.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/tabs/tabs.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3717,8 +3436,7 @@
       "files": [
         {
           "path": "registry/default/app/tabs/tabs-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/tabs/tabs-content.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3732,8 +3450,7 @@
       "files": [
         {
           "path": "registry/default/app/tabs/tabs-list.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/tabs/tabs-list.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3747,13 +3464,12 @@
       "files": [
         {
           "path": "registry/default/app/tabs/tabs-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/tabs/tabs-trigger.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/close-overlay.json",
-        "https://reactolith.github.io/ui/r/render-element.json",
+        "@reactolith/close-overlay",
+        "@reactolith/render-element",
         "tabs"
       ]
     },
@@ -3764,8 +3480,7 @@
       "files": [
         {
           "path": "registry/default/app/textarea/textarea.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/textarea/textarea.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3779,12 +3494,11 @@
       "files": [
         {
           "path": "registry/default/app/toggle/toggle.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/toggle/toggle.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/render-element.json",
+        "@reactolith/render-element",
         "toggle"
       ]
     },
@@ -3795,8 +3509,7 @@
       "files": [
         {
           "path": "registry/default/app/toggle-group/toggle-group.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/toggle-group/toggle-group.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3810,12 +3523,11 @@
       "files": [
         {
           "path": "registry/default/app/toggle-group/toggle-group-item.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/toggle-group/toggle-group-item.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/render-element.json",
+        "@reactolith/render-element",
         "toggle-group"
       ]
     },
@@ -3826,8 +3538,7 @@
       "files": [
         {
           "path": "registry/default/app/tooltip/tooltip.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/tooltip/tooltip.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3841,8 +3552,7 @@
       "files": [
         {
           "path": "registry/default/app/tooltip/tooltip-content.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/tooltip/tooltip-content.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3856,8 +3566,7 @@
       "files": [
         {
           "path": "registry/default/app/tooltip/tooltip-provider.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/tooltip/tooltip-provider.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
@@ -3871,12 +3580,11 @@
       "files": [
         {
           "path": "registry/default/app/tooltip/tooltip-trigger.tsx",
-          "type": "registry:component",
-          "target": "@/components/app/tooltip/tooltip-trigger.tsx"
+          "type": "registry:component"
         }
       ],
       "registryDependencies": [
-        "https://reactolith.github.io/ui/r/render-element.json",
+        "@reactolith/render-element",
         "tooltip"
       ]
     }

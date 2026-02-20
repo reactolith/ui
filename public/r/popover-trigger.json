@@ -3,14 +3,13 @@
   "name": "popover-trigger",
   "title": "Popover Trigger",
   "registryDependencies": [
-    "https://reactolith.github.io/ui/r/render-element.json"
+    "@reactolith/render-element"
   ],
   "files": [
     {
-      "path": "registry/default/app/popover/popover-trigger.tsx",
+      "path": "components/app/popover/popover-trigger.tsx",
       "content": "import { Popover as PopoverPrimitive } from \"@base-ui/react/popover\"\nimport { renderTrigger } from \"@/registry/default/lib/render-element\"\n\nexport default function PopoverTrigger({\n  children,\n  is,\n  ...props\n}: PopoverPrimitive.Trigger.Props & { is?: string }) {\n  return renderTrigger(PopoverPrimitive.Trigger, { \"data-slot\": \"popover-trigger\", ...props }, children)\n}\n",
-      "type": "registry:component",
-      "target": "@/components/app/popover/popover-trigger.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

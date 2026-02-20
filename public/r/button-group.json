@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/button-group/button-group.tsx",
+      "path": "components/app/button-group/button-group.tsx",
       "content": "import { ButtonGroup } from \"@/components/ui/button-group\"\n\nexport default ButtonGroup\n",
-      "type": "registry:component",
-      "target": "@/components/app/button-group/button-group.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

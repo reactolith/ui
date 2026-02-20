@@ -4,10 +4,9 @@
   "title": "Command Empty",
   "files": [
     {
-      "path": "registry/default/app/command/command-empty.tsx",
+      "path": "components/app/command/command-empty.tsx",
       "content": "import { CommandEmpty } from \"@/components/ui/command\"\n\nexport default CommandEmpty\n",
-      "type": "registry:component",
-      "target": "@/components/app/command/command-empty.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

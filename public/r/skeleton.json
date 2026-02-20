@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/skeleton/skeleton.tsx",
+      "path": "components/app/skeleton/skeleton.tsx",
       "content": "import { Skeleton } from \"@/components/ui/skeleton\"\n\nexport default Skeleton\n",
-      "type": "registry:component",
-      "target": "@/components/app/skeleton/skeleton.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

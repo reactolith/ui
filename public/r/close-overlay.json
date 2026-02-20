@@ -4,10 +4,9 @@
   "title": "Close Overlay",
   "files": [
     {
-      "path": "registry/default/lib/close-overlay.tsx",
+      "path": "lib/close-overlay.tsx",
       "content": "import * as React from \"react\";\n\ntype CloseOverlayContextType = (() => void) | null;\n\nconst CloseOverlayContext = React.createContext<CloseOverlayContextType>(null);\n\nfunction CloseOverlayProvider({\n    onClose,\n    children,\n}: {\n    onClose: () => void;\n    children: React.ReactNode;\n}) {\n    return (\n        <CloseOverlayContext.Provider value={onClose}>\n            {children}\n        </CloseOverlayContext.Provider>\n    );\n}\n\nfunction useCloseOverlay() {\n    return React.useContext(CloseOverlayContext);\n}\n\nexport { CloseOverlayProvider, useCloseOverlay };\n",
-      "type": "registry:lib",
-      "target": "@/lib/close-overlay.tsx"
+      "type": "registry:lib"
     }
   ],
   "type": "registry:lib"

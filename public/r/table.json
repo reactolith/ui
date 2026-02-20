@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/table/table.tsx",
+      "path": "components/app/table/table.tsx",
       "content": "import { Table } from \"@/components/ui/table\"\n\nexport default Table\n",
-      "type": "registry:component",
-      "target": "@/components/app/table/table.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

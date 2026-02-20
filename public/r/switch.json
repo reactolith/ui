@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/switch/switch.tsx",
+      "path": "components/app/switch/switch.tsx",
       "content": "import { Switch } from \"@/components/ui/switch\"\n\nexport default Switch\n",
-      "type": "registry:component",
-      "target": "@/components/app/switch/switch.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

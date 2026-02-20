@@ -4,10 +4,9 @@
   "title": "Input Group Addon",
   "files": [
     {
-      "path": "registry/default/app/input-group/input-group-addon.tsx",
+      "path": "components/app/input-group/input-group-addon.tsx",
       "content": "import { InputGroupAddon } from \"@/components/ui/input-group\"\n\nexport default InputGroupAddon\n",
-      "type": "registry:component",
-      "target": "@/components/app/input-group/input-group-addon.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

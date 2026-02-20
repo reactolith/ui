@@ -4,10 +4,9 @@
   "title": "Context Menu Trigger",
   "files": [
     {
-      "path": "registry/default/app/context-menu/context-menu-trigger.tsx",
+      "path": "components/app/context-menu/context-menu-trigger.tsx",
       "content": "import { ContextMenuTrigger } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuTrigger\n",
-      "type": "registry:component",
-      "target": "@/components/app/context-menu/context-menu-trigger.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

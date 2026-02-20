@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/tooltip/tooltip-provider.tsx",
+      "path": "components/app/tooltip/tooltip-provider.tsx",
       "content": "import { TooltipProvider } from \"@/components/ui/tooltip\"\n\nexport default TooltipProvider\n",
-      "type": "registry:component",
-      "target": "@/components/app/tooltip/tooltip-provider.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

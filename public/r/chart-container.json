@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/chart/chart-container.tsx",
+      "path": "components/app/chart/chart-container.tsx",
       "content": "import { ChartContainer } from \"@/components/ui/chart\"\nimport { cn } from \"@/lib/utils\"\nimport type { ComponentProps } from \"react\"\n\nexport default function ChartContainerWrapper({\n  is,\n  className,\n  ...props\n}: ComponentProps<typeof ChartContainer> & { is?: string }) {\n  return (\n    <ChartContainer\n      {...props}\n      className={cn(\n        \"relative [&>.recharts-responsive-container]:absolute [&>.recharts-responsive-container]:inset-0\",\n        className,\n      )}\n    />\n  )\n}\n",
-      "type": "registry:component",
-      "target": "@/components/app/chart/chart-container.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

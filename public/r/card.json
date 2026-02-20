@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/card/card.tsx",
+      "path": "components/app/card/card.tsx",
       "content": "import { Card } from \"@/components/ui/card\"\n\nexport default Card\n",
-      "type": "registry:component",
-      "target": "@/components/app/card/card.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

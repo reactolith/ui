@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/card/card-footer.tsx",
+      "path": "components/app/card/card-footer.tsx",
       "content": "import { CardFooter } from \"@/components/ui/card\"\n\nexport default CardFooter\n",
-      "type": "registry:component",
-      "target": "@/components/app/card/card-footer.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

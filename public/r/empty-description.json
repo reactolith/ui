@@ -4,10 +4,9 @@
   "title": "Empty Description",
   "files": [
     {
-      "path": "registry/default/app/empty/empty-description.tsx",
+      "path": "components/app/empty/empty-description.tsx",
       "content": "import { EmptyDescription } from \"@/components/ui/empty\"\n\nexport default EmptyDescription\n",
-      "type": "registry:component",
-      "target": "@/components/app/empty/empty-description.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

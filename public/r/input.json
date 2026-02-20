@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/input/input.tsx",
+      "path": "components/app/input/input.tsx",
       "content": "import { Input } from \"@/components/ui/input\"\n\nexport default Input\n",
-      "type": "registry:component",
-      "target": "@/components/app/input/input.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

@@ -4,10 +4,9 @@
   "title": "Menubar Menu",
   "files": [
     {
-      "path": "registry/default/app/menubar/menubar-menu.tsx",
+      "path": "components/app/menubar/menubar-menu.tsx",
       "content": "import { MenubarMenu } from \"@/components/ui/menubar\"\n\nexport default MenubarMenu\n",
-      "type": "registry:component",
-      "target": "@/components/app/menubar/menubar-menu.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

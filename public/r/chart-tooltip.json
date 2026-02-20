@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/chart/chart-tooltip.tsx",
+      "path": "components/app/chart/chart-tooltip.tsx",
       "content": "import { ChartTooltip } from \"@/components/ui/chart\"\nimport type { ComponentProps, ReactNode } from \"react\"\n\nexport default function ChartTooltipWrapper({\n  children,\n  ...props\n}: ComponentProps<typeof ChartTooltip> & { children?: ReactNode }) {\n  return <ChartTooltip {...props} content={children as any} />\n}\n",
-      "type": "registry:component",
-      "target": "@/components/app/chart/chart-tooltip.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

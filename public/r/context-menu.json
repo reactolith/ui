@@ -4,10 +4,9 @@
   "title": "Context Menu",
   "files": [
     {
-      "path": "registry/default/app/context-menu/context-menu.tsx",
+      "path": "components/app/context-menu/context-menu.tsx",
       "content": "import { ContextMenu } from \"@/components/ui/context-menu\"\n\nexport default ContextMenu\n",
-      "type": "registry:component",
-      "target": "@/components/app/context-menu/context-menu.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

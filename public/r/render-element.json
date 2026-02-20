@@ -4,10 +4,9 @@
   "title": "Render Element",
   "files": [
     {
-      "path": "registry/default/lib/render-element.tsx",
+      "path": "lib/render-element.tsx",
       "content": "import { Children, isValidElement, type ReactNode, type ReactElement, type ElementType, type Ref, type MouseEvent } from \"react\"\n\nexport function getSingleElement(children: ReactNode): ReactElement | null {\n  const childArray = Children.toArray(children).filter(\n    (child) => !(typeof child === \"string\" && child.trim() === \"\")\n  )\n  if (childArray.length === 1 && isValidElement(childArray[0])) {\n    return childArray[0] as ReactElement\n  }\n  return null\n}\n\nexport function renderTrigger(\n  Component: ElementType,\n  props: any,\n  children: ReactNode\n) {\n  const singleChild = getSingleElement(children)\n  if (singleChild) {\n    return <Component {...props} render={singleChild} />\n  }\n  return <Component {...props}>{children}</Component>\n}\n\nexport function renderLinkable(\n  Component: ElementType,\n  props: any,\n  { href, ref, children, onNavigate }: {\n    href?: string | null\n    ref?: Ref<any>\n    children: ReactNode\n    onNavigate?: (() => void) | null\n  }\n) {\n  if (href) {\n    return (\n      <Component\n        {...props}\n        render={(itemProps: any) => (\n          <a\n            {...itemProps}\n            ref={ref}\n            href={href}\n            onClick={(e: MouseEvent<HTMLAnchorElement>) => {\n              itemProps.onClick?.(e)\n              onNavigate?.()\n            }}\n          >\n            {children}\n          </a>\n        )}\n      />\n    )\n  }\n  return <Component ref={ref} {...props}>{children}</Component>\n}\n",
-      "type": "registry:lib",
-      "target": "@/lib/render-element.tsx"
+      "type": "registry:lib"
     }
   ],
   "type": "registry:lib"

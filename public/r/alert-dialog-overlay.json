@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/alert-dialog/alert-dialog-overlay.tsx",
+      "path": "components/app/alert-dialog/alert-dialog-overlay.tsx",
       "content": "import { AlertDialogOverlay } from \"@/components/ui/alert-dialog\"\n\nexport default AlertDialogOverlay\n",
-      "type": "registry:component",
-      "target": "@/components/app/alert-dialog/alert-dialog-overlay.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

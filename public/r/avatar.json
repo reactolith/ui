@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/avatar/avatar.tsx",
+      "path": "components/app/avatar/avatar.tsx",
       "content": "import { Avatar } from \"@/components/ui/avatar\"\n\nexport default Avatar\n",
-      "type": "registry:component",
-      "target": "@/components/app/avatar/avatar.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

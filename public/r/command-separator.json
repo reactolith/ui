@@ -4,10 +4,9 @@
   "title": "Command Separator",
   "files": [
     {
-      "path": "registry/default/app/command/command-separator.tsx",
+      "path": "components/app/command/command-separator.tsx",
       "content": "import { CommandSeparator } from \"@/components/ui/command\"\n\nexport default CommandSeparator\n",
-      "type": "registry:component",
-      "target": "@/components/app/command/command-separator.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

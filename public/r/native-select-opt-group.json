@@ -4,10 +4,9 @@
   "title": "Native Select Opt Group",
   "files": [
     {
-      "path": "registry/default/app/native-select/native-select-opt-group.tsx",
+      "path": "components/app/native-select/native-select-opt-group.tsx",
       "content": "import { NativeSelectOptGroup } from \"@/components/ui/native-select\"\n\nexport default NativeSelectOptGroup\n",
-      "type": "registry:component",
-      "target": "@/components/app/native-select/native-select-opt-group.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

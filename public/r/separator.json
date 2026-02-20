@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/separator/separator.tsx",
+      "path": "components/app/separator/separator.tsx",
       "content": "import { Separator } from \"@/components/ui/separator\"\n\nexport default Separator\n",
-      "type": "registry:component",
-      "target": "@/components/app/separator/separator.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

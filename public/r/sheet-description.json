@@ -4,10 +4,9 @@
   "title": "Sheet Description",
   "files": [
     {
-      "path": "registry/default/app/sheet/sheet-description.tsx",
+      "path": "components/app/sheet/sheet-description.tsx",
       "content": "import { SheetDescription } from \"@/components/ui/sheet\"\n\nexport default SheetDescription\n",
-      "type": "registry:component",
-      "target": "@/components/app/sheet/sheet-description.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

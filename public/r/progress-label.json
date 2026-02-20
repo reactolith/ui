@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/progress/progress-label.tsx",
+      "path": "components/app/progress/progress-label.tsx",
       "content": "import { ProgressLabel } from \"@/components/ui/progress\"\n\nexport default ProgressLabel\n",
-      "type": "registry:component",
-      "target": "@/components/app/progress/progress-label.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

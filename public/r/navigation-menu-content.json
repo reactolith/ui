@@ -4,10 +4,9 @@
   "title": "Navigation Menu Content",
   "files": [
     {
-      "path": "registry/default/app/navigation-menu/navigation-menu-content.tsx",
+      "path": "components/app/navigation-menu/navigation-menu-content.tsx",
       "content": "import { NavigationMenuContent } from \"@/components/ui/navigation-menu\"\n\nexport default NavigationMenuContent\n",
-      "type": "registry:component",
-      "target": "@/components/app/navigation-menu/navigation-menu-content.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

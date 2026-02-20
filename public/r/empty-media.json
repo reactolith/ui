@@ -4,10 +4,9 @@
   "title": "Empty Media",
   "files": [
     {
-      "path": "registry/default/app/empty/empty-media.tsx",
+      "path": "components/app/empty/empty-media.tsx",
       "content": "import { EmptyMedia } from \"@/components/ui/empty\"\n\nexport default EmptyMedia\n",
-      "type": "registry:component",
-      "target": "@/components/app/empty/empty-media.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

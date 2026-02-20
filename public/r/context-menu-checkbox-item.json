@@ -4,10 +4,9 @@
   "title": "Context Menu Checkbox Item",
   "files": [
     {
-      "path": "registry/default/app/context-menu/context-menu-checkbox-item.tsx",
+      "path": "components/app/context-menu/context-menu-checkbox-item.tsx",
       "content": "import { ContextMenuCheckboxItem } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuCheckboxItem\n",
-      "type": "registry:component",
-      "target": "@/components/app/context-menu/context-menu-checkbox-item.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

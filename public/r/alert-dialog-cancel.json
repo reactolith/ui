@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/alert-dialog/alert-dialog-cancel.tsx",
+      "path": "components/app/alert-dialog/alert-dialog-cancel.tsx",
       "content": "import { AlertDialogCancel } from \"@/components/ui/alert-dialog\"\n\nexport default AlertDialogCancel\n",
-      "type": "registry:component",
-      "target": "@/components/app/alert-dialog/alert-dialog-cancel.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

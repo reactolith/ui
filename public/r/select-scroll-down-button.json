@@ -4,10 +4,9 @@
   "title": "Select Scroll Down Button",
   "files": [
     {
-      "path": "registry/default/app/select/select-scroll-down-button.tsx",
+      "path": "components/app/select/select-scroll-down-button.tsx",
       "content": "import { SelectScrollDownButton } from \"@/components/ui/select\"\n\nexport default SelectScrollDownButton\n",
-      "type": "registry:component",
-      "target": "@/components/app/select/select-scroll-down-button.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

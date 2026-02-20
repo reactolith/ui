@@ -4,10 +4,9 @@
   "title": "Item Media",
   "files": [
     {
-      "path": "registry/default/app/item/item-media.tsx",
+      "path": "components/app/item/item-media.tsx",
       "content": "import { ItemMedia } from \"@/components/ui/item\"\n\nexport default ItemMedia\n",
-      "type": "registry:component",
-      "target": "@/components/app/item/item-media.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

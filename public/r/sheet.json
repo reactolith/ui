@@ -3,14 +3,13 @@
   "name": "sheet",
   "title": "Sheet",
   "registryDependencies": [
-    "https://reactolith.github.io/ui/r/close-overlay.json"
+    "@reactolith/close-overlay"
   ],
   "files": [
     {
-      "path": "registry/default/app/sheet/sheet.tsx",
+      "path": "components/app/sheet/sheet.tsx",
       "content": "import * as React from \"react\";\nimport { Sheet } from \"@/components/ui/sheet\";\nimport { CloseOverlayProvider } from \"@/registry/default/lib/close-overlay\";\n\ntype UiSheetProps = React.ComponentProps<typeof Sheet>;\n\nexport default function UiSheet({\n    onOpenChange,\n    children,\n    ...props\n}: UiSheetProps) {\n    const handleClose = React.useCallback(() => {\n        onOpenChange?.(false);\n    }, [onOpenChange]);\n\n    return (\n        <Sheet onOpenChange={onOpenChange} {...props}>\n            <CloseOverlayProvider onClose={handleClose}>\n                {children}\n            </CloseOverlayProvider>\n        </Sheet>\n    );\n}\n",
-      "type": "registry:component",
-      "target": "@/components/app/sheet/sheet.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

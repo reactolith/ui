@@ -6,7 +6,7 @@
     "dev": "vite dev",
     "build": "vite build",
     "lint": "eslint .",
-    "registry:build": "shadcn build"
+    "registry:build": "shadcn build && node scripts/patch-registry-paths.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.2.0",

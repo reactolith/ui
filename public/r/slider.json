@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/slider/slider.tsx",
+      "path": "components/app/slider/slider.tsx",
       "content": "import { Slider } from \"@/components/ui/slider\"\n\nexport default Slider\n",
-      "type": "registry:component",
-      "target": "@/components/app/slider/slider.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

@@ -4,10 +4,9 @@
   "title": "Combobox Content",
   "files": [
     {
-      "path": "registry/default/app/combobox/combobox-content.tsx",
+      "path": "components/app/combobox/combobox-content.tsx",
       "content": "import { ComboboxContent } from \"@/components/ui/combobox\"\n\nexport default ComboboxContent\n",
-      "type": "registry:component",
-      "target": "@/components/app/combobox/combobox-content.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

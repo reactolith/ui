@@ -4,10 +4,9 @@
   "title": "Dropdown Menu Group",
   "files": [
     {
-      "path": "registry/default/app/dropdown-menu/dropdown-menu-group.tsx",
+      "path": "components/app/dropdown-menu/dropdown-menu-group.tsx",
       "content": "import { DropdownMenuGroup } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuGroup\n",
-      "type": "registry:component",
-      "target": "@/components/app/dropdown-menu/dropdown-menu-group.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

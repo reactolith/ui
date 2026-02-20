@@ -4,10 +4,9 @@
   "title": "Context Menu Separator",
   "files": [
     {
-      "path": "registry/default/app/context-menu/context-menu-separator.tsx",
+      "path": "components/app/context-menu/context-menu-separator.tsx",
       "content": "import { ContextMenuSeparator } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuSeparator\n",
-      "type": "registry:component",
-      "target": "@/components/app/context-menu/context-menu-separator.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

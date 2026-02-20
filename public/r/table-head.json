@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/table/table-head.tsx",
+      "path": "components/app/table/table-head.tsx",
       "content": "import { TableHead } from \"@/components/ui/table\"\n\nexport default TableHead\n",
-      "type": "registry:component",
-      "target": "@/components/app/table/table-head.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

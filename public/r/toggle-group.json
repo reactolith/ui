@@ -7,10 +7,9 @@
   ],
   "files": [
     {
-      "path": "registry/default/app/toggle-group/toggle-group.tsx",
+      "path": "components/app/toggle-group/toggle-group.tsx",
       "content": "import { ToggleGroup } from \"@/components/ui/toggle-group\"\n\nexport default ToggleGroup\n",
-      "type": "registry:component",
-      "target": "@/components/app/toggle-group/toggle-group.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

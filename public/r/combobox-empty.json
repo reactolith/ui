@@ -4,10 +4,9 @@
   "title": "Combobox Empty",
   "files": [
     {
-      "path": "registry/default/app/combobox/combobox-empty.tsx",
+      "path": "components/app/combobox/combobox-empty.tsx",
       "content": "import { ComboboxEmpty } from \"@/components/ui/combobox\"\n\nexport default ComboboxEmpty\n",
-      "type": "registry:component",
-      "target": "@/components/app/combobox/combobox-empty.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"

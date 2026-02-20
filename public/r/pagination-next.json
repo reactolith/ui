@@ -3,14 +3,13 @@
   "name": "pagination-next",
   "title": "Pagination Next",
   "registryDependencies": [
-    "https://reactolith.github.io/ui/r/close-overlay.json"
+    "@reactolith/close-overlay"
   ],
   "files": [
     {
-      "path": "registry/default/app/pagination/pagination-next.tsx",
+      "path": "components/app/pagination/pagination-next.tsx",
       "content": "import * as React from \"react\";\nimport { PaginationNext } from \"@/components/ui/pagination\";\nimport { useCloseOverlay } from \"@/registry/default/lib/close-overlay\";\n\ntype UiPaginationNextProps = React.ComponentProps<typeof PaginationNext>;\n\nconst UiPaginationNext = React.forwardRef<\n    HTMLAnchorElement,\n    UiPaginationNextProps\n>(({ onClick, ...props }, ref) => {\n    const closeOverlay = useCloseOverlay();\n\n    const handleClick = React.useCallback(\n        (e: React.MouseEvent<HTMLAnchorElement>) => {\n            closeOverlay?.();\n            onClick?.(e);\n        },\n        [closeOverlay, onClick]\n    );\n\n    return (\n        <PaginationNext\n            ref={ref}\n            onClick={handleClick}\n            {...props}\n        />\n    );\n});\n\nUiPaginationNext.displayName = \"UiPaginationNext\";\nexport default UiPaginationNext;\n",
-      "type": "registry:component",
-      "target": "@/components/app/pagination/pagination-next.tsx"
+      "type": "registry:component"
     }
   ],
   "type": "registry:component"
