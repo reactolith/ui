@@ -9,7 +9,8 @@
     {
       "path": "registry/default/app/alert-dialog/alert-dialog-media.tsx",
       "content": "import { AlertDialogMedia } from \"@/components/ui/alert-dialog\"\n\nexport default AlertDialogMedia\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/alert-dialog/alert-dialog-media.tsx"
     }
   ],
   "type": "registry:component"

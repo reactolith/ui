@@ -9,7 +9,8 @@
     {
       "path": "registry/default/app/table/table-header.tsx",
       "content": "import { TableHeader } from \"@/components/ui/table\"\n\nexport default TableHeader\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/table/table-header.tsx"
     }
   ],
   "type": "registry:component"

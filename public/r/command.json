@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/command/command.tsx",
       "content": "import { Command } from \"@/components/ui/command\"\n\nexport default Command\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/command/command.tsx"
     }
   ],
   "type": "registry:component"

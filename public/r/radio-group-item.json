@@ -9,7 +9,8 @@
     {
       "path": "registry/default/app/radio-group/radio-group-item.tsx",
       "content": "import { RadioGroupItem } from \"@/components/ui/radio-group\"\n\nexport default RadioGroupItem\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/radio-group/radio-group-item.tsx"
     }
   ],
   "type": "registry:component"

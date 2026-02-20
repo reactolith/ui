@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/context-menu/context-menu-label.tsx",
       "content": "import { ContextMenuLabel } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuLabel\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/context-menu/context-menu-label.tsx"
     }
   ],
   "type": "registry:component"

@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/combobox/combobox-value.tsx",
       "content": "import { ComboboxValue } from \"@/components/ui/combobox\"\n\nexport default ComboboxValue\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/combobox/combobox-value.tsx"
     }
   ],
   "type": "registry:component"

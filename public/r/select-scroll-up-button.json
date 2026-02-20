@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/select/select-scroll-up-button.tsx",
       "content": "import { SelectScrollUpButton } from \"@/components/ui/select\"\n\nexport default SelectScrollUpButton\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/select/select-scroll-up-button.tsx"
     }
   ],
   "type": "registry:component"

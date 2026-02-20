@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/dialog/dialog-header.tsx",
       "content": "import { DialogHeader } from \"@/components/ui/dialog\"\n\nexport default DialogHeader\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/dialog/dialog-header.tsx"
     }
   ],
   "type": "registry:component"

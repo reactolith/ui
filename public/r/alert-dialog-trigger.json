@@ -3,13 +3,15 @@
   "name": "alert-dialog-trigger",
   "title": "Alert Dialog Trigger",
   "registryDependencies": [
-    "alert-dialog"
+    "alert-dialog",
+    "render-element"
   ],
   "files": [
     {
       "path": "registry/default/app/alert-dialog/alert-dialog-trigger.tsx",
-      "content": "import { AlertDialogTrigger } from \"@/components/ui/alert-dialog\"\n\nexport default AlertDialogTrigger\n",
-      "type": "registry:component"
+      "content": "import { AlertDialogTrigger } from \"@/components/ui/alert-dialog\"\nimport { renderTrigger } from \"@/registry/default/lib/render-element\"\nimport type {ComponentProps, ReactNode} from \"react\";\n\nexport default function AlertDialogTriggerWrapper({\n  children,\n  is,\n  ...props\n}: ComponentProps<typeof AlertDialogTrigger> & { children?: ReactNode; is?: string }) {\n  return renderTrigger(AlertDialogTrigger, props, children)\n}\n",
+      "type": "registry:component",
+      "target": "components/app/alert-dialog/alert-dialog-trigger.tsx"
     }
   ],
   "type": "registry:component"

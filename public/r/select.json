@@ -2,11 +2,15 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "select",
   "title": "Select",
+  "registryDependencies": [
+    "select-items"
+  ],
   "files": [
     {
       "path": "registry/default/app/select/select.tsx",
-      "content": "import { Select } from \"@/components/ui/select\"\n\nexport default Select\n",
-      "type": "registry:component"
+      "content": "import * as React from \"react\"\nimport { Select } from \"@/components/ui/select\"\nimport { SelectItemsProvider } from \"@/registry/default/lib/select-items\"\n\nconst UiSelect = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentProps<typeof Select>\n>(({ children, ...props }, ref) => {\n  const [items, setItems] = React.useState<Record<string, string> | undefined>(undefined)\n\n  const handleItemsChange = React.useCallback((next: Record<string, string>) => {\n    setItems(Object.keys(next).length > 0 ? next : undefined)\n  }, [])\n\n  return (\n    <SelectItemsProvider onItemsChange={handleItemsChange}>\n      <Select ref={ref} items={items} {...props}>\n        {children}\n      </Select>\n    </SelectItemsProvider>\n  )\n})\n\nUiSelect.displayName = \"UiSelect\"\nexport default UiSelect\n",
+      "type": "registry:component",
+      "target": "components/app/select/select.tsx"
     }
   ],
   "type": "registry:component"

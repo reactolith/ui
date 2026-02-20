@@ -9,7 +9,8 @@
     {
       "path": "registry/default/app/badge/badge.tsx",
       "content": "import { Badge } from \"@/components/ui/badge\"\n\nexport default Badge\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/badge/badge.tsx"
     }
   ],
   "type": "registry:component"

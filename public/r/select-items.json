@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-items",
+  "title": "Select Items",
+  "files": [
+    {
+      "path": "registry/default/lib/select-items.tsx",
+      "content": "import * as React from \"react\"\n\ntype SelectItemsContextValue = {\n  registerItem: (value: string, label: string) => void\n  unregisterItem: (value: string) => void\n}\n\nconst SelectItemsContext = React.createContext<SelectItemsContextValue | null>(null)\n\nexport function useSelectItemsRegister() {\n  return React.useContext(SelectItemsContext)\n}\n\nexport function SelectItemsProvider({\n  children,\n  onItemsChange,\n}: {\n  children: React.ReactNode\n  onItemsChange: (items: Record<string, string>) => void\n}) {\n  const itemsRef = React.useRef<Record<string, string>>({})\n  const onItemsChangeRef = React.useRef(onItemsChange)\n  onItemsChangeRef.current = onItemsChange\n\n  const contextValue = React.useMemo<SelectItemsContextValue>(\n    () => ({\n      registerItem(value: string, label: string) {\n        if (itemsRef.current[value] !== label) {\n          itemsRef.current = { ...itemsRef.current, [value]: label }\n          onItemsChangeRef.current(itemsRef.current)\n        }\n      },\n      unregisterItem(value: string) {\n        if (value in itemsRef.current) {\n          const next = { ...itemsRef.current }\n          delete next[value]\n          itemsRef.current = next\n          onItemsChangeRef.current(next)\n        }\n      },\n    }),\n    []\n  )\n\n  return (\n    <SelectItemsContext.Provider value={contextValue}>\n      {children}\n    </SelectItemsContext.Provider>\n  )\n}\n",
+      "type": "registry:lib",
+      "target": "lib/select-items.tsx"
+    }
+  ],
+  "type": "registry:lib"
+}

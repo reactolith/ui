@@ -9,7 +9,8 @@
     {
       "path": "registry/default/app/progress/progress-indicator.tsx",
       "content": "import { ProgressIndicator } from \"@/components/ui/progress\"\n\nexport default ProgressIndicator\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/progress/progress-indicator.tsx"
     }
   ],
   "type": "registry:component"

@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/menubar/menubar-group.tsx",
       "content": "import { MenubarGroup } from \"@/components/ui/menubar\"\n\nexport default MenubarGroup\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/menubar/menubar-group.tsx"
     }
   ],
   "type": "registry:component"

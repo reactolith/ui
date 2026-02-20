@@ -2,11 +2,15 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sheet",
   "title": "Sheet",
+  "registryDependencies": [
+    "close-overlay"
+  ],
   "files": [
     {
       "path": "registry/default/app/sheet/sheet.tsx",
-      "content": "import { Sheet } from \"@/components/ui/sheet\"\n\nexport default Sheet\n",
-      "type": "registry:component"
+      "content": "import * as React from \"react\";\nimport { Sheet } from \"@/components/ui/sheet\";\nimport { CloseOverlayProvider } from \"@/registry/default/lib/close-overlay\";\n\ntype UiSheetProps = React.ComponentProps<typeof Sheet>;\n\nexport default function UiSheet({\n    onOpenChange,\n    children,\n    ...props\n}: UiSheetProps) {\n    const handleClose = React.useCallback(() => {\n        onOpenChange?.(false);\n    }, [onOpenChange]);\n\n    return (\n        <Sheet onOpenChange={onOpenChange} {...props}>\n            <CloseOverlayProvider onClose={handleClose}>\n                {children}\n            </CloseOverlayProvider>\n        </Sheet>\n    );\n}\n",
+      "type": "registry:component",
+      "target": "components/app/sheet/sheet.tsx"
     }
   ],
   "type": "registry:component"

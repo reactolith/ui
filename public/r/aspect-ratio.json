@@ -9,7 +9,8 @@
     {
       "path": "registry/default/app/aspect-ratio/aspect-ratio.tsx",
       "content": "import { AspectRatio } from \"@/components/ui/aspect-ratio\"\n\nexport default AspectRatio\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/aspect-ratio/aspect-ratio.tsx"
     }
   ],
   "type": "registry:component"

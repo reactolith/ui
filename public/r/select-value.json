@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/select/select-value.tsx",
       "content": "import { SelectValue } from \"@/components/ui/select\"\n\nexport default SelectValue\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/select/select-value.tsx"
     }
   ],
   "type": "registry:component"

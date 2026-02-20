@@ -5,8 +5,9 @@
   "files": [
     {
       "path": "registry/default/app/combobox/combobox.tsx",
-      "content": "import { Combobox } from \"@/components/ui/combobox\"\n\nexport default Combobox\n",
-      "type": "registry:component"
+      "content": "import * as React from \"react\"\nimport { Combobox } from \"@/components/ui/combobox\"\n\ntype ComboboxItem = string | { value: string; label: string }\n\nexport const ComboboxItemsContext = React.createContext<ComboboxItem[] | null>(null)\n\nfunction ComboboxWrapper({\n  items,\n  children,\n  ...props\n}: React.ComponentProps<typeof Combobox> & { items?: ComboboxItem[] }) {\n  if (!items) {\n    return <Combobox {...props}>{children}</Combobox>\n  }\n\n  const hasObjects = items.length > 0 && typeof items[0] === \"object\"\n\n  return (\n    <ComboboxItemsContext.Provider value={items}>\n      <Combobox\n        items={items}\n        {...(hasObjects\n          ? { getOptionAsString: (item: ComboboxItem) => (typeof item === \"string\" ? item : item.label) }\n          : {})}\n        {...props}\n      >\n        {children}\n      </Combobox>\n    </ComboboxItemsContext.Provider>\n  )\n}\n\nexport default ComboboxWrapper\n",
+      "type": "registry:component",
+      "target": "components/app/combobox/combobox.tsx"
     }
   ],
   "type": "registry:component"

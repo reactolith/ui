@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/dropdown-menu/dropdown-menu-sub.tsx",
       "content": "import { DropdownMenuSub } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuSub\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/dropdown-menu/dropdown-menu-sub.tsx"
     }
   ],
   "type": "registry:component"

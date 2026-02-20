@@ -2,11 +2,15 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "select-item",
   "title": "Select Item",
+  "registryDependencies": [
+    "select-items"
+  ],
   "files": [
     {
       "path": "registry/default/app/select/select-item.tsx",
-      "content": "import { SelectItem } from \"@/components/ui/select\"\n\nexport default SelectItem\n",
-      "type": "registry:component"
+      "content": "import * as React from \"react\"\nimport { SelectItem } from \"@/components/ui/select\"\nimport { useSelectItemsRegister } from \"@/registry/default/lib/select-items\"\n\nconst UiSelectItem = React.forwardRef<\n  HTMLDivElement,\n  React.ComponentProps<typeof SelectItem>\n>(({ value, children, ...props }, ref) => {\n  const register = useSelectItemsRegister()\n\n  React.useEffect(() => {\n    if (register && value != null) {\n      const label =\n        typeof children === \"string\"\n          ? children\n          : typeof children === \"number\"\n            ? String(children)\n            : String(value)\n      register.registerItem(String(value), label)\n      return () => register.unregisterItem(String(value))\n    }\n  }, [register, value, children])\n\n  return (\n    <SelectItem ref={ref} value={value} {...props}>\n      {children}\n    </SelectItem>\n  )\n})\n\nUiSelectItem.displayName = \"UiSelectItem\"\nexport default UiSelectItem\n",
+      "type": "registry:component",
+      "target": "components/app/select/select-item.tsx"
     }
   ],
   "type": "registry:component"

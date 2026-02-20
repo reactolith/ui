@@ -2,11 +2,15 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dialog-trigger",
   "title": "Dialog Trigger",
+  "registryDependencies": [
+    "render-element"
+  ],
   "files": [
     {
       "path": "registry/default/app/dialog/dialog-trigger.tsx",
-      "content": "import { DialogTrigger } from \"@/components/ui/dialog\"\n\nexport default DialogTrigger\n",
-      "type": "registry:component"
+      "content": "import { DialogTrigger } from \"@/components/ui/dialog\"\nimport { renderTrigger } from \"@/registry/default/lib/render-element\"\nimport type {ComponentProps, ReactNode} from \"react\";\n\nexport default function DialogTriggerWrapper({\n  children,\n  is,\n  ...props\n}: ComponentProps<typeof DialogTrigger> & { children?: ReactNode; is?: string }) {\n  return renderTrigger(DialogTrigger, props, children)\n}\n",
+      "type": "registry:component",
+      "target": "components/app/dialog/dialog-trigger.tsx"
     }
   ],
   "type": "registry:component"

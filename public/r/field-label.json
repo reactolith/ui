@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/field/field-label.tsx",
       "content": "import { FieldLabel } from \"@/components/ui/field\"\n\nexport default FieldLabel\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/field/field-label.tsx"
     }
   ],
   "type": "registry:component"

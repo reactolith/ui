@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/sidebar/sidebar-group.tsx",
       "content": "import { SidebarGroup } from \"@/components/ui/sidebar\"\n\nexport default SidebarGroup\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/sidebar/sidebar-group.tsx"
     }
   ],
   "type": "registry:component"

@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/combobox/combobox-chips.tsx",
       "content": "import { ComboboxChips } from \"@/components/ui/combobox\"\n\nexport default ComboboxChips\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/combobox/combobox-chips.tsx"
     }
   ],
   "type": "registry:component"

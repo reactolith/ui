@@ -9,7 +9,8 @@
     {
       "path": "registry/default/app/tabs/tabs-content.tsx",
       "content": "import { TabsContent } from \"@/components/ui/tabs\"\n\nexport default TabsContent\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/tabs/tabs-content.tsx"
     }
   ],
   "type": "registry:component"

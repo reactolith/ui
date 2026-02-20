@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/context-menu/context-menu-radio-item.tsx",
       "content": "import { ContextMenuRadioItem } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuRadioItem\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/context-menu/context-menu-radio-item.tsx"
     }
   ],
   "type": "registry:component"

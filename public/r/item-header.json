@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/item/item-header.tsx",
       "content": "import { ItemHeader } from \"@/components/ui/item\"\n\nexport default ItemHeader\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/item/item-header.tsx"
     }
   ],
   "type": "registry:component"

@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/navigation-menu/navigation-menu-positioner.tsx",
       "content": "import { NavigationMenuPositioner } from \"@/components/ui/navigation-menu\"\n\nexport default NavigationMenuPositioner\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/navigation-menu/navigation-menu-positioner.tsx"
     }
   ],
   "type": "registry:component"

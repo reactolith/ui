@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/field/field-group.tsx",
       "content": "import { FieldGroup } from \"@/components/ui/field\"\n\nexport default FieldGroup\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/field/field-group.tsx"
     }
   ],
   "type": "registry:component"

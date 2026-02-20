@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/item/item-content.tsx",
       "content": "import { ItemContent } from \"@/components/ui/item\"\n\nexport default ItemContent\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/item/item-content.tsx"
     }
   ],
   "type": "registry:component"

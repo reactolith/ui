@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/sidebar/sidebar-menu-action.tsx",
       "content": "import { SidebarMenuAction } from \"@/components/ui/sidebar\"\n\nexport default SidebarMenuAction\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/sidebar/sidebar-menu-action.tsx"
     }
   ],
   "type": "registry:component"

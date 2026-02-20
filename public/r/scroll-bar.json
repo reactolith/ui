@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/scroll-area/scroll-bar.tsx",
       "content": "import { ScrollBar } from \"@/components/ui/scroll-area\"\n\nexport default ScrollBar\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/scroll-area/scroll-bar.tsx"
     }
   ],
   "type": "registry:component"

@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/context-menu/context-menu-portal.tsx",
       "content": "import { ContextMenuPortal } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuPortal\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/context-menu/context-menu-portal.tsx"
     }
   ],
   "type": "registry:component"

@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/dropdown-menu/dropdown-menu-shortcut.tsx",
       "content": "import { DropdownMenuShortcut } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuShortcut\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/dropdown-menu/dropdown-menu-shortcut.tsx"
     }
   ],
   "type": "registry:component"

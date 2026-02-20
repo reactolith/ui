@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/dropdown-menu/dropdown-menu-label.tsx",
       "content": "import { DropdownMenuLabel } from \"@/components/ui/dropdown-menu\"\n\nexport default DropdownMenuLabel\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/dropdown-menu/dropdown-menu-label.tsx"
     }
   ],
   "type": "registry:component"

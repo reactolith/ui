@@ -8,8 +8,9 @@
   "files": [
     {
       "path": "registry/default/app/progress/progress.tsx",
-      "content": "import { Progress } from \"@/components/ui/progress\"\n\nexport default Progress\n",
-      "type": "registry:component"
+      "content": "import * as React from \"react\"\nimport { Progress } from \"@/components/ui/progress\"\n\ntype UiProgressProps = Omit<React.ComponentProps<typeof Progress>, \"value\"> & {\n  value?: number | string\n}\n\nconst UiProgress = React.forwardRef<HTMLDivElement, UiProgressProps>(\n  ({ value, ...props }, ref) => {\n    const numValue = value != null ? Number(value) : undefined\n    return <Progress ref={ref} value={numValue} {...props} />\n  }\n)\n\nUiProgress.displayName = \"UiProgress\"\nexport default UiProgress\n",
+      "type": "registry:component",
+      "target": "components/app/progress/progress.tsx"
     }
   ],
   "type": "registry:component"

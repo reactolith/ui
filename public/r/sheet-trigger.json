@@ -2,11 +2,15 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "sheet-trigger",
   "title": "Sheet Trigger",
+  "registryDependencies": [
+    "render-element"
+  ],
   "files": [
     {
       "path": "registry/default/app/sheet/sheet-trigger.tsx",
-      "content": "import { SheetTrigger } from \"@/components/ui/sheet\"\n\nexport default SheetTrigger\n",
-      "type": "registry:component"
+      "content": "import { Dialog as SheetPrimitive } from \"@base-ui/react/dialog\"\nimport { renderTrigger } from \"@/registry/default/lib/render-element\"\n\nexport default function SheetTrigger({\n  children,\n  is,\n  ...props\n}: SheetPrimitive.Trigger.Props & { is?: string }) {\n  return renderTrigger(SheetPrimitive.Trigger, { \"data-slot\": \"sheet-trigger\", ...props }, children)\n}\n",
+      "type": "registry:component",
+      "target": "components/app/sheet/sheet-trigger.tsx"
     }
   ],
   "type": "registry:component"

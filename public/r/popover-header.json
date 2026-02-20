@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/popover/popover-header.tsx",
       "content": "import { PopoverHeader } from \"@/components/ui/popover\"\n\nexport default PopoverHeader\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/popover/popover-header.tsx"
     }
   ],
   "type": "registry:component"

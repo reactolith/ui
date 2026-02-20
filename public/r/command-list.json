@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/command/command-list.tsx",
       "content": "import { CommandList } from \"@/components/ui/command\"\n\nexport default CommandList\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/command/command-list.tsx"
     }
   ],
   "type": "registry:component"

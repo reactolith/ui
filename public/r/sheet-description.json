@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/sheet/sheet-description.tsx",
       "content": "import { SheetDescription } from \"@/components/ui/sheet\"\n\nexport default SheetDescription\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/sheet/sheet-description.tsx"
     }
   ],
   "type": "registry:component"

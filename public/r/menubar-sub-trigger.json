@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/menubar/menubar-sub-trigger.tsx",
       "content": "import { MenubarSubTrigger } from \"@/components/ui/menubar\"\n\nexport default MenubarSubTrigger\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/menubar/menubar-sub-trigger.tsx"
     }
   ],
   "type": "registry:component"

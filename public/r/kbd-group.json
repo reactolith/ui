@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/kbd/kbd-group.tsx",
       "content": "import { KbdGroup } from \"@/components/ui/kbd\"\n\nexport default KbdGroup\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/kbd/kbd-group.tsx"
     }
   ],
   "type": "registry:component"

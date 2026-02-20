@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/navigation-menu/navigation-menu-indicator.tsx",
       "content": "import { NavigationMenuIndicator } from \"@/components/ui/navigation-menu\"\n\nexport default NavigationMenuIndicator\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/navigation-menu/navigation-menu-indicator.tsx"
     }
   ],
   "type": "registry:component"

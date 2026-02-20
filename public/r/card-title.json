@@ -9,7 +9,8 @@
     {
       "path": "registry/default/app/card/card-title.tsx",
       "content": "import { CardTitle } from \"@/components/ui/card\"\n\nexport default CardTitle\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/card/card-title.tsx"
     }
   ],
   "type": "registry:component"

@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/input-group/input-group.tsx",
       "content": "import { InputGroup } from \"@/components/ui/input-group\"\n\nexport default InputGroup\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/input-group/input-group.tsx"
     }
   ],
   "type": "registry:component"

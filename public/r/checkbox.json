@@ -9,7 +9,8 @@
     {
       "path": "registry/default/app/checkbox/checkbox.tsx",
       "content": "import { Checkbox } from \"@/components/ui/checkbox\"\n\nexport default Checkbox\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/checkbox/checkbox.tsx"
     }
   ],
   "type": "registry:component"

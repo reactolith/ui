@@ -3,13 +3,15 @@
   "name": "tooltip-trigger",
   "title": "Tooltip Trigger",
   "registryDependencies": [
+    "render-element",
     "tooltip"
   ],
   "files": [
     {
       "path": "registry/default/app/tooltip/tooltip-trigger.tsx",
-      "content": "import { TooltipTrigger } from \"@/components/ui/tooltip\"\n\nexport default TooltipTrigger\n",
-      "type": "registry:component"
+      "content": "import { Tooltip as TooltipPrimitive } from \"@base-ui/react/tooltip\"\nimport { TooltipTrigger } from \"@/components/ui/tooltip\"\nimport { renderTrigger } from \"@/registry/default/lib/render-element\"\n\nexport default function TooltipTriggerWrapper({\n  children,\n  is,\n  ...props\n}: TooltipPrimitive.Trigger.Props & { is?: string }) {\n  return renderTrigger(TooltipTrigger, props, children)\n}\n",
+      "type": "registry:component",
+      "target": "components/app/tooltip/tooltip-trigger.tsx"
     }
   ],
   "type": "registry:component"

@@ -5,8 +5,9 @@
   "files": [
     {
       "path": "registry/default/app/combobox/combobox-list.tsx",
-      "content": "import { ComboboxList } from \"@/components/ui/combobox\"\n\nexport default ComboboxList\n",
-      "type": "registry:component"
+      "content": "import * as React from \"react\"\nimport { ComboboxList, ComboboxItem } from \"@/components/ui/combobox\"\nimport { ComboboxItemsContext } from \"./combobox\"\n\nfunction ComboboxListWrapper({\n  children,\n  ...props\n}: React.ComponentProps<typeof ComboboxList>) {\n  const items = React.useContext(ComboboxItemsContext)\n\n  if (items) {\n    return (\n      <ComboboxList {...props}>\n        {(item: string | { value: string; label: string }) => {\n          const value = typeof item === \"string\" ? item : item.value\n          const label = typeof item === \"string\" ? item : item.label\n          return (\n            <ComboboxItem key={value} value={item}>\n              {label}\n            </ComboboxItem>\n          )\n        }}\n      </ComboboxList>\n    )\n  }\n\n  return <ComboboxList {...props}>{children}</ComboboxList>\n}\n\nexport default ComboboxListWrapper\n",
+      "type": "registry:component",
+      "target": "components/app/combobox/combobox-list.tsx"
     }
   ],
   "type": "registry:component"

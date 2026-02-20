@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/input-otp/input-otp-separator.tsx",
       "content": "import { InputOTPSeparator } from \"@/components/ui/input-otp\"\n\nexport default InputOTPSeparator\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/input-otp/input-otp-separator.tsx"
     }
   ],
   "type": "registry:component"

@@ -9,7 +9,8 @@
     {
       "path": "registry/default/app/carousel/carousel-previous.tsx",
       "content": "import { CarouselPrevious } from \"@/components/ui/carousel\"\n\nexport default CarouselPrevious\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/carousel/carousel-previous.tsx"
     }
   ],
   "type": "registry:component"

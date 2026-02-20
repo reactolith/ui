@@ -2,11 +2,15 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dialog",
   "title": "Dialog",
+  "registryDependencies": [
+    "close-overlay"
+  ],
   "files": [
     {
       "path": "registry/default/app/dialog/dialog.tsx",
-      "content": "import { Dialog } from \"@/components/ui/dialog\"\n\nexport default Dialog\n",
-      "type": "registry:component"
+      "content": "import * as React from \"react\";\nimport { Dialog } from \"@/components/ui/dialog\";\nimport { CloseOverlayProvider } from \"@/registry/default/lib/close-overlay\";\n\ntype UiDialogProps = React.ComponentProps<typeof Dialog>;\n\nexport default function UiDialog({\n    onOpenChange,\n    children,\n    ...props\n}: UiDialogProps) {\n    const handleClose = React.useCallback(() => {\n        onOpenChange?.(false);\n    }, [onOpenChange]);\n\n    return (\n        <Dialog onOpenChange={onOpenChange} {...props}>\n            <CloseOverlayProvider onClose={handleClose}>\n                {children}\n            </CloseOverlayProvider>\n        </Dialog>\n    );\n}\n",
+      "type": "registry:component",
+      "target": "components/app/dialog/dialog.tsx"
     }
   ],
   "type": "registry:component"

@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/context-menu/context-menu-sub.tsx",
       "content": "import { ContextMenuSub } from \"@/components/ui/context-menu\"\n\nexport default ContextMenuSub\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/context-menu/context-menu-sub.tsx"
     }
   ],
   "type": "registry:component"

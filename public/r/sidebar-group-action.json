@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/sidebar/sidebar-group-action.tsx",
       "content": "import { SidebarGroupAction } from \"@/components/ui/sidebar\"\n\nexport default SidebarGroupAction\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/sidebar/sidebar-group-action.tsx"
     }
   ],
   "type": "registry:component"

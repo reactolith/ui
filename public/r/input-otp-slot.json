@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/input-otp/input-otp-slot.tsx",
       "content": "import { InputOTPSlot } from \"@/components/ui/input-otp\"\n\nexport default InputOTPSlot\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/input-otp/input-otp-slot.tsx"
     }
   ],
   "type": "registry:component"

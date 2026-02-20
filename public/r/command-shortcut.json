@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/command/command-shortcut.tsx",
       "content": "import { CommandShortcut } from \"@/components/ui/command\"\n\nexport default CommandShortcut\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/command/command-shortcut.tsx"
     }
   ],
   "type": "registry:component"

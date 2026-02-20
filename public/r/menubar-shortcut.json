@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/menubar/menubar-shortcut.tsx",
       "content": "import { MenubarShortcut } from \"@/components/ui/menubar\"\n\nexport default MenubarShortcut\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/menubar/menubar-shortcut.tsx"
     }
   ],
   "type": "registry:component"

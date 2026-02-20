@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/sidebar/sidebar-rail.tsx",
       "content": "import { SidebarRail } from \"@/components/ui/sidebar\"\n\nexport default SidebarRail\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/sidebar/sidebar-rail.tsx"
     }
   ],
   "type": "registry:component"

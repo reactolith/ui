@@ -9,7 +9,8 @@
     {
       "path": "registry/default/app/card/card-header.tsx",
       "content": "import { CardHeader } from \"@/components/ui/card\"\n\nexport default CardHeader\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/card/card-header.tsx"
     }
   ],
   "type": "registry:component"

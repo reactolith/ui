@@ -6,7 +6,8 @@
     {
       "path": "registry/default/app/direction-provider/direction-provider.tsx",
       "content": "import { DirectionProvider } from \"@/components/ui/direction\"\n\nexport default DirectionProvider\n",
-      "type": "registry:component"
+      "type": "registry:component",
+      "target": "components/app/direction-provider/direction-provider.tsx"
     }
   ],
   "type": "registry:component"

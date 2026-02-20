@@ -3,13 +3,15 @@
   "name": "collapsible-trigger",
   "title": "Collapsible Trigger",
   "registryDependencies": [
-    "collapsible"
+    "collapsible",
+    "render-element"
   ],
   "files": [
     {
       "path": "registry/default/app/collapsible/collapsible-trigger.tsx",
-      "content": "import { CollapsibleTrigger } from \"@/components/ui/collapsible\"\n\nexport default CollapsibleTrigger\n",
-      "type": "registry:component"
+      "content": "import { type ComponentProps, type ReactNode } from \"react\"\nimport { CollapsibleTrigger } from \"@/components/ui/collapsible\"\nimport { renderTrigger } from \"@/registry/default/lib/render-element\"\n\nexport default function CollapsibleTriggerWrapper({\n  children,\n  is,\n  ...props\n}: ComponentProps<typeof CollapsibleTrigger> & { children?: ReactNode; is?: string }) {\n  return renderTrigger(CollapsibleTrigger, props, children)\n}\n",
+      "type": "registry:component",
+      "target": "components/app/collapsible/collapsible-trigger.tsx"
     }
   ],
   "type": "registry:component"
