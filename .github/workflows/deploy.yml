@@ -29,6 +29,9 @@ jobs:
         env:
           GITHUB_PAGES: true
 
+      # Generate web-types
+      - run: npx generate-web-types --components registry/default/app/ --prefix ui-
+
       # Build the shadcn registry
       - run: npm run registry:build
 
