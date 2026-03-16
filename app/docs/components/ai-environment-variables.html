@@ -424,7 +424,24 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-environment-variables>
+  <ui-ai-environment-variables-header>
+    <ui-ai-environment-variables-title>Environment Variables</ui-ai-environment-variables-title>
+    <ui-ai-environment-variables-toggle />
+  </ui-ai-environment-variables-header>
+  <ui-ai-environment-variables-content>
+    <ui-ai-environment-variable name="API_KEY" value="sk-abc123...">
+      <ui-ai-environment-variable-name />
+      <ui-ai-environment-variable-value />
+      <ui-ai-environment-variable-copy-button />
+    </ui-ai-environment-variable>
+    <ui-ai-environment-variable name="DATABASE_URL" value="postgres://localhost:5432/mydb">
+      <ui-ai-environment-variable-name />
+      <ui-ai-environment-variable-value />
+      <ui-ai-environment-variable-required />
+    </ui-ai-environment-variable>
+  </ui-ai-environment-variables-content>
+</ui-ai-environment-variables>
                   </div>
             </section>
 
@@ -432,11 +449,22 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-environment-variables&gt;
-  &lt;ui-ai-environment-variables-header&gt;...&lt;/ui-ai-environment-variables-header&gt;
-  &lt;ui-ai-environment-variables-title&gt;...&lt;/ui-ai-environment-variables-title&gt;
-  &lt;ui-ai-environment-variables-toggle&gt;...&lt;/ui-ai-environment-variables-toggle&gt;
-  &lt;ui-ai-environment-variables-content&gt;...&lt;/ui-ai-environment-variables-content&gt;
-  &lt;!-- ... more sub-components --&gt;
+  &lt;ui-ai-environment-variables-header&gt;
+    &lt;ui-ai-environment-variables-title&gt;Environment Variables&lt;/ui-ai-environment-variables-title&gt;
+    &lt;ui-ai-environment-variables-toggle /&gt;
+  &lt;/ui-ai-environment-variables-header&gt;
+  &lt;ui-ai-environment-variables-content&gt;
+    &lt;ui-ai-environment-variable name=&quot;API_KEY&quot; value=&quot;sk-abc123...&quot;&gt;
+      &lt;ui-ai-environment-variable-name /&gt;
+      &lt;ui-ai-environment-variable-value /&gt;
+      &lt;ui-ai-environment-variable-copy-button /&gt;
+    &lt;/ui-ai-environment-variable&gt;
+    &lt;ui-ai-environment-variable name=&quot;DATABASE_URL&quot; value=&quot;postgres://localhost:5432/mydb&quot;&gt;
+      &lt;ui-ai-environment-variable-name /&gt;
+      &lt;ui-ai-environment-variable-value /&gt;
+      &lt;ui-ai-environment-variable-required /&gt;
+    &lt;/ui-ai-environment-variable&gt;
+  &lt;/ui-ai-environment-variables-content&gt;
 &lt;/ui-ai-environment-variables&gt;</code></pre>
               </div>
             </section>

@@ -424,7 +424,14 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-web-preview>
+  <ui-ai-web-preview-navigation>
+    <ui-ai-web-preview-url value="https://example.com" />
+  </ui-ai-web-preview-navigation>
+  <ui-ai-web-preview-body class="h-48 border rounded bg-muted/10 flex items-center justify-center text-sm text-muted-foreground">
+    Embedded web page preview
+  </ui-ai-web-preview-body>
+</ui-ai-web-preview>
                   </div>
             </section>
 
@@ -432,11 +439,12 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-web-preview&gt;
-  &lt;ui-ai-web-preview-navigation&gt;...&lt;/ui-ai-web-preview-navigation&gt;
-  &lt;ui-ai-web-preview-navigation-button&gt;...&lt;/ui-ai-web-preview-navigation-button&gt;
-  &lt;ui-ai-web-preview-url&gt;...&lt;/ui-ai-web-preview-url&gt;
-  &lt;ui-ai-web-preview-body&gt;...&lt;/ui-ai-web-preview-body&gt;
-  &lt;!-- ... more sub-components --&gt;
+  &lt;ui-ai-web-preview-navigation&gt;
+    &lt;ui-ai-web-preview-url value=&quot;https://example.com&quot; /&gt;
+  &lt;/ui-ai-web-preview-navigation&gt;
+  &lt;ui-ai-web-preview-body class=&quot;h-48 border rounded bg-muted/10 flex items-center justify-center text-sm text-muted-foreground&quot;&gt;
+    Embedded web page preview
+  &lt;/ui-ai-web-preview-body&gt;
 &lt;/ui-ai-web-preview&gt;</code></pre>
               </div>
             </section>

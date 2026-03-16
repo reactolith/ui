@@ -424,7 +424,30 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-test-results>
+  <ui-ai-test-results-header>
+    <ui-ai-test-results-summary>48 tests</ui-ai-test-results-summary>
+    <ui-ai-test-results-duration>1.2s</ui-ai-test-results-duration>
+  </ui-ai-test-results-header>
+  <ui-ai-test-results-progress />
+  <ui-ai-test-results-content>
+    <ui-ai-test-suite>
+      <ui-ai-test-suite-name>Authentication</ui-ai-test-suite-name>
+      <ui-ai-test-suite-content>
+        <ui-ai-test>
+          <ui-ai-test-status>✓</ui-ai-test-status>
+          <ui-ai-test-name>should validate JWT tokens</ui-ai-test-name>
+          <ui-ai-test-duration>12ms</ui-ai-test-duration>
+        </ui-ai-test>
+        <ui-ai-test>
+          <ui-ai-test-status>✗</ui-ai-test-status>
+          <ui-ai-test-name>should reject expired tokens</ui-ai-test-name>
+          <ui-ai-test-duration>3ms</ui-ai-test-duration>
+        </ui-ai-test>
+      </ui-ai-test-suite-content>
+    </ui-ai-test-suite>
+  </ui-ai-test-results-content>
+</ui-ai-test-results>
                   </div>
             </section>
 
@@ -432,11 +455,28 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-test-results&gt;
-  &lt;ui-ai-test-results-header&gt;...&lt;/ui-ai-test-results-header&gt;
-  &lt;ui-ai-test-results-duration&gt;...&lt;/ui-ai-test-results-duration&gt;
-  &lt;ui-ai-test-results-summary&gt;...&lt;/ui-ai-test-results-summary&gt;
-  &lt;ui-ai-test-results-progress&gt;...&lt;/ui-ai-test-results-progress&gt;
-  &lt;!-- ... more sub-components --&gt;
+  &lt;ui-ai-test-results-header&gt;
+    &lt;ui-ai-test-results-summary&gt;48 tests&lt;/ui-ai-test-results-summary&gt;
+    &lt;ui-ai-test-results-duration&gt;1.2s&lt;/ui-ai-test-results-duration&gt;
+  &lt;/ui-ai-test-results-header&gt;
+  &lt;ui-ai-test-results-progress /&gt;
+  &lt;ui-ai-test-results-content&gt;
+    &lt;ui-ai-test-suite&gt;
+      &lt;ui-ai-test-suite-name&gt;Authentication&lt;/ui-ai-test-suite-name&gt;
+      &lt;ui-ai-test-suite-content&gt;
+        &lt;ui-ai-test&gt;
+          &lt;ui-ai-test-status&gt;✓&lt;/ui-ai-test-status&gt;
+          &lt;ui-ai-test-name&gt;should validate JWT tokens&lt;/ui-ai-test-name&gt;
+          &lt;ui-ai-test-duration&gt;12ms&lt;/ui-ai-test-duration&gt;
+        &lt;/ui-ai-test&gt;
+        &lt;ui-ai-test&gt;
+          &lt;ui-ai-test-status&gt;✗&lt;/ui-ai-test-status&gt;
+          &lt;ui-ai-test-name&gt;should reject expired tokens&lt;/ui-ai-test-name&gt;
+          &lt;ui-ai-test-duration&gt;3ms&lt;/ui-ai-test-duration&gt;
+        &lt;/ui-ai-test&gt;
+      &lt;/ui-ai-test-suite-content&gt;
+    &lt;/ui-ai-test-suite&gt;
+  &lt;/ui-ai-test-results-content&gt;
 &lt;/ui-ai-test-results&gt;</code></pre>
               </div>
             </section>

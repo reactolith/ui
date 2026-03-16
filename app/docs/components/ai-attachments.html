@@ -424,7 +424,18 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-attachments>
+  <ui-ai-attachment>
+    <ui-ai-attachment-preview>
+      <div class="w-16 h-16 bg-muted rounded flex items-center justify-center text-xs">PDF</div>
+    </ui-ai-attachment-preview>
+    <ui-ai-attachment-info>
+      <span class="text-sm font-medium">report.pdf</span>
+      <span class="text-xs text-muted-foreground">2.4 MB</span>
+    </ui-ai-attachment-info>
+    <ui-ai-attachment-remove />
+  </ui-ai-attachment>
+</ui-ai-attachments>
                   </div>
             </section>
 
@@ -432,11 +443,16 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-attachments&gt;
-  &lt;ui-ai-attachment&gt;...&lt;/ui-ai-attachment&gt;
-  &lt;ui-ai-attachment-preview&gt;...&lt;/ui-ai-attachment-preview&gt;
-  &lt;ui-ai-attachment-info&gt;...&lt;/ui-ai-attachment-info&gt;
-  &lt;ui-ai-attachment-remove&gt;...&lt;/ui-ai-attachment-remove&gt;
-  &lt;!-- ... more sub-components --&gt;
+  &lt;ui-ai-attachment&gt;
+    &lt;ui-ai-attachment-preview&gt;
+      &lt;div class=&quot;w-16 h-16 bg-muted rounded flex items-center justify-center text-xs&quot;&gt;PDF&lt;/div&gt;
+    &lt;/ui-ai-attachment-preview&gt;
+    &lt;ui-ai-attachment-info&gt;
+      &lt;span class=&quot;text-sm font-medium&quot;&gt;report.pdf&lt;/span&gt;
+      &lt;span class=&quot;text-xs text-muted-foreground&quot;&gt;2.4 MB&lt;/span&gt;
+    &lt;/ui-ai-attachment-info&gt;
+    &lt;ui-ai-attachment-remove /&gt;
+  &lt;/ui-ai-attachment&gt;
 &lt;/ui-ai-attachments&gt;</code></pre>
               </div>
             </section>

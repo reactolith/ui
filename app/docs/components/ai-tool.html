@@ -424,7 +424,13 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-tool>
+  <ui-ai-tool-header>web-search</ui-ai-tool-header>
+  <ui-ai-tool-content>
+    <ui-ai-tool-input>{"query": "React Server Components best practices"}</ui-ai-tool-input>
+    <ui-ai-tool-output>Found 5 relevant results from react.dev, vercel.com...</ui-ai-tool-output>
+  </ui-ai-tool-content>
+</ui-ai-tool>
                   </div>
             </section>
 
@@ -432,10 +438,11 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-tool&gt;
-  &lt;ui-ai-tool-header&gt;...&lt;/ui-ai-tool-header&gt;
-  &lt;ui-ai-tool-content&gt;...&lt;/ui-ai-tool-content&gt;
-  &lt;ui-ai-tool-input&gt;...&lt;/ui-ai-tool-input&gt;
-  &lt;ui-ai-tool-output&gt;...&lt;/ui-ai-tool-output&gt;
+  &lt;ui-ai-tool-header&gt;web-search&lt;/ui-ai-tool-header&gt;
+  &lt;ui-ai-tool-content&gt;
+    &lt;ui-ai-tool-input&gt;{&quot;query&quot;: &quot;React Server Components best practices&quot;}&lt;/ui-ai-tool-input&gt;
+    &lt;ui-ai-tool-output&gt;Found 5 relevant results from react.dev, vercel.com...&lt;/ui-ai-tool-output&gt;
+  &lt;/ui-ai-tool-content&gt;
 &lt;/ui-ai-tool&gt;</code></pre>
               </div>
             </section>

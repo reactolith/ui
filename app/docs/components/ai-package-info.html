@@ -424,19 +424,39 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-package-info name="react" current-version="18.3.0" new-version="19.2.4" change-type="major">
+  <ui-ai-package-info-header>
+    <ui-ai-package-info-name />
+    <ui-ai-package-info-change-type />
+    <ui-ai-package-info-version />
+  </ui-ai-package-info-header>
+  <ui-ai-package-info-description>A JavaScript library for building user interfaces</ui-ai-package-info-description>
+  <ui-ai-package-info-content>
+    <ui-ai-package-info-dependencies>
+      <ui-ai-package-info-dependency name="react-dom" version="19.2.4" />
+      <ui-ai-package-info-dependency name="scheduler" version="0.25.0" />
+    </ui-ai-package-info-dependencies>
+  </ui-ai-package-info-content>
+</ui-ai-package-info>
                   </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-ai-package-info&gt;
-  &lt;ui-ai-package-info-header&gt;...&lt;/ui-ai-package-info-header&gt;
-  &lt;ui-ai-package-info-name&gt;...&lt;/ui-ai-package-info-name&gt;
-  &lt;ui-ai-package-info-change-type&gt;...&lt;/ui-ai-package-info-change-type&gt;
-  &lt;ui-ai-package-info-version&gt;...&lt;/ui-ai-package-info-version&gt;
-  &lt;!-- ... more sub-components --&gt;
+                <pre class="p-4 text-sm"><code>&lt;ui-ai-package-info name=&quot;react&quot; current-version=&quot;18.3.0&quot; new-version=&quot;19.2.4&quot; change-type=&quot;major&quot;&gt;
+  &lt;ui-ai-package-info-header&gt;
+    &lt;ui-ai-package-info-name /&gt;
+    &lt;ui-ai-package-info-change-type /&gt;
+    &lt;ui-ai-package-info-version /&gt;
+  &lt;/ui-ai-package-info-header&gt;
+  &lt;ui-ai-package-info-description&gt;A JavaScript library for building user interfaces&lt;/ui-ai-package-info-description&gt;
+  &lt;ui-ai-package-info-content&gt;
+    &lt;ui-ai-package-info-dependencies&gt;
+      &lt;ui-ai-package-info-dependency name=&quot;react-dom&quot; version=&quot;19.2.4&quot; /&gt;
+      &lt;ui-ai-package-info-dependency name=&quot;scheduler&quot; version=&quot;0.25.0&quot; /&gt;
+    &lt;/ui-ai-package-info-dependencies&gt;
+  &lt;/ui-ai-package-info-content&gt;
 &lt;/ui-ai-package-info&gt;</code></pre>
               </div>
             </section>

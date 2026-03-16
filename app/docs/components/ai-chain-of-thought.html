@@ -424,7 +424,14 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-chain-of-thought>
+  <ui-ai-chain-of-thought-header>Reasoning Steps</ui-ai-chain-of-thought-header>
+  <ui-ai-chain-of-thought-content>
+    <ui-ai-chain-of-thought-step>Analyzing the user query for key concepts</ui-ai-chain-of-thought-step>
+    <ui-ai-chain-of-thought-step>Searching for relevant documentation</ui-ai-chain-of-thought-step>
+    <ui-ai-chain-of-thought-step>Formulating a comprehensive response</ui-ai-chain-of-thought-step>
+  </ui-ai-chain-of-thought-content>
+</ui-ai-chain-of-thought>
                   </div>
             </section>
 
@@ -432,11 +439,12 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-chain-of-thought&gt;
-  &lt;ui-ai-chain-of-thought-header&gt;...&lt;/ui-ai-chain-of-thought-header&gt;
-  &lt;ui-ai-chain-of-thought-step&gt;...&lt;/ui-ai-chain-of-thought-step&gt;
-  &lt;ui-ai-chain-of-thought-search-results&gt;...&lt;/ui-ai-chain-of-thought-search-results&gt;
-  &lt;ui-ai-chain-of-thought-search-result&gt;...&lt;/ui-ai-chain-of-thought-search-result&gt;
-  &lt;!-- ... more sub-components --&gt;
+  &lt;ui-ai-chain-of-thought-header&gt;Reasoning Steps&lt;/ui-ai-chain-of-thought-header&gt;
+  &lt;ui-ai-chain-of-thought-content&gt;
+    &lt;ui-ai-chain-of-thought-step&gt;Analyzing the user query for key concepts&lt;/ui-ai-chain-of-thought-step&gt;
+    &lt;ui-ai-chain-of-thought-step&gt;Searching for relevant documentation&lt;/ui-ai-chain-of-thought-step&gt;
+    &lt;ui-ai-chain-of-thought-step&gt;Formulating a comprehensive response&lt;/ui-ai-chain-of-thought-step&gt;
+  &lt;/ui-ai-chain-of-thought-content&gt;
 &lt;/ui-ai-chain-of-thought&gt;</code></pre>
               </div>
             </section>

@@ -424,14 +424,20 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <div class="space-y-4">
+  <ui-ai-shimmer>Generating response...</ui-ai-shimmer>
+  <ui-ai-shimmer>Analyzing code patterns...</ui-ai-shimmer>
+</div>
                   </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-ai-shimmer&gt;&lt;/ui-ai-shimmer&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;div class=&quot;space-y-4&quot;&gt;
+  &lt;ui-ai-shimmer&gt;Generating response...&lt;/ui-ai-shimmer&gt;
+  &lt;ui-ai-shimmer&gt;Analyzing code patterns...&lt;/ui-ai-shimmer&gt;
+&lt;/div&gt;</code></pre>
               </div>
             </section>
 

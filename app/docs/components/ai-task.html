@@ -424,7 +424,15 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-task>
+  <ui-ai-task-trigger>Refactor authentication module</ui-ai-task-trigger>
+  <ui-ai-task-content>
+    <ui-ai-task-item>Extract token validation logic</ui-ai-task-item>
+    <ui-ai-task-item>Create middleware factory</ui-ai-task-item>
+    <ui-ai-task-item-file>src/auth/middleware.ts</ui-ai-task-item-file>
+    <ui-ai-task-item-file>src/auth/tokens.ts</ui-ai-task-item-file>
+  </ui-ai-task-content>
+</ui-ai-task>
                   </div>
             </section>
 
@@ -432,10 +440,13 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-task&gt;
-  &lt;ui-ai-task-trigger&gt;...&lt;/ui-ai-task-trigger&gt;
-  &lt;ui-ai-task-content&gt;...&lt;/ui-ai-task-content&gt;
-  &lt;ui-ai-task-item&gt;...&lt;/ui-ai-task-item&gt;
-  &lt;ui-ai-task-item-file&gt;...&lt;/ui-ai-task-item-file&gt;
+  &lt;ui-ai-task-trigger&gt;Refactor authentication module&lt;/ui-ai-task-trigger&gt;
+  &lt;ui-ai-task-content&gt;
+    &lt;ui-ai-task-item&gt;Extract token validation logic&lt;/ui-ai-task-item&gt;
+    &lt;ui-ai-task-item&gt;Create middleware factory&lt;/ui-ai-task-item&gt;
+    &lt;ui-ai-task-item-file&gt;src/auth/middleware.ts&lt;/ui-ai-task-item-file&gt;
+    &lt;ui-ai-task-item-file&gt;src/auth/tokens.ts&lt;/ui-ai-task-item-file&gt;
+  &lt;/ui-ai-task-content&gt;
 &lt;/ui-ai-task&gt;</code></pre>
               </div>
             </section>

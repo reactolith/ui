@@ -424,18 +424,31 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-conversation class="h-64">
+  <ui-ai-conversation-content>
+    <ui-ai-message from="user">
+      <ui-ai-message-content>What is TypeScript?</ui-ai-message-content>
+    </ui-ai-message>
+    <ui-ai-message from="assistant">
+      <ui-ai-message-content>TypeScript is a strongly typed programming language that builds on JavaScript.</ui-ai-message-content>
+    </ui-ai-message>
+  </ui-ai-conversation-content>
+</ui-ai-conversation>
                   </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-ai-conversation&gt;
-  &lt;ui-ai-conversation-content&gt;...&lt;/ui-ai-conversation-content&gt;
-  &lt;ui-ai-conversation-empty-state&gt;...&lt;/ui-ai-conversation-empty-state&gt;
-  &lt;ui-ai-conversation-scroll-button&gt;...&lt;/ui-ai-conversation-scroll-button&gt;
-  &lt;ui-ai-conversation-download&gt;...&lt;/ui-ai-conversation-download&gt;
+                <pre class="p-4 text-sm"><code>&lt;ui-ai-conversation class=&quot;h-64&quot;&gt;
+  &lt;ui-ai-conversation-content&gt;
+    &lt;ui-ai-message from=&quot;user&quot;&gt;
+      &lt;ui-ai-message-content&gt;What is TypeScript?&lt;/ui-ai-message-content&gt;
+    &lt;/ui-ai-message&gt;
+    &lt;ui-ai-message from=&quot;assistant&quot;&gt;
+      &lt;ui-ai-message-content&gt;TypeScript is a strongly typed programming language that builds on JavaScript.&lt;/ui-ai-message-content&gt;
+    &lt;/ui-ai-message&gt;
+  &lt;/ui-ai-conversation-content&gt;
 &lt;/ui-ai-conversation&gt;</code></pre>
               </div>
             </section>

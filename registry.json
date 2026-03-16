@@ -3711,7 +3711,7 @@
       "title": "Agent Agent Content",
       "files": [
         {
-          "path": "registry/default/app/ai-agent/agent-content.tsx",
+          "path": "registry/default/app/ai-agent/ai-agent-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -3725,7 +3725,7 @@
       "title": "Agent Agent Header",
       "files": [
         {
-          "path": "registry/default/app/ai-agent/agent-header.tsx",
+          "path": "registry/default/app/ai-agent/ai-agent-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -3739,7 +3739,7 @@
       "title": "Agent Agent Instructions",
       "files": [
         {
-          "path": "registry/default/app/ai-agent/agent-instructions.tsx",
+          "path": "registry/default/app/ai-agent/ai-agent-instructions.tsx",
           "type": "registry:component"
         }
       ],
@@ -3753,7 +3753,7 @@
       "title": "Agent Agent Output",
       "files": [
         {
-          "path": "registry/default/app/ai-agent/agent-output.tsx",
+          "path": "registry/default/app/ai-agent/ai-agent-output.tsx",
           "type": "registry:component"
         }
       ],
@@ -3767,7 +3767,7 @@
       "title": "Agent Agent Tool",
       "files": [
         {
-          "path": "registry/default/app/ai-agent/agent-tool.tsx",
+          "path": "registry/default/app/ai-agent/ai-agent-tool.tsx",
           "type": "registry:component"
         }
       ],
@@ -3781,7 +3781,7 @@
       "title": "Agent Agent Tools",
       "files": [
         {
-          "path": "registry/default/app/ai-agent/agent-tools.tsx",
+          "path": "registry/default/app/ai-agent/ai-agent-tools.tsx",
           "type": "registry:component"
         }
       ],
@@ -3795,7 +3795,7 @@
       "title": "Agent",
       "files": [
         {
-          "path": "registry/default/app/ai-agent/agent.tsx",
+          "path": "registry/default/app/ai-agent/ai-agent.tsx",
           "type": "registry:component"
         }
       ],
@@ -3809,7 +3809,7 @@
       "title": "Artifact Artifact Action",
       "files": [
         {
-          "path": "registry/default/app/ai-artifact/artifact-action.tsx",
+          "path": "registry/default/app/ai-artifact/ai-artifact-action.tsx",
           "type": "registry:component"
         }
       ],
@@ -3823,7 +3823,7 @@
       "title": "Artifact Artifact Actions",
       "files": [
         {
-          "path": "registry/default/app/ai-artifact/artifact-actions.tsx",
+          "path": "registry/default/app/ai-artifact/ai-artifact-actions.tsx",
           "type": "registry:component"
         }
       ],
@@ -3837,7 +3837,7 @@
       "title": "Artifact Artifact Close",
       "files": [
         {
-          "path": "registry/default/app/ai-artifact/artifact-close.tsx",
+          "path": "registry/default/app/ai-artifact/ai-artifact-close.tsx",
           "type": "registry:component"
         }
       ],
@@ -3851,7 +3851,7 @@
       "title": "Artifact Artifact Content",
       "files": [
         {
-          "path": "registry/default/app/ai-artifact/artifact-content.tsx",
+          "path": "registry/default/app/ai-artifact/ai-artifact-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -3865,7 +3865,7 @@
       "title": "Artifact Artifact Description",
       "files": [
         {
-          "path": "registry/default/app/ai-artifact/artifact-description.tsx",
+          "path": "registry/default/app/ai-artifact/ai-artifact-description.tsx",
           "type": "registry:component"
         }
       ],
@@ -3879,7 +3879,7 @@
       "title": "Artifact Artifact Header",
       "files": [
         {
-          "path": "registry/default/app/ai-artifact/artifact-header.tsx",
+          "path": "registry/default/app/ai-artifact/ai-artifact-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -3893,7 +3893,7 @@
       "title": "Artifact Artifact Title",
       "files": [
         {
-          "path": "registry/default/app/ai-artifact/artifact-title.tsx",
+          "path": "registry/default/app/ai-artifact/ai-artifact-title.tsx",
           "type": "registry:component"
         }
       ],
@@ -3907,7 +3907,7 @@
       "title": "Artifact",
       "files": [
         {
-          "path": "registry/default/app/ai-artifact/artifact.tsx",
+          "path": "registry/default/app/ai-artifact/ai-artifact.tsx",
           "type": "registry:component"
         }
       ],
@@ -3921,7 +3921,7 @@
       "title": "Attachments Attachment Empty",
       "files": [
         {
-          "path": "registry/default/app/ai-attachments/attachment-empty.tsx",
+          "path": "registry/default/app/ai-attachments/ai-attachment-empty.tsx",
           "type": "registry:component"
         }
       ],
@@ -3935,7 +3935,7 @@
       "title": "Attachments Attachment Hover Card Content",
       "files": [
         {
-          "path": "registry/default/app/ai-attachments/attachment-hover-card-content.tsx",
+          "path": "registry/default/app/ai-attachments/ai-attachment-hover-card-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -3949,7 +3949,7 @@
       "title": "Attachments Attachment Hover Card Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-attachments/attachment-hover-card-trigger.tsx",
+          "path": "registry/default/app/ai-attachments/ai-attachment-hover-card-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -3963,7 +3963,7 @@
       "title": "Attachments Attachment Hover Card",
       "files": [
         {
-          "path": "registry/default/app/ai-attachments/attachment-hover-card.tsx",
+          "path": "registry/default/app/ai-attachments/ai-attachment-hover-card.tsx",
           "type": "registry:component"
         }
       ],
@@ -3977,7 +3977,7 @@
       "title": "Attachments Attachment Info",
       "files": [
         {
-          "path": "registry/default/app/ai-attachments/attachment-info.tsx",
+          "path": "registry/default/app/ai-attachments/ai-attachment-info.tsx",
           "type": "registry:component"
         }
       ],
@@ -3991,7 +3991,7 @@
       "title": "Attachments Attachment Preview",
       "files": [
         {
-          "path": "registry/default/app/ai-attachments/attachment-preview.tsx",
+          "path": "registry/default/app/ai-attachments/ai-attachment-preview.tsx",
           "type": "registry:component"
         }
       ],
@@ -4005,7 +4005,7 @@
       "title": "Attachments Attachment Remove",
       "files": [
         {
-          "path": "registry/default/app/ai-attachments/attachment-remove.tsx",
+          "path": "registry/default/app/ai-attachments/ai-attachment-remove.tsx",
           "type": "registry:component"
         }
       ],
@@ -4019,7 +4019,7 @@
       "title": "Attachments Attachment",
       "files": [
         {
-          "path": "registry/default/app/ai-attachments/attachment.tsx",
+          "path": "registry/default/app/ai-attachments/ai-attachment.tsx",
           "type": "registry:component"
         }
       ],
@@ -4033,7 +4033,7 @@
       "title": "Attachments",
       "files": [
         {
-          "path": "registry/default/app/ai-attachments/attachments.tsx",
+          "path": "registry/default/app/ai-attachments/ai-attachments.tsx",
           "type": "registry:component"
         }
       ],
@@ -4047,7 +4047,7 @@
       "title": "Audio Player Audio Player Control Bar",
       "files": [
         {
-          "path": "registry/default/app/ai-audio-player/audio-player-control-bar.tsx",
+          "path": "registry/default/app/ai-audio-player/ai-audio-player-control-bar.tsx",
           "type": "registry:component"
         }
       ],
@@ -4061,7 +4061,7 @@
       "title": "Audio Player Audio Player Duration Display",
       "files": [
         {
-          "path": "registry/default/app/ai-audio-player/audio-player-duration-display.tsx",
+          "path": "registry/default/app/ai-audio-player/ai-audio-player-duration-display.tsx",
           "type": "registry:component"
         }
       ],
@@ -4075,7 +4075,7 @@
       "title": "Audio Player Audio Player Element",
       "files": [
         {
-          "path": "registry/default/app/ai-audio-player/audio-player-element.tsx",
+          "path": "registry/default/app/ai-audio-player/ai-audio-player-element.tsx",
           "type": "registry:component"
         }
       ],
@@ -4089,7 +4089,7 @@
       "title": "Audio Player Audio Player Mute Button",
       "files": [
         {
-          "path": "registry/default/app/ai-audio-player/audio-player-mute-button.tsx",
+          "path": "registry/default/app/ai-audio-player/ai-audio-player-mute-button.tsx",
           "type": "registry:component"
         }
       ],
@@ -4103,7 +4103,7 @@
       "title": "Audio Player Audio Player Play Button",
       "files": [
         {
-          "path": "registry/default/app/ai-audio-player/audio-player-play-button.tsx",
+          "path": "registry/default/app/ai-audio-player/ai-audio-player-play-button.tsx",
           "type": "registry:component"
         }
       ],
@@ -4117,7 +4117,7 @@
       "title": "Audio Player Audio Player Seek Backward Button",
       "files": [
         {
-          "path": "registry/default/app/ai-audio-player/audio-player-seek-backward-button.tsx",
+          "path": "registry/default/app/ai-audio-player/ai-audio-player-seek-backward-button.tsx",
           "type": "registry:component"
         }
       ],
@@ -4131,7 +4131,7 @@
       "title": "Audio Player Audio Player Seek Forward Button",
       "files": [
         {
-          "path": "registry/default/app/ai-audio-player/audio-player-seek-forward-button.tsx",
+          "path": "registry/default/app/ai-audio-player/ai-audio-player-seek-forward-button.tsx",
           "type": "registry:component"
         }
       ],
@@ -4145,7 +4145,7 @@
       "title": "Audio Player Audio Player Time Display",
       "files": [
         {
-          "path": "registry/default/app/ai-audio-player/audio-player-time-display.tsx",
+          "path": "registry/default/app/ai-audio-player/ai-audio-player-time-display.tsx",
           "type": "registry:component"
         }
       ],
@@ -4159,7 +4159,7 @@
       "title": "Audio Player Audio Player Time Range",
       "files": [
         {
-          "path": "registry/default/app/ai-audio-player/audio-player-time-range.tsx",
+          "path": "registry/default/app/ai-audio-player/ai-audio-player-time-range.tsx",
           "type": "registry:component"
         }
       ],
@@ -4173,7 +4173,7 @@
       "title": "Audio Player Audio Player Volume Range",
       "files": [
         {
-          "path": "registry/default/app/ai-audio-player/audio-player-volume-range.tsx",
+          "path": "registry/default/app/ai-audio-player/ai-audio-player-volume-range.tsx",
           "type": "registry:component"
         }
       ],
@@ -4187,7 +4187,7 @@
       "title": "Audio Player",
       "files": [
         {
-          "path": "registry/default/app/ai-audio-player/audio-player.tsx",
+          "path": "registry/default/app/ai-audio-player/ai-audio-player.tsx",
           "type": "registry:component"
         }
       ],
@@ -4201,7 +4201,7 @@
       "title": "Canvas",
       "files": [
         {
-          "path": "registry/default/app/ai-canvas/canvas.tsx",
+          "path": "registry/default/app/ai-canvas/ai-canvas.tsx",
           "type": "registry:component"
         }
       ],
@@ -4215,7 +4215,7 @@
       "title": "Chain Of Thought Chain Of Thought Content",
       "files": [
         {
-          "path": "registry/default/app/ai-chain-of-thought/chain-of-thought-content.tsx",
+          "path": "registry/default/app/ai-chain-of-thought/ai-chain-of-thought-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -4229,7 +4229,7 @@
       "title": "Chain Of Thought Chain Of Thought Header",
       "files": [
         {
-          "path": "registry/default/app/ai-chain-of-thought/chain-of-thought-header.tsx",
+          "path": "registry/default/app/ai-chain-of-thought/ai-chain-of-thought-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -4243,7 +4243,7 @@
       "title": "Chain Of Thought Chain Of Thought Image",
       "files": [
         {
-          "path": "registry/default/app/ai-chain-of-thought/chain-of-thought-image.tsx",
+          "path": "registry/default/app/ai-chain-of-thought/ai-chain-of-thought-image.tsx",
           "type": "registry:component"
         }
       ],
@@ -4257,7 +4257,7 @@
       "title": "Chain Of Thought Chain Of Thought Search Result",
       "files": [
         {
-          "path": "registry/default/app/ai-chain-of-thought/chain-of-thought-search-result.tsx",
+          "path": "registry/default/app/ai-chain-of-thought/ai-chain-of-thought-search-result.tsx",
           "type": "registry:component"
         }
       ],
@@ -4271,7 +4271,7 @@
       "title": "Chain Of Thought Chain Of Thought Search Results",
       "files": [
         {
-          "path": "registry/default/app/ai-chain-of-thought/chain-of-thought-search-results.tsx",
+          "path": "registry/default/app/ai-chain-of-thought/ai-chain-of-thought-search-results.tsx",
           "type": "registry:component"
         }
       ],
@@ -4285,7 +4285,7 @@
       "title": "Chain Of Thought Chain Of Thought Step",
       "files": [
         {
-          "path": "registry/default/app/ai-chain-of-thought/chain-of-thought-step.tsx",
+          "path": "registry/default/app/ai-chain-of-thought/ai-chain-of-thought-step.tsx",
           "type": "registry:component"
         }
       ],
@@ -4299,7 +4299,7 @@
       "title": "Chain Of Thought",
       "files": [
         {
-          "path": "registry/default/app/ai-chain-of-thought/chain-of-thought.tsx",
+          "path": "registry/default/app/ai-chain-of-thought/ai-chain-of-thought.tsx",
           "type": "registry:component"
         }
       ],
@@ -4313,7 +4313,7 @@
       "title": "Checkpoint Checkpoint Icon",
       "files": [
         {
-          "path": "registry/default/app/ai-checkpoint/checkpoint-icon.tsx",
+          "path": "registry/default/app/ai-checkpoint/ai-checkpoint-icon.tsx",
           "type": "registry:component"
         }
       ],
@@ -4327,7 +4327,7 @@
       "title": "Checkpoint Checkpoint Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-checkpoint/checkpoint-trigger.tsx",
+          "path": "registry/default/app/ai-checkpoint/ai-checkpoint-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -4341,7 +4341,7 @@
       "title": "Checkpoint",
       "files": [
         {
-          "path": "registry/default/app/ai-checkpoint/checkpoint.tsx",
+          "path": "registry/default/app/ai-checkpoint/ai-checkpoint.tsx",
           "type": "registry:component"
         }
       ],
@@ -4355,7 +4355,7 @@
       "title": "Code Block Code Block Actions",
       "files": [
         {
-          "path": "registry/default/app/ai-code-block/code-block-actions.tsx",
+          "path": "registry/default/app/ai-code-block/ai-code-block-actions.tsx",
           "type": "registry:component"
         }
       ],
@@ -4369,7 +4369,7 @@
       "title": "Code Block Code Block Container",
       "files": [
         {
-          "path": "registry/default/app/ai-code-block/code-block-container.tsx",
+          "path": "registry/default/app/ai-code-block/ai-code-block-container.tsx",
           "type": "registry:component"
         }
       ],
@@ -4383,7 +4383,7 @@
       "title": "Code Block Code Block Content",
       "files": [
         {
-          "path": "registry/default/app/ai-code-block/code-block-content.tsx",
+          "path": "registry/default/app/ai-code-block/ai-code-block-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -4397,7 +4397,7 @@
       "title": "Code Block Code Block Copy Button",
       "files": [
         {
-          "path": "registry/default/app/ai-code-block/code-block-copy-button.tsx",
+          "path": "registry/default/app/ai-code-block/ai-code-block-copy-button.tsx",
           "type": "registry:component"
         }
       ],
@@ -4411,7 +4411,7 @@
       "title": "Code Block Code Block Filename",
       "files": [
         {
-          "path": "registry/default/app/ai-code-block/code-block-filename.tsx",
+          "path": "registry/default/app/ai-code-block/ai-code-block-filename.tsx",
           "type": "registry:component"
         }
       ],
@@ -4425,7 +4425,7 @@
       "title": "Code Block Code Block Header",
       "files": [
         {
-          "path": "registry/default/app/ai-code-block/code-block-header.tsx",
+          "path": "registry/default/app/ai-code-block/ai-code-block-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -4439,7 +4439,7 @@
       "title": "Code Block Code Block Language Selector Content",
       "files": [
         {
-          "path": "registry/default/app/ai-code-block/code-block-language-selector-content.tsx",
+          "path": "registry/default/app/ai-code-block/ai-code-block-language-selector-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -4453,7 +4453,7 @@
       "title": "Code Block Code Block Language Selector Item",
       "files": [
         {
-          "path": "registry/default/app/ai-code-block/code-block-language-selector-item.tsx",
+          "path": "registry/default/app/ai-code-block/ai-code-block-language-selector-item.tsx",
           "type": "registry:component"
         }
       ],
@@ -4467,7 +4467,7 @@
       "title": "Code Block Code Block Language Selector Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-code-block/code-block-language-selector-trigger.tsx",
+          "path": "registry/default/app/ai-code-block/ai-code-block-language-selector-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -4481,7 +4481,7 @@
       "title": "Code Block Code Block Language Selector Value",
       "files": [
         {
-          "path": "registry/default/app/ai-code-block/code-block-language-selector-value.tsx",
+          "path": "registry/default/app/ai-code-block/ai-code-block-language-selector-value.tsx",
           "type": "registry:component"
         }
       ],
@@ -4495,7 +4495,7 @@
       "title": "Code Block Code Block Language Selector",
       "files": [
         {
-          "path": "registry/default/app/ai-code-block/code-block-language-selector.tsx",
+          "path": "registry/default/app/ai-code-block/ai-code-block-language-selector.tsx",
           "type": "registry:component"
         }
       ],
@@ -4509,7 +4509,7 @@
       "title": "Code Block Code Block Title",
       "files": [
         {
-          "path": "registry/default/app/ai-code-block/code-block-title.tsx",
+          "path": "registry/default/app/ai-code-block/ai-code-block-title.tsx",
           "type": "registry:component"
         }
       ],
@@ -4523,7 +4523,7 @@
       "title": "Code Block",
       "files": [
         {
-          "path": "registry/default/app/ai-code-block/code-block.tsx",
+          "path": "registry/default/app/ai-code-block/ai-code-block.tsx",
           "type": "registry:component"
         }
       ],
@@ -4537,7 +4537,7 @@
       "title": "Commit Commit Actions",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-actions.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-actions.tsx",
           "type": "registry:component"
         }
       ],
@@ -4551,7 +4551,7 @@
       "title": "Commit Commit Author Avatar",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-author-avatar.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-author-avatar.tsx",
           "type": "registry:component"
         }
       ],
@@ -4565,7 +4565,7 @@
       "title": "Commit Commit Author",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-author.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-author.tsx",
           "type": "registry:component"
         }
       ],
@@ -4579,7 +4579,7 @@
       "title": "Commit Commit Content",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-content.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -4593,7 +4593,7 @@
       "title": "Commit Commit Copy Button",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-copy-button.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-copy-button.tsx",
           "type": "registry:component"
         }
       ],
@@ -4607,7 +4607,7 @@
       "title": "Commit Commit File Additions",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-file-additions.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-file-additions.tsx",
           "type": "registry:component"
         }
       ],
@@ -4621,7 +4621,7 @@
       "title": "Commit Commit File Changes",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-file-changes.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-file-changes.tsx",
           "type": "registry:component"
         }
       ],
@@ -4635,7 +4635,7 @@
       "title": "Commit Commit File Deletions",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-file-deletions.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-file-deletions.tsx",
           "type": "registry:component"
         }
       ],
@@ -4649,7 +4649,7 @@
       "title": "Commit Commit File Icon",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-file-icon.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-file-icon.tsx",
           "type": "registry:component"
         }
       ],
@@ -4663,7 +4663,7 @@
       "title": "Commit Commit File Info",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-file-info.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-file-info.tsx",
           "type": "registry:component"
         }
       ],
@@ -4677,7 +4677,7 @@
       "title": "Commit Commit File Path",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-file-path.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-file-path.tsx",
           "type": "registry:component"
         }
       ],
@@ -4691,7 +4691,7 @@
       "title": "Commit Commit File Status",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-file-status.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-file-status.tsx",
           "type": "registry:component"
         }
       ],
@@ -4705,7 +4705,7 @@
       "title": "Commit Commit File",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-file.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-file.tsx",
           "type": "registry:component"
         }
       ],
@@ -4719,7 +4719,7 @@
       "title": "Commit Commit Files",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-files.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-files.tsx",
           "type": "registry:component"
         }
       ],
@@ -4733,7 +4733,7 @@
       "title": "Commit Commit Hash",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-hash.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-hash.tsx",
           "type": "registry:component"
         }
       ],
@@ -4747,7 +4747,7 @@
       "title": "Commit Commit Header",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-header.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -4761,7 +4761,7 @@
       "title": "Commit Commit Info",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-info.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-info.tsx",
           "type": "registry:component"
         }
       ],
@@ -4775,7 +4775,7 @@
       "title": "Commit Commit Message",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-message.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-message.tsx",
           "type": "registry:component"
         }
       ],
@@ -4789,7 +4789,7 @@
       "title": "Commit Commit Metadata",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-metadata.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-metadata.tsx",
           "type": "registry:component"
         }
       ],
@@ -4803,7 +4803,7 @@
       "title": "Commit Commit Separator",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-separator.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-separator.tsx",
           "type": "registry:component"
         }
       ],
@@ -4817,7 +4817,7 @@
       "title": "Commit Commit Timestamp",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit-timestamp.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit-timestamp.tsx",
           "type": "registry:component"
         }
       ],
@@ -4831,7 +4831,7 @@
       "title": "Commit",
       "files": [
         {
-          "path": "registry/default/app/ai-commit/commit.tsx",
+          "path": "registry/default/app/ai-commit/ai-commit.tsx",
           "type": "registry:component"
         }
       ],
@@ -4845,7 +4845,7 @@
       "title": "Confirmation Confirmation Accepted",
       "files": [
         {
-          "path": "registry/default/app/ai-confirmation/confirmation-accepted.tsx",
+          "path": "registry/default/app/ai-confirmation/ai-confirmation-accepted.tsx",
           "type": "registry:component"
         }
       ],
@@ -4859,7 +4859,7 @@
       "title": "Confirmation Confirmation Action",
       "files": [
         {
-          "path": "registry/default/app/ai-confirmation/confirmation-action.tsx",
+          "path": "registry/default/app/ai-confirmation/ai-confirmation-action.tsx",
           "type": "registry:component"
         }
       ],
@@ -4873,7 +4873,7 @@
       "title": "Confirmation Confirmation Actions",
       "files": [
         {
-          "path": "registry/default/app/ai-confirmation/confirmation-actions.tsx",
+          "path": "registry/default/app/ai-confirmation/ai-confirmation-actions.tsx",
           "type": "registry:component"
         }
       ],
@@ -4887,7 +4887,7 @@
       "title": "Confirmation Confirmation Rejected",
       "files": [
         {
-          "path": "registry/default/app/ai-confirmation/confirmation-rejected.tsx",
+          "path": "registry/default/app/ai-confirmation/ai-confirmation-rejected.tsx",
           "type": "registry:component"
         }
       ],
@@ -4901,7 +4901,7 @@
       "title": "Confirmation Confirmation Request",
       "files": [
         {
-          "path": "registry/default/app/ai-confirmation/confirmation-request.tsx",
+          "path": "registry/default/app/ai-confirmation/ai-confirmation-request.tsx",
           "type": "registry:component"
         }
       ],
@@ -4915,7 +4915,7 @@
       "title": "Confirmation Confirmation Title",
       "files": [
         {
-          "path": "registry/default/app/ai-confirmation/confirmation-title.tsx",
+          "path": "registry/default/app/ai-confirmation/ai-confirmation-title.tsx",
           "type": "registry:component"
         }
       ],
@@ -4929,7 +4929,7 @@
       "title": "Confirmation",
       "files": [
         {
-          "path": "registry/default/app/ai-confirmation/confirmation.tsx",
+          "path": "registry/default/app/ai-confirmation/ai-confirmation.tsx",
           "type": "registry:component"
         }
       ],
@@ -4943,7 +4943,7 @@
       "title": "Connection",
       "files": [
         {
-          "path": "registry/default/app/ai-connection/connection.tsx",
+          "path": "registry/default/app/ai-connection/ai-connection.tsx",
           "type": "registry:component"
         }
       ],
@@ -4957,7 +4957,7 @@
       "title": "Context Context Cache Usage",
       "files": [
         {
-          "path": "registry/default/app/ai-context/context-cache-usage.tsx",
+          "path": "registry/default/app/ai-context/ai-context-cache-usage.tsx",
           "type": "registry:component"
         }
       ],
@@ -4971,7 +4971,7 @@
       "title": "Context Context Content Body",
       "files": [
         {
-          "path": "registry/default/app/ai-context/context-content-body.tsx",
+          "path": "registry/default/app/ai-context/ai-context-content-body.tsx",
           "type": "registry:component"
         }
       ],
@@ -4985,7 +4985,7 @@
       "title": "Context Context Content Footer",
       "files": [
         {
-          "path": "registry/default/app/ai-context/context-content-footer.tsx",
+          "path": "registry/default/app/ai-context/ai-context-content-footer.tsx",
           "type": "registry:component"
         }
       ],
@@ -4999,7 +4999,7 @@
       "title": "Context Context Content Header",
       "files": [
         {
-          "path": "registry/default/app/ai-context/context-content-header.tsx",
+          "path": "registry/default/app/ai-context/ai-context-content-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -5013,7 +5013,7 @@
       "title": "Context Context Content",
       "files": [
         {
-          "path": "registry/default/app/ai-context/context-content.tsx",
+          "path": "registry/default/app/ai-context/ai-context-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -5027,7 +5027,7 @@
       "title": "Context Context Input Usage",
       "files": [
         {
-          "path": "registry/default/app/ai-context/context-input-usage.tsx",
+          "path": "registry/default/app/ai-context/ai-context-input-usage.tsx",
           "type": "registry:component"
         }
       ],
@@ -5041,7 +5041,7 @@
       "title": "Context Context Output Usage",
       "files": [
         {
-          "path": "registry/default/app/ai-context/context-output-usage.tsx",
+          "path": "registry/default/app/ai-context/ai-context-output-usage.tsx",
           "type": "registry:component"
         }
       ],
@@ -5055,7 +5055,7 @@
       "title": "Context Context Reasoning Usage",
       "files": [
         {
-          "path": "registry/default/app/ai-context/context-reasoning-usage.tsx",
+          "path": "registry/default/app/ai-context/ai-context-reasoning-usage.tsx",
           "type": "registry:component"
         }
       ],
@@ -5069,7 +5069,7 @@
       "title": "Context Context Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-context/context-trigger.tsx",
+          "path": "registry/default/app/ai-context/ai-context-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -5083,7 +5083,7 @@
       "title": "Context",
       "files": [
         {
-          "path": "registry/default/app/ai-context/context.tsx",
+          "path": "registry/default/app/ai-context/ai-context.tsx",
           "type": "registry:component"
         }
       ],
@@ -5097,7 +5097,7 @@
       "title": "Controls",
       "files": [
         {
-          "path": "registry/default/app/ai-controls/controls.tsx",
+          "path": "registry/default/app/ai-controls/ai-controls.tsx",
           "type": "registry:component"
         }
       ],
@@ -5111,7 +5111,7 @@
       "title": "Conversation Conversation Content",
       "files": [
         {
-          "path": "registry/default/app/ai-conversation/conversation-content.tsx",
+          "path": "registry/default/app/ai-conversation/ai-conversation-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -5125,7 +5125,7 @@
       "title": "Conversation Conversation Download",
       "files": [
         {
-          "path": "registry/default/app/ai-conversation/conversation-download.tsx",
+          "path": "registry/default/app/ai-conversation/ai-conversation-download.tsx",
           "type": "registry:component"
         }
       ],
@@ -5139,7 +5139,7 @@
       "title": "Conversation Conversation Empty State",
       "files": [
         {
-          "path": "registry/default/app/ai-conversation/conversation-empty-state.tsx",
+          "path": "registry/default/app/ai-conversation/ai-conversation-empty-state.tsx",
           "type": "registry:component"
         }
       ],
@@ -5153,7 +5153,7 @@
       "title": "Conversation Conversation Scroll Button",
       "files": [
         {
-          "path": "registry/default/app/ai-conversation/conversation-scroll-button.tsx",
+          "path": "registry/default/app/ai-conversation/ai-conversation-scroll-button.tsx",
           "type": "registry:component"
         }
       ],
@@ -5167,7 +5167,7 @@
       "title": "Conversation",
       "files": [
         {
-          "path": "registry/default/app/ai-conversation/conversation.tsx",
+          "path": "registry/default/app/ai-conversation/ai-conversation.tsx",
           "type": "registry:component"
         }
       ],
@@ -5181,7 +5181,7 @@
       "title": "Edge",
       "files": [
         {
-          "path": "registry/default/app/ai-edge/edge.tsx",
+          "path": "registry/default/app/ai-edge/ai-edge.tsx",
           "type": "registry:component"
         }
       ],
@@ -5195,7 +5195,7 @@
       "title": "Environment Variables Environment Variable Copy Button",
       "files": [
         {
-          "path": "registry/default/app/ai-environment-variables/environment-variable-copy-button.tsx",
+          "path": "registry/default/app/ai-environment-variables/ai-environment-variable-copy-button.tsx",
           "type": "registry:component"
         }
       ],
@@ -5209,7 +5209,7 @@
       "title": "Environment Variables Environment Variable Group",
       "files": [
         {
-          "path": "registry/default/app/ai-environment-variables/environment-variable-group.tsx",
+          "path": "registry/default/app/ai-environment-variables/ai-environment-variable-group.tsx",
           "type": "registry:component"
         }
       ],
@@ -5223,7 +5223,7 @@
       "title": "Environment Variables Environment Variable Name",
       "files": [
         {
-          "path": "registry/default/app/ai-environment-variables/environment-variable-name.tsx",
+          "path": "registry/default/app/ai-environment-variables/ai-environment-variable-name.tsx",
           "type": "registry:component"
         }
       ],
@@ -5237,7 +5237,7 @@
       "title": "Environment Variables Environment Variable Required",
       "files": [
         {
-          "path": "registry/default/app/ai-environment-variables/environment-variable-required.tsx",
+          "path": "registry/default/app/ai-environment-variables/ai-environment-variable-required.tsx",
           "type": "registry:component"
         }
       ],
@@ -5251,7 +5251,7 @@
       "title": "Environment Variables Environment Variable Value",
       "files": [
         {
-          "path": "registry/default/app/ai-environment-variables/environment-variable-value.tsx",
+          "path": "registry/default/app/ai-environment-variables/ai-environment-variable-value.tsx",
           "type": "registry:component"
         }
       ],
@@ -5265,7 +5265,7 @@
       "title": "Environment Variables Environment Variable",
       "files": [
         {
-          "path": "registry/default/app/ai-environment-variables/environment-variable.tsx",
+          "path": "registry/default/app/ai-environment-variables/ai-environment-variable.tsx",
           "type": "registry:component"
         }
       ],
@@ -5279,7 +5279,7 @@
       "title": "Environment Variables Environment Variables Content",
       "files": [
         {
-          "path": "registry/default/app/ai-environment-variables/environment-variables-content.tsx",
+          "path": "registry/default/app/ai-environment-variables/ai-environment-variables-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -5293,7 +5293,7 @@
       "title": "Environment Variables Environment Variables Header",
       "files": [
         {
-          "path": "registry/default/app/ai-environment-variables/environment-variables-header.tsx",
+          "path": "registry/default/app/ai-environment-variables/ai-environment-variables-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -5307,7 +5307,7 @@
       "title": "Environment Variables Environment Variables Title",
       "files": [
         {
-          "path": "registry/default/app/ai-environment-variables/environment-variables-title.tsx",
+          "path": "registry/default/app/ai-environment-variables/ai-environment-variables-title.tsx",
           "type": "registry:component"
         }
       ],
@@ -5321,7 +5321,7 @@
       "title": "Environment Variables Environment Variables Toggle",
       "files": [
         {
-          "path": "registry/default/app/ai-environment-variables/environment-variables-toggle.tsx",
+          "path": "registry/default/app/ai-environment-variables/ai-environment-variables-toggle.tsx",
           "type": "registry:component"
         }
       ],
@@ -5335,7 +5335,7 @@
       "title": "Environment Variables",
       "files": [
         {
-          "path": "registry/default/app/ai-environment-variables/environment-variables.tsx",
+          "path": "registry/default/app/ai-environment-variables/ai-environment-variables.tsx",
           "type": "registry:component"
         }
       ],
@@ -5349,7 +5349,7 @@
       "title": "File Tree File Tree Actions",
       "files": [
         {
-          "path": "registry/default/app/ai-file-tree/file-tree-actions.tsx",
+          "path": "registry/default/app/ai-file-tree/ai-file-tree-actions.tsx",
           "type": "registry:component"
         }
       ],
@@ -5363,7 +5363,7 @@
       "title": "File Tree File Tree File",
       "files": [
         {
-          "path": "registry/default/app/ai-file-tree/file-tree-file.tsx",
+          "path": "registry/default/app/ai-file-tree/ai-file-tree-file.tsx",
           "type": "registry:component"
         }
       ],
@@ -5377,7 +5377,7 @@
       "title": "File Tree File Tree Folder",
       "files": [
         {
-          "path": "registry/default/app/ai-file-tree/file-tree-folder.tsx",
+          "path": "registry/default/app/ai-file-tree/ai-file-tree-folder.tsx",
           "type": "registry:component"
         }
       ],
@@ -5391,7 +5391,7 @@
       "title": "File Tree File Tree Icon",
       "files": [
         {
-          "path": "registry/default/app/ai-file-tree/file-tree-icon.tsx",
+          "path": "registry/default/app/ai-file-tree/ai-file-tree-icon.tsx",
           "type": "registry:component"
         }
       ],
@@ -5405,7 +5405,7 @@
       "title": "File Tree File Tree Name",
       "files": [
         {
-          "path": "registry/default/app/ai-file-tree/file-tree-name.tsx",
+          "path": "registry/default/app/ai-file-tree/ai-file-tree-name.tsx",
           "type": "registry:component"
         }
       ],
@@ -5419,7 +5419,7 @@
       "title": "File Tree",
       "files": [
         {
-          "path": "registry/default/app/ai-file-tree/file-tree.tsx",
+          "path": "registry/default/app/ai-file-tree/ai-file-tree.tsx",
           "type": "registry:component"
         }
       ],
@@ -5433,7 +5433,7 @@
       "title": "Image",
       "files": [
         {
-          "path": "registry/default/app/ai-image/image.tsx",
+          "path": "registry/default/app/ai-image/ai-image.tsx",
           "type": "registry:component"
         }
       ],
@@ -5447,7 +5447,7 @@
       "title": "Inline Citation Inline Citation Card Body",
       "files": [
         {
-          "path": "registry/default/app/ai-inline-citation/inline-citation-card-body.tsx",
+          "path": "registry/default/app/ai-inline-citation/ai-inline-citation-card-body.tsx",
           "type": "registry:component"
         }
       ],
@@ -5461,7 +5461,7 @@
       "title": "Inline Citation Inline Citation Card Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-inline-citation/inline-citation-card-trigger.tsx",
+          "path": "registry/default/app/ai-inline-citation/ai-inline-citation-card-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -5475,7 +5475,7 @@
       "title": "Inline Citation Inline Citation Card",
       "files": [
         {
-          "path": "registry/default/app/ai-inline-citation/inline-citation-card.tsx",
+          "path": "registry/default/app/ai-inline-citation/ai-inline-citation-card.tsx",
           "type": "registry:component"
         }
       ],
@@ -5489,7 +5489,7 @@
       "title": "Inline Citation Inline Citation Carousel Content",
       "files": [
         {
-          "path": "registry/default/app/ai-inline-citation/inline-citation-carousel-content.tsx",
+          "path": "registry/default/app/ai-inline-citation/ai-inline-citation-carousel-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -5503,7 +5503,7 @@
       "title": "Inline Citation Inline Citation Carousel Header",
       "files": [
         {
-          "path": "registry/default/app/ai-inline-citation/inline-citation-carousel-header.tsx",
+          "path": "registry/default/app/ai-inline-citation/ai-inline-citation-carousel-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -5517,7 +5517,7 @@
       "title": "Inline Citation Inline Citation Carousel Index",
       "files": [
         {
-          "path": "registry/default/app/ai-inline-citation/inline-citation-carousel-index.tsx",
+          "path": "registry/default/app/ai-inline-citation/ai-inline-citation-carousel-index.tsx",
           "type": "registry:component"
         }
       ],
@@ -5531,7 +5531,7 @@
       "title": "Inline Citation Inline Citation Carousel Item",
       "files": [
         {
-          "path": "registry/default/app/ai-inline-citation/inline-citation-carousel-item.tsx",
+          "path": "registry/default/app/ai-inline-citation/ai-inline-citation-carousel-item.tsx",
           "type": "registry:component"
         }
       ],
@@ -5545,7 +5545,7 @@
       "title": "Inline Citation Inline Citation Carousel Next",
       "files": [
         {
-          "path": "registry/default/app/ai-inline-citation/inline-citation-carousel-next.tsx",
+          "path": "registry/default/app/ai-inline-citation/ai-inline-citation-carousel-next.tsx",
           "type": "registry:component"
         }
       ],
@@ -5559,7 +5559,7 @@
       "title": "Inline Citation Inline Citation Carousel Prev",
       "files": [
         {
-          "path": "registry/default/app/ai-inline-citation/inline-citation-carousel-prev.tsx",
+          "path": "registry/default/app/ai-inline-citation/ai-inline-citation-carousel-prev.tsx",
           "type": "registry:component"
         }
       ],
@@ -5573,7 +5573,7 @@
       "title": "Inline Citation Inline Citation Carousel",
       "files": [
         {
-          "path": "registry/default/app/ai-inline-citation/inline-citation-carousel.tsx",
+          "path": "registry/default/app/ai-inline-citation/ai-inline-citation-carousel.tsx",
           "type": "registry:component"
         }
       ],
@@ -5587,7 +5587,7 @@
       "title": "Inline Citation Inline Citation Quote",
       "files": [
         {
-          "path": "registry/default/app/ai-inline-citation/inline-citation-quote.tsx",
+          "path": "registry/default/app/ai-inline-citation/ai-inline-citation-quote.tsx",
           "type": "registry:component"
         }
       ],
@@ -5601,7 +5601,7 @@
       "title": "Inline Citation Inline Citation Source",
       "files": [
         {
-          "path": "registry/default/app/ai-inline-citation/inline-citation-source.tsx",
+          "path": "registry/default/app/ai-inline-citation/ai-inline-citation-source.tsx",
           "type": "registry:component"
         }
       ],
@@ -5615,7 +5615,7 @@
       "title": "Inline Citation Inline Citation Text",
       "files": [
         {
-          "path": "registry/default/app/ai-inline-citation/inline-citation-text.tsx",
+          "path": "registry/default/app/ai-inline-citation/ai-inline-citation-text.tsx",
           "type": "registry:component"
         }
       ],
@@ -5629,7 +5629,7 @@
       "title": "Inline Citation",
       "files": [
         {
-          "path": "registry/default/app/ai-inline-citation/inline-citation.tsx",
+          "path": "registry/default/app/ai-inline-citation/ai-inline-citation.tsx",
           "type": "registry:component"
         }
       ],
@@ -5643,7 +5643,7 @@
       "title": "Jsx Preview J S X Preview Content",
       "files": [
         {
-          "path": "registry/default/app/ai-jsx-preview/j-s-x-preview-content.tsx",
+          "path": "registry/default/app/ai-jsx-preview/ai-j-s-x-preview-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -5657,7 +5657,7 @@
       "title": "Jsx Preview J S X Preview Error",
       "files": [
         {
-          "path": "registry/default/app/ai-jsx-preview/j-s-x-preview-error.tsx",
+          "path": "registry/default/app/ai-jsx-preview/ai-j-s-x-preview-error.tsx",
           "type": "registry:component"
         }
       ],
@@ -5671,7 +5671,7 @@
       "title": "Jsx Preview J S X Preview",
       "files": [
         {
-          "path": "registry/default/app/ai-jsx-preview/j-s-x-preview.tsx",
+          "path": "registry/default/app/ai-jsx-preview/ai-j-s-x-preview.tsx",
           "type": "registry:component"
         }
       ],
@@ -5685,7 +5685,7 @@
       "title": "Message Message Action",
       "files": [
         {
-          "path": "registry/default/app/ai-message/message-action.tsx",
+          "path": "registry/default/app/ai-message/ai-message-action.tsx",
           "type": "registry:component"
         }
       ],
@@ -5699,7 +5699,7 @@
       "title": "Message Message Actions",
       "files": [
         {
-          "path": "registry/default/app/ai-message/message-actions.tsx",
+          "path": "registry/default/app/ai-message/ai-message-actions.tsx",
           "type": "registry:component"
         }
       ],
@@ -5713,7 +5713,7 @@
       "title": "Message Message Branch Content",
       "files": [
         {
-          "path": "registry/default/app/ai-message/message-branch-content.tsx",
+          "path": "registry/default/app/ai-message/ai-message-branch-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -5727,7 +5727,7 @@
       "title": "Message Message Branch Next",
       "files": [
         {
-          "path": "registry/default/app/ai-message/message-branch-next.tsx",
+          "path": "registry/default/app/ai-message/ai-message-branch-next.tsx",
           "type": "registry:component"
         }
       ],
@@ -5741,7 +5741,7 @@
       "title": "Message Message Branch Page",
       "files": [
         {
-          "path": "registry/default/app/ai-message/message-branch-page.tsx",
+          "path": "registry/default/app/ai-message/ai-message-branch-page.tsx",
           "type": "registry:component"
         }
       ],
@@ -5755,7 +5755,7 @@
       "title": "Message Message Branch Previous",
       "files": [
         {
-          "path": "registry/default/app/ai-message/message-branch-previous.tsx",
+          "path": "registry/default/app/ai-message/ai-message-branch-previous.tsx",
           "type": "registry:component"
         }
       ],
@@ -5769,7 +5769,7 @@
       "title": "Message Message Branch Selector",
       "files": [
         {
-          "path": "registry/default/app/ai-message/message-branch-selector.tsx",
+          "path": "registry/default/app/ai-message/ai-message-branch-selector.tsx",
           "type": "registry:component"
         }
       ],
@@ -5783,7 +5783,7 @@
       "title": "Message Message Branch",
       "files": [
         {
-          "path": "registry/default/app/ai-message/message-branch.tsx",
+          "path": "registry/default/app/ai-message/ai-message-branch.tsx",
           "type": "registry:component"
         }
       ],
@@ -5797,7 +5797,7 @@
       "title": "Message Message Content",
       "files": [
         {
-          "path": "registry/default/app/ai-message/message-content.tsx",
+          "path": "registry/default/app/ai-message/ai-message-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -5811,7 +5811,7 @@
       "title": "Message Message Response",
       "files": [
         {
-          "path": "registry/default/app/ai-message/message-response.tsx",
+          "path": "registry/default/app/ai-message/ai-message-response.tsx",
           "type": "registry:component"
         }
       ],
@@ -5825,7 +5825,7 @@
       "title": "Message Message Toolbar",
       "files": [
         {
-          "path": "registry/default/app/ai-message/message-toolbar.tsx",
+          "path": "registry/default/app/ai-message/ai-message-toolbar.tsx",
           "type": "registry:component"
         }
       ],
@@ -5839,7 +5839,7 @@
       "title": "Message",
       "files": [
         {
-          "path": "registry/default/app/ai-message/message.tsx",
+          "path": "registry/default/app/ai-message/ai-message.tsx",
           "type": "registry:component"
         }
       ],
@@ -5853,7 +5853,7 @@
       "title": "Mic Selector Mic Selector Content",
       "files": [
         {
-          "path": "registry/default/app/ai-mic-selector/mic-selector-content.tsx",
+          "path": "registry/default/app/ai-mic-selector/ai-mic-selector-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -5867,7 +5867,7 @@
       "title": "Mic Selector Mic Selector Empty",
       "files": [
         {
-          "path": "registry/default/app/ai-mic-selector/mic-selector-empty.tsx",
+          "path": "registry/default/app/ai-mic-selector/ai-mic-selector-empty.tsx",
           "type": "registry:component"
         }
       ],
@@ -5881,7 +5881,7 @@
       "title": "Mic Selector Mic Selector Input",
       "files": [
         {
-          "path": "registry/default/app/ai-mic-selector/mic-selector-input.tsx",
+          "path": "registry/default/app/ai-mic-selector/ai-mic-selector-input.tsx",
           "type": "registry:component"
         }
       ],
@@ -5895,7 +5895,7 @@
       "title": "Mic Selector Mic Selector Item",
       "files": [
         {
-          "path": "registry/default/app/ai-mic-selector/mic-selector-item.tsx",
+          "path": "registry/default/app/ai-mic-selector/ai-mic-selector-item.tsx",
           "type": "registry:component"
         }
       ],
@@ -5909,7 +5909,7 @@
       "title": "Mic Selector Mic Selector Label",
       "files": [
         {
-          "path": "registry/default/app/ai-mic-selector/mic-selector-label.tsx",
+          "path": "registry/default/app/ai-mic-selector/ai-mic-selector-label.tsx",
           "type": "registry:component"
         }
       ],
@@ -5923,7 +5923,7 @@
       "title": "Mic Selector Mic Selector List",
       "files": [
         {
-          "path": "registry/default/app/ai-mic-selector/mic-selector-list.tsx",
+          "path": "registry/default/app/ai-mic-selector/ai-mic-selector-list.tsx",
           "type": "registry:component"
         }
       ],
@@ -5937,7 +5937,7 @@
       "title": "Mic Selector Mic Selector Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-mic-selector/mic-selector-trigger.tsx",
+          "path": "registry/default/app/ai-mic-selector/ai-mic-selector-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -5951,7 +5951,7 @@
       "title": "Mic Selector Mic Selector Value",
       "files": [
         {
-          "path": "registry/default/app/ai-mic-selector/mic-selector-value.tsx",
+          "path": "registry/default/app/ai-mic-selector/ai-mic-selector-value.tsx",
           "type": "registry:component"
         }
       ],
@@ -5965,7 +5965,7 @@
       "title": "Mic Selector",
       "files": [
         {
-          "path": "registry/default/app/ai-mic-selector/mic-selector.tsx",
+          "path": "registry/default/app/ai-mic-selector/ai-mic-selector.tsx",
           "type": "registry:component"
         }
       ],
@@ -5979,7 +5979,7 @@
       "title": "Model Selector Model Selector Content",
       "files": [
         {
-          "path": "registry/default/app/ai-model-selector/model-selector-content.tsx",
+          "path": "registry/default/app/ai-model-selector/ai-model-selector-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -5993,7 +5993,7 @@
       "title": "Model Selector Model Selector Dialog",
       "files": [
         {
-          "path": "registry/default/app/ai-model-selector/model-selector-dialog.tsx",
+          "path": "registry/default/app/ai-model-selector/ai-model-selector-dialog.tsx",
           "type": "registry:component"
         }
       ],
@@ -6007,7 +6007,7 @@
       "title": "Model Selector Model Selector Empty",
       "files": [
         {
-          "path": "registry/default/app/ai-model-selector/model-selector-empty.tsx",
+          "path": "registry/default/app/ai-model-selector/ai-model-selector-empty.tsx",
           "type": "registry:component"
         }
       ],
@@ -6021,7 +6021,7 @@
       "title": "Model Selector Model Selector Group",
       "files": [
         {
-          "path": "registry/default/app/ai-model-selector/model-selector-group.tsx",
+          "path": "registry/default/app/ai-model-selector/ai-model-selector-group.tsx",
           "type": "registry:component"
         }
       ],
@@ -6035,7 +6035,7 @@
       "title": "Model Selector Model Selector Input",
       "files": [
         {
-          "path": "registry/default/app/ai-model-selector/model-selector-input.tsx",
+          "path": "registry/default/app/ai-model-selector/ai-model-selector-input.tsx",
           "type": "registry:component"
         }
       ],
@@ -6049,7 +6049,7 @@
       "title": "Model Selector Model Selector Item",
       "files": [
         {
-          "path": "registry/default/app/ai-model-selector/model-selector-item.tsx",
+          "path": "registry/default/app/ai-model-selector/ai-model-selector-item.tsx",
           "type": "registry:component"
         }
       ],
@@ -6063,7 +6063,7 @@
       "title": "Model Selector Model Selector List",
       "files": [
         {
-          "path": "registry/default/app/ai-model-selector/model-selector-list.tsx",
+          "path": "registry/default/app/ai-model-selector/ai-model-selector-list.tsx",
           "type": "registry:component"
         }
       ],
@@ -6077,7 +6077,7 @@
       "title": "Model Selector Model Selector Logo Group",
       "files": [
         {
-          "path": "registry/default/app/ai-model-selector/model-selector-logo-group.tsx",
+          "path": "registry/default/app/ai-model-selector/ai-model-selector-logo-group.tsx",
           "type": "registry:component"
         }
       ],
@@ -6091,7 +6091,7 @@
       "title": "Model Selector Model Selector Logo",
       "files": [
         {
-          "path": "registry/default/app/ai-model-selector/model-selector-logo.tsx",
+          "path": "registry/default/app/ai-model-selector/ai-model-selector-logo.tsx",
           "type": "registry:component"
         }
       ],
@@ -6105,7 +6105,7 @@
       "title": "Model Selector Model Selector Name",
       "files": [
         {
-          "path": "registry/default/app/ai-model-selector/model-selector-name.tsx",
+          "path": "registry/default/app/ai-model-selector/ai-model-selector-name.tsx",
           "type": "registry:component"
         }
       ],
@@ -6119,7 +6119,7 @@
       "title": "Model Selector Model Selector Separator",
       "files": [
         {
-          "path": "registry/default/app/ai-model-selector/model-selector-separator.tsx",
+          "path": "registry/default/app/ai-model-selector/ai-model-selector-separator.tsx",
           "type": "registry:component"
         }
       ],
@@ -6133,7 +6133,7 @@
       "title": "Model Selector Model Selector Shortcut",
       "files": [
         {
-          "path": "registry/default/app/ai-model-selector/model-selector-shortcut.tsx",
+          "path": "registry/default/app/ai-model-selector/ai-model-selector-shortcut.tsx",
           "type": "registry:component"
         }
       ],
@@ -6147,7 +6147,7 @@
       "title": "Model Selector Model Selector Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-model-selector/model-selector-trigger.tsx",
+          "path": "registry/default/app/ai-model-selector/ai-model-selector-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -6161,7 +6161,7 @@
       "title": "Model Selector",
       "files": [
         {
-          "path": "registry/default/app/ai-model-selector/model-selector.tsx",
+          "path": "registry/default/app/ai-model-selector/ai-model-selector.tsx",
           "type": "registry:component"
         }
       ],
@@ -6175,7 +6175,7 @@
       "title": "Node Node Action",
       "files": [
         {
-          "path": "registry/default/app/ai-node/node-action.tsx",
+          "path": "registry/default/app/ai-node/ai-node-action.tsx",
           "type": "registry:component"
         }
       ],
@@ -6189,7 +6189,7 @@
       "title": "Node Node Content",
       "files": [
         {
-          "path": "registry/default/app/ai-node/node-content.tsx",
+          "path": "registry/default/app/ai-node/ai-node-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -6203,7 +6203,7 @@
       "title": "Node Node Description",
       "files": [
         {
-          "path": "registry/default/app/ai-node/node-description.tsx",
+          "path": "registry/default/app/ai-node/ai-node-description.tsx",
           "type": "registry:component"
         }
       ],
@@ -6217,7 +6217,7 @@
       "title": "Node Node Footer",
       "files": [
         {
-          "path": "registry/default/app/ai-node/node-footer.tsx",
+          "path": "registry/default/app/ai-node/ai-node-footer.tsx",
           "type": "registry:component"
         }
       ],
@@ -6231,7 +6231,7 @@
       "title": "Node Node Header",
       "files": [
         {
-          "path": "registry/default/app/ai-node/node-header.tsx",
+          "path": "registry/default/app/ai-node/ai-node-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -6245,7 +6245,7 @@
       "title": "Node Node Title",
       "files": [
         {
-          "path": "registry/default/app/ai-node/node-title.tsx",
+          "path": "registry/default/app/ai-node/ai-node-title.tsx",
           "type": "registry:component"
         }
       ],
@@ -6259,7 +6259,7 @@
       "title": "Node",
       "files": [
         {
-          "path": "registry/default/app/ai-node/node.tsx",
+          "path": "registry/default/app/ai-node/ai-node.tsx",
           "type": "registry:component"
         }
       ],
@@ -6273,7 +6273,7 @@
       "title": "Open In Chat Open In Chat G P T",
       "files": [
         {
-          "path": "registry/default/app/ai-open-in-chat/open-in-chat-g-p-t.tsx",
+          "path": "registry/default/app/ai-open-in-chat/ai-open-in-chat-g-p-t.tsx",
           "type": "registry:component"
         }
       ],
@@ -6287,7 +6287,7 @@
       "title": "Open In Chat Open In Claude",
       "files": [
         {
-          "path": "registry/default/app/ai-open-in-chat/open-in-claude.tsx",
+          "path": "registry/default/app/ai-open-in-chat/ai-open-in-claude.tsx",
           "type": "registry:component"
         }
       ],
@@ -6301,7 +6301,7 @@
       "title": "Open In Chat Open In Content",
       "files": [
         {
-          "path": "registry/default/app/ai-open-in-chat/open-in-content.tsx",
+          "path": "registry/default/app/ai-open-in-chat/ai-open-in-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -6315,7 +6315,7 @@
       "title": "Open In Chat Open In Cursor",
       "files": [
         {
-          "path": "registry/default/app/ai-open-in-chat/open-in-cursor.tsx",
+          "path": "registry/default/app/ai-open-in-chat/ai-open-in-cursor.tsx",
           "type": "registry:component"
         }
       ],
@@ -6329,7 +6329,7 @@
       "title": "Open In Chat Open In Item",
       "files": [
         {
-          "path": "registry/default/app/ai-open-in-chat/open-in-item.tsx",
+          "path": "registry/default/app/ai-open-in-chat/ai-open-in-item.tsx",
           "type": "registry:component"
         }
       ],
@@ -6343,7 +6343,7 @@
       "title": "Open In Chat Open In Label",
       "files": [
         {
-          "path": "registry/default/app/ai-open-in-chat/open-in-label.tsx",
+          "path": "registry/default/app/ai-open-in-chat/ai-open-in-label.tsx",
           "type": "registry:component"
         }
       ],
@@ -6357,7 +6357,7 @@
       "title": "Open In Chat Open In Scira",
       "files": [
         {
-          "path": "registry/default/app/ai-open-in-chat/open-in-scira.tsx",
+          "path": "registry/default/app/ai-open-in-chat/ai-open-in-scira.tsx",
           "type": "registry:component"
         }
       ],
@@ -6371,7 +6371,7 @@
       "title": "Open In Chat Open In Separator",
       "files": [
         {
-          "path": "registry/default/app/ai-open-in-chat/open-in-separator.tsx",
+          "path": "registry/default/app/ai-open-in-chat/ai-open-in-separator.tsx",
           "type": "registry:component"
         }
       ],
@@ -6385,7 +6385,7 @@
       "title": "Open In Chat Open In T3",
       "files": [
         {
-          "path": "registry/default/app/ai-open-in-chat/open-in-t3.tsx",
+          "path": "registry/default/app/ai-open-in-chat/ai-open-in-t3.tsx",
           "type": "registry:component"
         }
       ],
@@ -6399,7 +6399,7 @@
       "title": "Open In Chat Open In Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-open-in-chat/open-in-trigger.tsx",
+          "path": "registry/default/app/ai-open-in-chat/ai-open-in-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -6413,7 +6413,7 @@
       "title": "Open In Chat Open In",
       "files": [
         {
-          "path": "registry/default/app/ai-open-in-chat/open-in.tsx",
+          "path": "registry/default/app/ai-open-in-chat/ai-open-in.tsx",
           "type": "registry:component"
         }
       ],
@@ -6427,7 +6427,7 @@
       "title": "Open In Chat Open Inv0",
       "files": [
         {
-          "path": "registry/default/app/ai-open-in-chat/open-inv0.tsx",
+          "path": "registry/default/app/ai-open-in-chat/ai-open-inv0.tsx",
           "type": "registry:component"
         }
       ],
@@ -6441,7 +6441,7 @@
       "title": "Package Info Package Info Change Type",
       "files": [
         {
-          "path": "registry/default/app/ai-package-info/package-info-change-type.tsx",
+          "path": "registry/default/app/ai-package-info/ai-package-info-change-type.tsx",
           "type": "registry:component"
         }
       ],
@@ -6455,7 +6455,7 @@
       "title": "Package Info Package Info Content",
       "files": [
         {
-          "path": "registry/default/app/ai-package-info/package-info-content.tsx",
+          "path": "registry/default/app/ai-package-info/ai-package-info-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -6469,7 +6469,7 @@
       "title": "Package Info Package Info Dependencies",
       "files": [
         {
-          "path": "registry/default/app/ai-package-info/package-info-dependencies.tsx",
+          "path": "registry/default/app/ai-package-info/ai-package-info-dependencies.tsx",
           "type": "registry:component"
         }
       ],
@@ -6483,7 +6483,7 @@
       "title": "Package Info Package Info Dependency",
       "files": [
         {
-          "path": "registry/default/app/ai-package-info/package-info-dependency.tsx",
+          "path": "registry/default/app/ai-package-info/ai-package-info-dependency.tsx",
           "type": "registry:component"
         }
       ],
@@ -6497,7 +6497,7 @@
       "title": "Package Info Package Info Description",
       "files": [
         {
-          "path": "registry/default/app/ai-package-info/package-info-description.tsx",
+          "path": "registry/default/app/ai-package-info/ai-package-info-description.tsx",
           "type": "registry:component"
         }
       ],
@@ -6511,7 +6511,7 @@
       "title": "Package Info Package Info Header",
       "files": [
         {
-          "path": "registry/default/app/ai-package-info/package-info-header.tsx",
+          "path": "registry/default/app/ai-package-info/ai-package-info-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -6525,7 +6525,7 @@
       "title": "Package Info Package Info Name",
       "files": [
         {
-          "path": "registry/default/app/ai-package-info/package-info-name.tsx",
+          "path": "registry/default/app/ai-package-info/ai-package-info-name.tsx",
           "type": "registry:component"
         }
       ],
@@ -6539,7 +6539,7 @@
       "title": "Package Info Package Info Version",
       "files": [
         {
-          "path": "registry/default/app/ai-package-info/package-info-version.tsx",
+          "path": "registry/default/app/ai-package-info/ai-package-info-version.tsx",
           "type": "registry:component"
         }
       ],
@@ -6553,7 +6553,7 @@
       "title": "Package Info",
       "files": [
         {
-          "path": "registry/default/app/ai-package-info/package-info.tsx",
+          "path": "registry/default/app/ai-package-info/ai-package-info.tsx",
           "type": "registry:component"
         }
       ],
@@ -6567,7 +6567,7 @@
       "title": "Panel",
       "files": [
         {
-          "path": "registry/default/app/ai-panel/panel.tsx",
+          "path": "registry/default/app/ai-panel/ai-panel.tsx",
           "type": "registry:component"
         }
       ],
@@ -6581,7 +6581,7 @@
       "title": "Persona",
       "files": [
         {
-          "path": "registry/default/app/ai-persona/persona.tsx",
+          "path": "registry/default/app/ai-persona/ai-persona.tsx",
           "type": "registry:component"
         }
       ],
@@ -6595,7 +6595,7 @@
       "title": "Plan Plan Action",
       "files": [
         {
-          "path": "registry/default/app/ai-plan/plan-action.tsx",
+          "path": "registry/default/app/ai-plan/ai-plan-action.tsx",
           "type": "registry:component"
         }
       ],
@@ -6609,7 +6609,7 @@
       "title": "Plan Plan Content",
       "files": [
         {
-          "path": "registry/default/app/ai-plan/plan-content.tsx",
+          "path": "registry/default/app/ai-plan/ai-plan-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -6623,7 +6623,7 @@
       "title": "Plan Plan Description",
       "files": [
         {
-          "path": "registry/default/app/ai-plan/plan-description.tsx",
+          "path": "registry/default/app/ai-plan/ai-plan-description.tsx",
           "type": "registry:component"
         }
       ],
@@ -6637,7 +6637,7 @@
       "title": "Plan Plan Footer",
       "files": [
         {
-          "path": "registry/default/app/ai-plan/plan-footer.tsx",
+          "path": "registry/default/app/ai-plan/ai-plan-footer.tsx",
           "type": "registry:component"
         }
       ],
@@ -6651,7 +6651,7 @@
       "title": "Plan Plan Header",
       "files": [
         {
-          "path": "registry/default/app/ai-plan/plan-header.tsx",
+          "path": "registry/default/app/ai-plan/ai-plan-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -6665,7 +6665,7 @@
       "title": "Plan Plan Title",
       "files": [
         {
-          "path": "registry/default/app/ai-plan/plan-title.tsx",
+          "path": "registry/default/app/ai-plan/ai-plan-title.tsx",
           "type": "registry:component"
         }
       ],
@@ -6679,7 +6679,7 @@
       "title": "Plan Plan Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-plan/plan-trigger.tsx",
+          "path": "registry/default/app/ai-plan/ai-plan-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -6693,7 +6693,7 @@
       "title": "Plan",
       "files": [
         {
-          "path": "registry/default/app/ai-plan/plan.tsx",
+          "path": "registry/default/app/ai-plan/ai-plan.tsx",
           "type": "registry:component"
         }
       ],
@@ -6707,7 +6707,7 @@
       "title": "Prompt Input Prompt Input Action Add Attachments",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-action-add-attachments.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-action-add-attachments.tsx",
           "type": "registry:component"
         }
       ],
@@ -6721,7 +6721,7 @@
       "title": "Prompt Input Prompt Input Action Add Screenshot",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-action-add-screenshot.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-action-add-screenshot.tsx",
           "type": "registry:component"
         }
       ],
@@ -6735,7 +6735,7 @@
       "title": "Prompt Input Prompt Input Action Menu Content",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-action-menu-content.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-action-menu-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -6749,7 +6749,7 @@
       "title": "Prompt Input Prompt Input Action Menu Item",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-action-menu-item.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-action-menu-item.tsx",
           "type": "registry:component"
         }
       ],
@@ -6763,7 +6763,7 @@
       "title": "Prompt Input Prompt Input Action Menu Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-action-menu-trigger.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-action-menu-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -6777,7 +6777,7 @@
       "title": "Prompt Input Prompt Input Action Menu",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-action-menu.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-action-menu.tsx",
           "type": "registry:component"
         }
       ],
@@ -6791,7 +6791,7 @@
       "title": "Prompt Input Prompt Input Body",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-body.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-body.tsx",
           "type": "registry:component"
         }
       ],
@@ -6805,7 +6805,7 @@
       "title": "Prompt Input Prompt Input Button",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-button.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-button.tsx",
           "type": "registry:component"
         }
       ],
@@ -6819,7 +6819,7 @@
       "title": "Prompt Input Prompt Input Command Empty",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-command-empty.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-command-empty.tsx",
           "type": "registry:component"
         }
       ],
@@ -6833,7 +6833,7 @@
       "title": "Prompt Input Prompt Input Command Group",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-command-group.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-command-group.tsx",
           "type": "registry:component"
         }
       ],
@@ -6847,7 +6847,7 @@
       "title": "Prompt Input Prompt Input Command Input",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-command-input.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-command-input.tsx",
           "type": "registry:component"
         }
       ],
@@ -6861,7 +6861,7 @@
       "title": "Prompt Input Prompt Input Command Item",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-command-item.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-command-item.tsx",
           "type": "registry:component"
         }
       ],
@@ -6875,7 +6875,7 @@
       "title": "Prompt Input Prompt Input Command List",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-command-list.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-command-list.tsx",
           "type": "registry:component"
         }
       ],
@@ -6889,7 +6889,7 @@
       "title": "Prompt Input Prompt Input Command Separator",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-command-separator.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-command-separator.tsx",
           "type": "registry:component"
         }
       ],
@@ -6903,7 +6903,7 @@
       "title": "Prompt Input Prompt Input Command",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-command.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-command.tsx",
           "type": "registry:component"
         }
       ],
@@ -6917,7 +6917,7 @@
       "title": "Prompt Input Prompt Input Footer",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-footer.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-footer.tsx",
           "type": "registry:component"
         }
       ],
@@ -6931,7 +6931,7 @@
       "title": "Prompt Input Prompt Input Header",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-header.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -6945,7 +6945,7 @@
       "title": "Prompt Input Prompt Input Hover Card Content",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-hover-card-content.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-hover-card-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -6959,7 +6959,7 @@
       "title": "Prompt Input Prompt Input Hover Card Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-hover-card-trigger.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-hover-card-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -6973,7 +6973,7 @@
       "title": "Prompt Input Prompt Input Hover Card",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-hover-card.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-hover-card.tsx",
           "type": "registry:component"
         }
       ],
@@ -6987,7 +6987,7 @@
       "title": "Prompt Input Prompt Input Select Content",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-select-content.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-select-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -7001,7 +7001,7 @@
       "title": "Prompt Input Prompt Input Select Item",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-select-item.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-select-item.tsx",
           "type": "registry:component"
         }
       ],
@@ -7015,7 +7015,7 @@
       "title": "Prompt Input Prompt Input Select Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-select-trigger.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-select-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -7029,7 +7029,7 @@
       "title": "Prompt Input Prompt Input Select Value",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-select-value.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-select-value.tsx",
           "type": "registry:component"
         }
       ],
@@ -7043,7 +7043,7 @@
       "title": "Prompt Input Prompt Input Select",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-select.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-select.tsx",
           "type": "registry:component"
         }
       ],
@@ -7057,7 +7057,7 @@
       "title": "Prompt Input Prompt Input Submit",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-submit.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-submit.tsx",
           "type": "registry:component"
         }
       ],
@@ -7071,7 +7071,7 @@
       "title": "Prompt Input Prompt Input Tab Body",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-tab-body.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-tab-body.tsx",
           "type": "registry:component"
         }
       ],
@@ -7085,7 +7085,7 @@
       "title": "Prompt Input Prompt Input Tab Item",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-tab-item.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-tab-item.tsx",
           "type": "registry:component"
         }
       ],
@@ -7099,7 +7099,7 @@
       "title": "Prompt Input Prompt Input Tab Label",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-tab-label.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-tab-label.tsx",
           "type": "registry:component"
         }
       ],
@@ -7113,7 +7113,7 @@
       "title": "Prompt Input Prompt Input Tab",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-tab.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-tab.tsx",
           "type": "registry:component"
         }
       ],
@@ -7127,7 +7127,7 @@
       "title": "Prompt Input Prompt Input Tabs List",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-tabs-list.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-tabs-list.tsx",
           "type": "registry:component"
         }
       ],
@@ -7141,7 +7141,7 @@
       "title": "Prompt Input Prompt Input Textarea",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-textarea.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-textarea.tsx",
           "type": "registry:component"
         }
       ],
@@ -7155,7 +7155,7 @@
       "title": "Prompt Input Prompt Input Tools",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input-tools.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input-tools.tsx",
           "type": "registry:component"
         }
       ],
@@ -7169,7 +7169,7 @@
       "title": "Prompt Input",
       "files": [
         {
-          "path": "registry/default/app/ai-prompt-input/prompt-input.tsx",
+          "path": "registry/default/app/ai-prompt-input/ai-prompt-input.tsx",
           "type": "registry:component"
         }
       ],
@@ -7183,7 +7183,7 @@
       "title": "Queue Queue Item Action",
       "files": [
         {
-          "path": "registry/default/app/ai-queue/queue-item-action.tsx",
+          "path": "registry/default/app/ai-queue/ai-queue-item-action.tsx",
           "type": "registry:component"
         }
       ],
@@ -7197,7 +7197,7 @@
       "title": "Queue Queue Item Actions",
       "files": [
         {
-          "path": "registry/default/app/ai-queue/queue-item-actions.tsx",
+          "path": "registry/default/app/ai-queue/ai-queue-item-actions.tsx",
           "type": "registry:component"
         }
       ],
@@ -7211,7 +7211,7 @@
       "title": "Queue Queue Item Attachment",
       "files": [
         {
-          "path": "registry/default/app/ai-queue/queue-item-attachment.tsx",
+          "path": "registry/default/app/ai-queue/ai-queue-item-attachment.tsx",
           "type": "registry:component"
         }
       ],
@@ -7225,7 +7225,7 @@
       "title": "Queue Queue Item Content",
       "files": [
         {
-          "path": "registry/default/app/ai-queue/queue-item-content.tsx",
+          "path": "registry/default/app/ai-queue/ai-queue-item-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -7239,7 +7239,7 @@
       "title": "Queue Queue Item Description",
       "files": [
         {
-          "path": "registry/default/app/ai-queue/queue-item-description.tsx",
+          "path": "registry/default/app/ai-queue/ai-queue-item-description.tsx",
           "type": "registry:component"
         }
       ],
@@ -7253,7 +7253,7 @@
       "title": "Queue Queue Item File",
       "files": [
         {
-          "path": "registry/default/app/ai-queue/queue-item-file.tsx",
+          "path": "registry/default/app/ai-queue/ai-queue-item-file.tsx",
           "type": "registry:component"
         }
       ],
@@ -7267,7 +7267,7 @@
       "title": "Queue Queue Item Image",
       "files": [
         {
-          "path": "registry/default/app/ai-queue/queue-item-image.tsx",
+          "path": "registry/default/app/ai-queue/ai-queue-item-image.tsx",
           "type": "registry:component"
         }
       ],
@@ -7281,7 +7281,7 @@
       "title": "Queue Queue Item Indicator",
       "files": [
         {
-          "path": "registry/default/app/ai-queue/queue-item-indicator.tsx",
+          "path": "registry/default/app/ai-queue/ai-queue-item-indicator.tsx",
           "type": "registry:component"
         }
       ],
@@ -7295,7 +7295,7 @@
       "title": "Queue Queue Item",
       "files": [
         {
-          "path": "registry/default/app/ai-queue/queue-item.tsx",
+          "path": "registry/default/app/ai-queue/ai-queue-item.tsx",
           "type": "registry:component"
         }
       ],
@@ -7309,7 +7309,7 @@
       "title": "Queue Queue List",
       "files": [
         {
-          "path": "registry/default/app/ai-queue/queue-list.tsx",
+          "path": "registry/default/app/ai-queue/ai-queue-list.tsx",
           "type": "registry:component"
         }
       ],
@@ -7323,7 +7323,7 @@
       "title": "Queue Queue Section Content",
       "files": [
         {
-          "path": "registry/default/app/ai-queue/queue-section-content.tsx",
+          "path": "registry/default/app/ai-queue/ai-queue-section-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -7337,7 +7337,7 @@
       "title": "Queue Queue Section Label",
       "files": [
         {
-          "path": "registry/default/app/ai-queue/queue-section-label.tsx",
+          "path": "registry/default/app/ai-queue/ai-queue-section-label.tsx",
           "type": "registry:component"
         }
       ],
@@ -7351,7 +7351,7 @@
       "title": "Queue Queue Section Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-queue/queue-section-trigger.tsx",
+          "path": "registry/default/app/ai-queue/ai-queue-section-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -7365,7 +7365,7 @@
       "title": "Queue Queue Section",
       "files": [
         {
-          "path": "registry/default/app/ai-queue/queue-section.tsx",
+          "path": "registry/default/app/ai-queue/ai-queue-section.tsx",
           "type": "registry:component"
         }
       ],
@@ -7379,7 +7379,7 @@
       "title": "Queue",
       "files": [
         {
-          "path": "registry/default/app/ai-queue/queue.tsx",
+          "path": "registry/default/app/ai-queue/ai-queue.tsx",
           "type": "registry:component"
         }
       ],
@@ -7393,7 +7393,7 @@
       "title": "Reasoning Reasoning Content",
       "files": [
         {
-          "path": "registry/default/app/ai-reasoning/reasoning-content.tsx",
+          "path": "registry/default/app/ai-reasoning/ai-reasoning-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -7407,7 +7407,7 @@
       "title": "Reasoning Reasoning Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-reasoning/reasoning-trigger.tsx",
+          "path": "registry/default/app/ai-reasoning/ai-reasoning-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -7421,7 +7421,7 @@
       "title": "Reasoning",
       "files": [
         {
-          "path": "registry/default/app/ai-reasoning/reasoning.tsx",
+          "path": "registry/default/app/ai-reasoning/ai-reasoning.tsx",
           "type": "registry:component"
         }
       ],
@@ -7435,7 +7435,7 @@
       "title": "Sandbox Sandbox Content",
       "files": [
         {
-          "path": "registry/default/app/ai-sandbox/sandbox-content.tsx",
+          "path": "registry/default/app/ai-sandbox/ai-sandbox-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -7449,7 +7449,7 @@
       "title": "Sandbox Sandbox Header",
       "files": [
         {
-          "path": "registry/default/app/ai-sandbox/sandbox-header.tsx",
+          "path": "registry/default/app/ai-sandbox/ai-sandbox-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -7463,7 +7463,7 @@
       "title": "Sandbox Sandbox Tab Content",
       "files": [
         {
-          "path": "registry/default/app/ai-sandbox/sandbox-tab-content.tsx",
+          "path": "registry/default/app/ai-sandbox/ai-sandbox-tab-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -7477,7 +7477,7 @@
       "title": "Sandbox Sandbox Tabs Bar",
       "files": [
         {
-          "path": "registry/default/app/ai-sandbox/sandbox-tabs-bar.tsx",
+          "path": "registry/default/app/ai-sandbox/ai-sandbox-tabs-bar.tsx",
           "type": "registry:component"
         }
       ],
@@ -7491,7 +7491,7 @@
       "title": "Sandbox Sandbox Tabs List",
       "files": [
         {
-          "path": "registry/default/app/ai-sandbox/sandbox-tabs-list.tsx",
+          "path": "registry/default/app/ai-sandbox/ai-sandbox-tabs-list.tsx",
           "type": "registry:component"
         }
       ],
@@ -7505,7 +7505,7 @@
       "title": "Sandbox Sandbox Tabs Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-sandbox/sandbox-tabs-trigger.tsx",
+          "path": "registry/default/app/ai-sandbox/ai-sandbox-tabs-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -7519,7 +7519,7 @@
       "title": "Sandbox Sandbox Tabs",
       "files": [
         {
-          "path": "registry/default/app/ai-sandbox/sandbox-tabs.tsx",
+          "path": "registry/default/app/ai-sandbox/ai-sandbox-tabs.tsx",
           "type": "registry:component"
         }
       ],
@@ -7533,7 +7533,7 @@
       "title": "Sandbox",
       "files": [
         {
-          "path": "registry/default/app/ai-sandbox/sandbox.tsx",
+          "path": "registry/default/app/ai-sandbox/ai-sandbox.tsx",
           "type": "registry:component"
         }
       ],
@@ -7547,7 +7547,7 @@
       "title": "Schema Display Schema Display Body",
       "files": [
         {
-          "path": "registry/default/app/ai-schema-display/schema-display-body.tsx",
+          "path": "registry/default/app/ai-schema-display/ai-schema-display-body.tsx",
           "type": "registry:component"
         }
       ],
@@ -7561,7 +7561,7 @@
       "title": "Schema Display Schema Display Content",
       "files": [
         {
-          "path": "registry/default/app/ai-schema-display/schema-display-content.tsx",
+          "path": "registry/default/app/ai-schema-display/ai-schema-display-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -7575,7 +7575,7 @@
       "title": "Schema Display Schema Display Description",
       "files": [
         {
-          "path": "registry/default/app/ai-schema-display/schema-display-description.tsx",
+          "path": "registry/default/app/ai-schema-display/ai-schema-display-description.tsx",
           "type": "registry:component"
         }
       ],
@@ -7589,7 +7589,7 @@
       "title": "Schema Display Schema Display Example",
       "files": [
         {
-          "path": "registry/default/app/ai-schema-display/schema-display-example.tsx",
+          "path": "registry/default/app/ai-schema-display/ai-schema-display-example.tsx",
           "type": "registry:component"
         }
       ],
@@ -7603,7 +7603,7 @@
       "title": "Schema Display Schema Display Header",
       "files": [
         {
-          "path": "registry/default/app/ai-schema-display/schema-display-header.tsx",
+          "path": "registry/default/app/ai-schema-display/ai-schema-display-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -7617,7 +7617,7 @@
       "title": "Schema Display Schema Display Method",
       "files": [
         {
-          "path": "registry/default/app/ai-schema-display/schema-display-method.tsx",
+          "path": "registry/default/app/ai-schema-display/ai-schema-display-method.tsx",
           "type": "registry:component"
         }
       ],
@@ -7631,7 +7631,7 @@
       "title": "Schema Display Schema Display Parameter",
       "files": [
         {
-          "path": "registry/default/app/ai-schema-display/schema-display-parameter.tsx",
+          "path": "registry/default/app/ai-schema-display/ai-schema-display-parameter.tsx",
           "type": "registry:component"
         }
       ],
@@ -7645,7 +7645,7 @@
       "title": "Schema Display Schema Display Parameters",
       "files": [
         {
-          "path": "registry/default/app/ai-schema-display/schema-display-parameters.tsx",
+          "path": "registry/default/app/ai-schema-display/ai-schema-display-parameters.tsx",
           "type": "registry:component"
         }
       ],
@@ -7659,7 +7659,7 @@
       "title": "Schema Display Schema Display Path",
       "files": [
         {
-          "path": "registry/default/app/ai-schema-display/schema-display-path.tsx",
+          "path": "registry/default/app/ai-schema-display/ai-schema-display-path.tsx",
           "type": "registry:component"
         }
       ],
@@ -7673,7 +7673,7 @@
       "title": "Schema Display Schema Display Property",
       "files": [
         {
-          "path": "registry/default/app/ai-schema-display/schema-display-property.tsx",
+          "path": "registry/default/app/ai-schema-display/ai-schema-display-property.tsx",
           "type": "registry:component"
         }
       ],
@@ -7687,7 +7687,7 @@
       "title": "Schema Display Schema Display Request",
       "files": [
         {
-          "path": "registry/default/app/ai-schema-display/schema-display-request.tsx",
+          "path": "registry/default/app/ai-schema-display/ai-schema-display-request.tsx",
           "type": "registry:component"
         }
       ],
@@ -7701,7 +7701,7 @@
       "title": "Schema Display Schema Display Response",
       "files": [
         {
-          "path": "registry/default/app/ai-schema-display/schema-display-response.tsx",
+          "path": "registry/default/app/ai-schema-display/ai-schema-display-response.tsx",
           "type": "registry:component"
         }
       ],
@@ -7715,7 +7715,7 @@
       "title": "Schema Display",
       "files": [
         {
-          "path": "registry/default/app/ai-schema-display/schema-display.tsx",
+          "path": "registry/default/app/ai-schema-display/ai-schema-display.tsx",
           "type": "registry:component"
         }
       ],
@@ -7729,7 +7729,7 @@
       "title": "Shimmer",
       "files": [
         {
-          "path": "registry/default/app/ai-shimmer/shimmer.tsx",
+          "path": "registry/default/app/ai-shimmer/ai-shimmer.tsx",
           "type": "registry:component"
         }
       ],
@@ -7743,7 +7743,7 @@
       "title": "Snippet Snippet Addon",
       "files": [
         {
-          "path": "registry/default/app/ai-snippet/snippet-addon.tsx",
+          "path": "registry/default/app/ai-snippet/ai-snippet-addon.tsx",
           "type": "registry:component"
         }
       ],
@@ -7757,7 +7757,7 @@
       "title": "Snippet Snippet Copy Button",
       "files": [
         {
-          "path": "registry/default/app/ai-snippet/snippet-copy-button.tsx",
+          "path": "registry/default/app/ai-snippet/ai-snippet-copy-button.tsx",
           "type": "registry:component"
         }
       ],
@@ -7771,7 +7771,7 @@
       "title": "Snippet Snippet Input",
       "files": [
         {
-          "path": "registry/default/app/ai-snippet/snippet-input.tsx",
+          "path": "registry/default/app/ai-snippet/ai-snippet-input.tsx",
           "type": "registry:component"
         }
       ],
@@ -7785,7 +7785,7 @@
       "title": "Snippet Snippet Text",
       "files": [
         {
-          "path": "registry/default/app/ai-snippet/snippet-text.tsx",
+          "path": "registry/default/app/ai-snippet/ai-snippet-text.tsx",
           "type": "registry:component"
         }
       ],
@@ -7799,7 +7799,7 @@
       "title": "Snippet",
       "files": [
         {
-          "path": "registry/default/app/ai-snippet/snippet.tsx",
+          "path": "registry/default/app/ai-snippet/ai-snippet.tsx",
           "type": "registry:component"
         }
       ],
@@ -7813,7 +7813,7 @@
       "title": "Sources Source",
       "files": [
         {
-          "path": "registry/default/app/ai-sources/source.tsx",
+          "path": "registry/default/app/ai-sources/ai-source.tsx",
           "type": "registry:component"
         }
       ],
@@ -7827,7 +7827,7 @@
       "title": "Sources Sources Content",
       "files": [
         {
-          "path": "registry/default/app/ai-sources/sources-content.tsx",
+          "path": "registry/default/app/ai-sources/ai-sources-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -7841,7 +7841,7 @@
       "title": "Sources Sources Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-sources/sources-trigger.tsx",
+          "path": "registry/default/app/ai-sources/ai-sources-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -7855,7 +7855,7 @@
       "title": "Sources",
       "files": [
         {
-          "path": "registry/default/app/ai-sources/sources.tsx",
+          "path": "registry/default/app/ai-sources/ai-sources.tsx",
           "type": "registry:component"
         }
       ],
@@ -7869,7 +7869,7 @@
       "title": "Speech Input",
       "files": [
         {
-          "path": "registry/default/app/ai-speech-input/speech-input.tsx",
+          "path": "registry/default/app/ai-speech-input/ai-speech-input.tsx",
           "type": "registry:component"
         }
       ],
@@ -7883,7 +7883,7 @@
       "title": "Stack Trace Stack Trace Actions",
       "files": [
         {
-          "path": "registry/default/app/ai-stack-trace/stack-trace-actions.tsx",
+          "path": "registry/default/app/ai-stack-trace/ai-stack-trace-actions.tsx",
           "type": "registry:component"
         }
       ],
@@ -7897,7 +7897,7 @@
       "title": "Stack Trace Stack Trace Content",
       "files": [
         {
-          "path": "registry/default/app/ai-stack-trace/stack-trace-content.tsx",
+          "path": "registry/default/app/ai-stack-trace/ai-stack-trace-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -7911,7 +7911,7 @@
       "title": "Stack Trace Stack Trace Copy Button",
       "files": [
         {
-          "path": "registry/default/app/ai-stack-trace/stack-trace-copy-button.tsx",
+          "path": "registry/default/app/ai-stack-trace/ai-stack-trace-copy-button.tsx",
           "type": "registry:component"
         }
       ],
@@ -7925,7 +7925,7 @@
       "title": "Stack Trace Stack Trace Error Message",
       "files": [
         {
-          "path": "registry/default/app/ai-stack-trace/stack-trace-error-message.tsx",
+          "path": "registry/default/app/ai-stack-trace/ai-stack-trace-error-message.tsx",
           "type": "registry:component"
         }
       ],
@@ -7939,7 +7939,7 @@
       "title": "Stack Trace Stack Trace Error Type",
       "files": [
         {
-          "path": "registry/default/app/ai-stack-trace/stack-trace-error-type.tsx",
+          "path": "registry/default/app/ai-stack-trace/ai-stack-trace-error-type.tsx",
           "type": "registry:component"
         }
       ],
@@ -7953,7 +7953,7 @@
       "title": "Stack Trace Stack Trace Error",
       "files": [
         {
-          "path": "registry/default/app/ai-stack-trace/stack-trace-error.tsx",
+          "path": "registry/default/app/ai-stack-trace/ai-stack-trace-error.tsx",
           "type": "registry:component"
         }
       ],
@@ -7967,7 +7967,7 @@
       "title": "Stack Trace Stack Trace Expand Button",
       "files": [
         {
-          "path": "registry/default/app/ai-stack-trace/stack-trace-expand-button.tsx",
+          "path": "registry/default/app/ai-stack-trace/ai-stack-trace-expand-button.tsx",
           "type": "registry:component"
         }
       ],
@@ -7981,7 +7981,7 @@
       "title": "Stack Trace Stack Trace Frames",
       "files": [
         {
-          "path": "registry/default/app/ai-stack-trace/stack-trace-frames.tsx",
+          "path": "registry/default/app/ai-stack-trace/ai-stack-trace-frames.tsx",
           "type": "registry:component"
         }
       ],
@@ -7995,7 +7995,7 @@
       "title": "Stack Trace Stack Trace Header",
       "files": [
         {
-          "path": "registry/default/app/ai-stack-trace/stack-trace-header.tsx",
+          "path": "registry/default/app/ai-stack-trace/ai-stack-trace-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -8009,7 +8009,7 @@
       "title": "Stack Trace",
       "files": [
         {
-          "path": "registry/default/app/ai-stack-trace/stack-trace.tsx",
+          "path": "registry/default/app/ai-stack-trace/ai-stack-trace.tsx",
           "type": "registry:component"
         }
       ],
@@ -8023,7 +8023,7 @@
       "title": "Suggestion",
       "files": [
         {
-          "path": "registry/default/app/ai-suggestion/suggestion.tsx",
+          "path": "registry/default/app/ai-suggestion/ai-suggestion.tsx",
           "type": "registry:component"
         }
       ],
@@ -8037,7 +8037,7 @@
       "title": "Suggestion Suggestions",
       "files": [
         {
-          "path": "registry/default/app/ai-suggestion/suggestions.tsx",
+          "path": "registry/default/app/ai-suggestion/ai-suggestions.tsx",
           "type": "registry:component"
         }
       ],
@@ -8051,7 +8051,7 @@
       "title": "Task Task Content",
       "files": [
         {
-          "path": "registry/default/app/ai-task/task-content.tsx",
+          "path": "registry/default/app/ai-task/ai-task-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -8065,7 +8065,7 @@
       "title": "Task Task Item File",
       "files": [
         {
-          "path": "registry/default/app/ai-task/task-item-file.tsx",
+          "path": "registry/default/app/ai-task/ai-task-item-file.tsx",
           "type": "registry:component"
         }
       ],
@@ -8079,7 +8079,7 @@
       "title": "Task Task Item",
       "files": [
         {
-          "path": "registry/default/app/ai-task/task-item.tsx",
+          "path": "registry/default/app/ai-task/ai-task-item.tsx",
           "type": "registry:component"
         }
       ],
@@ -8093,7 +8093,7 @@
       "title": "Task Task Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-task/task-trigger.tsx",
+          "path": "registry/default/app/ai-task/ai-task-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -8107,7 +8107,7 @@
       "title": "Task",
       "files": [
         {
-          "path": "registry/default/app/ai-task/task.tsx",
+          "path": "registry/default/app/ai-task/ai-task.tsx",
           "type": "registry:component"
         }
       ],
@@ -8121,7 +8121,7 @@
       "title": "Terminal Terminal Actions",
       "files": [
         {
-          "path": "registry/default/app/ai-terminal/terminal-actions.tsx",
+          "path": "registry/default/app/ai-terminal/ai-terminal-actions.tsx",
           "type": "registry:component"
         }
       ],
@@ -8135,7 +8135,7 @@
       "title": "Terminal Terminal Clear Button",
       "files": [
         {
-          "path": "registry/default/app/ai-terminal/terminal-clear-button.tsx",
+          "path": "registry/default/app/ai-terminal/ai-terminal-clear-button.tsx",
           "type": "registry:component"
         }
       ],
@@ -8149,7 +8149,7 @@
       "title": "Terminal Terminal Content",
       "files": [
         {
-          "path": "registry/default/app/ai-terminal/terminal-content.tsx",
+          "path": "registry/default/app/ai-terminal/ai-terminal-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -8163,7 +8163,7 @@
       "title": "Terminal Terminal Copy Button",
       "files": [
         {
-          "path": "registry/default/app/ai-terminal/terminal-copy-button.tsx",
+          "path": "registry/default/app/ai-terminal/ai-terminal-copy-button.tsx",
           "type": "registry:component"
         }
       ],
@@ -8177,7 +8177,7 @@
       "title": "Terminal Terminal Header",
       "files": [
         {
-          "path": "registry/default/app/ai-terminal/terminal-header.tsx",
+          "path": "registry/default/app/ai-terminal/ai-terminal-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -8191,7 +8191,7 @@
       "title": "Terminal Terminal Status",
       "files": [
         {
-          "path": "registry/default/app/ai-terminal/terminal-status.tsx",
+          "path": "registry/default/app/ai-terminal/ai-terminal-status.tsx",
           "type": "registry:component"
         }
       ],
@@ -8205,7 +8205,7 @@
       "title": "Terminal Terminal Title",
       "files": [
         {
-          "path": "registry/default/app/ai-terminal/terminal-title.tsx",
+          "path": "registry/default/app/ai-terminal/ai-terminal-title.tsx",
           "type": "registry:component"
         }
       ],
@@ -8219,7 +8219,7 @@
       "title": "Terminal",
       "files": [
         {
-          "path": "registry/default/app/ai-terminal/terminal.tsx",
+          "path": "registry/default/app/ai-terminal/ai-terminal.tsx",
           "type": "registry:component"
         }
       ],
@@ -8233,7 +8233,7 @@
       "title": "Test Results Test Duration",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test-duration.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test-duration.tsx",
           "type": "registry:component"
         }
       ],
@@ -8247,7 +8247,7 @@
       "title": "Test Results Test Error Message",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test-error-message.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test-error-message.tsx",
           "type": "registry:component"
         }
       ],
@@ -8261,7 +8261,7 @@
       "title": "Test Results Test Error Stack",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test-error-stack.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test-error-stack.tsx",
           "type": "registry:component"
         }
       ],
@@ -8275,7 +8275,7 @@
       "title": "Test Results Test Error",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test-error.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test-error.tsx",
           "type": "registry:component"
         }
       ],
@@ -8289,7 +8289,7 @@
       "title": "Test Results Test Name",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test-name.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test-name.tsx",
           "type": "registry:component"
         }
       ],
@@ -8303,7 +8303,7 @@
       "title": "Test Results Test Results Content",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test-results-content.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test-results-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -8317,7 +8317,7 @@
       "title": "Test Results Test Results Duration",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test-results-duration.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test-results-duration.tsx",
           "type": "registry:component"
         }
       ],
@@ -8331,7 +8331,7 @@
       "title": "Test Results Test Results Header",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test-results-header.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test-results-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -8345,7 +8345,7 @@
       "title": "Test Results Test Results Progress",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test-results-progress.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test-results-progress.tsx",
           "type": "registry:component"
         }
       ],
@@ -8359,7 +8359,7 @@
       "title": "Test Results Test Results Summary",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test-results-summary.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test-results-summary.tsx",
           "type": "registry:component"
         }
       ],
@@ -8373,7 +8373,7 @@
       "title": "Test Results",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test-results.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test-results.tsx",
           "type": "registry:component"
         }
       ],
@@ -8387,7 +8387,7 @@
       "title": "Test Results Test Status",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test-status.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test-status.tsx",
           "type": "registry:component"
         }
       ],
@@ -8401,7 +8401,7 @@
       "title": "Test Results Test Suite Content",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test-suite-content.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test-suite-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -8415,7 +8415,7 @@
       "title": "Test Results Test Suite Name",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test-suite-name.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test-suite-name.tsx",
           "type": "registry:component"
         }
       ],
@@ -8429,7 +8429,7 @@
       "title": "Test Results Test Suite Stats",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test-suite-stats.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test-suite-stats.tsx",
           "type": "registry:component"
         }
       ],
@@ -8443,7 +8443,7 @@
       "title": "Test Results Test Suite",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test-suite.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test-suite.tsx",
           "type": "registry:component"
         }
       ],
@@ -8457,7 +8457,7 @@
       "title": "Test Results Test",
       "files": [
         {
-          "path": "registry/default/app/ai-test-results/test.tsx",
+          "path": "registry/default/app/ai-test-results/ai-test.tsx",
           "type": "registry:component"
         }
       ],
@@ -8471,7 +8471,7 @@
       "title": "Tool Tool Content",
       "files": [
         {
-          "path": "registry/default/app/ai-tool/tool-content.tsx",
+          "path": "registry/default/app/ai-tool/ai-tool-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -8485,7 +8485,7 @@
       "title": "Tool Tool Header",
       "files": [
         {
-          "path": "registry/default/app/ai-tool/tool-header.tsx",
+          "path": "registry/default/app/ai-tool/ai-tool-header.tsx",
           "type": "registry:component"
         }
       ],
@@ -8499,7 +8499,7 @@
       "title": "Tool Tool Input",
       "files": [
         {
-          "path": "registry/default/app/ai-tool/tool-input.tsx",
+          "path": "registry/default/app/ai-tool/ai-tool-input.tsx",
           "type": "registry:component"
         }
       ],
@@ -8513,7 +8513,7 @@
       "title": "Tool Tool Output",
       "files": [
         {
-          "path": "registry/default/app/ai-tool/tool-output.tsx",
+          "path": "registry/default/app/ai-tool/ai-tool-output.tsx",
           "type": "registry:component"
         }
       ],
@@ -8527,7 +8527,7 @@
       "title": "Tool",
       "files": [
         {
-          "path": "registry/default/app/ai-tool/tool.tsx",
+          "path": "registry/default/app/ai-tool/ai-tool.tsx",
           "type": "registry:component"
         }
       ],
@@ -8541,7 +8541,7 @@
       "title": "Toolbar",
       "files": [
         {
-          "path": "registry/default/app/ai-toolbar/toolbar.tsx",
+          "path": "registry/default/app/ai-toolbar/ai-toolbar.tsx",
           "type": "registry:component"
         }
       ],
@@ -8555,7 +8555,7 @@
       "title": "Transcription Transcription Segment",
       "files": [
         {
-          "path": "registry/default/app/ai-transcription/transcription-segment.tsx",
+          "path": "registry/default/app/ai-transcription/ai-transcription-segment.tsx",
           "type": "registry:component"
         }
       ],
@@ -8569,7 +8569,7 @@
       "title": "Transcription",
       "files": [
         {
-          "path": "registry/default/app/ai-transcription/transcription.tsx",
+          "path": "registry/default/app/ai-transcription/ai-transcription.tsx",
           "type": "registry:component"
         }
       ],
@@ -8583,7 +8583,7 @@
       "title": "Voice Selector Voice Selector Accent",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-accent.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-accent.tsx",
           "type": "registry:component"
         }
       ],
@@ -8597,7 +8597,7 @@
       "title": "Voice Selector Voice Selector Age",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-age.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-age.tsx",
           "type": "registry:component"
         }
       ],
@@ -8611,7 +8611,7 @@
       "title": "Voice Selector Voice Selector Attributes",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-attributes.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-attributes.tsx",
           "type": "registry:component"
         }
       ],
@@ -8625,7 +8625,7 @@
       "title": "Voice Selector Voice Selector Bullet",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-bullet.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-bullet.tsx",
           "type": "registry:component"
         }
       ],
@@ -8639,7 +8639,7 @@
       "title": "Voice Selector Voice Selector Content",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-content.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-content.tsx",
           "type": "registry:component"
         }
       ],
@@ -8653,7 +8653,7 @@
       "title": "Voice Selector Voice Selector Description",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-description.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-description.tsx",
           "type": "registry:component"
         }
       ],
@@ -8667,7 +8667,7 @@
       "title": "Voice Selector Voice Selector Dialog",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-dialog.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-dialog.tsx",
           "type": "registry:component"
         }
       ],
@@ -8681,7 +8681,7 @@
       "title": "Voice Selector Voice Selector Empty",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-empty.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-empty.tsx",
           "type": "registry:component"
         }
       ],
@@ -8695,7 +8695,7 @@
       "title": "Voice Selector Voice Selector Gender",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-gender.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-gender.tsx",
           "type": "registry:component"
         }
       ],
@@ -8709,7 +8709,7 @@
       "title": "Voice Selector Voice Selector Group",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-group.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-group.tsx",
           "type": "registry:component"
         }
       ],
@@ -8723,7 +8723,7 @@
       "title": "Voice Selector Voice Selector Input",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-input.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-input.tsx",
           "type": "registry:component"
         }
       ],
@@ -8737,7 +8737,7 @@
       "title": "Voice Selector Voice Selector Item",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-item.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-item.tsx",
           "type": "registry:component"
         }
       ],
@@ -8751,7 +8751,7 @@
       "title": "Voice Selector Voice Selector List",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-list.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-list.tsx",
           "type": "registry:component"
         }
       ],
@@ -8765,7 +8765,7 @@
       "title": "Voice Selector Voice Selector Name",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-name.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-name.tsx",
           "type": "registry:component"
         }
       ],
@@ -8779,7 +8779,7 @@
       "title": "Voice Selector Voice Selector Preview",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-preview.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-preview.tsx",
           "type": "registry:component"
         }
       ],
@@ -8793,7 +8793,7 @@
       "title": "Voice Selector Voice Selector Separator",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-separator.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-separator.tsx",
           "type": "registry:component"
         }
       ],
@@ -8807,7 +8807,7 @@
       "title": "Voice Selector Voice Selector Shortcut",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-shortcut.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-shortcut.tsx",
           "type": "registry:component"
         }
       ],
@@ -8821,7 +8821,7 @@
       "title": "Voice Selector Voice Selector Trigger",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector-trigger.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector-trigger.tsx",
           "type": "registry:component"
         }
       ],
@@ -8835,7 +8835,7 @@
       "title": "Voice Selector",
       "files": [
         {
-          "path": "registry/default/app/ai-voice-selector/voice-selector.tsx",
+          "path": "registry/default/app/ai-voice-selector/ai-voice-selector.tsx",
           "type": "registry:component"
         }
       ],
@@ -8849,7 +8849,7 @@
       "title": "Web Preview Web Preview Body",
       "files": [
         {
-          "path": "registry/default/app/ai-web-preview/web-preview-body.tsx",
+          "path": "registry/default/app/ai-web-preview/ai-web-preview-body.tsx",
           "type": "registry:component"
         }
       ],
@@ -8863,7 +8863,7 @@
       "title": "Web Preview Web Preview Console",
       "files": [
         {
-          "path": "registry/default/app/ai-web-preview/web-preview-console.tsx",
+          "path": "registry/default/app/ai-web-preview/ai-web-preview-console.tsx",
           "type": "registry:component"
         }
       ],
@@ -8877,7 +8877,7 @@
       "title": "Web Preview Web Preview Navigation Button",
       "files": [
         {
-          "path": "registry/default/app/ai-web-preview/web-preview-navigation-button.tsx",
+          "path": "registry/default/app/ai-web-preview/ai-web-preview-navigation-button.tsx",
           "type": "registry:component"
         }
       ],
@@ -8891,7 +8891,7 @@
       "title": "Web Preview Web Preview Navigation",
       "files": [
         {
-          "path": "registry/default/app/ai-web-preview/web-preview-navigation.tsx",
+          "path": "registry/default/app/ai-web-preview/ai-web-preview-navigation.tsx",
           "type": "registry:component"
         }
       ],
@@ -8905,7 +8905,7 @@
       "title": "Web Preview Web Preview Url",
       "files": [
         {
-          "path": "registry/default/app/ai-web-preview/web-preview-url.tsx",
+          "path": "registry/default/app/ai-web-preview/ai-web-preview-url.tsx",
           "type": "registry:component"
         }
       ],
@@ -8919,7 +8919,7 @@
       "title": "Web Preview",
       "files": [
         {
-          "path": "registry/default/app/ai-web-preview/web-preview.tsx",
+          "path": "registry/default/app/ai-web-preview/ai-web-preview.tsx",
           "type": "registry:component"
         }
       ],

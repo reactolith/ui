@@ -424,17 +424,26 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <div class="text-sm text-muted-foreground italic">JSX Preview renders live React/JSX code with error boundaries. It requires react-jsx-parser for runtime evaluation.</div>
+<div class="mt-4 rounded-lg border p-4 bg-muted/10">
+  <div class="text-sm">
+    <div class="font-semibold mb-2">Preview Output:</div>
+    <div class="p-3 border rounded bg-background">Hello, World!</div>
+  </div>
+</div>
                   </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-ai-jsx-preview&gt;
-  &lt;ui-ai-j-s-x-preview-content&gt;...&lt;/ui-ai-j-s-x-preview-content&gt;
-  &lt;ui-ai-j-s-x-preview-error&gt;...&lt;/ui-ai-j-s-x-preview-error&gt;
-&lt;/ui-ai-jsx-preview&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;div class=&quot;text-sm text-muted-foreground italic&quot;&gt;JSX Preview renders live React/JSX code with error boundaries. It requires react-jsx-parser for runtime evaluation.&lt;/div&gt;
+&lt;div class=&quot;mt-4 rounded-lg border p-4 bg-muted/10&quot;&gt;
+  &lt;div class=&quot;text-sm&quot;&gt;
+    &lt;div class=&quot;font-semibold mb-2&quot;&gt;Preview Output:&lt;/div&gt;
+    &lt;div class=&quot;p-3 border rounded bg-background&quot;&gt;Hello, World!&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
               </div>
             </section>
 

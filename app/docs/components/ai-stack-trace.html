@@ -424,7 +424,20 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-stack-trace>
+  <ui-ai-stack-trace-header>
+    <ui-ai-stack-trace-error>
+      <ui-ai-stack-trace-error-type>TypeError</ui-ai-stack-trace-error-type>
+      <ui-ai-stack-trace-error-message>Cannot read properties of undefined (reading 'map')</ui-ai-stack-trace-error-message>
+    </ui-ai-stack-trace-error>
+    <ui-ai-stack-trace-actions>
+      <ui-ai-stack-trace-copy-button />
+    </ui-ai-stack-trace-actions>
+  </ui-ai-stack-trace-header>
+  <ui-ai-stack-trace-content>
+    <ui-ai-stack-trace-frames />
+  </ui-ai-stack-trace-content>
+</ui-ai-stack-trace>
                   </div>
             </section>
 
@@ -432,11 +445,18 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-stack-trace&gt;
-  &lt;ui-ai-stack-trace-header&gt;...&lt;/ui-ai-stack-trace-header&gt;
-  &lt;ui-ai-stack-trace-error&gt;...&lt;/ui-ai-stack-trace-error&gt;
-  &lt;ui-ai-stack-trace-error-type&gt;...&lt;/ui-ai-stack-trace-error-type&gt;
-  &lt;ui-ai-stack-trace-error-message&gt;...&lt;/ui-ai-stack-trace-error-message&gt;
-  &lt;!-- ... more sub-components --&gt;
+  &lt;ui-ai-stack-trace-header&gt;
+    &lt;ui-ai-stack-trace-error&gt;
+      &lt;ui-ai-stack-trace-error-type&gt;TypeError&lt;/ui-ai-stack-trace-error-type&gt;
+      &lt;ui-ai-stack-trace-error-message&gt;Cannot read properties of undefined (reading 'map')&lt;/ui-ai-stack-trace-error-message&gt;
+    &lt;/ui-ai-stack-trace-error&gt;
+    &lt;ui-ai-stack-trace-actions&gt;
+      &lt;ui-ai-stack-trace-copy-button /&gt;
+    &lt;/ui-ai-stack-trace-actions&gt;
+  &lt;/ui-ai-stack-trace-header&gt;
+  &lt;ui-ai-stack-trace-content&gt;
+    &lt;ui-ai-stack-trace-frames /&gt;
+  &lt;/ui-ai-stack-trace-content&gt;
 &lt;/ui-ai-stack-trace&gt;</code></pre>
               </div>
             </section>

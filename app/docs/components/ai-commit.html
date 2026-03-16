@@ -424,7 +424,33 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-commit>
+  <ui-ai-commit-header>
+    <ui-ai-commit-info>
+      <ui-ai-commit-hash>a1b2c3d</ui-ai-commit-hash>
+      <ui-ai-commit-message>feat: add user authentication flow</ui-ai-commit-message>
+    </ui-ai-commit-info>
+    <ui-ai-commit-metadata>
+      <ui-ai-commit-author>
+        <ui-ai-commit-author-avatar initials="JD" />
+      </ui-ai-commit-author>
+    </ui-ai-commit-metadata>
+  </ui-ai-commit-header>
+  <ui-ai-commit-content>
+    <ui-ai-commit-files>
+      <ui-ai-commit-file>
+        <ui-ai-commit-file-info>
+          <ui-ai-commit-file-icon />
+          <ui-ai-commit-file-path>src/auth/login.tsx</ui-ai-commit-file-path>
+        </ui-ai-commit-file-info>
+        <ui-ai-commit-file-changes>
+          <ui-ai-commit-file-additions count="42" />
+          <ui-ai-commit-file-deletions count="3" />
+        </ui-ai-commit-file-changes>
+      </ui-ai-commit-file>
+    </ui-ai-commit-files>
+  </ui-ai-commit-content>
+</ui-ai-commit>
                   </div>
             </section>
 
@@ -432,11 +458,31 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-commit&gt;
-  &lt;ui-ai-commit-header&gt;...&lt;/ui-ai-commit-header&gt;
-  &lt;ui-ai-commit-hash&gt;...&lt;/ui-ai-commit-hash&gt;
-  &lt;ui-ai-commit-message&gt;...&lt;/ui-ai-commit-message&gt;
-  &lt;ui-ai-commit-metadata&gt;...&lt;/ui-ai-commit-metadata&gt;
-  &lt;!-- ... more sub-components --&gt;
+  &lt;ui-ai-commit-header&gt;
+    &lt;ui-ai-commit-info&gt;
+      &lt;ui-ai-commit-hash&gt;a1b2c3d&lt;/ui-ai-commit-hash&gt;
+      &lt;ui-ai-commit-message&gt;feat: add user authentication flow&lt;/ui-ai-commit-message&gt;
+    &lt;/ui-ai-commit-info&gt;
+    &lt;ui-ai-commit-metadata&gt;
+      &lt;ui-ai-commit-author&gt;
+        &lt;ui-ai-commit-author-avatar initials=&quot;JD&quot; /&gt;
+      &lt;/ui-ai-commit-author&gt;
+    &lt;/ui-ai-commit-metadata&gt;
+  &lt;/ui-ai-commit-header&gt;
+  &lt;ui-ai-commit-content&gt;
+    &lt;ui-ai-commit-files&gt;
+      &lt;ui-ai-commit-file&gt;
+        &lt;ui-ai-commit-file-info&gt;
+          &lt;ui-ai-commit-file-icon /&gt;
+          &lt;ui-ai-commit-file-path&gt;src/auth/login.tsx&lt;/ui-ai-commit-file-path&gt;
+        &lt;/ui-ai-commit-file-info&gt;
+        &lt;ui-ai-commit-file-changes&gt;
+          &lt;ui-ai-commit-file-additions count=&quot;42&quot; /&gt;
+          &lt;ui-ai-commit-file-deletions count=&quot;3&quot; /&gt;
+        &lt;/ui-ai-commit-file-changes&gt;
+      &lt;/ui-ai-commit-file&gt;
+    &lt;/ui-ai-commit-files&gt;
+  &lt;/ui-ai-commit-content&gt;
 &lt;/ui-ai-commit&gt;</code></pre>
               </div>
             </section>

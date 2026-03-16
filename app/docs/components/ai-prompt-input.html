@@ -424,7 +424,15 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-prompt-input>
+  <ui-ai-prompt-input-textarea placeholder="Ask anything..." />
+  <ui-ai-prompt-input-footer>
+    <ui-ai-prompt-input-tools>
+      <ui-ai-prompt-input-button tooltip="Attach files">+</ui-ai-prompt-input-button>
+    </ui-ai-prompt-input-tools>
+    <ui-ai-prompt-input-submit />
+  </ui-ai-prompt-input-footer>
+</ui-ai-prompt-input>
                   </div>
             </section>
 
@@ -432,11 +440,13 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-prompt-input&gt;
-  &lt;ui-ai-prompt-input-body&gt;...&lt;/ui-ai-prompt-input-body&gt;
-  &lt;ui-ai-prompt-input-textarea&gt;...&lt;/ui-ai-prompt-input-textarea&gt;
-  &lt;ui-ai-prompt-input-header&gt;...&lt;/ui-ai-prompt-input-header&gt;
-  &lt;ui-ai-prompt-input-footer&gt;...&lt;/ui-ai-prompt-input-footer&gt;
-  &lt;!-- ... more sub-components --&gt;
+  &lt;ui-ai-prompt-input-textarea placeholder=&quot;Ask anything...&quot; /&gt;
+  &lt;ui-ai-prompt-input-footer&gt;
+    &lt;ui-ai-prompt-input-tools&gt;
+      &lt;ui-ai-prompt-input-button tooltip=&quot;Attach files&quot;&gt;+&lt;/ui-ai-prompt-input-button&gt;
+    &lt;/ui-ai-prompt-input-tools&gt;
+    &lt;ui-ai-prompt-input-submit /&gt;
+  &lt;/ui-ai-prompt-input-footer&gt;
 &lt;/ui-ai-prompt-input&gt;</code></pre>
               </div>
             </section>
