@@ -424,7 +424,25 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-terminal>
+  <ui-ai-terminal-header>
+    <ui-ai-terminal-title>Terminal</ui-ai-terminal-title>
+    <ui-ai-terminal-status>Complete</ui-ai-terminal-status>
+    <ui-ai-terminal-actions>
+      <ui-ai-terminal-copy-button />
+    </ui-ai-terminal-actions>
+  </ui-ai-terminal-header>
+  <ui-ai-terminal-content>
+    <pre class="text-xs font-mono text-green-400 bg-black/90 p-3 rounded">$ npm test
+> jest --coverage
+
+PASS  src/auth.test.ts
+  ✓ validates tokens (12ms)
+  ✓ rejects expired tokens (3ms)
+
+Tests: 2 passed, 2 total</pre>
+  </ui-ai-terminal-content>
+</ui-ai-terminal>
                   </div>
             </section>
 
@@ -432,11 +450,23 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-terminal&gt;
-  &lt;ui-ai-terminal-header&gt;...&lt;/ui-ai-terminal-header&gt;
-  &lt;ui-ai-terminal-title&gt;...&lt;/ui-ai-terminal-title&gt;
-  &lt;ui-ai-terminal-status&gt;...&lt;/ui-ai-terminal-status&gt;
-  &lt;ui-ai-terminal-actions&gt;...&lt;/ui-ai-terminal-actions&gt;
-  &lt;!-- ... more sub-components --&gt;
+  &lt;ui-ai-terminal-header&gt;
+    &lt;ui-ai-terminal-title&gt;Terminal&lt;/ui-ai-terminal-title&gt;
+    &lt;ui-ai-terminal-status&gt;Complete&lt;/ui-ai-terminal-status&gt;
+    &lt;ui-ai-terminal-actions&gt;
+      &lt;ui-ai-terminal-copy-button /&gt;
+    &lt;/ui-ai-terminal-actions&gt;
+  &lt;/ui-ai-terminal-header&gt;
+  &lt;ui-ai-terminal-content&gt;
+    &lt;pre class=&quot;text-xs font-mono text-green-400 bg-black/90 p-3 rounded&quot;&gt;$ npm test
+&gt; jest --coverage
+
+PASS  src/auth.test.ts
+  ✓ validates tokens (12ms)
+  ✓ rejects expired tokens (3ms)
+
+Tests: 2 passed, 2 total&lt;/pre&gt;
+  &lt;/ui-ai-terminal-content&gt;
 &lt;/ui-ai-terminal&gt;</code></pre>
               </div>
             </section>

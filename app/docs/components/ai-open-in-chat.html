@@ -424,20 +424,34 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-open-in>
+  <ui-ai-open-in-trigger>
+    <ui-button variant="outline" size="sm">Open in...</ui-button>
+  </ui-ai-open-in-trigger>
+  <ui-ai-open-in-content>
+    <ui-ai-open-in-label>Open conversation in</ui-ai-open-in-label>
+    <ui-ai-open-in-separator />
+    <ui-ai-open-in-claude>Claude</ui-ai-open-in-claude>
+    <ui-ai-open-in-chat-g-p-t>ChatGPT</ui-ai-open-in-chat-g-p-t>
+  </ui-ai-open-in-content>
+</ui-ai-open-in>
                   </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-ai-open-in-chat&gt;
-  &lt;ui-ai-open-in-content&gt;...&lt;/ui-ai-open-in-content&gt;
-  &lt;ui-ai-open-in-item&gt;...&lt;/ui-ai-open-in-item&gt;
-  &lt;ui-ai-open-in-label&gt;...&lt;/ui-ai-open-in-label&gt;
-  &lt;ui-ai-open-in-separator&gt;...&lt;/ui-ai-open-in-separator&gt;
-  &lt;!-- ... more sub-components --&gt;
-&lt;/ui-ai-open-in-chat&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;ui-ai-open-in&gt;
+  &lt;ui-ai-open-in-trigger&gt;
+    &lt;ui-button variant=&quot;outline&quot; size=&quot;sm&quot;&gt;Open in...&lt;/ui-button&gt;
+  &lt;/ui-ai-open-in-trigger&gt;
+  &lt;ui-ai-open-in-content&gt;
+    &lt;ui-ai-open-in-label&gt;Open conversation in&lt;/ui-ai-open-in-label&gt;
+    &lt;ui-ai-open-in-separator /&gt;
+    &lt;ui-ai-open-in-claude&gt;Claude&lt;/ui-ai-open-in-claude&gt;
+    &lt;ui-ai-open-in-chat-g-p-t&gt;ChatGPT&lt;/ui-ai-open-in-chat-g-p-t&gt;
+  &lt;/ui-ai-open-in-content&gt;
+&lt;/ui-ai-open-in&gt;</code></pre>
               </div>
             </section>
 

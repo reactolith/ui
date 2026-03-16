@@ -424,7 +424,14 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-confirmation>
+  <ui-ai-confirmation-title>Execute shell command?</ui-ai-confirmation-title>
+  <ui-ai-confirmation-request>npm install express</ui-ai-confirmation-request>
+  <ui-ai-confirmation-actions>
+    <ui-ai-confirmation-action>Approve</ui-ai-confirmation-action>
+    <ui-ai-confirmation-action>Deny</ui-ai-confirmation-action>
+  </ui-ai-confirmation-actions>
+</ui-ai-confirmation>
                   </div>
             </section>
 
@@ -432,11 +439,12 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-confirmation&gt;
-  &lt;ui-ai-confirmation-title&gt;...&lt;/ui-ai-confirmation-title&gt;
-  &lt;ui-ai-confirmation-request&gt;...&lt;/ui-ai-confirmation-request&gt;
-  &lt;ui-ai-confirmation-accepted&gt;...&lt;/ui-ai-confirmation-accepted&gt;
-  &lt;ui-ai-confirmation-rejected&gt;...&lt;/ui-ai-confirmation-rejected&gt;
-  &lt;!-- ... more sub-components --&gt;
+  &lt;ui-ai-confirmation-title&gt;Execute shell command?&lt;/ui-ai-confirmation-title&gt;
+  &lt;ui-ai-confirmation-request&gt;npm install express&lt;/ui-ai-confirmation-request&gt;
+  &lt;ui-ai-confirmation-actions&gt;
+    &lt;ui-ai-confirmation-action&gt;Approve&lt;/ui-ai-confirmation-action&gt;
+    &lt;ui-ai-confirmation-action&gt;Deny&lt;/ui-ai-confirmation-action&gt;
+  &lt;/ui-ai-confirmation-actions&gt;
 &lt;/ui-ai-confirmation&gt;</code></pre>
               </div>
             </section>

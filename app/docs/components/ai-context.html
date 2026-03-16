@@ -424,7 +424,17 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-context>
+  <ui-ai-context-trigger>View Context</ui-ai-context-trigger>
+  <ui-ai-context-content>
+    <ui-ai-context-content-header>Token Usage</ui-ai-context-content-header>
+    <ui-ai-context-content-body>
+      <ui-ai-context-input-usage>Input: 1,234 tokens</ui-ai-context-input-usage>
+      <ui-ai-context-output-usage>Output: 567 tokens</ui-ai-context-output-usage>
+      <ui-ai-context-cache-usage>Cache: 890 tokens</ui-ai-context-cache-usage>
+    </ui-ai-context-content-body>
+  </ui-ai-context-content>
+</ui-ai-context>
                   </div>
             </section>
 
@@ -432,11 +442,15 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-context&gt;
-  &lt;ui-ai-context-trigger&gt;...&lt;/ui-ai-context-trigger&gt;
-  &lt;ui-ai-context-content&gt;...&lt;/ui-ai-context-content&gt;
-  &lt;ui-ai-context-content-header&gt;...&lt;/ui-ai-context-content-header&gt;
-  &lt;ui-ai-context-content-body&gt;...&lt;/ui-ai-context-content-body&gt;
-  &lt;!-- ... more sub-components --&gt;
+  &lt;ui-ai-context-trigger&gt;View Context&lt;/ui-ai-context-trigger&gt;
+  &lt;ui-ai-context-content&gt;
+    &lt;ui-ai-context-content-header&gt;Token Usage&lt;/ui-ai-context-content-header&gt;
+    &lt;ui-ai-context-content-body&gt;
+      &lt;ui-ai-context-input-usage&gt;Input: 1,234 tokens&lt;/ui-ai-context-input-usage&gt;
+      &lt;ui-ai-context-output-usage&gt;Output: 567 tokens&lt;/ui-ai-context-output-usage&gt;
+      &lt;ui-ai-context-cache-usage&gt;Cache: 890 tokens&lt;/ui-ai-context-cache-usage&gt;
+    &lt;/ui-ai-context-content-body&gt;
+  &lt;/ui-ai-context-content&gt;
 &lt;/ui-ai-context&gt;</code></pre>
               </div>
             </section>

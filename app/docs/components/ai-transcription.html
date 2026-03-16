@@ -424,16 +424,24 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <div class="text-sm text-muted-foreground italic">Transcription displays audio transcription with clickable time-coded segments. It requires transcription data from a speech-to-text service.</div>
+<div class="mt-4 space-y-1 text-sm">
+  <div class="flex gap-2"><span class="text-xs text-muted-foreground w-12">0:00</span> Hello, welcome to the demo.</div>
+  <div class="flex gap-2"><span class="text-xs text-muted-foreground w-12">0:03</span> This shows transcription segments.</div>
+  <div class="flex gap-2"><span class="text-xs text-muted-foreground w-12">0:07</span> Each segment is clickable.</div>
+</div>
                   </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-ai-transcription&gt;
-  &lt;ui-ai-transcription-segment&gt;...&lt;/ui-ai-transcription-segment&gt;
-&lt;/ui-ai-transcription&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;div class=&quot;text-sm text-muted-foreground italic&quot;&gt;Transcription displays audio transcription with clickable time-coded segments. It requires transcription data from a speech-to-text service.&lt;/div&gt;
+&lt;div class=&quot;mt-4 space-y-1 text-sm&quot;&gt;
+  &lt;div class=&quot;flex gap-2&quot;&gt;&lt;span class=&quot;text-xs text-muted-foreground w-12&quot;&gt;0:00&lt;/span&gt; Hello, welcome to the demo.&lt;/div&gt;
+  &lt;div class=&quot;flex gap-2&quot;&gt;&lt;span class=&quot;text-xs text-muted-foreground w-12&quot;&gt;0:03&lt;/span&gt; This shows transcription segments.&lt;/div&gt;
+  &lt;div class=&quot;flex gap-2&quot;&gt;&lt;span class=&quot;text-xs text-muted-foreground w-12&quot;&gt;0:07&lt;/span&gt; Each segment is clickable.&lt;/div&gt;
+&lt;/div&gt;</code></pre>
               </div>
             </section>
 

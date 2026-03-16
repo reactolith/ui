@@ -424,7 +424,10 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-checkpoint>
+  <ui-ai-checkpoint-icon />
+  <ui-ai-checkpoint-trigger>Checkpoint saved</ui-ai-checkpoint-trigger>
+</ui-ai-checkpoint>
                   </div>
             </section>
 
@@ -432,8 +435,8 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-checkpoint&gt;
-  &lt;ui-ai-checkpoint-icon&gt;...&lt;/ui-ai-checkpoint-icon&gt;
-  &lt;ui-ai-checkpoint-trigger&gt;...&lt;/ui-ai-checkpoint-trigger&gt;
+  &lt;ui-ai-checkpoint-icon /&gt;
+  &lt;ui-ai-checkpoint-trigger&gt;Checkpoint saved&lt;/ui-ai-checkpoint-trigger&gt;
 &lt;/ui-ai-checkpoint&gt;</code></pre>
               </div>
             </section>

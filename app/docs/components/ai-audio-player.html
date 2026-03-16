@@ -424,20 +424,28 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <div class="text-sm text-muted-foreground italic">Audio Player requires browser media APIs. It provides a full audio player with play, seek, volume, and time display controls.</div>
+<div class="mt-4 rounded-lg border p-4 bg-muted/30">
+  <div class="flex items-center gap-3">
+    <ui-button size="icon" variant="outline">▶</ui-button>
+    <div class="flex-1 h-1 bg-muted rounded-full"><div class="h-1 w-1/3 bg-primary rounded-full"></div></div>
+    <span class="text-xs text-muted-foreground">1:23 / 4:56</span>
+  </div>
+</div>
                   </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-ai-audio-player&gt;
-  &lt;ui-ai-audio-player-element&gt;...&lt;/ui-ai-audio-player-element&gt;
-  &lt;ui-ai-audio-player-control-bar&gt;...&lt;/ui-ai-audio-player-control-bar&gt;
-  &lt;ui-ai-audio-player-play-button&gt;...&lt;/ui-ai-audio-player-play-button&gt;
-  &lt;ui-ai-audio-player-seek-backward-button&gt;...&lt;/ui-ai-audio-player-seek-backward-button&gt;
-  &lt;!-- ... more sub-components --&gt;
-&lt;/ui-ai-audio-player&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;div class=&quot;text-sm text-muted-foreground italic&quot;&gt;Audio Player requires browser media APIs. It provides a full audio player with play, seek, volume, and time display controls.&lt;/div&gt;
+&lt;div class=&quot;mt-4 rounded-lg border p-4 bg-muted/30&quot;&gt;
+  &lt;div class=&quot;flex items-center gap-3&quot;&gt;
+    &lt;ui-button size=&quot;icon&quot; variant=&quot;outline&quot;&gt;▶&lt;/ui-button&gt;
+    &lt;div class=&quot;flex-1 h-1 bg-muted rounded-full&quot;&gt;&lt;div class=&quot;h-1 w-1/3 bg-primary rounded-full&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;span class=&quot;text-xs text-muted-foreground&quot;&gt;1:23 / 4:56&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
               </div>
             </section>
 

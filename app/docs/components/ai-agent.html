@@ -424,7 +424,19 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-agent>
+  <ui-ai-agent-header>
+    <div class="font-semibold">Research Assistant</div>
+    <div class="text-xs text-muted-foreground">claude-sonnet-4-20250514</div>
+  </ui-ai-agent-header>
+  <ui-ai-agent-content>
+    <ui-ai-agent-instructions>You are a helpful research assistant that searches the web and summarizes findings.</ui-ai-agent-instructions>
+    <ui-ai-agent-tools>
+      <ui-ai-agent-tool>web-search</ui-ai-agent-tool>
+      <ui-ai-agent-tool>read-url</ui-ai-agent-tool>
+    </ui-ai-agent-tools>
+  </ui-ai-agent-content>
+</ui-ai-agent>
                   </div>
             </section>
 
@@ -432,11 +444,17 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-agent&gt;
-  &lt;ui-ai-agent-header&gt;...&lt;/ui-ai-agent-header&gt;
-  &lt;ui-ai-agent-content&gt;...&lt;/ui-ai-agent-content&gt;
-  &lt;ui-ai-agent-instructions&gt;...&lt;/ui-ai-agent-instructions&gt;
-  &lt;ui-ai-agent-tools&gt;...&lt;/ui-ai-agent-tools&gt;
-  &lt;!-- ... more sub-components --&gt;
+  &lt;ui-ai-agent-header&gt;
+    &lt;div class=&quot;font-semibold&quot;&gt;Research Assistant&lt;/div&gt;
+    &lt;div class=&quot;text-xs text-muted-foreground&quot;&gt;claude-sonnet-4-20250514&lt;/div&gt;
+  &lt;/ui-ai-agent-header&gt;
+  &lt;ui-ai-agent-content&gt;
+    &lt;ui-ai-agent-instructions&gt;You are a helpful research assistant that searches the web and summarizes findings.&lt;/ui-ai-agent-instructions&gt;
+    &lt;ui-ai-agent-tools&gt;
+      &lt;ui-ai-agent-tool&gt;web-search&lt;/ui-ai-agent-tool&gt;
+      &lt;ui-ai-agent-tool&gt;read-url&lt;/ui-ai-agent-tool&gt;
+    &lt;/ui-ai-agent-tools&gt;
+  &lt;/ui-ai-agent-content&gt;
 &lt;/ui-ai-agent&gt;</code></pre>
               </div>
             </section>

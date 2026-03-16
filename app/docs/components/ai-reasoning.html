@@ -424,7 +424,12 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-reasoning>
+  <ui-ai-reasoning-trigger>Thinking...</ui-ai-reasoning-trigger>
+  <ui-ai-reasoning-content>
+    I need to consider the trade-offs between using a SQL database and a NoSQL database for this use case. The application requires flexible schema evolution but also needs strong consistency for financial transactions...
+  </ui-ai-reasoning-content>
+</ui-ai-reasoning>
                   </div>
             </section>
 
@@ -432,8 +437,10 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-reasoning&gt;
-  &lt;ui-ai-reasoning-trigger&gt;...&lt;/ui-ai-reasoning-trigger&gt;
-  &lt;ui-ai-reasoning-content&gt;...&lt;/ui-ai-reasoning-content&gt;
+  &lt;ui-ai-reasoning-trigger&gt;Thinking...&lt;/ui-ai-reasoning-trigger&gt;
+  &lt;ui-ai-reasoning-content&gt;
+    I need to consider the trade-offs between using a SQL database and a NoSQL database for this use case. The application requires flexible schema evolution but also needs strong consistency for financial transactions...
+  &lt;/ui-ai-reasoning-content&gt;
 &lt;/ui-ai-reasoning&gt;</code></pre>
               </div>
             </section>

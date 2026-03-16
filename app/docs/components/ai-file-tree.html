@@ -424,7 +424,18 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-file-tree>
+  <ui-ai-file-tree-folder name="src" path="/src">
+    <ui-ai-file-tree-folder name="components" path="/src/components">
+      <ui-ai-file-tree-file name="Button.tsx" path="/src/components/Button.tsx" />
+      <ui-ai-file-tree-file name="Input.tsx" path="/src/components/Input.tsx" />
+    </ui-ai-file-tree-folder>
+    <ui-ai-file-tree-file name="App.tsx" path="/src/App.tsx" />
+    <ui-ai-file-tree-file name="index.ts" path="/src/index.ts" />
+  </ui-ai-file-tree-folder>
+  <ui-ai-file-tree-file name="package.json" path="/package.json" />
+  <ui-ai-file-tree-file name="tsconfig.json" path="/tsconfig.json" />
+</ui-ai-file-tree>
                   </div>
             </section>
 
@@ -432,11 +443,16 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-file-tree&gt;
-  &lt;ui-ai-file-tree-icon&gt;...&lt;/ui-ai-file-tree-icon&gt;
-  &lt;ui-ai-file-tree-name&gt;...&lt;/ui-ai-file-tree-name&gt;
-  &lt;ui-ai-file-tree-folder&gt;...&lt;/ui-ai-file-tree-folder&gt;
-  &lt;ui-ai-file-tree-file&gt;...&lt;/ui-ai-file-tree-file&gt;
-  &lt;!-- ... more sub-components --&gt;
+  &lt;ui-ai-file-tree-folder name=&quot;src&quot; path=&quot;/src&quot;&gt;
+    &lt;ui-ai-file-tree-folder name=&quot;components&quot; path=&quot;/src/components&quot;&gt;
+      &lt;ui-ai-file-tree-file name=&quot;Button.tsx&quot; path=&quot;/src/components/Button.tsx&quot; /&gt;
+      &lt;ui-ai-file-tree-file name=&quot;Input.tsx&quot; path=&quot;/src/components/Input.tsx&quot; /&gt;
+    &lt;/ui-ai-file-tree-folder&gt;
+    &lt;ui-ai-file-tree-file name=&quot;App.tsx&quot; path=&quot;/src/App.tsx&quot; /&gt;
+    &lt;ui-ai-file-tree-file name=&quot;index.ts&quot; path=&quot;/src/index.ts&quot; /&gt;
+  &lt;/ui-ai-file-tree-folder&gt;
+  &lt;ui-ai-file-tree-file name=&quot;package.json&quot; path=&quot;/package.json&quot; /&gt;
+  &lt;ui-ai-file-tree-file name=&quot;tsconfig.json&quot; path=&quot;/tsconfig.json&quot; /&gt;
 &lt;/ui-ai-file-tree&gt;</code></pre>
               </div>
             </section>

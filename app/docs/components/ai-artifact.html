@@ -424,7 +424,32 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-artifact>
+  <ui-ai-artifact-header>
+    <ui-ai-artifact-title>React Component</ui-ai-artifact-title>
+    <ui-ai-artifact-description>A counter component with increment/decrement</ui-ai-artifact-description>
+    <ui-ai-artifact-actions>
+      <ui-ai-artifact-action>Copy</ui-ai-artifact-action>
+    </ui-ai-artifact-actions>
+  </ui-ai-artifact-header>
+  <ui-ai-artifact-content>
+    <pre class="p-4 text-sm"><code>&lt;ui-ai-artifact&gt;
+  &lt;ui-ai-artifact-header&gt;
+    &lt;ui-ai-artifact-title&gt;React Component&lt;/ui-ai-artifact-title&gt;
+    &lt;ui-ai-artifact-description&gt;A counter component with increment/decrement&lt;/ui-ai-artifact-description&gt;
+    &lt;ui-ai-artifact-actions&gt;
+      &lt;ui-ai-artifact-action&gt;Copy&lt;/ui-ai-artifact-action&gt;
+    &lt;/ui-ai-artifact-actions&gt;
+  &lt;/ui-ai-artifact-header&gt;
+  &lt;ui-ai-artifact-content&gt;
+    &lt;pre class=&quot;p-4 text-sm&quot;&gt;&lt;code&gt;export function Counter() {
+  const [count, setCount] = useState(0);
+  return &amp;lt;button onClick={() =&gt; setCount(c =&gt; c + 1)}&amp;gt;{count}&amp;lt;/button&amp;gt;;
+}&lt;/code&gt;&lt;/pre&gt;
+  &lt;/ui-ai-artifact-content&gt;
+&lt;/ui-ai-artifact&gt;</code></pre>
+  </ui-ai-artifact-content>
+</ui-ai-artifact>
                   </div>
             </section>
 

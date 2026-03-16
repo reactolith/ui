@@ -424,7 +424,14 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-sources>
+  <ui-ai-sources-trigger>3 sources</ui-ai-sources-trigger>
+  <ui-ai-sources-content>
+    <ui-ai-source href="https://react.dev">React Documentation</ui-ai-source>
+    <ui-ai-source href="https://nextjs.org/docs">Next.js Docs</ui-ai-source>
+    <ui-ai-source href="https://ai-sdk.dev">AI SDK Reference</ui-ai-source>
+  </ui-ai-sources-content>
+</ui-ai-sources>
                   </div>
             </section>
 
@@ -432,9 +439,12 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-sources&gt;
-  &lt;ui-ai-sources-trigger&gt;...&lt;/ui-ai-sources-trigger&gt;
-  &lt;ui-ai-sources-content&gt;...&lt;/ui-ai-sources-content&gt;
-  &lt;ui-ai-source&gt;...&lt;/ui-ai-source&gt;
+  &lt;ui-ai-sources-trigger&gt;3 sources&lt;/ui-ai-sources-trigger&gt;
+  &lt;ui-ai-sources-content&gt;
+    &lt;ui-ai-source href=&quot;https://react.dev&quot;&gt;React Documentation&lt;/ui-ai-source&gt;
+    &lt;ui-ai-source href=&quot;https://nextjs.org/docs&quot;&gt;Next.js Docs&lt;/ui-ai-source&gt;
+    &lt;ui-ai-source href=&quot;https://ai-sdk.dev&quot;&gt;AI SDK Reference&lt;/ui-ai-source&gt;
+  &lt;/ui-ai-sources-content&gt;
 &lt;/ui-ai-sources&gt;</code></pre>
               </div>
             </section>

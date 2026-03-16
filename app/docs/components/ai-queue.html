@@ -424,7 +424,25 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-queue>
+  <ui-ai-queue-list>
+    <ui-ai-queue-section>
+      <ui-ai-queue-section-trigger>
+        <ui-ai-queue-section-label>In Progress</ui-ai-queue-section-label>
+      </ui-ai-queue-section-trigger>
+      <ui-ai-queue-section-content>
+        <ui-ai-queue-item>
+          <ui-ai-queue-item-indicator />
+          <ui-ai-queue-item-content>Analyze codebase structure</ui-ai-queue-item-content>
+        </ui-ai-queue-item>
+        <ui-ai-queue-item>
+          <ui-ai-queue-item-indicator />
+          <ui-ai-queue-item-content>Generate test cases</ui-ai-queue-item-content>
+        </ui-ai-queue-item>
+      </ui-ai-queue-section-content>
+    </ui-ai-queue-section>
+  </ui-ai-queue-list>
+</ui-ai-queue>
                   </div>
             </section>
 
@@ -432,11 +450,23 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-queue&gt;
-  &lt;ui-ai-queue-item&gt;...&lt;/ui-ai-queue-item&gt;
-  &lt;ui-ai-queue-item-indicator&gt;...&lt;/ui-ai-queue-item-indicator&gt;
-  &lt;ui-ai-queue-item-content&gt;...&lt;/ui-ai-queue-item-content&gt;
-  &lt;ui-ai-queue-list&gt;...&lt;/ui-ai-queue-list&gt;
-  &lt;!-- ... more sub-components --&gt;
+  &lt;ui-ai-queue-list&gt;
+    &lt;ui-ai-queue-section&gt;
+      &lt;ui-ai-queue-section-trigger&gt;
+        &lt;ui-ai-queue-section-label&gt;In Progress&lt;/ui-ai-queue-section-label&gt;
+      &lt;/ui-ai-queue-section-trigger&gt;
+      &lt;ui-ai-queue-section-content&gt;
+        &lt;ui-ai-queue-item&gt;
+          &lt;ui-ai-queue-item-indicator /&gt;
+          &lt;ui-ai-queue-item-content&gt;Analyze codebase structure&lt;/ui-ai-queue-item-content&gt;
+        &lt;/ui-ai-queue-item&gt;
+        &lt;ui-ai-queue-item&gt;
+          &lt;ui-ai-queue-item-indicator /&gt;
+          &lt;ui-ai-queue-item-content&gt;Generate test cases&lt;/ui-ai-queue-item-content&gt;
+        &lt;/ui-ai-queue-item&gt;
+      &lt;/ui-ai-queue-section-content&gt;
+    &lt;/ui-ai-queue-section&gt;
+  &lt;/ui-ai-queue-list&gt;
 &lt;/ui-ai-queue&gt;</code></pre>
               </div>
             </section>

@@ -424,7 +424,11 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">This component requires the AI SDK to function. See the usage code below for the component structure.</div>
+                    <ui-ai-snippet>
+  <ui-ai-snippet-addon>$</ui-ai-snippet-addon>
+  <ui-ai-snippet-input value="npm install @ai-sdk/react" readonly />
+  <ui-ai-snippet-copy-button />
+</ui-ai-snippet>
                   </div>
             </section>
 
@@ -432,10 +436,9 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-snippet&gt;
-  &lt;ui-ai-snippet-addon&gt;...&lt;/ui-ai-snippet-addon&gt;
-  &lt;ui-ai-snippet-text&gt;...&lt;/ui-ai-snippet-text&gt;
-  &lt;ui-ai-snippet-input&gt;...&lt;/ui-ai-snippet-input&gt;
-  &lt;ui-ai-snippet-copy-button&gt;...&lt;/ui-ai-snippet-copy-button&gt;
+  &lt;ui-ai-snippet-addon&gt;$&lt;/ui-ai-snippet-addon&gt;
+  &lt;ui-ai-snippet-input value=&quot;npm install @ai-sdk/react&quot; readonly /&gt;
+  &lt;ui-ai-snippet-copy-button /&gt;
 &lt;/ui-ai-snippet&gt;</code></pre>
               </div>
             </section>
