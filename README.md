@@ -1,23 +1,112 @@
-# registry-template
+# Reactolith UI
 
-You can use the `shadcn` CLI to run your own component registry. Running your own
-component registry allows you to distribute your custom components, hooks, pages, and
-other files to any React project.
+A component library built with React 19 + Base UI + Tailwind CSS v4. Uses a custom loader to resolve `<ui-*>` tags to the correct component exports — no individual wrapper files needed.
 
-> [!IMPORTANT]  
-> This template uses Tailwind v4. For Tailwind v3, see [registry-template-v3](https://github.com/shadcn-ui/registry-template-v3).
+## Installation
 
-## Getting Started
+```bash
+npm install @reactolith/ui reactolith @loadable/component
+```
 
-This is a template for creating a custom registry using Next.js.
+## Setup
 
-- The template uses a `registry.json` file to define components and their files.
-- The `shadcn build` command is used to build the registry.
-- The registry items are served as static files under `public/r/[name].json`.
-- The template also includes a route handler for serving registry items.
-- Every registry item are compatible with the `shadcn` CLI.
-- We have also added v0 integration using the `Open in v0` api.
+### 1. Vite configuration
 
-## Documentation
+Reactolith UI is distributed as source TypeScript. Add the `@/` alias and include the package in Tailwind's source scanning:
 
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
+```ts
+// vite.config.ts
+import path from "path"
+import tailwindcss from "@tailwindcss/vite"
+import react from "@vitejs/plugin-react"
+import { defineConfig } from "vite"
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  resolve: {
+    alias: {
+      "@/": path.resolve(__dirname, "node_modules/@reactolith/ui/"),
+    },
+  },
+})
+```
+
+### 2. CSS
+
+Import Tailwind and the component styles in your main CSS file:
+
+```css
+@import "tailwindcss";
+@import "tw-animate-css";
+@source "../node_modules/@reactolith/ui/components";
+@source "../node_modules/@reactolith/ui/lib";
+```
+
+### 3. Entry point
+
+Import the package to register all `<ui-*>` custom elements:
+
+```ts
+import "@reactolith/ui"
+```
+
+That's it. You can now use any component as an HTML tag:
+
+```html
+<ui-button variant="outline">Click me</ui-button>
+
+<ui-card>
+  <ui-card-header>
+    <ui-card-title>Title</ui-card-title>
+  </ui-card-header>
+  <ui-card-content>Content here</ui-card-content>
+</ui-card>
+```
+
+## How it works
+
+The loader in `app/loader.tsx` dynamically resolves tag names to component exports:
+
+- `ui-field-label` → `components/ui/field.tsx` → `FieldLabel` export
+- `ui-ai-message-content` → `components/ai-elements/message.tsx` → `MessageContent`
+- `ui-area-chart` → `recharts` → `AreaChart`
+
+It also applies behavior wrappers (close-on-navigate for overlays, render props for triggers, prop transforms) without needing individual wrapper files per component.
+
+## Advanced: Custom loader
+
+If you need to customize the loader or add your own component modules:
+
+```ts
+import loadable from "@loadable/component"
+import { App } from "reactolith"
+import { createComponentLoader } from "@reactolith/ui/loader"
+import type { ComponentType } from "react"
+
+const modules = import.meta.glob([
+  "@/components/ui/*.tsx",
+  "@/components/ai-elements/*.tsx",
+  // add your own component globs here
+])
+
+new App(
+  loadable(
+    createComponentLoader(modules),
+    { cacheKey: ({ is }: { is: string }) => is },
+  ) as unknown as ComponentType<Record<string, unknown>>,
+)
+```
+
+## Components
+
+### UI Components (`<ui-*>`)
+
+54 component groups based on shadcn/ui: accordion, alert, button, card, dialog, dropdown-menu, sidebar, table, tabs, and more.
+
+### AI Components (`<ui-ai-*>`)
+
+Specialized components for AI interfaces: message, code-block, canvas, prompt-input, reasoning, tool, and more.
+
+## License
+
+MIT
