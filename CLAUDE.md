@@ -8,12 +8,27 @@ This is a shadcn-based component registry built with Vite + React 19 + Base UI +
 
 These are shadcn base component copies. In a real project they come from `npx shadcn add` and should never be manually edited. Treat them as read-only third-party code.
 
-### `registry/default/` — All custom logic goes here
+### `app/loader.tsx` — Custom loadable loader
 
-The `registry/` directory contains wrapper components that extend and enhance the base `components/ui/` primitives. **All feature implementations, behavioral enhancements, and custom logic MUST go in `registry/`**, never in `components/ui/`.
+The loader automatically resolves `<ui-*>` tags to the correct component exports without needing individual wrapper files. It handles:
 
-- `registry/default/app/` — Component wrappers (one subdirectory per component)
-- `registry/default/lib/` — Shared utilities used across registry components
+1. **Module resolution**: `ui-field-label` → `components/ui/field.tsx` → `FieldLabel` export (case-insensitive lookup, progressively removes trailing kebab segments to find the module file)
+2. **AI components**: `ui-ai-message-content` → `components/ai-elements/message.tsx` → `MessageContent`
+3. **Recharts**: `ui-area-chart` → `recharts` → `AreaChart`
+4. **Standard behavior HOCs**: `STANDARD_BEHAVIORS` map — applies `renderLinkable`, `renderTrigger`, `CloseOverlayProvider`, or `useCloseOverlay` wrappers
+5. **Component-specific wrappers**: `COMPONENT_WRAPPERS` map — inline HOCs for select (provider/consumer), combobox (provider/list-renderer), command-item (href→`<a>`), sidebar buttons (useSidebar + close), drawer triggers (smart Button wrapping)
+6. **Prop transforms**: `PROP_TRANSFORMS` map — simple prop rewriting for progress (value coercion), spinner (size mapping), chart-container (className), chart-tooltip (children→content)
+7. **Override files**: `registry/default/app/**/*.tsx` take priority for components that need standalone implementations
+
+### `registry/default/app/` — Override files only
+
+Only 2 override files remain for components that are standalone implementations (not wrappers around base components): **sonner** (declarative toast firing via `toasts` prop) and **theme-switch** (complete light/dark/system toggle component).
+
+### `registry/default/lib/` — Shared utilities
+
+- `close-overlay.tsx` — CloseOverlayProvider/useCloseOverlay context
+- `render-element.tsx` — renderLinkable, renderTrigger, getSingleElement
+- `select-items.tsx` — SelectItemsProvider/useSelectItemsRegister context
 
 ## Close-on-Navigation Pattern
 
@@ -25,17 +40,26 @@ Navigation links inside overlays (sidebars, sheets, dropdowns, popovers, command
 
 2. **Item components with `href`** (`DropdownMenuItem`, `ContextMenuItem`, `MenubarItem`, `CommandItem`, `NavigationMenuLink`) consume the context via `useCloseOverlay()` and call the close function on click.
 
-3. **Sidebar** handles mobile close separately via `useSidebar().setOpenMobile(false)` in `sidebar-menu-button.tsx` and `sidebar-menu-sub-button.tsx`.
+3. **Sidebar** handles mobile close separately via `useSidebar().setOpenMobile(false)` in the `withSidebarLinkable`/`withSidebarSubLinkable` wrappers in `app/loader.tsx`.
 
 4. **Dropdown/Context/Menubar menus** auto-close their own menu via Base UI's built-in behavior. The `useCloseOverlay()` hook additionally closes any parent overlay (e.g., a Sheet containing a DropdownMenu).
 
 ### When adding new components with navigation links
 
-- If the component is an **overlay container**: wrap children with `<CloseOverlayProvider onClose={...}>` using the `onOpenChange` prop.
-- If the component is an **item with `href`**: call `useCloseOverlay()` and invoke it in the click handler.
-- Import from `@/registry/default/lib/close-overlay`.
+- If the component is an **overlay container**: add it to the `'overlay'` behavior in `app/loader.tsx` `STANDARD_BEHAVIORS` map.
+- If the component is an **item with `href`**: add it to `'linkable'` (without close) or `'linkable-close'` (with close) in the `STANDARD_BEHAVIORS` map.
+- If the component is a **trigger with single-child render prop**: add it to `'trigger'` in the `STANDARD_BEHAVIORS` map.
+- If it needs **unique logic**: add a wrapper function in `COMPONENT_WRAPPERS` (receives both the component and the loaded module for sibling export access).
+- If it needs **simple prop rewriting**: add an entry to `PROP_TRANSFORMS`.
+- Only create an override file in `registry/default/app/` if the component is a completely standalone implementation.
 
 ## When working on registry components
 
-- Execute `npx generate-web-types --components registry/default/app/ --prefix ui-` to generate a web-types-json for all components with all props
+- To regenerate `web-types.json` (all components with all props), run:
+  ```
+  npx generate-web-types -c components/ui -p ui- -o web-types.json && \
+  npx generate-web-types -c components/ai-elements -p ui-ai- -o web-types-ai.json && \
+  npx generate-web-types -c registry/default/app -p ui- -o web-types-ov.json && \
+  node -e "const f=require('fs'),m=p=>JSON.parse(f.readFileSync(p,'utf8'));const u=m('web-types.json');u.contributions.html.elements.push(...m('web-types-ai.json').contributions.html.elements,...m('web-types-ov.json').contributions.html.elements);f.writeFileSync('web-types.json',JSON.stringify(u,null,2));['web-types-ai.json','web-types-ov.json'].forEach(p=>f.unlinkSync(p))"
+  ```
 
