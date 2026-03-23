@@ -420,17 +420,15 @@
             </div>
 
             <div class="prose prose-neutral dark:prose-invert max-w-none">
-              <h2>Using the shadcn CLI (Recommended)</h2>
-              <p>Reactolith UI is distributed as a <a href="https://ui.shadcn.com/docs/registry">shadcn registry</a>. You can add individual components to your project using the shadcn CLI:</p>
+              <h2>Install via npm</h2>
+              <p>Reactolith UI is distributed as an npm package. Install it alongside its peer dependencies:</p>
             </div>
 
             <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
-              <pre class="p-4 text-sm"><code>npx shadcn@latest add https://reactolith.github.io/ui/r/button.json</code></pre>
+              <pre class="p-4 text-sm"><code>npm install @reactolith/ui reactolith react react-dom</code></pre>
             </div>
 
             <div class="prose prose-neutral dark:prose-invert max-w-none">
-              <p>This will install the button component and all its dependencies into your project.</p>
-
               <h2>Prerequisites</h2>
               <ul>
                 <li>Node.js 18+</li>
@@ -448,35 +446,23 @@ mkdir my-app &amp;&amp; cd my-app
 npm init -y
 
 # 2. Install dependencies
-npm install reactolith react react-dom
-npm install -D tailwindcss @tailwindcss/vite vite @vitejs/plugin-react
-
-# 3. Install shadcn
-npx shadcn@latest init
-
-# 4. Add components from the Reactolith UI registry
-npx shadcn@latest add https://reactolith.github.io/ui/r/button.json
-npx shadcn@latest add https://reactolith.github.io/ui/r/card.json
-# ... add more components as needed</code></pre>
+npm install @reactolith/ui reactolith react react-dom
+npm install -D tailwindcss @tailwindcss/vite vite @vitejs/plugin-react</code></pre>
             </div>
 
             <div class="prose prose-neutral dark:prose-invert max-w-none">
               <h2>CSS Setup</h2>
-              <p>Make sure your main CSS file imports Tailwind and the shadcn styles:</p>
+              <p>Make sure your main CSS file imports Tailwind and the component styles:</p>
             </div>
 
             <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
               <pre class="p-4 text-sm"><code>@import &quot;tailwindcss&quot;;
-@import &quot;tw-animate-css&quot;;
-@import &quot;shadcn/tailwind.css&quot;;
-
-/* Import the style-vega.css for cn-* component classes */
-@import &quot;./style-vega.css&quot;;</code></pre>
+@import &quot;tw-animate-css&quot;;</code></pre>
             </div>
 
             <div class="prose prose-neutral dark:prose-invert max-w-none">
               <h2>Available Components</h2>
-              <p>Browse all 54 component groups in the sidebar to see what's available. Each component can be installed individually from the registry.</p>
+              <p>Browse all 54 component groups in the sidebar to see what's available. All components are included in the package and resolved automatically by the loader.</p>
             </div>
         </div>
       </div>

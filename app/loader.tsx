@@ -1,8 +1,8 @@
 import * as React from "react"
 import { type ComponentType } from "react"
-import { renderLinkable, renderTrigger, getSingleElement } from "@/registry/default/lib/render-element"
-import { CloseOverlayProvider, useCloseOverlay } from "@/registry/default/lib/close-overlay"
-import { SelectItemsProvider, useSelectItemsRegister } from "@/registry/default/lib/select-items"
+import { renderLinkable, renderTrigger, getSingleElement } from "@/lib/render-element"
+import { CloseOverlayProvider, useCloseOverlay } from "@/lib/close-overlay"
+import { SelectItemsProvider, useSelectItemsRegister } from "@/lib/select-items"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -56,7 +56,7 @@ function findModuleInDir(name: string, modules: ModuleMap, dirSegment: string): 
 /** Find override file in registry/default/app/ */
 function findOverride(name: string, modules: ModuleMap): string | null {
   return Object.keys(modules).find(k =>
-    k.includes('/registry/default/app/') && k.endsWith(`/${name}.tsx`)
+    k.includes('/app/overrides/') && k.endsWith(`/${name}.tsx`)
   ) || null
 }
 
