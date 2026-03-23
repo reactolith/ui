@@ -4017,6 +4017,21 @@
       ]
     },
     {
+      "name": "theme-switch",
+      "type": "registry:component",
+      "title": "Theme Switch",
+      "files": [
+        {
+          "path": "registry/default/app/theme-switch/theme-switch.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu"
+      ]
+    },
+    {
       "name": "toggle",
       "type": "registry:component",
       "title": "Toggle",
