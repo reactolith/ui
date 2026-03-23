@@ -2,16 +2,15 @@ import "./index.css";
 import loadable from "@loadable/component";
 import { App } from "reactolith";
 import type { ComponentType } from "react";
+import { createComponentLoader } from "./loader";
 
-const modules = import.meta.glob("@/registry/default/app/**/*.tsx");
+const uiModules = import.meta.glob("@/components/ui/*.tsx");
+const aiModules = import.meta.glob("@/components/ai-elements/*.tsx");
+const overrideModules = import.meta.glob("@/registry/default/app/**/*.tsx");
 
 new App(
-    loadable(({ is }: { is: string }) => {
-        const name = is.substring(3)
-        const match = Object.keys(modules).find(key => key.endsWith(`/${name}.tsx`));
-        if (!match) throw new Error(`Component not found: ${is}`);
-        return modules[match]() as Promise<{ default: ComponentType }>;
-    }, {
-        cacheKey: ({ is }: { is: string }) => is,
-    }) as unknown as ComponentType<Record<string, unknown>>,
+    loadable(
+        createComponentLoader(uiModules, aiModules, overrideModules),
+        { cacheKey: ({ is }: { is: string }) => is },
+    ) as unknown as ComponentType<Record<string, unknown>>,
 );
