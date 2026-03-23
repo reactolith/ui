@@ -919,6 +919,9 @@
           "path": "registry/default/app/combobox/combobox.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "combobox"
       ]
     },
     {
@@ -930,6 +933,9 @@
           "path": "registry/default/app/combobox/combobox-chip.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "combobox"
       ]
     },
     {
@@ -941,6 +947,9 @@
           "path": "registry/default/app/combobox/combobox-chips.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "combobox"
       ]
     },
     {
@@ -952,6 +961,9 @@
           "path": "registry/default/app/combobox/combobox-chips-input.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "combobox"
       ]
     },
     {
@@ -963,6 +975,9 @@
           "path": "registry/default/app/combobox/combobox-collection.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "combobox"
       ]
     },
     {
@@ -974,6 +989,9 @@
           "path": "registry/default/app/combobox/combobox-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "combobox"
       ]
     },
     {
@@ -985,6 +1003,9 @@
           "path": "registry/default/app/combobox/combobox-empty.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "combobox"
       ]
     },
     {
@@ -996,6 +1017,9 @@
           "path": "registry/default/app/combobox/combobox-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "combobox"
       ]
     },
     {
@@ -1007,6 +1031,9 @@
           "path": "registry/default/app/combobox/combobox-input.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "combobox"
       ]
     },
     {
@@ -1018,6 +1045,9 @@
           "path": "registry/default/app/combobox/combobox-item.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "combobox"
       ]
     },
     {
@@ -1029,6 +1059,9 @@
           "path": "registry/default/app/combobox/combobox-label.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "combobox"
       ]
     },
     {
@@ -1040,6 +1073,9 @@
           "path": "registry/default/app/combobox/combobox-list.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "combobox"
       ]
     },
     {
@@ -1051,6 +1087,9 @@
           "path": "registry/default/app/combobox/combobox-separator.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "combobox"
       ]
     },
     {
@@ -1062,6 +1101,9 @@
           "path": "registry/default/app/combobox/combobox-trigger.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "combobox"
       ]
     },
     {
@@ -1073,6 +1115,9 @@
           "path": "registry/default/app/combobox/combobox-value.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "combobox"
       ]
     },
     {
@@ -1084,6 +1129,9 @@
           "path": "registry/default/app/command/command.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "command"
       ]
     },
     {
@@ -1097,6 +1145,7 @@
         }
       ],
       "registryDependencies": [
+        "command",
         "@reactolith/close-overlay"
       ]
     },
@@ -1109,6 +1158,9 @@
           "path": "registry/default/app/command/command-empty.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "command"
       ]
     },
     {
@@ -1120,6 +1172,9 @@
           "path": "registry/default/app/command/command-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "command"
       ]
     },
     {
@@ -1131,6 +1186,9 @@
           "path": "registry/default/app/command/command-input.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "command"
       ]
     },
     {
@@ -1144,6 +1202,7 @@
         }
       ],
       "registryDependencies": [
+        "command",
         "@reactolith/close-overlay"
       ]
     },
@@ -1156,6 +1215,9 @@
           "path": "registry/default/app/command/command-list.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "command"
       ]
     },
     {
@@ -1167,6 +1229,9 @@
           "path": "registry/default/app/command/command-separator.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "command"
       ]
     },
     {
@@ -1178,6 +1243,9 @@
           "path": "registry/default/app/command/command-shortcut.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "command"
       ]
     },
     {
@@ -1189,6 +1257,9 @@
           "path": "registry/default/app/context-menu/context-menu.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "context-menu"
       ]
     },
     {
@@ -1200,6 +1271,9 @@
           "path": "registry/default/app/context-menu/context-menu-checkbox-item.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "context-menu"
       ]
     },
     {
@@ -1211,6 +1285,9 @@
           "path": "registry/default/app/context-menu/context-menu-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "context-menu"
       ]
     },
     {
@@ -1222,6 +1299,9 @@
           "path": "registry/default/app/context-menu/context-menu-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "context-menu"
       ]
     },
     {
@@ -1235,6 +1315,7 @@
         }
       ],
       "registryDependencies": [
+        "context-menu",
         "@reactolith/close-overlay",
         "@reactolith/render-element"
       ]
@@ -1248,6 +1329,9 @@
           "path": "registry/default/app/context-menu/context-menu-label.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "context-menu"
       ]
     },
     {
@@ -1259,6 +1343,9 @@
           "path": "registry/default/app/context-menu/context-menu-portal.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "context-menu"
       ]
     },
     {
@@ -1270,6 +1357,9 @@
           "path": "registry/default/app/context-menu/context-menu-radio-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "context-menu"
       ]
     },
     {
@@ -1281,6 +1371,9 @@
           "path": "registry/default/app/context-menu/context-menu-radio-item.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "context-menu"
       ]
     },
     {
@@ -1292,6 +1385,9 @@
           "path": "registry/default/app/context-menu/context-menu-separator.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "context-menu"
       ]
     },
     {
@@ -1303,6 +1399,9 @@
           "path": "registry/default/app/context-menu/context-menu-shortcut.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "context-menu"
       ]
     },
     {
@@ -1314,6 +1413,9 @@
           "path": "registry/default/app/context-menu/context-menu-sub.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "context-menu"
       ]
     },
     {
@@ -1325,6 +1427,9 @@
           "path": "registry/default/app/context-menu/context-menu-sub-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "context-menu"
       ]
     },
     {
@@ -1336,6 +1441,9 @@
           "path": "registry/default/app/context-menu/context-menu-sub-trigger.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "context-menu"
       ]
     },
     {
@@ -1347,6 +1455,9 @@
           "path": "registry/default/app/context-menu/context-menu-trigger.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "context-menu"
       ]
     },
     {
@@ -1360,6 +1471,7 @@
         }
       ],
       "registryDependencies": [
+        "dialog",
         "@reactolith/close-overlay"
       ]
     },
@@ -1374,6 +1486,7 @@
         }
       ],
       "registryDependencies": [
+        "dialog",
         "@reactolith/render-element"
       ]
     },
@@ -1386,6 +1499,9 @@
           "path": "registry/default/app/dialog/dialog-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dialog"
       ]
     },
     {
@@ -1397,6 +1513,9 @@
           "path": "registry/default/app/dialog/dialog-description.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dialog"
       ]
     },
     {
@@ -1408,6 +1527,9 @@
           "path": "registry/default/app/dialog/dialog-footer.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dialog"
       ]
     },
     {
@@ -1419,6 +1541,9 @@
           "path": "registry/default/app/dialog/dialog-header.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dialog"
       ]
     },
     {
@@ -1430,6 +1555,9 @@
           "path": "registry/default/app/dialog/dialog-overlay.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dialog"
       ]
     },
     {
@@ -1441,6 +1569,9 @@
           "path": "registry/default/app/dialog/dialog-portal.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dialog"
       ]
     },
     {
@@ -1452,6 +1583,9 @@
           "path": "registry/default/app/dialog/dialog-title.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dialog"
       ]
     },
     {
@@ -1465,6 +1599,7 @@
         }
       ],
       "registryDependencies": [
+        "dialog",
         "@reactolith/render-element"
       ]
     },
@@ -1477,6 +1612,9 @@
           "path": "registry/default/app/direction-provider/direction-provider.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "direction"
       ]
     },
     {
@@ -1488,6 +1626,9 @@
           "path": "registry/default/app/dropdown-menu/dropdown-menu.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
       ]
     },
     {
@@ -1499,6 +1640,9 @@
           "path": "registry/default/app/dropdown-menu/dropdown-menu-checkbox-item.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
       ]
     },
     {
@@ -1510,6 +1654,9 @@
           "path": "registry/default/app/dropdown-menu/dropdown-menu-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
       ]
     },
     {
@@ -1521,6 +1668,9 @@
           "path": "registry/default/app/dropdown-menu/dropdown-menu-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
       ]
     },
     {
@@ -1534,6 +1684,7 @@
         }
       ],
       "registryDependencies": [
+        "dropdown-menu",
         "@reactolith/close-overlay",
         "@reactolith/render-element"
       ]
@@ -1547,6 +1698,9 @@
           "path": "registry/default/app/dropdown-menu/dropdown-menu-label.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
       ]
     },
     {
@@ -1558,6 +1712,9 @@
           "path": "registry/default/app/dropdown-menu/dropdown-menu-portal.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
       ]
     },
     {
@@ -1569,6 +1726,9 @@
           "path": "registry/default/app/dropdown-menu/dropdown-menu-radio-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
       ]
     },
     {
@@ -1580,6 +1740,9 @@
           "path": "registry/default/app/dropdown-menu/dropdown-menu-radio-item.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
       ]
     },
     {
@@ -1591,6 +1754,9 @@
           "path": "registry/default/app/dropdown-menu/dropdown-menu-separator.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
       ]
     },
     {
@@ -1602,6 +1768,9 @@
           "path": "registry/default/app/dropdown-menu/dropdown-menu-shortcut.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
       ]
     },
     {
@@ -1613,6 +1782,9 @@
           "path": "registry/default/app/dropdown-menu/dropdown-menu-sub.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
       ]
     },
     {
@@ -1624,6 +1796,9 @@
           "path": "registry/default/app/dropdown-menu/dropdown-menu-sub-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
       ]
     },
     {
@@ -1635,6 +1810,9 @@
           "path": "registry/default/app/dropdown-menu/dropdown-menu-sub-trigger.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
       ]
     },
     {
@@ -1648,6 +1826,7 @@
         }
       ],
       "registryDependencies": [
+        "dropdown-menu",
         "@reactolith/render-element"
       ]
     },
@@ -1660,6 +1839,9 @@
           "path": "registry/default/app/empty/empty.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "empty"
       ]
     },
     {
@@ -1671,6 +1853,9 @@
           "path": "registry/default/app/empty/empty-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "empty"
       ]
     },
     {
@@ -1682,6 +1867,9 @@
           "path": "registry/default/app/empty/empty-description.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "empty"
       ]
     },
     {
@@ -1693,6 +1881,9 @@
           "path": "registry/default/app/empty/empty-header.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "empty"
       ]
     },
     {
@@ -1704,6 +1895,9 @@
           "path": "registry/default/app/empty/empty-media.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "empty"
       ]
     },
     {
@@ -1715,6 +1909,9 @@
           "path": "registry/default/app/empty/empty-title.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "empty"
       ]
     },
     {
@@ -1726,6 +1923,9 @@
           "path": "registry/default/app/field/field.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "field"
       ]
     },
     {
@@ -1737,6 +1937,9 @@
           "path": "registry/default/app/field/field-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "field"
       ]
     },
     {
@@ -1748,6 +1951,9 @@
           "path": "registry/default/app/field/field-description.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "field"
       ]
     },
     {
@@ -1759,6 +1965,9 @@
           "path": "registry/default/app/field/field-error.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "field"
       ]
     },
     {
@@ -1770,6 +1979,9 @@
           "path": "registry/default/app/field/field-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "field"
       ]
     },
     {
@@ -1781,6 +1993,9 @@
           "path": "registry/default/app/field/field-label.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "field"
       ]
     },
     {
@@ -1792,6 +2007,9 @@
           "path": "registry/default/app/field/field-legend.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "field"
       ]
     },
     {
@@ -1803,6 +2021,9 @@
           "path": "registry/default/app/field/field-separator.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "field"
       ]
     },
     {
@@ -1814,6 +2035,9 @@
           "path": "registry/default/app/field/field-set.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "field"
       ]
     },
     {
@@ -1825,6 +2049,9 @@
           "path": "registry/default/app/field/field-title.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "field"
       ]
     },
     {
@@ -1836,6 +2063,9 @@
           "path": "registry/default/app/hover-card/hover-card.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "hover-card"
       ]
     },
     {
@@ -1847,6 +2077,9 @@
           "path": "registry/default/app/hover-card/hover-card-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "hover-card"
       ]
     },
     {
@@ -1858,6 +2091,9 @@
           "path": "registry/default/app/hover-card/hover-card-trigger.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "hover-card"
       ]
     },
     {
@@ -1883,6 +2119,9 @@
           "path": "registry/default/app/input-group/input-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "input-group"
       ]
     },
     {
@@ -1894,6 +2133,9 @@
           "path": "registry/default/app/input-group/input-group-addon.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "input-group"
       ]
     },
     {
@@ -1905,6 +2147,9 @@
           "path": "registry/default/app/input-group/input-group-button.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "input-group"
       ]
     },
     {
@@ -1916,6 +2161,9 @@
           "path": "registry/default/app/input-group/input-group-input.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "input-group"
       ]
     },
     {
@@ -1927,6 +2175,9 @@
           "path": "registry/default/app/input-group/input-group-text.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "input-group"
       ]
     },
     {
@@ -1938,6 +2189,9 @@
           "path": "registry/default/app/input-group/input-group-textarea.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "input-group"
       ]
     },
     {
@@ -1949,6 +2203,9 @@
           "path": "registry/default/app/input-otp/input-otp.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "input-otp"
       ]
     },
     {
@@ -1960,6 +2217,9 @@
           "path": "registry/default/app/input-otp/input-otp-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "input-otp"
       ]
     },
     {
@@ -1971,6 +2231,9 @@
           "path": "registry/default/app/input-otp/input-otp-separator.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "input-otp"
       ]
     },
     {
@@ -1982,6 +2245,9 @@
           "path": "registry/default/app/input-otp/input-otp-slot.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "input-otp"
       ]
     },
     {
@@ -1993,6 +2259,9 @@
           "path": "registry/default/app/item/item.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "item"
       ]
     },
     {
@@ -2004,6 +2273,9 @@
           "path": "registry/default/app/item/item-actions.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "item"
       ]
     },
     {
@@ -2015,6 +2287,9 @@
           "path": "registry/default/app/item/item-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "item"
       ]
     },
     {
@@ -2026,6 +2301,9 @@
           "path": "registry/default/app/item/item-description.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "item"
       ]
     },
     {
@@ -2037,6 +2315,9 @@
           "path": "registry/default/app/item/item-footer.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "item"
       ]
     },
     {
@@ -2048,6 +2329,9 @@
           "path": "registry/default/app/item/item-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "item"
       ]
     },
     {
@@ -2059,6 +2343,9 @@
           "path": "registry/default/app/item/item-header.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "item"
       ]
     },
     {
@@ -2070,6 +2357,9 @@
           "path": "registry/default/app/item/item-media.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "item"
       ]
     },
     {
@@ -2081,6 +2371,9 @@
           "path": "registry/default/app/item/item-separator.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "item"
       ]
     },
     {
@@ -2092,6 +2385,9 @@
           "path": "registry/default/app/item/item-title.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "item"
       ]
     },
     {
@@ -2103,6 +2399,9 @@
           "path": "registry/default/app/kbd/kbd.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "kbd"
       ]
     },
     {
@@ -2114,6 +2413,9 @@
           "path": "registry/default/app/kbd/kbd-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "kbd"
       ]
     },
     {
@@ -2139,6 +2441,9 @@
           "path": "registry/default/app/menubar/menubar.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "menubar"
       ]
     },
     {
@@ -2150,6 +2455,9 @@
           "path": "registry/default/app/menubar/menubar-checkbox-item.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "menubar"
       ]
     },
     {
@@ -2161,6 +2469,9 @@
           "path": "registry/default/app/menubar/menubar-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "menubar"
       ]
     },
     {
@@ -2172,6 +2483,9 @@
           "path": "registry/default/app/menubar/menubar-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "menubar"
       ]
     },
     {
@@ -2185,6 +2499,7 @@
         }
       ],
       "registryDependencies": [
+        "menubar",
         "@reactolith/close-overlay",
         "@reactolith/render-element"
       ]
@@ -2198,6 +2513,9 @@
           "path": "registry/default/app/menubar/menubar-label.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "menubar"
       ]
     },
     {
@@ -2209,6 +2527,9 @@
           "path": "registry/default/app/menubar/menubar-menu.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "menubar"
       ]
     },
     {
@@ -2220,6 +2541,9 @@
           "path": "registry/default/app/menubar/menubar-portal.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "menubar"
       ]
     },
     {
@@ -2231,6 +2555,9 @@
           "path": "registry/default/app/menubar/menubar-radio-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "menubar"
       ]
     },
     {
@@ -2242,6 +2569,9 @@
           "path": "registry/default/app/menubar/menubar-radio-item.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "menubar"
       ]
     },
     {
@@ -2253,6 +2583,9 @@
           "path": "registry/default/app/menubar/menubar-separator.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "menubar"
       ]
     },
     {
@@ -2264,6 +2597,9 @@
           "path": "registry/default/app/menubar/menubar-shortcut.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "menubar"
       ]
     },
     {
@@ -2275,6 +2611,9 @@
           "path": "registry/default/app/menubar/menubar-sub.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "menubar"
       ]
     },
     {
@@ -2286,6 +2625,9 @@
           "path": "registry/default/app/menubar/menubar-sub-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "menubar"
       ]
     },
     {
@@ -2297,6 +2639,9 @@
           "path": "registry/default/app/menubar/menubar-sub-trigger.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "menubar"
       ]
     },
     {
@@ -2308,6 +2653,9 @@
           "path": "registry/default/app/menubar/menubar-trigger.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "menubar"
       ]
     },
     {
@@ -2319,6 +2667,9 @@
           "path": "registry/default/app/native-select/native-select.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "native-select"
       ]
     },
     {
@@ -2330,6 +2681,9 @@
           "path": "registry/default/app/native-select/native-select-opt-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "native-select"
       ]
     },
     {
@@ -2341,6 +2695,9 @@
           "path": "registry/default/app/native-select/native-select-option.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "native-select"
       ]
     },
     {
@@ -2352,6 +2709,9 @@
           "path": "registry/default/app/navigation-menu/navigation-menu.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "navigation-menu"
       ]
     },
     {
@@ -2363,6 +2723,9 @@
           "path": "registry/default/app/navigation-menu/navigation-menu-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "navigation-menu"
       ]
     },
     {
@@ -2374,6 +2737,9 @@
           "path": "registry/default/app/navigation-menu/navigation-menu-indicator.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "navigation-menu"
       ]
     },
     {
@@ -2385,6 +2751,9 @@
           "path": "registry/default/app/navigation-menu/navigation-menu-item.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "navigation-menu"
       ]
     },
     {
@@ -2398,6 +2767,7 @@
         }
       ],
       "registryDependencies": [
+        "navigation-menu",
         "@reactolith/close-overlay",
         "@reactolith/render-element"
       ]
@@ -2411,6 +2781,9 @@
           "path": "registry/default/app/navigation-menu/navigation-menu-list.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "navigation-menu"
       ]
     },
     {
@@ -2422,6 +2795,9 @@
           "path": "registry/default/app/navigation-menu/navigation-menu-positioner.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "navigation-menu"
       ]
     },
     {
@@ -2433,6 +2809,9 @@
           "path": "registry/default/app/navigation-menu/navigation-menu-trigger.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "navigation-menu"
       ]
     },
     {
@@ -2444,6 +2823,9 @@
           "path": "registry/default/app/pagination/pagination.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "pagination"
       ]
     },
     {
@@ -2455,6 +2837,9 @@
           "path": "registry/default/app/pagination/pagination-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "pagination"
       ]
     },
     {
@@ -2466,6 +2851,9 @@
           "path": "registry/default/app/pagination/pagination-ellipsis.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "pagination"
       ]
     },
     {
@@ -2477,6 +2865,9 @@
           "path": "registry/default/app/pagination/pagination-item.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "pagination"
       ]
     },
     {
@@ -2490,6 +2881,7 @@
         }
       ],
       "registryDependencies": [
+        "pagination",
         "@reactolith/close-overlay"
       ]
     },
@@ -2504,6 +2896,7 @@
         }
       ],
       "registryDependencies": [
+        "pagination",
         "@reactolith/close-overlay"
       ]
     },
@@ -2518,6 +2911,7 @@
         }
       ],
       "registryDependencies": [
+        "pagination",
         "@reactolith/close-overlay"
       ]
     },
@@ -2532,6 +2926,7 @@
         }
       ],
       "registryDependencies": [
+        "popover",
         "@reactolith/close-overlay"
       ]
     },
@@ -2544,6 +2939,9 @@
           "path": "registry/default/app/popover/popover-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "popover"
       ]
     },
     {
@@ -2555,6 +2953,9 @@
           "path": "registry/default/app/popover/popover-description.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "popover"
       ]
     },
     {
@@ -2566,6 +2967,9 @@
           "path": "registry/default/app/popover/popover-header.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "popover"
       ]
     },
     {
@@ -2577,6 +2981,9 @@
           "path": "registry/default/app/popover/popover-title.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "popover"
       ]
     },
     {
@@ -2700,6 +3107,9 @@
           "path": "registry/default/app/resizable/resizable-handle.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "resizable"
       ]
     },
     {
@@ -2711,6 +3121,9 @@
           "path": "registry/default/app/resizable/resizable-panel.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "resizable"
       ]
     },
     {
@@ -2722,6 +3135,9 @@
           "path": "registry/default/app/resizable/resizable-panel-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "resizable"
       ]
     },
     {
@@ -2733,6 +3149,9 @@
           "path": "registry/default/app/scroll-area/scroll-area.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "scroll-area"
       ]
     },
     {
@@ -2744,6 +3163,9 @@
           "path": "registry/default/app/scroll-area/scroll-bar.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "scroll-area"
       ]
     },
     {
@@ -2757,6 +3179,7 @@
         }
       ],
       "registryDependencies": [
+        "select",
         "@reactolith/select-items"
       ]
     },
@@ -2769,6 +3192,9 @@
           "path": "registry/default/app/select/select-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "select"
       ]
     },
     {
@@ -2780,6 +3206,9 @@
           "path": "registry/default/app/select/select-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "select"
       ]
     },
     {
@@ -2793,6 +3222,7 @@
         }
       ],
       "registryDependencies": [
+        "select",
         "@reactolith/select-items"
       ]
     },
@@ -2805,6 +3235,9 @@
           "path": "registry/default/app/select/select-label.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "select"
       ]
     },
     {
@@ -2816,6 +3249,9 @@
           "path": "registry/default/app/select/select-scroll-down-button.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "select"
       ]
     },
     {
@@ -2827,6 +3263,9 @@
           "path": "registry/default/app/select/select-scroll-up-button.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "select"
       ]
     },
     {
@@ -2838,6 +3277,9 @@
           "path": "registry/default/app/select/select-separator.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "select"
       ]
     },
     {
@@ -2849,6 +3291,9 @@
           "path": "registry/default/app/select/select-trigger.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "select"
       ]
     },
     {
@@ -2860,6 +3305,9 @@
           "path": "registry/default/app/select/select-value.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "select"
       ]
     },
     {
@@ -2887,6 +3335,7 @@
         }
       ],
       "registryDependencies": [
+        "sheet",
         "@reactolith/close-overlay"
       ]
     },
@@ -2913,6 +3362,9 @@
           "path": "registry/default/app/sheet/sheet-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sheet"
       ]
     },
     {
@@ -2924,6 +3376,9 @@
           "path": "registry/default/app/sheet/sheet-description.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sheet"
       ]
     },
     {
@@ -2935,6 +3390,9 @@
           "path": "registry/default/app/sheet/sheet-footer.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sheet"
       ]
     },
     {
@@ -2946,6 +3404,9 @@
           "path": "registry/default/app/sheet/sheet-header.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sheet"
       ]
     },
     {
@@ -2957,6 +3418,9 @@
           "path": "registry/default/app/sheet/sheet-title.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sheet"
       ]
     },
     {
@@ -2982,6 +3446,9 @@
           "path": "registry/default/app/sidebar/sidebar.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -2993,6 +3460,9 @@
           "path": "registry/default/app/sidebar/sidebar-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3004,6 +3474,9 @@
           "path": "registry/default/app/sidebar/sidebar-footer.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3015,6 +3488,9 @@
           "path": "registry/default/app/sidebar/sidebar-group.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3026,6 +3502,9 @@
           "path": "registry/default/app/sidebar/sidebar-group-action.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3037,6 +3516,9 @@
           "path": "registry/default/app/sidebar/sidebar-group-content.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3048,6 +3530,9 @@
           "path": "registry/default/app/sidebar/sidebar-group-label.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3059,6 +3544,9 @@
           "path": "registry/default/app/sidebar/sidebar-header.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3070,6 +3558,9 @@
           "path": "registry/default/app/sidebar/sidebar-input.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3081,6 +3572,9 @@
           "path": "registry/default/app/sidebar/sidebar-inset.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3092,6 +3586,9 @@
           "path": "registry/default/app/sidebar/sidebar-menu.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3103,6 +3600,9 @@
           "path": "registry/default/app/sidebar/sidebar-menu-action.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3114,6 +3614,9 @@
           "path": "registry/default/app/sidebar/sidebar-menu-badge.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3127,6 +3630,7 @@
         }
       ],
       "registryDependencies": [
+        "sidebar",
         "@reactolith/close-overlay",
         "@reactolith/render-element"
       ]
@@ -3140,6 +3644,9 @@
           "path": "registry/default/app/sidebar/sidebar-menu-item.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3151,6 +3658,9 @@
           "path": "registry/default/app/sidebar/sidebar-menu-skeleton.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3162,6 +3672,9 @@
           "path": "registry/default/app/sidebar/sidebar-menu-sub.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3175,6 +3688,7 @@
         }
       ],
       "registryDependencies": [
+        "sidebar",
         "@reactolith/close-overlay"
       ]
     },
@@ -3187,6 +3701,9 @@
           "path": "registry/default/app/sidebar/sidebar-menu-sub-item.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3198,6 +3715,9 @@
           "path": "registry/default/app/sidebar/sidebar-provider.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3209,6 +3729,9 @@
           "path": "registry/default/app/sidebar/sidebar-rail.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3220,6 +3743,9 @@
           "path": "registry/default/app/sidebar/sidebar-separator.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3231,6 +3757,9 @@
           "path": "registry/default/app/sidebar/sidebar-trigger.tsx",
           "type": "registry:component"
         }
+      ],
+      "registryDependencies": [
+        "sidebar"
       ]
     },
     {
@@ -3485,6 +4014,21 @@
       ],
       "registryDependencies": [
         "textarea"
+      ]
+    },
+    {
+      "name": "theme-switch",
+      "type": "registry:component",
+      "title": "Theme Switch",
+      "files": [
+        {
+          "path": "registry/default/app/theme-switch/theme-switch.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu"
       ]
     },
     {
