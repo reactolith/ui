@@ -30,13 +30,23 @@ jobs:
           GITHUB_PAGES: true
 
       # Generate web-types
-      - run: npx generate-web-types --components registry/default/app/ --prefix ui-
+      - run: |
+          npx generate-web-types -c components/ui -p ui- -o web-types.json
+          npx generate-web-types -c components/ai-elements -p ui-ai- -o web-types-ai.json
+          npx generate-web-types -c app/overrides -p ui- -o web-types-ov.json
+          node -e "
+            const f=require('fs'),m=p=>JSON.parse(f.readFileSync(p,'utf8'));
+            const u=m('web-types.json');
+            u.contributions.html.elements.push(
+              ...m('web-types-ai.json').contributions.html.elements,
+              ...m('web-types-ov.json').contributions.html.elements
+            );
+            f.writeFileSync('web-types.json',JSON.stringify(u,null,2));
+            ['web-types-ai.json','web-types-ov.json'].forEach(p=>f.unlinkSync(p));
+          "
 
-      # Build the shadcn registry
-      - run: npm run registry:build
-
-      # Copy registry files into the app build output
-      - run: cp -r public/r app/dist/r
+      # Copy web-types into build output
+      - run: cp web-types.json app/dist/
 
       - uses: actions/upload-pages-artifact@v3
         with:
