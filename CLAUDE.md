@@ -55,5 +55,11 @@ Navigation links inside overlays (sidebars, sheets, dropdowns, popovers, command
 
 ## When working on registry components
 
-- Execute `npx generate-web-types --components registry/default/app/ --prefix ui-` to generate a web-types-json for all components with all props
+- To regenerate `web-types.json` (all components with all props), run:
+  ```
+  npx generate-web-types -c components/ui -p ui- -o web-types.json && \
+  npx generate-web-types -c components/ai-elements -p ui-ai- -o web-types-ai.json && \
+  npx generate-web-types -c registry/default/app -p ui- -o web-types-ov.json && \
+  node -e "const f=require('fs'),m=p=>JSON.parse(f.readFileSync(p,'utf8'));const u=m('web-types.json');u.contributions.html.elements.push(...m('web-types-ai.json').contributions.html.elements,...m('web-types-ov.json').contributions.html.elements);f.writeFileSync('web-types.json',JSON.stringify(u,null,2));['web-types-ai.json','web-types-ov.json'].forEach(p=>f.unlinkSync(p))"
+  ```
 
