@@ -7,7 +7,7 @@ import { createComponentLoader } from "./loader";
 const modules = import.meta.glob([
     "@/components/ui/*.tsx",
     "@/components/ai-elements/*.tsx",
-    "@/registry/default/app/**/*.tsx",
+    "@/app/overrides/*.tsx",
 ]);
 
 new App(
