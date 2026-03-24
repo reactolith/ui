@@ -127,7 +127,7 @@ export function createRechartsLoader(): ExternalLoader {
 export function createOverridesLoader(modules: ModuleMap): OverrideLoader {
   return new OverrideLoader({
     modules,
-    dirSegment: "/app/overrides/",
+    dirSegment: "/overrides/",
     dir: "app/overrides",
     prefix: "ui-",
   })
