@@ -23,6 +23,7 @@
         <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
       </ui-sidebar-header>
       <ui-sidebar-content>
+        
           <ui-sidebar-group>
             <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
             <ui-sidebar-group-content>
@@ -93,7 +94,7 @@
                   <ui-sidebar-menu-button  size="sm" href="input-group.html">Input Group</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input Otp</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input OTP</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="label.html">Label</ui-sidebar-menu-button>
@@ -257,7 +258,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-artifact.html">Artifact</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  is-active size="sm" href="ai-attachments.html">Attachments</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="ai-attachments.html">Attachments</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-audio-player.html">Audio Player</ui-sidebar-menu-button>
@@ -266,7 +267,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-canvas.html">Canvas</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain Of Thought</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain of Thought</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-checkpoint.html">Checkpoint</ui-sidebar-menu-button>
@@ -308,7 +309,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-inline-citation.html">Inline Citation</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">Jsx Preview</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">JSX Preview</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-message.html">Message</ui-sidebar-menu-button>
@@ -368,7 +369,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-suggestion.html">Suggestion</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-task.html">Task</ui-sidebar-menu-button>
@@ -415,19 +416,25 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://elements.ai-sdk.dev/docs/components/attachments" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
+                <a href="https://ai.shadcn.com/docs/components/attachments" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">Attachments</h1>
-              <p class="text-lg text-muted-foreground">Displays file attachments with preview, info, and removal actions.</p>
+              <p class="text-lg text-muted-foreground">Displays file attachments in grid, list, or compact layouts with previews and removal actions.</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <ui-ai-attachments variant="list">
-  <ui-ai-attachment json-data='{"type":"file","id":"1","filename":"report.pdf","mediaType":"application/pdf"}'>
+                    <ui-ai-attachments variant="grid">
+  <ui-ai-attachment data='{"name":"report.pdf","type":"application/pdf","size":1024}'>
+    <ui-ai-attachment-preview></ui-ai-attachment-preview>
+    <ui-ai-attachment-info showMediaType></ui-ai-attachment-info>
+    <ui-ai-attachment-remove label="Remove"></ui-ai-attachment-remove>
+  </ui-ai-attachment>
+  <ui-ai-attachment data='{"name":"image.png","type":"image/png","size":2048}'>
     <ui-ai-attachment-preview></ui-ai-attachment-preview>
     <ui-ai-attachment-info></ui-ai-attachment-info>
+    <ui-ai-attachment-remove></ui-ai-attachment-remove>
   </ui-ai-attachment>
 </ui-ai-attachments>
                   </div>
@@ -436,16 +443,16 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-ai-attachments&gt;
-  &lt;ui-ai-attachment&gt;
-    &lt;ui-ai-attachment-preview&gt;
-      &lt;div class=&quot;w-16 h-16 bg-muted rounded flex items-center justify-center text-xs&quot;&gt;PDF&lt;/div&gt;
-    &lt;/ui-ai-attachment-preview&gt;
-    &lt;ui-ai-attachment-info&gt;
-      &lt;span class=&quot;text-sm font-medium&quot;&gt;report.pdf&lt;/span&gt;
-      &lt;span class=&quot;text-xs text-muted-foreground&quot;&gt;2.4 MB&lt;/span&gt;
-    &lt;/ui-ai-attachment-info&gt;
-    &lt;ui-ai-attachment-remove /&gt;
+                <pre class="p-4 text-sm"><code>&lt;ui-ai-attachments variant=&quot;grid&quot;&gt;
+  &lt;ui-ai-attachment data='{&quot;name&quot;:&quot;report.pdf&quot;,&quot;type&quot;:&quot;application/pdf&quot;,&quot;size&quot;:1024}'&gt;
+    &lt;ui-ai-attachment-preview&gt;&lt;/ui-ai-attachment-preview&gt;
+    &lt;ui-ai-attachment-info showMediaType&gt;&lt;/ui-ai-attachment-info&gt;
+    &lt;ui-ai-attachment-remove label=&quot;Remove&quot;&gt;&lt;/ui-ai-attachment-remove&gt;
+  &lt;/ui-ai-attachment&gt;
+  &lt;ui-ai-attachment data='{&quot;name&quot;:&quot;image.png&quot;,&quot;type&quot;:&quot;image/png&quot;,&quot;size&quot;:2048}'&gt;
+    &lt;ui-ai-attachment-preview&gt;&lt;/ui-ai-attachment-preview&gt;
+    &lt;ui-ai-attachment-info&gt;&lt;/ui-ai-attachment-info&gt;
+    &lt;ui-ai-attachment-remove&gt;&lt;/ui-ai-attachment-remove&gt;
   &lt;/ui-ai-attachment&gt;
 &lt;/ui-ai-attachments&gt;</code></pre>
               </div>
@@ -457,6 +464,38 @@
                 <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-attachments&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-attachment&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-attachment-preview&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-attachment-info&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-attachment-remove&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-attachment-hover-card&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-attachment-hover-card-trigger&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-attachment-hover-card-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-attachment-empty&gt;</code>
               </div>
             </section>
+
+            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-attachments&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">variant</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;grid&quot; | &quot;list&quot; | &quot;compact&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;grid&quot;</code></td><td class="py-2 text-muted-foreground">Layout variant for the attachments.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-attachment&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">data</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">AttachmentData</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Attachment data object.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onRemove</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">() =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback when attachment is removed.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-attachment-preview&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">fallbackIcon</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">ReactNode</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Icon to display when preview is unavailable.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-attachment-info&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">showMediaType</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Whether to display the media type.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-attachment-remove&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">label</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;Remove&quot;</code></td><td class="py-2 text-muted-foreground">Accessible label for the remove button.</td></tr></tbody></table>
+              </div>
+            </div></section>
 
             <section class="mb-10">
               <p class="text-sm text-muted-foreground">

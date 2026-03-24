@@ -23,6 +23,7 @@
         <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
       </ui-sidebar-header>
       <ui-sidebar-content>
+        
           <ui-sidebar-group>
             <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
             <ui-sidebar-group-content>
@@ -93,7 +94,7 @@
                   <ui-sidebar-menu-button  size="sm" href="input-group.html">Input Group</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input Otp</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input OTP</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="label.html">Label</ui-sidebar-menu-button>
@@ -266,7 +267,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-canvas.html">Canvas</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain Of Thought</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain of Thought</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-checkpoint.html">Checkpoint</ui-sidebar-menu-button>
@@ -296,7 +297,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-edge.html">Edge</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  is-active size="sm" href="ai-environment-variables.html">Environment Variables</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="ai-environment-variables.html">Environment Variables</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-file-tree.html">File Tree</ui-sidebar-menu-button>
@@ -308,7 +309,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-inline-citation.html">Inline Citation</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">Jsx Preview</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">JSX Preview</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-message.html">Message</ui-sidebar-menu-button>
@@ -368,7 +369,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-suggestion.html">Suggestion</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-task.html">Task</ui-sidebar-menu-button>
@@ -415,30 +416,31 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://elements.ai-sdk.dev/docs/components/environment-variables" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
+                <a href="https://ai.shadcn.com/docs/components/environment-variables" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">Environment Variables</h1>
-              <p class="text-lg text-muted-foreground">Displays and manages environment variables with toggle visibility.</p>
+              <p class="text-lg text-muted-foreground">Displays environment variables with toggle visibility, copy actions, and required indicators.</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <ui-ai-environment-variables>
+                    <ui-ai-environment-variables defaultShowValues>
   <ui-ai-environment-variables-header>
     <ui-ai-environment-variables-title>Environment Variables</ui-ai-environment-variables-title>
-    <ui-ai-environment-variables-toggle ></ui-ai-environment-variables-toggle>
+    <ui-ai-environment-variables-toggle></ui-ai-environment-variables-toggle>
   </ui-ai-environment-variables-header>
   <ui-ai-environment-variables-content>
-    <ui-ai-environment-variable name="API_KEY" value="sk-abc123...">
-      <ui-ai-environment-variable-name ></ui-ai-environment-variable-name>
-      <ui-ai-environment-variable-value ></ui-ai-environment-variable-value>
-      <ui-ai-environment-variable-copy-button ></ui-ai-environment-variable-copy-button>
-    </ui-ai-environment-variable>
     <ui-ai-environment-variable name="DATABASE_URL" value="postgres://localhost:5432/mydb">
-      <ui-ai-environment-variable-name ></ui-ai-environment-variable-name>
-      <ui-ai-environment-variable-value ></ui-ai-environment-variable-value>
-      <ui-ai-environment-variable-required ></ui-ai-environment-variable-required>
+      <ui-ai-environment-variable-name></ui-ai-environment-variable-name>
+      <ui-ai-environment-variable-value></ui-ai-environment-variable-value>
+      <ui-ai-environment-variable-copy-button copyFormat="export"></ui-ai-environment-variable-copy-button>
+      <ui-ai-environment-variable-required></ui-ai-environment-variable-required>
+    </ui-ai-environment-variable>
+    <ui-ai-environment-variable name="API_KEY" value="sk-abc123">
+      <ui-ai-environment-variable-name></ui-ai-environment-variable-name>
+      <ui-ai-environment-variable-value></ui-ai-environment-variable-value>
+      <ui-ai-environment-variable-copy-button copyFormat="value"></ui-ai-environment-variable-copy-button>
     </ui-ai-environment-variable>
   </ui-ai-environment-variables-content>
 </ui-ai-environment-variables>
@@ -448,21 +450,22 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-ai-environment-variables&gt;
+                <pre class="p-4 text-sm"><code>&lt;ui-ai-environment-variables defaultShowValues&gt;
   &lt;ui-ai-environment-variables-header&gt;
     &lt;ui-ai-environment-variables-title&gt;Environment Variables&lt;/ui-ai-environment-variables-title&gt;
-    &lt;ui-ai-environment-variables-toggle /&gt;
+    &lt;ui-ai-environment-variables-toggle&gt;&lt;/ui-ai-environment-variables-toggle&gt;
   &lt;/ui-ai-environment-variables-header&gt;
   &lt;ui-ai-environment-variables-content&gt;
-    &lt;ui-ai-environment-variable name=&quot;API_KEY&quot; value=&quot;sk-abc123...&quot;&gt;
-      &lt;ui-ai-environment-variable-name /&gt;
-      &lt;ui-ai-environment-variable-value /&gt;
-      &lt;ui-ai-environment-variable-copy-button /&gt;
-    &lt;/ui-ai-environment-variable&gt;
     &lt;ui-ai-environment-variable name=&quot;DATABASE_URL&quot; value=&quot;postgres://localhost:5432/mydb&quot;&gt;
-      &lt;ui-ai-environment-variable-name /&gt;
-      &lt;ui-ai-environment-variable-value /&gt;
-      &lt;ui-ai-environment-variable-required /&gt;
+      &lt;ui-ai-environment-variable-name&gt;&lt;/ui-ai-environment-variable-name&gt;
+      &lt;ui-ai-environment-variable-value&gt;&lt;/ui-ai-environment-variable-value&gt;
+      &lt;ui-ai-environment-variable-copy-button copyFormat=&quot;export&quot;&gt;&lt;/ui-ai-environment-variable-copy-button&gt;
+      &lt;ui-ai-environment-variable-required&gt;&lt;/ui-ai-environment-variable-required&gt;
+    &lt;/ui-ai-environment-variable&gt;
+    &lt;ui-ai-environment-variable name=&quot;API_KEY&quot; value=&quot;sk-abc123&quot;&gt;
+      &lt;ui-ai-environment-variable-name&gt;&lt;/ui-ai-environment-variable-name&gt;
+      &lt;ui-ai-environment-variable-value&gt;&lt;/ui-ai-environment-variable-value&gt;
+      &lt;ui-ai-environment-variable-copy-button copyFormat=&quot;value&quot;&gt;&lt;/ui-ai-environment-variable-copy-button&gt;
     &lt;/ui-ai-environment-variable&gt;
   &lt;/ui-ai-environment-variables-content&gt;
 &lt;/ui-ai-environment-variables&gt;</code></pre>
@@ -472,9 +475,29 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Sub-components</h2>
               <div class="flex flex-wrap gap-2">
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variables&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variables-header&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variables-title&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variables-toggle&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variables-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variable-group&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variable-name&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variable-value&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variable&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variable-copy-button&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variable-required&gt;</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variables&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variables-header&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variables-title&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variables-toggle&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variables-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variable&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variable-name&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variable-value&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variable-copy-button&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-environment-variable-required&gt;</code>
               </div>
             </section>
+
+            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-environment-variables&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">showValues</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Controlled visibility of values.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">defaultShowValues</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Initial visibility state.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onShowValuesChange</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">(show: boolean) =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback when visibility changes.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-environment-variable&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Variable name.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Variable value.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-environment-variable-copy-button&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onCopy</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">() =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback on copy.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onError</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">(error: Error) =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback on error.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">timeout</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Duration in ms to show success state.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">copyFormat</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;name&quot; | &quot;value&quot; | &quot;export&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Format for the copied text.</td></tr></tbody></table>
+              </div>
+            </div></section>
 
             <section class="mb-10">
               <p class="text-sm text-muted-foreground">

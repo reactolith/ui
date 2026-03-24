@@ -23,6 +23,7 @@
         <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
       </ui-sidebar-header>
       <ui-sidebar-content>
+        
           <ui-sidebar-group>
             <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
             <ui-sidebar-group-content>
@@ -93,7 +94,7 @@
                   <ui-sidebar-menu-button  size="sm" href="input-group.html">Input Group</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input Otp</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input OTP</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="label.html">Label</ui-sidebar-menu-button>
@@ -266,7 +267,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-canvas.html">Canvas</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain Of Thought</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain of Thought</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-checkpoint.html">Checkpoint</ui-sidebar-menu-button>
@@ -275,7 +276,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-code-block.html">Code Block</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  is-active size="sm" href="ai-commit.html">Commit</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="ai-commit.html">Commit</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-confirmation.html">Confirmation</ui-sidebar-menu-button>
@@ -308,7 +309,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-inline-citation.html">Inline Citation</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">Jsx Preview</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">JSX Preview</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-message.html">Message</ui-sidebar-menu-button>
@@ -368,7 +369,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-suggestion.html">Suggestion</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-task.html">Task</ui-sidebar-menu-button>
@@ -415,10 +416,10 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://elements.ai-sdk.dev/docs/components/commit" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
+                <a href="https://ai.shadcn.com/docs/components/commit" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">Commit</h1>
-              <p class="text-lg text-muted-foreground">Displays git commit details including hash, message, author, and file changes.</p>
+              <p class="text-lg text-muted-foreground">Displays a git commit with hash, message, author info, file changes, and diff statistics.</p>
             </div>
 
             <section class="mb-10">
@@ -426,26 +427,32 @@
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
                     <ui-ai-commit>
   <ui-ai-commit-header>
-    <ui-ai-commit-info>
-      <ui-ai-commit-hash>a1b2c3d</ui-ai-commit-hash>
-      <ui-ai-commit-message>feat: add user authentication flow</ui-ai-commit-message>
-    </ui-ai-commit-info>
-    <ui-ai-commit-metadata>
-      <ui-ai-commit-author>
-        <ui-ai-commit-author-avatar initials="JD" ></ui-ai-commit-author-avatar>
-      </ui-ai-commit-author>
-    </ui-ai-commit-metadata>
+    <ui-ai-commit-hash>a1b2c3d</ui-ai-commit-hash>
+    <ui-ai-commit-message>Fix authentication flow</ui-ai-commit-message>
   </ui-ai-commit-header>
+  <ui-ai-commit-metadata>
+    <ui-ai-commit-info>
+      <ui-ai-commit-author>
+        <ui-ai-commit-author-avatar initials="JD"></ui-ai-commit-author-avatar>
+        Jane Doe
+      </ui-ai-commit-author>
+      <ui-ai-commit-separator></ui-ai-commit-separator>
+      <ui-ai-commit-timestamp date="2024-01-15T10:30:00Z"></ui-ai-commit-timestamp>
+    </ui-ai-commit-info>
+    <ui-ai-commit-actions>
+      <ui-ai-commit-copy-button hash="a1b2c3d"></ui-ai-commit-copy-button>
+    </ui-ai-commit-actions>
+  </ui-ai-commit-metadata>
   <ui-ai-commit-content>
     <ui-ai-commit-files>
       <ui-ai-commit-file>
         <ui-ai-commit-file-info>
-          <ui-ai-commit-file-icon ></ui-ai-commit-file-icon>
-          <ui-ai-commit-file-path>src/auth/login.tsx</ui-ai-commit-file-path>
+          <ui-ai-commit-file-status status="modified"></ui-ai-commit-file-status>
+          <ui-ai-commit-file-path>src/auth/login.ts</ui-ai-commit-file-path>
         </ui-ai-commit-file-info>
         <ui-ai-commit-file-changes>
-          <ui-ai-commit-file-additions count="42" ></ui-ai-commit-file-additions>
-          <ui-ai-commit-file-deletions count="3" ></ui-ai-commit-file-deletions>
+          <ui-ai-commit-file-additions count="12"></ui-ai-commit-file-additions>
+          <ui-ai-commit-file-deletions count="3"></ui-ai-commit-file-deletions>
         </ui-ai-commit-file-changes>
       </ui-ai-commit-file>
     </ui-ai-commit-files>
@@ -459,26 +466,32 @@
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-commit&gt;
   &lt;ui-ai-commit-header&gt;
-    &lt;ui-ai-commit-info&gt;
-      &lt;ui-ai-commit-hash&gt;a1b2c3d&lt;/ui-ai-commit-hash&gt;
-      &lt;ui-ai-commit-message&gt;feat: add user authentication flow&lt;/ui-ai-commit-message&gt;
-    &lt;/ui-ai-commit-info&gt;
-    &lt;ui-ai-commit-metadata&gt;
-      &lt;ui-ai-commit-author&gt;
-        &lt;ui-ai-commit-author-avatar initials=&quot;JD&quot; /&gt;
-      &lt;/ui-ai-commit-author&gt;
-    &lt;/ui-ai-commit-metadata&gt;
+    &lt;ui-ai-commit-hash&gt;a1b2c3d&lt;/ui-ai-commit-hash&gt;
+    &lt;ui-ai-commit-message&gt;Fix authentication flow&lt;/ui-ai-commit-message&gt;
   &lt;/ui-ai-commit-header&gt;
+  &lt;ui-ai-commit-metadata&gt;
+    &lt;ui-ai-commit-info&gt;
+      &lt;ui-ai-commit-author&gt;
+        &lt;ui-ai-commit-author-avatar initials=&quot;JD&quot;&gt;&lt;/ui-ai-commit-author-avatar&gt;
+        Jane Doe
+      &lt;/ui-ai-commit-author&gt;
+      &lt;ui-ai-commit-separator&gt;&lt;/ui-ai-commit-separator&gt;
+      &lt;ui-ai-commit-timestamp date=&quot;2024-01-15T10:30:00Z&quot;&gt;&lt;/ui-ai-commit-timestamp&gt;
+    &lt;/ui-ai-commit-info&gt;
+    &lt;ui-ai-commit-actions&gt;
+      &lt;ui-ai-commit-copy-button hash=&quot;a1b2c3d&quot;&gt;&lt;/ui-ai-commit-copy-button&gt;
+    &lt;/ui-ai-commit-actions&gt;
+  &lt;/ui-ai-commit-metadata&gt;
   &lt;ui-ai-commit-content&gt;
     &lt;ui-ai-commit-files&gt;
       &lt;ui-ai-commit-file&gt;
         &lt;ui-ai-commit-file-info&gt;
-          &lt;ui-ai-commit-file-icon /&gt;
-          &lt;ui-ai-commit-file-path&gt;src/auth/login.tsx&lt;/ui-ai-commit-file-path&gt;
+          &lt;ui-ai-commit-file-status status=&quot;modified&quot;&gt;&lt;/ui-ai-commit-file-status&gt;
+          &lt;ui-ai-commit-file-path&gt;src/auth/login.ts&lt;/ui-ai-commit-file-path&gt;
         &lt;/ui-ai-commit-file-info&gt;
         &lt;ui-ai-commit-file-changes&gt;
-          &lt;ui-ai-commit-file-additions count=&quot;42&quot; /&gt;
-          &lt;ui-ai-commit-file-deletions count=&quot;3&quot; /&gt;
+          &lt;ui-ai-commit-file-additions count=&quot;12&quot;&gt;&lt;/ui-ai-commit-file-additions&gt;
+          &lt;ui-ai-commit-file-deletions count=&quot;3&quot;&gt;&lt;/ui-ai-commit-file-deletions&gt;
         &lt;/ui-ai-commit-file-changes&gt;
       &lt;/ui-ai-commit-file&gt;
     &lt;/ui-ai-commit-files&gt;
@@ -490,9 +503,47 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Sub-components</h2>
               <div class="flex flex-wrap gap-2">
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-header&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-hash&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-message&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-metadata&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-author&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-author-avatar&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-timestamp&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-actions&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-copy-button&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-files&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-file&gt;</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-header&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-hash&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-message&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-metadata&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-separator&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-info&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-author&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-author-avatar&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-timestamp&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-actions&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-copy-button&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-files&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-file&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-file-info&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-file-status&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-file-icon&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-file-path&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-file-changes&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-file-additions&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-commit-file-deletions&gt;</code>
               </div>
             </section>
+
+            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-commit-author-avatar&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">initials</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Author initials for the avatar.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-commit-timestamp&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">date</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">Date</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The commit date.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-commit-copy-button&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">hash</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The commit hash to copy.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onCopy</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">() =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback on copy.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onError</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">(error: Error) =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback on error.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">timeout</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Duration in ms to show success state.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-commit-file-status&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">status</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;added&quot; | &quot;modified&quot; | &quot;deleted&quot; | &quot;renamed&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The file change status.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-commit-file-additions&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">count</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Number of added lines.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-commit-file-deletions&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">count</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Number of deleted lines.</td></tr></tbody></table>
+              </div>
+            </div></section>
 
             <section class="mb-10">
               <p class="text-sm text-muted-foreground">

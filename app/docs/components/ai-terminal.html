@@ -23,6 +23,7 @@
         <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
       </ui-sidebar-header>
       <ui-sidebar-content>
+        
           <ui-sidebar-group>
             <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
             <ui-sidebar-group-content>
@@ -93,7 +94,7 @@
                   <ui-sidebar-menu-button  size="sm" href="input-group.html">Input Group</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input Otp</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input OTP</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="label.html">Label</ui-sidebar-menu-button>
@@ -266,7 +267,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-canvas.html">Canvas</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain Of Thought</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain of Thought</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-checkpoint.html">Checkpoint</ui-sidebar-menu-button>
@@ -308,7 +309,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-inline-citation.html">Inline Citation</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">Jsx Preview</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">JSX Preview</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-message.html">Message</ui-sidebar-menu-button>
@@ -368,13 +369,13 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-suggestion.html">Suggestion</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-task.html">Task</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  is-active size="sm" href="ai-terminal.html">Terminal</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="ai-terminal.html">Terminal</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-test-results.html">Test Results</ui-sidebar-menu-button>
@@ -415,33 +416,29 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://elements.ai-sdk.dev/docs/components/terminal" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
+                <a href="https://ai.shadcn.com/docs/components/terminal" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">Terminal</h1>
-              <p class="text-lg text-muted-foreground">A terminal-style output display with copy and clear actions.</p>
+              <p class="text-lg text-muted-foreground">A terminal output display with streaming support, auto-scroll, copy, and clear actions.</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <ui-ai-terminal>
+                    <ui-ai-terminal output="$ npm install react
+added 5 packages in 2s
+
+$ npm run build
+Build complete!" isStreaming="false" autoScroll>
   <ui-ai-terminal-header>
     <ui-ai-terminal-title>Terminal</ui-ai-terminal-title>
-    <ui-ai-terminal-status>Complete</ui-ai-terminal-status>
+    <ui-ai-terminal-status></ui-ai-terminal-status>
     <ui-ai-terminal-actions>
-      <ui-ai-terminal-copy-button ></ui-ai-terminal-copy-button>
+      <ui-ai-terminal-copy-button></ui-ai-terminal-copy-button>
+      <ui-ai-terminal-clear-button></ui-ai-terminal-clear-button>
     </ui-ai-terminal-actions>
   </ui-ai-terminal-header>
-  <ui-ai-terminal-content>
-    <pre class="text-xs font-mono text-green-400 bg-black/90 p-3 rounded">$ npm test
-> jest --coverage
-
-PASS  src/auth.test.ts
-  ✓ validates tokens (12ms)
-  ✓ rejects expired tokens (3ms)
-
-Tests: 2 passed, 2 total</pre>
-  </ui-ai-terminal-content>
+  <ui-ai-terminal-content></ui-ai-terminal-content>
 </ui-ai-terminal>
                   </div>
             </section>
@@ -449,24 +446,20 @@ Tests: 2 passed, 2 total</pre>
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-ai-terminal&gt;
+                <pre class="p-4 text-sm"><code>&lt;ui-ai-terminal output=&quot;$ npm install react
+added 5 packages in 2s
+
+$ npm run build
+Build complete!&quot; isStreaming=&quot;false&quot; autoScroll&gt;
   &lt;ui-ai-terminal-header&gt;
     &lt;ui-ai-terminal-title&gt;Terminal&lt;/ui-ai-terminal-title&gt;
-    &lt;ui-ai-terminal-status&gt;Complete&lt;/ui-ai-terminal-status&gt;
+    &lt;ui-ai-terminal-status&gt;&lt;/ui-ai-terminal-status&gt;
     &lt;ui-ai-terminal-actions&gt;
-      &lt;ui-ai-terminal-copy-button /&gt;
+      &lt;ui-ai-terminal-copy-button&gt;&lt;/ui-ai-terminal-copy-button&gt;
+      &lt;ui-ai-terminal-clear-button&gt;&lt;/ui-ai-terminal-clear-button&gt;
     &lt;/ui-ai-terminal-actions&gt;
   &lt;/ui-ai-terminal-header&gt;
-  &lt;ui-ai-terminal-content&gt;
-    &lt;pre class=&quot;text-xs font-mono text-green-400 bg-black/90 p-3 rounded&quot;&gt;$ npm test
-&gt; jest --coverage
-
-PASS  src/auth.test.ts
-  ✓ validates tokens (12ms)
-  ✓ rejects expired tokens (3ms)
-
-Tests: 2 passed, 2 total&lt;/pre&gt;
-  &lt;/ui-ai-terminal-content&gt;
+  &lt;ui-ai-terminal-content&gt;&lt;/ui-ai-terminal-content&gt;
 &lt;/ui-ai-terminal&gt;</code></pre>
               </div>
             </section>
@@ -477,6 +470,20 @@ Tests: 2 passed, 2 total&lt;/pre&gt;
                 <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-terminal&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-terminal-header&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-terminal-title&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-terminal-status&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-terminal-actions&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-terminal-copy-button&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-terminal-clear-button&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-terminal-content&gt;</code>
               </div>
             </section>
+
+            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-terminal&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">output</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Terminal output text.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">isStreaming</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Whether output is still streaming.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">autoScroll</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">true</code></td><td class="py-2 text-muted-foreground">Auto-scroll to bottom on new output.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-terminal-copy-button&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onCopy</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">() =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback on copy.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onError</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">(error: Error) =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback on error.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">timeout</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Duration in ms to show success state.</td></tr></tbody></table>
+              </div>
+            </div></section>
 
             <section class="mb-10">
               <p class="text-sm text-muted-foreground">

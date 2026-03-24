@@ -23,6 +23,7 @@
         <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
       </ui-sidebar-header>
       <ui-sidebar-content>
+        
           <ui-sidebar-group>
             <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
             <ui-sidebar-group-content>
@@ -93,7 +94,7 @@
                   <ui-sidebar-menu-button  size="sm" href="input-group.html">Input Group</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input Otp</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input OTP</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="label.html">Label</ui-sidebar-menu-button>
@@ -266,7 +267,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-canvas.html">Canvas</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain Of Thought</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain of Thought</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-checkpoint.html">Checkpoint</ui-sidebar-menu-button>
@@ -308,7 +309,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-inline-citation.html">Inline Citation</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">Jsx Preview</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">JSX Preview</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-message.html">Message</ui-sidebar-menu-button>
@@ -368,7 +369,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-suggestion.html">Suggestion</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-task.html">Task</ui-sidebar-menu-button>
@@ -389,7 +390,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-transcription.html">Transcription</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  is-active size="sm" href="ai-voice-selector.html">Voice Selector</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="ai-voice-selector.html">Voice Selector</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-web-preview.html">Web Preview</ui-sidebar-menu-button>
@@ -415,38 +416,124 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://elements.ai-sdk.dev/docs/components/voice-selector" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
+                <a href="https://ai.shadcn.com/docs/components/voice-selector" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">Voice Selector</h1>
-              <p class="text-lg text-muted-foreground">Voice picker dialog with search, preview, and attributes.</p>
+              <p class="text-lg text-muted-foreground">A dialog-based voice picker with search, filtering by gender/accent, and audio preview.</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">Voice Selector provides a dialog for browsing and selecting text-to-speech voices with preview, filtering by gender, accent, and age.</div>
-<div class="mt-4">
-  <ui-button variant="outline">Select Voice</ui-button>
-</div>
+                    <ui-ai-voice-selector>
+  <ui-ai-voice-selector-trigger>Select Voice</ui-ai-voice-selector-trigger>
+  <ui-ai-voice-selector-content title="Choose a voice">
+    <ui-ai-voice-selector-input placeholder="Search voices..."></ui-ai-voice-selector-input>
+    <ui-ai-voice-selector-list>
+      <ui-ai-voice-selector-empty>No voices found.</ui-ai-voice-selector-empty>
+      <ui-ai-voice-selector-group>
+        <ui-ai-voice-selector-item>
+          <ui-ai-voice-selector-name>Alloy</ui-ai-voice-selector-name>
+          <ui-ai-voice-selector-attributes>
+            <ui-ai-voice-selector-gender value="non-binary"></ui-ai-voice-selector-gender>
+            <ui-ai-voice-selector-bullet></ui-ai-voice-selector-bullet>
+            <ui-ai-voice-selector-accent value="American"></ui-ai-voice-selector-accent>
+          </ui-ai-voice-selector-attributes>
+          <ui-ai-voice-selector-description>Warm and expressive</ui-ai-voice-selector-description>
+          <ui-ai-voice-selector-preview></ui-ai-voice-selector-preview>
+        </ui-ai-voice-selector-item>
+        <ui-ai-voice-selector-item>
+          <ui-ai-voice-selector-name>Echo</ui-ai-voice-selector-name>
+          <ui-ai-voice-selector-attributes>
+            <ui-ai-voice-selector-gender value="male"></ui-ai-voice-selector-gender>
+            <ui-ai-voice-selector-bullet></ui-ai-voice-selector-bullet>
+            <ui-ai-voice-selector-accent value="American"></ui-ai-voice-selector-accent>
+          </ui-ai-voice-selector-attributes>
+          <ui-ai-voice-selector-description>Deep and resonant</ui-ai-voice-selector-description>
+          <ui-ai-voice-selector-preview></ui-ai-voice-selector-preview>
+        </ui-ai-voice-selector-item>
+      </ui-ai-voice-selector-group>
+    </ui-ai-voice-selector-list>
+  </ui-ai-voice-selector-content>
+</ui-ai-voice-selector>
                   </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;div class=&quot;text-sm text-muted-foreground italic&quot;&gt;Voice Selector provides a dialog for browsing and selecting text-to-speech voices with preview, filtering by gender, accent, and age.&lt;/div&gt;
-&lt;div class=&quot;mt-4&quot;&gt;
-  &lt;ui-button variant=&quot;outline&quot;&gt;Select Voice&lt;/ui-button&gt;
-&lt;/div&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;ui-ai-voice-selector&gt;
+  &lt;ui-ai-voice-selector-trigger&gt;Select Voice&lt;/ui-ai-voice-selector-trigger&gt;
+  &lt;ui-ai-voice-selector-content title=&quot;Choose a voice&quot;&gt;
+    &lt;ui-ai-voice-selector-input placeholder=&quot;Search voices...&quot;&gt;&lt;/ui-ai-voice-selector-input&gt;
+    &lt;ui-ai-voice-selector-list&gt;
+      &lt;ui-ai-voice-selector-empty&gt;No voices found.&lt;/ui-ai-voice-selector-empty&gt;
+      &lt;ui-ai-voice-selector-group&gt;
+        &lt;ui-ai-voice-selector-item&gt;
+          &lt;ui-ai-voice-selector-name&gt;Alloy&lt;/ui-ai-voice-selector-name&gt;
+          &lt;ui-ai-voice-selector-attributes&gt;
+            &lt;ui-ai-voice-selector-gender value=&quot;non-binary&quot;&gt;&lt;/ui-ai-voice-selector-gender&gt;
+            &lt;ui-ai-voice-selector-bullet&gt;&lt;/ui-ai-voice-selector-bullet&gt;
+            &lt;ui-ai-voice-selector-accent value=&quot;American&quot;&gt;&lt;/ui-ai-voice-selector-accent&gt;
+          &lt;/ui-ai-voice-selector-attributes&gt;
+          &lt;ui-ai-voice-selector-description&gt;Warm and expressive&lt;/ui-ai-voice-selector-description&gt;
+          &lt;ui-ai-voice-selector-preview&gt;&lt;/ui-ai-voice-selector-preview&gt;
+        &lt;/ui-ai-voice-selector-item&gt;
+        &lt;ui-ai-voice-selector-item&gt;
+          &lt;ui-ai-voice-selector-name&gt;Echo&lt;/ui-ai-voice-selector-name&gt;
+          &lt;ui-ai-voice-selector-attributes&gt;
+            &lt;ui-ai-voice-selector-gender value=&quot;male&quot;&gt;&lt;/ui-ai-voice-selector-gender&gt;
+            &lt;ui-ai-voice-selector-bullet&gt;&lt;/ui-ai-voice-selector-bullet&gt;
+            &lt;ui-ai-voice-selector-accent value=&quot;American&quot;&gt;&lt;/ui-ai-voice-selector-accent&gt;
+          &lt;/ui-ai-voice-selector-attributes&gt;
+          &lt;ui-ai-voice-selector-description&gt;Deep and resonant&lt;/ui-ai-voice-selector-description&gt;
+          &lt;ui-ai-voice-selector-preview&gt;&lt;/ui-ai-voice-selector-preview&gt;
+        &lt;/ui-ai-voice-selector-item&gt;
+      &lt;/ui-ai-voice-selector-group&gt;
+    &lt;/ui-ai-voice-selector-list&gt;
+  &lt;/ui-ai-voice-selector-content&gt;
+&lt;/ui-ai-voice-selector&gt;</code></pre>
               </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Sub-components</h2>
               <div class="flex flex-wrap gap-2">
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-trigger&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-dialog&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-input&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-list&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-empty&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-group&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-item&gt;</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-trigger&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-dialog&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-input&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-list&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-empty&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-group&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-item&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-shortcut&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-separator&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-gender&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-accent&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-age&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-name&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-description&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-attributes&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-bullet&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-voice-selector-preview&gt;</code>
               </div>
             </section>
+
+            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-voice-selector&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Controlled selected voice.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">defaultValue</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Default selected voice.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onValueChange</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">(value: string) =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback when selection changes.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-voice-selector-content&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">title</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">ReactNode</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Dialog title.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-voice-selector-gender&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;male&quot; | &quot;female&quot; | &quot;transgender&quot; | &quot;androgyne&quot; | &quot;non-binary&quot; | &quot;intersex&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Gender value for filtering.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-voice-selector-accent&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Accent value for filtering.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-voice-selector-preview&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">playing</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Whether audio is playing.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">loading</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Whether audio is loading.</td></tr></tbody></table>
+              </div>
+            </div></section>
 
             <section class="mb-10">
               <p class="text-sm text-muted-foreground">

@@ -23,6 +23,7 @@
         <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
       </ui-sidebar-header>
       <ui-sidebar-content>
+        
           <ui-sidebar-group>
             <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
             <ui-sidebar-group-content>
@@ -93,7 +94,7 @@
                   <ui-sidebar-menu-button  size="sm" href="input-group.html">Input Group</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input Otp</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input OTP</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="label.html">Label</ui-sidebar-menu-button>
@@ -266,7 +267,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-canvas.html">Canvas</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain Of Thought</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain of Thought</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-checkpoint.html">Checkpoint</ui-sidebar-menu-button>
@@ -305,10 +306,10 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-image.html">Image</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  is-active size="sm" href="ai-inline-citation.html">Inline Citation</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="ai-inline-citation.html">Inline Citation</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">Jsx Preview</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">JSX Preview</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-message.html">Message</ui-sidebar-menu-button>
@@ -368,7 +369,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-suggestion.html">Suggestion</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-task.html">Task</ui-sidebar-menu-button>
@@ -415,26 +416,24 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://elements.ai-sdk.dev/docs/components/inline-citation" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
+                <a href="https://ai.shadcn.com/docs/components/inline-citation" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">Inline Citation</h1>
-              <p class="text-lg text-muted-foreground">Inline citation badges with hover card showing source details.</p>
+              <p class="text-lg text-muted-foreground">Inline citation badges with hover cards showing source details, carousels, and quotes.</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <p class="text-sm leading-relaxed">
+                    <p>
   React is a JavaScript library for building user interfaces
   <ui-ai-inline-citation>
     <ui-ai-inline-citation-card>
-      <ui-ai-inline-citation-card-trigger json-sources='["https://react.dev"]'>[1]</ui-ai-inline-citation-card-trigger>
-    </ui-ai-inline-citation-card>
-  </ui-ai-inline-citation>
-  that was originally created by Facebook
-  <ui-ai-inline-citation>
-    <ui-ai-inline-citation-card>
-      <ui-ai-inline-citation-card-trigger json-sources='["https://engineering.fb.com"]'>[2]</ui-ai-inline-citation-card-trigger>
+      <ui-ai-inline-citation-card-trigger sources='["https://react.dev"]'>[1]</ui-ai-inline-citation-card-trigger>
+      <ui-ai-inline-citation-card-body>
+        <ui-ai-inline-citation-source title="React Documentation" url="https://react.dev" description="Official React documentation"></ui-ai-inline-citation-source>
+        <ui-ai-inline-citation-quote>React lets you build user interfaces out of individual pieces called components.</ui-ai-inline-citation-quote>
+      </ui-ai-inline-citation-card-body>
     </ui-ai-inline-citation-card>
   </ui-ai-inline-citation>.
 </p>
@@ -444,17 +443,15 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;p class=&quot;text-sm leading-relaxed&quot;&gt;
+                <pre class="p-4 text-sm"><code>&lt;p&gt;
   React is a JavaScript library for building user interfaces
   &lt;ui-ai-inline-citation&gt;
     &lt;ui-ai-inline-citation-card&gt;
-      &lt;ui-ai-inline-citation-card-trigger&gt;[1]&lt;/ui-ai-inline-citation-card-trigger&gt;
-    &lt;/ui-ai-inline-citation-card&gt;
-  &lt;/ui-ai-inline-citation&gt;
-  that was originally created by Facebook
-  &lt;ui-ai-inline-citation&gt;
-    &lt;ui-ai-inline-citation-card&gt;
-      &lt;ui-ai-inline-citation-card-trigger&gt;[2]&lt;/ui-ai-inline-citation-card-trigger&gt;
+      &lt;ui-ai-inline-citation-card-trigger sources='[&quot;https://react.dev&quot;]'&gt;[1]&lt;/ui-ai-inline-citation-card-trigger&gt;
+      &lt;ui-ai-inline-citation-card-body&gt;
+        &lt;ui-ai-inline-citation-source title=&quot;React Documentation&quot; url=&quot;https://react.dev&quot; description=&quot;Official React documentation&quot;&gt;&lt;/ui-ai-inline-citation-source&gt;
+        &lt;ui-ai-inline-citation-quote&gt;React lets you build user interfaces out of individual pieces called components.&lt;/ui-ai-inline-citation-quote&gt;
+      &lt;/ui-ai-inline-citation-card-body&gt;
     &lt;/ui-ai-inline-citation-card&gt;
   &lt;/ui-ai-inline-citation&gt;.
 &lt;/p&gt;</code></pre>
@@ -464,9 +461,23 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Sub-components</h2>
               <div class="flex flex-wrap gap-2">
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-inline-citation&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-inline-citation-text&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-inline-citation-card&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-inline-citation-card-trigger&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-inline-citation-card-body&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-inline-citation-carousel&gt;</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-inline-citation&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-inline-citation-text&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-inline-citation-card&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-inline-citation-card-trigger&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-inline-citation-card-body&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-inline-citation-source&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-inline-citation-quote&gt;</code>
               </div>
             </section>
+
+            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-inline-citation-card-trigger&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">sources</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string[]</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Array of source URLs.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-inline-citation-source&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">title</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Source title.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">url</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Source URL.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">description</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Source description.</td></tr></tbody></table>
+              </div>
+            </div></section>
 
             <section class="mb-10">
               <p class="text-sm text-muted-foreground">

@@ -23,6 +23,7 @@
         <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
       </ui-sidebar-header>
       <ui-sidebar-content>
+        
           <ui-sidebar-group>
             <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
             <ui-sidebar-group-content>
@@ -93,7 +94,7 @@
                   <ui-sidebar-menu-button  size="sm" href="input-group.html">Input Group</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input Otp</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input OTP</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="label.html">Label</ui-sidebar-menu-button>
@@ -266,7 +267,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-canvas.html">Canvas</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain Of Thought</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain of Thought</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-checkpoint.html">Checkpoint</ui-sidebar-menu-button>
@@ -308,7 +309,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-inline-citation.html">Inline Citation</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">Jsx Preview</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">JSX Preview</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-message.html">Message</ui-sidebar-menu-button>
@@ -368,7 +369,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-suggestion.html">Suggestion</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-task.html">Task</ui-sidebar-menu-button>
@@ -392,7 +393,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-voice-selector.html">Voice Selector</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  is-active size="sm" href="ai-web-preview.html">Web Preview</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="ai-web-preview.html">Web Preview</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
               </ui-sidebar-menu>
             </ui-sidebar-group-content>
@@ -415,20 +416,24 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://elements.ai-sdk.dev/docs/components/web-preview" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
+                <a href="https://ai.shadcn.com/docs/components/web-preview" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">Web Preview</h1>
-              <p class="text-lg text-muted-foreground">Embedded web page preview with navigation and console.</p>
+              <p class="text-lg text-muted-foreground">An iframe-based web preview with navigation controls, URL bar, and developer console log display.</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <ui-ai-web-preview default-url="https://example.com">
+                    <ui-ai-web-preview defaultUrl="https://example.com">
   <ui-ai-web-preview-navigation>
+    <ui-ai-web-preview-navigation-button tooltip="Back">←</ui-ai-web-preview-navigation-button>
+    <ui-ai-web-preview-navigation-button tooltip="Forward">→</ui-ai-web-preview-navigation-button>
+    <ui-ai-web-preview-navigation-button tooltip="Refresh">↻</ui-ai-web-preview-navigation-button>
     <ui-ai-web-preview-url></ui-ai-web-preview-url>
   </ui-ai-web-preview-navigation>
-  <ui-ai-web-preview-body class="h-48"></ui-ai-web-preview-body>
+  <ui-ai-web-preview-body loading="<p>Loading...</p>"></ui-ai-web-preview-body>
+  <ui-ai-web-preview-console></ui-ai-web-preview-console>
 </ui-ai-web-preview>
                   </div>
             </section>
@@ -436,13 +441,15 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-ai-web-preview&gt;
+                <pre class="p-4 text-sm"><code>&lt;ui-ai-web-preview defaultUrl=&quot;https://example.com&quot;&gt;
   &lt;ui-ai-web-preview-navigation&gt;
-    &lt;ui-ai-web-preview-url value=&quot;https://example.com&quot; /&gt;
+    &lt;ui-ai-web-preview-navigation-button tooltip=&quot;Back&quot;&gt;←&lt;/ui-ai-web-preview-navigation-button&gt;
+    &lt;ui-ai-web-preview-navigation-button tooltip=&quot;Forward&quot;&gt;→&lt;/ui-ai-web-preview-navigation-button&gt;
+    &lt;ui-ai-web-preview-navigation-button tooltip=&quot;Refresh&quot;&gt;↻&lt;/ui-ai-web-preview-navigation-button&gt;
+    &lt;ui-ai-web-preview-url&gt;&lt;/ui-ai-web-preview-url&gt;
   &lt;/ui-ai-web-preview-navigation&gt;
-  &lt;ui-ai-web-preview-body class=&quot;h-48 border rounded bg-muted/10 flex items-center justify-center text-sm text-muted-foreground&quot;&gt;
-    Embedded web page preview
-  &lt;/ui-ai-web-preview-body&gt;
+  &lt;ui-ai-web-preview-body loading=&quot;&lt;p&gt;Loading...&lt;/p&gt;&quot;&gt;&lt;/ui-ai-web-preview-body&gt;
+  &lt;ui-ai-web-preview-console&gt;&lt;/ui-ai-web-preview-console&gt;
 &lt;/ui-ai-web-preview&gt;</code></pre>
               </div>
             </section>
@@ -453,6 +460,26 @@
                 <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-web-preview&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-web-preview-navigation&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-web-preview-navigation-button&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-web-preview-url&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-web-preview-body&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-web-preview-console&gt;</code>
               </div>
             </section>
+
+            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-web-preview&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">defaultUrl</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Initial URL to load.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onUrlChange</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">(url: string) =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback when URL changes.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-web-preview-navigation-button&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">tooltip</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Button tooltip text.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-web-preview-body&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">loading</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">ReactNode</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Loading state content.</td></tr></tbody></table>
+              </div>
+            </div></section>
 
             <section class="mb-10">
               <p class="text-sm text-muted-foreground">

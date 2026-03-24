@@ -23,6 +23,7 @@
         <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
       </ui-sidebar-header>
       <ui-sidebar-content>
+        
           <ui-sidebar-group>
             <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
             <ui-sidebar-group-content>
@@ -93,7 +94,7 @@
                   <ui-sidebar-menu-button  size="sm" href="input-group.html">Input Group</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input Otp</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input OTP</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="label.html">Label</ui-sidebar-menu-button>
@@ -260,13 +261,13 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-attachments.html">Attachments</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  is-active size="sm" href="ai-audio-player.html">Audio Player</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="ai-audio-player.html">Audio Player</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-canvas.html">Canvas</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain Of Thought</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain of Thought</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-checkpoint.html">Checkpoint</ui-sidebar-menu-button>
@@ -308,7 +309,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-inline-citation.html">Inline Citation</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">Jsx Preview</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">JSX Preview</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-message.html">Message</ui-sidebar-menu-button>
@@ -368,7 +369,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-suggestion.html">Suggestion</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-task.html">Task</ui-sidebar-menu-button>
@@ -415,37 +416,47 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://elements.ai-sdk.dev/docs/components/audio-player" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
+                <a href="https://ai.shadcn.com/docs/components/audio-player" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">Audio Player</h1>
-              <p class="text-lg text-muted-foreground">A full-featured audio player with controls, seek, and volume.</p>
+              <p class="text-lg text-muted-foreground">A media player for audio playback with controls for play, seek, volume, and time display.</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <div class="text-sm text-muted-foreground italic">Audio Player requires browser media APIs. It provides a full audio player with play, seek, volume, and time display controls.</div>
-<div class="mt-4 rounded-lg border p-4 bg-muted/30">
-  <div class="flex items-center gap-3">
-    <ui-button size="icon" variant="outline">▶</ui-button>
-    <div class="flex-1 h-1 bg-muted rounded-full"><div class="h-1 w-1/3 bg-primary rounded-full"></div></div>
-    <span class="text-xs text-muted-foreground">1:23 / 4:56</span>
-  </div>
-</div>
+                    <ui-ai-audio-player>
+  <ui-ai-audio-player-element src="/audio/sample.mp3"></ui-ai-audio-player-element>
+  <ui-ai-audio-player-control-bar>
+    <ui-ai-audio-player-seek-backward-button seekOffset="10"></ui-ai-audio-player-seek-backward-button>
+    <ui-ai-audio-player-play-button></ui-ai-audio-player-play-button>
+    <ui-ai-audio-player-seek-forward-button seekOffset="10"></ui-ai-audio-player-seek-forward-button>
+    <ui-ai-audio-player-time-display></ui-ai-audio-player-time-display>
+    <ui-ai-audio-player-time-range></ui-ai-audio-player-time-range>
+    <ui-ai-audio-player-duration-display></ui-ai-audio-player-duration-display>
+    <ui-ai-audio-player-mute-button></ui-ai-audio-player-mute-button>
+    <ui-ai-audio-player-volume-range></ui-ai-audio-player-volume-range>
+  </ui-ai-audio-player-control-bar>
+</ui-ai-audio-player>
                   </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;div class=&quot;text-sm text-muted-foreground italic&quot;&gt;Audio Player requires browser media APIs. It provides a full audio player with play, seek, volume, and time display controls.&lt;/div&gt;
-&lt;div class=&quot;mt-4 rounded-lg border p-4 bg-muted/30&quot;&gt;
-  &lt;div class=&quot;flex items-center gap-3&quot;&gt;
-    &lt;ui-button size=&quot;icon&quot; variant=&quot;outline&quot;&gt;▶&lt;/ui-button&gt;
-    &lt;div class=&quot;flex-1 h-1 bg-muted rounded-full&quot;&gt;&lt;div class=&quot;h-1 w-1/3 bg-primary rounded-full&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-    &lt;span class=&quot;text-xs text-muted-foreground&quot;&gt;1:23 / 4:56&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;ui-ai-audio-player&gt;
+  &lt;ui-ai-audio-player-element src=&quot;/audio/sample.mp3&quot;&gt;&lt;/ui-ai-audio-player-element&gt;
+  &lt;ui-ai-audio-player-control-bar&gt;
+    &lt;ui-ai-audio-player-seek-backward-button seekOffset=&quot;10&quot;&gt;&lt;/ui-ai-audio-player-seek-backward-button&gt;
+    &lt;ui-ai-audio-player-play-button&gt;&lt;/ui-ai-audio-player-play-button&gt;
+    &lt;ui-ai-audio-player-seek-forward-button seekOffset=&quot;10&quot;&gt;&lt;/ui-ai-audio-player-seek-forward-button&gt;
+    &lt;ui-ai-audio-player-time-display&gt;&lt;/ui-ai-audio-player-time-display&gt;
+    &lt;ui-ai-audio-player-time-range&gt;&lt;/ui-ai-audio-player-time-range&gt;
+    &lt;ui-ai-audio-player-duration-display&gt;&lt;/ui-ai-audio-player-duration-display&gt;
+    &lt;ui-ai-audio-player-mute-button&gt;&lt;/ui-ai-audio-player-mute-button&gt;
+    &lt;ui-ai-audio-player-volume-range&gt;&lt;/ui-ai-audio-player-volume-range&gt;
+  &lt;/ui-ai-audio-player-control-bar&gt;
+&lt;/ui-ai-audio-player&gt;</code></pre>
               </div>
             </section>
 
@@ -455,6 +466,26 @@
                 <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-audio-player&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-audio-player-element&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-audio-player-control-bar&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-audio-player-play-button&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-audio-player-seek-backward-button&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-audio-player-seek-forward-button&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-audio-player-time-display&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-audio-player-time-range&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-audio-player-duration-display&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-audio-player-mute-button&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-audio-player-volume-range&gt;</code>
               </div>
             </section>
+
+            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-audio-player-element&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">src</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">URL of the audio source.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-audio-player-seek-backward-button&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">seekOffset</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">10</code></td><td class="py-2 text-muted-foreground">Number of seconds to seek backward.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-audio-player-seek-forward-button&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">seekOffset</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">10</code></td><td class="py-2 text-muted-foreground">Number of seconds to seek forward.</td></tr></tbody></table>
+              </div>
+            </div></section>
 
             <section class="mb-10">
               <p class="text-sm text-muted-foreground">
