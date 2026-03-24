@@ -1,12 +1,11 @@
 import * as React from "react"
 import { type ComponentType } from "react"
-import { renderLinkable, renderTrigger, getSingleElement } from "@/lib/render-element"
-import { CloseOverlayProvider, useCloseOverlay } from "@/lib/close-overlay"
-import { SelectItemsProvider, useSelectItemsRegister } from "@/lib/select-items"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { renderLinkable, renderTrigger, getSingleElement } from "../lib/render-element"
+import { CloseOverlayProvider, useCloseOverlay } from "../lib/close-overlay"
+import { SelectItemsProvider, useSelectItemsRegister } from "../lib/select-items"
+import { cn } from "../lib/utils"
 
-type ModuleMap = Record<string, () => Promise<Record<string, any>>>
+export type ModuleMap = Record<string, () => Promise<Record<string, any>>>
 
 // ---------------------------------------------------------------------------
 // Contexts (shared between provider/consumer behaviors)
@@ -19,7 +18,7 @@ const ComboboxItemsContext = React.createContext<ComboboxItemShape[] | null>(nul
 // Recharts components (external package)
 // ---------------------------------------------------------------------------
 
-const RECHARTS = new Set([
+export const RECHARTS = new Set([
   'area-chart', 'area', 'bar-chart', 'bar', 'cartesian-grid', 'cell',
   'label-list', 'line-chart', 'line', 'pie-chart', 'pie',
   'polar-angle-axis', 'polar-grid', 'polar-radius-axis',
@@ -32,7 +31,7 @@ const RECHARTS = new Set([
 // ---------------------------------------------------------------------------
 
 /** Case-insensitive export lookup: "field-label" matches "FieldLabel" */
-function findExport(mod: Record<string, any>, kebabName: string): ComponentType<any> | null {
+export function findExport(mod: Record<string, any>, kebabName: string): ComponentType<any> | null {
   const normalized = kebabName.replace(/-/g, '').toLowerCase()
   for (const key of Object.keys(mod)) {
     if (key.toLowerCase() === normalized) return mod[key]
@@ -41,7 +40,7 @@ function findExport(mod: Record<string, any>, kebabName: string): ComponentType<
 }
 
 /** Find module in a specific directory within the module map */
-function findModuleInDir(name: string, modules: ModuleMap, dirSegment: string): string | null {
+export function findModuleInDir(name: string, modules: ModuleMap, dirSegment: string): string | null {
   const parts = name.split('-')
   for (let i = parts.length; i >= 1; i--) {
     const moduleKey = parts.slice(0, i).join('-')
@@ -53,10 +52,10 @@ function findModuleInDir(name: string, modules: ModuleMap, dirSegment: string): 
   return null
 }
 
-/** Find override file in registry/default/app/ */
-function findOverride(name: string, modules: ModuleMap): string | null {
+/** Find override file */
+export function findOverride(name: string, modules: ModuleMap, dirSegment = '/app/overrides/'): string | null {
   return Object.keys(modules).find(k =>
-    k.includes('/app/overrides/') && k.endsWith(`/${name}.tsx`)
+    k.includes(dirSegment) && k.endsWith(`/${name}.tsx`)
   ) || null
 }
 
@@ -64,9 +63,9 @@ function findOverride(name: string, modules: ModuleMap): string | null {
 // Standard behavior HOCs
 // ---------------------------------------------------------------------------
 
-type Behavior = 'linkable' | 'linkable-close' | 'trigger' | 'overlay' | 'close-click'
+export type Behavior = 'linkable' | 'linkable-close' | 'trigger' | 'overlay' | 'close-click'
 
-const STANDARD_BEHAVIORS: Record<string, Behavior> = {
+export const STANDARD_BEHAVIORS: Record<string, Behavior> = {
   // href support via renderLinkable
   'button': 'linkable',
   'accordion-trigger': 'linkable',
@@ -105,24 +104,24 @@ const STANDARD_BEHAVIORS: Record<string, Behavior> = {
   'pagination-previous': 'close-click',
 }
 
-function withLinkable(C: ComponentType<any>): ComponentType<any> {
+export function withLinkable(C: ComponentType<any>): ComponentType<any> {
   return React.forwardRef(({ href, children, is, ...props }: any, ref: any) =>
     renderLinkable(C, props, { href, ref, children })
   )
 }
 
-function withLinkableClose(C: ComponentType<any>): ComponentType<any> {
+export function withLinkableClose(C: ComponentType<any>): ComponentType<any> {
   return React.forwardRef(({ href, children, is, ...props }: any, ref: any) => {
     const closeOverlay = useCloseOverlay()
     return renderLinkable(C, props, { href, ref, children, onNavigate: closeOverlay })
   })
 }
 
-function withTrigger(C: ComponentType<any>): ComponentType<any> {
+export function withTrigger(C: ComponentType<any>): ComponentType<any> {
   return ({ children, is, ...props }: any) => renderTrigger(C, props, children)
 }
 
-function withOverlay(C: ComponentType<any>): ComponentType<any> {
+export function withOverlay(C: ComponentType<any>): ComponentType<any> {
   return ({ onOpenChange, children, is, ...props }: any) => {
     const handleClose = React.useCallback(() => onOpenChange?.(false), [onOpenChange])
     return (
@@ -135,7 +134,7 @@ function withOverlay(C: ComponentType<any>): ComponentType<any> {
   }
 }
 
-function withCloseClick(C: ComponentType<any>): ComponentType<any> {
+export function withCloseClick(C: ComponentType<any>): ComponentType<any> {
   return React.forwardRef(({ onClick, is, ...props }: any, ref: any) => {
     const closeOverlay = useCloseOverlay()
     const handleClick = React.useCallback(
@@ -146,7 +145,7 @@ function withCloseClick(C: ComponentType<any>): ComponentType<any> {
   })
 }
 
-const STANDARD_HOCS: Record<Behavior, (C: ComponentType<any>) => ComponentType<any>> = {
+export const STANDARD_HOCS: Record<Behavior, (C: ComponentType<any>) => ComponentType<any>> = {
   'linkable': withLinkable,
   'linkable-close': withLinkableClose,
   'trigger': withTrigger,
@@ -158,17 +157,9 @@ const STANDARD_HOCS: Record<Behavior, (C: ComponentType<any>) => ComponentType<a
 // Component-specific wrappers (need custom logic or module access)
 // ---------------------------------------------------------------------------
 
-type WrapperFn = (C: ComponentType<any>, mod: Record<string, any>) => ComponentType<any>
+export type WrapperFn = (C: ComponentType<any>, mod: Record<string, any>) => ComponentType<any>
 
-function withSmartTrigger(C: ComponentType<any>): ComponentType<any> {
-  return ({ children, is, ...props }: any) => {
-    const singleChild = getSingleElement(children)
-    if (singleChild) return <C asChild {...props}>{singleChild}</C>
-    return <C asChild {...props}><Button variant="outline">{children}</Button></C>
-  }
-}
-
-function withCommandLinkable(C: ComponentType<any>): ComponentType<any> {
+export function withCommandLinkable(C: ComponentType<any>): ComponentType<any> {
   return React.forwardRef(({ href, children, is, ...props }: any, ref: any) => {
     const closeOverlay = useCloseOverlay()
     if (href) {
@@ -183,7 +174,7 @@ function withCommandLinkable(C: ComponentType<any>): ComponentType<any> {
   })
 }
 
-function withSidebarLinkable(C: ComponentType<any>, mod: Record<string, any>): ComponentType<any> {
+export function withSidebarLinkable(C: ComponentType<any>, mod: Record<string, any>): ComponentType<any> {
   const useSidebar = mod.useSidebar as () => { isMobile: boolean; setOpenMobile: (v: boolean) => void }
   return ({ href, onClick, children, ref, is, ...props }: any) => {
     const { isMobile, setOpenMobile } = useSidebar()
@@ -200,7 +191,7 @@ function withSidebarLinkable(C: ComponentType<any>, mod: Record<string, any>): C
   }
 }
 
-function withSidebarSubLinkable(C: ComponentType<any>, mod: Record<string, any>): ComponentType<any> {
+export function withSidebarSubLinkable(C: ComponentType<any>, mod: Record<string, any>): ComponentType<any> {
   const useSidebar = mod.useSidebar as () => { isMobile: boolean; setOpenMobile: (v: boolean) => void }
   return React.forwardRef(({ onClick, is, ...props }: any, ref: any) => {
     const { isMobile, setOpenMobile } = useSidebar()
@@ -217,7 +208,7 @@ function withSidebarSubLinkable(C: ComponentType<any>, mod: Record<string, any>)
   })
 }
 
-function withSelectProvider(C: ComponentType<any>): ComponentType<any> {
+export function withSelectProvider(C: ComponentType<any>): ComponentType<any> {
   return React.forwardRef(({ children, is, ...props }: any, ref: any) => {
     const [items, setItems] = React.useState<Record<string, string> | undefined>(undefined)
     const handleItemsChange = React.useCallback((next: Record<string, string>) => {
@@ -231,7 +222,7 @@ function withSelectProvider(C: ComponentType<any>): ComponentType<any> {
   })
 }
 
-function withSelectRegister(C: ComponentType<any>): ComponentType<any> {
+export function withSelectRegister(C: ComponentType<any>): ComponentType<any> {
   return React.forwardRef(({ value, children, is, ...props }: any, ref: any) => {
     const register = useSelectItemsRegister()
     React.useEffect(() => {
@@ -248,7 +239,7 @@ function withSelectRegister(C: ComponentType<any>): ComponentType<any> {
   })
 }
 
-function withComboboxProvider(C: ComponentType<any>): ComponentType<any> {
+export function withComboboxProvider(C: ComponentType<any>): ComponentType<any> {
   return ({ items, children, is, ...props }: any) => {
     if (!items) return <C {...props}>{children}</C>
     const hasObjects = items.length > 0 && typeof items[0] === "object"
@@ -268,7 +259,7 @@ function withComboboxProvider(C: ComponentType<any>): ComponentType<any> {
   }
 }
 
-function withComboboxListRenderer(C: ComponentType<any>, mod: Record<string, any>): ComponentType<any> {
+export function withComboboxListRenderer(C: ComponentType<any>, mod: Record<string, any>): ComponentType<any> {
   const ComboboxItem = mod.ComboboxItem as ComponentType<any>
   return ({ children, is, ...props }: any) => {
     const items = React.useContext(ComboboxItemsContext)
@@ -285,18 +276,6 @@ function withComboboxListRenderer(C: ComponentType<any>, mod: Record<string, any
   }
 }
 
-const COMPONENT_WRAPPERS: Record<string, WrapperFn> = {
-  'drawer-trigger': withSmartTrigger,
-  'drawer-close': withSmartTrigger,
-  'command-item': withCommandLinkable,
-  'sidebar-menu-button': withSidebarLinkable,
-  'sidebar-menu-sub-button': withSidebarSubLinkable,
-  'select': withSelectProvider,
-  'select-item': withSelectRegister,
-  'combobox': withComboboxProvider,
-  'combobox-list': withComboboxListRenderer,
-}
-
 // ---------------------------------------------------------------------------
 // Prop transforms (simple prop rewriting, no component tree changes)
 // ---------------------------------------------------------------------------
@@ -305,7 +284,7 @@ const SPINNER_SIZES: Record<string, string> = {
   sm: "size-3", default: "size-4", lg: "size-6",
 }
 
-const PROP_TRANSFORMS: Record<string, (props: any) => any> = {
+export const PROP_TRANSFORMS: Record<string, (props: any) => any> = {
   'progress': ({ value, is, ...rest }: any) => ({
     ...rest,
     value: value != null ? Number(value) : undefined,
@@ -331,11 +310,16 @@ const PROP_TRANSFORMS: Record<string, (props: any) => any> = {
 // Wrap component: apply behavior + prop transform
 // ---------------------------------------------------------------------------
 
-function wrapComponent(name: string, C: ComponentType<any>, mod: Record<string, any>): ComponentType<any> {
+export function wrapComponent(
+  name: string,
+  C: ComponentType<any>,
+  mod: Record<string, any>,
+  componentWrappers: Record<string, WrapperFn> = DEFAULT_COMPONENT_WRAPPERS,
+): ComponentType<any> {
   let result = C
 
   // Component-specific wrapper (takes priority over standard behaviors)
-  const wrapper = COMPONENT_WRAPPERS[name]
+  const wrapper = componentWrappers[name]
   if (wrapper) {
     result = wrapper(result, mod)
   } else {
@@ -355,15 +339,75 @@ function wrapComponent(name: string, C: ComponentType<any>, mod: Record<string, 
 }
 
 // ---------------------------------------------------------------------------
+// Default component wrappers (exported for customization)
+// ---------------------------------------------------------------------------
+
+export const DEFAULT_COMPONENT_WRAPPERS: Record<string, WrapperFn> = {
+  'command-item': withCommandLinkable,
+  'sidebar-menu-button': withSidebarLinkable,
+  'sidebar-menu-sub-button': withSidebarSubLinkable,
+  'select': withSelectProvider,
+  'select-item': withSelectRegister,
+  'combobox': withComboboxProvider,
+  'combobox-list': withComboboxListRenderer,
+}
+
+// ---------------------------------------------------------------------------
+// Smart trigger wrapper factory (needs Button from consumer's modules)
+// ---------------------------------------------------------------------------
+
+export function createSmartTriggerWrapper(ButtonComponent: ComponentType<any> | null): WrapperFn {
+  return (C: ComponentType<any>) => {
+    return ({ children, is, ...props }: any) => {
+      const singleChild = getSingleElement(children)
+      if (singleChild) return <C asChild {...props}>{singleChild}</C>
+      if (ButtonComponent) {
+        return <C asChild {...props}><ButtonComponent variant="outline">{children}</ButtonComponent></C>
+      }
+      return <C asChild {...props}><button type="button">{children}</button></C>
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Main loader factory
 // ---------------------------------------------------------------------------
 
-export function createComponentLoader(modules: ModuleMap) {
+export interface LoaderOptions {
+  /** Override dir segment for findOverride (default: '/app/overrides/') */
+  overrideDir?: string
+  /** Custom component wrappers (merged with defaults) */
+  componentWrappers?: Record<string, WrapperFn>
+}
+
+export function createComponentLoader(modules: ModuleMap, options: LoaderOptions = {}) {
+  const { overrideDir, componentWrappers: customWrappers } = options
+
+  // Pre-resolve Button for smart trigger wrappers
+  let ResolvedButton: ComponentType<any> | null = null
+  const buttonPath = findModuleInDir('button', modules, '/components/ui/')
+  if (buttonPath) {
+    modules[buttonPath]().then(mod => {
+      ResolvedButton = findExport(mod, 'button')
+    })
+  }
+
+  // Build component wrappers with smart trigger (needs Button from consumer's modules)
+  const getWrappers = (): Record<string, WrapperFn> => {
+    const smartTrigger = createSmartTriggerWrapper(ResolvedButton)
+    return {
+      ...DEFAULT_COMPONENT_WRAPPERS,
+      'drawer-trigger': smartTrigger,
+      'drawer-close': smartTrigger,
+      ...customWrappers,
+    }
+  }
+
   return ({ is }: { is: string }): Promise<{ default: ComponentType<any> }> => {
     const name = is.substring(3) // strip "ui-"
 
     // 1. Override files take priority (sonner, theme-switch)
-    const override = findOverride(name, modules)
+    const override = findOverride(name, modules, overrideDir)
     if (override) return modules[override]() as Promise<{ default: ComponentType }>
 
     // 2. AI components: ui-ai-* → components/ai-elements/
@@ -393,7 +437,7 @@ export function createComponentLoader(modules: ModuleMap) {
     return modules[path]().then(mod => {
       const Component = findExport(mod, name)
       if (!Component) throw new Error(`Export "${name}" not found in ${path}`)
-      return { default: wrapComponent(name, Component, mod) }
+      return { default: wrapComponent(name, Component, mod, getWrappers()) }
     })
   }
 }

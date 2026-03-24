@@ -1,111 +1,163 @@
 # Reactolith UI
 
-A component library built with React 19 + Base UI + Tailwind CSS v4. Uses a custom loader to resolve `<ui-*>` tags to the correct component exports — no individual wrapper files needed.
+Custom loadable loader for [Reactolith](https://reactolith.dev) that resolves `<ui-*>` tags to shadcn component exports. Includes behavior HOCs for close-on-navigate, render props, prop transforms, and more.
 
 ## Installation
 
 ```bash
-npm install @reactolith/ui reactolith @loadable/component
+npm install @reactolith/ui
 ```
 
-## Setup
+You also need shadcn components installed locally in your project (via `npx shadcn add`).
 
-### 1. Vite configuration
-
-Reactolith UI is distributed as source TypeScript. Add the `@/` alias and include the package in Tailwind's source scanning:
-
-```ts
-// vite.config.ts
-import path from "path"
-import tailwindcss from "@tailwindcss/vite"
-import react from "@vitejs/plugin-react"
-import { defineConfig } from "vite"
-
-export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  resolve: {
-    alias: {
-      "@/": path.resolve(__dirname, "node_modules/@reactolith/ui/"),
-    },
-  },
-})
-```
-
-### 2. CSS
-
-Import Tailwind and the component styles in your main CSS file:
-
-```css
-@import "tailwindcss";
-@import "tw-animate-css";
-@source "../node_modules/@reactolith/ui/components";
-@source "../node_modules/@reactolith/ui/lib";
-```
-
-### 3. Entry point
-
-Import the package to register all `<ui-*>` custom elements:
-
-```ts
-import "@reactolith/ui"
-```
-
-That's it. You can now use any component as an HTML tag:
-
-```html
-<ui-button variant="outline">Click me</ui-button>
-
-<ui-card>
-  <ui-card-header>
-    <ui-card-title>Title</ui-card-title>
-  </ui-card-header>
-  <ui-card-content>Content here</ui-card-content>
-</ui-card>
-```
-
-## How it works
-
-The loader in `app/loader.tsx` dynamically resolves tag names to component exports:
-
-- `ui-field-label` → `components/ui/field.tsx` → `FieldLabel` export
-- `ui-ai-message-content` → `components/ai-elements/message.tsx` → `MessageContent`
-- `ui-area-chart` → `recharts` → `AreaChart`
-
-It also applies behavior wrappers (close-on-navigate for overlays, render props for triggers, prop transforms) without needing individual wrapper files per component.
-
-## Advanced: Custom loader
-
-If you need to customize the loader or add your own component modules:
+## Quick Start
 
 ```ts
 import loadable from "@loadable/component"
 import { App } from "reactolith"
-import { createComponentLoader } from "@reactolith/ui/loader"
-import type { ComponentType } from "react"
+import { createComponentLoader } from "@reactolith/ui"
 
 const modules = import.meta.glob([
   "@/components/ui/*.tsx",
-  "@/components/ai-elements/*.tsx",
-  // add your own component globs here
+  // optional: override files
+  "@/app/overrides/*.tsx",
 ])
 
 new App(
   loadable(
     createComponentLoader(modules),
-    { cacheKey: ({ is }: { is: string }) => is },
-  ) as unknown as ComponentType<Record<string, unknown>>,
+    { cacheKey: ({ is }) => is },
+  ),
 )
 ```
 
-## Components
+Components are then usable as HTML tags:
 
-### UI Components (`<ui-*>`)
+```html
+<ui-button variant="outline">Click me</ui-button>
+<ui-dialog>
+  <ui-dialog-trigger>Open</ui-dialog-trigger>
+  <ui-dialog-content>
+    <ui-dialog-header>
+      <ui-dialog-title>Title</ui-dialog-title>
+    </ui-dialog-header>
+  </ui-dialog-content>
+</ui-dialog>
+```
 
-54 component groups based on shadcn/ui: accordion, alert, button, card, dialog, dropdown-menu, sidebar, table, tabs, and more.
+## How the Loader Works
 
-### AI Components (`<ui-ai-*>`)
+`createComponentLoader(modules)` returns a load function that maps tag names to component exports:
 
-Specialized components for AI interfaces: message, code-block, canvas, prompt-input, reasoning, tool, and more.
+- **Module resolution**: `ui-field-label` → `components/ui/field.tsx` → `FieldLabel` (case-insensitive, progressively removes trailing kebab segments)
+- **Recharts**: `ui-area-chart` → `recharts` → `AreaChart`
+- **Override files**: checked first, for standalone implementations (e.g. custom sonner, theme-switch)
+
+After resolving, components are wrapped with behavior HOCs and prop transforms.
+
+## Loader Options
+
+```ts
+createComponentLoader(modules, {
+  // Custom dir segment for override file detection (default: '/app/overrides/')
+  overrideDir: '/my-overrides/',
+
+  // Additional or replacement component wrappers (merged with defaults)
+  componentWrappers: {
+    'my-component': (C, mod) => withLinkable(C),
+  },
+})
+```
+
+## Behaviors
+
+The loader applies behavior wrappers automatically based on `STANDARD_BEHAVIORS`. You can import and use these individually:
+
+```ts
+import {
+  withLinkable,       // href support via renderLinkable
+  withLinkableClose,  // href + close parent overlay
+  withTrigger,        // single-child render prop (asChild)
+  withOverlay,        // wraps children in CloseOverlayProvider
+  withCloseClick,     // calls useCloseOverlay on click
+} from "@reactolith/ui"
+```
+
+### Close-on-Navigate
+
+Navigation links inside overlays auto-close the overlay:
+
+```ts
+import { CloseOverlayProvider, useCloseOverlay } from "@reactolith/ui"
+```
+
+- **Overlay containers** (Sheet, Dialog, Popover, etc.) provide `CloseOverlayProvider`
+- **Items with `href`** consume `useCloseOverlay()` and call it on click
+- **Sidebar** uses `useSidebar().setOpenMobile(false)` for mobile close
+
+### Component Wrappers
+
+For components needing custom logic beyond standard behaviors:
+
+```ts
+import {
+  DEFAULT_COMPONENT_WRAPPERS,  // the default wrapper map
+  createSmartTriggerWrapper,   // drawer trigger: uses Button if available
+  withCommandLinkable,         // command-item: href → <a> with close
+  withSidebarLinkable,         // sidebar button: mobile close + overlay close
+  withSelectProvider,          // select: auto-registers items
+  withComboboxProvider,        // combobox: items prop support
+} from "@reactolith/ui"
+```
+
+### Prop Transforms
+
+Simple prop rewriting applied after behavior wrapping:
+
+```ts
+import { PROP_TRANSFORMS } from "@reactolith/ui"
+// progress: value coercion to number
+// spinner: size → className mapping
+// chart-container: adds recharts responsive container styles
+// chart-tooltip: children → content prop
+```
+
+## Utilities
+
+```ts
+import { renderLinkable, renderTrigger, getSingleElement } from "@reactolith/ui"
+import { cn } from "@reactolith/ui/utils"
+```
+
+## Building a Custom Load Function
+
+You can combine the exported pieces with your own logic:
+
+```ts
+import {
+  findExport,
+  findModuleInDir,
+  wrapComponent,
+  RECHARTS,
+} from "@reactolith/ui"
+
+function myLoader(modules) {
+  return ({ is }) => {
+    const name = is.substring(3)
+
+    if (RECHARTS.has(name)) {
+      return import('recharts').then(mod => ({
+        default: findExport(mod, name),
+      }))
+    }
+
+    const path = findModuleInDir(name, modules, '/components/ui/')
+    return modules[path]().then(mod => ({
+      default: wrapComponent(name, findExport(mod, name), mod),
+    }))
+  }
+}
+```
 
 ## License
 
