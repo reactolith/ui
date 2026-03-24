@@ -24,6 +24,18 @@ function getHtmlInputs() {
         // Components dir may not exist yet
     }
 
+    const examplesDir = path.resolve(__dirname, "app/docs/examples")
+    try {
+        for (const file of readdirSync(examplesDir)) {
+            if (file.endsWith(".html")) {
+                const name = file.replace(".html", "")
+                inputs[`docs-examples-${name}`] = path.resolve(examplesDir, file)
+            }
+        }
+    } catch {
+        // Examples dir may not exist yet
+    }
+
     return inputs
 }
 
