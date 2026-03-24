@@ -53,10 +53,18 @@ export class ComponentLoader {
     const parts = name.split("-")
     for (let i = parts.length; i >= 1; i--) {
       const moduleKey = parts.slice(0, i).join("-")
-      const path = Object.keys(this.modules).find(k =>
+      // Exact match: field-label → field-label.tsx
+      const exact = Object.keys(this.modules).find(k =>
         k.includes(this.dirSegment) && k.endsWith(`/${moduleKey}.tsx`),
       )
-      if (path) return path
+      if (exact) return exact
+      // Prefix match: attachment → attachments.tsx, environment-variable → environment-variables.tsx
+      const prefix = Object.keys(this.modules).find(k => {
+        if (!k.includes(this.dirSegment) || !k.endsWith(".tsx")) return false
+        const fileName = k.slice(k.lastIndexOf("/") + 1, -4) // strip path + .tsx
+        return fileName.startsWith(moduleKey) && fileName !== moduleKey
+      })
+      if (prefix) return prefix
     }
     return null
   }
