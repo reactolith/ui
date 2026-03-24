@@ -424,16 +424,10 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <ui-ai-attachments>
-  <ui-ai-attachment>
-    <ui-ai-attachment-preview>
-      <div class="w-16 h-16 bg-muted rounded flex items-center justify-center text-xs">PDF</div>
-    </ui-ai-attachment-preview>
-    <ui-ai-attachment-info>
-      <span class="text-sm font-medium">report.pdf</span>
-      <span class="text-xs text-muted-foreground">2.4 MB</span>
-    </ui-ai-attachment-info>
-    <ui-ai-attachment-remove ></ui-ai-attachment-remove>
+                    <ui-ai-attachments variant="list">
+  <ui-ai-attachment json-data='{"type":"file","id":"1","filename":"report.pdf","mediaType":"application/pdf"}'>
+    <ui-ai-attachment-preview></ui-ai-attachment-preview>
+    <ui-ai-attachment-info></ui-ai-attachment-info>
   </ui-ai-attachment>
 </ui-ai-attachments>
                   </div>
