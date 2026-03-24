@@ -12,17 +12,42 @@ Shadcn base component copies. Treat as read-only third-party code.
 
 AI-specific components (code blocks, messages, canvases, etc.). Also read-only.
 
-### `app/loader.tsx` — Custom loadable loader
+### `lib/loader/` — Loader system
 
-The loader resolves `<ui-*>` tags to the correct component exports without individual wrapper files. It handles:
+The loader system resolves `<ui-*>` tags to components using a class-based architecture with reusable behaviors.
 
-1. **Module resolution**: `ui-field-label` → `components/ui/field.tsx` → `FieldLabel` export (case-insensitive lookup, progressively removes trailing kebab segments to find the module file)
-2. **AI components**: `ui-ai-message-content` → `components/ai-elements/message.tsx` → `MessageContent`
-3. **Recharts**: `ui-area-chart` → `recharts` → `AreaChart`
-4. **Standard behavior HOCs**: `STANDARD_BEHAVIORS` map — applies `renderLinkable`, `renderTrigger`, `CloseOverlayProvider`, or `useCloseOverlay` wrappers
-5. **Component-specific wrappers**: `COMPONENT_WRAPPERS` map — inline HOCs for select (provider/consumer), combobox (provider/list-renderer), command-item (href→`<a>`), sidebar buttons (useSidebar + close), drawer triggers (smart Button wrapping)
-6. **Prop transforms**: `PROP_TRANSFORMS` map — simple prop rewriting for progress (value coercion), spinner (size mapping), chart-container (className), chart-tooltip (children→content)
-7. **Override files**: `app/overrides/*.tsx` take priority for standalone implementations
+#### Key files
+
+- **`behaviors.tsx`** — Reusable behavior definitions (HOC + web-type metadata):
+  - `linkable` — adds `href` prop, renders as `<a>` link
+  - `linkableClose` — adds `href` + closes parent overlay on navigate
+  - `trigger` — single-child asChild render prop pattern
+  - `overlay` — wraps children with `CloseOverlayProvider`
+  - `closeClick` — calls `useCloseOverlay()` on click
+  - Component-specific wrappers: `commandLinkable`, `sidebarLinkable`, `sidebarSubLinkable`, `selectProvider`, `selectRegister`, `comboboxProvider`, `comboboxListRenderer`
+  - Prop transforms: `progressTransform`, `spinnerTransform`, `chartContainerTransform`, `chartTooltipTransform`
+
+- **`component-loader.tsx`** — Loader classes:
+  - `ComponentLoader` — base class: module resolution, export lookup, behavior/wrapper/transform application
+  - `OverrideLoader` — exact file name match, default export, no wrapping
+  - `AiElementsLoader` — strips `ai-` prefix, delegates to `ComponentLoader`
+  - `ExternalLoader` — imports from external packages (e.g. recharts)
+  - `createCompositeLoader()` — chains loaders in priority order
+
+- **`presets.tsx`** — Factory functions for common loader configurations:
+  - `createShadcnLoader(modules)` — shadcn components with all behaviors pre-configured
+  - `createAiElementsLoader(modules)` — AI element components
+  - `createRechartsLoader()` — recharts chart components
+  - `createOverridesLoader(modules)` — override files
+
+- **`index.ts`** — Re-exports everything
+
+#### How resolution works
+
+1. `ui-field-label` → `ComponentLoader.findModule('field-label')` → `components/ui/field.tsx` → `findExport(mod, 'field-label')` → `FieldLabel` (case-insensitive, progressively removes trailing kebab segments)
+2. `ui-ai-message-content` → `AiElementsLoader` strips `ai-` → resolves `message-content` in `components/ai-elements/`
+3. `ui-area-chart` → `ExternalLoader` → `import('recharts')` → `AreaChart`
+4. `ui-sonner` → `OverrideLoader` → `app/overrides/sonner.tsx` default export
 
 ### `app/overrides/` — Override files (2 files)
 
@@ -45,25 +70,24 @@ Navigation links inside overlays (sidebars, sheets, dropdowns, popovers, command
 
 2. **Item components with `href`** (`DropdownMenuItem`, `ContextMenuItem`, `MenubarItem`, `CommandItem`, `NavigationMenuLink`) consume the context via `useCloseOverlay()` and call the close function on click.
 
-3. **Sidebar** handles mobile close separately via `useSidebar().setOpenMobile(false)` in the `withSidebarLinkable`/`withSidebarSubLinkable` wrappers in `app/loader.tsx`.
+3. **Sidebar** handles mobile close separately via `useSidebar().setOpenMobile(false)` in the `sidebarLinkable`/`sidebarSubLinkable` wrappers.
 
 4. **Dropdown/Context/Menubar menus** auto-close their own menu via Base UI's built-in behavior. The `useCloseOverlay()` hook additionally closes any parent overlay (e.g., a Sheet containing a DropdownMenu).
 
 ### When adding new components with navigation links
 
-- If the component is an **overlay container**: add it to `'overlay'` in `STANDARD_BEHAVIORS`.
-- If the component is an **item with `href`**: add it to `'linkable'` or `'linkable-close'` in `STANDARD_BEHAVIORS`.
-- If the component is a **trigger with single-child render prop**: add it to `'trigger'` in `STANDARD_BEHAVIORS`.
-- If it needs **unique logic**: add a wrapper function in `COMPONENT_WRAPPERS` (receives both the component and the loaded module for sibling export access).
-- If it needs **simple prop rewriting**: add an entry to `PROP_TRANSFORMS`.
+- If the component is an **overlay container**: assign the `overlay` behavior in the loader's `behaviors` config.
+- If the component is an **item with `href`**: assign `linkable` or `linkableClose` behavior.
+- If the component is a **trigger with single-child render prop**: assign the `trigger` behavior.
+- If it needs **unique logic**: create a `WrapperDef` and add it to the loader's `wrappers` config.
+- If it needs **simple prop rewriting**: create a `PropTransformDef` and add it to the loader's `propTransforms` config.
 - Only create an override file in `app/overrides/` if the component is a completely standalone implementation.
 
 ## Web Types
 
-To regenerate `web-types.json` (all components with all props):
+To regenerate `web-types.json` (all components with all props, including loader-injected attributes):
 ```
-npx generate-web-types -c components/ui -p ui- -o web-types.json && \
-npx generate-web-types -c components/ai-elements -p ui-ai- -o web-types-ai.json && \
-npx generate-web-types -c app/overrides -p ui- -o web-types-ov.json && \
-node -e "const f=require('fs'),m=p=>JSON.parse(f.readFileSync(p,'utf8'));const u=m('web-types.json');u.contributions.html.elements.push(...m('web-types-ai.json').contributions.html.elements,...m('web-types-ov.json').contributions.html.elements);f.writeFileSync('web-types.json',JSON.stringify(u,null,2));['web-types-ai.json','web-types-ov.json'].forEach(p=>f.unlinkSync(p))"
+npm run generate-web-types
 ```
+
+The script (`scripts/generate-web-types.ts`) scans all loader configs, extracts props via ts-morph, and enriches with additional attributes from behavior/wrapper metadata (e.g. `href` on linkable components, `items` on combobox).

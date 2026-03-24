@@ -8,7 +8,7 @@ export {
   type ModuleMap,
   type ComponentLoaderConfig,
   type AnyLoader,
-} from "./lib/loader"
+} from "./component-loader"
 
 // Behaviors (reusable building blocks)
 export {
@@ -21,7 +21,7 @@ export {
   type WrapperDef,
   type PropTransformDef,
   type WebTypeAttribute,
-} from "./lib/loader"
+} from "./behaviors"
 
 // Component-specific wrappers
 export {
@@ -35,7 +35,7 @@ export {
   createSmartTriggerWrapper,
   HREF_ATTR,
   ITEMS_ATTR,
-} from "./lib/loader"
+} from "./behaviors"
 
 // Prop transforms
 export {
@@ -43,7 +43,7 @@ export {
   spinnerTransform,
   chartContainerTransform,
   chartTooltipTransform,
-} from "./lib/loader"
+} from "./behaviors"
 
 // Preset loader factories
 export {
@@ -51,10 +51,4 @@ export {
   createAiElementsLoader,
   createRechartsLoader,
   createOverridesLoader,
-} from "./lib/loader"
-
-// Utilities
-export { renderLinkable, renderTrigger, getSingleElement } from "./lib/render-element"
-export { CloseOverlayProvider, useCloseOverlay } from "./lib/close-overlay"
-export { SelectItemsProvider, useSelectItemsRegister } from "./lib/select-items"
-export { cn } from "./lib/utils"
+} from "./presets"
