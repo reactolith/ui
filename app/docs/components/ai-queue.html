@@ -23,6 +23,7 @@
         <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
       </ui-sidebar-header>
       <ui-sidebar-content>
+        
           <ui-sidebar-group>
             <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
             <ui-sidebar-group-content>
@@ -93,7 +94,7 @@
                   <ui-sidebar-menu-button  size="sm" href="input-group.html">Input Group</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input Otp</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input OTP</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="label.html">Label</ui-sidebar-menu-button>
@@ -266,7 +267,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-canvas.html">Canvas</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain Of Thought</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain of Thought</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-checkpoint.html">Checkpoint</ui-sidebar-menu-button>
@@ -308,7 +309,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-inline-citation.html">Inline Citation</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">Jsx Preview</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">JSX Preview</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-message.html">Message</ui-sidebar-menu-button>
@@ -341,7 +342,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-prompt-input.html">Prompt Input</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  is-active size="sm" href="ai-queue.html">Queue</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="ai-queue.html">Queue</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-reasoning.html">Reasoning</ui-sidebar-menu-button>
@@ -368,7 +369,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-suggestion.html">Suggestion</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-task.html">Task</ui-sidebar-menu-button>
@@ -415,10 +416,10 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://elements.ai-sdk.dev/docs/components/queue" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
+                <a href="https://ai.shadcn.com/docs/components/queue" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">Queue</h1>
-              <p class="text-lg text-muted-foreground">A queue display with sections, items, and status indicators.</p>
+              <p class="text-lg text-muted-foreground">A task queue with collapsible sections, item indicators, descriptions, and file attachments.</p>
             </div>
 
             <section class="mb-10">
@@ -428,16 +429,24 @@
   <ui-ai-queue-list>
     <ui-ai-queue-section>
       <ui-ai-queue-section-trigger>
-        <ui-ai-queue-section-label>In Progress</ui-ai-queue-section-label>
+        <ui-ai-queue-section-label label="In Progress" count="2"></ui-ai-queue-section-label>
       </ui-ai-queue-section-trigger>
       <ui-ai-queue-section-content>
         <ui-ai-queue-item>
-          <ui-ai-queue-item-indicator ></ui-ai-queue-item-indicator>
-          <ui-ai-queue-item-content>Analyze codebase structure</ui-ai-queue-item-content>
+          <ui-ai-queue-item-indicator></ui-ai-queue-item-indicator>
+          <ui-ai-queue-item-content>Build authentication flow</ui-ai-queue-item-content>
+          <ui-ai-queue-item-description>Setting up OAuth providers</ui-ai-queue-item-description>
         </ui-ai-queue-item>
+      </ui-ai-queue-section-content>
+    </ui-ai-queue-section>
+    <ui-ai-queue-section>
+      <ui-ai-queue-section-trigger>
+        <ui-ai-queue-section-label label="Completed" count="1"></ui-ai-queue-section-label>
+      </ui-ai-queue-section-trigger>
+      <ui-ai-queue-section-content>
         <ui-ai-queue-item>
-          <ui-ai-queue-item-indicator ></ui-ai-queue-item-indicator>
-          <ui-ai-queue-item-content>Generate test cases</ui-ai-queue-item-content>
+          <ui-ai-queue-item-indicator completed></ui-ai-queue-item-indicator>
+          <ui-ai-queue-item-content completed>Set up project structure</ui-ai-queue-item-content>
         </ui-ai-queue-item>
       </ui-ai-queue-section-content>
     </ui-ai-queue-section>
@@ -453,16 +462,24 @@
   &lt;ui-ai-queue-list&gt;
     &lt;ui-ai-queue-section&gt;
       &lt;ui-ai-queue-section-trigger&gt;
-        &lt;ui-ai-queue-section-label&gt;In Progress&lt;/ui-ai-queue-section-label&gt;
+        &lt;ui-ai-queue-section-label label=&quot;In Progress&quot; count=&quot;2&quot;&gt;&lt;/ui-ai-queue-section-label&gt;
       &lt;/ui-ai-queue-section-trigger&gt;
       &lt;ui-ai-queue-section-content&gt;
         &lt;ui-ai-queue-item&gt;
-          &lt;ui-ai-queue-item-indicator /&gt;
-          &lt;ui-ai-queue-item-content&gt;Analyze codebase structure&lt;/ui-ai-queue-item-content&gt;
+          &lt;ui-ai-queue-item-indicator&gt;&lt;/ui-ai-queue-item-indicator&gt;
+          &lt;ui-ai-queue-item-content&gt;Build authentication flow&lt;/ui-ai-queue-item-content&gt;
+          &lt;ui-ai-queue-item-description&gt;Setting up OAuth providers&lt;/ui-ai-queue-item-description&gt;
         &lt;/ui-ai-queue-item&gt;
+      &lt;/ui-ai-queue-section-content&gt;
+    &lt;/ui-ai-queue-section&gt;
+    &lt;ui-ai-queue-section&gt;
+      &lt;ui-ai-queue-section-trigger&gt;
+        &lt;ui-ai-queue-section-label label=&quot;Completed&quot; count=&quot;1&quot;&gt;&lt;/ui-ai-queue-section-label&gt;
+      &lt;/ui-ai-queue-section-trigger&gt;
+      &lt;ui-ai-queue-section-content&gt;
         &lt;ui-ai-queue-item&gt;
-          &lt;ui-ai-queue-item-indicator /&gt;
-          &lt;ui-ai-queue-item-content&gt;Generate test cases&lt;/ui-ai-queue-item-content&gt;
+          &lt;ui-ai-queue-item-indicator completed&gt;&lt;/ui-ai-queue-item-indicator&gt;
+          &lt;ui-ai-queue-item-content completed&gt;Set up project structure&lt;/ui-ai-queue-item-content&gt;
         &lt;/ui-ai-queue-item&gt;
       &lt;/ui-ai-queue-section-content&gt;
     &lt;/ui-ai-queue-section&gt;
@@ -474,9 +491,35 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Sub-components</h2>
               <div class="flex flex-wrap gap-2">
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-item&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-item-indicator&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-item-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-list&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-section&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-section-trigger&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-section-label&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-section-content&gt;</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-list&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-section&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-section-trigger&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-section-label&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-section-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-item&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-item-indicator&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-item-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-item-description&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-item-actions&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-item-action&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-item-attachment&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-item-image&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-queue-item-file&gt;</code>
               </div>
             </section>
+
+            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-queue-section-label&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">count</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Number of items in section.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">label</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Section label.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">icon</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">ReactNode</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Section icon.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-queue-item-indicator&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">completed</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Whether the item is completed.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-queue-item-content&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">completed</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Whether the item is completed.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-queue-item-description&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">completed</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Whether the item is completed.</td></tr></tbody></table>
+              </div>
+            </div></section>
 
             <section class="mb-10">
               <p class="text-sm text-muted-foreground">

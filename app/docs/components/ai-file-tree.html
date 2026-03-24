@@ -23,6 +23,7 @@
         <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
       </ui-sidebar-header>
       <ui-sidebar-content>
+        
           <ui-sidebar-group>
             <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
             <ui-sidebar-group-content>
@@ -93,7 +94,7 @@
                   <ui-sidebar-menu-button  size="sm" href="input-group.html">Input Group</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input Otp</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input OTP</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="label.html">Label</ui-sidebar-menu-button>
@@ -266,7 +267,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-canvas.html">Canvas</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain Of Thought</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain of Thought</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-checkpoint.html">Checkpoint</ui-sidebar-menu-button>
@@ -299,7 +300,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-environment-variables.html">Environment Variables</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  is-active size="sm" href="ai-file-tree.html">File Tree</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="ai-file-tree.html">File Tree</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-image.html">Image</ui-sidebar-menu-button>
@@ -308,7 +309,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-inline-citation.html">Inline Citation</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">Jsx Preview</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">JSX Preview</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-message.html">Message</ui-sidebar-menu-button>
@@ -368,7 +369,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-suggestion.html">Suggestion</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-task.html">Task</ui-sidebar-menu-button>
@@ -415,26 +416,24 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://elements.ai-sdk.dev/docs/components/file-tree" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
+                <a href="https://ai.shadcn.com/docs/components/file-tree" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">File Tree</h1>
-              <p class="text-lg text-muted-foreground">A hierarchical file tree with folders, files, and actions.</p>
+              <p class="text-lg text-muted-foreground">An interactive file tree with expandable folders, file selection, and custom actions.</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <ui-ai-file-tree>
-  <ui-ai-file-tree-folder name="src" path="/src">
-    <ui-ai-file-tree-folder name="components" path="/src/components">
-      <ui-ai-file-tree-file name="Button.tsx" path="/src/components/Button.tsx" ></ui-ai-file-tree-file>
-      <ui-ai-file-tree-file name="Input.tsx" path="/src/components/Input.tsx" ></ui-ai-file-tree-file>
+                    <ui-ai-file-tree selectedPath="src/App.tsx">
+  <ui-ai-file-tree-folder path="src" name="src">
+    <ui-ai-file-tree-file path="src/App.tsx" name="App.tsx"></ui-ai-file-tree-file>
+    <ui-ai-file-tree-file path="src/index.ts" name="index.ts"></ui-ai-file-tree-file>
+    <ui-ai-file-tree-folder path="src/components" name="components">
+      <ui-ai-file-tree-file path="src/components/Button.tsx" name="Button.tsx"></ui-ai-file-tree-file>
     </ui-ai-file-tree-folder>
-    <ui-ai-file-tree-file name="App.tsx" path="/src/App.tsx" ></ui-ai-file-tree-file>
-    <ui-ai-file-tree-file name="index.ts" path="/src/index.ts" ></ui-ai-file-tree-file>
   </ui-ai-file-tree-folder>
-  <ui-ai-file-tree-file name="package.json" path="/package.json" ></ui-ai-file-tree-file>
-  <ui-ai-file-tree-file name="tsconfig.json" path="/tsconfig.json" ></ui-ai-file-tree-file>
+  <ui-ai-file-tree-file path="package.json" name="package.json"></ui-ai-file-tree-file>
 </ui-ai-file-tree>
                   </div>
             </section>
@@ -442,17 +441,15 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-ai-file-tree&gt;
-  &lt;ui-ai-file-tree-folder name=&quot;src&quot; path=&quot;/src&quot;&gt;
-    &lt;ui-ai-file-tree-folder name=&quot;components&quot; path=&quot;/src/components&quot;&gt;
-      &lt;ui-ai-file-tree-file name=&quot;Button.tsx&quot; path=&quot;/src/components/Button.tsx&quot; /&gt;
-      &lt;ui-ai-file-tree-file name=&quot;Input.tsx&quot; path=&quot;/src/components/Input.tsx&quot; /&gt;
+                <pre class="p-4 text-sm"><code>&lt;ui-ai-file-tree selectedPath=&quot;src/App.tsx&quot;&gt;
+  &lt;ui-ai-file-tree-folder path=&quot;src&quot; name=&quot;src&quot;&gt;
+    &lt;ui-ai-file-tree-file path=&quot;src/App.tsx&quot; name=&quot;App.tsx&quot;&gt;&lt;/ui-ai-file-tree-file&gt;
+    &lt;ui-ai-file-tree-file path=&quot;src/index.ts&quot; name=&quot;index.ts&quot;&gt;&lt;/ui-ai-file-tree-file&gt;
+    &lt;ui-ai-file-tree-folder path=&quot;src/components&quot; name=&quot;components&quot;&gt;
+      &lt;ui-ai-file-tree-file path=&quot;src/components/Button.tsx&quot; name=&quot;Button.tsx&quot;&gt;&lt;/ui-ai-file-tree-file&gt;
     &lt;/ui-ai-file-tree-folder&gt;
-    &lt;ui-ai-file-tree-file name=&quot;App.tsx&quot; path=&quot;/src/App.tsx&quot; /&gt;
-    &lt;ui-ai-file-tree-file name=&quot;index.ts&quot; path=&quot;/src/index.ts&quot; /&gt;
   &lt;/ui-ai-file-tree-folder&gt;
-  &lt;ui-ai-file-tree-file name=&quot;package.json&quot; path=&quot;/package.json&quot; /&gt;
-  &lt;ui-ai-file-tree-file name=&quot;tsconfig.json&quot; path=&quot;/tsconfig.json&quot; /&gt;
+  &lt;ui-ai-file-tree-file path=&quot;package.json&quot; name=&quot;package.json&quot;&gt;&lt;/ui-ai-file-tree-file&gt;
 &lt;/ui-ai-file-tree&gt;</code></pre>
               </div>
             </section>
@@ -463,6 +460,26 @@
                 <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-file-tree&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-file-tree-icon&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-file-tree-name&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-file-tree-folder&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-file-tree-file&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-file-tree-actions&gt;</code>
               </div>
             </section>
+
+            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-file-tree&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">selectedPath</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Currently selected file path.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onSelect</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">(path: string) =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback when a file is selected.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-file-tree-folder&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">path</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Folder path.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Display name.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-file-tree-file&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">path</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">File path.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Display name.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">icon</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">ReactNode</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Custom file icon.</td></tr></tbody></table>
+              </div>
+            </div></section>
 
             <section class="mb-10">
               <p class="text-sm text-muted-foreground">

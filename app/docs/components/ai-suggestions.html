@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Context - Reactolith UI</title>
+    <title>Suggestions - Reactolith UI</title>
     <link rel="icon" href="../../icon.svg" type="image/svg+xml">
     <script type="module" src="../../app.ts"></script>
     <script>
@@ -285,7 +285,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-connection.html">Connection</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button is-active size="sm" href="ai-context.html">Context</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-context.html">Context</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-controls.html">Controls</ui-sidebar-menu-button>
@@ -369,7 +369,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-task.html">Task</ui-sidebar-menu-button>
@@ -416,62 +416,46 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://ai.shadcn.com/docs/components/context" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
+                <a href="https://ai.shadcn.com/docs/components/suggestions" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
               </div>
-              <h1 class="text-3xl font-bold tracking-tight">Context</h1>
-              <p class="text-lg text-muted-foreground">A hover card displaying token usage, model info, and context window utilization.</p>
+              <h1 class="text-3xl font-bold tracking-tight">Suggestions</h1>
+              <p class="text-lg text-muted-foreground">A scrollable list of suggested prompts or follow-up questions.</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <ui-ai-context usedTokens="3200" maxTokens="8192" modelId="gpt-4o">
-  <ui-ai-context-trigger>3.2k / 8.1k tokens</ui-ai-context-trigger>
-  <ui-ai-context-content>
-    <ui-ai-context-content-header>Token Usage</ui-ai-context-content-header>
-    <ui-ai-context-content-body>
-      <ui-ai-context-input-usage></ui-ai-context-input-usage>
-      <ui-ai-context-output-usage></ui-ai-context-output-usage>
-      <ui-ai-context-reasoning-usage></ui-ai-context-reasoning-usage>
-      <ui-ai-context-cache-usage></ui-ai-context-cache-usage>
-    </ui-ai-context-content-body>
-    <ui-ai-context-content-footer>Model: gpt-4o</ui-ai-context-content-footer>
-  </ui-ai-context-content>
-</ui-ai-context>
+                    <ui-ai-suggestions>
+  <ui-ai-suggestion suggestion="What is React?">What is React?</ui-ai-suggestion>
+  <ui-ai-suggestion suggestion="How do hooks work?">How do hooks work?</ui-ai-suggestion>
+  <ui-ai-suggestion suggestion="Explain server components">Explain server components</ui-ai-suggestion>
+</ui-ai-suggestions>
                   </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-ai-context usedTokens=&quot;3200&quot; maxTokens=&quot;8192&quot; modelId=&quot;gpt-4o&quot;&gt;
-  &lt;ui-ai-context-trigger&gt;3.2k / 8.1k tokens&lt;/ui-ai-context-trigger&gt;
-  &lt;ui-ai-context-content&gt;
-    &lt;ui-ai-context-content-header&gt;Token Usage&lt;/ui-ai-context-content-header&gt;
-    &lt;ui-ai-context-content-body&gt;
-      &lt;ui-ai-context-input-usage&gt;&lt;/ui-ai-context-input-usage&gt;
-      &lt;ui-ai-context-output-usage&gt;&lt;/ui-ai-context-output-usage&gt;
-      &lt;ui-ai-context-reasoning-usage&gt;&lt;/ui-ai-context-reasoning-usage&gt;
-      &lt;ui-ai-context-cache-usage&gt;&lt;/ui-ai-context-cache-usage&gt;
-    &lt;/ui-ai-context-content-body&gt;
-    &lt;ui-ai-context-content-footer&gt;Model: gpt-4o&lt;/ui-ai-context-content-footer&gt;
-  &lt;/ui-ai-context-content&gt;
-&lt;/ui-ai-context&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;ui-ai-suggestions&gt;
+  &lt;ui-ai-suggestion suggestion=&quot;What is React?&quot;&gt;What is React?&lt;/ui-ai-suggestion&gt;
+  &lt;ui-ai-suggestion suggestion=&quot;How do hooks work?&quot;&gt;How do hooks work?&lt;/ui-ai-suggestion&gt;
+  &lt;ui-ai-suggestion suggestion=&quot;Explain server components&quot;&gt;Explain server components&lt;/ui-ai-suggestion&gt;
+&lt;/ui-ai-suggestions&gt;</code></pre>
               </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Sub-components</h2>
               <div class="flex flex-wrap gap-2">
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-context&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-context-trigger&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-context-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-context-content-header&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-context-content-body&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-context-content-footer&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-context-input-usage&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-context-output-usage&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-context-reasoning-usage&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-context-cache-usage&gt;</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-suggestions&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-suggestion&gt;</code>
               </div>
             </section>
 
             <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
             <div class="mt-6">
-              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-context&gt;</code></h3>
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-suggestion&gt;</code></h3>
               <div class="overflow-x-auto max-w-full">
-                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">usedTokens</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Number of tokens used.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">maxTokens</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Maximum tokens available.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">usage</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">object</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Detailed usage breakdown object.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">modelId</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The model identifier.</td></tr></tbody></table>
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">suggestion</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The suggestion text.</td></tr></tbody></table>
               </div>
             </div></section>
 

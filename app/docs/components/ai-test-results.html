@@ -23,6 +23,7 @@
         <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
       </ui-sidebar-header>
       <ui-sidebar-content>
+        
           <ui-sidebar-group>
             <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
             <ui-sidebar-group-content>
@@ -93,7 +94,7 @@
                   <ui-sidebar-menu-button  size="sm" href="input-group.html">Input Group</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input Otp</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input OTP</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="label.html">Label</ui-sidebar-menu-button>
@@ -266,7 +267,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-canvas.html">Canvas</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain Of Thought</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain of Thought</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-checkpoint.html">Checkpoint</ui-sidebar-menu-button>
@@ -308,7 +309,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-inline-citation.html">Inline Citation</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">Jsx Preview</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">JSX Preview</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-message.html">Message</ui-sidebar-menu-button>
@@ -368,7 +369,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-suggestion.html">Suggestion</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-task.html">Task</ui-sidebar-menu-button>
@@ -377,7 +378,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-terminal.html">Terminal</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  is-active size="sm" href="ai-test-results.html">Test Results</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="ai-test-results.html">Test Results</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-tool.html">Tool</ui-sidebar-menu-button>
@@ -415,10 +416,10 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://elements.ai-sdk.dev/docs/components/test-results" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
+                <a href="https://ai.shadcn.com/docs/components/test-results" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">Test Results</h1>
-              <p class="text-lg text-muted-foreground">Displays test suite results with progress, stats, and details.</p>
+              <p class="text-lg text-muted-foreground">Displays test suite results with pass/fail/skip counts, progress bars, and collapsible error details.</p>
             </div>
 
             <section class="mb-10">
@@ -426,23 +427,26 @@
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
                     <ui-ai-test-results>
   <ui-ai-test-results-header>
-    <ui-ai-test-results-summary>48 tests</ui-ai-test-results-summary>
-    <ui-ai-test-results-duration>1.2s</ui-ai-test-results-duration>
+    <ui-ai-test-results-summary></ui-ai-test-results-summary>
+    <ui-ai-test-results-duration>2.5s</ui-ai-test-results-duration>
   </ui-ai-test-results-header>
-  <ui-ai-test-results-progress ></ui-ai-test-results-progress>
+  <ui-ai-test-results-progress></ui-ai-test-results-progress>
   <ui-ai-test-results-content>
-    <ui-ai-test-suite>
-      <ui-ai-test-suite-name>Authentication</ui-ai-test-suite-name>
+    <ui-ai-test-suite name="auth.test.ts" status="failed">
+      <ui-ai-test-suite-name></ui-ai-test-suite-name>
+      <ui-ai-test-suite-stats passed="3" failed="1" skipped="0"></ui-ai-test-suite-stats>
       <ui-ai-test-suite-content>
-        <ui-ai-test>
-          <ui-ai-test-status>✓</ui-ai-test-status>
-          <ui-ai-test-name>should validate JWT tokens</ui-ai-test-name>
-          <ui-ai-test-duration>12ms</ui-ai-test-duration>
+        <ui-ai-test name="should login successfully" status="passed" duration="120">
+          <ui-ai-test-name></ui-ai-test-name>
+          <ui-ai-test-status></ui-ai-test-status>
+          <ui-ai-test-duration></ui-ai-test-duration>
         </ui-ai-test>
-        <ui-ai-test>
-          <ui-ai-test-status>✗</ui-ai-test-status>
-          <ui-ai-test-name>should reject expired tokens</ui-ai-test-name>
-          <ui-ai-test-duration>3ms</ui-ai-test-duration>
+        <ui-ai-test name="should handle invalid credentials" status="failed" duration="85">
+          <ui-ai-test-name></ui-ai-test-name>
+          <ui-ai-test-status></ui-ai-test-status>
+          <ui-ai-test-error>
+            <ui-ai-test-error-message>Expected status 401 but received 500</ui-ai-test-error-message>
+          </ui-ai-test-error>
         </ui-ai-test>
       </ui-ai-test-suite-content>
     </ui-ai-test-suite>
@@ -456,23 +460,26 @@
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-test-results&gt;
   &lt;ui-ai-test-results-header&gt;
-    &lt;ui-ai-test-results-summary&gt;48 tests&lt;/ui-ai-test-results-summary&gt;
-    &lt;ui-ai-test-results-duration&gt;1.2s&lt;/ui-ai-test-results-duration&gt;
+    &lt;ui-ai-test-results-summary&gt;&lt;/ui-ai-test-results-summary&gt;
+    &lt;ui-ai-test-results-duration&gt;2.5s&lt;/ui-ai-test-results-duration&gt;
   &lt;/ui-ai-test-results-header&gt;
-  &lt;ui-ai-test-results-progress /&gt;
+  &lt;ui-ai-test-results-progress&gt;&lt;/ui-ai-test-results-progress&gt;
   &lt;ui-ai-test-results-content&gt;
-    &lt;ui-ai-test-suite&gt;
-      &lt;ui-ai-test-suite-name&gt;Authentication&lt;/ui-ai-test-suite-name&gt;
+    &lt;ui-ai-test-suite name=&quot;auth.test.ts&quot; status=&quot;failed&quot;&gt;
+      &lt;ui-ai-test-suite-name&gt;&lt;/ui-ai-test-suite-name&gt;
+      &lt;ui-ai-test-suite-stats passed=&quot;3&quot; failed=&quot;1&quot; skipped=&quot;0&quot;&gt;&lt;/ui-ai-test-suite-stats&gt;
       &lt;ui-ai-test-suite-content&gt;
-        &lt;ui-ai-test&gt;
-          &lt;ui-ai-test-status&gt;✓&lt;/ui-ai-test-status&gt;
-          &lt;ui-ai-test-name&gt;should validate JWT tokens&lt;/ui-ai-test-name&gt;
-          &lt;ui-ai-test-duration&gt;12ms&lt;/ui-ai-test-duration&gt;
+        &lt;ui-ai-test name=&quot;should login successfully&quot; status=&quot;passed&quot; duration=&quot;120&quot;&gt;
+          &lt;ui-ai-test-name&gt;&lt;/ui-ai-test-name&gt;
+          &lt;ui-ai-test-status&gt;&lt;/ui-ai-test-status&gt;
+          &lt;ui-ai-test-duration&gt;&lt;/ui-ai-test-duration&gt;
         &lt;/ui-ai-test&gt;
-        &lt;ui-ai-test&gt;
-          &lt;ui-ai-test-status&gt;✗&lt;/ui-ai-test-status&gt;
-          &lt;ui-ai-test-name&gt;should reject expired tokens&lt;/ui-ai-test-name&gt;
-          &lt;ui-ai-test-duration&gt;3ms&lt;/ui-ai-test-duration&gt;
+        &lt;ui-ai-test name=&quot;should handle invalid credentials&quot; status=&quot;failed&quot; duration=&quot;85&quot;&gt;
+          &lt;ui-ai-test-name&gt;&lt;/ui-ai-test-name&gt;
+          &lt;ui-ai-test-status&gt;&lt;/ui-ai-test-status&gt;
+          &lt;ui-ai-test-error&gt;
+            &lt;ui-ai-test-error-message&gt;Expected status 401 but received 500&lt;/ui-ai-test-error-message&gt;
+          &lt;/ui-ai-test-error&gt;
         &lt;/ui-ai-test&gt;
       &lt;/ui-ai-test-suite-content&gt;
     &lt;/ui-ai-test-suite&gt;
@@ -487,6 +494,26 @@
                 <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test-results&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test-results-header&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test-results-duration&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test-results-summary&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test-results-progress&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test-results-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test-suite&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test-suite-name&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test-suite-stats&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test-suite-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test-name&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test-duration&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test-status&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test-error&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test-error-message&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-test-error-stack&gt;</code>
               </div>
             </section>
+
+            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-test-suite&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Test suite name.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">status</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Suite status (passed, failed, etc.).</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-test-suite-stats&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">passed</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Number of passed tests.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">failed</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Number of failed tests.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">skipped</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Number of skipped tests.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-test&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Test name.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">status</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Test status.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">duration</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Test duration in ms.</td></tr></tbody></table>
+              </div>
+            </div></section>
 
             <section class="mb-10">
               <p class="text-sm text-muted-foreground">

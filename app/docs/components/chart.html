@@ -23,6 +23,7 @@
         <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
       </ui-sidebar-header>
       <ui-sidebar-content>
+        
           <ui-sidebar-group>
             <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
             <ui-sidebar-group-content>
@@ -93,7 +94,7 @@
                   <ui-sidebar-menu-button  size="sm" href="input-group.html">Input Group</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input Otp</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input OTP</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="label.html">Label</ui-sidebar-menu-button>
@@ -142,7 +143,7 @@
                   <ui-sidebar-menu-button  size="sm" href="carousel.html">Carousel</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  is-active size="sm" href="chart.html">Chart</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="chart.html">Chart</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="collapsible.html">Collapsible</ui-sidebar-menu-button>
@@ -266,7 +267,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-canvas.html">Canvas</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain Of Thought</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain of Thought</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-checkpoint.html">Checkpoint</ui-sidebar-menu-button>
@@ -308,7 +309,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-inline-citation.html">Inline Citation</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">Jsx Preview</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">JSX Preview</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-message.html">Message</ui-sidebar-menu-button>
@@ -368,7 +369,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-suggestion.html">Suggestion</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-task.html">Task</ui-sidebar-menu-button>
@@ -424,7 +425,7 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <ui-chart-container json-config='{"desktop":{"label":"Desktop","color":"var(--chart-1)"},"mobile":{"label":"Mobile","color":"var(--chart-2)"}}'>
+                    <ui-chart-container json-config='{"desktop":{"label":"Desktop","color":"hsl(var(--chart-1))"},"mobile":{"label":"Mobile","color":"hsl(var(--chart-2))"}}'>
   <ui-bar-chart json-data='[{"month":"Jan","desktop":186,"mobile":80},{"month":"Feb","desktop":305,"mobile":200},{"month":"Mar","desktop":237,"mobile":120}]'>
     <ui-cartesian-grid json-vertical="false" />
     <ui-x-axis dataKey="month" json-tickLine="false" json-axisLine="false" json-tickMargin="8" />

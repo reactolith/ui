@@ -23,6 +23,7 @@
         <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
       </ui-sidebar-header>
       <ui-sidebar-content>
+        
           <ui-sidebar-group>
             <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
             <ui-sidebar-group-content>
@@ -93,7 +94,7 @@
                   <ui-sidebar-menu-button  size="sm" href="input-group.html">Input Group</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input Otp</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input OTP</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="label.html">Label</ui-sidebar-menu-button>
@@ -266,7 +267,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-canvas.html">Canvas</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain Of Thought</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain of Thought</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-checkpoint.html">Checkpoint</ui-sidebar-menu-button>
@@ -308,7 +309,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-inline-citation.html">Inline Citation</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">Jsx Preview</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">JSX Preview</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-message.html">Message</ui-sidebar-menu-button>
@@ -326,7 +327,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-open-in-chat.html">Open In Chat</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  is-active size="sm" href="ai-package-info.html">Package Info</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="ai-package-info.html">Package Info</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-panel.html">Panel</ui-sidebar-menu-button>
@@ -368,7 +369,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-suggestion.html">Suggestion</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-task.html">Task</ui-sidebar-menu-button>
@@ -415,26 +416,26 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://elements.ai-sdk.dev/docs/components/package-info" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
+                <a href="https://ai.shadcn.com/docs/components/package-info" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">Package Info</h1>
-              <p class="text-lg text-muted-foreground">Displays npm package information with version and dependencies.</p>
+              <p class="text-lg text-muted-foreground">Displays package metadata with version changes, change types, and dependency lists.</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <ui-ai-package-info name="react" current-version="18.3.0" new-version="19.2.4" change-type="major">
+                    <ui-ai-package-info name="react" currentVersion="18.2.0" newVersion="19.0.0" changeType="major">
   <ui-ai-package-info-header>
-    <ui-ai-package-info-name ></ui-ai-package-info-name>
-    <ui-ai-package-info-change-type ></ui-ai-package-info-change-type>
-    <ui-ai-package-info-version ></ui-ai-package-info-version>
+    <ui-ai-package-info-name></ui-ai-package-info-name>
+    <ui-ai-package-info-change-type></ui-ai-package-info-change-type>
+    <ui-ai-package-info-version></ui-ai-package-info-version>
   </ui-ai-package-info-header>
-  <ui-ai-package-info-description>A JavaScript library for building user interfaces</ui-ai-package-info-description>
+  <ui-ai-package-info-description>A JavaScript library for building user interfaces.</ui-ai-package-info-description>
   <ui-ai-package-info-content>
     <ui-ai-package-info-dependencies>
-      <ui-ai-package-info-dependency name="react-dom" version="19.2.4" ></ui-ai-package-info-dependency>
-      <ui-ai-package-info-dependency name="scheduler" version="0.25.0" ></ui-ai-package-info-dependency>
+      <ui-ai-package-info-dependency name="react-dom" version="^19.0.0"></ui-ai-package-info-dependency>
+      <ui-ai-package-info-dependency name="scheduler" version="^0.24.0"></ui-ai-package-info-dependency>
     </ui-ai-package-info-dependencies>
   </ui-ai-package-info-content>
 </ui-ai-package-info>
@@ -444,17 +445,17 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-ai-package-info name=&quot;react&quot; current-version=&quot;18.3.0&quot; new-version=&quot;19.2.4&quot; change-type=&quot;major&quot;&gt;
+                <pre class="p-4 text-sm"><code>&lt;ui-ai-package-info name=&quot;react&quot; currentVersion=&quot;18.2.0&quot; newVersion=&quot;19.0.0&quot; changeType=&quot;major&quot;&gt;
   &lt;ui-ai-package-info-header&gt;
-    &lt;ui-ai-package-info-name /&gt;
-    &lt;ui-ai-package-info-change-type /&gt;
-    &lt;ui-ai-package-info-version /&gt;
+    &lt;ui-ai-package-info-name&gt;&lt;/ui-ai-package-info-name&gt;
+    &lt;ui-ai-package-info-change-type&gt;&lt;/ui-ai-package-info-change-type&gt;
+    &lt;ui-ai-package-info-version&gt;&lt;/ui-ai-package-info-version&gt;
   &lt;/ui-ai-package-info-header&gt;
-  &lt;ui-ai-package-info-description&gt;A JavaScript library for building user interfaces&lt;/ui-ai-package-info-description&gt;
+  &lt;ui-ai-package-info-description&gt;A JavaScript library for building user interfaces.&lt;/ui-ai-package-info-description&gt;
   &lt;ui-ai-package-info-content&gt;
     &lt;ui-ai-package-info-dependencies&gt;
-      &lt;ui-ai-package-info-dependency name=&quot;react-dom&quot; version=&quot;19.2.4&quot; /&gt;
-      &lt;ui-ai-package-info-dependency name=&quot;scheduler&quot; version=&quot;0.25.0&quot; /&gt;
+      &lt;ui-ai-package-info-dependency name=&quot;react-dom&quot; version=&quot;^19.0.0&quot;&gt;&lt;/ui-ai-package-info-dependency&gt;
+      &lt;ui-ai-package-info-dependency name=&quot;scheduler&quot; version=&quot;^0.24.0&quot;&gt;&lt;/ui-ai-package-info-dependency&gt;
     &lt;/ui-ai-package-info-dependencies&gt;
   &lt;/ui-ai-package-info-content&gt;
 &lt;/ui-ai-package-info&gt;</code></pre>
@@ -467,6 +468,20 @@
                 <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-package-info&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-package-info-header&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-package-info-name&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-package-info-change-type&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-package-info-version&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-package-info-description&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-package-info-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-package-info-dependencies&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-package-info-dependency&gt;</code>
               </div>
             </section>
+
+            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-package-info&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Package name.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">currentVersion</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Current installed version.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">newVersion</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">New available version.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">changeType</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;major&quot; | &quot;minor&quot; | &quot;patch&quot; | &quot;dev&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Type of version change.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-package-info-dependency&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Dependency name.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">version</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Dependency version.</td></tr></tbody></table>
+              </div>
+            </div></section>
 
             <section class="mb-10">
               <p class="text-sm text-muted-foreground">

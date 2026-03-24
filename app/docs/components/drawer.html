@@ -23,6 +23,7 @@
         <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
       </ui-sidebar-header>
       <ui-sidebar-content>
+        
           <ui-sidebar-group>
             <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
             <ui-sidebar-group-content>
@@ -93,7 +94,7 @@
                   <ui-sidebar-menu-button  size="sm" href="input-group.html">Input Group</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input Otp</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input OTP</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="label.html">Label</ui-sidebar-menu-button>
@@ -198,7 +199,7 @@
                   <ui-sidebar-menu-button  size="sm" href="dialog.html">Dialog</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  is-active size="sm" href="drawer.html">Drawer</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="drawer.html">Drawer</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="dropdown-menu.html">Dropdown Menu</ui-sidebar-menu-button>
@@ -266,7 +267,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-canvas.html">Canvas</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain Of Thought</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain of Thought</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-checkpoint.html">Checkpoint</ui-sidebar-menu-button>
@@ -308,7 +309,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-inline-citation.html">Inline Citation</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">Jsx Preview</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">JSX Preview</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-message.html">Message</ui-sidebar-menu-button>
@@ -368,7 +369,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-suggestion.html">Suggestion</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-task.html">Task</ui-sidebar-menu-button>
@@ -418,7 +419,7 @@
                 <a href="https://ui.shadcn.com/docs/components/base/drawer" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">shadcn/ui docs</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">Drawer</h1>
-              <p class="text-lg text-muted-foreground">A drawer component that extends the Dialog component to display content from the edge of the screen.</p>
+              <p class="text-lg text-muted-foreground">A drawer component that slides in from the edge of the screen, built on top of Vaul.</p>
             </div>
 
             <section class="mb-10">
@@ -428,18 +429,20 @@
   <ui-drawer-trigger>Open Drawer</ui-drawer-trigger>
   <ui-drawer-content>
     <ui-drawer-header>
-      <ui-drawer-title>Edit Profile</ui-drawer-title>
-      <ui-drawer-description>Make changes to your profile. Click save when done.</ui-drawer-description>
+      <ui-drawer-title>Move Goal</ui-drawer-title>
+      <ui-drawer-description>Set your daily activity goal.</ui-drawer-description>
     </ui-drawer-header>
-    <div class="p-4 space-y-4">
-      <div class="space-y-2">
-        <ui-label>Name</ui-label>
-        <ui-input placeholder="Your name"></ui-input>
+    <div class="p-4">
+      <div class="flex items-center justify-center space-x-2">
+        <ui-button variant="outline" size="icon-sm">−</ui-button>
+        <div class="text-7xl font-bold tracking-tighter">350</div>
+        <ui-button variant="outline" size="icon-sm">+</ui-button>
       </div>
+      <p class="text-center text-muted-foreground text-sm mt-2">Calories/day</p>
     </div>
     <ui-drawer-footer>
+      <ui-button>Submit</ui-button>
       <ui-drawer-close>Cancel</ui-drawer-close>
-      <ui-button>Save</ui-button>
     </ui-drawer-footer>
   </ui-drawer-content>
 </ui-drawer>
@@ -453,18 +456,20 @@
   &lt;ui-drawer-trigger&gt;Open Drawer&lt;/ui-drawer-trigger&gt;
   &lt;ui-drawer-content&gt;
     &lt;ui-drawer-header&gt;
-      &lt;ui-drawer-title&gt;Edit Profile&lt;/ui-drawer-title&gt;
-      &lt;ui-drawer-description&gt;Make changes to your profile. Click save when done.&lt;/ui-drawer-description&gt;
+      &lt;ui-drawer-title&gt;Move Goal&lt;/ui-drawer-title&gt;
+      &lt;ui-drawer-description&gt;Set your daily activity goal.&lt;/ui-drawer-description&gt;
     &lt;/ui-drawer-header&gt;
-    &lt;div class=&quot;p-4 space-y-4&quot;&gt;
-      &lt;div class=&quot;space-y-2&quot;&gt;
-        &lt;ui-label&gt;Name&lt;/ui-label&gt;
-        &lt;ui-input placeholder=&quot;Your name&quot;&gt;&lt;/ui-input&gt;
+    &lt;div class=&quot;p-4&quot;&gt;
+      &lt;div class=&quot;flex items-center justify-center space-x-2&quot;&gt;
+        &lt;ui-button variant=&quot;outline&quot; size=&quot;icon-sm&quot;&gt;−&lt;/ui-button&gt;
+        &lt;div class=&quot;text-7xl font-bold tracking-tighter&quot;&gt;350&lt;/div&gt;
+        &lt;ui-button variant=&quot;outline&quot; size=&quot;icon-sm&quot;&gt;+&lt;/ui-button&gt;
       &lt;/div&gt;
+      &lt;p class=&quot;text-center text-muted-foreground text-sm mt-2&quot;&gt;Calories/day&lt;/p&gt;
     &lt;/div&gt;
     &lt;ui-drawer-footer&gt;
+      &lt;ui-button&gt;Submit&lt;/ui-button&gt;
       &lt;ui-drawer-close&gt;Cancel&lt;/ui-drawer-close&gt;
-      &lt;ui-button&gt;Save&lt;/ui-button&gt;
     &lt;/ui-drawer-footer&gt;
   &lt;/ui-drawer-content&gt;
 &lt;/ui-drawer&gt;</code></pre>
@@ -474,9 +479,17 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Sub-components</h2>
               <div class="flex flex-wrap gap-2">
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer-trigger&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer-header&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer-title&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer-description&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer-footer&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer-close&gt;</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer-trigger&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer-header&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer-title&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer-description&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer-footer&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer-close&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer-overlay&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-drawer-portal&gt;</code>
               </div>
             </section>
+
+            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-drawer&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">open</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Controlled open state.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">shouldScaleBackground</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">true</code></td><td class="py-2 text-muted-foreground">Whether the background should scale down when the drawer opens.</td></tr></tbody></table>
+              </div>
+            </div></section>
 
             <section class="mb-10">
               <p class="text-sm text-muted-foreground">

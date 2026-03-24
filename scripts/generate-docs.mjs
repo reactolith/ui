@@ -17,7 +17,7 @@ const components = [
     subComponents: [
       { tag: "ui-accordion", props: [{ name: "type", type: '"single" | "multiple"', default: '"single"', description: "Whether one or multiple items can be opened at the same time." }, { name: "defaultValue", type: "string | string[]", default: "—", description: "The default open item(s)." }, { name: "collapsible", type: "boolean", default: "false", description: "Whether an open item can be collapsed." }] },
       { tag: "ui-accordion-item", props: [{ name: "value", type: "string", default: "—", description: "A unique value for the item." }] },
-      { tag: "ui-accordion-trigger", props: [{ name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }], custom: true },
+      { tag: "ui-accordion-trigger", props: [{ name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set.", source: "linkable" }], enhancedBy: "linkable behavior" },
       { tag: "ui-accordion-content", props: [] },
     ],
     example: `<ui-accordion type="single" collapsible>
@@ -161,7 +161,7 @@ const components = [
       { tag: "ui-breadcrumb", props: [] },
       { tag: "ui-breadcrumb-list", props: [] },
       { tag: "ui-breadcrumb-item", props: [] },
-      { tag: "ui-breadcrumb-link", props: [{ name: "href", type: "string", default: "—", description: "The URL to navigate to. Renders as an anchor tag when provided." }], custom: true },
+      { tag: "ui-breadcrumb-link", props: [{ name: "href", type: "string", default: "—", description: "The URL to navigate to. Renders as an anchor tag when provided.", source: "linkableClose" }], enhancedBy: "linkableClose behavior" },
       { tag: "ui-breadcrumb-page", props: [] },
       { tag: "ui-breadcrumb-separator", props: [] },
       { tag: "ui-breadcrumb-ellipsis", props: [] },
@@ -193,8 +193,8 @@ const components = [
         { name: "variant", type: '"default" | "outline" | "secondary" | "ghost" | "destructive" | "link"', default: '"default"', description: "The visual style variant." },
         { name: "size", type: '"default" | "xs" | "sm" | "lg" | "icon" | "icon-xs" | "icon-sm" | "icon-lg"', default: '"default"', description: "The size of the button." },
         { name: "disabled", type: "boolean", default: "false", description: "Whether the button is disabled." },
-        { name: "href", type: "string", default: "—", description: "When provided, renders the button as an anchor tag. (Custom prop)" },
-      ], custom: true },
+        { name: "href", type: "string", default: "—", description: "When provided, renders the button as an anchor tag.", source: "linkable" },
+      ], enhancedBy: "linkable behavior" },
     ],
     example: `<div class="space-y-6">
   <div>
@@ -447,12 +447,12 @@ const components = [
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/command",
     subComponents: [
       { tag: "ui-command", props: [] },
-      { tag: "ui-command-dialog", props: [] },
+      { tag: "ui-command-dialog", props: [{ name: "title", type: "string", default: '"Command Palette"', description: "Title for the dialog." }, { name: "description", type: "string", default: '"Search for a command to run..."', description: "Description for accessibility." }, { name: "showCloseButton", type: "boolean", default: "false", description: "Whether to show a close button." }] },
       { tag: "ui-command-input", props: [{ name: "placeholder", type: "string", default: "—", description: "Input placeholder text." }] },
       { tag: "ui-command-list", props: [] },
       { tag: "ui-command-empty", props: [] },
       { tag: "ui-command-group", props: [{ name: "heading", type: "string", default: "—", description: "Group heading text." }] },
-      { tag: "ui-command-item", props: [{ name: "value", type: "string", default: "—", description: "The value of the item." }, { name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }], custom: true },
+      { tag: "ui-command-item", props: [{ name: "value", type: "string", default: "—", description: "The value of the item." }, { name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set.", source: "commandLinkable" }], enhancedBy: "commandLinkable wrapper" },
       { tag: "ui-command-separator", props: [] },
       { tag: "ui-command-shortcut", props: [] },
     ],
@@ -478,7 +478,7 @@ const components = [
       { tag: "ui-context-menu", props: [] },
       { tag: "ui-context-menu-trigger", props: [] },
       { tag: "ui-context-menu-content", props: [] },
-      { tag: "ui-context-menu-item", props: [{ name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }], custom: true },
+      { tag: "ui-context-menu-item", props: [{ name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set.", source: "linkableClose" }, { name: "inset", type: "boolean", default: "false", description: "Indent the item to align with items that have icons." }, { name: "variant", type: '"default" | "destructive"', default: '"default"', description: "The visual style variant." }], enhancedBy: "linkableClose behavior" },
       { tag: "ui-context-menu-checkbox-item", props: [] },
       { tag: "ui-context-menu-radio-group", props: [] },
       { tag: "ui-context-menu-radio-item", props: [] },
@@ -518,7 +518,7 @@ const components = [
       { tag: "ui-dialog-trigger", props: [] },
       { tag: "ui-dialog-portal", props: [] },
       { tag: "ui-dialog-overlay", props: [] },
-      { tag: "ui-dialog-content", props: [] },
+      { tag: "ui-dialog-content", props: [{ name: "showCloseButton", type: "boolean", default: "true", description: "Whether to show the close button." }] },
       { tag: "ui-dialog-header", props: [] },
       { tag: "ui-dialog-title", props: [] },
       { tag: "ui-dialog-description", props: [] },
@@ -550,6 +550,46 @@ const components = [
 </ui-dialog>`,
   },
   {
+    name: "Drawer",
+    slug: "drawer",
+    description: "A drawer component that slides in from the edge of the screen, built on top of Vaul.",
+    category: "Overlay",
+    shadcnUrl: "https://ui.shadcn.com/docs/components/base/drawer",
+    subComponents: [
+      { tag: "ui-drawer", props: [{ name: "open", type: "boolean", default: "—", description: "Controlled open state." }, { name: "shouldScaleBackground", type: "boolean", default: "true", description: "Whether the background should scale down when the drawer opens." }] },
+      { tag: "ui-drawer-trigger", props: [], enhancedBy: "trigger behavior" },
+      { tag: "ui-drawer-content", props: [] },
+      { tag: "ui-drawer-header", props: [] },
+      { tag: "ui-drawer-title", props: [] },
+      { tag: "ui-drawer-description", props: [] },
+      { tag: "ui-drawer-footer", props: [] },
+      { tag: "ui-drawer-close", props: [], enhancedBy: "trigger behavior" },
+      { tag: "ui-drawer-overlay", props: [] },
+      { tag: "ui-drawer-portal", props: [] },
+    ],
+    example: `<ui-drawer>
+  <ui-drawer-trigger>Open Drawer</ui-drawer-trigger>
+  <ui-drawer-content>
+    <ui-drawer-header>
+      <ui-drawer-title>Move Goal</ui-drawer-title>
+      <ui-drawer-description>Set your daily activity goal.</ui-drawer-description>
+    </ui-drawer-header>
+    <div class="p-4">
+      <div class="flex items-center justify-center space-x-2">
+        <ui-button variant="outline" size="icon-sm">−</ui-button>
+        <div class="text-7xl font-bold tracking-tighter">350</div>
+        <ui-button variant="outline" size="icon-sm">+</ui-button>
+      </div>
+      <p class="text-center text-muted-foreground text-sm mt-2">Calories/day</p>
+    </div>
+    <ui-drawer-footer>
+      <ui-button>Submit</ui-button>
+      <ui-drawer-close>Cancel</ui-drawer-close>
+    </ui-drawer-footer>
+  </ui-drawer-content>
+</ui-drawer>`,
+  },
+  {
     name: "Dropdown Menu",
     slug: "dropdown-menu",
     description: "Displays a menu of actions or options triggered by a button.",
@@ -558,8 +598,8 @@ const components = [
     subComponents: [
       { tag: "ui-dropdown-menu", props: [] },
       { tag: "ui-dropdown-menu-trigger", props: [] },
-      { tag: "ui-dropdown-menu-content", props: [{ name: "align", type: '"start" | "center" | "end"', default: '"start"', description: "Alignment of the content." }] },
-      { tag: "ui-dropdown-menu-item", props: [{ name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }], custom: true },
+      { tag: "ui-dropdown-menu-content", props: [{ name: "align", type: '"start" | "center" | "end"', default: '"start"', description: "Alignment of the content." }, { name: "side", type: '"top" | "right" | "bottom" | "left"', default: '"bottom"', description: "Preferred side of the trigger." }, { name: "sideOffset", type: "number", default: "4", description: "Offset from the trigger in pixels." }] },
+      { tag: "ui-dropdown-menu-item", props: [{ name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set.", source: "linkableClose" }, { name: "inset", type: "boolean", default: "false", description: "Indent the item to align with items that have icons." }, { name: "variant", type: '"default" | "destructive"', default: '"default"', description: "The visual style variant." }], enhancedBy: "linkableClose behavior" },
       { tag: "ui-dropdown-menu-checkbox-item", props: [] },
       { tag: "ui-dropdown-menu-radio-group", props: [] },
       { tag: "ui-dropdown-menu-radio-item", props: [] },
@@ -807,7 +847,7 @@ const components = [
       { tag: "ui-menubar-menu", props: [] },
       { tag: "ui-menubar-trigger", props: [] },
       { tag: "ui-menubar-content", props: [] },
-      { tag: "ui-menubar-item", props: [{ name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }], custom: true },
+      { tag: "ui-menubar-item", props: [{ name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set.", source: "linkableClose" }, { name: "inset", type: "boolean", default: "false", description: "Indent the item to align with items that have icons." }], enhancedBy: "linkableClose behavior" },
       { tag: "ui-menubar-checkbox-item", props: [] },
       { tag: "ui-menubar-radio-group", props: [] },
       { tag: "ui-menubar-radio-item", props: [] },
@@ -873,7 +913,7 @@ const components = [
       { tag: "ui-navigation-menu-item", props: [] },
       { tag: "ui-navigation-menu-trigger", props: [] },
       { tag: "ui-navigation-menu-content", props: [] },
-      { tag: "ui-navigation-menu-link", props: [{ name: "href", type: "string", default: "—", description: "URL the link points to. (Custom prop)" }], custom: true },
+      { tag: "ui-navigation-menu-link", props: [{ name: "href", type: "string", default: "—", description: "URL the link points to.", source: "linkableClose" }], enhancedBy: "linkableClose behavior" },
       { tag: "ui-navigation-menu-indicator", props: [] },
       { tag: "ui-navigation-menu-positioner", props: [] },
     ],
@@ -901,7 +941,7 @@ const components = [
       { tag: "ui-pagination", props: [] },
       { tag: "ui-pagination-content", props: [] },
       { tag: "ui-pagination-item", props: [] },
-      { tag: "ui-pagination-link", props: [{ name: "href", type: "string", default: "—", description: "URL the link points to. (Custom prop)" }, { name: "isActive", type: "boolean", default: "false", description: "Whether this page is active." }], custom: true },
+      { tag: "ui-pagination-link", props: [{ name: "href", type: "string", default: "—", description: "URL the link points to." }, { name: "isActive", type: "boolean", default: "false", description: "Whether this page is active." }], enhancedBy: "closeClick behavior" },
       { tag: "ui-pagination-previous", props: [] },
       { tag: "ui-pagination-next", props: [] },
       { tag: "ui-pagination-ellipsis", props: [] },
@@ -1131,7 +1171,7 @@ const components = [
     subComponents: [
       { tag: "ui-sheet", props: [{ name: "open", type: "boolean", default: "—", description: "Controlled open state." }] },
       { tag: "ui-sheet-trigger", props: [] },
-      { tag: "ui-sheet-content", props: [{ name: "side", type: '"top" | "right" | "bottom" | "left"', default: '"right"', description: "The side the sheet slides in from." }] },
+      { tag: "ui-sheet-content", props: [{ name: "side", type: '"top" | "right" | "bottom" | "left"', default: '"right"', description: "The side the sheet slides in from." }, { name: "showCloseButton", type: "boolean", default: "true", description: "Whether to show the close button." }] },
       { tag: "ui-sheet-header", props: [] },
       { tag: "ui-sheet-title", props: [] },
       { tag: "ui-sheet-description", props: [] },
@@ -1176,13 +1216,13 @@ const components = [
       { tag: "ui-sidebar-group-content", props: [] },
       { tag: "ui-sidebar-menu", props: [] },
       { tag: "ui-sidebar-menu-item", props: [] },
-      { tag: "ui-sidebar-menu-button", props: [{ name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }, { name: "isActive", type: "boolean", default: "false", description: "Whether active." }], custom: true },
+      { tag: "ui-sidebar-menu-button", props: [{ name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set.", source: "sidebarLinkable" }, { name: "isActive", type: "boolean", default: "false", description: "Whether active." }, { name: "tooltip", type: "string | TooltipContentProps", default: "—", description: "Tooltip shown on hover when sidebar is collapsed." }, { name: "variant", type: '"default" | "outline"', default: '"default"', description: "The visual style variant." }, { name: "size", type: '"default" | "sm" | "lg"', default: '"default"', description: "The button size." }], enhancedBy: "sidebarLinkable wrapper" },
       { tag: "ui-sidebar-menu-action", props: [] },
       { tag: "ui-sidebar-menu-badge", props: [] },
       { tag: "ui-sidebar-menu-skeleton", props: [] },
       { tag: "ui-sidebar-menu-sub", props: [] },
       { tag: "ui-sidebar-menu-sub-item", props: [] },
-      { tag: "ui-sidebar-menu-sub-button", props: [] },
+      { tag: "ui-sidebar-menu-sub-button", props: [{ name: "size", type: '"sm" | "md"', default: '"md"', description: "The button size." }, { name: "isActive", type: "boolean", default: "false", description: "Whether active." }], enhancedBy: "sidebarSubLinkable wrapper" },
       { tag: "ui-sidebar-trigger", props: [] },
       { tag: "ui-sidebar-rail", props: [] },
       { tag: "ui-sidebar-inset", props: [] },
@@ -1304,7 +1344,7 @@ const components = [
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/switch",
     subComponents: [
-      { tag: "ui-switch", props: [{ name: "checked", type: "boolean", default: "—", description: "Controlled checked state." }, { name: "defaultChecked", type: "boolean", default: "false", description: "Default checked state." }, { name: "disabled", type: "boolean", default: "false", description: "Whether disabled." }] },
+      { tag: "ui-switch", props: [{ name: "checked", type: "boolean", default: "—", description: "Controlled checked state." }, { name: "defaultChecked", type: "boolean", default: "false", description: "Default checked state." }, { name: "disabled", type: "boolean", default: "false", description: "Whether disabled." }, { name: "size", type: '"sm" | "default"', default: '"default"', description: "The size of the switch." }] },
     ],
     example: `<div class="space-y-4">
   <div class="flex items-center gap-3">
@@ -1373,7 +1413,7 @@ const components = [
     subComponents: [
       { tag: "ui-tabs", props: [{ name: "defaultValue", type: "string", default: "—", description: "The default active tab." }, { name: "value", type: "string", default: "—", description: "Controlled active tab." }] },
       { tag: "ui-tabs-list", props: [] },
-      { tag: "ui-tabs-trigger", props: [{ name: "value", type: "string", default: "—", description: "The tab value." }, { name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }], custom: true },
+      { tag: "ui-tabs-trigger", props: [{ name: "value", type: "string", default: "—", description: "The tab value." }, { name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set.", source: "linkableClose" }], enhancedBy: "linkableClose behavior" },
       { tag: "ui-tabs-content", props: [{ name: "value", type: "string", default: "—", description: "The content panel value." }] },
     ],
     example: `<ui-tabs defaultValue="account" class="max-w-[400px] w-full">
@@ -1432,7 +1472,7 @@ const components = [
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/toggle",
     subComponents: [
-      { tag: "ui-toggle", props: [{ name: "variant", type: '"default" | "outline"', default: '"default"', description: "Visual variant." }, { name: "size", type: '"default" | "sm" | "lg"', default: '"default"', description: "Toggle size." }, { name: "pressed", type: "boolean", default: "—", description: "Controlled pressed state." }, { name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }], custom: true },
+      { tag: "ui-toggle", props: [{ name: "variant", type: '"default" | "outline"', default: '"default"', description: "Visual variant." }, { name: "size", type: '"default" | "sm" | "lg"', default: '"default"', description: "Toggle size." }, { name: "pressed", type: "boolean", default: "—", description: "Controlled pressed state." }, { name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set.", source: "linkable" }], enhancedBy: "linkable behavior" },
     ],
     example: `<div class="flex items-center gap-2">
   <ui-toggle>B</ui-toggle>
@@ -1448,7 +1488,7 @@ const components = [
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/toggle-group",
     subComponents: [
       { tag: "ui-toggle-group", props: [{ name: "type", type: '"single" | "multiple"', default: '"single"', description: "Single or multiple selection." }, { name: "variant", type: '"default" | "outline"', default: '"default"', description: "Visual variant." }] },
-      { tag: "ui-toggle-group-item", props: [{ name: "value", type: "string", default: "—", description: "The item value." }, { name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set. (Custom prop)" }], custom: true },
+      { tag: "ui-toggle-group-item", props: [{ name: "value", type: "string", default: "—", description: "The item value." }, { name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set.", source: "linkable" }], enhancedBy: "linkable behavior" },
     ],
     example: `<ui-toggle-group type="single">
   <ui-toggle-group-item value="left">Left</ui-toggle-group-item>
@@ -1515,13 +1555,1338 @@ const components = [
   <p class="text-sm text-muted-foreground">Wrap your application root with this provider to set the text direction globally.</p>
 </ui-direction-provider>`,
   },
+  {
+    name: "Agent",
+    slug: "ai-agent",
+    description: "Displays an AI agent configuration with its header, instructions, tools, and output schema.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/agent",
+    subComponents: [
+      { tag: "ui-ai-agent", props: [] },
+      { tag: "ui-ai-agent-header", props: [{ name: "name", type: "string", default: "—", description: "The agent name." }, { name: "model", type: "string", default: "—", description: "The model identifier." }] },
+      { tag: "ui-ai-agent-content", props: [] },
+      { tag: "ui-ai-agent-instructions", props: [] },
+      { tag: "ui-ai-agent-tools", props: [] },
+      { tag: "ui-ai-agent-tool", props: [{ name: "tool", type: "Tool", default: "—", description: "Tool object with name, description, and parameters." }] },
+      { tag: "ui-ai-agent-output", props: [{ name: "schema", type: "string", default: "—", description: "The output schema definition." }] },
+    ],
+    example: `<ui-ai-agent>
+  <ui-ai-agent-header name="Research Agent" model="gpt-4o"></ui-ai-agent-header>
+  <ui-ai-agent-content>
+    <ui-ai-agent-instructions>Search the web for relevant information and summarize findings.</ui-ai-agent-instructions>
+    <ui-ai-agent-tools>
+      <ui-ai-agent-tool tool='{"name":"web_search","description":"Search the web","parameters":[]}'></ui-ai-agent-tool>
+    </ui-ai-agent-tools>
+    <ui-ai-agent-output schema='{"type":"object","properties":{"summary":{"type":"string"}}}'></ui-ai-agent-output>
+  </ui-ai-agent-content>
+</ui-ai-agent>`,
+  },
+  {
+    name: "Artifact",
+    slug: "ai-artifact",
+    description: "A panel for displaying generated artifacts such as code, documents, or previews.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/artifact",
+    subComponents: [
+      { tag: "ui-ai-artifact", props: [] },
+      { tag: "ui-ai-artifact-header", props: [] },
+      { tag: "ui-ai-artifact-close", props: [] },
+      { tag: "ui-ai-artifact-title", props: [] },
+      { tag: "ui-ai-artifact-description", props: [] },
+      { tag: "ui-ai-artifact-actions", props: [] },
+      { tag: "ui-ai-artifact-action", props: [{ name: "tooltip", type: "string", default: "—", description: "Tooltip text for the action." }, { name: "label", type: "string", default: "—", description: "Accessible label for the action." }] },
+      { tag: "ui-ai-artifact-content", props: [] },
+    ],
+    example: `<ui-ai-artifact>
+  <ui-ai-artifact-header>
+    <ui-ai-artifact-title>Generated Component</ui-ai-artifact-title>
+    <ui-ai-artifact-description>A React counter component</ui-ai-artifact-description>
+    <ui-ai-artifact-actions>
+      <ui-ai-artifact-action tooltip="Copy code" label="Copy"></ui-ai-artifact-action>
+      <ui-ai-artifact-action tooltip="Download" label="Download"></ui-ai-artifact-action>
+    </ui-ai-artifact-actions>
+    <ui-ai-artifact-close></ui-ai-artifact-close>
+  </ui-ai-artifact-header>
+  <ui-ai-artifact-content>
+    <p>Artifact content goes here</p>
+  </ui-ai-artifact-content>
+</ui-ai-artifact>`,
+  },
+  {
+    name: "Attachments",
+    slug: "ai-attachments",
+    description: "Displays file attachments in grid, list, or compact layouts with previews and removal actions.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/attachments",
+    subComponents: [
+      { tag: "ui-ai-attachments", props: [{ name: "variant", type: '"grid" | "list" | "compact"', default: '"grid"', description: "Layout variant for the attachments." }] },
+      { tag: "ui-ai-attachment", props: [{ name: "data", type: "AttachmentData", default: "—", description: "Attachment data object." }, { name: "onRemove", type: "() => void", default: "—", description: "Callback when attachment is removed." }] },
+      { tag: "ui-ai-attachment-preview", props: [{ name: "fallbackIcon", type: "ReactNode", default: "—", description: "Icon to display when preview is unavailable." }] },
+      { tag: "ui-ai-attachment-info", props: [{ name: "showMediaType", type: "boolean", default: "false", description: "Whether to display the media type." }] },
+      { tag: "ui-ai-attachment-remove", props: [{ name: "label", type: "string", default: '"Remove"', description: "Accessible label for the remove button." }] },
+      { tag: "ui-ai-attachment-hover-card", props: [] },
+      { tag: "ui-ai-attachment-hover-card-trigger", props: [] },
+      { tag: "ui-ai-attachment-hover-card-content", props: [] },
+      { tag: "ui-ai-attachment-empty", props: [] },
+    ],
+    example: `<ui-ai-attachments variant="grid">
+  <ui-ai-attachment data='{"name":"report.pdf","type":"application/pdf","size":1024}'>
+    <ui-ai-attachment-preview></ui-ai-attachment-preview>
+    <ui-ai-attachment-info showMediaType></ui-ai-attachment-info>
+    <ui-ai-attachment-remove label="Remove"></ui-ai-attachment-remove>
+  </ui-ai-attachment>
+  <ui-ai-attachment data='{"name":"image.png","type":"image/png","size":2048}'>
+    <ui-ai-attachment-preview></ui-ai-attachment-preview>
+    <ui-ai-attachment-info></ui-ai-attachment-info>
+    <ui-ai-attachment-remove></ui-ai-attachment-remove>
+  </ui-ai-attachment>
+</ui-ai-attachments>`,
+  },
+  {
+    name: "Audio Player",
+    slug: "ai-audio-player",
+    description: "A media player for audio playback with controls for play, seek, volume, and time display.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/audio-player",
+    subComponents: [
+      { tag: "ui-ai-audio-player", props: [] },
+      { tag: "ui-ai-audio-player-element", props: [{ name: "src", type: "string", default: "—", description: "URL of the audio source." }] },
+      { tag: "ui-ai-audio-player-control-bar", props: [] },
+      { tag: "ui-ai-audio-player-play-button", props: [] },
+      { tag: "ui-ai-audio-player-seek-backward-button", props: [{ name: "seekOffset", type: "number", default: "10", description: "Number of seconds to seek backward." }] },
+      { tag: "ui-ai-audio-player-seek-forward-button", props: [{ name: "seekOffset", type: "number", default: "10", description: "Number of seconds to seek forward." }] },
+      { tag: "ui-ai-audio-player-time-display", props: [] },
+      { tag: "ui-ai-audio-player-time-range", props: [] },
+      { tag: "ui-ai-audio-player-duration-display", props: [] },
+      { tag: "ui-ai-audio-player-mute-button", props: [] },
+      { tag: "ui-ai-audio-player-volume-range", props: [] },
+    ],
+    example: `<ui-ai-audio-player>
+  <ui-ai-audio-player-element src="/audio/sample.mp3"></ui-ai-audio-player-element>
+  <ui-ai-audio-player-control-bar>
+    <ui-ai-audio-player-seek-backward-button seekOffset="10"></ui-ai-audio-player-seek-backward-button>
+    <ui-ai-audio-player-play-button></ui-ai-audio-player-play-button>
+    <ui-ai-audio-player-seek-forward-button seekOffset="10"></ui-ai-audio-player-seek-forward-button>
+    <ui-ai-audio-player-time-display></ui-ai-audio-player-time-display>
+    <ui-ai-audio-player-time-range></ui-ai-audio-player-time-range>
+    <ui-ai-audio-player-duration-display></ui-ai-audio-player-duration-display>
+    <ui-ai-audio-player-mute-button></ui-ai-audio-player-mute-button>
+    <ui-ai-audio-player-volume-range></ui-ai-audio-player-volume-range>
+  </ui-ai-audio-player-control-bar>
+</ui-ai-audio-player>`,
+  },
+  {
+    name: "Canvas",
+    slug: "ai-canvas",
+    description: "A ReactFlow-based canvas for building node-based visual workflows.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/canvas",
+    subComponents: [
+      { tag: "ui-ai-canvas", props: [] },
+    ],
+    example: `<ui-ai-canvas>
+  <!-- Nodes and edges rendered inside the canvas -->
+</ui-ai-canvas>`,
+  },
+  {
+    name: "Chain of Thought",
+    slug: "ai-chain-of-thought",
+    description: "Displays an AI reasoning process with expandable steps, statuses, and search results.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/chain-of-thought",
+    subComponents: [
+      { tag: "ui-ai-chain-of-thought", props: [{ name: "open", type: "boolean", default: "—", description: "Controlled open state." }, { name: "defaultOpen", type: "boolean", default: "false", description: "Initial open state." }, { name: "onOpenChange", type: "(open: boolean) => void", default: "—", description: "Callback when open state changes." }] },
+      { tag: "ui-ai-chain-of-thought-header", props: [] },
+      { tag: "ui-ai-chain-of-thought-step", props: [{ name: "label", type: "ReactNode", default: "—", description: "Step label text." }, { name: "description", type: "ReactNode", default: "—", description: "Step description." }, { name: "status", type: '"complete" | "active" | "pending"', default: '"complete"', description: "Current step status." }] },
+      { tag: "ui-ai-chain-of-thought-search-results", props: [] },
+      { tag: "ui-ai-chain-of-thought-search-result", props: [] },
+      { tag: "ui-ai-chain-of-thought-content", props: [] },
+      { tag: "ui-ai-chain-of-thought-image", props: [{ name: "caption", type: "string", default: "—", description: "Image caption text." }] },
+    ],
+    example: `<ui-ai-chain-of-thought defaultOpen>
+  <ui-ai-chain-of-thought-header>Reasoning Steps</ui-ai-chain-of-thought-header>
+  <ui-ai-chain-of-thought-content>
+    <ui-ai-chain-of-thought-step label="Analyzing query" status="complete"></ui-ai-chain-of-thought-step>
+    <ui-ai-chain-of-thought-step label="Searching knowledge base" description="Found 12 relevant documents" status="complete">
+      <ui-ai-chain-of-thought-search-results>
+        <ui-ai-chain-of-thought-search-result>React documentation</ui-ai-chain-of-thought-search-result>
+        <ui-ai-chain-of-thought-search-result>Component patterns</ui-ai-chain-of-thought-search-result>
+      </ui-ai-chain-of-thought-search-results>
+    </ui-ai-chain-of-thought-step>
+    <ui-ai-chain-of-thought-step label="Generating response" status="active"></ui-ai-chain-of-thought-step>
+  </ui-ai-chain-of-thought-content>
+</ui-ai-chain-of-thought>`,
+  },
+  {
+    name: "Checkpoint",
+    slug: "ai-checkpoint",
+    description: "A checkpoint marker with an icon and trigger button for reverting or restoring states.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/checkpoint",
+    subComponents: [
+      { tag: "ui-ai-checkpoint", props: [] },
+      { tag: "ui-ai-checkpoint-icon", props: [] },
+      { tag: "ui-ai-checkpoint-trigger", props: [{ name: "tooltip", type: "string", default: "—", description: "Tooltip text for the trigger button." }] },
+    ],
+    example: `<ui-ai-checkpoint>
+  <ui-ai-checkpoint-icon></ui-ai-checkpoint-icon>
+  <ui-ai-checkpoint-trigger tooltip="Restore to this point">Restore</ui-ai-checkpoint-trigger>
+</ui-ai-checkpoint>`,
+  },
+  {
+    name: "Code Block",
+    slug: "ai-code-block",
+    description: "Syntax-highlighted code display with copy button, line numbers, and language selector.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/code-block",
+    subComponents: [
+      { tag: "ui-ai-code-block", props: [{ name: "code", type: "string", default: "—", description: "The code string to display." }, { name: "language", type: "BundledLanguage", default: "—", description: "Programming language for syntax highlighting." }, { name: "showLineNumbers", type: "boolean", default: "false", description: "Whether to show line numbers." }] },
+      { tag: "ui-ai-code-block-container", props: [{ name: "language", type: "string", default: "—", description: "Language identifier." }] },
+      { tag: "ui-ai-code-block-header", props: [] },
+      { tag: "ui-ai-code-block-title", props: [] },
+      { tag: "ui-ai-code-block-filename", props: [] },
+      { tag: "ui-ai-code-block-actions", props: [] },
+      { tag: "ui-ai-code-block-content", props: [{ name: "code", type: "string", default: "—", description: "The code string to display." }, { name: "language", type: "BundledLanguage", default: "—", description: "Programming language for syntax highlighting." }, { name: "showLineNumbers", type: "boolean", default: "false", description: "Whether to show line numbers." }] },
+      { tag: "ui-ai-code-block-copy-button", props: [{ name: "onCopy", type: "() => void", default: "—", description: "Callback when code is copied." }, { name: "onError", type: "(error: Error) => void", default: "—", description: "Callback on copy error." }, { name: "timeout", type: "number", default: "2000", description: "Duration in ms to show success state." }] },
+      { tag: "ui-ai-code-block-language-selector", props: [] },
+      { tag: "ui-ai-code-block-language-selector-trigger", props: [] },
+      { tag: "ui-ai-code-block-language-selector-value", props: [] },
+      { tag: "ui-ai-code-block-language-selector-content", props: [] },
+      { tag: "ui-ai-code-block-language-selector-item", props: [] },
+    ],
+    example: `<ui-ai-code-block code="const greeting = 'Hello, world!';\nconsole.log(greeting);" language="typescript" showLineNumbers>
+</ui-ai-code-block>`,
+  },
+  {
+    name: "Commit",
+    slug: "ai-commit",
+    description: "Displays a git commit with hash, message, author info, file changes, and diff statistics.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/commit",
+    subComponents: [
+      { tag: "ui-ai-commit", props: [] },
+      { tag: "ui-ai-commit-header", props: [] },
+      { tag: "ui-ai-commit-hash", props: [] },
+      { tag: "ui-ai-commit-message", props: [] },
+      { tag: "ui-ai-commit-metadata", props: [] },
+      { tag: "ui-ai-commit-separator", props: [] },
+      { tag: "ui-ai-commit-info", props: [] },
+      { tag: "ui-ai-commit-author", props: [] },
+      { tag: "ui-ai-commit-author-avatar", props: [{ name: "initials", type: "string", default: "—", description: "Author initials for the avatar." }] },
+      { tag: "ui-ai-commit-timestamp", props: [{ name: "date", type: "Date", default: "—", description: "The commit date." }] },
+      { tag: "ui-ai-commit-actions", props: [] },
+      { tag: "ui-ai-commit-copy-button", props: [{ name: "hash", type: "string", default: "—", description: "The commit hash to copy." }, { name: "onCopy", type: "() => void", default: "—", description: "Callback on copy." }, { name: "onError", type: "(error: Error) => void", default: "—", description: "Callback on error." }, { name: "timeout", type: "number", default: "—", description: "Duration in ms to show success state." }] },
+      { tag: "ui-ai-commit-content", props: [] },
+      { tag: "ui-ai-commit-files", props: [] },
+      { tag: "ui-ai-commit-file", props: [] },
+      { tag: "ui-ai-commit-file-info", props: [] },
+      { tag: "ui-ai-commit-file-status", props: [{ name: "status", type: '"added" | "modified" | "deleted" | "renamed"', default: "—", description: "The file change status." }] },
+      { tag: "ui-ai-commit-file-icon", props: [] },
+      { tag: "ui-ai-commit-file-path", props: [] },
+      { tag: "ui-ai-commit-file-changes", props: [] },
+      { tag: "ui-ai-commit-file-additions", props: [{ name: "count", type: "number", default: "—", description: "Number of added lines." }] },
+      { tag: "ui-ai-commit-file-deletions", props: [{ name: "count", type: "number", default: "—", description: "Number of deleted lines." }] },
+    ],
+    example: `<ui-ai-commit>
+  <ui-ai-commit-header>
+    <ui-ai-commit-hash>a1b2c3d</ui-ai-commit-hash>
+    <ui-ai-commit-message>Fix authentication flow</ui-ai-commit-message>
+  </ui-ai-commit-header>
+  <ui-ai-commit-metadata>
+    <ui-ai-commit-info>
+      <ui-ai-commit-author>
+        <ui-ai-commit-author-avatar initials="JD"></ui-ai-commit-author-avatar>
+        Jane Doe
+      </ui-ai-commit-author>
+      <ui-ai-commit-separator></ui-ai-commit-separator>
+      <ui-ai-commit-timestamp date="2024-01-15T10:30:00Z"></ui-ai-commit-timestamp>
+    </ui-ai-commit-info>
+    <ui-ai-commit-actions>
+      <ui-ai-commit-copy-button hash="a1b2c3d"></ui-ai-commit-copy-button>
+    </ui-ai-commit-actions>
+  </ui-ai-commit-metadata>
+  <ui-ai-commit-content>
+    <ui-ai-commit-files>
+      <ui-ai-commit-file>
+        <ui-ai-commit-file-info>
+          <ui-ai-commit-file-status status="modified"></ui-ai-commit-file-status>
+          <ui-ai-commit-file-path>src/auth/login.ts</ui-ai-commit-file-path>
+        </ui-ai-commit-file-info>
+        <ui-ai-commit-file-changes>
+          <ui-ai-commit-file-additions count="12"></ui-ai-commit-file-additions>
+          <ui-ai-commit-file-deletions count="3"></ui-ai-commit-file-deletions>
+        </ui-ai-commit-file-changes>
+      </ui-ai-commit-file>
+    </ui-ai-commit-files>
+  </ui-ai-commit-content>
+</ui-ai-commit>`,
+  },
+  {
+    name: "Confirmation",
+    slug: "ai-confirmation",
+    description: "An alert dialog for tool execution approval with accept and reject actions.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/confirmation",
+    subComponents: [
+      { tag: "ui-ai-confirmation", props: [{ name: "approval", type: "ToolUIPartApproval", default: "—", description: "The approval state." }, { name: "state", type: "string", default: "—", description: "The tool execution state." }] },
+      { tag: "ui-ai-confirmation-title", props: [] },
+      { tag: "ui-ai-confirmation-request", props: [] },
+      { tag: "ui-ai-confirmation-accepted", props: [] },
+      { tag: "ui-ai-confirmation-rejected", props: [] },
+      { tag: "ui-ai-confirmation-actions", props: [] },
+      { tag: "ui-ai-confirmation-action", props: [] },
+    ],
+    example: `<ui-ai-confirmation state="requires-approval">
+  <ui-ai-confirmation-title>Execute Shell Command</ui-ai-confirmation-title>
+  <ui-ai-confirmation-request>
+    <p>The AI wants to run: <code>npm install react</code></p>
+  </ui-ai-confirmation-request>
+  <ui-ai-confirmation-actions>
+    <ui-ai-confirmation-action>Allow</ui-ai-confirmation-action>
+    <ui-ai-confirmation-action>Deny</ui-ai-confirmation-action>
+  </ui-ai-confirmation-actions>
+</ui-ai-confirmation>`,
+  },
+  {
+    name: "Connection",
+    slug: "ai-connection",
+    description: "A ReactFlow connection line component for rendering in-progress edge connections on the canvas.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/connection",
+    subComponents: [
+      { tag: "ui-ai-connection", props: [] },
+    ],
+    example: `<ui-ai-canvas>
+  <ui-ai-connection></ui-ai-connection>
+</ui-ai-canvas>`,
+  },
+  {
+    name: "Context",
+    slug: "ai-context",
+    description: "A hover card displaying token usage, model info, and context window utilization.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/context",
+    subComponents: [
+      { tag: "ui-ai-context", props: [{ name: "usedTokens", type: "number", default: "—", description: "Number of tokens used." }, { name: "maxTokens", type: "number", default: "—", description: "Maximum tokens available." }, { name: "usage", type: "object", default: "—", description: "Detailed usage breakdown object." }, { name: "modelId", type: "string", default: "—", description: "The model identifier." }] },
+      { tag: "ui-ai-context-trigger", props: [] },
+      { tag: "ui-ai-context-content", props: [] },
+      { tag: "ui-ai-context-content-header", props: [] },
+      { tag: "ui-ai-context-content-body", props: [] },
+      { tag: "ui-ai-context-content-footer", props: [] },
+      { tag: "ui-ai-context-input-usage", props: [] },
+      { tag: "ui-ai-context-output-usage", props: [] },
+      { tag: "ui-ai-context-reasoning-usage", props: [] },
+      { tag: "ui-ai-context-cache-usage", props: [] },
+    ],
+    example: `<ui-ai-context usedTokens="3200" maxTokens="8192" modelId="gpt-4o">
+  <ui-ai-context-trigger>3.2k / 8.1k tokens</ui-ai-context-trigger>
+  <ui-ai-context-content>
+    <ui-ai-context-content-header>Token Usage</ui-ai-context-content-header>
+    <ui-ai-context-content-body>
+      <ui-ai-context-input-usage></ui-ai-context-input-usage>
+      <ui-ai-context-output-usage></ui-ai-context-output-usage>
+      <ui-ai-context-reasoning-usage></ui-ai-context-reasoning-usage>
+      <ui-ai-context-cache-usage></ui-ai-context-cache-usage>
+    </ui-ai-context-content-body>
+    <ui-ai-context-content-footer>Model: gpt-4o</ui-ai-context-content-footer>
+  </ui-ai-context-content>
+</ui-ai-context>`,
+  },
+  {
+    name: "Controls",
+    slug: "ai-controls",
+    description: "ReactFlow controls for zooming and fitting the canvas view.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/controls",
+    subComponents: [
+      { tag: "ui-ai-controls", props: [] },
+    ],
+    example: `<ui-ai-canvas>
+  <ui-ai-controls></ui-ai-controls>
+</ui-ai-canvas>`,
+  },
+  {
+    name: "Conversation",
+    slug: "ai-conversation",
+    description: "A scrollable chat container with stick-to-bottom behavior, empty states, and message download.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/conversation",
+    subComponents: [
+      { tag: "ui-ai-conversation", props: [] },
+      { tag: "ui-ai-conversation-content", props: [] },
+      { tag: "ui-ai-conversation-empty-state", props: [{ name: "title", type: "string", default: "—", description: "Empty state title." }, { name: "description", type: "string", default: "—", description: "Empty state description." }, { name: "icon", type: "ReactNode", default: "—", description: "Icon to display." }] },
+      { tag: "ui-ai-conversation-scroll-button", props: [] },
+      { tag: "ui-ai-conversation-download", props: [{ name: "messages", type: "UIMessage[]", default: "—", description: "Messages to export." }, { name: "filename", type: "string", default: '"conversation.md"', description: "Download filename." }] },
+    ],
+    example: `<ui-ai-conversation>
+  <ui-ai-conversation-content>
+    <ui-ai-message from="user">
+      <ui-ai-message-content>Hello!</ui-ai-message-content>
+    </ui-ai-message>
+    <ui-ai-message from="assistant">
+      <ui-ai-message-content>Hi there! How can I help?</ui-ai-message-content>
+    </ui-ai-message>
+  </ui-ai-conversation-content>
+  <ui-ai-conversation-scroll-button></ui-ai-conversation-scroll-button>
+</ui-ai-conversation>`,
+  },
+  {
+    name: "Edge",
+    slug: "ai-edge",
+    description: "A ReactFlow edge component with animated and temporary edge variants.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/edge",
+    subComponents: [
+      { tag: "ui-ai-edge", props: [] },
+    ],
+    example: `<ui-ai-canvas>
+  <ui-ai-edge></ui-ai-edge>
+</ui-ai-canvas>`,
+  },
+  {
+    name: "Environment Variables",
+    slug: "ai-environment-variables",
+    description: "Displays environment variables with toggle visibility, copy actions, and required indicators.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/environment-variables",
+    subComponents: [
+      { tag: "ui-ai-environment-variables", props: [{ name: "showValues", type: "boolean", default: "—", description: "Controlled visibility of values." }, { name: "defaultShowValues", type: "boolean", default: "—", description: "Initial visibility state." }, { name: "onShowValuesChange", type: "(show: boolean) => void", default: "—", description: "Callback when visibility changes." }] },
+      { tag: "ui-ai-environment-variables-header", props: [] },
+      { tag: "ui-ai-environment-variables-title", props: [] },
+      { tag: "ui-ai-environment-variables-toggle", props: [] },
+      { tag: "ui-ai-environment-variables-content", props: [] },
+      { tag: "ui-ai-environment-variable", props: [{ name: "name", type: "string", default: "—", description: "Variable name." }, { name: "value", type: "string", default: "—", description: "Variable value." }] },
+      { tag: "ui-ai-environment-variable-name", props: [] },
+      { tag: "ui-ai-environment-variable-value", props: [] },
+      { tag: "ui-ai-environment-variable-copy-button", props: [{ name: "onCopy", type: "() => void", default: "—", description: "Callback on copy." }, { name: "onError", type: "(error: Error) => void", default: "—", description: "Callback on error." }, { name: "timeout", type: "number", default: "—", description: "Duration in ms to show success state." }, { name: "copyFormat", type: '"name" | "value" | "export"', default: "—", description: "Format for the copied text." }] },
+      { tag: "ui-ai-environment-variable-required", props: [] },
+    ],
+    example: `<ui-ai-environment-variables defaultShowValues>
+  <ui-ai-environment-variables-header>
+    <ui-ai-environment-variables-title>Environment Variables</ui-ai-environment-variables-title>
+    <ui-ai-environment-variables-toggle></ui-ai-environment-variables-toggle>
+  </ui-ai-environment-variables-header>
+  <ui-ai-environment-variables-content>
+    <ui-ai-environment-variable name="DATABASE_URL" value="postgres://localhost:5432/mydb">
+      <ui-ai-environment-variable-name></ui-ai-environment-variable-name>
+      <ui-ai-environment-variable-value></ui-ai-environment-variable-value>
+      <ui-ai-environment-variable-copy-button copyFormat="export"></ui-ai-environment-variable-copy-button>
+      <ui-ai-environment-variable-required></ui-ai-environment-variable-required>
+    </ui-ai-environment-variable>
+    <ui-ai-environment-variable name="API_KEY" value="sk-abc123">
+      <ui-ai-environment-variable-name></ui-ai-environment-variable-name>
+      <ui-ai-environment-variable-value></ui-ai-environment-variable-value>
+      <ui-ai-environment-variable-copy-button copyFormat="value"></ui-ai-environment-variable-copy-button>
+    </ui-ai-environment-variable>
+  </ui-ai-environment-variables-content>
+</ui-ai-environment-variables>`,
+  },
+  {
+    name: "File Tree",
+    slug: "ai-file-tree",
+    description: "An interactive file tree with expandable folders, file selection, and custom actions.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/file-tree",
+    subComponents: [
+      { tag: "ui-ai-file-tree", props: [{ name: "selectedPath", type: "string", default: "—", description: "Currently selected file path." }, { name: "onSelect", type: "(path: string) => void", default: "—", description: "Callback when a file is selected." }] },
+      { tag: "ui-ai-file-tree-icon", props: [] },
+      { tag: "ui-ai-file-tree-name", props: [] },
+      { tag: "ui-ai-file-tree-folder", props: [{ name: "path", type: "string", default: "—", description: "Folder path." }, { name: "name", type: "string", default: "—", description: "Display name." }] },
+      { tag: "ui-ai-file-tree-file", props: [{ name: "path", type: "string", default: "—", description: "File path." }, { name: "name", type: "string", default: "—", description: "Display name." }, { name: "icon", type: "ReactNode", default: "—", description: "Custom file icon." }] },
+      { tag: "ui-ai-file-tree-actions", props: [] },
+    ],
+    example: `<ui-ai-file-tree selectedPath="src/App.tsx">
+  <ui-ai-file-tree-folder path="src" name="src">
+    <ui-ai-file-tree-file path="src/App.tsx" name="App.tsx"></ui-ai-file-tree-file>
+    <ui-ai-file-tree-file path="src/index.ts" name="index.ts"></ui-ai-file-tree-file>
+    <ui-ai-file-tree-folder path="src/components" name="components">
+      <ui-ai-file-tree-file path="src/components/Button.tsx" name="Button.tsx"></ui-ai-file-tree-file>
+    </ui-ai-file-tree-folder>
+  </ui-ai-file-tree-folder>
+  <ui-ai-file-tree-file path="package.json" name="package.json"></ui-ai-file-tree-file>
+</ui-ai-file-tree>`,
+  },
+  {
+    name: "Image",
+    slug: "ai-image",
+    description: "Displays a base64-encoded AI-generated image.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/image",
+    subComponents: [
+      { tag: "ui-ai-image", props: [{ name: "base64", type: "string", default: "—", description: "Base64-encoded image data." }, { name: "alt", type: "string", default: "—", description: "Alt text for the image." }] },
+    ],
+    example: `<ui-ai-image base64="iVBORw0KGgoAAAANSUhEUg..." alt="AI generated landscape"></ui-ai-image>`,
+  },
+  {
+    name: "Inline Citation",
+    slug: "ai-inline-citation",
+    description: "Inline citation badges with hover cards showing source details, carousels, and quotes.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/inline-citation",
+    subComponents: [
+      { tag: "ui-ai-inline-citation", props: [] },
+      { tag: "ui-ai-inline-citation-text", props: [] },
+      { tag: "ui-ai-inline-citation-card", props: [] },
+      { tag: "ui-ai-inline-citation-card-trigger", props: [{ name: "sources", type: "string[]", default: "—", description: "Array of source URLs." }] },
+      { tag: "ui-ai-inline-citation-card-body", props: [] },
+      { tag: "ui-ai-inline-citation-source", props: [{ name: "title", type: "string", default: "—", description: "Source title." }, { name: "url", type: "string", default: "—", description: "Source URL." }, { name: "description", type: "string", default: "—", description: "Source description." }] },
+      { tag: "ui-ai-inline-citation-quote", props: [] },
+    ],
+    example: `<p>
+  React is a JavaScript library for building user interfaces
+  <ui-ai-inline-citation>
+    <ui-ai-inline-citation-card>
+      <ui-ai-inline-citation-card-trigger sources='["https://react.dev"]'>[1]</ui-ai-inline-citation-card-trigger>
+      <ui-ai-inline-citation-card-body>
+        <ui-ai-inline-citation-source title="React Documentation" url="https://react.dev" description="Official React documentation"></ui-ai-inline-citation-source>
+        <ui-ai-inline-citation-quote>React lets you build user interfaces out of individual pieces called components.</ui-ai-inline-citation-quote>
+      </ui-ai-inline-citation-card-body>
+    </ui-ai-inline-citation-card>
+  </ui-ai-inline-citation>.
+</p>`,
+  },
+  {
+    name: "JSX Preview",
+    slug: "ai-jsx-preview",
+    description: "Renders JSX strings as live previews with streaming support and error handling.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/jsx-preview",
+    subComponents: [
+      { tag: "ui-ai-jsx-preview", props: [{ name: "jsx", type: "string", default: "—", description: "JSX string to render." }, { name: "isStreaming", type: "boolean", default: "—", description: "Whether the JSX is still streaming." }, { name: "components", type: "object", default: "—", description: "Custom components available in the JSX." }, { name: "bindings", type: "object", default: "—", description: "Variable bindings for the JSX." }, { name: "onError", type: "(error: Error) => void", default: "—", description: "Callback on render error." }] },
+      { tag: "ui-ai-jsx-preview-content", props: [] },
+      { tag: "ui-ai-jsx-preview-error", props: [] },
+    ],
+    example: `<ui-ai-jsx-preview jsx="<div className='p-4'><h1>Hello World</h1><p>This is a live preview.</p></div>">
+  <ui-ai-jsx-preview-content></ui-ai-jsx-preview-content>
+  <ui-ai-jsx-preview-error></ui-ai-jsx-preview-error>
+</ui-ai-jsx-preview>`,
+  },
+  {
+    name: "Message",
+    slug: "ai-message",
+    description: "A chat message component with role-based styling, actions, branching, and streaming response support.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/message",
+    subComponents: [
+      { tag: "ui-ai-message", props: [{ name: "from", type: '"user" | "assistant" | "system" | "tool"', default: "—", description: "The message sender role." }] },
+      { tag: "ui-ai-message-content", props: [] },
+      { tag: "ui-ai-message-actions", props: [] },
+      { tag: "ui-ai-message-action", props: [{ name: "tooltip", type: "string", default: "—", description: "Tooltip text." }, { name: "label", type: "string", default: "—", description: "Accessible label." }] },
+      { tag: "ui-ai-message-branch", props: [{ name: "defaultBranch", type: "number", default: "—", description: "Default branch index." }, { name: "onBranchChange", type: "(branchIndex: number) => void", default: "—", description: "Callback when branch changes." }] },
+      { tag: "ui-ai-message-branch-content", props: [] },
+      { tag: "ui-ai-message-branch-selector", props: [] },
+      { tag: "ui-ai-message-branch-previous", props: [] },
+      { tag: "ui-ai-message-branch-next", props: [] },
+      { tag: "ui-ai-message-branch-page", props: [] },
+      { tag: "ui-ai-message-response", props: [] },
+      { tag: "ui-ai-message-toolbar", props: [] },
+    ],
+    example: `<ui-ai-message from="user">
+  <ui-ai-message-content>What is React?</ui-ai-message-content>
+</ui-ai-message>
+<ui-ai-message from="assistant">
+  <ui-ai-message-content>
+    <ui-ai-message-response>React is a JavaScript library for building user interfaces.</ui-ai-message-response>
+  </ui-ai-message-content>
+  <ui-ai-message-actions>
+    <ui-ai-message-action tooltip="Copy" label="Copy"></ui-ai-message-action>
+    <ui-ai-message-action tooltip="Regenerate" label="Regenerate"></ui-ai-message-action>
+  </ui-ai-message-actions>
+</ui-ai-message>`,
+  },
+  {
+    name: "Mic Selector",
+    slug: "ai-mic-selector",
+    description: "A popover-based microphone device selector.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/mic-selector",
+    subComponents: [
+      { tag: "ui-ai-mic-selector", props: [{ name: "value", type: "string", default: "—", description: "Controlled selected device." }, { name: "defaultValue", type: "string", default: "—", description: "Default selected device." }, { name: "onValueChange", type: "(value: string) => void", default: "—", description: "Callback when selection changes." }] },
+      { tag: "ui-ai-mic-selector-trigger", props: [] },
+      { tag: "ui-ai-mic-selector-content", props: [] },
+      { tag: "ui-ai-mic-selector-input", props: [] },
+      { tag: "ui-ai-mic-selector-list", props: [] },
+      { tag: "ui-ai-mic-selector-empty", props: [] },
+      { tag: "ui-ai-mic-selector-item", props: [] },
+      { tag: "ui-ai-mic-selector-label", props: [] },
+      { tag: "ui-ai-mic-selector-value", props: [] },
+    ],
+    example: `<ui-ai-mic-selector>
+  <ui-ai-mic-selector-trigger>
+    <ui-ai-mic-selector-value>Select microphone</ui-ai-mic-selector-value>
+  </ui-ai-mic-selector-trigger>
+  <ui-ai-mic-selector-content>
+    <ui-ai-mic-selector-input placeholder="Search devices..."></ui-ai-mic-selector-input>
+    <ui-ai-mic-selector-list>
+      <ui-ai-mic-selector-empty>No devices found.</ui-ai-mic-selector-empty>
+      <ui-ai-mic-selector-item>
+        <ui-ai-mic-selector-label>Built-in Microphone</ui-ai-mic-selector-label>
+      </ui-ai-mic-selector-item>
+      <ui-ai-mic-selector-item>
+        <ui-ai-mic-selector-label>USB Microphone</ui-ai-mic-selector-label>
+      </ui-ai-mic-selector-item>
+    </ui-ai-mic-selector-list>
+  </ui-ai-mic-selector-content>
+</ui-ai-mic-selector>`,
+  },
+  {
+    name: "Model Selector",
+    slug: "ai-model-selector",
+    description: "A dialog-based model picker with search, grouping, provider logos, and keyboard shortcuts.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/model-selector",
+    subComponents: [
+      { tag: "ui-ai-model-selector", props: [] },
+      { tag: "ui-ai-model-selector-trigger", props: [] },
+      { tag: "ui-ai-model-selector-content", props: [{ name: "title", type: "ReactNode", default: "—", description: "Dialog title." }] },
+      { tag: "ui-ai-model-selector-dialog", props: [] },
+      { tag: "ui-ai-model-selector-input", props: [] },
+      { tag: "ui-ai-model-selector-list", props: [] },
+      { tag: "ui-ai-model-selector-empty", props: [] },
+      { tag: "ui-ai-model-selector-group", props: [] },
+      { tag: "ui-ai-model-selector-item", props: [] },
+      { tag: "ui-ai-model-selector-shortcut", props: [] },
+      { tag: "ui-ai-model-selector-separator", props: [] },
+      { tag: "ui-ai-model-selector-logo", props: [{ name: "provider", type: "string", default: "—", description: "Provider name for the logo." }] },
+      { tag: "ui-ai-model-selector-logo-group", props: [] },
+      { tag: "ui-ai-model-selector-name", props: [] },
+    ],
+    example: `<ui-ai-model-selector>
+  <ui-ai-model-selector-trigger>Select Model</ui-ai-model-selector-trigger>
+  <ui-ai-model-selector-content title="Choose a model">
+    <ui-ai-model-selector-input placeholder="Search models..."></ui-ai-model-selector-input>
+    <ui-ai-model-selector-list>
+      <ui-ai-model-selector-empty>No models found.</ui-ai-model-selector-empty>
+      <ui-ai-model-selector-group>
+        <ui-ai-model-selector-item>
+          <ui-ai-model-selector-logo provider="openai"></ui-ai-model-selector-logo>
+          <ui-ai-model-selector-name>GPT-4o</ui-ai-model-selector-name>
+          <ui-ai-model-selector-shortcut>⌘1</ui-ai-model-selector-shortcut>
+        </ui-ai-model-selector-item>
+        <ui-ai-model-selector-item>
+          <ui-ai-model-selector-logo provider="anthropic"></ui-ai-model-selector-logo>
+          <ui-ai-model-selector-name>Claude 3.5 Sonnet</ui-ai-model-selector-name>
+          <ui-ai-model-selector-shortcut>⌘2</ui-ai-model-selector-shortcut>
+        </ui-ai-model-selector-item>
+      </ui-ai-model-selector-group>
+    </ui-ai-model-selector-list>
+  </ui-ai-model-selector-content>
+</ui-ai-model-selector>`,
+  },
+  {
+    name: "Node",
+    slug: "ai-node",
+    description: "A ReactFlow node card with header, content, footer, and configurable connection handles.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/node",
+    subComponents: [
+      { tag: "ui-ai-node", props: [{ name: "handles", type: "{ target: boolean; source: boolean }", default: "—", description: "Configure which connection handles to display." }] },
+      { tag: "ui-ai-node-header", props: [] },
+      { tag: "ui-ai-node-title", props: [] },
+      { tag: "ui-ai-node-description", props: [] },
+      { tag: "ui-ai-node-action", props: [] },
+      { tag: "ui-ai-node-content", props: [] },
+      { tag: "ui-ai-node-footer", props: [] },
+    ],
+    example: `<ui-ai-node handles='{"target":true,"source":true}'>
+  <ui-ai-node-header>
+    <ui-ai-node-title>Transform</ui-ai-node-title>
+    <ui-ai-node-description>Apply data transformation</ui-ai-node-description>
+    <ui-ai-node-action>Edit</ui-ai-node-action>
+  </ui-ai-node-header>
+  <ui-ai-node-content>
+    <p>Converts input data to JSON format</p>
+  </ui-ai-node-content>
+  <ui-ai-node-footer>Last run: 2 min ago</ui-ai-node-footer>
+</ui-ai-node>`,
+  },
+  {
+    name: "Open In Chat",
+    slug: "ai-open-in-chat",
+    description: "A dropdown menu with preset links to open a query in external AI chat services.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/open-in-chat",
+    subComponents: [
+      { tag: "ui-ai-open-in", props: [{ name: "query", type: "string", default: "—", description: "The query to pass to external services." }] },
+      { tag: "ui-ai-open-in-trigger", props: [] },
+      { tag: "ui-ai-open-in-content", props: [] },
+      { tag: "ui-ai-open-in-item", props: [] },
+      { tag: "ui-ai-open-in-label", props: [] },
+      { tag: "ui-ai-open-in-separator", props: [] },
+      { tag: "ui-ai-open-in-chat-gpt", props: [] },
+      { tag: "ui-ai-open-in-claude", props: [] },
+      { tag: "ui-ai-open-in-t3", props: [] },
+      { tag: "ui-ai-open-in-scira", props: [] },
+      { tag: "ui-ai-open-in-v0", props: [] },
+      { tag: "ui-ai-open-in-cursor", props: [] },
+    ],
+    example: `<ui-ai-open-in query="How to build a React component?">
+  <ui-ai-open-in-trigger>Open in...</ui-ai-open-in-trigger>
+  <ui-ai-open-in-content>
+    <ui-ai-open-in-label>Open in</ui-ai-open-in-label>
+    <ui-ai-open-in-chat-gpt></ui-ai-open-in-chat-gpt>
+    <ui-ai-open-in-claude></ui-ai-open-in-claude>
+    <ui-ai-open-in-separator></ui-ai-open-in-separator>
+    <ui-ai-open-in-v0></ui-ai-open-in-v0>
+    <ui-ai-open-in-cursor></ui-ai-open-in-cursor>
+  </ui-ai-open-in-content>
+</ui-ai-open-in>`,
+  },
+  {
+    name: "Package Info",
+    slug: "ai-package-info",
+    description: "Displays package metadata with version changes, change types, and dependency lists.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/package-info",
+    subComponents: [
+      { tag: "ui-ai-package-info", props: [{ name: "name", type: "string", default: "—", description: "Package name." }, { name: "currentVersion", type: "string", default: "—", description: "Current installed version." }, { name: "newVersion", type: "string", default: "—", description: "New available version." }, { name: "changeType", type: '"major" | "minor" | "patch" | "dev"', default: "—", description: "Type of version change." }] },
+      { tag: "ui-ai-package-info-header", props: [] },
+      { tag: "ui-ai-package-info-name", props: [] },
+      { tag: "ui-ai-package-info-change-type", props: [] },
+      { tag: "ui-ai-package-info-version", props: [] },
+      { tag: "ui-ai-package-info-description", props: [] },
+      { tag: "ui-ai-package-info-content", props: [] },
+      { tag: "ui-ai-package-info-dependencies", props: [] },
+      { tag: "ui-ai-package-info-dependency", props: [{ name: "name", type: "string", default: "—", description: "Dependency name." }, { name: "version", type: "string", default: "—", description: "Dependency version." }] },
+    ],
+    example: `<ui-ai-package-info name="react" currentVersion="18.2.0" newVersion="19.0.0" changeType="major">
+  <ui-ai-package-info-header>
+    <ui-ai-package-info-name></ui-ai-package-info-name>
+    <ui-ai-package-info-change-type></ui-ai-package-info-change-type>
+    <ui-ai-package-info-version></ui-ai-package-info-version>
+  </ui-ai-package-info-header>
+  <ui-ai-package-info-description>A JavaScript library for building user interfaces.</ui-ai-package-info-description>
+  <ui-ai-package-info-content>
+    <ui-ai-package-info-dependencies>
+      <ui-ai-package-info-dependency name="react-dom" version="^19.0.0"></ui-ai-package-info-dependency>
+      <ui-ai-package-info-dependency name="scheduler" version="^0.24.0"></ui-ai-package-info-dependency>
+    </ui-ai-package-info-dependencies>
+  </ui-ai-package-info-content>
+</ui-ai-package-info>`,
+  },
+  {
+    name: "Panel",
+    slug: "ai-panel",
+    description: "A ReactFlow panel primitive for positioning content within the canvas viewport.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/panel",
+    subComponents: [
+      { tag: "ui-ai-panel", props: [] },
+    ],
+    example: `<ui-ai-canvas>
+  <ui-ai-panel>
+    <p>Panel content</p>
+  </ui-ai-panel>
+</ui-ai-canvas>`,
+  },
+  {
+    name: "Persona",
+    slug: "ai-persona",
+    description: "An animated AI persona avatar that reflects idle, listening, thinking, and speaking states.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/persona",
+    subComponents: [
+      { tag: "ui-ai-persona", props: [{ name: "state", type: '"idle" | "listening" | "thinking" | "speaking"', default: "—", description: "Current persona state." }, { name: "variant", type: "string", default: "—", description: "Visual variant of the persona." }] },
+    ],
+    example: `<ui-ai-persona state="thinking" variant="obsidian"></ui-ai-persona>`,
+  },
+  {
+    name: "Plan",
+    slug: "ai-plan",
+    description: "A collapsible plan component with streaming support, title, description, and action items.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/plan",
+    subComponents: [
+      { tag: "ui-ai-plan", props: [{ name: "isStreaming", type: "boolean", default: "—", description: "Whether the plan is still streaming." }] },
+      { tag: "ui-ai-plan-header", props: [] },
+      { tag: "ui-ai-plan-title", props: [] },
+      { tag: "ui-ai-plan-description", props: [] },
+      { tag: "ui-ai-plan-action", props: [] },
+      { tag: "ui-ai-plan-content", props: [] },
+      { tag: "ui-ai-plan-footer", props: [] },
+      { tag: "ui-ai-plan-trigger", props: [] },
+    ],
+    example: `<ui-ai-plan>
+  <ui-ai-plan-header>
+    <ui-ai-plan-title>Implementation Plan</ui-ai-plan-title>
+    <ui-ai-plan-description>Steps to build the authentication system</ui-ai-plan-description>
+    <ui-ai-plan-trigger></ui-ai-plan-trigger>
+  </ui-ai-plan-header>
+  <ui-ai-plan-content>
+    <p>1. Set up OAuth provider</p>
+    <p>2. Create login and signup pages</p>
+    <p>3. Implement session management</p>
+  </ui-ai-plan-content>
+  <ui-ai-plan-footer>
+    <ui-ai-plan-action>Execute Plan</ui-ai-plan-action>
+  </ui-ai-plan-footer>
+</ui-ai-plan>`,
+  },
+  {
+    name: "Prompt Input",
+    slug: "ai-prompt-input",
+    description: "A rich prompt input form with file attachments, action menus, model selection, and submit controls.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/prompt-input",
+    subComponents: [
+      { tag: "ui-ai-prompt-input-provider", props: [{ name: "initialInput", type: "string", default: "—", description: "Initial input value." }] },
+      { tag: "ui-ai-prompt-input", props: [{ name: "accept", type: "string", default: "—", description: "Accepted file types." }, { name: "multiple", type: "boolean", default: "—", description: "Allow multiple file uploads." }, { name: "globalDrop", type: "boolean", default: "—", description: "Enable global drag-and-drop." }, { name: "maxFiles", type: "number", default: "—", description: "Maximum number of files." }, { name: "maxFileSize", type: "number", default: "—", description: "Maximum file size in bytes." }] },
+      { tag: "ui-ai-prompt-input-body", props: [] },
+      { tag: "ui-ai-prompt-input-textarea", props: [] },
+      { tag: "ui-ai-prompt-input-header", props: [] },
+      { tag: "ui-ai-prompt-input-footer", props: [] },
+      { tag: "ui-ai-prompt-input-tools", props: [] },
+      { tag: "ui-ai-prompt-input-button", props: [{ name: "tooltip", type: "string", default: "—", description: "Tooltip text for the button." }] },
+      { tag: "ui-ai-prompt-input-action-menu", props: [] },
+      { tag: "ui-ai-prompt-input-action-menu-trigger", props: [] },
+      { tag: "ui-ai-prompt-input-action-menu-content", props: [] },
+      { tag: "ui-ai-prompt-input-action-menu-item", props: [] },
+      { tag: "ui-ai-prompt-input-action-add-attachments", props: [{ name: "label", type: "string", default: '"Add photos or files"', description: "Button label." }] },
+      { tag: "ui-ai-prompt-input-action-add-screenshot", props: [{ name: "label", type: "string", default: '"Take screenshot"', description: "Button label." }] },
+      { tag: "ui-ai-prompt-input-submit", props: [{ name: "status", type: "ChatStatus", default: "—", description: "Current chat status." }, { name: "onStop", type: "() => void", default: "—", description: "Callback to stop generation." }] },
+      { tag: "ui-ai-prompt-input-select", props: [] },
+      { tag: "ui-ai-prompt-input-select-trigger", props: [] },
+      { tag: "ui-ai-prompt-input-select-content", props: [] },
+      { tag: "ui-ai-prompt-input-select-item", props: [] },
+      { tag: "ui-ai-prompt-input-select-value", props: [] },
+      { tag: "ui-ai-prompt-input-hover-card", props: [] },
+      { tag: "ui-ai-prompt-input-hover-card-trigger", props: [] },
+      { tag: "ui-ai-prompt-input-hover-card-content", props: [] },
+      { tag: "ui-ai-prompt-input-tabs-list", props: [] },
+      { tag: "ui-ai-prompt-input-tab", props: [] },
+      { tag: "ui-ai-prompt-input-tab-label", props: [] },
+      { tag: "ui-ai-prompt-input-tab-body", props: [] },
+      { tag: "ui-ai-prompt-input-tab-item", props: [] },
+      { tag: "ui-ai-prompt-input-command", props: [] },
+      { tag: "ui-ai-prompt-input-command-input", props: [] },
+      { tag: "ui-ai-prompt-input-command-list", props: [] },
+      { tag: "ui-ai-prompt-input-command-empty", props: [] },
+      { tag: "ui-ai-prompt-input-command-group", props: [] },
+      { tag: "ui-ai-prompt-input-command-item", props: [] },
+      { tag: "ui-ai-prompt-input-command-separator", props: [] },
+    ],
+    example: `<ui-ai-prompt-input-provider>
+  <ui-ai-prompt-input>
+    <ui-ai-prompt-input-body>
+      <ui-ai-prompt-input-textarea placeholder="Ask anything..."></ui-ai-prompt-input-textarea>
+    </ui-ai-prompt-input-body>
+    <ui-ai-prompt-input-footer>
+      <ui-ai-prompt-input-tools>
+        <ui-ai-prompt-input-action-add-attachments label="Add photos or files"></ui-ai-prompt-input-action-add-attachments>
+      </ui-ai-prompt-input-tools>
+      <ui-ai-prompt-input-submit status="ready"></ui-ai-prompt-input-submit>
+    </ui-ai-prompt-input-footer>
+  </ui-ai-prompt-input>
+</ui-ai-prompt-input-provider>`,
+  },
+  {
+    name: "Queue",
+    slug: "ai-queue",
+    description: "A task queue with collapsible sections, item indicators, descriptions, and file attachments.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/queue",
+    subComponents: [
+      { tag: "ui-ai-queue", props: [] },
+      { tag: "ui-ai-queue-list", props: [] },
+      { tag: "ui-ai-queue-section", props: [] },
+      { tag: "ui-ai-queue-section-trigger", props: [] },
+      { tag: "ui-ai-queue-section-label", props: [{ name: "count", type: "number", default: "—", description: "Number of items in section." }, { name: "label", type: "string", default: "—", description: "Section label." }, { name: "icon", type: "ReactNode", default: "—", description: "Section icon." }] },
+      { tag: "ui-ai-queue-section-content", props: [] },
+      { tag: "ui-ai-queue-item", props: [] },
+      { tag: "ui-ai-queue-item-indicator", props: [{ name: "completed", type: "boolean", default: "—", description: "Whether the item is completed." }] },
+      { tag: "ui-ai-queue-item-content", props: [{ name: "completed", type: "boolean", default: "—", description: "Whether the item is completed." }] },
+      { tag: "ui-ai-queue-item-description", props: [{ name: "completed", type: "boolean", default: "—", description: "Whether the item is completed." }] },
+      { tag: "ui-ai-queue-item-actions", props: [] },
+      { tag: "ui-ai-queue-item-action", props: [] },
+      { tag: "ui-ai-queue-item-attachment", props: [] },
+      { tag: "ui-ai-queue-item-image", props: [] },
+      { tag: "ui-ai-queue-item-file", props: [] },
+    ],
+    example: `<ui-ai-queue>
+  <ui-ai-queue-list>
+    <ui-ai-queue-section>
+      <ui-ai-queue-section-trigger>
+        <ui-ai-queue-section-label label="In Progress" count="2"></ui-ai-queue-section-label>
+      </ui-ai-queue-section-trigger>
+      <ui-ai-queue-section-content>
+        <ui-ai-queue-item>
+          <ui-ai-queue-item-indicator></ui-ai-queue-item-indicator>
+          <ui-ai-queue-item-content>Build authentication flow</ui-ai-queue-item-content>
+          <ui-ai-queue-item-description>Setting up OAuth providers</ui-ai-queue-item-description>
+        </ui-ai-queue-item>
+      </ui-ai-queue-section-content>
+    </ui-ai-queue-section>
+    <ui-ai-queue-section>
+      <ui-ai-queue-section-trigger>
+        <ui-ai-queue-section-label label="Completed" count="1"></ui-ai-queue-section-label>
+      </ui-ai-queue-section-trigger>
+      <ui-ai-queue-section-content>
+        <ui-ai-queue-item>
+          <ui-ai-queue-item-indicator completed></ui-ai-queue-item-indicator>
+          <ui-ai-queue-item-content completed>Set up project structure</ui-ai-queue-item-content>
+        </ui-ai-queue-item>
+      </ui-ai-queue-section-content>
+    </ui-ai-queue-section>
+  </ui-ai-queue-list>
+</ui-ai-queue>`,
+  },
+  {
+    name: "Reasoning",
+    slug: "ai-reasoning",
+    description: "A collapsible reasoning block that shows AI thinking process with streaming and duration display.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/reasoning",
+    subComponents: [
+      { tag: "ui-ai-reasoning", props: [{ name: "isStreaming", type: "boolean", default: "—", description: "Whether reasoning is still streaming." }, { name: "open", type: "boolean", default: "—", description: "Controlled open state." }, { name: "defaultOpen", type: "boolean", default: "—", description: "Initial open state." }, { name: "duration", type: "number", default: "—", description: "Thinking duration in seconds." }] },
+      { tag: "ui-ai-reasoning-trigger", props: [] },
+      { tag: "ui-ai-reasoning-content", props: [] },
+    ],
+    example: `<ui-ai-reasoning defaultOpen duration="3">
+  <ui-ai-reasoning-trigger></ui-ai-reasoning-trigger>
+  <ui-ai-reasoning-content>I need to analyze the user's question about React hooks. Let me consider the key points about useState and useEffect...</ui-ai-reasoning-content>
+</ui-ai-reasoning>`,
+  },
+  {
+    name: "Sandbox",
+    slug: "ai-sandbox",
+    description: "A collapsible sandbox environment with tabbed content for running and previewing code.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/sandbox",
+    subComponents: [
+      { tag: "ui-ai-sandbox", props: [] },
+      { tag: "ui-ai-sandbox-header", props: [{ name: "title", type: "string", default: "—", description: "Sandbox title." }, { name: "state", type: "string", default: "—", description: "The tool execution state." }] },
+      { tag: "ui-ai-sandbox-content", props: [] },
+      { tag: "ui-ai-sandbox-tabs", props: [] },
+      { tag: "ui-ai-sandbox-tabs-bar", props: [] },
+      { tag: "ui-ai-sandbox-tabs-list", props: [] },
+      { tag: "ui-ai-sandbox-tabs-trigger", props: [] },
+      { tag: "ui-ai-sandbox-tab-content", props: [] },
+    ],
+    example: `<ui-ai-sandbox>
+  <ui-ai-sandbox-header title="Code Sandbox" state="complete"></ui-ai-sandbox-header>
+  <ui-ai-sandbox-content>
+    <ui-ai-sandbox-tabs>
+      <ui-ai-sandbox-tabs-bar>
+        <ui-ai-sandbox-tabs-list>
+          <ui-ai-sandbox-tabs-trigger>Code</ui-ai-sandbox-tabs-trigger>
+          <ui-ai-sandbox-tabs-trigger>Preview</ui-ai-sandbox-tabs-trigger>
+        </ui-ai-sandbox-tabs-list>
+      </ui-ai-sandbox-tabs-bar>
+      <ui-ai-sandbox-tab-content>
+        <p>Code editor content</p>
+      </ui-ai-sandbox-tab-content>
+      <ui-ai-sandbox-tab-content>
+        <p>Preview content</p>
+      </ui-ai-sandbox-tab-content>
+    </ui-ai-sandbox-tabs>
+  </ui-ai-sandbox-content>
+</ui-ai-sandbox>`,
+  },
+  {
+    name: "Schema Display",
+    slug: "ai-schema-display",
+    description: "Renders API schema documentation with HTTP method badges, parameters, and request/response bodies.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/schema-display",
+    subComponents: [
+      { tag: "ui-ai-schema-display", props: [{ name: "method", type: "string", default: "—", description: "HTTP method (GET, POST, etc.)." }, { name: "path", type: "string", default: "—", description: "API endpoint path." }, { name: "description", type: "string", default: "—", description: "Endpoint description." }] },
+      { tag: "ui-ai-schema-display-header", props: [] },
+      { tag: "ui-ai-schema-display-method", props: [] },
+      { tag: "ui-ai-schema-display-path", props: [] },
+      { tag: "ui-ai-schema-display-description", props: [] },
+      { tag: "ui-ai-schema-display-content", props: [] },
+      { tag: "ui-ai-schema-display-body", props: [] },
+      { tag: "ui-ai-schema-display-example", props: [] },
+      { tag: "ui-ai-schema-display-parameter", props: [] },
+      { tag: "ui-ai-schema-display-parameters", props: [] },
+      { tag: "ui-ai-schema-display-property", props: [{ name: "depth", type: "number", default: "—", description: "Nesting depth for indentation." }] },
+      { tag: "ui-ai-schema-display-request", props: [] },
+      { tag: "ui-ai-schema-display-response", props: [] },
+    ],
+    example: `<ui-ai-schema-display method="POST" path="/api/users" description="Create a new user account">
+  <ui-ai-schema-display-header>
+    <ui-ai-schema-display-method></ui-ai-schema-display-method>
+    <ui-ai-schema-display-path></ui-ai-schema-display-path>
+  </ui-ai-schema-display-header>
+  <ui-ai-schema-display-description></ui-ai-schema-display-description>
+  <ui-ai-schema-display-content>
+    <ui-ai-schema-display-request>
+      <ui-ai-schema-display-body>
+        <ui-ai-schema-display-property depth="0">name: string</ui-ai-schema-display-property>
+        <ui-ai-schema-display-property depth="0">email: string</ui-ai-schema-display-property>
+      </ui-ai-schema-display-body>
+    </ui-ai-schema-display-request>
+    <ui-ai-schema-display-response>
+      <ui-ai-schema-display-body>
+        <ui-ai-schema-display-property depth="0">id: number</ui-ai-schema-display-property>
+        <ui-ai-schema-display-property depth="0">name: string</ui-ai-schema-display-property>
+      </ui-ai-schema-display-body>
+    </ui-ai-schema-display-response>
+  </ui-ai-schema-display-content>
+</ui-ai-schema-display>`,
+  },
+  {
+    name: "Shimmer",
+    slug: "ai-shimmer",
+    description: "A text shimmer effect for highlighting AI-generated content with customizable animation.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/shimmer",
+    subComponents: [
+      { tag: "ui-ai-shimmer", props: [{ name: "as", type: "string", default: '"p"', description: "HTML element type to render." }, { name: "duration", type: "number", default: "2", description: "Animation duration in seconds." }, { name: "spread", type: "number", default: "2", description: "Shimmer spread width." }] },
+    ],
+    example: `<ui-ai-shimmer duration="2" spread="2">This text has a shimmer effect applied to it.</ui-ai-shimmer>`,
+  },
+  {
+    name: "Snippet",
+    slug: "ai-snippet",
+    description: "A code snippet display with inline copy button for quick sharing of short code strings.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/snippet",
+    subComponents: [
+      { tag: "ui-ai-snippet", props: [{ name: "code", type: "string", default: "—", description: "The code string to display." }] },
+      { tag: "ui-ai-snippet-addon", props: [] },
+      { tag: "ui-ai-snippet-text", props: [] },
+      { tag: "ui-ai-snippet-input", props: [] },
+      { tag: "ui-ai-snippet-copy-button", props: [{ name: "onCopy", type: "() => void", default: "—", description: "Callback on copy." }, { name: "onError", type: "(error: Error) => void", default: "—", description: "Callback on error." }, { name: "timeout", type: "number", default: "—", description: "Duration in ms to show success state." }] },
+    ],
+    example: `<ui-ai-snippet code="npm install reactolith-ui">
+  <ui-ai-snippet-addon>$</ui-ai-snippet-addon>
+  <ui-ai-snippet-text></ui-ai-snippet-text>
+  <ui-ai-snippet-copy-button></ui-ai-snippet-copy-button>
+</ui-ai-snippet>`,
+  },
+  {
+    name: "Sources",
+    slug: "ai-sources",
+    description: "A collapsible list of referenced sources with count badge and linked source items.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/sources",
+    subComponents: [
+      { tag: "ui-ai-sources", props: [] },
+      { tag: "ui-ai-sources-trigger", props: [{ name: "count", type: "number", default: "—", description: "Number of sources." }] },
+      { tag: "ui-ai-sources-content", props: [] },
+      { tag: "ui-ai-source", props: [] },
+    ],
+    example: `<ui-ai-sources>
+  <ui-ai-sources-trigger count="3">3 sources</ui-ai-sources-trigger>
+  <ui-ai-sources-content>
+    <ui-ai-source href="https://react.dev">React Documentation</ui-ai-source>
+    <ui-ai-source href="https://nextjs.org">Next.js Documentation</ui-ai-source>
+    <ui-ai-source href="https://tailwindcss.com">Tailwind CSS</ui-ai-source>
+  </ui-ai-sources-content>
+</ui-ai-sources>`,
+  },
+  {
+    name: "Speech Input",
+    slug: "ai-speech-input",
+    description: "A microphone button for speech-to-text input with transcription callbacks.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/speech-input",
+    subComponents: [
+      { tag: "ui-ai-speech-input", props: [{ name: "lang", type: "string", default: '"en-US"', description: "Language for speech recognition." }] },
+    ],
+    example: `<ui-ai-speech-input lang="en-US"></ui-ai-speech-input>`,
+  },
+  {
+    name: "Stack Trace",
+    slug: "ai-stack-trace",
+    description: "Displays error stack traces with collapsible frames, error type/message parsing, and copy actions.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/stack-trace",
+    subComponents: [
+      { tag: "ui-ai-stack-trace", props: [{ name: "trace", type: "string", default: "—", description: "The stack trace string." }, { name: "open", type: "boolean", default: "—", description: "Controlled open state." }, { name: "defaultOpen", type: "boolean", default: "—", description: "Initial open state." }] },
+      { tag: "ui-ai-stack-trace-header", props: [] },
+      { tag: "ui-ai-stack-trace-error", props: [] },
+      { tag: "ui-ai-stack-trace-error-type", props: [] },
+      { tag: "ui-ai-stack-trace-error-message", props: [] },
+      { tag: "ui-ai-stack-trace-actions", props: [] },
+      { tag: "ui-ai-stack-trace-copy-button", props: [{ name: "onCopy", type: "() => void", default: "—", description: "Callback on copy." }, { name: "onError", type: "(error: Error) => void", default: "—", description: "Callback on error." }, { name: "timeout", type: "number", default: "—", description: "Duration in ms to show success state." }] },
+      { tag: "ui-ai-stack-trace-expand-button", props: [] },
+      { tag: "ui-ai-stack-trace-content", props: [{ name: "maxHeight", type: "number", default: "400", description: "Maximum height in pixels." }] },
+      { tag: "ui-ai-stack-trace-frames", props: [{ name: "showInternalFrames", type: "boolean", default: "true", description: "Whether to show internal frames." }] },
+    ],
+    example: `<ui-ai-stack-trace trace="TypeError: Cannot read property 'map' of undefined\n    at App.tsx:15:23\n    at renderWithHooks (react-dom.js:123:45)" defaultOpen>
+  <ui-ai-stack-trace-header>
+    <ui-ai-stack-trace-error>
+      <ui-ai-stack-trace-error-type></ui-ai-stack-trace-error-type>
+      <ui-ai-stack-trace-error-message></ui-ai-stack-trace-error-message>
+    </ui-ai-stack-trace-error>
+    <ui-ai-stack-trace-actions>
+      <ui-ai-stack-trace-copy-button></ui-ai-stack-trace-copy-button>
+      <ui-ai-stack-trace-expand-button></ui-ai-stack-trace-expand-button>
+    </ui-ai-stack-trace-actions>
+  </ui-ai-stack-trace-header>
+  <ui-ai-stack-trace-content maxHeight="400">
+    <ui-ai-stack-trace-frames showInternalFrames></ui-ai-stack-trace-frames>
+  </ui-ai-stack-trace-content>
+</ui-ai-stack-trace>`,
+  },
+  {
+    name: "Suggestions",
+    slug: "ai-suggestions",
+    description: "A scrollable list of suggested prompts or follow-up questions.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/suggestions",
+    subComponents: [
+      { tag: "ui-ai-suggestions", props: [] },
+      { tag: "ui-ai-suggestion", props: [{ name: "suggestion", type: "string", default: "—", description: "The suggestion text." }] },
+    ],
+    example: `<ui-ai-suggestions>
+  <ui-ai-suggestion suggestion="What is React?">What is React?</ui-ai-suggestion>
+  <ui-ai-suggestion suggestion="How do hooks work?">How do hooks work?</ui-ai-suggestion>
+  <ui-ai-suggestion suggestion="Explain server components">Explain server components</ui-ai-suggestion>
+</ui-ai-suggestions>`,
+  },
+  {
+    name: "Task",
+    slug: "ai-task",
+    description: "A collapsible task container with trigger title, content area, and file item listings.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/task",
+    subComponents: [
+      { tag: "ui-ai-task", props: [] },
+      { tag: "ui-ai-task-trigger", props: [{ name: "title", type: "string", default: "—", description: "Task title." }] },
+      { tag: "ui-ai-task-content", props: [] },
+      { tag: "ui-ai-task-item", props: [] },
+      { tag: "ui-ai-task-item-file", props: [] },
+    ],
+    example: `<ui-ai-task>
+  <ui-ai-task-trigger title="Refactor components"></ui-ai-task-trigger>
+  <ui-ai-task-content>
+    <ui-ai-task-item>
+      <ui-ai-task-item-file>src/components/Button.tsx</ui-ai-task-item-file>
+    </ui-ai-task-item>
+    <ui-ai-task-item>
+      <ui-ai-task-item-file>src/components/Input.tsx</ui-ai-task-item-file>
+    </ui-ai-task-item>
+  </ui-ai-task-content>
+</ui-ai-task>`,
+  },
+  {
+    name: "Terminal",
+    slug: "ai-terminal",
+    description: "A terminal output display with streaming support, auto-scroll, copy, and clear actions.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/terminal",
+    subComponents: [
+      { tag: "ui-ai-terminal", props: [{ name: "output", type: "string", default: "—", description: "Terminal output text." }, { name: "isStreaming", type: "boolean", default: "false", description: "Whether output is still streaming." }, { name: "autoScroll", type: "boolean", default: "true", description: "Auto-scroll to bottom on new output." }] },
+      { tag: "ui-ai-terminal-header", props: [] },
+      { tag: "ui-ai-terminal-title", props: [] },
+      { tag: "ui-ai-terminal-status", props: [] },
+      { tag: "ui-ai-terminal-actions", props: [] },
+      { tag: "ui-ai-terminal-copy-button", props: [{ name: "onCopy", type: "() => void", default: "—", description: "Callback on copy." }, { name: "onError", type: "(error: Error) => void", default: "—", description: "Callback on error." }, { name: "timeout", type: "number", default: "—", description: "Duration in ms to show success state." }] },
+      { tag: "ui-ai-terminal-clear-button", props: [] },
+      { tag: "ui-ai-terminal-content", props: [] },
+    ],
+    example: `<ui-ai-terminal output="$ npm install react\nadded 5 packages in 2s\n\n$ npm run build\nBuild complete!" isStreaming="false" autoScroll>
+  <ui-ai-terminal-header>
+    <ui-ai-terminal-title>Terminal</ui-ai-terminal-title>
+    <ui-ai-terminal-status></ui-ai-terminal-status>
+    <ui-ai-terminal-actions>
+      <ui-ai-terminal-copy-button></ui-ai-terminal-copy-button>
+      <ui-ai-terminal-clear-button></ui-ai-terminal-clear-button>
+    </ui-ai-terminal-actions>
+  </ui-ai-terminal-header>
+  <ui-ai-terminal-content></ui-ai-terminal-content>
+</ui-ai-terminal>`,
+  },
+  {
+    name: "Test Results",
+    slug: "ai-test-results",
+    description: "Displays test suite results with pass/fail/skip counts, progress bars, and collapsible error details.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/test-results",
+    subComponents: [
+      { tag: "ui-ai-test-results", props: [] },
+      { tag: "ui-ai-test-results-header", props: [] },
+      { tag: "ui-ai-test-results-duration", props: [] },
+      { tag: "ui-ai-test-results-summary", props: [] },
+      { tag: "ui-ai-test-results-progress", props: [] },
+      { tag: "ui-ai-test-results-content", props: [] },
+      { tag: "ui-ai-test-suite", props: [{ name: "name", type: "string", default: "—", description: "Test suite name." }, { name: "status", type: "string", default: "—", description: "Suite status (passed, failed, etc.)." }] },
+      { tag: "ui-ai-test-suite-name", props: [] },
+      { tag: "ui-ai-test-suite-stats", props: [{ name: "passed", type: "number", default: "—", description: "Number of passed tests." }, { name: "failed", type: "number", default: "—", description: "Number of failed tests." }, { name: "skipped", type: "number", default: "—", description: "Number of skipped tests." }] },
+      { tag: "ui-ai-test-suite-content", props: [] },
+      { tag: "ui-ai-test", props: [{ name: "name", type: "string", default: "—", description: "Test name." }, { name: "status", type: "string", default: "—", description: "Test status." }, { name: "duration", type: "number", default: "—", description: "Test duration in ms." }] },
+      { tag: "ui-ai-test-name", props: [] },
+      { tag: "ui-ai-test-duration", props: [] },
+      { tag: "ui-ai-test-status", props: [] },
+      { tag: "ui-ai-test-error", props: [] },
+      { tag: "ui-ai-test-error-message", props: [] },
+      { tag: "ui-ai-test-error-stack", props: [] },
+    ],
+    example: `<ui-ai-test-results>
+  <ui-ai-test-results-header>
+    <ui-ai-test-results-summary></ui-ai-test-results-summary>
+    <ui-ai-test-results-duration>2.5s</ui-ai-test-results-duration>
+  </ui-ai-test-results-header>
+  <ui-ai-test-results-progress></ui-ai-test-results-progress>
+  <ui-ai-test-results-content>
+    <ui-ai-test-suite name="auth.test.ts" status="failed">
+      <ui-ai-test-suite-name></ui-ai-test-suite-name>
+      <ui-ai-test-suite-stats passed="3" failed="1" skipped="0"></ui-ai-test-suite-stats>
+      <ui-ai-test-suite-content>
+        <ui-ai-test name="should login successfully" status="passed" duration="120">
+          <ui-ai-test-name></ui-ai-test-name>
+          <ui-ai-test-status></ui-ai-test-status>
+          <ui-ai-test-duration></ui-ai-test-duration>
+        </ui-ai-test>
+        <ui-ai-test name="should handle invalid credentials" status="failed" duration="85">
+          <ui-ai-test-name></ui-ai-test-name>
+          <ui-ai-test-status></ui-ai-test-status>
+          <ui-ai-test-error>
+            <ui-ai-test-error-message>Expected status 401 but received 500</ui-ai-test-error-message>
+          </ui-ai-test-error>
+        </ui-ai-test>
+      </ui-ai-test-suite-content>
+    </ui-ai-test-suite>
+  </ui-ai-test-results-content>
+</ui-ai-test-results>`,
+  },
+  {
+    name: "Tool",
+    slug: "ai-tool",
+    description: "A collapsible tool invocation display showing tool type, state, input arguments, and output results.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/tool",
+    subComponents: [
+      { tag: "ui-ai-tool", props: [] },
+      { tag: "ui-ai-tool-header", props: [{ name: "title", type: "string", default: "—", description: "Tool display title." }, { name: "type", type: "string", default: "—", description: "Tool type identifier." }, { name: "state", type: "string", default: "—", description: "Tool execution state." }, { name: "toolName", type: "string", default: "—", description: "The tool name." }] },
+      { tag: "ui-ai-tool-content", props: [] },
+      { tag: "ui-ai-tool-input", props: [{ name: "input", type: "object", default: "—", description: "Tool input arguments." }] },
+      { tag: "ui-ai-tool-output", props: [{ name: "output", type: "object", default: "—", description: "Tool output result." }, { name: "errorText", type: "string", default: "—", description: "Error text if tool failed." }] },
+    ],
+    example: `<ui-ai-tool>
+  <ui-ai-tool-header title="Web Search" type="function" state="complete" toolName="web_search"></ui-ai-tool-header>
+  <ui-ai-tool-content>
+    <ui-ai-tool-input input='{"query":"React server components"}'></ui-ai-tool-input>
+    <ui-ai-tool-output output='{"results":[{"title":"React Server Components","url":"https://react.dev"}]}'></ui-ai-tool-output>
+  </ui-ai-tool-content>
+</ui-ai-tool>`,
+  },
+  {
+    name: "Toolbar",
+    slug: "ai-toolbar",
+    description: "A ReactFlow node toolbar for attaching actions and controls to canvas nodes.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/toolbar",
+    subComponents: [
+      { tag: "ui-ai-toolbar", props: [] },
+    ],
+    example: `<ui-ai-canvas>
+  <ui-ai-toolbar>
+    <button>Edit</button>
+    <button>Delete</button>
+  </ui-ai-toolbar>
+</ui-ai-canvas>`,
+  },
+  {
+    name: "Transcription",
+    slug: "ai-transcription",
+    description: "Displays audio transcription segments with time-synced highlighting and seek-on-click support.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/transcription",
+    subComponents: [
+      { tag: "ui-ai-transcription", props: [{ name: "currentTime", type: "number", default: "—", description: "Current playback time in seconds." }] },
+      { tag: "ui-ai-transcription-segment", props: [{ name: "segment", type: "TranscriptionSegment", default: "—", description: "Transcription segment data." }, { name: "index", type: "number", default: "—", description: "Segment index." }] },
+    ],
+    example: `<ui-ai-transcription currentTime="5.2">
+  <ui-ai-transcription-segment segment='{"start":0,"end":3.5,"text":"Hello and welcome."}' index="0"></ui-ai-transcription-segment>
+  <ui-ai-transcription-segment segment='{"start":3.5,"end":7.0,"text":"Today we will discuss React."}' index="1"></ui-ai-transcription-segment>
+  <ui-ai-transcription-segment segment='{"start":7.0,"end":11.2,"text":"Let us get started."}' index="2"></ui-ai-transcription-segment>
+</ui-ai-transcription>`,
+  },
+  {
+    name: "Voice Selector",
+    slug: "ai-voice-selector",
+    description: "A dialog-based voice picker with search, filtering by gender/accent, and audio preview.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/voice-selector",
+    subComponents: [
+      { tag: "ui-ai-voice-selector", props: [{ name: "value", type: "string", default: "—", description: "Controlled selected voice." }, { name: "defaultValue", type: "string", default: "—", description: "Default selected voice." }, { name: "onValueChange", type: "(value: string) => void", default: "—", description: "Callback when selection changes." }] },
+      { tag: "ui-ai-voice-selector-trigger", props: [] },
+      { tag: "ui-ai-voice-selector-content", props: [{ name: "title", type: "ReactNode", default: "—", description: "Dialog title." }] },
+      { tag: "ui-ai-voice-selector-dialog", props: [] },
+      { tag: "ui-ai-voice-selector-input", props: [] },
+      { tag: "ui-ai-voice-selector-list", props: [] },
+      { tag: "ui-ai-voice-selector-empty", props: [] },
+      { tag: "ui-ai-voice-selector-group", props: [] },
+      { tag: "ui-ai-voice-selector-item", props: [] },
+      { tag: "ui-ai-voice-selector-shortcut", props: [] },
+      { tag: "ui-ai-voice-selector-separator", props: [] },
+      { tag: "ui-ai-voice-selector-gender", props: [{ name: "value", type: '"male" | "female" | "transgender" | "androgyne" | "non-binary" | "intersex"', default: "—", description: "Gender value for filtering." }] },
+      { tag: "ui-ai-voice-selector-accent", props: [{ name: "value", type: "string", default: "—", description: "Accent value for filtering." }] },
+      { tag: "ui-ai-voice-selector-age", props: [] },
+      { tag: "ui-ai-voice-selector-name", props: [] },
+      { tag: "ui-ai-voice-selector-description", props: [] },
+      { tag: "ui-ai-voice-selector-attributes", props: [] },
+      { tag: "ui-ai-voice-selector-bullet", props: [] },
+      { tag: "ui-ai-voice-selector-preview", props: [{ name: "playing", type: "boolean", default: "—", description: "Whether audio is playing." }, { name: "loading", type: "boolean", default: "—", description: "Whether audio is loading." }] },
+    ],
+    example: `<ui-ai-voice-selector>
+  <ui-ai-voice-selector-trigger>Select Voice</ui-ai-voice-selector-trigger>
+  <ui-ai-voice-selector-content title="Choose a voice">
+    <ui-ai-voice-selector-input placeholder="Search voices..."></ui-ai-voice-selector-input>
+    <ui-ai-voice-selector-list>
+      <ui-ai-voice-selector-empty>No voices found.</ui-ai-voice-selector-empty>
+      <ui-ai-voice-selector-group>
+        <ui-ai-voice-selector-item>
+          <ui-ai-voice-selector-name>Alloy</ui-ai-voice-selector-name>
+          <ui-ai-voice-selector-attributes>
+            <ui-ai-voice-selector-gender value="non-binary"></ui-ai-voice-selector-gender>
+            <ui-ai-voice-selector-bullet></ui-ai-voice-selector-bullet>
+            <ui-ai-voice-selector-accent value="American"></ui-ai-voice-selector-accent>
+          </ui-ai-voice-selector-attributes>
+          <ui-ai-voice-selector-description>Warm and expressive</ui-ai-voice-selector-description>
+          <ui-ai-voice-selector-preview></ui-ai-voice-selector-preview>
+        </ui-ai-voice-selector-item>
+        <ui-ai-voice-selector-item>
+          <ui-ai-voice-selector-name>Echo</ui-ai-voice-selector-name>
+          <ui-ai-voice-selector-attributes>
+            <ui-ai-voice-selector-gender value="male"></ui-ai-voice-selector-gender>
+            <ui-ai-voice-selector-bullet></ui-ai-voice-selector-bullet>
+            <ui-ai-voice-selector-accent value="American"></ui-ai-voice-selector-accent>
+          </ui-ai-voice-selector-attributes>
+          <ui-ai-voice-selector-description>Deep and resonant</ui-ai-voice-selector-description>
+          <ui-ai-voice-selector-preview></ui-ai-voice-selector-preview>
+        </ui-ai-voice-selector-item>
+      </ui-ai-voice-selector-group>
+    </ui-ai-voice-selector-list>
+  </ui-ai-voice-selector-content>
+</ui-ai-voice-selector>`,
+  },
+  {
+    name: "Web Preview",
+    slug: "ai-web-preview",
+    description: "An iframe-based web preview with navigation controls, URL bar, and developer console log display.",
+    category: "AI Elements",
+    shadcnUrl: "https://ai.shadcn.com/docs/components/web-preview",
+    subComponents: [
+      { tag: "ui-ai-web-preview", props: [{ name: "defaultUrl", type: "string", default: "—", description: "Initial URL to load." }, { name: "onUrlChange", type: "(url: string) => void", default: "—", description: "Callback when URL changes." }] },
+      { tag: "ui-ai-web-preview-navigation", props: [] },
+      { tag: "ui-ai-web-preview-navigation-button", props: [{ name: "tooltip", type: "string", default: "—", description: "Button tooltip text." }] },
+      { tag: "ui-ai-web-preview-url", props: [] },
+      { tag: "ui-ai-web-preview-body", props: [{ name: "loading", type: "ReactNode", default: "—", description: "Loading state content." }] },
+      { tag: "ui-ai-web-preview-console", props: [] },
+    ],
+    example: `<ui-ai-web-preview defaultUrl="https://example.com">
+  <ui-ai-web-preview-navigation>
+    <ui-ai-web-preview-navigation-button tooltip="Back">←</ui-ai-web-preview-navigation-button>
+    <ui-ai-web-preview-navigation-button tooltip="Forward">→</ui-ai-web-preview-navigation-button>
+    <ui-ai-web-preview-navigation-button tooltip="Refresh">↻</ui-ai-web-preview-navigation-button>
+    <ui-ai-web-preview-url></ui-ai-web-preview-url>
+  </ui-ai-web-preview-navigation>
+  <ui-ai-web-preview-body loading="<p>Loading...</p>"></ui-ai-web-preview-body>
+  <ui-ai-web-preview-console></ui-ai-web-preview-console>
+</ui-ai-web-preview>`,
+  },
 ];
 
 // ============================================================================
 // CATEGORY ORDERING
 // ============================================================================
 
-const categoryOrder = ["Layout", "Forms", "Data Display", "Feedback", "Overlay", "Navigation"];
+const categoryOrder = ["Layout", "Forms", "Data Display", "Feedback", "Overlay", "Navigation", "AI Elements"];
 
 function groupByCategory(comps) {
   const grouped = {};
@@ -1683,11 +3048,11 @@ function componentPage(comp) {
     if (sub.props.length === 0) continue;
     propsHtml += `
             <div class="mt-6">
-              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;${sub.tag}&gt;</code>${sub.custom ? ' <span class="text-xs bg-primary text-primary-foreground px-1.5 py-0.5 rounded ml-2">Custom wrapper</span>' : ""}</h3>
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;${sub.tag}&gt;</code>${sub.enhancedBy ? ` <span class="text-xs bg-blue-500/15 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded ml-2">${sub.enhancedBy}</span>` : ""}</h3>
               <div class="overflow-x-auto max-w-full">
                 <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody>`;
     for (const prop of sub.props) {
-      propsHtml += `<tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">${prop.name}</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">${escapeHtml(prop.type)}</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">${escapeHtml(prop.default)}</code></td><td class="py-2 text-muted-foreground">${prop.description}</td></tr>`;
+      propsHtml += `<tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">${prop.name}</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">${escapeHtml(prop.type)}</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">${escapeHtml(prop.default)}</code></td><td class="py-2 text-muted-foreground">${prop.description}${prop.source ? ` <span class="text-[10px] bg-blue-500/15 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded whitespace-nowrap">via ${prop.source}</span>` : ""}</td></tr>`;
     }
     propsHtml += `</tbody></table>
               </div>
@@ -1701,7 +3066,7 @@ function componentPage(comp) {
   const content = `
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="${comp.shadcnUrl}" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">shadcn/ui docs</a>
+                <a href="${comp.shadcnUrl}" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">${comp.category === "AI Elements" ? "AI Elements docs" : "shadcn/ui docs"}</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">${comp.name}</h1>
               <p class="text-lg text-muted-foreground">${comp.description}</p>
@@ -1762,11 +3127,12 @@ function introductionPage() {
 
               <h2>Key Features</h2>
               <ul>
-                <li><strong>55 component groups</strong> with 299 sub-components</li>
-                <li><strong>Standard HTML</strong> — use <code>&lt;ui-button&gt;</code> instead of importing React components</li>
-                <li><strong>shadcn/ui design</strong> — same beautiful, accessible components</li>
+                <li><strong>103+ component groups</strong> — 55 shadcn/ui base components and 48 AI element components</li>
+                <li><strong>Standard HTML</strong> — use <code>&lt;ui-button&gt;</code> or <code>&lt;ui-ai-message&gt;</code> instead of importing React components</li>
+                <li><strong>shadcn/ui + AI Elements</strong> — beautiful, accessible components for apps and AI interfaces</li>
                 <li><strong>Base UI primitives</strong> — built on unstyled, accessible Base UI components</li>
                 <li><strong>Tailwind CSS v4</strong> — fully styled with Tailwind utilities</li>
+                <li><strong>Behavior system</strong> — props like <code>href</code> are injected by reusable behaviors (linkable, overlay, trigger, etc.)</li>
                 <li><strong>Customizable</strong> — use Tailwind classes directly on any element</li>
               </ul>
 
@@ -1937,32 +3303,68 @@ function usagePage() {
             </div>
 
             <div class="prose prose-neutral dark:prose-invert max-w-none">
-              <h2>Custom Props (Reactolith Extensions)</h2>
-              <p>Some components have additional props added by the Reactolith wrapper. These are marked with a <span class="text-xs bg-primary text-primary-foreground px-1.5 py-0.5 rounded">Custom wrapper</span> badge in the component docs.</p>
-              <p>Currently, two components have custom extensions:</p>
+              <h2>Behavior System</h2>
+              <p>Some components have additional props injected by the loader's <strong>behavior system</strong>. These are marked with a behavior badge (e.g. <span class="text-[10px] bg-blue-500/15 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded">via linkable</span>) in the component docs.</p>
+              <h3>Available Behaviors</h3>
               <ul>
-                <li><strong><code>&lt;ui-button&gt;</code></strong> — adds <code>href</code> prop to render as a link</li>
-                <li><strong><code>&lt;ui-breadcrumb-link&gt;</code></strong> — adds <code>href</code> prop to render as a link</li>
+                <li><strong><code>linkable</code></strong> — Adds <code>href</code> prop, renders as <code>&lt;a&gt;</code> link. Used by: Button, Accordion Trigger, Toggle, Toggle Group Item.</li>
+                <li><strong><code>linkableClose</code></strong> — Adds <code>href</code> prop + closes parent overlay on navigate. Used by: Dropdown Menu Item, Context Menu Item, Menubar Item, Navigation Menu Link, Breadcrumb Link, Tabs Trigger.</li>
+                <li><strong><code>trigger</code></strong> — Single-child <code>asChild</code> render prop pattern. Used by: tooltip/sheet/popover/dropdown/dialog/collapsible/alert-dialog triggers.</li>
+                <li><strong><code>overlay</code></strong> — Wraps children with <code>CloseOverlayProvider</code>. Used by: Sheet, Dialog, Drawer, Popover, Command Dialog.</li>
+                <li><strong><code>closeClick</code></strong> — Calls close overlay on click. Used by: Pagination Link/Next/Previous.</li>
+              </ul>
+              <h3>Component Wrappers</h3>
+              <ul>
+                <li><strong><code>commandLinkable</code></strong> — Adds <code>href</code> to Command Item with overlay close.</li>
+                <li><strong><code>sidebarLinkable</code></strong> — Adds <code>href</code> to Sidebar Menu Button with mobile close.</li>
+                <li><strong><code>sidebarSubLinkable</code></strong> — Adds mobile close to Sidebar Menu Sub Button.</li>
+                <li><strong><code>selectProvider</code> / <code>selectRegister</code></strong> — Enables <code>items</code> prop on Select.</li>
+                <li><strong><code>comboboxProvider</code> / <code>comboboxListRenderer</code></strong> — Enables <code>items</code> prop on Combobox.</li>
               </ul>
             </div>
 
             <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
-              <pre class="p-4 text-sm"><code>${escapeHtml(`<!-- Button as a link -->
+              <pre class="p-4 text-sm"><code>${escapeHtml(`<!-- linkable behavior: Button as a link -->
 <ui-button href="https://example.com">Visit Site</ui-button>
 
-<!-- Breadcrumb with links -->
-<ui-breadcrumb-link href="/docs">Documentation</ui-breadcrumb-link>`)}</code></pre>
+<!-- linkableClose behavior: Closes parent overlay on navigate -->
+<ui-dropdown-menu-item href="/settings">Settings</ui-dropdown-menu-item>
+
+<!-- sidebarLinkable wrapper: Link with mobile close -->
+<ui-sidebar-menu-button href="/dashboard">Dashboard</ui-sidebar-menu-button>`)}</code></pre>
+            </div>
+
+            <div class="prose prose-neutral dark:prose-invert max-w-none">
+              <h2>AI Element Components</h2>
+              <p>AI-specific components use the <code>ui-ai-</code> prefix and provide building blocks for AI interfaces:</p>
+            </div>
+
+            <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
+              <pre class="p-4 text-sm"><code>${escapeHtml(`<!-- AI Message -->
+<ui-ai-message from="assistant">
+  <ui-ai-message-content>Hello! How can I help you?</ui-ai-message-content>
+</ui-ai-message>
+
+<!-- AI Code Block -->
+<ui-ai-code-block code="console.log('hello')" language="javascript"></ui-ai-code-block>
+
+<!-- AI Reasoning -->
+<ui-ai-reasoning>
+  <ui-ai-reasoning-trigger></ui-ai-reasoning-trigger>
+  <ui-ai-reasoning-content>Let me think about this...</ui-ai-reasoning-content>
+</ui-ai-reasoning>`)}</code></pre>
             </div>
 
             <div class="prose prose-neutral dark:prose-invert max-w-none">
               <h2>Naming Convention</h2>
               <p>The HTML tag name maps directly to the component path:</p>
               <ul>
-                <li><code>&lt;ui-button&gt;</code> → <code>Button</code> component</li>
-                <li><code>&lt;ui-card-header&gt;</code> → <code>CardHeader</code> component</li>
-                <li><code>&lt;ui-dropdown-menu-trigger&gt;</code> → <code>DropdownMenuTrigger</code> component</li>
+                <li><code>&lt;ui-button&gt;</code> → <code>Button</code> component (shadcn/ui)</li>
+                <li><code>&lt;ui-card-header&gt;</code> → <code>CardHeader</code> component (shadcn/ui)</li>
+                <li><code>&lt;ui-ai-message&gt;</code> → <code>Message</code> component (AI Elements)</li>
+                <li><code>&lt;ui-ai-code-block&gt;</code> → <code>CodeBlock</code> component (AI Elements)</li>
               </ul>
-              <p>The pattern is always: <code>ui-</code> prefix + kebab-case component name.</p>
+              <p>The pattern is: <code>ui-</code> prefix for shadcn/ui, <code>ui-ai-</code> prefix for AI Elements, both in kebab-case.</p>
             </div>`;
 
   return pageShell("Usage", "usage", content, 1);
@@ -2011,8 +3413,8 @@ function landingPage() {
                 <span class="text-muted-foreground">Style with shadcn.</span>
             </h1>
             <p class="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                ${components.length} component groups powered by Reactolith, shadcn/ui, and Base UI.
-                Use standard HTML custom elements with world-class design.
+                ${components.length} component groups powered by Reactolith, shadcn/ui, Base UI, and AI Elements.
+                Use standard HTML custom elements with world-class design — for apps and AI interfaces.
             </p>
             <div class="flex items-center justify-center gap-3">
                 <ui-button size="lg" href="docs/introduction.html">Get Started</ui-button>

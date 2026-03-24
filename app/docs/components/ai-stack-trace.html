@@ -23,6 +23,7 @@
         <a href="../../index.html" class="text-lg font-bold tracking-tight">Reactolith UI</a>
       </ui-sidebar-header>
       <ui-sidebar-content>
+        
           <ui-sidebar-group>
             <ui-sidebar-group-label>Getting Started</ui-sidebar-group-label>
             <ui-sidebar-group-content>
@@ -93,7 +94,7 @@
                   <ui-sidebar-menu-button  size="sm" href="input-group.html">Input Group</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input Otp</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="input-otp.html">Input OTP</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="label.html">Label</ui-sidebar-menu-button>
@@ -266,7 +267,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-canvas.html">Canvas</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain Of Thought</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain of Thought</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-checkpoint.html">Checkpoint</ui-sidebar-menu-button>
@@ -308,7 +309,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-inline-citation.html">Inline Citation</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">Jsx Preview</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-jsx-preview.html">JSX Preview</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-message.html">Message</ui-sidebar-menu-button>
@@ -365,10 +366,10 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-speech-input.html">Speech Input</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  is-active size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="ai-stack-trace.html">Stack Trace</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-suggestion.html">Suggestion</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-suggestions.html">Suggestions</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-task.html">Task</ui-sidebar-menu-button>
@@ -415,16 +416,18 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://elements.ai-sdk.dev/docs/components/stack-trace" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
+                <a href="https://ai.shadcn.com/docs/components/stack-trace" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">Stack Trace</h1>
-              <p class="text-lg text-muted-foreground">Displays error stack traces with expandable frames.</p>
+              <p class="text-lg text-muted-foreground">Displays error stack traces with collapsible frames, error type/message parsing, and copy actions.</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <ui-ai-stack-trace trace="TypeError: Cannot read properties of undefined (reading 'map')&#10;    at processItems (src/utils.ts:42:15)&#10;    at handleRequest (src/api/handler.ts:28:9)&#10;    at Object.dispatch (node_modules/express/lib/router.js:271:10)">
+                    <ui-ai-stack-trace trace="TypeError: Cannot read property 'map' of undefined
+    at App.tsx:15:23
+    at renderWithHooks (react-dom.js:123:45)" defaultOpen>
   <ui-ai-stack-trace-header>
     <ui-ai-stack-trace-error>
       <ui-ai-stack-trace-error-type></ui-ai-stack-trace-error-type>
@@ -432,10 +435,11 @@
     </ui-ai-stack-trace-error>
     <ui-ai-stack-trace-actions>
       <ui-ai-stack-trace-copy-button></ui-ai-stack-trace-copy-button>
+      <ui-ai-stack-trace-expand-button></ui-ai-stack-trace-expand-button>
     </ui-ai-stack-trace-actions>
   </ui-ai-stack-trace-header>
-  <ui-ai-stack-trace-content>
-    <ui-ai-stack-trace-frames></ui-ai-stack-trace-frames>
+  <ui-ai-stack-trace-content maxHeight="400">
+    <ui-ai-stack-trace-frames showInternalFrames></ui-ai-stack-trace-frames>
   </ui-ai-stack-trace-content>
 </ui-ai-stack-trace>
                   </div>
@@ -444,18 +448,21 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-ai-stack-trace&gt;
+                <pre class="p-4 text-sm"><code>&lt;ui-ai-stack-trace trace=&quot;TypeError: Cannot read property 'map' of undefined
+    at App.tsx:15:23
+    at renderWithHooks (react-dom.js:123:45)&quot; defaultOpen&gt;
   &lt;ui-ai-stack-trace-header&gt;
     &lt;ui-ai-stack-trace-error&gt;
-      &lt;ui-ai-stack-trace-error-type&gt;TypeError&lt;/ui-ai-stack-trace-error-type&gt;
-      &lt;ui-ai-stack-trace-error-message&gt;Cannot read properties of undefined (reading 'map')&lt;/ui-ai-stack-trace-error-message&gt;
+      &lt;ui-ai-stack-trace-error-type&gt;&lt;/ui-ai-stack-trace-error-type&gt;
+      &lt;ui-ai-stack-trace-error-message&gt;&lt;/ui-ai-stack-trace-error-message&gt;
     &lt;/ui-ai-stack-trace-error&gt;
     &lt;ui-ai-stack-trace-actions&gt;
-      &lt;ui-ai-stack-trace-copy-button /&gt;
+      &lt;ui-ai-stack-trace-copy-button&gt;&lt;/ui-ai-stack-trace-copy-button&gt;
+      &lt;ui-ai-stack-trace-expand-button&gt;&lt;/ui-ai-stack-trace-expand-button&gt;
     &lt;/ui-ai-stack-trace-actions&gt;
   &lt;/ui-ai-stack-trace-header&gt;
-  &lt;ui-ai-stack-trace-content&gt;
-    &lt;ui-ai-stack-trace-frames /&gt;
+  &lt;ui-ai-stack-trace-content maxHeight=&quot;400&quot;&gt;
+    &lt;ui-ai-stack-trace-frames showInternalFrames&gt;&lt;/ui-ai-stack-trace-frames&gt;
   &lt;/ui-ai-stack-trace-content&gt;
 &lt;/ui-ai-stack-trace&gt;</code></pre>
               </div>
@@ -467,6 +474,32 @@
                 <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-stack-trace&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-stack-trace-header&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-stack-trace-error&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-stack-trace-error-type&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-stack-trace-error-message&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-stack-trace-actions&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-stack-trace-copy-button&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-stack-trace-expand-button&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-stack-trace-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-stack-trace-frames&gt;</code>
               </div>
             </section>
+
+            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-stack-trace&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">trace</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The stack trace string.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">open</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Controlled open state.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">defaultOpen</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Initial open state.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-stack-trace-copy-button&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onCopy</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">() =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback on copy.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onError</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">(error: Error) =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback on error.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">timeout</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Duration in ms to show success state.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-stack-trace-content&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">maxHeight</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">400</code></td><td class="py-2 text-muted-foreground">Maximum height in pixels.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-stack-trace-frames&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">showInternalFrames</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">true</code></td><td class="py-2 text-muted-foreground">Whether to show internal frames.</td></tr></tbody></table>
+              </div>
+            </div></section>
 
             <section class="mb-10">
               <p class="text-sm text-muted-foreground">
