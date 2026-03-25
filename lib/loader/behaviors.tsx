@@ -210,9 +210,9 @@ function AsyncCombobox({ C, src, debounce: debounceMs = 300, "min-length": minLe
   const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)
   const abortRef = React.useRef<AbortController | null>(null)
 
-  const handleInputChange = React.useCallback(
+  const handleInputValueChange = React.useCallback(
     (value: string) => {
-      props.onInputChange?.(value)
+      props.onInputValueChange?.(value)
 
       if (timerRef.current) clearTimeout(timerRef.current)
       if (abortRef.current) abortRef.current.abort()
@@ -233,7 +233,7 @@ function AsyncCombobox({ C, src, debounce: debounceMs = 300, "min-length": minLe
         }
       }, delay)
     },
-    [src, delay, minLength, props.onInputChange],
+    [src, delay, minLength, props.onInputValueChange],
   )
 
   React.useEffect(() => {
@@ -249,7 +249,7 @@ function AsyncCombobox({ C, src, debounce: debounceMs = 300, "min-length": minLe
     <ComboboxItemsContext.Provider value={items}>
       <C
         items={items}
-        onInputChange={handleInputChange}
+        onInputValueChange={handleInputValueChange}
         {...(hasObjects
           ? { getOptionAsString: (item: ComboboxItemShape) => typeof item === "string" ? item : item.label }
           : {})}
