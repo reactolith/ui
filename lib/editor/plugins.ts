@@ -7,7 +7,6 @@ import {
   BasicMarksPlugin,
   BoldPlugin,
   ItalicPlugin,
-  UnderlinePlugin,
   StrikethroughPlugin,
   CodePlugin,
   SubscriptPlugin,
@@ -48,20 +47,39 @@ const AUTOFORMAT_RULES = [
 ]
 
 // ---------------------------------------------------------------------------
-// Plugin sets by feature
+// Plugin sets by preset
 // ---------------------------------------------------------------------------
 
-/** Core marks: bold, italic, underline, strikethrough, inline code */
-const BASIC_MARKS_PLUGINS = [BasicMarksPlugin]
+/** Inline-only: just text formatting marks (no block types) */
+function getInlinePlugins(): CorePlugin[] {
+  return [
+    BasicMarksPlugin,
+    LinkPlugin,
+    MarkdownPlugin,
+  ]
+}
 
-/** Heading, blockquote, horizontal rule */
-const BASIC_BLOCKS_PLUGINS = [BasicBlocksPlugin]
+/** Standard: common editing features with block types */
+function getStandardPlugins(): CorePlugin[] {
+  return [
+    BasicMarksPlugin,
+    BasicBlocksPlugin,
+    HighlightPlugin,
+    ListPlugin,
+    LinkPlugin,
+    ImagePlugin,
+    TablePlugin,
+    CodeBlockPlugin,
+    MarkdownPlugin,
+    AutoformatPlugin.configure({ options: { rules: AUTOFORMAT_RULES } }),
+  ]
+}
 
-/** Full plugin list for the "full" preset */
+/** Full: all available plugins */
 function getFullPlugins(): CorePlugin[] {
   return [
-    ...BASIC_MARKS_PLUGINS,
-    ...BASIC_BLOCKS_PLUGINS,
+    BasicMarksPlugin,
+    BasicBlocksPlugin,
     HighlightPlugin,
     SubscriptPlugin,
     SuperscriptPlugin,
@@ -78,47 +96,20 @@ function getFullPlugins(): CorePlugin[] {
   ]
 }
 
-/** Standard plugin list (most common features) */
-function getStandardPlugins(): CorePlugin[] {
-  return [
-    ...BASIC_MARKS_PLUGINS,
-    ...BASIC_BLOCKS_PLUGINS,
-    HighlightPlugin,
-    ListPlugin,
-    LinkPlugin,
-    ImagePlugin,
-    TablePlugin,
-    CodeBlockPlugin,
-    MarkdownPlugin,
-    AutoformatPlugin.configure({ options: { rules: AUTOFORMAT_RULES } }),
-  ]
-}
-
-/** Minimal plugin list (basic text formatting) */
-function getMinimalPlugins(): CorePlugin[] {
-  return [
-    ...BASIC_MARKS_PLUGINS,
-    HeadingPlugin,
-    ListPlugin,
-    LinkPlugin,
-    MarkdownPlugin,
-  ]
-}
-
 // ---------------------------------------------------------------------------
 // Public API
 // ---------------------------------------------------------------------------
 
 /** Plugin preset configurations */
 export const PLUGIN_PRESETS: Record<PluginPreset, () => CorePlugin[]> = {
-  full: getFullPlugins,
+  inline: getInlinePlugins,
   standard: getStandardPlugins,
-  minimal: getMinimalPlugins,
+  full: getFullPlugins,
 }
 
 /** Get plugins for a given preset */
 export function getPluginsForPreset(preset: PluginPreset): CorePlugin[] {
-  return PLUGIN_PRESETS[preset]()
+  return (PLUGIN_PRESETS[preset] ?? PLUGIN_PRESETS.standard)()
 }
 
 // ---------------------------------------------------------------------------
@@ -126,7 +117,7 @@ export function getPluginsForPreset(preset: PluginPreset): CorePlugin[] {
 // ---------------------------------------------------------------------------
 
 export const TOOLBAR_PRESETS: Record<string, ToolbarFeature[]> = {
-  minimal: ["bold", "italic", "link"],
+  inline: ["bold", "italic", "underline", "strikethrough", "code", "link"],
   standard: [
     "undo",
     "redo",

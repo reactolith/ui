@@ -23,8 +23,8 @@ import {
   HorizontalRulePlugin,
 } from "@platejs/basic-nodes/react"
 import { CodeBlockPlugin } from "@platejs/code-block/react"
-import { LinkPlugin } from "@platejs/link/react"
-import { ListPlugin } from "@platejs/list/react"
+import { upsertLink } from "@platejs/link"
+import { toggleList } from "@platejs/list"
 import type { ToolbarFeature } from "./types"
 import { cn } from "@/lib/utils"
 
@@ -135,7 +135,12 @@ const BLOCK_FEATURES: ToolbarButtonDef[] = [
     label: "Horizontal Rule",
     icon: "\u2015",
     group: "blocks",
-    action: (editor) => editor.tf.toggleBlock(HorizontalRulePlugin.key),
+    action: (editor) => {
+      editor.tf.insertNodes({
+        type: HorizontalRulePlugin.key,
+        children: [{ text: "" }],
+      })
+    },
   },
 ]
 
@@ -146,12 +151,7 @@ const LIST_FEATURES: ToolbarButtonDef[] = [
     icon: "\u2022",
     group: "lists",
     action: (editor) => {
-      try {
-        const api = editor as unknown as { tf: { list: { toggle: (opts: { type: string }) => void } } }
-        api.tf.list.toggle({ type: "ul" })
-      } catch {
-        editor.tf.toggleBlock("ul")
-      }
+      toggleList(editor, { listStyleType: "disc" })
     },
   },
   {
@@ -160,12 +160,7 @@ const LIST_FEATURES: ToolbarButtonDef[] = [
     icon: "1.",
     group: "lists",
     action: (editor) => {
-      try {
-        const api = editor as unknown as { tf: { list: { toggle: (opts: { type: string }) => void } } }
-        api.tf.list.toggle({ type: "ol" })
-      } catch {
-        editor.tf.toggleBlock("ol")
-      }
+      toggleList(editor, { listStyleType: "decimal" })
     },
   },
 ]
@@ -179,16 +174,8 @@ const INLINE_FEATURES: ToolbarButtonDef[] = [
     action: (editor) => {
       const url = window.prompt("Enter URL:")
       if (url) {
-        try {
-          const api = editor as unknown as { tf: { link: { insert: (opts: { url: string }) => void } } }
-          api.tf.link.insert({ url })
-        } catch {
-          editor.tf.insertNodes({
-            type: LinkPlugin.key,
-            url,
-            children: [{ text: url }],
-          })
-        }
+        const text = editor.api.string(editor.selection!) || url
+        upsertLink(editor, { url, text })
       }
     },
   },
@@ -214,12 +201,26 @@ const INLINE_FEATURES: ToolbarButtonDef[] = [
     icon: "\u2637",
     group: "inline",
     action: (editor) => {
-      try {
-        const api = editor as unknown as { tf: { table: { insert: (opts: Record<string, unknown>) => void } } }
-        api.tf.table.insert({})
-      } catch {
-        // Table API might not be available
-      }
+      // Insert a basic 2x2 table
+      editor.tf.insertNodes({
+        type: "table",
+        children: [
+          {
+            type: "tr",
+            children: [
+              { type: "th", children: [{ text: "" }] },
+              { type: "th", children: [{ text: "" }] },
+            ],
+          },
+          {
+            type: "tr",
+            children: [
+              { type: "td", children: [{ text: "" }] },
+              { type: "td", children: [{ text: "" }] },
+            ],
+          },
+        ],
+      })
     },
   },
 ]
@@ -230,20 +231,14 @@ const HISTORY_FEATURES: ToolbarButtonDef[] = [
     label: "Undo",
     icon: "\u21B6",
     group: "history",
-    action: (editor) => {
-      const history = editor as unknown as { undo?: () => void }
-      history.undo?.()
-    },
+    action: (editor) => editor.tf.undo(),
   },
   {
     feature: "redo",
     label: "Redo",
     icon: "\u21B7",
     group: "history",
-    action: (editor) => {
-      const history = editor as unknown as { redo?: () => void }
-      history.redo?.()
-    },
+    action: (editor) => editor.tf.redo(),
   },
 ]
 

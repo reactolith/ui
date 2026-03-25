@@ -78,6 +78,10 @@ export {
   // Toolbar
   EditorToolbar,
   type EditorToolbarProps,
+  // Slash Menu
+  SlashMenu,
+  SLASH_ITEMS,
+  type SlashMenuItem,
   // Form sync
   useEditorFormSync,
   deserializeValue,

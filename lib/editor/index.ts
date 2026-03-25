@@ -35,6 +35,9 @@ export {
 // Toolbar
 export { EditorToolbar, type EditorToolbarProps } from "./toolbar"
 
+// Slash Menu
+export { SlashMenu, SLASH_ITEMS, type SlashMenuItem } from "./slash-menu"
+
 // Form sync
 export {
   useEditorFormSync,
