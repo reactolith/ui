@@ -5,7 +5,7 @@ Custom loadable loader for [Reactolith](https://reactolith.dev) that resolves `<
 ## Installation
 
 ```bash
-npm install @reactolith/ui
+npm install reactolith-ui
 ```
 
 You also need shadcn components installed locally in your project (via `npx shadcn add`).
@@ -15,7 +15,7 @@ You also need shadcn components installed locally in your project (via `npx shad
 ```ts
 import loadable from "@loadable/component"
 import { App } from "reactolith"
-import { createComponentLoader } from "@reactolith/ui"
+import { createComponentLoader } from "reactolith-ui"
 
 const modules = import.meta.glob([
   "@/components/ui/*.tsx",
@@ -80,7 +80,7 @@ import {
   withTrigger,        // single-child render prop (asChild)
   withOverlay,        // wraps children in CloseOverlayProvider
   withCloseClick,     // calls useCloseOverlay on click
-} from "@reactolith/ui"
+} from "reactolith-ui"
 ```
 
 ### Close-on-Navigate
@@ -88,7 +88,7 @@ import {
 Navigation links inside overlays auto-close the overlay:
 
 ```ts
-import { CloseOverlayProvider, useCloseOverlay } from "@reactolith/ui"
+import { CloseOverlayProvider, useCloseOverlay } from "reactolith-ui"
 ```
 
 - **Overlay containers** (Sheet, Dialog, Popover, etc.) provide `CloseOverlayProvider`
@@ -107,7 +107,7 @@ import {
   withSidebarLinkable,         // sidebar button: mobile close + overlay close
   withSelectProvider,          // select: auto-registers items
   withComboboxProvider,        // combobox: items prop support
-} from "@reactolith/ui"
+} from "reactolith-ui"
 ```
 
 ### Prop Transforms
@@ -115,7 +115,7 @@ import {
 Simple prop rewriting applied after behavior wrapping:
 
 ```ts
-import { PROP_TRANSFORMS } from "@reactolith/ui"
+import { PROP_TRANSFORMS } from "reactolith-ui"
 // progress: value coercion to number
 // spinner: size → className mapping
 // chart-container: adds recharts responsive container styles
@@ -125,8 +125,8 @@ import { PROP_TRANSFORMS } from "@reactolith/ui"
 ## Utilities
 
 ```ts
-import { renderLinkable, renderTrigger, getSingleElement } from "@reactolith/ui"
-import { cn } from "@reactolith/ui/utils"
+import { renderLinkable, renderTrigger, getSingleElement } from "reactolith-ui"
+import { cn } from "reactolith-ui/utils"
 ```
 
 ## Building a Custom Load Function
@@ -139,7 +139,7 @@ import {
   findModuleInDir,
   wrapComponent,
   RECHARTS,
-} from "@reactolith/ui"
+} from "reactolith-ui"
 
 function myLoader(modules) {
   return ({ is }) => {

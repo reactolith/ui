@@ -8,13 +8,14 @@ import {
     createAiElementsLoader,
     createRechartsLoader,
     createOverridesLoader,
+    type ModuleMap,
 } from "../lib/loader";
 
 const modules = import.meta.glob([
     "@/components/ui/*.tsx",
     "@/components/ai-elements/*.tsx",
     "@/app/overrides/*.tsx",
-]);
+]) as unknown as ModuleMap;
 
 const loaders = [
     createOverridesLoader(modules),
