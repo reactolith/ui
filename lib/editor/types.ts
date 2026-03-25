@@ -9,56 +9,18 @@ import type { PlateEditor } from "platejs/react"
 export type EditorFormat = "html" | "json" | "markdown"
 
 // ---------------------------------------------------------------------------
-// Toolbar presets
-// ---------------------------------------------------------------------------
-
-/** Built-in toolbar presets */
-export type ToolbarPreset = "full" | "standard" | "inline" | "none"
-
-/** Individual toolbar features that can be toggled */
-export type ToolbarFeature =
-  // marks
-  | "bold"
-  | "italic"
-  | "underline"
-  | "strikethrough"
-  | "code"
-  | "superscript"
-  | "subscript"
-  | "highlight"
-  // blocks
-  | "heading"
-  | "blockquote"
-  | "code-block"
-  | "callout"
-  | "toggle"
-  | "horizontal-rule"
-  // lists
-  | "bullet-list"
-  | "numbered-list"
-  // inline
-  | "link"
-  | "image"
-  // table
-  | "table"
-  // history
-  | "undo"
-  | "redo"
-
-// ---------------------------------------------------------------------------
-// Plugin presets
-// ---------------------------------------------------------------------------
-
-/** Plugin preset determines which editing features are available */
-export type PluginPreset = "full" | "standard" | "inline"
-
-// ---------------------------------------------------------------------------
 // Editor component props
 // ---------------------------------------------------------------------------
 
+/**
+ * Standard props for Reactolith editor override components.
+ *
+ * Implement these in your `app/overrides/editor.tsx` so that `<ui-editor>`
+ * can be configured via HTML attributes by backend developers.
+ */
 export interface EditorProps {
   // --- Content ---
-  /** Initial content (HTML string, JSON string, or Plate Value array) */
+  /** Initial content (HTML string, JSON string, Markdown string, or Plate Value) */
   value?: string | Value
   /** Content format for value parsing and form sync. Default: "html" */
   format?: EditorFormat
@@ -68,29 +30,19 @@ export interface EditorProps {
   readOnly?: boolean
 
   // --- Form sync ---
-  /** Hidden input name for form submission. When set, a hidden <input> syncs editor content. */
+  /** Hidden input name for form submission. Renders a hidden <input> that syncs editor content. */
   name?: string
   /** Form ID to associate with (like native form= attribute) */
   form?: string
 
-  // --- Toolbar ---
-  /** Toolbar preset: "full" | "standard" | "inline" | "none". Default: "standard" */
-  toolbar?: ToolbarPreset
-  /** Comma-separated toolbar features (overrides preset). E.g. "bold,italic,link,heading" */
-  toolbarFeatures?: string
-
-  // --- Plugins ---
-  /** Plugin preset: "full" | "standard" | "inline". Default: "standard" */
-  plugins?: PluginPreset
-
   // --- Appearance ---
   className?: string
-  /** Minimum editor height (CSS value). E.g. "200px" */
+  /** Minimum editor height (CSS value) */
   minHeight?: string
-  /** Maximum editor height (CSS value, enables scroll). E.g. "600px" */
+  /** Maximum editor height (CSS value, enables scroll) */
   maxHeight?: string
 
-  // --- Events ---
+  // --- Events (React consumers only) ---
   /** Callback fired on content change (receives serialized string in configured format) */
   onChange?: (value: string) => void
   /** Callback with direct access to the Plate editor instance */
