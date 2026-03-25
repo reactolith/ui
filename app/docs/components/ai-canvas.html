@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas - Reactolith UI</title>
+    <title>Workflow - Reactolith UI</title>
     <link rel="icon" href="../../icon.svg" type="image/svg+xml">
     <script type="module" src="../../app.ts"></script>
     <script>
@@ -264,7 +264,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-audio-player.html">Audio Player</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button is-active size="sm" href="ai-canvas.html">Canvas</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="ai-canvas.html">Workflow</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-chain-of-thought.html">Chain of Thought</ui-sidebar-menu-button>
@@ -282,19 +282,10 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-confirmation.html">Confirmation</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-connection.html">Connection</ui-sidebar-menu-button>
-                </ui-sidebar-menu-item>
-                <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-context.html">Context</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-controls.html">Controls</ui-sidebar-menu-button>
-                </ui-sidebar-menu-item>
-                <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-conversation.html">Conversation</ui-sidebar-menu-button>
-                </ui-sidebar-menu-item>
-                <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-edge.html">Edge</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-environment-variables.html">Environment Variables</ui-sidebar-menu-button>
@@ -321,16 +312,10 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-model-selector.html">Model Selector</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-node.html">Node</ui-sidebar-menu-button>
-                </ui-sidebar-menu-item>
-                <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-open-in-chat.html">Open In Chat</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-package-info.html">Package Info</ui-sidebar-menu-button>
-                </ui-sidebar-menu-item>
-                <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="ai-panel.html">Panel</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-persona.html">Persona</ui-sidebar-menu-button>
@@ -418,15 +403,31 @@
               <div class="flex items-start justify-end gap-3">
                 <a href="https://ai.shadcn.com/docs/components/canvas" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
               </div>
-              <h1 class="text-3xl font-bold tracking-tight">Canvas</h1>
-              <p class="text-lg text-muted-foreground">A ReactFlow-based canvas for building node-based visual workflows.</p>
+              <h1 class="text-3xl font-bold tracking-tight">Workflow</h1>
+              <p class="text-lg text-muted-foreground">A ReactFlow-based canvas for building node-based visual workflows with nodes, edges, connections, controls, and panels.</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
                     <ui-ai-canvas>
-  <!-- Nodes and edges rendered inside the canvas -->
+  <ui-ai-node handles='{"target":true,"source":true}'>
+    <ui-ai-node-header>
+      <ui-ai-node-title>Transform</ui-ai-node-title>
+      <ui-ai-node-description>Apply data transformation</ui-ai-node-description>
+      <ui-ai-node-action>Edit</ui-ai-node-action>
+    </ui-ai-node-header>
+    <ui-ai-node-content>
+      <p>Converts input data to JSON format</p>
+    </ui-ai-node-content>
+    <ui-ai-node-footer>Last run: 2 min ago</ui-ai-node-footer>
+  </ui-ai-node>
+  <ui-ai-edge></ui-ai-edge>
+  <ui-ai-connection></ui-ai-connection>
+  <ui-ai-controls></ui-ai-controls>
+  <ui-ai-panel>
+    <p>Panel content</p>
+  </ui-ai-panel>
 </ui-ai-canvas>
                   </div>
             </section>
@@ -435,7 +436,23 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-ai-canvas&gt;
-  &lt;!-- Nodes and edges rendered inside the canvas --&gt;
+  &lt;ui-ai-node handles='{&quot;target&quot;:true,&quot;source&quot;:true}'&gt;
+    &lt;ui-ai-node-header&gt;
+      &lt;ui-ai-node-title&gt;Transform&lt;/ui-ai-node-title&gt;
+      &lt;ui-ai-node-description&gt;Apply data transformation&lt;/ui-ai-node-description&gt;
+      &lt;ui-ai-node-action&gt;Edit&lt;/ui-ai-node-action&gt;
+    &lt;/ui-ai-node-header&gt;
+    &lt;ui-ai-node-content&gt;
+      &lt;p&gt;Converts input data to JSON format&lt;/p&gt;
+    &lt;/ui-ai-node-content&gt;
+    &lt;ui-ai-node-footer&gt;Last run: 2 min ago&lt;/ui-ai-node-footer&gt;
+  &lt;/ui-ai-node&gt;
+  &lt;ui-ai-edge&gt;&lt;/ui-ai-edge&gt;
+  &lt;ui-ai-connection&gt;&lt;/ui-ai-connection&gt;
+  &lt;ui-ai-controls&gt;&lt;/ui-ai-controls&gt;
+  &lt;ui-ai-panel&gt;
+    &lt;p&gt;Panel content&lt;/p&gt;
+  &lt;/ui-ai-panel&gt;
 &lt;/ui-ai-canvas&gt;</code></pre>
               </div>
             </section>
@@ -443,11 +460,17 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Sub-components</h2>
               <div class="flex flex-wrap gap-2">
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-canvas&gt;</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-canvas&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-node&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-node-header&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-node-title&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-node-description&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-node-action&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-node-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-node-footer&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-edge&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-connection&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-controls&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-panel&gt;</code>
               </div>
             </section>
 
-            
+            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-node&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">handles</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">{ target: boolean; source: boolean }</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Configure which connection handles to display.</td></tr></tbody></table>
+              </div>
+            </div></section>
 
             <section class="mb-10">
               <p class="text-sm text-muted-foreground">

@@ -1676,16 +1676,43 @@ const components = [
 </ui-ai-audio-player>`,
   },
   {
-    name: "Canvas",
+    name: "Workflow",
     slug: "ai-canvas",
-    description: "A ReactFlow-based canvas for building node-based visual workflows.",
+    description: "A ReactFlow-based canvas for building node-based visual workflows with nodes, edges, connections, controls, and panels.",
     category: "AI Elements",
     shadcnUrl: "https://ai.shadcn.com/docs/components/canvas",
     subComponents: [
       { tag: "ui-ai-canvas", props: [] },
+      { tag: "ui-ai-node", props: [{ name: "handles", type: "{ target: boolean; source: boolean }", default: "—", description: "Configure which connection handles to display." }] },
+      { tag: "ui-ai-node-header", props: [] },
+      { tag: "ui-ai-node-title", props: [] },
+      { tag: "ui-ai-node-description", props: [] },
+      { tag: "ui-ai-node-action", props: [] },
+      { tag: "ui-ai-node-content", props: [] },
+      { tag: "ui-ai-node-footer", props: [] },
+      { tag: "ui-ai-edge", props: [] },
+      { tag: "ui-ai-connection", props: [] },
+      { tag: "ui-ai-controls", props: [] },
+      { tag: "ui-ai-panel", props: [] },
     ],
     example: `<ui-ai-canvas>
-  <!-- Nodes and edges rendered inside the canvas -->
+  <ui-ai-node handles='{"target":true,"source":true}'>
+    <ui-ai-node-header>
+      <ui-ai-node-title>Transform</ui-ai-node-title>
+      <ui-ai-node-description>Apply data transformation</ui-ai-node-description>
+      <ui-ai-node-action>Edit</ui-ai-node-action>
+    </ui-ai-node-header>
+    <ui-ai-node-content>
+      <p>Converts input data to JSON format</p>
+    </ui-ai-node-content>
+    <ui-ai-node-footer>Last run: 2 min ago</ui-ai-node-footer>
+  </ui-ai-node>
+  <ui-ai-edge></ui-ai-edge>
+  <ui-ai-connection></ui-ai-connection>
+  <ui-ai-controls></ui-ai-controls>
+  <ui-ai-panel>
+    <p>Panel content</p>
+  </ui-ai-panel>
 </ui-ai-canvas>`,
   },
   {
@@ -1848,19 +1875,6 @@ const components = [
 </ui-ai-confirmation>`,
   },
   {
-    name: "Connection",
-    slug: "ai-connection",
-    description: "A ReactFlow connection line component for rendering in-progress edge connections on the canvas.",
-    category: "AI Elements",
-    shadcnUrl: "https://ai.shadcn.com/docs/components/connection",
-    subComponents: [
-      { tag: "ui-ai-connection", props: [] },
-    ],
-    example: `<ui-ai-canvas>
-  <ui-ai-connection></ui-ai-connection>
-</ui-ai-canvas>`,
-  },
-  {
     name: "Context",
     slug: "ai-context",
     description: "A hover card displaying token usage, model info, and context window utilization.",
@@ -1893,19 +1907,6 @@ const components = [
 </ui-ai-context>`,
   },
   {
-    name: "Controls",
-    slug: "ai-controls",
-    description: "ReactFlow controls for zooming and fitting the canvas view.",
-    category: "AI Elements",
-    shadcnUrl: "https://ai.shadcn.com/docs/components/controls",
-    subComponents: [
-      { tag: "ui-ai-controls", props: [] },
-    ],
-    example: `<ui-ai-canvas>
-  <ui-ai-controls></ui-ai-controls>
-</ui-ai-canvas>`,
-  },
-  {
     name: "Conversation",
     slug: "ai-conversation",
     description: "A scrollable chat container with stick-to-bottom behavior, empty states, and message download.",
@@ -1929,19 +1930,6 @@ const components = [
   </ui-ai-conversation-content>
   <ui-ai-conversation-scroll-button></ui-ai-conversation-scroll-button>
 </ui-ai-conversation>`,
-  },
-  {
-    name: "Edge",
-    slug: "ai-edge",
-    description: "A ReactFlow edge component with animated and temporary edge variants.",
-    category: "AI Elements",
-    shadcnUrl: "https://ai.shadcn.com/docs/components/edge",
-    subComponents: [
-      { tag: "ui-ai-edge", props: [] },
-    ],
-    example: `<ui-ai-canvas>
-  <ui-ai-edge></ui-ai-edge>
-</ui-ai-canvas>`,
   },
   {
     name: "Environment Variables",
@@ -2174,33 +2162,6 @@ const components = [
 </ui-ai-model-selector>`,
   },
   {
-    name: "Node",
-    slug: "ai-node",
-    description: "A ReactFlow node card with header, content, footer, and configurable connection handles.",
-    category: "AI Elements",
-    shadcnUrl: "https://ai.shadcn.com/docs/components/node",
-    subComponents: [
-      { tag: "ui-ai-node", props: [{ name: "handles", type: "{ target: boolean; source: boolean }", default: "—", description: "Configure which connection handles to display." }] },
-      { tag: "ui-ai-node-header", props: [] },
-      { tag: "ui-ai-node-title", props: [] },
-      { tag: "ui-ai-node-description", props: [] },
-      { tag: "ui-ai-node-action", props: [] },
-      { tag: "ui-ai-node-content", props: [] },
-      { tag: "ui-ai-node-footer", props: [] },
-    ],
-    example: `<ui-ai-node handles='{"target":true,"source":true}'>
-  <ui-ai-node-header>
-    <ui-ai-node-title>Transform</ui-ai-node-title>
-    <ui-ai-node-description>Apply data transformation</ui-ai-node-description>
-    <ui-ai-node-action>Edit</ui-ai-node-action>
-  </ui-ai-node-header>
-  <ui-ai-node-content>
-    <p>Converts input data to JSON format</p>
-  </ui-ai-node-content>
-  <ui-ai-node-footer>Last run: 2 min ago</ui-ai-node-footer>
-</ui-ai-node>`,
-  },
-  {
     name: "Open In Chat",
     slug: "ai-open-in-chat",
     description: "A dropdown menu with preset links to open a query in external AI chat services.",
@@ -2263,21 +2224,6 @@ const components = [
     </ui-ai-package-info-dependencies>
   </ui-ai-package-info-content>
 </ui-ai-package-info>`,
-  },
-  {
-    name: "Panel",
-    slug: "ai-panel",
-    description: "A ReactFlow panel primitive for positioning content within the canvas viewport.",
-    category: "AI Elements",
-    shadcnUrl: "https://ai.shadcn.com/docs/components/panel",
-    subComponents: [
-      { tag: "ui-ai-panel", props: [] },
-    ],
-    example: `<ui-ai-canvas>
-  <ui-ai-panel>
-    <p>Panel content</p>
-  </ui-ai-panel>
-</ui-ai-canvas>`,
   },
   {
     name: "Persona",
