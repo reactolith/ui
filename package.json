@@ -12,6 +12,16 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
+    },
+    "./editor": {
+      "types": "./dist/editor.d.ts",
+      "import": "./dist/editor.mjs",
+      "require": "./dist/editor.cjs"
+    },
+    "./recharts": {
+      "types": "./dist/recharts.d.ts",
+      "import": "./dist/recharts.mjs",
+      "require": "./dist/recharts.cjs"
     }
   },
   "files": [

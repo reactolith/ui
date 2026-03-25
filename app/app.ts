@@ -6,10 +6,10 @@ import {
     createCompositeLoader,
     createShadcnLoader,
     createAiElementsLoader,
-    createRechartsLoader,
     createOverridesLoader,
     type ModuleMap,
 } from "../lib/loader";
+import { createRechartsLoader } from "../lib/loader/recharts-loader";
 
 const modules = import.meta.glob([
     "@/components/ui/*.tsx",

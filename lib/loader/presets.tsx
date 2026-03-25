@@ -1,5 +1,5 @@
 import type { ModuleMap } from "./component-loader"
-import { ComponentLoader, OverrideLoader, AiElementsLoader, ExternalLoader } from "./component-loader"
+import { ComponentLoader, OverrideLoader, AiElementsLoader } from "./component-loader"
 import {
   linkable, linkableClose, trigger, overlay, closeClick,
   commandLinkable, sidebarLinkable, sidebarSubLinkable,
@@ -97,26 +97,6 @@ export function createAiElementsLoader(modules: ModuleMap): AiElementsLoader {
     dirSegment: "/ai-elements/",
     dir: "components/ai-elements",
     prefix: "ui-ai-",
-  })
-}
-
-// ---------------------------------------------------------------------------
-// Recharts loader (external package)
-// ---------------------------------------------------------------------------
-
-const RECHARTS_COMPONENTS = [
-  "area-chart", "area", "bar-chart", "bar", "cartesian-grid", "cell",
-  "label-list", "line-chart", "line", "pie-chart", "pie",
-  "polar-angle-axis", "polar-grid", "polar-radius-axis",
-  "radar-chart", "radar", "radial-bar-chart", "radial-bar",
-  "x-axis", "y-axis",
-]
-
-export function createRechartsLoader(): ExternalLoader {
-  return new ExternalLoader({
-    prefix: "ui-",
-    components: RECHARTS_COMPONENTS,
-    importFn: () => import("recharts"),
   })
 }
 

@@ -49,7 +49,6 @@ export {
 export {
   createShadcnLoader,
   createAiElementsLoader,
-  createRechartsLoader,
   createOverridesLoader,
 } from "./lib/loader"
 
@@ -58,11 +57,3 @@ export { renderLinkable, renderTrigger, getSingleElement } from "./lib/render-el
 export { CloseOverlayProvider, useCloseOverlay } from "./lib/close-overlay"
 export { SelectItemsProvider, useSelectItemsRegister } from "./lib/select-items"
 export { cn } from "./lib/utils"
-
-// Editor (Plate.js integration utilities)
-export {
-  type EditorProps,
-  type EditorFormat,
-  useEditorFormSync,
-  type UseEditorFormSyncOptions,
-} from "./lib/editor"

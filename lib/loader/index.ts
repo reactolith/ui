@@ -49,6 +49,5 @@ export {
 export {
   createShadcnLoader,
   createAiElementsLoader,
-  createRechartsLoader,
   createOverridesLoader,
 } from "./presets"
