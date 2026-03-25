@@ -129,51 +129,53 @@ export default function Editor({
   })
 
   return (
-    <Plate
-      editor={editor}
-      onChange={() => {
-        syncContent()
-      }}
-    >
-      <div
-        className={cn(
-          "rounded-md border border-input bg-background text-foreground shadow-xs",
-          "focus-within:ring-1 focus-within:ring-ring focus-within:border-ring",
-          className,
-        )}
+    <div>
+      <Plate
+        editor={editor}
+        onChange={() => {
+          syncContent()
+        }}
       >
-        {/* Toolbar */}
-        {!readOnly && toolbarItems.length > 0 && (
-          <EditorToolbar features={toolbarItems} />
-        )}
-
-        {/* Editor content area */}
         <div
-          style={{
-            minHeight,
-            maxHeight: maxHeight ?? undefined,
-            overflowY: maxHeight ? "auto" : undefined,
-          }}
+          className={cn(
+            "rounded-md border border-input bg-background text-foreground shadow-xs",
+            "focus-within:ring-1 focus-within:ring-ring focus-within:border-ring",
+            className,
+          )}
         >
-          <PlateContent
-            readOnly={readOnly}
-            placeholder={placeholder}
-            className={cn(
-              "p-4 outline-none",
-              "prose prose-sm dark:prose-invert max-w-none",
-              "prose-p:my-1 prose-headings:my-2 prose-ul:my-1 prose-ol:my-1",
-              "prose-blockquote:my-2 prose-pre:my-2",
-              "[&_[data-slate-placeholder]]:!opacity-30",
-            )}
-          />
+          {/* Toolbar */}
+          {!readOnly && toolbarItems.length > 0 && (
+            <EditorToolbar features={toolbarItems} />
+          )}
+
+          {/* Editor content area */}
+          <div
+            style={{
+              minHeight,
+              maxHeight: maxHeight ?? undefined,
+              overflowY: maxHeight ? "auto" : undefined,
+            }}
+          >
+            <PlateContent
+              readOnly={readOnly}
+              placeholder={placeholder}
+              className={cn(
+                "p-4 outline-none",
+                "prose prose-sm dark:prose-invert max-w-none",
+                "prose-p:my-1 prose-headings:my-2 prose-ul:my-1 prose-ol:my-1",
+                "prose-blockquote:my-2 prose-pre:my-2",
+                "[&_[data-slate-placeholder]]:!opacity-30",
+              )}
+            />
+          </div>
         </div>
-      </div>
 
-      {/* Slash command menu (notion-like block insertion) */}
-      {showSlashMenu && <SlashMenu />}
+        {/* Slash command menu — rendered as fixed overlay via portal */}
+        {showSlashMenu && <SlashMenu />}
+      </Plate>
 
-      {/* Hidden form input */}
+      {/* Hidden form input — outside Plate to not interfere with Slate DOM */}
       {inputProps && <input {...inputProps} />}
-    </Plate>
+    </div>
   )
 }
