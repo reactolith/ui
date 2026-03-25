@@ -10,6 +10,7 @@ import type { WebTypeAttribute } from "./behaviors"
 const BUILTIN_COMPONENTS: Record<string, () => Promise<{ default: ComponentType<any> }>> = {
   "sonner": () => import("../components/sonner"),
   "theme-switch": () => import("../components/theme-switch"),
+  "theme-switch-item": () => import("../components/theme-switch-item"),
   "theme-provider": () => import("../components/theme-provider"),
   "route-progress-bar": () => import("../components/route-progress-bar"),
   "route-error": () => import("../components/route-error"),
