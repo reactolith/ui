@@ -58,3 +58,29 @@ export { renderLinkable, renderTrigger, getSingleElement } from "./lib/render-el
 export { CloseOverlayProvider, useCloseOverlay } from "./lib/close-overlay"
 export { SelectItemsProvider, useSelectItemsRegister } from "./lib/select-items"
 export { cn } from "./lib/utils"
+
+// Editor (Plate.js rich text editor building blocks)
+export {
+  // Types
+  type EditorProps,
+  type EditorFormat,
+  type ToolbarPreset,
+  type ToolbarFeature,
+  type PluginPreset,
+  // Plugin presets
+  PLUGIN_PRESETS,
+  getPluginsForPreset,
+  TOOLBAR_PRESETS,
+  parseToolbarFeatures,
+  resolveToolbarFeatures,
+  // Components
+  getEditorComponents,
+  // Toolbar
+  EditorToolbar,
+  type EditorToolbarProps,
+  // Form sync
+  useEditorFormSync,
+  deserializeValue,
+  EMPTY_VALUE,
+  type UseEditorFormSyncOptions,
+} from "./lib/editor"

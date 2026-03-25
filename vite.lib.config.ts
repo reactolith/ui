@@ -19,7 +19,17 @@ export default defineConfig({
             fileName: (format) => `index.${format === "es" ? "mjs" : "cjs"}`,
         },
         rollupOptions: {
-            external: ["react", "react-dom", "react/jsx-runtime", "recharts"],
+            external: [
+                "react",
+                "react-dom",
+                "react/jsx-runtime",
+                "recharts",
+                // Plate.js editor (consumers install separately)
+                "platejs",
+                "platejs/react",
+                "platejs/static",
+                /^@platejs\//,
+            ],
         },
         outDir: "dist",
         emptyOutDir: true,
