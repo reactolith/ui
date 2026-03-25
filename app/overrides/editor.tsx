@@ -36,14 +36,47 @@
  */
 
 import * as React from "react"
+import type { Value } from "platejs"
 import { Plate, PlateContent, usePlateEditor } from "platejs/react"
-import type { EditorProps } from "@/lib/editor/types"
+import type { EditorProps, EditorFormat } from "@/lib/editor/types"
 import { getPluginsForPreset, resolveToolbarFeatures } from "@/lib/editor/plugins"
 import { getEditorComponents } from "@/lib/editor/components"
 import { EditorToolbar } from "@/lib/editor/toolbar"
 import { SlashMenu } from "@/lib/editor/slash-menu"
-import { useEditorFormSync, deserializeValue } from "@/lib/editor/use-editor-form"
+import { useEditorFormSync, EMPTY_VALUE } from "@/lib/editor/use-editor-form"
 import { cn } from "@/lib/utils"
+
+// ---------------------------------------------------------------------------
+// Parse initial value without needing the editor instance
+// ---------------------------------------------------------------------------
+
+function parseInitialValue(
+  value: string | Value | undefined,
+  format: EditorFormat,
+): Value | string | undefined {
+  if (!value) return undefined // let Plate use its default
+  if (Array.isArray(value)) return value
+
+  if (typeof value !== "string" || value.trim() === "") return undefined
+
+  switch (format) {
+    case "json":
+      try {
+        const parsed = JSON.parse(value)
+        return Array.isArray(parsed) ? parsed : undefined
+      } catch {
+        return undefined
+      }
+    case "html":
+      // Pass HTML string directly — Plate parses it via HtmlPlugin
+      return value
+    case "markdown":
+      // Markdown needs editor API, so we'll handle it after editor creation
+      return value
+    default:
+      return undefined
+  }
+}
 
 // ---------------------------------------------------------------------------
 // Main Editor component
@@ -69,12 +102,16 @@ export default function Editor({
   const components = React.useMemo(() => getEditorComponents(), [])
   const showSlashMenu = pluginPreset !== "inline" && !readOnly
 
+  // Parse initial value statically (without needing the editor instance)
+  const initialValue = React.useMemo(
+    () => parseInitialValue(value, format),
+    [value, format],
+  )
+
   const editor = usePlateEditor({
     plugins: getPluginsForPreset(pluginPreset),
     override: { components },
-    value: (editor) => {
-      return deserializeValue(editor, value, format)
-    },
+    value: initialValue,
   })
 
   // Notify parent when editor is ready

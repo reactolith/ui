@@ -9,6 +9,7 @@
 import * as React from "react"
 import {
   useEditorRef,
+  useEditorMounted,
   useEditorSelector,
 } from "platejs/react"
 import {
@@ -152,36 +153,39 @@ const SLASH_ITEMS: SlashMenuItem[] = [
 // ---------------------------------------------------------------------------
 
 function getSlashQuery(editor: ReturnType<typeof useEditorRef>): string | null {
-  const { selection } = editor
-  if (!selection) return null
-
-  // Only works with collapsed selection (cursor, not range)
-  const isCollapsed = selection.anchor.path.join(",") === selection.focus.path.join(",")
-    && selection.anchor.offset === selection.focus.offset
-  if (!isCollapsed) return null
-
-  // Get the text of the current block up to the cursor
   try {
-    const blockEntry = editor.api.block()
-    if (!blockEntry) return null
+    const { selection } = editor
+    if (!selection) return null
 
-    const [block] = blockEntry
-    const blockText = editor.api.string(blockEntry[1])
-    const cursorOffset = selection.anchor.offset
-
-    // Find text before cursor within the leaf
-    const leafText = blockText.slice(0, cursorOffset)
-
-    // Find the last "/" in the text
-    const slashIndex = leafText.lastIndexOf("/")
-    if (slashIndex === -1) return null
-
-    // "/" must be at start of block or preceded by whitespace
-    if (slashIndex > 0 && leafText[slashIndex - 1] !== " " && leafText[slashIndex - 1] !== "\n") {
+    // Only works with collapsed selection (cursor, not range)
+    if (
+      selection.anchor.path.join(",") !== selection.focus.path.join(",") ||
+      selection.anchor.offset !== selection.focus.offset
+    ) {
       return null
     }
 
-    return leafText.slice(slashIndex + 1)
+    // Get the text node at the cursor position
+    const point = selection.anchor
+    const node = editor.api.node(point.path)
+    if (!node) return null
+
+    const [textNode] = node
+    if (typeof (textNode as Record<string, unknown>).text !== "string") return null
+
+    const text = (textNode as Record<string, unknown>).text as string
+    const beforeCursor = text.slice(0, point.offset)
+
+    // Find the last "/" in the text before cursor
+    const slashIndex = beforeCursor.lastIndexOf("/")
+    if (slashIndex === -1) return null
+
+    // "/" must be at start of text or preceded by whitespace
+    if (slashIndex > 0 && beforeCursor[slashIndex - 1] !== " " && beforeCursor[slashIndex - 1] !== "\n") {
+      return null
+    }
+
+    return beforeCursor.slice(slashIndex + 1)
   } catch {
     return null
   }
@@ -197,14 +201,16 @@ export interface SlashMenuProps {
 
 export function SlashMenu({ className }: SlashMenuProps) {
   const editor = useEditorRef()
+  const mounted = useEditorMounted()
   const [selectedIndex, setSelectedIndex] = React.useState(0)
   const menuRef = React.useRef<HTMLDivElement>(null)
   const [position, setPosition] = React.useState<{ x: number; y: number } | null>(null)
 
   // Read the slash query from editor state reactively
+  // Guard with mounted check to avoid accessing editor before DOM is ready
   const slashQuery = useEditorSelector(
-    () => getSlashQuery(editor),
-    [editor],
+    () => (mounted ? getSlashQuery(editor) : null),
+    [editor, mounted],
   )
 
   const open = slashQuery !== null
