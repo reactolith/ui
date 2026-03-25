@@ -257,6 +257,23 @@ export function ToggleElement({
 }
 
 // ---------------------------------------------------------------------------
+// Horizontal Rule (void element — must not render children into DOM)
+// ---------------------------------------------------------------------------
+
+export function HorizontalRuleElement({
+  children,
+  className,
+  ...props
+}: PlateElementProps) {
+  return (
+    <PlateElement className={cn("my-4", className)} {...props}>
+      <hr className="border-t border-border" contentEditable={false} />
+      {children}
+    </PlateElement>
+  )
+}
+
+// ---------------------------------------------------------------------------
 // Component map for override.components
 // ---------------------------------------------------------------------------
 
@@ -270,6 +287,7 @@ export function getEditorComponents(): Record<string, React.FC<PlateElementProps
     th: TableCellHeaderElement,
     code_line: CodeLineElement,
     img: ImageElement,
+    hr: HorizontalRuleElement,
     callout: CalloutElement,
     toggle: ToggleElement,
   }
