@@ -24,7 +24,9 @@
       "Bash(gh api:*)",
       "Bash(find:*)",
       "Bash(ls:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(git add:*)",
+      "Bash(npm:*)"
     ]
   }
 }
