@@ -201,9 +201,93 @@ export const selectRegister: WrapperDef = {
   }),
 }
 
-/** Combobox root with items context provider */
+/** Inner component for async combobox (src prop) — needs hooks */
+function AsyncCombobox({ C, src, debounce: debounceMs = 300, "min-length": minLen = 2, children, ...props }: any) {
+  const delay = typeof debounceMs === "string" ? Number(debounceMs) : debounceMs
+  const minLength = typeof minLen === "string" ? Number(minLen) : minLen
+
+  const [items, setItems] = React.useState<ComboboxItemShape[]>([])
+  const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)
+  const abortRef = React.useRef<AbortController | null>(null)
+
+  const handleInputChange = React.useCallback(
+    (value: string) => {
+      props.onInputChange?.(value)
+
+      if (timerRef.current) clearTimeout(timerRef.current)
+      if (abortRef.current) abortRef.current.abort()
+
+      if (value.length < minLength) {
+        setItems([])
+        return
+      }
+
+      timerRef.current = setTimeout(async () => {
+        const controller = new AbortController()
+        abortRef.current = controller
+        try {
+          const res = await fetch(`${src}?q=${encodeURIComponent(value)}`, { signal: controller.signal })
+          if (res.ok) setItems(await res.json())
+        } catch {
+          // aborted or network error — ignore
+        }
+      }, delay)
+    },
+    [src, delay, minLength, props.onInputChange],
+  )
+
+  React.useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current)
+      if (abortRef.current) abortRef.current.abort()
+    }
+  }, [])
+
+  const hasObjects = items.length > 0 && typeof items[0] === "object"
+
+  return (
+    <ComboboxItemsContext.Provider value={items}>
+      <C
+        items={items}
+        onInputChange={handleInputChange}
+        {...(hasObjects
+          ? { getOptionAsString: (item: ComboboxItemShape) => typeof item === "string" ? item : item.label }
+          : {})}
+        {...props}
+      >
+        {children}
+      </C>
+    </ComboboxItemsContext.Provider>
+  )
+}
+
+const SRC_ATTR: WebTypeAttribute = {
+  name: "src",
+  required: false,
+  value: { kind: "plain", type: "string" },
+  description: "URL to fetch items from. Appends ?q={query} on input change.",
+}
+
+const DEBOUNCE_ATTR: WebTypeAttribute = {
+  name: "debounce",
+  required: false,
+  value: { kind: "plain", type: "number" },
+  description: "Debounce delay in ms (default: 300).",
+}
+
+const MIN_LENGTH_ATTR: WebTypeAttribute = {
+  name: "min-length",
+  required: false,
+  value: { kind: "plain", type: "number" },
+  description: "Minimum input length before fetching (default: 2).",
+}
+
+/** Combobox root with items context provider (static items or async src) */
 export const comboboxProvider: WrapperDef = {
-  fn: (C) => ({ items, children, is, ...props }: any) => {
+  fn: (C) => ({ items, src, debounce, "min-length": minLength, children, is, ...props }: any) => {
+    if (src) {
+      return <AsyncCombobox C={C} src={src} debounce={debounce} min-length={minLength} children={children} {...props} />
+    }
     if (!items) return <C {...props}>{children}</C>
     const hasObjects = items.length > 0 && typeof items[0] === "object"
     return (
@@ -220,7 +304,7 @@ export const comboboxProvider: WrapperDef = {
       </ComboboxItemsContext.Provider>
     )
   },
-  additionalAttributes: [ITEMS_ATTR],
+  additionalAttributes: [ITEMS_ATTR, SRC_ATTR, DEBOUNCE_ATTR, MIN_LENGTH_ATTR],
 }
 
 /** Combobox list that auto-renders items from context */

@@ -1,4 +1,16 @@
-import { Children, isValidElement, type ReactNode, type ReactElement, type ElementType, type Ref, type MouseEvent } from "react"
+import { Children, isValidElement, useMemo, type ReactNode, type ReactElement, type ElementType, type Ref, type MouseEvent } from "react"
+
+function mergeRefs<T>(...refs: (Ref<T> | undefined | null)[]): Ref<T> | undefined {
+  const filtered = refs.filter(Boolean) as Ref<T>[]
+  if (filtered.length === 0) return undefined
+  if (filtered.length === 1) return filtered[0]
+  return (value: T | null) => {
+    for (const ref of filtered) {
+      if (typeof ref === "function") ref(value)
+      else if (ref && typeof ref === "object") (ref as any).current = value
+    }
+  }
+}
 
 export function getSingleElement(children: ReactNode): ReactElement | null {
   const childArray = Children.toArray(children).filter(
@@ -39,7 +51,7 @@ export function renderLinkable(
         render={(itemProps: any) => (
           <a
             {...itemProps}
-            ref={ref}
+            ref={mergeRefs(itemProps.ref, ref)}
             href={href}
             onClick={(e: MouseEvent<HTMLAnchorElement>) => {
               itemProps.onClick?.(e)
