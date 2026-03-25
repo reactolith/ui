@@ -20,6 +20,7 @@ import type { EditorProps } from "@/lib/editor/types"
 import { useEditorFormSync } from "@/lib/editor/use-editor-form"
 import { EditorKit } from "@/components/plate/editor/editor-kit"
 import { Editor, EditorContainer } from "@/components/plate/ui/editor"
+import { TooltipProvider } from "@/components/plate/ui/tooltip"
 import { cn } from "@/lib/utils"
 
 export default function EditorOverride({
@@ -53,23 +54,25 @@ export default function EditorOverride({
   })
 
   return (
-    <div className={cn("rounded-md border border-input shadow-xs", className)}>
-      <Plate
-        editor={editor}
-        readOnly={readOnly}
-        onChange={() => syncContent()}
-      >
-        <EditorContainer
-          style={{ minHeight, maxHeight: maxHeight ?? undefined }}
+    <TooltipProvider>
+      <div className={cn("rounded-md border border-input shadow-xs", className)}>
+        <Plate
+          editor={editor}
+          readOnly={readOnly}
+          onChange={() => syncContent()}
         >
-          <Editor
-            placeholder={placeholder}
-            variant="default"
-          />
-        </EditorContainer>
-      </Plate>
+          <EditorContainer
+            style={{ minHeight, maxHeight: maxHeight ?? undefined }}
+          >
+            <Editor
+              placeholder={placeholder}
+              variant="default"
+            />
+          </EditorContainer>
+        </Plate>
 
-      {inputProps && <input {...inputProps} />}
-    </div>
+        {inputProps && <input {...inputProps} />}
+      </div>
+    </TooltipProvider>
   )
 }
