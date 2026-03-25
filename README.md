@@ -15,17 +15,27 @@ You also need shadcn components installed locally in your project (via `npx shad
 ```ts
 import loadable from "@loadable/component"
 import { App } from "reactolith"
-import { createComponentLoader } from "reactolith-ui"
+import {
+  createCompositeLoader,
+  createShadcnLoader,
+  createOverridesLoader,
+  type ModuleMap,
+} from "reactolith-ui"
 
 const modules = import.meta.glob([
   "@/components/ui/*.tsx",
   // optional: override files
   "@/app/overrides/*.tsx",
-])
+]) as unknown as ModuleMap
+
+const loaders = [
+  createOverridesLoader(modules),
+  createShadcnLoader(modules),
+]
 
 new App(
   loadable(
-    createComponentLoader(modules),
+    createCompositeLoader(loaders),
     { cacheKey: ({ is }) => is },
   ),
 )
@@ -47,39 +57,72 @@ Components are then usable as HTML tags:
 
 ## How the Loader Works
 
-`createComponentLoader(modules)` returns a load function that maps tag names to component exports:
+`createCompositeLoader(loaders)` returns a load function that chains multiple loaders in priority order:
 
 - **Module resolution**: `ui-field-label` → `components/ui/field.tsx` → `FieldLabel` (case-insensitive, progressively removes trailing kebab segments)
-- **Recharts**: `ui-area-chart` → `recharts` → `AreaChart`
-- **Override files**: checked first, for standalone implementations (e.g. custom sonner, theme-switch)
+- **Override files**: checked first via `createOverridesLoader`, for standalone implementations (e.g. custom sonner, theme-switch)
 
 After resolving, components are wrapped with behavior HOCs and prop transforms.
 
-## Loader Options
+## Optional Sub-Packages
+
+Additional loaders are available as separate imports so you only pay for what you use:
+
+### Recharts (Charts)
+
+```bash
+npm install recharts
+```
 
 ```ts
-createComponentLoader(modules, {
-  // Custom dir segment for override file detection (default: '/app/overrides/')
-  overrideDir: '/my-overrides/',
+import { createRechartsLoader } from "reactolith-ui/recharts"
 
-  // Additional or replacement component wrappers (merged with defaults)
-  componentWrappers: {
-    'my-component': (C, mod) => withLinkable(C),
-  },
-})
+const loaders = [
+  createOverridesLoader(modules),
+  createRechartsLoader(),
+  createShadcnLoader(modules),
+]
+```
+
+### AI Elements
+
+```ts
+import { createAiElementsLoader } from "reactolith-ui"
+
+const modules = import.meta.glob([
+  "@/components/ui/*.tsx",
+  "@/components/ai-elements/*.tsx",
+  "@/app/overrides/*.tsx",
+]) as unknown as ModuleMap
+
+const loaders = [
+  createOverridesLoader(modules),
+  createAiElementsLoader(modules),
+  createShadcnLoader(modules),
+]
+```
+
+### Editor (Plate.js)
+
+```bash
+npm install platejs @platejs/markdown
+```
+
+```ts
+import { useEditorFormSync, type EditorProps } from "reactolith-ui/editor"
 ```
 
 ## Behaviors
 
-The loader applies behavior wrappers automatically based on `STANDARD_BEHAVIORS`. You can import and use these individually:
+The loader applies behavior wrappers automatically based on the loader config. You can import and use these individually:
 
 ```ts
 import {
-  withLinkable,       // href support via renderLinkable
-  withLinkableClose,  // href + close parent overlay
-  withTrigger,        // single-child render prop (asChild)
-  withOverlay,        // wraps children in CloseOverlayProvider
-  withCloseClick,     // calls useCloseOverlay on click
+  linkable,       // href support via renderLinkable
+  linkableClose,  // href + close parent overlay
+  trigger,        // single-child render prop (asChild)
+  overlay,        // wraps children in CloseOverlayProvider
+  closeClick,     // calls useCloseOverlay on click
 } from "reactolith-ui"
 ```
 
@@ -101,12 +144,11 @@ For components needing custom logic beyond standard behaviors:
 
 ```ts
 import {
-  DEFAULT_COMPONENT_WRAPPERS,  // the default wrapper map
   createSmartTriggerWrapper,   // drawer trigger: uses Button if available
-  withCommandLinkable,         // command-item: href → <a> with close
-  withSidebarLinkable,         // sidebar button: mobile close + overlay close
-  withSelectProvider,          // select: auto-registers items
-  withComboboxProvider,        // combobox: items prop support
+  commandLinkable,             // command-item: href → <a> with close
+  sidebarLinkable,             // sidebar button: mobile close + overlay close
+  selectProvider,              // select: auto-registers items
+  comboboxProvider,            // combobox: items prop support
 } from "reactolith-ui"
 ```
 
@@ -115,48 +157,42 @@ import {
 Simple prop rewriting applied after behavior wrapping:
 
 ```ts
-import { PROP_TRANSFORMS } from "reactolith-ui"
-// progress: value coercion to number
-// spinner: size → className mapping
-// chart-container: adds recharts responsive container styles
-// chart-tooltip: children → content prop
+import {
+  progressTransform,        // value coercion to number
+  spinnerTransform,          // size → className mapping
+  chartContainerTransform,   // adds recharts responsive container styles
+  chartTooltipTransform,     // children → content prop
+} from "reactolith-ui"
 ```
 
 ## Utilities
 
 ```ts
-import { renderLinkable, renderTrigger, getSingleElement } from "reactolith-ui"
-import { cn } from "reactolith-ui/utils"
+import { renderLinkable, renderTrigger, getSingleElement, cn } from "reactolith-ui"
 ```
 
-## Building a Custom Load Function
+## Loader Classes
 
-You can combine the exported pieces with your own logic:
+You can use the loader classes directly for custom setups:
 
 ```ts
 import {
-  findExport,
-  findModuleInDir,
-  wrapComponent,
-  RECHARTS,
+  ComponentLoader,
+  OverrideLoader,
+  AiElementsLoader,
+  ExternalLoader,
+  createCompositeLoader,
 } from "reactolith-ui"
 
-function myLoader(modules) {
-  return ({ is }) => {
-    const name = is.substring(3)
-
-    if (RECHARTS.has(name)) {
-      return import('recharts').then(mod => ({
-        default: findExport(mod, name),
-      }))
-    }
-
-    const path = findModuleInDir(name, modules, '/components/ui/')
-    return modules[path]().then(mod => ({
-      default: wrapComponent(name, findExport(mod, name), mod),
-    }))
-  }
-}
+const loader = new ComponentLoader({
+  modules,
+  dirSegment: "/components/ui/",
+  dir: "components/ui",
+  prefix: "ui-",
+  behaviors: { "button": linkable },
+  wrappers: { "command-item": commandLinkable },
+  propTransforms: { "progress": progressTransform },
+})
 ```
 
 ## License

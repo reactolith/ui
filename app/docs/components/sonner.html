@@ -85,9 +85,6 @@
                   <ui-sidebar-menu-button  size="sm" href="combobox.html">Combobox</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="editor.html">Editor</ui-sidebar-menu-button>
-                </ui-sidebar-menu-item>
-                <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="field.html">Field</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
@@ -180,9 +177,6 @@
                   <ui-sidebar-menu-button  size="sm" href="skeleton.html">Skeleton</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button is-active size="sm" href="sonner.html">Sonner</ui-sidebar-menu-button>
-                </ui-sidebar-menu-item>
-                <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="spinner.html">Spinner</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
               </ui-sidebar-menu>
@@ -246,6 +240,31 @@
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="tabs.html">Tabs</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+              </ui-sidebar-menu>
+            </ui-sidebar-group-content>
+          </ui-sidebar-group>
+          <ui-sidebar-group>
+            <ui-sidebar-group-label>Built-in</ui-sidebar-group-label>
+            <ui-sidebar-group-content>
+              <ui-sidebar-menu>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="icon.html">Icon</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="route-error.html">Route Error</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="route-progress-bar.html">Route Progress Bar</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="theme-provider.html">Theme Provider</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="theme-switch.html">Theme Switch</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button is-active size="sm" href="sonner.html">Sonner</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
               </ui-sidebar-menu>
             </ui-sidebar-group-content>
@@ -404,33 +423,28 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://ui.shadcn.com/docs/components/base/sonner" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">shadcn/ui docs</a>
+                <span class="text-xs bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2 py-1 rounded shrink-0">built-in</span>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">Sonner</h1>
-              <p class="text-lg text-muted-foreground">An opinionated toast component for React, built by Emil Kowalski.</p>
+              <p class="text-lg text-muted-foreground">An opinionated toast component for React, built by Emil Kowalski. Ships as a built-in component with themed defaults.</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <ui-sonner rich-colors json-toasts='[{"kind":"success","message":"Profile saved","description":"Your changes have been saved successfully."},{"kind":"info","message":"Welcome back!"}]'></ui-sonner>
+                    <ui-sonner rich-colors json-toasts='[
+  {"kind":"success","message":"Profile saved","description":"Your changes have been saved successfully."},
+  {"kind":"info","message":"Welcome back!"}
+]'></ui-sonner>
                   </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;!-- Place once in your layout --&gt;
-&lt;ui-sonner rich-colors json-toasts='[
-  {
-    &quot;kind&quot;: &quot;success&quot;,
-    &quot;message&quot;: &quot;Profile saved&quot;,
-    &quot;description&quot;: &quot;Your changes have been saved successfully.&quot;
-  },
-  {
-    &quot;kind&quot;: &quot;info&quot;,
-    &quot;message&quot;: &quot;Welcome back!&quot;
-  }
+                <pre class="p-4 text-sm"><code>&lt;ui-sonner rich-colors json-toasts='[
+  {&quot;kind&quot;:&quot;success&quot;,&quot;message&quot;:&quot;Profile saved&quot;,&quot;description&quot;:&quot;Your changes have been saved successfully.&quot;},
+  {&quot;kind&quot;:&quot;info&quot;,&quot;message&quot;:&quot;Welcome back!&quot;}
 ]'&gt;&lt;/ui-sonner&gt;</code></pre>
               </div>
             </section>

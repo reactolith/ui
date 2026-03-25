@@ -7,16 +7,20 @@ export default defineConfig({
     plugins: [
         react(),
         dts({
-            include: ["index.ts", "lib/**/*.ts", "lib/**/*.tsx"],
+            include: ["index.ts", "editor.ts", "recharts.ts", "lib/**/*.ts", "lib/**/*.tsx"],
             outDir: "dist",
             rollupTypes: true,
         }),
     ],
     build: {
         lib: {
-            entry: path.resolve(__dirname, "index.ts"),
+            entry: {
+                index: path.resolve(__dirname, "index.ts"),
+                editor: path.resolve(__dirname, "editor.ts"),
+                recharts: path.resolve(__dirname, "recharts.ts"),
+            },
             formats: ["es", "cjs"],
-            fileName: (format) => `index.${format === "es" ? "mjs" : "cjs"}`,
+            fileName: (format, entryName) => `${entryName}.${format === "es" ? "mjs" : "cjs"}`,
         },
         rollupOptions: {
             external: [
@@ -29,6 +33,12 @@ export default defineConfig({
                 "platejs/react",
                 "platejs/static",
                 /^@platejs\//,
+                // Built-in component dependencies
+                "sonner",
+                "lucide-react",
+                "reactolith",
+                /^@base-ui\/react/,
+                /^@iconify/,
             ],
         },
         outDir: "dist",

@@ -1300,29 +1300,6 @@ const components = [
 </div>`,
   },
   {
-    name: "Sonner",
-    slug: "sonner",
-    description: "An opinionated toast component for React, built by Emil Kowalski.",
-    category: "Feedback",
-    shadcnUrl: "https://ui.shadcn.com/docs/components/base/sonner",
-    subComponents: [
-      { tag: "ui-sonner", props: [{ name: "position", type: '"top-left" | "top-right" | "bottom-left" | "bottom-right" | "top-center" | "bottom-center"', default: '"bottom-right"', description: "Toast position." }, { name: "richColors", type: "boolean", default: "false", description: "Use rich colors." }, { name: "json-toasts", type: "InitialToast[]", default: "[]", description: 'Initial toasts to show on mount. Each toast: { id?, kind?: "message" | "success" | "error" | "warning" | "info", message, description? }. Toasts are deduplicated by id.' }] },
-    ],
-    example: `<ui-sonner rich-colors json-toasts='[{"kind":"success","message":"Profile saved","description":"Your changes have been saved successfully."},{"kind":"info","message":"Welcome back!"}]'></ui-sonner>`,
-    readableExample: `<!-- Place once in your layout -->
-<ui-sonner rich-colors json-toasts='[
-  {
-    "kind": "success",
-    "message": "Profile saved",
-    "description": "Your changes have been saved successfully."
-  },
-  {
-    "kind": "info",
-    "message": "Welcome back!"
-  }
-]'></ui-sonner>`,
-  },
-  {
     name: "Spinner",
     slug: "spinner",
     description: "A loading spinner indicator.",
@@ -2826,13 +2803,105 @@ const components = [
   <ui-ai-web-preview-console></ui-ai-web-preview-console>
 </ui-ai-web-preview>`,
   },
+  // ==========================================================================
+  // BUILT-IN COMPONENTS (shipped with reactolith-ui, no local install needed)
+  // ==========================================================================
+  {
+    name: "Icon",
+    slug: "icon",
+    description: "Universal icon component powered by Iconify. Supports 200,000+ icons from 150+ icon sets.",
+    category: "Built-in",
+    subComponents: [
+      { tag: "ui-icon", props: [
+        { name: "icon", type: "string", default: "—", description: "Icon name in Iconify format, e.g. \"lucide:heart\" or \"mdi:home\"." },
+        { name: "width", type: "string | number", default: '"1em"', description: "Icon width." },
+        { name: "height", type: "string | number", default: '"1em"', description: "Icon height." },
+        { name: "inline", type: "boolean", default: "false", description: "Render inline (adds vertical-align)." },
+      ] },
+    ],
+    example: `<div class="flex items-center gap-4">
+  <ui-icon icon="lucide:heart" class="size-6 text-red-500"></ui-icon>
+  <ui-icon icon="lucide:star" class="size-6 text-yellow-500"></ui-icon>
+  <ui-icon icon="lucide:settings" class="size-6"></ui-icon>
+</div>`,
+  },
+  {
+    name: "Route Error",
+    slug: "route-error",
+    description: "Displays navigation errors in a dialog overlay. Automatically listens to Reactolith router errors.",
+    category: "Built-in",
+    subComponents: [
+      { tag: "ui-route-error", props: [] },
+    ],
+    example: `<!-- Place once in your layout -->
+<ui-route-error></ui-route-error>`,
+  },
+  {
+    name: "Route Progress Bar",
+    slug: "route-progress-bar",
+    description: "A thin progress bar at the top of the viewport that animates during Reactolith route transitions.",
+    category: "Built-in",
+    subComponents: [
+      { tag: "ui-route-progress-bar", props: [
+        { name: "className", type: "string", default: "—", description: "Additional CSS classes for the container." },
+        { name: "completeDelayMs", type: "number", default: "250", description: "Milliseconds to wait before hiding after reaching 100%." },
+        { name: "maxWhileLoading", type: "number", default: "85", description: "Maximum percentage to reach while still loading." },
+      ] },
+    ],
+    example: `<!-- Place once in your layout -->
+<ui-route-progress-bar></ui-route-progress-bar>`,
+  },
+  {
+    name: "Theme Provider",
+    slug: "theme-provider",
+    description: "React context provider for light/dark/system theme management with localStorage persistence and cross-tab sync.",
+    category: "Built-in",
+    subComponents: [
+      { tag: "ui-theme-provider", props: [
+        { name: "defaultTheme", type: '"dark" | "light" | "system"', default: '"system"', description: "Initial theme when nothing is stored." },
+        { name: "storageKey", type: "string", default: '"vite-ui-theme"', description: "LocalStorage key for persisting the theme." },
+      ] },
+    ],
+    example: `<!-- Wrap your app -->
+<ui-theme-provider defaultTheme="system">
+  <!-- your app content -->
+  <ui-theme-switch></ui-theme-switch>
+</ui-theme-provider>`,
+  },
+  {
+    name: "Theme Switch",
+    slug: "theme-switch",
+    description: "A dropdown button for toggling between light, dark, and system theme. Requires a parent Theme Provider.",
+    category: "Built-in",
+    subComponents: [
+      { tag: "ui-theme-switch", props: [] },
+    ],
+    example: `<ui-theme-switch></ui-theme-switch>`,
+  },
+  {
+    name: "Sonner",
+    slug: "sonner",
+    description: "An opinionated toast component for React, built by Emil Kowalski. Ships as a built-in component with themed defaults.",
+    category: "Built-in",
+    subComponents: [
+      { tag: "ui-sonner", props: [
+        { name: "position", type: '"top-left" | "top-right" | "bottom-left" | "bottom-right" | "top-center" | "bottom-center"', default: '"bottom-right"', description: "Toast position." },
+        { name: "richColors", type: "boolean", default: "false", description: "Use rich colors." },
+        { name: "json-toasts", type: "InitialToast[]", default: "[]", description: 'Initial toasts to show on mount. Each toast: { id?, kind?: "message" | "success" | "error" | "warning" | "info", message, description? }. Toasts are deduplicated by id.' },
+      ] },
+    ],
+    example: `<ui-sonner rich-colors json-toasts='[
+  {"kind":"success","message":"Profile saved","description":"Your changes have been saved successfully."},
+  {"kind":"info","message":"Welcome back!"}
+]'></ui-sonner>`,
+  },
 ];
 
 // ============================================================================
 // CATEGORY ORDERING
 // ============================================================================
 
-const categoryOrder = ["Layout", "Forms", "Data Display", "Feedback", "Overlay", "Navigation", "AI Elements"];
+const categoryOrder = ["Layout", "Forms", "Data Display", "Feedback", "Overlay", "Navigation", "Built-in", "AI Elements"];
 
 function groupByCategory(comps) {
   const grouped = {};
@@ -3012,7 +3081,7 @@ function componentPage(comp) {
   const content = `
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="${comp.shadcnUrl}" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">${comp.category === "AI Elements" ? "AI Elements docs" : "shadcn/ui docs"}</a>
+                ${comp.shadcnUrl ? `<a href="${comp.shadcnUrl}" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">${comp.category === "AI Elements" ? "AI Elements docs" : "shadcn/ui docs"}</a>` : `<span class="text-xs bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2 py-1 rounded shrink-0">built-in</span>`}
               </div>
               <h1 class="text-3xl font-bold tracking-tight">${comp.name}</h1>
               <p class="text-lg text-muted-foreground">${comp.description}</p>
@@ -3147,7 +3216,7 @@ mkdir my-app && cd my-app
 npm init -y
 
 # 2. Install dependencies
-npm install reactolith react react-dom
+npm install reactolith reactolith-ui react react-dom
 npm install -D tailwindcss @tailwindcss/vite vite @vitejs/plugin-react
 
 # 3. Install shadcn

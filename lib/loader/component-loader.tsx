@@ -203,7 +203,9 @@ export class ExternalLoader {
 // Composite loader — chains multiple loaders in priority order
 // ---------------------------------------------------------------------------
 
-export type AnyLoader = ComponentLoader | ExternalLoader
+import type { BuiltinLoader } from "./builtin-loader"
+
+export type AnyLoader = ComponentLoader | ExternalLoader | BuiltinLoader
 
 export function createCompositeLoader(
   loaders: AnyLoader[],

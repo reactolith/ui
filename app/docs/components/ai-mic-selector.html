@@ -85,9 +85,6 @@
                   <ui-sidebar-menu-button  size="sm" href="combobox.html">Combobox</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="editor.html">Editor</ui-sidebar-menu-button>
-                </ui-sidebar-menu-item>
-                <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="field.html">Field</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
@@ -180,9 +177,6 @@
                   <ui-sidebar-menu-button  size="sm" href="skeleton.html">Skeleton</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="sonner.html">Sonner</ui-sidebar-menu-button>
-                </ui-sidebar-menu-item>
-                <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="spinner.html">Spinner</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
               </ui-sidebar-menu>
@@ -246,6 +240,31 @@
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="tabs.html">Tabs</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+              </ui-sidebar-menu>
+            </ui-sidebar-group-content>
+          </ui-sidebar-group>
+          <ui-sidebar-group>
+            <ui-sidebar-group-label>Built-in</ui-sidebar-group-label>
+            <ui-sidebar-group-content>
+              <ui-sidebar-menu>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="icon.html">Icon</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="route-error.html">Route Error</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="route-progress-bar.html">Route Progress Bar</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="theme-provider.html">Theme Provider</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="theme-switch.html">Theme Switch</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="sonner.html">Sonner</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
               </ui-sidebar-menu>
             </ui-sidebar-group-content>
@@ -419,11 +438,15 @@
   </ui-ai-mic-selector-trigger>
   <ui-ai-mic-selector-content>
     <ui-ai-mic-selector-input placeholder="Search devices..."></ui-ai-mic-selector-input>
-    <ui-command-list>
+    <ui-ai-mic-selector-list>
       <ui-ai-mic-selector-empty>No devices found.</ui-ai-mic-selector-empty>
-      <ui-ai-mic-selector-item>Built-in Microphone</ui-ai-mic-selector-item>
-      <ui-ai-mic-selector-item>USB Microphone</ui-ai-mic-selector-item>
-    </ui-command-list>
+      <ui-ai-mic-selector-item>
+        <ui-ai-mic-selector-label>Built-in Microphone</ui-ai-mic-selector-label>
+      </ui-ai-mic-selector-item>
+      <ui-ai-mic-selector-item>
+        <ui-ai-mic-selector-label>USB Microphone</ui-ai-mic-selector-label>
+      </ui-ai-mic-selector-item>
+    </ui-ai-mic-selector-list>
   </ui-ai-mic-selector-content>
 </ui-ai-mic-selector>
                   </div>
@@ -438,11 +461,15 @@
   &lt;/ui-ai-mic-selector-trigger&gt;
   &lt;ui-ai-mic-selector-content&gt;
     &lt;ui-ai-mic-selector-input placeholder=&quot;Search devices...&quot;&gt;&lt;/ui-ai-mic-selector-input&gt;
-    &lt;ui-command-list&gt;
+    &lt;ui-ai-mic-selector-list&gt;
       &lt;ui-ai-mic-selector-empty&gt;No devices found.&lt;/ui-ai-mic-selector-empty&gt;
-      &lt;ui-ai-mic-selector-item&gt;Built-in Microphone&lt;/ui-ai-mic-selector-item&gt;
-      &lt;ui-ai-mic-selector-item&gt;USB Microphone&lt;/ui-ai-mic-selector-item&gt;
-    &lt;/ui-command-list&gt;
+      &lt;ui-ai-mic-selector-item&gt;
+        &lt;ui-ai-mic-selector-label&gt;Built-in Microphone&lt;/ui-ai-mic-selector-label&gt;
+      &lt;/ui-ai-mic-selector-item&gt;
+      &lt;ui-ai-mic-selector-item&gt;
+        &lt;ui-ai-mic-selector-label&gt;USB Microphone&lt;/ui-ai-mic-selector-label&gt;
+      &lt;/ui-ai-mic-selector-item&gt;
+    &lt;/ui-ai-mic-selector-list&gt;
   &lt;/ui-ai-mic-selector-content&gt;
 &lt;/ui-ai-mic-selector&gt;</code></pre>
               </div>
