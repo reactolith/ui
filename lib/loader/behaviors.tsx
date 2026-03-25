@@ -282,29 +282,83 @@ const MIN_LENGTH_ATTR: WebTypeAttribute = {
   description: "Minimum input length before fetching (default: 2).",
 }
 
+const PLACEHOLDER_ATTR: WebTypeAttribute = {
+  name: "placeholder",
+  required: false,
+  value: { kind: "plain", type: "string" },
+  description: "Placeholder text for the input (self-contained mode).",
+}
+
+const SHOW_CLEAR_ATTR: WebTypeAttribute = {
+  name: "show-clear",
+  required: false,
+  value: { kind: "plain", type: "boolean" },
+  description: "Show clear button in the input (self-contained mode).",
+}
+
+const SHOW_TRIGGER_ATTR: WebTypeAttribute = {
+  name: "show-trigger",
+  required: false,
+  value: { kind: "plain", type: "boolean" },
+  description: "Show dropdown trigger button in the input (self-contained mode, default: true).",
+}
+
+function parseBoolAttr(val: any, defaultVal: boolean): boolean {
+  if (val === undefined || val === null) return defaultVal
+  if (typeof val === "boolean") return val
+  return val !== "false"
+}
+
 /** Combobox root with items context provider (static items or async src) */
 export const comboboxProvider: WrapperDef = {
-  fn: (C) => ({ items, src, debounce, "min-length": minLength, children, is, ...props }: any) => {
-    if (src) {
-      return <AsyncCombobox C={C} src={src} debounce={debounce} min-length={minLength} children={children} {...props} />
+  fn: (C, mod) => {
+    const ComboboxInput = mod.ComboboxInput as ComponentType<any>
+    const ComboboxContent = mod.ComboboxContent as ComponentType<any>
+    const ComboboxList = mod.ComboboxList as ComponentType<any>
+    const ComboboxEmpty = mod.ComboboxEmpty as ComponentType<any>
+
+    return ({
+      items, src, debounce, "min-length": minLength, children, is,
+      placeholder, "show-clear": showClearAttr, "show-trigger": showTriggerAttr,
+      ...props
+    }: any) => {
+      const resolvedChildren = children ?? (
+        ComboboxInput && ComboboxContent && ComboboxList ? (
+          <>
+            <ComboboxInput
+              placeholder={placeholder}
+              showClear={parseBoolAttr(showClearAttr, false)}
+              showTrigger={parseBoolAttr(showTriggerAttr, true)}
+            />
+            <ComboboxContent>
+              {ComboboxEmpty && <ComboboxEmpty>No results found.</ComboboxEmpty>}
+              <ComboboxList />
+            </ComboboxContent>
+          </>
+        ) : undefined
+      )
+
+      if (src) {
+        return <AsyncCombobox C={C} src={src} debounce={debounce} min-length={minLength} children={resolvedChildren} {...props} />
+      }
+      if (!items) return <C {...props}>{resolvedChildren}</C>
+      const hasObjects = items.length > 0 && typeof items[0] === "object"
+      return (
+        <ComboboxItemsContext.Provider value={items}>
+          <C
+            items={items}
+            {...(hasObjects
+              ? { getOptionAsString: (item: ComboboxItemShape) => typeof item === "string" ? item : item.label }
+              : {})}
+            {...props}
+          >
+            {resolvedChildren}
+          </C>
+        </ComboboxItemsContext.Provider>
+      )
     }
-    if (!items) return <C {...props}>{children}</C>
-    const hasObjects = items.length > 0 && typeof items[0] === "object"
-    return (
-      <ComboboxItemsContext.Provider value={items}>
-        <C
-          items={items}
-          {...(hasObjects
-            ? { getOptionAsString: (item: ComboboxItemShape) => typeof item === "string" ? item : item.label }
-            : {})}
-          {...props}
-        >
-          {children}
-        </C>
-      </ComboboxItemsContext.Provider>
-    )
   },
-  additionalAttributes: [ITEMS_ATTR, SRC_ATTR, DEBOUNCE_ATTR, MIN_LENGTH_ATTR],
+  additionalAttributes: [ITEMS_ATTR, SRC_ATTR, DEBOUNCE_ATTR, MIN_LENGTH_ATTR, PLACEHOLDER_ATTR, SHOW_CLEAR_ATTR, SHOW_TRIGGER_ATTR],
 }
 
 /** Combobox list that auto-renders items from context */
