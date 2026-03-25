@@ -4,22 +4,22 @@ import {
   BlockMenuPlugin,
   BlockSelectionPlugin,
 } from '@platejs/selection/react';
-import { getPluginTypes, KEYS } from 'platejs';
+import { getPluginTypes, KEYS, type TElement } from 'platejs';
 
 import { BlockContextMenu } from '@/components/plate/ui/block-context-menu';
 import { BlockSelection } from '@/components/plate/ui/block-selection';
 
 export const BlockMenuKit = [
-  BlockSelectionPlugin.configure(({ editor }) => ({
+  BlockSelectionPlugin.configure(({ editor }: { editor: any }) => ({
     options: {
       enableContextMenu: true,
-      isSelectable: (element) =>
+      isSelectable: (element: TElement) =>
         !getPluginTypes(editor, [KEYS.codeLine, KEYS.td]).includes(
           element.type
         ),
     },
     render: {
-      belowRootNodes: (props) => {
+      belowRootNodes: (props: any) => {
         if (!props.attributes.className?.includes('slate-selectable'))
           return null;
 
