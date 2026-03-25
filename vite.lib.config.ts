@@ -33,6 +33,10 @@ export default defineConfig({
                 "platejs/react",
                 "platejs/static",
                 /^@platejs\//,
+                // Built-in component dependencies (consumers have these via shadcn)
+                "sonner",
+                "lucide-react",
+                /^@base-ui\/react/,
             ],
         },
         outDir: "dist",

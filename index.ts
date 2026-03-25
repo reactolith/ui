@@ -52,6 +52,9 @@ export {
   createOverridesLoader,
 } from "./lib/loader"
 
+// Built-in components loader
+export { BuiltinLoader, createBuiltinLoader } from "./lib/loader"
+
 // Utilities
 export { renderLinkable, renderTrigger, getSingleElement } from "./lib/render-element"
 export { CloseOverlayProvider, useCloseOverlay } from "./lib/close-overlay"

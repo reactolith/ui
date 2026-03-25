@@ -51,3 +51,6 @@ export {
   createAiElementsLoader,
   createOverridesLoader,
 } from "./presets"
+
+// Built-in components loader
+export { BuiltinLoader, createBuiltinLoader } from "./builtin-loader"
