@@ -59,32 +59,10 @@ export { CloseOverlayProvider, useCloseOverlay } from "./lib/close-overlay"
 export { SelectItemsProvider, useSelectItemsRegister } from "./lib/select-items"
 export { cn } from "./lib/utils"
 
-// Editor (Plate.js rich text editor building blocks)
+// Editor (Plate.js integration utilities)
 export {
-  // Types
   type EditorProps,
   type EditorFormat,
-  type ToolbarPreset,
-  type ToolbarFeature,
-  type PluginPreset,
-  // Plugin presets
-  PLUGIN_PRESETS,
-  getPluginsForPreset,
-  TOOLBAR_PRESETS,
-  parseToolbarFeatures,
-  resolveToolbarFeatures,
-  // Components
-  getEditorComponents,
-  // Toolbar
-  EditorToolbar,
-  type EditorToolbarProps,
-  // Slash Menu
-  SlashMenu,
-  SLASH_ITEMS,
-  type SlashMenuItem,
-  // Form sync
   useEditorFormSync,
-  deserializeValue,
-  EMPTY_VALUE,
   type UseEditorFormSyncOptions,
 } from "./lib/editor"

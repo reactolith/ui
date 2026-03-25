@@ -4,10 +4,18 @@
  * Supports three serialization formats:
  * - "json"      — JSON.stringify of the Slate value (fastest, lossless)
  * - "markdown"  — Markdown via @platejs/markdown (requires MarkdownPlugin)
- * - "html"      — HTML via platejs/static serializeHtml (async, needs react-dom/server)
+ * - "html"      — HTML via platejs/static serializeHtml (async)
  *
- * The hidden input is rendered alongside the editor so native <form> submission
- * picks up the serialized content automatically. Debounced at 300ms.
+ * Usage in your editor override:
+ *
+ * ```tsx
+ * const { syncContent, inputProps } = useEditorFormSync({ editor, format, name })
+ *
+ * <Plate editor={editor} onChange={() => syncContent()}>
+ *   ...
+ * </Plate>
+ * {inputProps && <input {...inputProps} />}
+ * ```
  */
 
 import { useCallback, useEffect, useRef, useState } from "react"
@@ -17,7 +25,7 @@ import { MarkdownPlugin } from "@platejs/markdown"
 import type { EditorFormat } from "./types"
 
 // ---------------------------------------------------------------------------
-// Serialization helpers
+// Serialization
 // ---------------------------------------------------------------------------
 
 function serializeToJson(value: Value): string {
@@ -29,7 +37,6 @@ function serializeToMarkdown(editor: PlateEditor): string {
     const api = editor.getApi(MarkdownPlugin)
     return (api as unknown as { markdown: { serialize: (opts: { value: Value }) => string } }).markdown.serialize({ value: editor.children as Value })
   } catch {
-    // MarkdownPlugin not configured — fall back to JSON
     return serializeToJson(editor.children as Value)
   }
 }
@@ -42,14 +49,9 @@ async function serializeToHtml(editor: PlateEditor): Promise<string> {
       stripDataAttributes: true,
     })
   } catch {
-    // platejs/static not available — fall back to JSON
     return serializeToJson(editor.children as Value)
   }
 }
-
-// ---------------------------------------------------------------------------
-// Serialize dispatch
-// ---------------------------------------------------------------------------
 
 async function serialize(
   editor: PlateEditor,
@@ -67,57 +69,7 @@ async function serialize(
 }
 
 // ---------------------------------------------------------------------------
-// Deserialize helpers (for initial value parsing)
-// ---------------------------------------------------------------------------
-
-const EMPTY_VALUE: Value = [{ type: "p", children: [{ text: "" }] }]
-
-export function deserializeValue(
-  editor: PlateEditor,
-  value: string | Value | undefined,
-  format: EditorFormat,
-): Value {
-  if (!value) return EMPTY_VALUE
-
-  // Already a Slate Value array
-  if (Array.isArray(value)) return value
-
-  if (typeof value !== "string") return EMPTY_VALUE
-  if (value.trim() === "") return EMPTY_VALUE
-
-  switch (format) {
-    case "json":
-      try {
-        const parsed = JSON.parse(value)
-        return Array.isArray(parsed) ? parsed : EMPTY_VALUE
-      } catch {
-        return EMPTY_VALUE
-      }
-
-    case "markdown":
-      try {
-        const mdApi = editor.getApi(MarkdownPlugin) as unknown as {
-          markdown: { deserialize: (input: string) => Value }
-        }
-        return mdApi.markdown.deserialize(value)
-      } catch {
-        return EMPTY_VALUE
-      }
-
-    case "html":
-      try {
-        return editor.api.html.deserialize({ element: value }) as Value
-      } catch {
-        return EMPTY_VALUE
-      }
-
-    default:
-      return EMPTY_VALUE
-  }
-}
-
-// ---------------------------------------------------------------------------
-// useEditorFormSync hook
+// Hook
 // ---------------------------------------------------------------------------
 
 export interface UseEditorFormSyncOptions {
@@ -150,7 +102,6 @@ export function useEditorFormSync({
     }, 300)
   }, [editor, format])
 
-  // Clean up timer on unmount
   useEffect(() => {
     return () => {
       if (debounceRef.current) clearTimeout(debounceRef.current)
@@ -171,5 +122,3 @@ export function useEditorFormSync({
       : null,
   }
 }
-
-export { EMPTY_VALUE }

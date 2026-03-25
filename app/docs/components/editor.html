@@ -407,163 +407,114 @@
                 <a href="https://platejs.org/" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">Plate.js docs</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">Editor</h1>
-              <p class="text-lg text-muted-foreground">A rich text editor powered by Plate.js. Configurable toolbar, plugin presets, and native form integration via hidden inputs.</p>
+              <p class="text-lg text-muted-foreground">A rich text editor powered by <a href="https://platejs.org/" class="underline">Plate.js</a>. Uses standard Plate kits and components installed via the shadcn CLI. Reactolith provides the integration layer for form sync and HTML-attribute configuration.</p>
             </div>
 
             <section class="mb-10">
-              <h2 class="text-xl font-semibold mb-4">Inline Editor</h2>
-              <p class="text-sm text-muted-foreground mb-3">Only inline text formatting (bold, italic, underline, etc.) — no block types. Ideal for single-line fields like titles or short descriptions.</p>
-              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                <ui-editor toolbar="inline" plugins="inline" placeholder="Format text inline..." min-height="60px"></ui-editor>
-              </div>
-              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-2">
-                <pre class="p-4 text-sm"><code>&lt;ui-editor toolbar=&quot;inline&quot; plugins=&quot;inline&quot; placeholder=&quot;Format text inline...&quot;&gt;&lt;/ui-editor&gt;</code></pre>
-              </div>
-            </section>
-
-            <section class="mb-10">
-              <h2 class="text-xl font-semibold mb-4">Standard Editor</h2>
-              <p class="text-sm text-muted-foreground mb-3">Block-level editing with headings, lists, quotes, code blocks. Includes a slash menu (type <code class="text-xs bg-muted px-1.5 py-0.5 rounded">/</code> to insert blocks). The default preset.</p>
-              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                <ui-editor toolbar="standard" plugins="standard" placeholder="Type / for block menu..." min-height="200px"></ui-editor>
-              </div>
-              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-2">
-                <pre class="p-4 text-sm"><code>&lt;ui-editor name=&quot;content&quot; format=&quot;html&quot;&gt;&lt;/ui-editor&gt;
-&lt;!-- or explicitly: toolbar=&quot;standard&quot; plugins=&quot;standard&quot; --&gt;</code></pre>
-              </div>
-            </section>
-
-            <section class="mb-10">
-              <h2 class="text-xl font-semibold mb-4">Full Editor</h2>
-              <p class="text-sm text-muted-foreground mb-3">All available features including images, tables, callouts, toggles, code highlighting, superscript/subscript, and more.</p>
-              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                <ui-editor toolbar="full" plugins="full" placeholder="Type / for block menu..." min-height="250px"></ui-editor>
-              </div>
-              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-2">
-                <pre class="p-4 text-sm"><code>&lt;ui-editor toolbar=&quot;full&quot; plugins=&quot;full&quot; min-height=&quot;250px&quot;&gt;&lt;/ui-editor&gt;</code></pre>
-              </div>
-            </section>
-
-            <section class="mb-10">
-              <h2 class="text-xl font-semibold mb-4">No Toolbar (Slash-only)</h2>
-              <p class="text-sm text-muted-foreground mb-3">Clean writing experience without a toolbar. All block types are still available via the slash menu.</p>
-              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                <ui-editor toolbar="none" plugins="standard" placeholder="Type / to insert blocks..." min-height="150px"></ui-editor>
-              </div>
-              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-2">
-                <pre class="p-4 text-sm"><code>&lt;ui-editor toolbar=&quot;none&quot; placeholder=&quot;Type / to insert blocks...&quot;&gt;&lt;/ui-editor&gt;</code></pre>
+              <h2 class="text-xl font-semibold mb-4">Preview</h2>
+              <div class="rounded-lg border bg-background overflow-x-auto max-w-full">
+                <ui-editor placeholder="Type / for commands..." min-height="400px"></ui-editor>
               </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;!-- Standard editor with form sync --&gt;
+                <pre class="p-4 text-sm"><code>&lt;!-- Basic editor --&gt;
+&lt;ui-editor placeholder=&quot;Start writing...&quot;&gt;&lt;/ui-editor&gt;
+
+&lt;!-- With form sync (syncs content to hidden input) --&gt;
 &lt;ui-editor name=&quot;content&quot; format=&quot;html&quot;&gt;&lt;/ui-editor&gt;
-
-&lt;!-- Inline-only (no blocks) --&gt;
-&lt;ui-editor toolbar=&quot;inline&quot; plugins=&quot;inline&quot; name=&quot;title&quot;&gt;&lt;/ui-editor&gt;
-
-&lt;!-- Full-featured editor --&gt;
-&lt;ui-editor toolbar=&quot;full&quot; plugins=&quot;full&quot; name=&quot;content&quot; min-height=&quot;300px&quot;&gt;&lt;/ui-editor&gt;
-
-&lt;!-- Custom toolbar features --&gt;
-&lt;ui-editor toolbar-features=&quot;bold,italic,link,heading&quot; name=&quot;content&quot;&gt;&lt;/ui-editor&gt;
-
-&lt;!-- Read-only display --&gt;
-&lt;ui-editor value=&quot;&amp;lt;p&amp;gt;Hello world&amp;lt;/p&amp;gt;&quot; format=&quot;html&quot; read-only&gt;&lt;/ui-editor&gt;</code></pre>
-              </div>
-            </section>
-
-            <section class="mb-10">
-              <h2 class="text-xl font-semibold mb-4">Form Integration</h2>
-              <p class="text-muted-foreground mb-4">When the <code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code> attribute is set, the editor renders a hidden <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;input&gt;</code> that syncs the editor content (debounced at 300ms). The content is serialized in the format specified by <code class="text-xs bg-muted px-1.5 py-0.5 rounded">format</code>.</p>
-              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;form action=&quot;/api/save&quot; method=&quot;POST&quot;&gt;
-  &lt;!-- Editor content is submitted as the &quot;content&quot; field --&gt;
-  &lt;ui-editor name=&quot;content&quot; format=&quot;html&quot;&gt;&lt;/ui-editor&gt;
-
-  &lt;button type=&quot;submit&quot;&gt;Save&lt;/button&gt;
-&lt;/form&gt;
 
 &lt;!-- JSON format (lossless, recommended for storage) --&gt;
 &lt;ui-editor name=&quot;content&quot; format=&quot;json&quot;&gt;&lt;/ui-editor&gt;
 
 &lt;!-- Markdown format --&gt;
-&lt;ui-editor name=&quot;content&quot; format=&quot;markdown&quot;&gt;&lt;/ui-editor&gt;</code></pre>
+&lt;ui-editor name=&quot;content&quot; format=&quot;markdown&quot;&gt;&lt;/ui-editor&gt;
+
+&lt;!-- Read-only display --&gt;
+&lt;ui-editor value=&quot;...&quot; read-only&gt;&lt;/ui-editor&gt;</code></pre>
               </div>
             </section>
 
             <section class="mb-10">
-              <h2 class="text-xl font-semibold mb-4">Toolbar Presets</h2>
-              <div class="overflow-x-auto max-w-full">
-                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Preset</th><th class="text-left py-2 font-medium">Features</th></tr></thead><tbody>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">inline</code></td><td class="py-2 text-muted-foreground">Bold, Italic, Underline, Strikethrough, Code, Link</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">standard</code></td><td class="py-2 text-muted-foreground">Undo/Redo, Heading, Bold, Italic, Underline, Strikethrough, Lists, Link, Blockquote, Code Block, Horizontal Rule + Slash Menu</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">full</code></td><td class="py-2 text-muted-foreground">All standard features + Code, Superscript, Subscript, Highlight, Image, Table, Callout, Toggle + Slash Menu</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">none</code></td><td class="py-2 text-muted-foreground">No toolbar rendered</td></tr>
-                </tbody></table>
-              </div>
-            </section>
+              <h2 class="text-xl font-semibold mb-4">Setup</h2>
+              <p class="text-muted-foreground mb-4">The editor uses standard <a href="https://platejs.org/" class="underline">Plate.js</a> components. Install them in your project via the shadcn CLI, then create an override file.</p>
 
-            <section class="mb-10">
-              <h2 class="text-xl font-semibold mb-4">Plugin Presets</h2>
-              <div class="overflow-x-auto max-w-full">
-                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Preset</th><th class="text-left py-2 font-medium">Plugins included</th></tr></thead><tbody>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">inline</code></td><td class="py-2 text-muted-foreground">Basic Marks, Link, Markdown. No block types — inline formatting only.</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">standard</code></td><td class="py-2 text-muted-foreground">Basic Marks, Basic Blocks, Highlight, List, Link, Image, Table, Code Block, Markdown, Autoformat</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">full</code></td><td class="py-2 text-muted-foreground">All standard plugins + Subscript, Superscript, Callout, Toggle, Indent</td></tr>
-                </tbody></table>
-              </div>
-            </section>
-
-            <section class="mb-10">
-              <h2 class="text-xl font-semibold mb-4">Slash Menu</h2>
-              <p class="text-muted-foreground mb-4">In <code class="text-xs bg-muted px-1.5 py-0.5 rounded">standard</code> and <code class="text-xs bg-muted px-1.5 py-0.5 rounded">full</code> presets, typing <code class="text-xs bg-muted px-1.5 py-0.5 rounded">/</code> opens a Notion-like block menu. Navigate with arrow keys, select with Enter, filter by typing. Available blocks:</p>
-              <div class="flex flex-wrap gap-1.5 mb-2">
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Text</code>
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Heading 1-3</code>
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Bullet List</code>
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Numbered List</code>
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Quote</code>
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Code</code>
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Divider</code>
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Table</code>
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Image</code>
-              </div>
-              <p class="text-sm text-muted-foreground">The slash menu is disabled for the <code class="text-xs bg-muted px-1.5 py-0.5 rounded">inline</code> preset since it only supports inline formatting.</p>
-            </section>
-
-            <section class="mb-10">
-              <h2 class="text-xl font-semibold mb-4">Extending with TypeScript</h2>
-              <p class="text-muted-foreground mb-4">React/TypeScript developers can import the building blocks to create custom editor variants:</p>
+              <h3 class="text-base font-semibold mt-6 mb-3">1. Install Plate components</h3>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>import { Plate, usePlateEditor } from &quot;platejs/react&quot;;
-import {
-  getPluginsForPreset,
-  getEditorComponents,
-  EditorToolbar,
-  useEditorFormSync,
-  resolveToolbarFeatures,
-} from &quot;@reactolith/ui&quot;;
+                <pre class="p-4 text-sm"><code># Install the full editor kit (recommended)
+npx shadcn@latest add @plate/editor-kit
 
-// Custom editor with additional plugins
-function CustomEditor() {
+# Or install individual feature kits
+npx shadcn@latest add @plate/basic-blocks-kit
+npx shadcn@latest add @plate/basic-marks-kit
+npx shadcn@latest add @plate/slash-kit
+npx shadcn@latest add @plate/dnd-kit
+npx shadcn@latest add @plate/floating-toolbar-kit
+# ... see platejs.org for all available kits</code></pre>
+              </div>
+
+              <h3 class="text-base font-semibold mt-6 mb-3">2. Create the editor override</h3>
+              <p class="text-sm text-muted-foreground mb-3">Create <code class="text-xs bg-muted px-1.5 py-0.5 rounded">app/overrides/editor.tsx</code> in your project. This makes the editor available as <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-editor&gt;</code>.</p>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>import { Plate, usePlateEditor } from &quot;platejs/react&quot;
+import { useEditorFormSync, type EditorProps } from &quot;@reactolith/ui&quot;
+
+// Import the kits you installed
+import { EditorKit } from &quot;@/components/editor/editor-kit&quot;
+import { Editor, EditorContainer } from &quot;@/components/ui/editor&quot;
+
+export default function EditorOverride({
+  value, format = &quot;html&quot;, placeholder, readOnly,
+  name, form, className, minHeight, maxHeight, onChange,
+}: EditorProps) {
   const editor = usePlateEditor({
-    plugins: [
-      ...getPluginsForPreset(&quot;standard&quot;),
-      MyCustomPlugin,
-    ],
-    override: { components: getEditorComponents() },
-  });
+    plugins: EditorKit,
+    value: value as string | undefined,
+  })
+
+  const { syncContent, inputProps } = useEditorFormSync({
+    editor, format, name, form, onChange,
+  })
 
   return (
-    &lt;Plate editor={editor}&gt;
-      &lt;EditorToolbar features={resolveToolbarFeatures(&quot;standard&quot;)} /&gt;
-      &lt;PlateContent /&gt;
-    &lt;/Plate&gt;
-  );
+    &lt;div className={className}&gt;
+      &lt;Plate editor={editor} readOnly={readOnly}
+        onChange={() =&gt; syncContent()}&gt;
+        &lt;EditorContainer style={{ minHeight, maxHeight }}&gt;
+          &lt;Editor placeholder={placeholder} /&gt;
+        &lt;/EditorContainer&gt;
+      &lt;/Plate&gt;
+      {inputProps &amp;&amp; &lt;input {...inputProps} /&gt;}
+    &lt;/div&gt;
+  )
 }</code></pre>
+              </div>
+
+              <h3 class="text-base font-semibold mt-6 mb-3">3. Use it</h3>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;form action=&quot;/api/save&quot; method=&quot;POST&quot;&gt;
+  &lt;ui-editor name=&quot;content&quot; format=&quot;html&quot;
+    placeholder=&quot;Start writing...&quot;&gt;&lt;/ui-editor&gt;
+  &lt;button type=&quot;submit&quot;&gt;Save&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+              </div>
+            </section>
+
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Features</h2>
+              <p class="text-muted-foreground mb-4">This demo uses the standard Plate.js editor kit which includes:</p>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Feature</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody>
+                <tr class="border-b"><td class="py-2 pr-4 font-medium">Slash commands</td><td class="py-2 text-muted-foreground">Type <code class="text-xs bg-muted px-1.5 py-0.5 rounded">/</code> to insert headings, lists, code blocks, tables, etc.</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4 font-medium">Fixed toolbar</td><td class="py-2 text-muted-foreground">Formatting buttons at the top of the editor</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4 font-medium">Floating toolbar</td><td class="py-2 text-muted-foreground">Context toolbar appears on text selection</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4 font-medium">Drag &amp; drop</td><td class="py-2 text-muted-foreground">Drag blocks to reorder them</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4 font-medium">Block selection</td><td class="py-2 text-muted-foreground">Click and drag to select multiple blocks</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4 font-medium">Autoformat</td><td class="py-2 text-muted-foreground">Markdown shortcuts: <code class="text-xs bg-muted px-1.5 py-0.5 rounded"># </code> for H1, <code class="text-xs bg-muted px-1.5 py-0.5 rounded">* </code> for lists, <code class="text-xs bg-muted px-1.5 py-0.5 rounded">> </code> for quotes, etc.</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4 font-medium">Form sync</td><td class="py-2 text-muted-foreground">Content syncs to a hidden <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;input&gt;</code> in HTML, JSON, or Markdown format</td></tr>
+                </tbody></table>
               </div>
             </section>
 
@@ -577,55 +528,24 @@ function CustomEditor() {
             <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
             <div class="mt-6">
               <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-editor&gt;</code></h3>
+              <p class="text-sm text-muted-foreground mb-3">These are the recommended props for your editor override. The actual props depend on your implementation.</p>
               <div class="overflow-x-auto max-w-full">
                 <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string | Value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Initial content. Can be an HTML string, JSON string, Markdown string, or Plate Value array depending on <code class="text-xs">format</code>.</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">format</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;html&quot; | &quot;json&quot; | &quot;markdown&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;html&quot;</code></td><td class="py-2 text-muted-foreground">Content format for both initial value parsing and form sync serialization.</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Hidden input name for form submission. When set, syncs editor content to a hidden <code class="text-xs">&lt;input&gt;</code>.</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">form</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Form ID to associate with (like the native <code class="text-xs">form</code> attribute on inputs).</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">toolbar</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;full&quot; | &quot;standard&quot; | &quot;inline&quot; | &quot;none&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;standard&quot;</code></td><td class="py-2 text-muted-foreground">Toolbar preset. Determines which formatting buttons are shown.</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">toolbar-features</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Comma-separated toolbar features. Overrides preset. E.g. <code class="text-xs">&quot;bold,italic,link,heading&quot;</code>.</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">plugins</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;full&quot; | &quot;standard&quot; | &quot;inline&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;standard&quot;</code></td><td class="py-2 text-muted-foreground">Plugin preset. Determines which editing features are available.</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">placeholder</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;Start writing...&quot;</code></td><td class="py-2 text-muted-foreground">Placeholder text shown when the editor is empty.</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">read-only</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Read-only mode. Hides toolbar and disables editing.</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">min-height</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;150px&quot;</code></td><td class="py-2 text-muted-foreground">Minimum editor height (CSS value).</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">max-height</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Maximum editor height (CSS value). Enables scroll when content exceeds this height.</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string | Value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Initial content (HTML, JSON, or Markdown string).</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">format</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;html&quot; | &quot;json&quot; | &quot;markdown&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;html&quot;</code></td><td class="py-2 text-muted-foreground">Serialization format for form sync.</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Hidden input name for form submission.</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">form</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Form ID to associate with.</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">placeholder</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;Type / for commands...&quot;</code></td><td class="py-2 text-muted-foreground">Placeholder text.</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">read-only</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Read-only mode.</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">min-height</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;200px&quot;</code></td><td class="py-2 text-muted-foreground">Minimum editor height (CSS value).</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">max-height</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Maximum height (enables scroll).</td></tr>
                 </tbody></table>
               </div>
             </div></section>
 
             <section class="mb-10">
-              <h2 class="text-xl font-semibold mb-4">Available Toolbar Features</h2>
-              <div class="overflow-x-auto max-w-full">
-                <div class="flex flex-wrap gap-1.5">
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">bold</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">italic</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">underline</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">strikethrough</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">code</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">superscript</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">subscript</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">highlight</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">heading</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">blockquote</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">code-block</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">callout</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">toggle</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">horizontal-rule</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">bullet-list</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">numbered-list</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">link</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">image</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">table</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">undo</code>
-                  <code class="text-xs bg-muted px-1.5 py-0.5 rounded">redo</code>
-                </div>
-              </div>
-            </section>
-
-            <section class="mb-10">
               <p class="text-sm text-muted-foreground">
-                All components also accept standard HTML attributes (class, id, style, data-*, aria-*, etc.) which are passed through to the underlying element.
+                The editor features (slash menu, toolbar, drag &amp; drop, etc.) are determined by which Plate kits you install. See <a href="https://platejs.org/docs" class="underline">platejs.org</a> for the full list of available kits.
               </p>
             </section>
         </div>
