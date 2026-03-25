@@ -85,9 +85,6 @@
                   <ui-sidebar-menu-button  size="sm" href="components/combobox.html">Combobox</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="components/editor.html">Editor</ui-sidebar-menu-button>
-                </ui-sidebar-menu-item>
-                <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="components/field.html">Field</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
@@ -180,9 +177,6 @@
                   <ui-sidebar-menu-button  size="sm" href="components/skeleton.html">Skeleton</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="components/sonner.html">Sonner</ui-sidebar-menu-button>
-                </ui-sidebar-menu-item>
-                <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="components/spinner.html">Spinner</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
               </ui-sidebar-menu>
@@ -246,6 +240,31 @@
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="components/tabs.html">Tabs</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+              </ui-sidebar-menu>
+            </ui-sidebar-group-content>
+          </ui-sidebar-group>
+          <ui-sidebar-group>
+            <ui-sidebar-group-label>Built-in</ui-sidebar-group-label>
+            <ui-sidebar-group-content>
+              <ui-sidebar-menu>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="components/icon.html">Icon</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="components/route-error.html">Route Error</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="components/route-progress-bar.html">Route Progress Bar</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="components/theme-provider.html">Theme Provider</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="components/theme-switch.html">Theme Switch</ui-sidebar-menu-button>
+                </ui-sidebar-menu-item>
+                <ui-sidebar-menu-item>
+                  <ui-sidebar-menu-button  size="sm" href="components/sonner.html">Sonner</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
               </ui-sidebar-menu>
             </ui-sidebar-group-content>
@@ -414,9 +433,8 @@
 
               <h2>Key Features</h2>
               <ul>
-                <li><strong>103+ component groups</strong> — 55 shadcn/ui base components, 48 AI element components, and rich text editor</li>
-                <li><strong>Standard HTML</strong> — use <code>&lt;ui-button&gt;</code>, <code>&lt;ui-ai-message&gt;</code>, or <code>&lt;ui-editor&gt;</code> instead of importing React components</li>
-                <li><strong>Rich Text Editor</strong> — full-featured <a href="https://platejs.org">Plate.js</a> editor with slash commands, drag &amp; drop, floating toolbar, block selection, and form sync</li>
+                <li><strong>103+ component groups</strong> — 55 shadcn/ui base components and 48 AI element components</li>
+                <li><strong>Standard HTML</strong> — use <code>&lt;ui-button&gt;</code> or <code>&lt;ui-ai-message&gt;</code> instead of importing React components</li>
                 <li><strong>shadcn/ui + AI Elements</strong> — beautiful, accessible components for apps and AI interfaces</li>
                 <li><strong>Base UI primitives</strong> — built on unstyled, accessible Base UI components</li>
                 <li><strong>Tailwind CSS v4</strong> — fully styled with Tailwind utilities</li>
@@ -445,7 +463,6 @@
                 <li><strong>shadcn/ui</strong> — Adds Tailwind-based styling and design system</li>
                 <li><strong>Reactolith</strong> — Wraps React components as HTML custom elements</li>
               </ol>
-              <p>For the rich text editor, <a href="https://platejs.org">Plate.js</a> provides the editing framework. Developers install Plate components via the shadcn CLI (<code>npx shadcn@latest add @plate/editor-kit</code>) and create an override file to make it available as <code>&lt;ui-editor&gt;</code>. Reactolith provides the <code>useEditorFormSync</code> hook for syncing content to native form inputs (HTML, JSON, or Markdown).</p>
 
               <h2>Browser Support</h2>
               <p>Reactolith UI works in all modern browsers that support custom elements (Chrome, Firefox, Safari, Edge).</p>

@@ -55,6 +55,9 @@ export {
 // Built-in components loader
 export { BuiltinLoader, createBuiltinLoader } from "./lib/loader"
 
+// Theme provider hook (for use in custom components)
+export { useTheme, type UiTheme, type UiThemeProviderState } from "./lib/components/theme-provider"
+
 // Utilities
 export { renderLinkable, renderTrigger, getSingleElement } from "./lib/render-element"
 export { CloseOverlayProvider, useCloseOverlay } from "./lib/close-overlay"

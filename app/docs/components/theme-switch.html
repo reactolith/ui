@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar - Reactolith UI</title>
+    <title>Theme Switch - Reactolith UI</title>
     <link rel="icon" href="../../icon.svg" type="image/svg+xml">
     <script type="module" src="../../app.ts"></script>
     <script>
@@ -236,7 +236,7 @@
                   <ui-sidebar-menu-button  size="sm" href="pagination.html">Pagination</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button is-active size="sm" href="sidebar.html">Sidebar</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="sidebar.html">Sidebar</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="tabs.html">Tabs</ui-sidebar-menu-button>
@@ -261,7 +261,7 @@
                   <ui-sidebar-menu-button  size="sm" href="theme-provider.html">Theme Provider</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="theme-switch.html">Theme Switch</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="theme-switch.html">Theme Switch</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="sonner.html">Sonner</ui-sidebar-menu-button>
@@ -423,93 +423,34 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://ui.shadcn.com/docs/components/base/sidebar" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">shadcn/ui docs</a>
+                <span class="text-xs bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2 py-1 rounded shrink-0">built-in</span>
               </div>
-              <h1 class="text-3xl font-bold tracking-tight">Sidebar</h1>
-              <p class="text-lg text-muted-foreground">A composable, themeable sidebar component for application navigation.</p>
+              <h1 class="text-3xl font-bold tracking-tight">Theme Switch</h1>
+              <p class="text-lg text-muted-foreground">A dropdown button for toggling between light, dark, and system theme. Requires a parent Theme Provider.</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
-              <div class="rounded-lg border bg-background overflow-hidden max-w-full">
-                    <iframe src="../examples/sidebar-inset.html" class="w-full h-[600px] border-0"></iframe>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
+                    <ui-theme-switch></ui-theme-switch>
                   </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-sidebar-provider&gt;
-  &lt;ui-sidebar variant=&quot;inset&quot; collapsible=&quot;icon&quot;&gt;
-    &lt;ui-sidebar-header&gt;
-      &lt;ui-sidebar-menu&gt;
-        &lt;ui-sidebar-menu-item&gt;
-          &lt;ui-sidebar-menu-button size=&quot;lg&quot;&gt;
-            &lt;span&gt;Acme Inc&lt;/span&gt;
-          &lt;/ui-sidebar-menu-button&gt;
-        &lt;/ui-sidebar-menu-item&gt;
-      &lt;/ui-sidebar-menu&gt;
-    &lt;/ui-sidebar-header&gt;
-    &lt;ui-sidebar-content&gt;
-      &lt;ui-sidebar-group&gt;
-        &lt;ui-sidebar-group-label&gt;Platform&lt;/ui-sidebar-group-label&gt;
-        &lt;ui-sidebar-group-content&gt;
-          &lt;ui-sidebar-menu&gt;
-            &lt;ui-sidebar-menu-item&gt;
-              &lt;ui-sidebar-menu-button is-active&gt;Dashboard&lt;/ui-sidebar-menu-button&gt;
-            &lt;/ui-sidebar-menu-item&gt;
-            &lt;ui-sidebar-menu-item&gt;
-              &lt;ui-sidebar-menu-button&gt;Projects&lt;/ui-sidebar-menu-button&gt;
-            &lt;/ui-sidebar-menu-item&gt;
-          &lt;/ui-sidebar-menu&gt;
-        &lt;/ui-sidebar-group-content&gt;
-      &lt;/ui-sidebar-group&gt;
-    &lt;/ui-sidebar-content&gt;
-    &lt;ui-sidebar-footer&gt;...&lt;/ui-sidebar-footer&gt;
-  &lt;/ui-sidebar&gt;
-  &lt;ui-sidebar-inset&gt;reactolith
-    &lt;header&gt;
-      &lt;ui-sidebar-trigger&gt;&lt;/ui-sidebar-trigger&gt;
-      &lt;ui-breadcrumb&gt;...&lt;/ui-breadcrumb&gt;
-    &lt;/header&gt;
-    &lt;main&gt;Your page content&lt;/main&gt;
-  &lt;/ui-sidebar-inset&gt;
-&lt;/ui-sidebar-provider&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;ui-theme-switch&gt;&lt;/ui-theme-switch&gt;</code></pre>
               </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Sub-components</h2>
               <div class="flex flex-wrap gap-2">
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-provider&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-header&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-footer&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-group&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-group-label&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-group-action&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-group-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-menu&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-menu-item&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-menu-button&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-menu-action&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-menu-badge&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-menu-skeleton&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-menu-sub&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-menu-sub-item&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-menu-sub-button&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-trigger&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-rail&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-inset&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-input&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-sidebar-separator&gt;</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-theme-switch&gt;</code>
               </div>
             </section>
 
-            <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
-            <div class="mt-6">
-              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-sidebar-provider&gt;</code></h3>
-              <div class="overflow-x-auto max-w-full">
-                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">defaultOpen</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">true</code></td><td class="py-2 text-muted-foreground">Default open state.</td></tr></tbody></table>
-              </div>
-            </div>
-            <div class="mt-6">
-              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-sidebar&gt;</code></h3>
-              <div class="overflow-x-auto max-w-full">
-                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">side</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;left&quot; | &quot;right&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;left&quot;</code></td><td class="py-2 text-muted-foreground">Which side.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">variant</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;sidebar&quot; | &quot;floating&quot; | &quot;inset&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;sidebar&quot;</code></td><td class="py-2 text-muted-foreground">Visual variant.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">collapsible</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;offcanvas&quot; | &quot;icon&quot; | &quot;none&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;offcanvas&quot;</code></td><td class="py-2 text-muted-foreground">Collapse behavior.</td></tr></tbody></table>
-              </div>
-            </div>
-            <div class="mt-6">
-              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-sidebar-menu-button&gt;</code> <span class="text-xs bg-blue-500/15 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded ml-2">sidebarLinkable wrapper</span></h3>
-              <div class="overflow-x-auto max-w-full">
-                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">href</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">URL to navigate to. Renders as a link when set. <span class="text-[10px] bg-blue-500/15 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded whitespace-nowrap">via sidebarLinkable</span></td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">isActive</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Whether active.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">tooltip</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string | TooltipContentProps</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Tooltip shown on hover when sidebar is collapsed.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">variant</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;default&quot; | &quot;outline&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;default&quot;</code></td><td class="py-2 text-muted-foreground">The visual style variant.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">size</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;default&quot; | &quot;sm&quot; | &quot;lg&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;default&quot;</code></td><td class="py-2 text-muted-foreground">The button size.</td></tr></tbody></table>
-              </div>
-            </div>
-            <div class="mt-6">
-              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-sidebar-menu-sub-button&gt;</code> <span class="text-xs bg-blue-500/15 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded ml-2">sidebarSubLinkable wrapper</span></h3>
-              <div class="overflow-x-auto max-w-full">
-                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">size</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;sm&quot; | &quot;md&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;md&quot;</code></td><td class="py-2 text-muted-foreground">The button size.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">isActive</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Whether active.</td></tr></tbody></table>
-              </div>
-            </div></section>
+            
 
             <section class="mb-10">
               <p class="text-sm text-muted-foreground">
