@@ -24,6 +24,7 @@ export function createShadcnLoader(modules: ModuleMap): ComponentLoader {
       "accordion-trigger": linkable,
       "toggle": linkable,
       "toggle-group-item": linkable,
+      "item": linkable,
 
       // href + close parent overlay
       "dropdown-menu-item": linkableClose,
