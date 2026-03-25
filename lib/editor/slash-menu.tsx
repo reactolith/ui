@@ -1,13 +1,16 @@
 /**
  * Slash command menu for notion-like block insertion.
  *
- * When the user types "/" at the beginning of a line, a menu appears
- * with available block types to insert. This is powered by
- * @platejs/slash-command's SlashPlugin.
+ * Works by observing the editor state (not intercepting DOM events).
+ * When the user types "/" the menu opens. Characters after "/" filter
+ * the list. Arrow keys navigate, Enter selects, Escape closes.
  */
 
 import * as React from "react"
-import { useEditorRef } from "platejs/react"
+import {
+  useEditorRef,
+  useEditorSelector,
+} from "platejs/react"
 import {
   BlockquotePlugin,
   HorizontalRulePlugin,
@@ -145,22 +148,67 @@ const SLASH_ITEMS: SlashMenuItem[] = [
 ]
 
 // ---------------------------------------------------------------------------
+// Helper: extract slash query from editor state
+// ---------------------------------------------------------------------------
+
+function getSlashQuery(editor: ReturnType<typeof useEditorRef>): string | null {
+  const { selection } = editor
+  if (!selection) return null
+
+  // Only works with collapsed selection (cursor, not range)
+  const isCollapsed = selection.anchor.path.join(",") === selection.focus.path.join(",")
+    && selection.anchor.offset === selection.focus.offset
+  if (!isCollapsed) return null
+
+  // Get the text of the current block up to the cursor
+  try {
+    const blockEntry = editor.api.block()
+    if (!blockEntry) return null
+
+    const [block] = blockEntry
+    const blockText = editor.api.string(blockEntry[1])
+    const cursorOffset = selection.anchor.offset
+
+    // Find text before cursor within the leaf
+    const leafText = blockText.slice(0, cursorOffset)
+
+    // Find the last "/" in the text
+    const slashIndex = leafText.lastIndexOf("/")
+    if (slashIndex === -1) return null
+
+    // "/" must be at start of block or preceded by whitespace
+    if (slashIndex > 0 && leafText[slashIndex - 1] !== " " && leafText[slashIndex - 1] !== "\n") {
+      return null
+    }
+
+    return leafText.slice(slashIndex + 1)
+  } catch {
+    return null
+  }
+}
+
+// ---------------------------------------------------------------------------
 // SlashMenu component
 // ---------------------------------------------------------------------------
 
 export interface SlashMenuProps {
-  /** Filter which items appear. Defaults to all. */
-  items?: SlashMenuItem[]
   className?: string
 }
 
 export function SlashMenu({ className }: SlashMenuProps) {
   const editor = useEditorRef()
-  const [open, setOpen] = React.useState(false)
-  const [search, setSearch] = React.useState("")
   const [selectedIndex, setSelectedIndex] = React.useState(0)
   const menuRef = React.useRef<HTMLDivElement>(null)
-  const triggerRef = React.useRef<{ x: number; y: number } | null>(null)
+  const [position, setPosition] = React.useState<{ x: number; y: number } | null>(null)
+
+  // Read the slash query from editor state reactively
+  const slashQuery = useEditorSelector(
+    () => getSlashQuery(editor),
+    [editor],
+  )
+
+  const open = slashQuery !== null
+  const search = slashQuery ?? ""
 
   // Filter items by search
   const filteredItems = React.useMemo(() => {
@@ -173,86 +221,93 @@ export function SlashMenu({ className }: SlashMenuProps) {
     )
   }, [search])
 
-  // Listen for "/" keypress to open menu
+  // Update position when menu opens
   React.useEffect(() => {
-    const el = document.querySelector<HTMLElement>("[data-slate-editor]")
-    if (!el) return
+    if (!open) {
+      setPosition(null)
+      return
+    }
+    // Get cursor position from DOM selection
+    const domSel = window.getSelection()
+    if (domSel && domSel.rangeCount > 0) {
+      const range = domSel.getRangeAt(0)
+      const rect = range.getBoundingClientRect()
+      setPosition({ x: rect.left, y: rect.bottom })
+    }
+  }, [open])
+
+  // Reset selected index when filter changes
+  React.useEffect(() => {
+    setSelectedIndex(0)
+  }, [search])
+
+  // Handle keyboard navigation when menu is open
+  React.useEffect(() => {
+    if (!open) return
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "/" && !open) {
-        // Check if we're at the start of a block or the block is empty
-        const sel = window.getSelection()
-        if (sel && sel.rangeCount > 0) {
-          const range = sel.getRangeAt(0)
-          const rect = range.getBoundingClientRect()
-          triggerRef.current = { x: rect.left, y: rect.bottom }
-          setOpen(true)
-          setSearch("")
-          setSelectedIndex(0)
-        }
-      }
-
-      if (open) {
-        if (e.key === "Escape") {
-          e.preventDefault()
-          setOpen(false)
-        } else if (e.key === "ArrowDown") {
-          e.preventDefault()
-          setSelectedIndex((i) => Math.min(i + 1, filteredItems.length - 1))
-        } else if (e.key === "ArrowUp") {
-          e.preventDefault()
-          setSelectedIndex((i) => Math.max(i - 1, 0))
-        } else if (e.key === "Enter" && filteredItems[selectedIndex]) {
+      if (e.key === "Escape") {
+        e.preventDefault()
+        // Close by deleting the "/" trigger
+        closeMenu()
+      } else if (e.key === "ArrowDown") {
+        e.preventDefault()
+        setSelectedIndex((i) => Math.min(i + 1, filteredItems.length - 1))
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault()
+        setSelectedIndex((i) => Math.max(i - 1, 0))
+      } else if (e.key === "Enter") {
+        if (filteredItems[selectedIndex]) {
           e.preventDefault()
           executeItem(filteredItems[selectedIndex])
-        } else if (e.key === "Backspace") {
-          if (search.length === 0) {
-            setOpen(false)
-          } else {
-            setSearch((s) => s.slice(0, -1))
-          }
-        } else if (e.key.length === 1 && !e.ctrlKey && !e.metaKey) {
-          e.preventDefault()
-          setSearch((s) => s + e.key)
-          setSelectedIndex(0)
         }
       }
     }
 
-    el.addEventListener("keydown", handleKeyDown)
-    return () => el.removeEventListener("keydown", handleKeyDown)
-  }, [open, search, filteredItems, selectedIndex]) // eslint-disable-line react-hooks/exhaustive-deps
+    // Use capture phase to intercept before Slate
+    document.addEventListener("keydown", handleKeyDown, true)
+    return () => document.removeEventListener("keydown", handleKeyDown, true)
+  }, [open, filteredItems, selectedIndex]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Close on click outside
   React.useEffect(() => {
     if (!open) return
     const handleClick = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setOpen(false)
+        // Don't close - let the editor handle the click naturally
+        // The slash query will become null when cursor moves
       }
     }
     document.addEventListener("mousedown", handleClick)
     return () => document.removeEventListener("mousedown", handleClick)
   }, [open])
 
+  const closeMenu = React.useCallback(() => {
+    // Delete "/" + search text by using deleteBackward for each character
+    const charsToDelete = 1 + search.length // "/" + search
+    for (let i = 0; i < charsToDelete; i++) {
+      editor.tf.deleteBackward("character")
+    }
+  }, [editor, search])
+
   const executeItem = React.useCallback(
     (item: SlashMenuItem) => {
-      setOpen(false)
-      // Delete the "/" trigger character
-      editor.tf.deleteBackward("character")
-      // Delete search text
-      for (let i = 0; i < search.length; i++) {
+      // Delete "/" + search text, then execute the action
+      const charsToDelete = 1 + search.length
+      for (let i = 0; i < charsToDelete; i++) {
         editor.tf.deleteBackward("character")
       }
-      // Execute the action
-      item.action(editor)
+      // Use setTimeout to let Slate settle before applying the transform
+      setTimeout(() => {
+        item.action(editor)
+        // Refocus the editor
+        editor.tf.focus()
+      }, 0)
     },
     [editor, search],
   )
 
-  if (!open || filteredItems.length === 0) return null
-
-  const pos = triggerRef.current ?? { x: 0, y: 0 }
+  if (!open || filteredItems.length === 0 || !position) return null
 
   return (
     <div
@@ -263,8 +318,8 @@ export function SlashMenu({ className }: SlashMenuProps) {
         className,
       )}
       style={{
-        top: pos.y + 4,
-        left: pos.x,
+        top: position.y + 4,
+        left: position.x,
       }}
     >
       {search && (
