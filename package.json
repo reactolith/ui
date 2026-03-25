@@ -33,6 +33,7 @@
     "dev": "vite dev",
     "build": "vite build",
     "build:lib": "vite build --config vite.lib.config.ts",
+    "build:release": "npm install --no-fund --no-audit && npm run typecheck && npm run build:lib --if-present",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "generate-web-types": "tsx scripts/generate-web-types.ts"
