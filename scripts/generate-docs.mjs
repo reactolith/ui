@@ -772,7 +772,7 @@ const components = [
     category: "Data Display",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/item",
     subComponents: [
-      { tag: "ui-item", props: [] },
+      { tag: "ui-item", props: [{ name: "href", type: "string", default: "—", description: "URL to navigate to. Renders as a link when set.", source: "linkable" }], enhancedBy: "linkable behavior" },
       { tag: "ui-item-header", props: [] },
       { tag: "ui-item-media", props: [] },
       { tag: "ui-item-content", props: [] },
