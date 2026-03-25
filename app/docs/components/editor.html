@@ -411,9 +411,47 @@
             </div>
 
             <section class="mb-10">
-              <h2 class="text-xl font-semibold mb-4">Preview</h2>
+              <h2 class="text-xl font-semibold mb-4">Inline Editor</h2>
+              <p class="text-sm text-muted-foreground mb-3">Only inline text formatting (bold, italic, underline, etc.) — no block types. Ideal for single-line fields like titles or short descriptions.</p>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                <ui-editor toolbar="standard" placeholder="Start writing..." min-height="200px"></ui-editor>
+                <ui-editor toolbar="inline" plugins="inline" placeholder="Format text inline..." min-height="60px"></ui-editor>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-2">
+                <pre class="p-4 text-sm"><code>&lt;ui-editor toolbar=&quot;inline&quot; plugins=&quot;inline&quot; placeholder=&quot;Format text inline...&quot;&gt;&lt;/ui-editor&gt;</code></pre>
+              </div>
+            </section>
+
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Standard Editor</h2>
+              <p class="text-sm text-muted-foreground mb-3">Block-level editing with headings, lists, quotes, code blocks. Includes a slash menu (type <code class="text-xs bg-muted px-1.5 py-0.5 rounded">/</code> to insert blocks). The default preset.</p>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
+                <ui-editor toolbar="standard" plugins="standard" placeholder="Type / for block menu..." min-height="200px"></ui-editor>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-2">
+                <pre class="p-4 text-sm"><code>&lt;ui-editor name=&quot;content&quot; format=&quot;html&quot;&gt;&lt;/ui-editor&gt;
+&lt;!-- or explicitly: toolbar=&quot;standard&quot; plugins=&quot;standard&quot; --&gt;</code></pre>
+              </div>
+            </section>
+
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Full Editor</h2>
+              <p class="text-sm text-muted-foreground mb-3">All available features including images, tables, callouts, toggles, code highlighting, superscript/subscript, and more.</p>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
+                <ui-editor toolbar="full" plugins="full" placeholder="Type / for block menu..." min-height="250px"></ui-editor>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-2">
+                <pre class="p-4 text-sm"><code>&lt;ui-editor toolbar=&quot;full&quot; plugins=&quot;full&quot; min-height=&quot;250px&quot;&gt;&lt;/ui-editor&gt;</code></pre>
+              </div>
+            </section>
+
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">No Toolbar (Slash-only)</h2>
+              <p class="text-sm text-muted-foreground mb-3">Clean writing experience without a toolbar. All block types are still available via the slash menu.</p>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
+                <ui-editor toolbar="none" plugins="standard" placeholder="Type / to insert blocks..." min-height="150px"></ui-editor>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-2">
+                <pre class="p-4 text-sm"><code>&lt;ui-editor toolbar=&quot;none&quot; placeholder=&quot;Type / to insert blocks...&quot;&gt;&lt;/ui-editor&gt;</code></pre>
               </div>
             </section>
 
@@ -421,22 +459,19 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;!-- Standard editor with form sync --&gt;
-&lt;ui-editor name=&quot;content&quot; format=&quot;html&quot; toolbar=&quot;standard&quot;&gt;&lt;/ui-editor&gt;
+&lt;ui-editor name=&quot;content&quot; format=&quot;html&quot;&gt;&lt;/ui-editor&gt;
 
-&lt;!-- Minimal toolbar --&gt;
-&lt;ui-editor name=&quot;body&quot; toolbar=&quot;minimal&quot; format=&quot;markdown&quot;&gt;&lt;/ui-editor&gt;
+&lt;!-- Inline-only (no blocks) --&gt;
+&lt;ui-editor toolbar=&quot;inline&quot; plugins=&quot;inline&quot; name=&quot;title&quot;&gt;&lt;/ui-editor&gt;
 
 &lt;!-- Full-featured editor --&gt;
-&lt;ui-editor name=&quot;content&quot; toolbar=&quot;full&quot; plugins=&quot;full&quot; min-height=&quot;300px&quot;&gt;&lt;/ui-editor&gt;
+&lt;ui-editor toolbar=&quot;full&quot; plugins=&quot;full&quot; name=&quot;content&quot; min-height=&quot;300px&quot;&gt;&lt;/ui-editor&gt;
 
 &lt;!-- Custom toolbar features --&gt;
-&lt;ui-editor name=&quot;content&quot; toolbar-features=&quot;bold,italic,link,heading&quot;&gt;&lt;/ui-editor&gt;
+&lt;ui-editor toolbar-features=&quot;bold,italic,link,heading&quot; name=&quot;content&quot;&gt;&lt;/ui-editor&gt;
 
 &lt;!-- Read-only display --&gt;
-&lt;ui-editor value=&quot;&amp;lt;p&amp;gt;Hello world&amp;lt;/p&amp;gt;&quot; format=&quot;html&quot; read-only&gt;&lt;/ui-editor&gt;
-
-&lt;!-- No toolbar --&gt;
-&lt;ui-editor name=&quot;notes&quot; toolbar=&quot;none&quot; placeholder=&quot;Quick note...&quot;&gt;&lt;/ui-editor&gt;</code></pre>
+&lt;ui-editor value=&quot;&amp;lt;p&amp;gt;Hello world&amp;lt;/p&amp;gt;&quot; format=&quot;html&quot; read-only&gt;&lt;/ui-editor&gt;</code></pre>
               </div>
             </section>
 
@@ -463,9 +498,9 @@
               <h2 class="text-xl font-semibold mb-4">Toolbar Presets</h2>
               <div class="overflow-x-auto max-w-full">
                 <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Preset</th><th class="text-left py-2 font-medium">Features</th></tr></thead><tbody>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">minimal</code></td><td class="py-2 text-muted-foreground">Bold, Italic, Link</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">standard</code></td><td class="py-2 text-muted-foreground">Undo/Redo, Heading, Bold, Italic, Underline, Strikethrough, Lists, Link, Blockquote, Code Block, Horizontal Rule</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">full</code></td><td class="py-2 text-muted-foreground">All standard features + Code, Superscript, Subscript, Highlight, Image, Table, Callout, Toggle</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">inline</code></td><td class="py-2 text-muted-foreground">Bold, Italic, Underline, Strikethrough, Code, Link</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">standard</code></td><td class="py-2 text-muted-foreground">Undo/Redo, Heading, Bold, Italic, Underline, Strikethrough, Lists, Link, Blockquote, Code Block, Horizontal Rule + Slash Menu</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">full</code></td><td class="py-2 text-muted-foreground">All standard features + Code, Superscript, Subscript, Highlight, Image, Table, Callout, Toggle + Slash Menu</td></tr>
                 <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">none</code></td><td class="py-2 text-muted-foreground">No toolbar rendered</td></tr>
                 </tbody></table>
               </div>
@@ -475,11 +510,28 @@
               <h2 class="text-xl font-semibold mb-4">Plugin Presets</h2>
               <div class="overflow-x-auto max-w-full">
                 <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Preset</th><th class="text-left py-2 font-medium">Plugins included</th></tr></thead><tbody>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">minimal</code></td><td class="py-2 text-muted-foreground">Basic Marks, Heading, List, Link, Markdown</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">inline</code></td><td class="py-2 text-muted-foreground">Basic Marks, Link, Markdown. No block types — inline formatting only.</td></tr>
                 <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">standard</code></td><td class="py-2 text-muted-foreground">Basic Marks, Basic Blocks, Highlight, List, Link, Image, Table, Code Block, Markdown, Autoformat</td></tr>
                 <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">full</code></td><td class="py-2 text-muted-foreground">All standard plugins + Subscript, Superscript, Callout, Toggle, Indent</td></tr>
                 </tbody></table>
               </div>
+            </section>
+
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Slash Menu</h2>
+              <p class="text-muted-foreground mb-4">In <code class="text-xs bg-muted px-1.5 py-0.5 rounded">standard</code> and <code class="text-xs bg-muted px-1.5 py-0.5 rounded">full</code> presets, typing <code class="text-xs bg-muted px-1.5 py-0.5 rounded">/</code> opens a Notion-like block menu. Navigate with arrow keys, select with Enter, filter by typing. Available blocks:</p>
+              <div class="flex flex-wrap gap-1.5 mb-2">
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Text</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Heading 1-3</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Bullet List</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Numbered List</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Quote</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Code</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Divider</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Table</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">Image</code>
+              </div>
+              <p class="text-sm text-muted-foreground">The slash menu is disabled for the <code class="text-xs bg-muted px-1.5 py-0.5 rounded">inline</code> preset since it only supports inline formatting.</p>
             </section>
 
             <section class="mb-10">
@@ -531,9 +583,9 @@ function CustomEditor() {
                 <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">format</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;html&quot; | &quot;json&quot; | &quot;markdown&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;html&quot;</code></td><td class="py-2 text-muted-foreground">Content format for both initial value parsing and form sync serialization.</td></tr>
                 <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Hidden input name for form submission. When set, syncs editor content to a hidden <code class="text-xs">&lt;input&gt;</code>.</td></tr>
                 <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">form</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Form ID to associate with (like the native <code class="text-xs">form</code> attribute on inputs).</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">toolbar</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;full&quot; | &quot;standard&quot; | &quot;minimal&quot; | &quot;none&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;standard&quot;</code></td><td class="py-2 text-muted-foreground">Toolbar preset. Determines which formatting buttons are shown.</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">toolbar</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;full&quot; | &quot;standard&quot; | &quot;inline&quot; | &quot;none&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;standard&quot;</code></td><td class="py-2 text-muted-foreground">Toolbar preset. Determines which formatting buttons are shown.</td></tr>
                 <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">toolbar-features</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Comma-separated toolbar features. Overrides preset. E.g. <code class="text-xs">&quot;bold,italic,link,heading&quot;</code>.</td></tr>
-                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">plugins</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;full&quot; | &quot;standard&quot; | &quot;minimal&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;standard&quot;</code></td><td class="py-2 text-muted-foreground">Plugin preset. Determines which editing features are available.</td></tr>
+                <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">plugins</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;full&quot; | &quot;standard&quot; | &quot;inline&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;standard&quot;</code></td><td class="py-2 text-muted-foreground">Plugin preset. Determines which editing features are available.</td></tr>
                 <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">placeholder</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;Start writing...&quot;</code></td><td class="py-2 text-muted-foreground">Placeholder text shown when the editor is empty.</td></tr>
                 <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">read-only</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Read-only mode. Hides toolbar and disables editing.</td></tr>
                 <tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">min-height</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;150px&quot;</code></td><td class="py-2 text-muted-foreground">Minimum editor height (CSS value).</td></tr>

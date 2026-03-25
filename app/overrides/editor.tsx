@@ -41,6 +41,7 @@ import type { EditorProps } from "@/lib/editor/types"
 import { getPluginsForPreset, resolveToolbarFeatures } from "@/lib/editor/plugins"
 import { getEditorComponents } from "@/lib/editor/components"
 import { EditorToolbar } from "@/lib/editor/toolbar"
+import { SlashMenu } from "@/lib/editor/slash-menu"
 import { useEditorFormSync, deserializeValue } from "@/lib/editor/use-editor-form"
 import { cn } from "@/lib/utils"
 
@@ -66,6 +67,7 @@ export default function Editor({
 }: EditorProps) {
   const toolbarItems = resolveToolbarFeatures(toolbar, toolbarFeatures)
   const components = React.useMemo(() => getEditorComponents(), [])
+  const showSlashMenu = pluginPreset !== "inline" && !readOnly
 
   const editor = usePlateEditor({
     plugins: getPluginsForPreset(pluginPreset),
@@ -129,6 +131,9 @@ export default function Editor({
           />
         </div>
       </div>
+
+      {/* Slash command menu (notion-like block insertion) */}
+      {showSlashMenu && <SlashMenu />}
 
       {/* Hidden form input */}
       {inputProps && <input {...inputProps} />}

@@ -13,7 +13,7 @@ export type EditorFormat = "html" | "json" | "markdown"
 // ---------------------------------------------------------------------------
 
 /** Built-in toolbar presets */
-export type ToolbarPreset = "full" | "standard" | "minimal" | "none"
+export type ToolbarPreset = "full" | "standard" | "inline" | "none"
 
 /** Individual toolbar features that can be toggled */
 export type ToolbarFeature =
@@ -50,7 +50,7 @@ export type ToolbarFeature =
 // ---------------------------------------------------------------------------
 
 /** Plugin preset determines which editing features are available */
-export type PluginPreset = "full" | "standard" | "minimal"
+export type PluginPreset = "full" | "standard" | "inline"
 
 // ---------------------------------------------------------------------------
 // Editor component props
@@ -74,13 +74,13 @@ export interface EditorProps {
   form?: string
 
   // --- Toolbar ---
-  /** Toolbar preset: "full" | "standard" | "minimal" | "none". Default: "standard" */
+  /** Toolbar preset: "full" | "standard" | "inline" | "none". Default: "standard" */
   toolbar?: ToolbarPreset
   /** Comma-separated toolbar features (overrides preset). E.g. "bold,italic,link,heading" */
   toolbarFeatures?: string
 
   // --- Plugins ---
-  /** Plugin preset: "full" | "standard" | "minimal". Default: "standard" */
+  /** Plugin preset: "full" | "standard" | "inline". Default: "standard" */
   plugins?: PluginPreset
 
   // --- Appearance ---
