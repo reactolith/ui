@@ -418,7 +418,7 @@
   <ui-ai-agent-content>
     <ui-ai-agent-instructions>Search the web for relevant information and summarize findings.</ui-ai-agent-instructions>
     <ui-ai-agent-tools>
-      <ui-ai-agent-tool tool='{"name":"web_search","description":"Search the web","parameters":[]}'></ui-ai-agent-tool>
+      <ui-ai-agent-tool value="web_search" json-tool='{"description":"Search the web","inputSchema":{"type":"object","properties":{"query":{"type":"string"}}}}'></ui-ai-agent-tool>
     </ui-ai-agent-tools>
     <ui-ai-agent-output schema='{"type":"object","properties":{"summary":{"type":"string"}}}'></ui-ai-agent-output>
   </ui-ai-agent-content>
@@ -434,7 +434,7 @@
   &lt;ui-ai-agent-content&gt;
     &lt;ui-ai-agent-instructions&gt;Search the web for relevant information and summarize findings.&lt;/ui-ai-agent-instructions&gt;
     &lt;ui-ai-agent-tools&gt;
-      &lt;ui-ai-agent-tool tool='{&quot;name&quot;:&quot;web_search&quot;,&quot;description&quot;:&quot;Search the web&quot;,&quot;parameters&quot;:[]}'&gt;&lt;/ui-ai-agent-tool&gt;
+      &lt;ui-ai-agent-tool value=&quot;web_search&quot; json-tool='{&quot;description&quot;:&quot;Search the web&quot;,&quot;inputSchema&quot;:{&quot;type&quot;:&quot;object&quot;,&quot;properties&quot;:{&quot;query&quot;:{&quot;type&quot;:&quot;string&quot;}}}}'&gt;&lt;/ui-ai-agent-tool&gt;
     &lt;/ui-ai-agent-tools&gt;
     &lt;ui-ai-agent-output schema='{&quot;type&quot;:&quot;object&quot;,&quot;properties&quot;:{&quot;summary&quot;:{&quot;type&quot;:&quot;string&quot;}}}'&gt;&lt;/ui-ai-agent-output&gt;
   &lt;/ui-ai-agent-content&gt;
