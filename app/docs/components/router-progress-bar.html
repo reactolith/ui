@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Route Progress Bar - Reactolith UI</title>
+    <title>Router Progress Bar - Reactolith UI</title>
     <link rel="icon" href="../../icon.svg" type="image/svg+xml">
     <script type="module" src="../../app.ts"></script>
     <script>
@@ -252,10 +252,10 @@
                   <ui-sidebar-menu-button  size="sm" href="icon.html">Icon</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="route-error.html">Route Error</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="router-error.html">Router Error</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button is-active size="sm" href="route-progress-bar.html">Route Progress Bar</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="router-progress-bar.html">Router Progress Bar</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="theme-provider.html">Theme Provider</ui-sidebar-menu-button>
@@ -425,7 +425,7 @@
               <div class="flex items-start justify-end gap-3">
                 <span class="text-xs bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2 py-1 rounded shrink-0">built-in</span>
               </div>
-              <h1 class="text-3xl font-bold tracking-tight">Route Progress Bar</h1>
+              <h1 class="text-3xl font-bold tracking-tight">Router Progress Bar</h1>
               <p class="text-lg text-muted-foreground">A thin progress bar at the top of the viewport that animates during Reactolith route transitions.</p>
             </div>
 
@@ -433,7 +433,7 @@
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
                     <!-- Place once in your layout -->
-<ui-route-progress-bar></ui-route-progress-bar>
+<ui-router-progress-bar></ui-router-progress-bar>
                   </div>
             </section>
 
@@ -441,20 +441,20 @@
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;!-- Place once in your layout --&gt;
-&lt;ui-route-progress-bar&gt;&lt;/ui-route-progress-bar&gt;</code></pre>
+&lt;ui-router-progress-bar&gt;&lt;/ui-router-progress-bar&gt;</code></pre>
               </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Sub-components</h2>
               <div class="flex flex-wrap gap-2">
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-route-progress-bar&gt;</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-router-progress-bar&gt;</code>
               </div>
             </section>
 
             <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
             <div class="mt-6">
-              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-route-progress-bar&gt;</code></h3>
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-router-progress-bar&gt;</code></h3>
               <div class="overflow-x-auto max-w-full">
                 <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">className</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Additional CSS classes for the container.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">completeDelayMs</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">250</code></td><td class="py-2 text-muted-foreground">Milliseconds to wait before hiding after reaching 100%.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">maxWhileLoading</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">85</code></td><td class="py-2 text-muted-foreground">Maximum percentage to reach while still loading.</td></tr></tbody></table>
               </div>

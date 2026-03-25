@@ -11,8 +11,8 @@ const BUILTIN_COMPONENTS: Record<string, () => Promise<{ default: ComponentType<
   "sonner": () => import("../components/sonner"),
   "theme-switch": () => import("../components/theme-switch"),
   "theme-provider": () => import("../components/theme-provider"),
-  "route-progress-bar": () => import("../components/route-progress-bar"),
-  "route-error": () => import("../components/route-error"),
+  "router-progress-bar": () => import("../components/route-progress-bar"),
+  "router-error": () => import("../components/route-error"),
   "icon": () => import("../components/icon"),
 }
 

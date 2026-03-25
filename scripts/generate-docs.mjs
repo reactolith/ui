@@ -2826,30 +2826,30 @@ const components = [
 </div>`,
   },
   {
-    name: "Route Error",
-    slug: "route-error",
+    name: "Router Error",
+    slug: "router-error",
     description: "Displays navigation errors in a dialog overlay. Automatically listens to Reactolith router errors.",
     category: "Built-in",
     subComponents: [
-      { tag: "ui-route-error", props: [] },
+      { tag: "ui-router-error", props: [] },
     ],
     example: `<!-- Place once in your layout -->
-<ui-route-error></ui-route-error>`,
+<ui-router-error></ui-router-error>`,
   },
   {
-    name: "Route Progress Bar",
-    slug: "route-progress-bar",
+    name: "Router Progress Bar",
+    slug: "router-progress-bar",
     description: "A thin progress bar at the top of the viewport that animates during Reactolith route transitions.",
     category: "Built-in",
     subComponents: [
-      { tag: "ui-route-progress-bar", props: [
+      { tag: "ui-router-progress-bar", props: [
         { name: "className", type: "string", default: "—", description: "Additional CSS classes for the container." },
         { name: "completeDelayMs", type: "number", default: "250", description: "Milliseconds to wait before hiding after reaching 100%." },
         { name: "maxWhileLoading", type: "number", default: "85", description: "Maximum percentage to reach while still loading." },
       ] },
     ],
     example: `<!-- Place once in your layout -->
-<ui-route-progress-bar></ui-route-progress-bar>`,
+<ui-router-progress-bar></ui-router-progress-bar>`,
   },
   {
     name: "Theme Provider",
