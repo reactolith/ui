@@ -203,7 +203,12 @@ export const selectRegister: WrapperDef = {
 }
 
 /** Inner component for async combobox (src prop) — needs hooks */
-function AsyncCombobox({ C, src, debounce: debounceMs = 300, "min-length": minLen = 2, children, ...props }: any) {
+function AsyncCombobox({
+  C, src, debounce: debounceMs = 300, "min-length": minLen = 2,
+  ComboboxInput, ComboboxContent, ComboboxList, ComboboxItem, ComboboxEmpty,
+  placeholder, showClear, showTrigger, userChildren,
+  ...props
+}: any) {
   const delay = typeof debounceMs === "string" ? Number(debounceMs) : debounceMs
   const minLength = typeof minLen === "string" ? Number(minLen) : minLen
 
@@ -211,9 +216,9 @@ function AsyncCombobox({ C, src, debounce: debounceMs = 300, "min-length": minLe
   const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)
   const abortRef = React.useRef<AbortController | null>(null)
 
-  const handleInputValueChange = React.useCallback(
-    (value: string) => {
-      props.onInputValueChange?.(value)
+  const handleChange = React.useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value
 
       if (timerRef.current) clearTimeout(timerRef.current)
       if (abortRef.current) abortRef.current.abort()
@@ -234,7 +239,7 @@ function AsyncCombobox({ C, src, debounce: debounceMs = 300, "min-length": minLe
         }
       }, delay)
     },
-    [src, delay, minLength, props.onInputValueChange],
+    [src, delay, minLength],
   )
 
   React.useEffect(() => {
@@ -244,23 +249,46 @@ function AsyncCombobox({ C, src, debounce: debounceMs = 300, "min-length": minLe
     }
   }, [])
 
-  const hasObjects = items.length > 0 && typeof items[0] === "object"
-
-  return (
-    <ComboboxItemsContext.Provider value={items}>
-      <C
-        items={items}
-        filterOptions={null}
-        onInputValueChange={handleInputValueChange}
-        {...(hasObjects
-          ? { getOptionAsString: (item: ComboboxItemShape) => typeof item === "string" ? item : item.label }
-          : {})}
-        {...props}
-      >
-        {children}
-      </C>
-    </ComboboxItemsContext.Provider>
+  const resolvedChildren = userChildren ?? (
+    ComboboxInput && ComboboxContent && ComboboxList ? (
+      <>
+        <ComboboxInput
+          placeholder={placeholder}
+          showClear={showClear}
+          showTrigger={showTrigger}
+          onChange={handleChange}
+        />
+        <ComboboxContent>
+          <ComboboxList>
+            {items.map((item: ComboboxItemShape) => {
+              const value = typeof item === "string" ? item : item.value
+              const label = typeof item === "string" ? item : item.label
+              const description = typeof item === "object" ? item.description : undefined
+              const suffix = typeof item === "object" ? item.suffix : undefined
+              return (
+                <ComboboxItem key={value} value={label}>
+                  {description ? (
+                    <Item size="xs" className="p-0">
+                      <ItemContent>
+                        <ItemTitle className="whitespace-nowrap">{label}</ItemTitle>
+                        <ItemDescription>{description}</ItemDescription>
+                      </ItemContent>
+                      {suffix && <span className="ml-auto text-xs text-muted-foreground tabular-nums">{suffix}</span>}
+                    </Item>
+                  ) : suffix ? (
+                    <>{label}<span className="ml-auto text-xs text-muted-foreground tabular-nums">{suffix}</span></>
+                  ) : label}
+                </ComboboxItem>
+              )
+            })}
+            {items.length === 0 && ComboboxEmpty && <ComboboxEmpty>No results found.</ComboboxEmpty>}
+          </ComboboxList>
+        </ComboboxContent>
+      </>
+    ) : undefined
   )
+
+  return <C {...props}>{resolvedChildren}</C>
 }
 
 const SRC_ATTR: WebTypeAttribute = {
@@ -317,6 +345,7 @@ export const comboboxProvider: WrapperDef = {
     const ComboboxInput = mod.ComboboxInput as ComponentType<any>
     const ComboboxContent = mod.ComboboxContent as ComponentType<any>
     const ComboboxList = mod.ComboboxList as ComponentType<any>
+    const ComboboxItem = mod.ComboboxItem as ComponentType<any>
     const ComboboxEmpty = mod.ComboboxEmpty as ComponentType<any>
 
     return ({
@@ -341,7 +370,21 @@ export const comboboxProvider: WrapperDef = {
       )
 
       if (src) {
-        return <AsyncCombobox C={C} src={src} debounce={debounce} min-length={minLength} children={resolvedChildren} {...props} />
+        return (
+          <AsyncCombobox
+            C={C} src={src} debounce={debounce} min-length={minLength}
+            ComboboxInput={ComboboxInput}
+            ComboboxContent={ComboboxContent}
+            ComboboxList={ComboboxList}
+            ComboboxItem={ComboboxItem}
+            ComboboxEmpty={ComboboxEmpty}
+            placeholder={placeholder}
+            showClear={parseBoolAttr(showClearAttr, false)}
+            showTrigger={parseBoolAttr(showTriggerAttr, true)}
+            userChildren={children}
+            {...props}
+          />
+        )
       }
       if (!items) return <C {...props}>{resolvedChildren}</C>
       const hasObjects = items.length > 0 && typeof items[0] === "object"
@@ -364,6 +407,31 @@ export const comboboxProvider: WrapperDef = {
 }
 
 /** Combobox list that auto-renders items from context */
+function renderComboboxItem(ComboboxItem: ComponentType<any>, item: ComboboxItemShape) {
+  const value = typeof item === "string" ? item : item.value
+  const label = typeof item === "string" ? item : item.label
+  const description = typeof item === "object" ? item.description : undefined
+  const suffix = typeof item === "object" ? item.suffix : undefined
+  return (
+    <ComboboxItem key={value} value={item}>
+      {description ? (
+        <Item size="xs" className="p-0">
+          <ItemContent>
+            <ItemTitle className="whitespace-nowrap">{label}</ItemTitle>
+            <ItemDescription>{description}</ItemDescription>
+          </ItemContent>
+          {suffix && <span className="ml-auto text-xs text-muted-foreground tabular-nums">{suffix}</span>}
+        </Item>
+      ) : suffix ? (
+        <>
+          {label}
+          <span className="ml-auto text-xs text-muted-foreground tabular-nums">{suffix}</span>
+        </>
+      ) : label}
+    </ComboboxItem>
+  )
+}
+
 export const comboboxListRenderer: WrapperDef = {
   fn: (C, mod) => {
     const ComboboxItem = mod.ComboboxItem as ComponentType<any>
@@ -372,30 +440,7 @@ export const comboboxListRenderer: WrapperDef = {
       if (!items || !ComboboxItem) return <C {...props}>{children}</C>
       return (
         <C {...props}>
-          {(item: ComboboxItemShape) => {
-            const value = typeof item === "string" ? item : item.value
-            const label = typeof item === "string" ? item : item.label
-            const description = typeof item === "object" ? item.description : undefined
-            const suffix = typeof item === "object" ? item.suffix : undefined
-            return (
-              <ComboboxItem key={value} value={item}>
-                {description ? (
-                  <Item size="xs" className="p-0">
-                    <ItemContent>
-                      <ItemTitle className="whitespace-nowrap">{label}</ItemTitle>
-                      <ItemDescription>{description}</ItemDescription>
-                    </ItemContent>
-                    {suffix && <span className="ml-auto text-xs text-muted-foreground tabular-nums">{suffix}</span>}
-                  </Item>
-                ) : suffix ? (
-                  <>
-                    {label}
-                    <span className="ml-auto text-xs text-muted-foreground tabular-nums">{suffix}</span>
-                  </>
-                ) : label}
-              </ComboboxItem>
-            )
-          }}
+          {(item: ComboboxItemShape) => renderComboboxItem(ComboboxItem, item)}
         </C>
       )
     }

@@ -38,7 +38,8 @@
       "Bash(open:*)",
       "Bash(xargs sed:*)",
       "Bash(sed -i '' 's|<div id=\"\"reactolith-app\"\">|<div id=\"\"reactolith-app\"\">\\\\n<ui-theme-provider storage-key=\"\"theme\"\">|g' /Users/franzwilding/Development/reactolith-ui/app/index.html)",
-      "Bash(sed -i '' 's|</ui-sidebar-provider>|</ui-sidebar-provider>\\\\n</ui-theme-provider>|g' /Users/franzwilding/Development/reactolith-ui/app/index.html)"
+      "Bash(sed -i '' 's|</ui-sidebar-provider>|</ui-sidebar-provider>\\\\n</ui-theme-provider>|g' /Users/franzwilding/Development/reactolith-ui/app/index.html)",
+      "Bash(ps:*)"
     ]
   }
 }

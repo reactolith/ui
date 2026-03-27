@@ -1,0 +1,17 @@
+[
+  {"value": "typescript", "label": "TypeScript", "suffix": "TS"},
+  {"value": "javascript", "label": "JavaScript", "suffix": "JS"},
+  {"value": "python", "label": "Python", "suffix": "PY"},
+  {"value": "rust", "label": "Rust", "suffix": "RS"},
+  {"value": "go", "label": "Go", "suffix": "GO"},
+  {"value": "java", "label": "Java", "suffix": "JVM"},
+  {"value": "kotlin", "label": "Kotlin", "suffix": "KT"},
+  {"value": "swift", "label": "Swift", "suffix": "SW"},
+  {"value": "ruby", "label": "Ruby", "suffix": "RB"},
+  {"value": "php", "label": "PHP", "suffix": "PHP"},
+  {"value": "csharp", "label": "C#", "suffix": "CS"},
+  {"value": "cpp", "label": "C++", "suffix": "CPP"},
+  {"value": "elixir", "label": "Elixir", "suffix": "EX"},
+  {"value": "haskell", "label": "Haskell", "suffix": "HS"},
+  {"value": "scala", "label": "Scala", "suffix": "SC"}
+]

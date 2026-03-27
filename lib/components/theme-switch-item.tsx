@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Sun, Moon, Monitor } from "lucide-react"
-import { useTheme, type UiTheme } from "./theme-provider"
+import { useTheme, type UiTheme } from "./theme-context"
 import {
   DropdownMenuSub,
   DropdownMenuSubTrigger,

@@ -1,12 +1,11 @@
 import React, {
-  createContext,
-  useContext,
   useEffect,
   useMemo,
   useState,
 } from "react"
+import { ThemeCtx, type UiTheme, type UiThemeProviderState } from "./theme-context"
 
-export type UiTheme = "dark" | "light" | "system"
+export type { UiTheme, UiThemeProviderState }
 
 export type UiThemeProviderProps = {
   children: React.ReactNode
@@ -15,25 +14,6 @@ export type UiThemeProviderProps = {
   /** LocalStorage key used to persist the user's choice */
   storageKey?: string
 }
-
-export type UiThemeProviderState = {
-  /** Current mode selection (system/light/dark) */
-  mode: UiTheme
-  /** Resolved theme actually applied to <html> (light/dark) */
-  resolved: "light" | "dark"
-  /**
-   * Change mode at runtime WITHOUT persisting.
-   * Useful for temporary previews.
-   */
-  setMode: (mode: UiTheme) => void
-  /**
-   * Persisted setter: updates state AND localStorage.
-   * Use this for user selections.
-   */
-  setTheme: (theme: UiTheme) => void
-}
-
-const ThemeCtx = createContext<UiThemeProviderState | undefined>(undefined)
 
 const getSystemTheme = (): "light" | "dark" => {
   if (typeof window === "undefined") return "light"
@@ -110,10 +90,5 @@ const UiThemeProvider: React.FC<UiThemeProviderProps> = ({
   )
 }
 
+export { useTheme } from "./theme-context"
 export default UiThemeProvider
-
-export function useTheme(): UiThemeProviderState {
-  const ctx = useContext(ThemeCtx)
-  if (!ctx) throw new Error("useTheme must be used within <ui-theme-provider>")
-  return ctx
-}

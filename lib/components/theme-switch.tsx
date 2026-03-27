@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Menu } from "@base-ui/react/menu"
 import { Sun, Moon, Monitor } from "lucide-react"
-import { useTheme } from "./theme-provider"
+import { useTheme } from "./theme-context"
 
 const triggerClassName =
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring/70 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-9 cursor-pointer relative"

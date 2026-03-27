@@ -438,6 +438,15 @@ const components = [
     <ui-combobox-list></ui-combobox-list>
   </ui-combobox-content>
 </ui-combobox>`,
+    additionalExamples: [
+      {
+        title: "Async Search (src)",
+        example: `<ui-combobox src="/search.json" placeholder="Search languages..." show-clear></ui-combobox>`,
+        readableExample: `<!-- The endpoint should return: [{"value": "...", "label": "...", "suffix": "..."}, ...] -->
+<!-- The query is appended as ?q={input}, debounce defaults to 300ms, min-length to 2 -->
+<ui-combobox src="/api/search" placeholder="Search..." show-clear></ui-combobox>`,
+      },
+    ],
   },
   {
     name: "Command",
@@ -3019,6 +3028,8 @@ function pageShell(title, activeSlug, content, depth = 0) {
 </head>
 <body class="style-vega">
 <div id="reactolith-app">
+<ui-theme-provider storage-key="theme">
+  <ui-route-progress-bar></ui-route-progress-bar>
   <ui-sidebar-provider>
     <ui-sidebar>
       <ui-sidebar-header class="p-4">
@@ -3046,6 +3057,7 @@ function pageShell(title, activeSlug, content, depth = 0) {
       </div>
     </ui-sidebar-inset>
   </ui-sidebar-provider>
+</ui-theme-provider>
 </div>
 </body>
 </html>
@@ -3105,6 +3117,17 @@ function componentPage(comp) {
                 <pre class="p-4 text-sm"><code>${escapeHtml((comp.readableExample || comp.example).trim())}</code></pre>
               </div>
             </section>
+
+            ${(comp.additionalExamples || []).map(ex => `
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">${ex.title}</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                ${ex.example}
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>${escapeHtml((ex.readableExample || ex.example).trim())}</code></pre>
+              </div>
+            </section>`).join('')}
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Sub-components</h2>
@@ -3380,6 +3403,55 @@ function usagePage() {
                 <li><code>&lt;ui-ai-code-block&gt;</code> → <code>CodeBlock</code> component (AI Elements)</li>
               </ul>
               <p>The pattern is: <code>ui-</code> prefix for shadcn/ui, <code>ui-ai-</code> prefix for AI Elements, both in kebab-case.</p>
+            </div>
+
+            <div class="prose prose-neutral dark:prose-invert max-w-none mt-8">
+              <h2>Custom Components</h2>
+              <p>You can add your own components to the loader chain — they are available as <code>&lt;ui-*&gt;</code> tags just like built-in components. The chain runs top to bottom: the first loader that handles a name wins, so custom loaders placed first can override any built-in.</p>
+              <h3>A few components — <code>BuiltinLoader</code></h3>
+              <p>For a small number of project-specific components, create a <code>BuiltinLoader</code> with an explicit registry and add it first:</p>
+            </div>
+
+            <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
+              <pre class="p-4 text-sm"><code>import { BuiltinLoader, createBuiltinLoader, createShadcnLoader, createCompositeLoader } from "reactolith-ui"
+
+const loaders = [
+  new BuiltinLoader({
+    "editor":     () => import("./components/editor"),      // &lt;ui-editor&gt;
+    "my-widget":  () => import("./components/my-widget"),   // &lt;ui-my-widget&gt;
+    "sonner":     () => import("./components/my-sonner"),   // overrides built-in &lt;ui-sonner&gt;
+  }),
+  createBuiltinLoader(),   // library built-ins (theme-switch, sonner, …)
+  createShadcnLoader(modules),
+]</code></pre>
+            </div>
+
+            <div class="prose prose-neutral dark:prose-invert max-w-none">
+              <h3>A whole directory — <code>CustomLoader</code></h3>
+              <p>For a larger set of custom components, use <code>CustomLoader</code> pointing at a directory. Every <code>.tsx</code> file in that directory becomes a <code>&lt;ui-*&gt;</code> tag matching its filename exactly, using its default export.</p>
+            </div>
+
+            <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
+              <pre class="p-4 text-sm"><code>import { CustomLoader, createBuiltinLoader, createShadcnLoader, createCompositeLoader } from "reactolith-ui"
+
+// components/custom/editor.tsx       → &lt;ui-editor&gt;
+// components/custom/my-widget.tsx    → &lt;ui-my-widget&gt;
+const customModules = import.meta.glob("./components/custom/*.tsx")
+
+const loaders = [
+  new CustomLoader({
+    modules: customModules,
+    dirSegment: "/components/custom/",
+    dir: "components/custom",
+    prefix: "ui-",
+  }),
+  createBuiltinLoader(),
+  createShadcnLoader(modules),
+]</code></pre>
+            </div>
+
+            <div class="prose prose-neutral dark:prose-invert max-w-none">
+              <p>Each file must export its component as the <strong>default export</strong>. The filename maps directly to the tag name: <code>my-widget.tsx</code> → <code>&lt;ui-my-widget&gt;</code>.</p>
             </div>`;
 
   return pageShell("Usage", "usage", content, 1);
@@ -3416,6 +3488,8 @@ function landingPage() {
 </head>
 <body class="style-vega">
 <div id="reactolith-app">
+<ui-theme-provider storage-key="theme">
+  <ui-route-progress-bar></ui-route-progress-bar>
     ${headerHtml(0)}
 
     <main class="max-w-5xl mx-auto px-6 py-16">
@@ -3493,6 +3567,7 @@ function landingPage() {
       </div>
     </footer>
 
+</ui-theme-provider>
 </div>
 </body>
 </html>
@@ -3519,6 +3594,8 @@ function sidebarInsetExample() {
 </head>
 <body class="style-vega">
 <div id="reactolith-app">
+<ui-theme-provider storage-key="theme">
+  <ui-route-progress-bar></ui-route-progress-bar>
   <ui-sidebar-provider>
     <ui-sidebar variant="inset" collapsible="icon">
       <ui-sidebar-header>
@@ -3631,6 +3708,7 @@ function sidebarInsetExample() {
       </div>
     </ui-sidebar-inset>
   </ui-sidebar-provider>
+</ui-theme-provider>
 </div>
 </body>
 </html>`;

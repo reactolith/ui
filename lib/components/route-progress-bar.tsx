@@ -56,7 +56,7 @@ const UiRouterProgressBar: React.FC<UiRouterProgressBarProps> = ({
     <div
       aria-hidden
       className={cn(
-        "fixed left-0 right-0 top-0 h-0.5 z-50 pointer-events-none",
+        "fixed left-0 right-0 top-0 h-0.5 z-100 pointer-events-none",
         className,
       )}
     >
