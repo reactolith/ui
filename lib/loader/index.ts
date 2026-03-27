@@ -1,7 +1,7 @@
 // Loader classes
 export {
   ComponentLoader,
-  OverrideLoader,
+  CustomLoader,
   AiElementsLoader,
   ExternalLoader,
   createCompositeLoader,

@@ -551,6 +551,55 @@
               </ul>
               <p>The pattern is: <code>ui-</code> prefix for shadcn/ui, <code>ui-ai-</code> prefix for AI Elements, both in kebab-case.</p>
             </div>
+
+            <div class="prose prose-neutral dark:prose-invert max-w-none mt-8">
+              <h2>Custom Components</h2>
+              <p>You can add your own components to the loader chain — they are available as <code>&lt;ui-*&gt;</code> tags just like built-in components. The chain runs top to bottom: the first loader that handles a name wins, so custom loaders placed first can override any built-in.</p>
+              <h3>A few components — <code>BuiltinLoader</code></h3>
+              <p>For a small number of project-specific components, create a <code>BuiltinLoader</code> with an explicit registry and add it first:</p>
+            </div>
+
+            <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
+              <pre class="p-4 text-sm"><code>import { BuiltinLoader, createBuiltinLoader, createShadcnLoader, createCompositeLoader } from "reactolith-ui"
+
+const loaders = [
+  new BuiltinLoader({
+    "editor":     () => import("./components/editor"),      // &lt;ui-editor&gt;
+    "my-widget":  () => import("./components/my-widget"),   // &lt;ui-my-widget&gt;
+    "sonner":     () => import("./components/my-sonner"),   // overrides built-in &lt;ui-sonner&gt;
+  }),
+  createBuiltinLoader(),   // library built-ins (theme-switch, sonner, …)
+  createShadcnLoader(modules),
+]</code></pre>
+            </div>
+
+            <div class="prose prose-neutral dark:prose-invert max-w-none">
+              <h3>A whole directory — <code>CustomLoader</code></h3>
+              <p>For a larger set of custom components, use <code>CustomLoader</code> pointing at a directory. Every <code>.tsx</code> file in that directory becomes a <code>&lt;ui-*&gt;</code> tag matching its filename exactly, using its default export.</p>
+            </div>
+
+            <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full mt-4 mb-6">
+              <pre class="p-4 text-sm"><code>import { CustomLoader, createBuiltinLoader, createShadcnLoader, createCompositeLoader } from "reactolith-ui"
+
+// components/custom/editor.tsx       → &lt;ui-editor&gt;
+// components/custom/my-widget.tsx    → &lt;ui-my-widget&gt;
+const customModules = import.meta.glob("./components/custom/*.tsx")
+
+const loaders = [
+  new CustomLoader({
+    modules: customModules,
+    dirSegment: "/components/custom/",
+    dir: "components/custom",
+    prefix: "ui-",
+  }),
+  createBuiltinLoader(),
+  createShadcnLoader(modules),
+]</code></pre>
+            </div>
+
+            <div class="prose prose-neutral dark:prose-invert max-w-none">
+              <p>Each file must export its component as the <strong>default export</strong>. The filename maps directly to the tag name: <code>my-widget.tsx</code> → <code>&lt;ui-my-widget&gt;</code>.</p>
+            </div>
         </div>
       </div>
     </ui-sidebar-inset>

@@ -128,10 +128,10 @@ export class ComponentLoader {
 }
 
 // ---------------------------------------------------------------------------
-// OverrideLoader — exact file name match, returns default export unmodified
+// CustomLoader — exact file name match, returns default export unmodified
 // ---------------------------------------------------------------------------
 
-export class OverrideLoader extends ComponentLoader {
+export class CustomLoader extends ComponentLoader {
   canHandle(name: string): boolean {
     return !!Object.keys(this.modules).find(k =>
       k.includes(this.dirSegment) && k.endsWith(`/${name}.tsx`),
