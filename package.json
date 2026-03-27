@@ -1,7 +1,7 @@
 {
   "name": "reactolith-ui",
   "repository": "https://github.com/reactolith/ui",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.cjs",
