@@ -393,7 +393,10 @@ export const comboboxProvider: WrapperDef = {
           <C
             items={items}
             {...(hasObjects
-              ? { getOptionAsString: (item: ComboboxItemShape) => typeof item === "string" ? item : item.label }
+              ? {
+                  getOptionAsString: (item: ComboboxItemShape) => typeof item === "string" ? item : item.label,
+                  itemToStringValue: (item: ComboboxItemShape) => typeof item === "string" ? item : item.label,
+                }
               : {})}
             {...props}
           >
