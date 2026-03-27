@@ -266,7 +266,7 @@ function AsyncCombobox({
               const description = typeof item === "object" ? item.description : undefined
               const suffix = typeof item === "object" ? item.suffix : undefined
               return (
-                <ComboboxItem key={value} value={label}>
+                <ComboboxItem key={value} value={item}>
                   {description ? (
                     <Item size="xs" className="p-0">
                       <ItemContent>
@@ -393,10 +393,7 @@ export const comboboxProvider: WrapperDef = {
           <C
             items={items}
             {...(hasObjects
-              ? {
-                  getOptionAsString: (item: ComboboxItemShape) => typeof item === "string" ? item : item.label,
-                  itemToStringValue: (item: ComboboxItemShape) => typeof item === "string" ? item : item.label,
-                }
+              ? { getOptionAsString: (item: ComboboxItemShape) => typeof item === "string" ? item : item.label }
               : {})}
             {...props}
           >
