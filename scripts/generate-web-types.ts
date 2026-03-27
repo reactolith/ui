@@ -76,7 +76,6 @@ const SHADCN_ADDITIONAL = buildAdditionalAttributes(
 const LOADER_CONFIGS: WebTypesLoaderConfig[] = [
   { dir: "components/ui", prefix: "ui-", additionalAttributes: SHADCN_ADDITIONAL },
   { dir: "components/ai-elements", prefix: "ui-ai-" },
-  { dir: "app/overrides", prefix: "ui-" },
 ]
 
 // ---------------------------------------------------------------------------

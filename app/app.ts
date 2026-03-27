@@ -6,7 +6,6 @@ import {
     createCompositeLoader,
     createShadcnLoader,
     createAiElementsLoader,
-    createOverridesLoader,
     createBuiltinLoader,
     type ModuleMap,
 } from "../lib/loader";
@@ -15,11 +14,9 @@ import { createRechartsLoader } from "../lib/loader/recharts-loader";
 const modules = import.meta.glob([
     "@/components/ui/*.tsx",
     "@/components/ai-elements/*.tsx",
-    "@/app/overrides/*.tsx",
 ]) as unknown as ModuleMap;
 
 const loaders = [
-    createOverridesLoader(modules),
     createBuiltinLoader(),
     createAiElementsLoader(modules),
     createRechartsLoader(),

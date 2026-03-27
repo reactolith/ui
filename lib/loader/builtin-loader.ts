@@ -8,6 +8,7 @@ import type { WebTypeAttribute } from "./behaviors"
 // ---------------------------------------------------------------------------
 
 const BUILTIN_COMPONENTS: Record<string, () => Promise<{ default: ComponentType<any> }>> = {
+  "editor": () => import("../components/editor"),
   "sonner": () => import("../components/sonner"),
   "theme-switch": () => import("../components/theme-switch"),
   "theme-switch-item": () => import("../components/theme-switch-item"),

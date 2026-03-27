@@ -49,7 +49,6 @@ export {
 export {
   createShadcnLoader,
   createAiElementsLoader,
-  createOverridesLoader,
 } from "./presets"
 
 // Built-in components loader

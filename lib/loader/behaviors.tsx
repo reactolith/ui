@@ -4,6 +4,7 @@ import { renderLinkable, renderTrigger, getSingleElement } from "../render-eleme
 import { CloseOverlayProvider, useCloseOverlay } from "../close-overlay"
 import { SelectItemsProvider, useSelectItemsRegister } from "../select-items"
 import { cn } from "../utils"
+import { Item, ItemContent, ItemTitle, ItemDescription } from "@/components/ui/item"
 
 // ---------------------------------------------------------------------------
 // Types
@@ -107,7 +108,7 @@ export const closeClick: BehaviorDef = {
 // Component-specific wrappers
 // ---------------------------------------------------------------------------
 
-type ComboboxItemShape = string | { value: string; label: string }
+type ComboboxItemShape = string | { value: string; label: string; description?: string; suffix?: string }
 const ComboboxItemsContext = React.createContext<ComboboxItemShape[] | null>(null)
 
 /** Command item with href → wraps children in <a> + closes overlay */
@@ -249,6 +250,7 @@ function AsyncCombobox({ C, src, debounce: debounceMs = 300, "min-length": minLe
     <ComboboxItemsContext.Provider value={items}>
       <C
         items={items}
+        filterOptions={null}
         onInputValueChange={handleInputValueChange}
         {...(hasObjects
           ? { getOptionAsString: (item: ComboboxItemShape) => typeof item === "string" ? item : item.label }
@@ -373,7 +375,26 @@ export const comboboxListRenderer: WrapperDef = {
           {(item: ComboboxItemShape) => {
             const value = typeof item === "string" ? item : item.value
             const label = typeof item === "string" ? item : item.label
-            return <ComboboxItem key={value} value={item}>{label}</ComboboxItem>
+            const description = typeof item === "object" ? item.description : undefined
+            const suffix = typeof item === "object" ? item.suffix : undefined
+            return (
+              <ComboboxItem key={value} value={item}>
+                {description ? (
+                  <Item size="xs" className="p-0">
+                    <ItemContent>
+                      <ItemTitle className="whitespace-nowrap">{label}</ItemTitle>
+                      <ItemDescription>{description}</ItemDescription>
+                    </ItemContent>
+                    {suffix && <span className="ml-auto text-xs text-muted-foreground tabular-nums">{suffix}</span>}
+                  </Item>
+                ) : suffix ? (
+                  <>
+                    {label}
+                    <span className="ml-auto text-xs text-muted-foreground tabular-nums">{suffix}</span>
+                  </>
+                ) : label}
+              </ComboboxItem>
+            )
           }}
         </C>
       )

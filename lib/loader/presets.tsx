@@ -1,5 +1,5 @@
 import type { ModuleMap } from "./component-loader"
-import { ComponentLoader, OverrideLoader, AiElementsLoader } from "./component-loader"
+import { ComponentLoader, AiElementsLoader } from "./component-loader"
 import {
   linkable, linkableClose, trigger, overlay, closeClick,
   commandLinkable, sidebarLinkable, sidebarSubLinkable,
@@ -101,15 +101,3 @@ export function createAiElementsLoader(modules: ModuleMap): AiElementsLoader {
   })
 }
 
-// ---------------------------------------------------------------------------
-// Overrides loader
-// ---------------------------------------------------------------------------
-
-export function createOverridesLoader(modules: ModuleMap): OverrideLoader {
-  return new OverrideLoader({
-    modules,
-    dirSegment: "/overrides/",
-    dir: "app/overrides",
-    prefix: "ui-",
-  })
-}

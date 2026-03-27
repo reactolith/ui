@@ -12,12 +12,7 @@ export type EditorFormat = "html" | "json" | "markdown"
 // Editor component props
 // ---------------------------------------------------------------------------
 
-/**
- * Standard props for Reactolith editor override components.
- *
- * Implement these in your `app/overrides/editor.tsx` so that `<ui-editor>`
- * can be configured via HTML attributes by backend developers.
- */
+/** Props for the `<ui-editor>` built-in component. */
 export interface EditorProps {
   // --- Content ---
   /** Initial content (HTML string, JSON string, Markdown string, or Plate Value) */

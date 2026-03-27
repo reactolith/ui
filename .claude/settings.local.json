@@ -26,7 +26,19 @@
       "Bash(ls:*)",
       "Bash(npm run:*)",
       "Bash(git add:*)",
-      "Bash(npm:*)"
+      "Bash(npm:*)",
+      "Bash(mkdir -p /Users/franzwilding/Development/reactolith-ui/components/custom)",
+      "Bash(mv /Users/franzwilding/Development/reactolith-ui/app/overrides/theme-switch.tsx /Users/franzwilding/Development/reactolith-ui/components/custom/theme-switch.tsx)",
+      "Bash(mv /Users/franzwilding/Development/reactolith-ui/app/overrides/editor.tsx /Users/franzwilding/Development/reactolith-ui/components/custom/editor.tsx)",
+      "Bash(mv /Users/franzwilding/Development/reactolith-ui/components/custom/editor.tsx /Users/franzwilding/Development/reactolith-ui/lib/components/editor.tsx)",
+      "Bash(rm /Users/franzwilding/Development/reactolith-ui/components/custom/theme-switch.tsx)",
+      "Bash(rmdir /Users/franzwilding/Development/reactolith-ui/components/custom)",
+      "Bash(rm /Users/franzwilding/Development/reactolith-ui/app/overrides/sonner.tsx)",
+      "Bash(rmdir /Users/franzwilding/Development/reactolith-ui/app/overrides)",
+      "Bash(open:*)",
+      "Bash(xargs sed:*)",
+      "Bash(sed -i '' 's|<div id=\"\"reactolith-app\"\">|<div id=\"\"reactolith-app\"\">\\\\n<ui-theme-provider storage-key=\"\"theme\"\">|g' /Users/franzwilding/Development/reactolith-ui/app/index.html)",
+      "Bash(sed -i '' 's|</ui-sidebar-provider>|</ui-sidebar-provider>\\\\n</ui-theme-provider>|g' /Users/franzwilding/Development/reactolith-ui/app/index.html)"
     ]
   }
 }
