@@ -266,7 +266,7 @@ function AsyncCombobox({
               const description = typeof item === "object" ? item.description : undefined
               const suffix = typeof item === "object" ? item.suffix : undefined
               return (
-                <ComboboxItem key={value} value={label}>
+                <ComboboxItem key={value} value={item}>
                   {description ? (
                     <Item size="xs" className="p-0">
                       <ItemContent>
