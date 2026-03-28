@@ -3,7 +3,8 @@ import { ComponentLoader, AiElementsLoader } from "./component-loader"
 import {
   linkable, linkableClose, trigger, overlay, closeClick,
   commandLinkable, sidebarLinkable, sidebarSubLinkable,
-  selectProvider, selectRegister, comboboxProvider, comboboxListRenderer,
+  selectProvider, selectRegister, selectContentRenderer,
+  comboboxProvider, comboboxListRenderer,
   createSmartTriggerWrapper,
   progressTransform, spinnerTransform, chartContainerTransform, chartTooltipTransform,
 } from "./behaviors"
@@ -63,6 +64,7 @@ export function createShadcnLoader(modules: ModuleMap): ComponentLoader {
       "sidebar-menu-sub-button": sidebarSubLinkable,
       "select": selectProvider,
       "select-item": selectRegister,
+      "select-content": selectContentRenderer,
       "combobox": comboboxProvider,
       "combobox-list": comboboxListRenderer,
     },
