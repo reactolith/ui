@@ -459,6 +459,29 @@
 
             
             <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Initial Value</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <ui-combobox default-value="vue" json-items='[{"value":"react","label":"React"},{"value":"vue","label":"Vue.js"},{"value":"angular","label":"Angular"},{"value":"svelte","label":"Svelte"}]'>
+  <ui-combobox-input placeholder="Select framework..." showClear></ui-combobox-input>
+  <ui-combobox-content>
+    <ui-combobox-empty>No framework found.</ui-combobox-empty>
+    <ui-combobox-list></ui-combobox-list>
+  </ui-combobox-content>
+</ui-combobox>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;!-- Pass default-value or value — the label is resolved automatically from the items array --&gt;
+&lt;ui-combobox default-value=&quot;vue&quot; json-items='[
+  {&quot;value&quot;:&quot;react&quot;,&quot;label&quot;:&quot;React&quot;},
+  {&quot;value&quot;:&quot;vue&quot;,&quot;label&quot;:&quot;Vue.js&quot;},
+  {&quot;value&quot;:&quot;angular&quot;,&quot;label&quot;:&quot;Angular&quot;},
+  {&quot;value&quot;:&quot;svelte&quot;,&quot;label&quot;:&quot;Svelte&quot;}
+]'&gt;
+  ...
+&lt;/ui-combobox&gt;</code></pre>
+              </div>
+            </section>
+            <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Async Search (src)</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
                 <ui-combobox src="/search.json" placeholder="Search languages..." show-clear></ui-combobox>
@@ -466,7 +489,13 @@
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;!-- The endpoint should return: [{&quot;value&quot;: &quot;...&quot;, &quot;label&quot;: &quot;...&quot;, &quot;suffix&quot;: &quot;...&quot;}, ...] --&gt;
 &lt;!-- The query is appended as ?q={input}, debounce defaults to 300ms, min-length to 2 --&gt;
-&lt;ui-combobox src=&quot;/api/search&quot; placeholder=&quot;Search...&quot; show-clear&gt;&lt;/ui-combobox&gt;</code></pre>
+&lt;ui-combobox src=&quot;/api/search&quot; placeholder=&quot;Search...&quot; show-clear&gt;&lt;/ui-combobox&gt;
+
+&lt;!-- With initial value: pass json-initial-items so the label can be displayed --&gt;
+&lt;ui-combobox src=&quot;/api/search&quot; value=&quot;js&quot;
+  json-initial-items='[{&quot;value&quot;:&quot;js&quot;,&quot;label&quot;:&quot;JavaScript&quot;}]'
+  placeholder=&quot;Search...&quot; show-clear&gt;
+&lt;/ui-combobox&gt;</code></pre>
               </div>
             </section>
 
@@ -481,7 +510,7 @@
             <div class="mt-6">
               <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-combobox&gt;</code></h3>
               <div class="overflow-x-auto max-w-full">
-                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">open</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Controlled open state.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The selected value.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">items</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string[] | {value: string, label: string}[]</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Items for filtering/search. Use json-items in HTML. When provided, ui-combobox-list auto-renders filtered items. <span class="text-[10px] bg-blue-500/15 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded whitespace-nowrap">via comboboxProvider</span></td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">src</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">URL to fetch items from. Appends ?q={query} on input change. Mutually exclusive with items. <span class="text-[10px] bg-blue-500/15 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded whitespace-nowrap">via comboboxProvider</span></td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">debounce</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">300</code></td><td class="py-2 text-muted-foreground">Debounce delay in ms before fetching (only with src). <span class="text-[10px] bg-blue-500/15 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded whitespace-nowrap">via comboboxProvider</span></td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">min-length</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">2</code></td><td class="py-2 text-muted-foreground">Minimum input length before fetching (only with src). <span class="text-[10px] bg-blue-500/15 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded whitespace-nowrap">via comboboxProvider</span></td></tr></tbody></table>
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">open</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Controlled open state.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The selected value. When items are objects, pass the value string — it is resolved to the matching item automatically.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">default-value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Default selected value. Resolved to matching item object automatically.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">items</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">(string | {value, label})[]</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Items for filtering/search. Use json-items in HTML. When provided, ui-combobox-list auto-renders filtered items. <span class="text-[10px] bg-blue-500/15 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded whitespace-nowrap">via comboboxProvider</span></td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">src</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">URL to fetch items from. Appends ?q={query} on input change. Mutually exclusive with items. <span class="text-[10px] bg-blue-500/15 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded whitespace-nowrap">via comboboxProvider</span></td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">initial-items</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">(string | {value, label})[]</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Initial items for async mode (src). Use json-initial-items in HTML. Allows displaying labels for pre-set values before any search. <span class="text-[10px] bg-blue-500/15 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded whitespace-nowrap">via comboboxProvider</span></td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">debounce</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">300</code></td><td class="py-2 text-muted-foreground">Debounce delay in ms before fetching (only with src). <span class="text-[10px] bg-blue-500/15 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded whitespace-nowrap">via comboboxProvider</span></td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">min-length</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">2</code></td><td class="py-2 text-muted-foreground">Minimum input length before fetching (only with src). <span class="text-[10px] bg-blue-500/15 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded whitespace-nowrap">via comboboxProvider</span></td></tr></tbody></table>
               </div>
             </div>
             <div class="mt-6">

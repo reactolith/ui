@@ -30,6 +30,7 @@ export {
   sidebarSubLinkable,
   selectProvider,
   selectRegister,
+  selectContentRenderer,
   comboboxProvider,
   comboboxListRenderer,
   createSmartTriggerWrapper,

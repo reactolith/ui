@@ -108,8 +108,31 @@ export const closeClick: BehaviorDef = {
 // Component-specific wrappers
 // ---------------------------------------------------------------------------
 
+type SelectItemShape = string | { value: string; label: string }
+const SelectItemsDataContext = React.createContext<SelectItemShape[] | null>(null)
+
 type ComboboxItemShape = string | { value: string; label: string; description?: string; suffix?: string }
 const ComboboxItemsContext = React.createContext<ComboboxItemShape[] | null>(null)
+
+/** Resolve a string value/defaultValue to the matching item object */
+function resolveItemValue<T extends { value: string }>(
+  val: any,
+  items: (string | T)[] | undefined,
+  hasObjects: boolean,
+): any {
+  if (val === undefined || val === null || !hasObjects || !items) return val
+  if (typeof val === "string") {
+    return items.find(i => typeof i === "object" && i.value === val) ?? val
+  }
+  if (Array.isArray(val)) {
+    return val.map(v =>
+      typeof v === "string"
+        ? items.find(i => typeof i === "object" && i.value === v) ?? v
+        : v,
+    )
+  }
+  return val
+}
 
 /** Command item with href → wraps children in <a> + closes overlay */
 export const commandLinkable: WrapperDef = {
@@ -169,19 +192,67 @@ export const sidebarSubLinkable: WrapperDef = {
   },
 }
 
-/** Select root with SelectItemsProvider context */
+/** Convert SelectItemShape[] to Record<string,string> for Base UI items prop */
+function selectItemsToRecord(items: SelectItemShape[]): Record<string, string> {
+  const record: Record<string, string> = {}
+  for (const item of items) {
+    if (typeof item === "string") record[item] = item
+    else record[item.value] = item.label
+  }
+  return record
+}
+
+/** Select root with SelectItemsProvider context + items prop support */
 export const selectProvider: WrapperDef = {
-  fn: (C) => React.forwardRef(({ children, is, ...props }: any, ref: any) => {
-    const [items, setItems] = React.useState<Record<string, string> | undefined>(undefined)
+  fn: (C) => React.forwardRef(({ children, is, items: userItems, ...props }: any, ref: any) => {
+    // Parse user-provided items (from json-items attribute)
+    const parsedRecord = React.useMemo(() => {
+      if (!userItems) return undefined
+      if (Array.isArray(userItems)) return selectItemsToRecord(userItems)
+      if (typeof userItems === "object") return userItems as Record<string, string>
+      return undefined
+    }, [userItems])
+
+    const [registeredItems, setRegisteredItems] = React.useState<Record<string, string> | undefined>(undefined)
     const handleItemsChange = React.useCallback((next: Record<string, string>) => {
-      setItems(Object.keys(next).length > 0 ? next : undefined)
+      setRegisteredItems(Object.keys(next).length > 0 ? next : undefined)
     }, [])
+
+    // Merge: user-provided items as base, registered items override
+    const mergedItems = React.useMemo(() => {
+      if (!parsedRecord && !registeredItems) return undefined
+      return { ...parsedRecord, ...registeredItems }
+    }, [parsedRecord, registeredItems])
+
     return (
       <SelectItemsProvider onItemsChange={handleItemsChange}>
-        <C ref={ref} items={items} {...props}>{children}</C>
+        <SelectItemsDataContext.Provider value={userItems ?? null}>
+          <C ref={ref} items={mergedItems} {...props}>{children}</C>
+        </SelectItemsDataContext.Provider>
       </SelectItemsProvider>
     )
   }),
+  additionalAttributes: [ITEMS_ATTR],
+}
+
+/** Select content that auto-renders items from context when no children provided */
+export const selectContentRenderer: WrapperDef = {
+  fn: (C, mod) => {
+    const SelectItem = mod.SelectItem as ComponentType<any>
+    return ({ children, is, ...props }: any) => {
+      const items = React.useContext(SelectItemsDataContext)
+      if (!items || !SelectItem || children) return <C {...props}>{children}</C>
+      return (
+        <C {...props}>
+          {items.map(item => {
+            const value = typeof item === "string" ? item : item.value
+            const label = typeof item === "string" ? item : item.label
+            return <SelectItem key={value} value={value}>{label}</SelectItem>
+          })}
+        </C>
+      )
+    }
+  },
 }
 
 /** Select item that registers its value/label with the provider */
@@ -207,14 +278,22 @@ function AsyncCombobox({
   C, src, debounce: debounceMs = 300, "min-length": minLen = 2,
   ComboboxInput, ComboboxContent, ComboboxList, ComboboxItem, ComboboxEmpty,
   placeholder, showClear, showTrigger, userChildren,
+  initialItems,
+  value, defaultValue,
   ...props
 }: any) {
   const delay = typeof debounceMs === "string" ? Number(debounceMs) : debounceMs
   const minLength = typeof minLen === "string" ? Number(minLen) : minLen
 
-  const [items, setItems] = React.useState<ComboboxItemShape[]>([])
+  const [items, setItems] = React.useState<ComboboxItemShape[]>(initialItems ?? [])
   const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)
   const abortRef = React.useRef<AbortController | null>(null)
+
+  // Resolve initial value using initialItems
+  const allKnownItems = initialItems ?? []
+  const hasObjects = allKnownItems.length > 0 && typeof allKnownItems[0] === "object"
+  const resolvedValue = resolveItemValue(value, allKnownItems, hasObjects)
+  const resolvedDefault = resolveItemValue(defaultValue, allKnownItems, hasObjects)
 
   const handleChange = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -288,7 +367,18 @@ function AsyncCombobox({
     ) : undefined
   )
 
-  return <C {...props}>{resolvedChildren}</C>
+  return (
+    <C
+      value={resolvedValue}
+      defaultValue={resolvedDefault}
+      {...(hasObjects
+        ? { itemToStringLabel: (item: ComboboxItemShape) => typeof item === "string" ? item : item.label }
+        : {})}
+      {...props}
+    >
+      {resolvedChildren}
+    </C>
+  )
 }
 
 const SRC_ATTR: WebTypeAttribute = {
@@ -339,6 +429,13 @@ function parseBoolAttr(val: any, defaultVal: boolean): boolean {
   return val !== "false"
 }
 
+const INITIAL_ITEMS_ATTR: WebTypeAttribute = {
+  name: "initial-items",
+  required: false,
+  value: { kind: "expression", type: '(string | { value: string; label: string })[]' },
+  description: "Initial items for async combobox, used to display labels for pre-set values.",
+}
+
 /** Combobox root with items context provider (static items or async src) */
 export const comboboxProvider: WrapperDef = {
   fn: (C, mod) => {
@@ -351,6 +448,8 @@ export const comboboxProvider: WrapperDef = {
     return ({
       items, src, debounce, "min-length": minLength, children, is,
       placeholder, "show-clear": showClearAttr, "show-trigger": showTriggerAttr,
+      "initial-items": initialItems,
+      value, defaultValue,
       ...props
     }: any) => {
       const resolvedChildren = children ?? (
@@ -382,18 +481,25 @@ export const comboboxProvider: WrapperDef = {
             showClear={parseBoolAttr(showClearAttr, false)}
             showTrigger={parseBoolAttr(showTriggerAttr, true)}
             userChildren={children}
+            initialItems={initialItems}
+            value={value}
+            defaultValue={defaultValue}
             {...props}
           />
         )
       }
-      if (!items) return <C {...props}>{resolvedChildren}</C>
+      if (!items) return <C value={value} defaultValue={defaultValue} {...props}>{resolvedChildren}</C>
       const hasObjects = items.length > 0 && typeof items[0] === "object"
+      const resolvedValue = resolveItemValue(value, items, hasObjects)
+      const resolvedDefault = resolveItemValue(defaultValue, items, hasObjects)
       return (
         <ComboboxItemsContext.Provider value={items}>
           <C
             items={items}
+            value={resolvedValue}
+            defaultValue={resolvedDefault}
             {...(hasObjects
-              ? { getOptionAsString: (item: ComboboxItemShape) => typeof item === "string" ? item : item.label }
+              ? { itemToStringLabel: (item: ComboboxItemShape) => typeof item === "string" ? item : item.label }
               : {})}
             {...props}
           >
@@ -403,7 +509,7 @@ export const comboboxProvider: WrapperDef = {
       )
     }
   },
-  additionalAttributes: [ITEMS_ATTR, SRC_ATTR, DEBOUNCE_ATTR, MIN_LENGTH_ATTR, PLACEHOLDER_ATTR, SHOW_CLEAR_ATTR, SHOW_TRIGGER_ATTR],
+  additionalAttributes: [ITEMS_ATTR, SRC_ATTR, DEBOUNCE_ATTR, MIN_LENGTH_ATTR, PLACEHOLDER_ATTR, SHOW_CLEAR_ATTR, SHOW_TRIGGER_ATTR, INITIAL_ITEMS_ATTR],
 }
 
 /** Combobox list that auto-renders items from context */
