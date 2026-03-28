@@ -415,7 +415,7 @@ const components = [
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/combobox",
     subComponents: [
-      { tag: "ui-combobox", props: [{ name: "open", type: "boolean", default: "—", description: "Controlled open state." }, { name: "value", type: "string", default: "—", description: "The selected value." }, { name: "items", type: 'string[] | {value: string, label: string}[]', default: "—", description: "Items for filtering/search. Use json-items in HTML. When provided, ui-combobox-list auto-renders filtered items.", source: "comboboxProvider" }, { name: "src", type: "string", default: "—", description: "URL to fetch items from. Appends ?q={query} on input change. Mutually exclusive with items.", source: "comboboxProvider" }, { name: "debounce", type: "number", default: "300", description: "Debounce delay in ms before fetching (only with src).", source: "comboboxProvider" }, { name: "min-length", type: "number", default: "2", description: "Minimum input length before fetching (only with src).", source: "comboboxProvider" }] },
+      { tag: "ui-combobox", props: [{ name: "open", type: "boolean", default: "—", description: "Controlled open state." }, { name: "value", type: "string", default: "—", description: "The selected value. When items are objects, pass the value string — it is resolved to the matching item automatically." }, { name: "default-value", type: "string", default: "—", description: "Default selected value. Resolved to matching item object automatically." }, { name: "items", type: '(string | {value, label})[]', default: "—", description: "Items for filtering/search. Use json-items in HTML. When provided, ui-combobox-list auto-renders filtered items.", source: "comboboxProvider" }, { name: "src", type: "string", default: "—", description: "URL to fetch items from. Appends ?q={query} on input change. Mutually exclusive with items.", source: "comboboxProvider" }, { name: "initial-items", type: '(string | {value, label})[]', default: "—", description: "Initial items for async mode (src). Use json-initial-items in HTML. Allows displaying labels for pre-set values before any search.", source: "comboboxProvider" }, { name: "debounce", type: "number", default: "300", description: "Debounce delay in ms before fetching (only with src).", source: "comboboxProvider" }, { name: "min-length", type: "number", default: "2", description: "Minimum input length before fetching (only with src).", source: "comboboxProvider" }] },
       { tag: "ui-combobox-trigger", props: [] },
       { tag: "ui-combobox-value", props: [{ name: "placeholder", type: "string", default: "—", description: "Placeholder text when no value is selected." }] },
       { tag: "ui-combobox-input", props: [{ name: "placeholder", type: "string", default: "—", description: "Input placeholder text." }] },
@@ -440,11 +440,36 @@ const components = [
 </ui-combobox>`,
     additionalExamples: [
       {
+        title: "Initial Value",
+        example: `<ui-combobox default-value="vue" json-items='[{"value":"react","label":"React"},{"value":"vue","label":"Vue.js"},{"value":"angular","label":"Angular"},{"value":"svelte","label":"Svelte"}]'>
+  <ui-combobox-input placeholder="Select framework..." showClear></ui-combobox-input>
+  <ui-combobox-content>
+    <ui-combobox-empty>No framework found.</ui-combobox-empty>
+    <ui-combobox-list></ui-combobox-list>
+  </ui-combobox-content>
+</ui-combobox>`,
+        readableExample: `<!-- Pass default-value or value — the label is resolved automatically from the items array -->
+<ui-combobox default-value="vue" json-items='[
+  {"value":"react","label":"React"},
+  {"value":"vue","label":"Vue.js"},
+  {"value":"angular","label":"Angular"},
+  {"value":"svelte","label":"Svelte"}
+]'>
+  ...
+</ui-combobox>`,
+      },
+      {
         title: "Async Search (src)",
         example: `<ui-combobox src="/search.json" placeholder="Search languages..." show-clear></ui-combobox>`,
         readableExample: `<!-- The endpoint should return: [{"value": "...", "label": "...", "suffix": "..."}, ...] -->
 <!-- The query is appended as ?q={input}, debounce defaults to 300ms, min-length to 2 -->
-<ui-combobox src="/api/search" placeholder="Search..." show-clear></ui-combobox>`,
+<ui-combobox src="/api/search" placeholder="Search..." show-clear></ui-combobox>
+
+<!-- With initial value: pass json-initial-items so the label can be displayed -->
+<ui-combobox src="/api/search" value="js"
+  json-initial-items='[{"value":"js","label":"JavaScript"}]'
+  placeholder="Search..." show-clear>
+</ui-combobox>`,
       },
     ],
   },
@@ -1121,7 +1146,7 @@ const components = [
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/select",
     subComponents: [
-      { tag: "ui-select", props: [{ name: "value", type: "string", default: "—", description: "Controlled selected value." }, { name: "default-value", type: "string", default: "—", description: "Default selected value." }] },
+      { tag: "ui-select", props: [{ name: "value", type: "string", default: "—", description: "Controlled selected value." }, { name: "default-value", type: "string", default: "—", description: "Default selected value." }, { name: "items", type: '(string | {value, label})[]', default: "—", description: "Items for the select. Use json-items in HTML. Enables initial value label display and auto-rendering in &lt;ui-select-content&gt;.", source: "selectProvider" }] },
       { tag: "ui-select-trigger", props: [] },
       { tag: "ui-select-value", props: [{ name: "placeholder", type: "string", default: "—", description: "Placeholder text." }] },
       { tag: "ui-select-content", props: [] },
@@ -1146,6 +1171,29 @@ const components = [
     </ui-select-group>
   </ui-select-content>
 </ui-select>`,
+    additionalExamples: [
+      {
+        title: "Items Mode (with initial value)",
+        example: `<ui-select default-value="banana" json-items='[{"value":"apple","label":"Apple"},{"value":"banana","label":"Banana"},{"value":"orange","label":"Orange"},{"value":"grape","label":"Grape"}]'>
+  <ui-select-trigger class="max-w-[180px] w-full">
+    <ui-select-value placeholder="Select a fruit"></ui-select-value>
+  </ui-select-trigger>
+  <ui-select-content></ui-select-content>
+</ui-select>`,
+        readableExample: `<!-- Pass json-items to enable initial value display and auto-rendering -->
+<ui-select default-value="banana" json-items='[
+  {"value":"apple","label":"Apple"},
+  {"value":"banana","label":"Banana"},
+  {"value":"orange","label":"Orange"},
+  {"value":"grape","label":"Grape"}
+]'>
+  <ui-select-trigger class="max-w-[180px] w-full">
+    <ui-select-value placeholder="Select a fruit"></ui-select-value>
+  </ui-select-trigger>
+  <ui-select-content></ui-select-content>
+</ui-select>`,
+      },
+    ],
   },
   {
     name: "Separator",
