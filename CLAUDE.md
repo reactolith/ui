@@ -83,7 +83,20 @@ Navigation links inside overlays (sidebars, sheets, dropdowns, popovers, command
 - If it needs **simple prop rewriting**: create a `PropTransformDef` and add it to the loader's `propTransforms` config.
 - Only create an override file in `app/overrides/` if the component is a completely standalone implementation.
 
-## Web Types
+## Documentation & Web Types
+
+**IMPORTANT: Never edit documentation HTML files directly.** All docs are generated from scripts and manual edits will be overwritten.
+
+### Docs generation
+
+To regenerate all documentation pages (HTML files in `app/docs/`):
+```
+node scripts/generate-docs.mjs
+```
+
+The script (`scripts/generate-docs.mjs`) contains hardcoded component data (name, description, category, props, examples). When adding or modifying components, update the component data in the script and re-run it.
+
+### Web Types generation
 
 To regenerate `web-types.json` (all components with all props, including loader-injected attributes):
 ```

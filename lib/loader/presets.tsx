@@ -1,7 +1,7 @@
 import type { ModuleMap } from "./component-loader"
 import { ComponentLoader, AiElementsLoader } from "./component-loader"
 import {
-  linkable, linkableClose, trigger, overlay, closeClick,
+  linkable, linkableClose, trigger, overlay, closeClick, formField,
   commandLinkable, sidebarLinkable, sidebarSubLinkable,
   selectProvider, selectRegister, selectContentRenderer,
   comboboxProvider, comboboxListRenderer,
@@ -34,6 +34,16 @@ export function createShadcnLoader(modules: ModuleMap): ComponentLoader {
       "navigation-menu-link": linkableClose,
       "breadcrumb-link": linkableClose,
       "tabs-trigger": linkableClose,
+
+      // form field: aria-invalid + disabled from FormItemContext
+      "input": formField,
+      "textarea": formField,
+      "checkbox": formField,
+      "switch": formField,
+      "slider": formField,
+      "radio-group": formField,
+      "native-select": formField,
+      "input-otp": formField,
 
       // single-child render prop via renderTrigger
       "tooltip-trigger": trigger,
