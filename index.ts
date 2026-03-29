@@ -17,6 +17,7 @@ export {
   trigger,
   overlay,
   closeClick,
+  formField,
   type BehaviorDef,
   type WrapperDef,
   type PropTransformDef,
@@ -56,6 +57,15 @@ export { BuiltinLoader, createBuiltinLoader } from "./lib/loader"
 
 // Theme provider hook (for use in custom components)
 export { useTheme, type UiTheme, type UiThemeProviderState } from "./lib/components/theme-context"
+
+// Form hooks
+export {
+  useFormSubmitting,
+  useFormErrors,
+  useFormInteraction,
+  useFormItem,
+  type FormError,
+} from "./components/ui/form"
 
 // Utilities
 export { renderLinkable, renderTrigger, getSingleElement } from "./lib/render-element"

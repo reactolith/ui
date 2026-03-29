@@ -5,6 +5,7 @@ import { CloseOverlayProvider, useCloseOverlay } from "../close-overlay"
 import { SelectItemsProvider, useSelectItemsRegister } from "../select-items"
 import { cn } from "../utils"
 import { Item, ItemContent, ItemTitle, ItemDescription } from "@/components/ui/item"
+import { FormItemContext, FormSubmittingContext } from "@/components/ui/form"
 
 // ---------------------------------------------------------------------------
 // Types
@@ -90,6 +91,23 @@ export const overlay: BehaviorDef = {
       </C>
     )
   },
+}
+
+/** Reads FormItemContext to apply aria-invalid and disabled when submitting */
+export const formField: BehaviorDef = {
+  hoc: (C) => React.forwardRef(({ is, ...props }: any, ref: any) => {
+    const formItem = React.useContext(FormItemContext)
+    const submitting = React.useContext(FormSubmittingContext)
+    if (!formItem) return <C ref={ref} {...props} />
+    return (
+      <C
+        ref={ref}
+        {...props}
+        aria-invalid={formItem.invalid || undefined}
+        disabled={props.disabled || submitting || undefined}
+      />
+    )
+  }),
 }
 
 /** Calls useCloseOverlay() on click */

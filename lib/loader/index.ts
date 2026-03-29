@@ -17,6 +17,7 @@ export {
   trigger,
   overlay,
   closeClick,
+  formField,
   type BehaviorDef,
   type WrapperDef,
   type PropTransformDef,
