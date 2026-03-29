@@ -489,9 +489,17 @@
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;!-- The endpoint should return: [{&quot;value&quot;: &quot;...&quot;, &quot;label&quot;: &quot;...&quot;, &quot;suffix&quot;: &quot;...&quot;}, ...] --&gt;
 &lt;!-- The query is appended as ?q={input}, debounce defaults to 300ms, min-length to 2 --&gt;
-&lt;ui-combobox src=&quot;/api/search&quot; placeholder=&quot;Search...&quot; show-clear&gt;&lt;/ui-combobox&gt;
-
-&lt;!-- With initial value: pass json-initial-items so the label can be displayed --&gt;
+&lt;ui-combobox src=&quot;/api/search&quot; placeholder=&quot;Search...&quot; show-clear&gt;&lt;/ui-combobox&gt;</code></pre>
+              </div>
+            </section>
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Async Search with Initial Value</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <ui-combobox src="/search.json" value="js" json-initial-items='[{"value":"js","label":"JavaScript"}]' placeholder="Search languages..." show-clear></ui-combobox>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;!-- For async comboboxes with a pre-selected value, pass json-initial-items --&gt;
+&lt;!-- so the label can be resolved and displayed before the user types --&gt;
 &lt;ui-combobox src=&quot;/api/search&quot; value=&quot;js&quot;
   json-initial-items='[{&quot;value&quot;:&quot;js&quot;,&quot;label&quot;:&quot;JavaScript&quot;}]'
   placeholder=&quot;Search...&quot; show-clear&gt;

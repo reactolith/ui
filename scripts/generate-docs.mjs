@@ -463,9 +463,13 @@ const components = [
         example: `<ui-combobox src="/search.json" placeholder="Search languages..." show-clear></ui-combobox>`,
         readableExample: `<!-- The endpoint should return: [{"value": "...", "label": "...", "suffix": "..."}, ...] -->
 <!-- The query is appended as ?q={input}, debounce defaults to 300ms, min-length to 2 -->
-<ui-combobox src="/api/search" placeholder="Search..." show-clear></ui-combobox>
-
-<!-- With initial value: pass json-initial-items so the label can be displayed -->
+<ui-combobox src="/api/search" placeholder="Search..." show-clear></ui-combobox>`,
+      },
+      {
+        title: "Async Search with Initial Value",
+        example: `<ui-combobox src="/search.json" value="js" json-initial-items='[{"value":"js","label":"JavaScript"}]' placeholder="Search languages..." show-clear></ui-combobox>`,
+        readableExample: `<!-- For async comboboxes with a pre-selected value, pass json-initial-items -->
+<!-- so the label can be resolved and displayed before the user types -->
 <ui-combobox src="/api/search" value="js"
   json-initial-items='[{"value":"js","label":"JavaScript"}]'
   placeholder="Search..." show-clear>
