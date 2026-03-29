@@ -24,7 +24,6 @@ The loader system resolves `<ui-*>` tags to components using a class-based archi
   - `trigger` — single-child asChild render prop pattern
   - `overlay` — wraps children with `CloseOverlayProvider`
   - `closeClick` — calls `useCloseOverlay()` on click
-  - `formField` — reads `FormItemContext` to apply `aria-invalid` and `disabled` on form controls inside `<ui-form-item>`
   - Component-specific wrappers: `commandLinkable`, `sidebarLinkable`, `sidebarSubLinkable`, `selectProvider`, `selectRegister`, `comboboxProvider`, `comboboxListRenderer`
   - Prop transforms: `progressTransform`, `spinnerTransform`, `chartContainerTransform`, `chartTooltipTransform`
 
