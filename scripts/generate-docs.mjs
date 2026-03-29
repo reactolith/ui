@@ -366,7 +366,7 @@ const components = [
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/checkbox",
     subComponents: [
-      { tag: "ui-checkbox", props: [{ name: "checked", type: "boolean", default: "false", description: "Controlled checked state." }, { name: "defaultChecked", type: "boolean", default: "false", description: "Default checked state." }, { name: "disabled", type: "boolean", default: "false", description: "Whether the checkbox is disabled." }, { name: "name", type: "string", default: "—", description: "The name for form submission." }] },
+      { tag: "ui-checkbox", props: [{ name: "checked", type: "boolean", default: "false", description: "Controlled checked state." }, { name: "defaultChecked", type: "boolean", default: "false", description: "Default checked state." }, { name: "disabled", type: "boolean", default: "false", description: "Whether the checkbox is disabled." }, { name: "name", type: "string", default: "—", description: "The name for form submission." }], enhancedBy: "formField behavior — auto-applies aria-invalid and disabled inside ui-form-item" },
     ],
     example: `<div class="space-y-4">
   <div class="flex items-center gap-3">
@@ -715,6 +715,37 @@ const components = [
 </ui-field>`,
   },
   {
+    name: "Form",
+    slug: "form",
+    description: "A form wrapper with validation, error display, submitting state, and auto-submit support (onChange, onBlur).",
+    category: "Forms",
+    subComponents: [
+      { tag: "ui-form", props: [{ name: "errors", type: "FormError[]", default: "[]", description: "Array of form errors to display. Each error has message, name/id, optional label." }, { name: "errors-title", type: "string", default: "—", description: "Optional title for the error summary alert." }] },
+      { tag: "ui-form-item", props: [{ name: "name", type: "string", default: "—", description: "Field name matching error id/name. Auto-displays errors and sets data-invalid." }] },
+    ],
+    example: `<ui-form errors='[{"id":"email","message":"Email is required"},{"id":"password","message":"Password must be at least 8 characters"}]' errors-title="Please fix the following errors:">
+  <div class="space-y-4 max-w-md">
+    <ui-form-item name="email">
+      <ui-field>
+        <ui-field-label html-for="email">Email</ui-field-label>
+        <ui-field-content>
+          <ui-input id="email" name="email" type="email" placeholder="you@example.com"></ui-input>
+        </ui-field-content>
+      </ui-field>
+    </ui-form-item>
+    <ui-form-item name="password">
+      <ui-field>
+        <ui-field-label html-for="password">Password</ui-field-label>
+        <ui-field-content>
+          <ui-input id="password" name="password" type="password"></ui-input>
+        </ui-field-content>
+      </ui-field>
+    </ui-form-item>
+    <ui-button type="submit">Submit</ui-button>
+  </div>
+</ui-form>`,
+  },
+  {
     name: "Hover Card",
     slug: "hover-card",
     description: "For sighted users to preview content available behind a link.",
@@ -744,7 +775,7 @@ const components = [
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/input",
     subComponents: [
-      { tag: "ui-input", props: [{ name: "type", type: "string", default: '"text"', description: "The input type (text, email, password, etc.)." }, { name: "placeholder", type: "string", default: "—", description: "Placeholder text." }, { name: "disabled", type: "boolean", default: "false", description: "Whether the input is disabled." }] },
+      { tag: "ui-input", props: [{ name: "type", type: "string", default: '"text"', description: "The input type (text, email, password, etc.)." }, { name: "placeholder", type: "string", default: "—", description: "Placeholder text." }, { name: "disabled", type: "boolean", default: "false", description: "Whether the input is disabled." }], enhancedBy: "formField behavior — auto-applies aria-invalid and disabled inside ui-form-item" },
     ],
     example: `<div class="space-y-4 max-w-sm">
   <ui-input type="text" placeholder="Default input"></ui-input>
@@ -784,7 +815,7 @@ const components = [
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/input-otp",
     subComponents: [
-      { tag: "ui-input-otp", props: [{ name: "max-length", type: "number", default: "—", description: "Maximum number of characters." }] },
+      { tag: "ui-input-otp", props: [{ name: "max-length", type: "number", default: "—", description: "Maximum number of characters." }], enhancedBy: "formField behavior — auto-applies aria-invalid and disabled inside ui-form-item" },
       { tag: "ui-input-otp-group", props: [] },
       { tag: "ui-input-otp-slot", props: [{ name: "index", type: "number", default: "—", description: "The slot index." }] },
       { tag: "ui-input-otp-separator", props: [] },
@@ -924,7 +955,7 @@ const components = [
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/native-select",
     subComponents: [
-      { tag: "ui-native-select", props: [{ name: "disabled", type: "boolean", default: "false", description: "Whether the select is disabled." }] },
+      { tag: "ui-native-select", props: [{ name: "disabled", type: "boolean", default: "false", description: "Whether the select is disabled." }], enhancedBy: "formField behavior — auto-applies aria-invalid and disabled inside ui-form-item" },
       { tag: "ui-native-select-option", props: [{ name: "value", type: "string", default: "—", description: "The option value." }] },
       { tag: "ui-native-select-opt-group", props: [{ name: "label", type: "string", default: "—", description: "The group label." }] },
     ],
@@ -1055,7 +1086,7 @@ const components = [
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/radio-group",
     subComponents: [
-      { tag: "ui-radio-group", props: [{ name: "defaultValue", type: "string", default: "—", description: "The default selected value." }, { name: "value", type: "string", default: "—", description: "Controlled selected value." }] },
+      { tag: "ui-radio-group", props: [{ name: "defaultValue", type: "string", default: "—", description: "The default selected value." }, { name: "value", type: "string", default: "—", description: "Controlled selected value." }], enhancedBy: "formField behavior — auto-applies aria-invalid and disabled inside ui-form-item" },
       { tag: "ui-radio-group-item", props: [{ name: "value", type: "string", default: "—", description: "The value of this radio item." }] },
     ],
     example: `<ui-radio-group defaultValue="option-1">
@@ -1353,7 +1384,7 @@ const components = [
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/slider",
     subComponents: [
-      { tag: "ui-slider", props: [{ name: "value", type: "number[]", default: "—", description: "Controlled value." }, { name: "defaultValue", type: "number[]", default: "[0]", description: "Default value." }, { name: "min", type: "number", default: "0", description: "Minimum value." }, { name: "max", type: "number", default: "100", description: "Maximum value." }, { name: "step", type: "number", default: "1", description: "Step increment." }] },
+      { tag: "ui-slider", props: [{ name: "value", type: "number[]", default: "—", description: "Controlled value." }, { name: "defaultValue", type: "number[]", default: "[0]", description: "Default value." }, { name: "min", type: "number", default: "0", description: "Minimum value." }, { name: "max", type: "number", default: "100", description: "Maximum value." }, { name: "step", type: "number", default: "1", description: "Step increment." }], enhancedBy: "formField behavior — auto-applies aria-invalid and disabled inside ui-form-item" },
     ],
     example: `<div class="space-y-4 max-w-md">
   <ui-slider json-default-value="[33]"></ui-slider>
@@ -1382,7 +1413,7 @@ const components = [
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/switch",
     subComponents: [
-      { tag: "ui-switch", props: [{ name: "checked", type: "boolean", default: "—", description: "Controlled checked state." }, { name: "defaultChecked", type: "boolean", default: "false", description: "Default checked state." }, { name: "disabled", type: "boolean", default: "false", description: "Whether disabled." }, { name: "size", type: '"sm" | "default"', default: '"default"', description: "The size of the switch." }] },
+      { tag: "ui-switch", props: [{ name: "checked", type: "boolean", default: "—", description: "Controlled checked state." }, { name: "defaultChecked", type: "boolean", default: "false", description: "Default checked state." }, { name: "disabled", type: "boolean", default: "false", description: "Whether disabled." }, { name: "size", type: '"sm" | "default"', default: '"default"', description: "The size of the switch." }], enhancedBy: "formField behavior — auto-applies aria-invalid and disabled inside ui-form-item" },
     ],
     example: `<div class="space-y-4">
   <div class="flex items-center gap-3">
@@ -1496,7 +1527,7 @@ const components = [
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/textarea",
     subComponents: [
-      { tag: "ui-textarea", props: [{ name: "placeholder", type: "string", default: "—", description: "Placeholder text." }, { name: "disabled", type: "boolean", default: "false", description: "Whether disabled." }, { name: "rows", type: "number", default: "—", description: "Number of visible rows." }] },
+      { tag: "ui-textarea", props: [{ name: "placeholder", type: "string", default: "—", description: "Placeholder text." }, { name: "disabled", type: "boolean", default: "false", description: "Whether disabled." }, { name: "rows", type: "number", default: "—", description: "Number of visible rows." }], enhancedBy: "formField behavior — auto-applies aria-invalid and disabled inside ui-form-item" },
     ],
     example: `<div class="space-y-4 max-w-md">
   <ui-textarea placeholder="Type your message here..."></ui-textarea>
