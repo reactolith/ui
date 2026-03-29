@@ -210,7 +210,7 @@ function Form({
             {...props}
           >
             {allErrors.length > 0 && (
-              <Alert variant="destructive">
+              <Alert variant="destructive" className="mb-4">
                 {errorsTitle && <AlertTitle>{errorsTitle}</AlertTitle>}
                 <AlertDescription>
                   <ul className="list-inside list-disc text-sm">

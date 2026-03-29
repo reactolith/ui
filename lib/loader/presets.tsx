@@ -6,7 +6,7 @@ import {
   selectProvider, selectRegister, selectContentRenderer,
   comboboxProvider, comboboxListRenderer,
   createSmartTriggerWrapper,
-  progressTransform, spinnerTransform, chartContainerTransform, chartTooltipTransform,
+  progressTransform, spinnerTransform, chartContainerTransform, chartTooltipTransform, formTransform,
 } from "./behaviors"
 
 // ---------------------------------------------------------------------------
@@ -83,6 +83,7 @@ export function createShadcnLoader(modules: ModuleMap): ComponentLoader {
       "spinner": spinnerTransform,
       "chart-container": chartContainerTransform,
       "chart-tooltip": chartTooltipTransform,
+      "form": formTransform,
     },
   })
 
