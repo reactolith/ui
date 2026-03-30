@@ -501,7 +501,7 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Auto-Submit on Change</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
-                <ui-form action="/api/settings" method="post">
+                <ui-form method="get">
   <div class="space-y-4 max-w-md">
     <ui-form-item name="theme" auto-submit="onChange">
       <ui-field>
@@ -525,7 +525,7 @@
 </ui-form>
               </div>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-form action=&quot;/api/settings&quot; method=&quot;post&quot;&gt;
+                <pre class="p-4 text-sm"><code>&lt;ui-form method=&quot;get&quot;&gt;
   &lt;div class=&quot;space-y-4 max-w-md&quot;&gt;
     &lt;ui-form-item name=&quot;theme&quot; auto-submit=&quot;onChange&quot;&gt;
       &lt;ui-field&gt;
@@ -552,7 +552,7 @@
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Auto-Submit on Blur</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
-                <ui-form action="/api/profile" method="post">
+                <ui-form method="get">
   <div class="space-y-4 max-w-md">
     <ui-form-item name="username" auto-submit="onBlur">
       <ui-field>
@@ -575,7 +575,7 @@
 </ui-form>
               </div>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-form action=&quot;/api/profile&quot; method=&quot;post&quot;&gt;
+                <pre class="p-4 text-sm"><code>&lt;ui-form method=&quot;get&quot;&gt;
   &lt;div class=&quot;space-y-4 max-w-md&quot;&gt;
     &lt;ui-form-item name=&quot;username&quot; auto-submit=&quot;onBlur&quot;&gt;
       &lt;ui-field&gt;

@@ -854,7 +854,7 @@ const components = [
     additionalExamples: [
       {
         title: "Auto-Submit on Change",
-        example: `<ui-form action="/api/settings" method="post">
+        example: `<ui-form method="get">
   <div class="space-y-4 max-w-md">
     <ui-form-item name="theme" auto-submit="onChange">
       <ui-field>
@@ -879,7 +879,7 @@ const components = [
       },
       {
         title: "Auto-Submit on Blur",
-        example: `<ui-form action="/api/profile" method="post">
+        example: `<ui-form method="get">
   <div class="space-y-4 max-w-md">
     <ui-form-item name="username" auto-submit="onBlur">
       <ui-field>
