@@ -103,15 +103,22 @@ export const overlay: BehaviorDef = {
   },
 }
 
-/** Reads FormItemContext to apply aria-invalid and disabled when submitting */
+/** Reads FormItemContext to apply aria-invalid and disabled when submitting.
+ *  Maps `value` → `defaultValue` so inputs stay uncontrolled — on SSR remount
+ *  the fresh server value is picked up automatically (same pattern as reference project). */
 export const formField: BehaviorDef = {
-  hoc: (C) => React.forwardRef(({ is, ...props }: any, ref: any) => {
+  hoc: (C) => React.forwardRef(({ is, value, ...props }: any, ref: any) => {
     const formItem = React.useContext(FormItemContext)
     const submitting = React.useContext(FormSubmittingContext)
-    if (!formItem) return <C ref={ref} {...props} />
+    // Convert value → defaultValue for uncontrolled behaviour (skip if already set)
+    const valueProps = value !== undefined && props.defaultValue === undefined
+      ? { defaultValue: value }
+      : value !== undefined ? { value } : {}
+    if (!formItem) return <C ref={ref} {...valueProps} {...props} />
     return (
       <C
         ref={ref}
+        {...valueProps}
         {...props}
         aria-invalid={formItem.invalid || undefined}
         disabled={props.disabled || submitting || undefined}

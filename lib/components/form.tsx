@@ -34,8 +34,6 @@ function Form({
   const formRef = React.useRef<HTMLFormElement>(null)
   const [touchedMap, setTouchedMap] = React.useState<Record<string, boolean>>({})
   const [submitting, setSubmitting] = React.useState(false)
-  const pendingResetRef = React.useRef(false)
-
   const getErrors = React.useCallback(
     (name: string, includeTouched = false) =>
       errors.filter((e) => {
@@ -70,15 +68,6 @@ function Form({
     [errors],
   )
 
-  // After a submit cycle completes and React commits new defaultValues from the
-  // parent, reset the native form so uncontrolled inputs pick up the fresh values.
-  React.useEffect(() => {
-    if (pendingResetRef.current) {
-      pendingResetRef.current = false
-      formRef.current?.reset()
-    }
-  })
-
   const handleSubmit = React.useCallback(
     async (event: React.FormEvent<HTMLFormElement> | SubmitEvent) => {
       // When no custom handler is provided, allow native form submission
@@ -91,7 +80,6 @@ function Form({
           "nativeEvent" in event ? event.nativeEvent : event
         await (userOnSubmit as any)?.(nativeEvent)
       } finally {
-        pendingResetRef.current = true
         setTouchedMap({})
         setSubmitting(false)
       }
