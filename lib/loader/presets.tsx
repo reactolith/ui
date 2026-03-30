@@ -1,7 +1,8 @@
 import type { ModuleMap } from "./component-loader"
 import { ComponentLoader, AiElementsLoader } from "./component-loader"
 import {
-  linkable, linkableClose, trigger, overlay, closeClick, formField,
+  linkable, linkableClose, trigger, overlay, closeClick,
+  formField, formFieldChecked, formFieldValue,
   commandLinkable, sidebarLinkable, sidebarSubLinkable,
   selectProvider, selectRegister, selectContentRenderer,
   comboboxProvider, comboboxListRenderer,
@@ -38,12 +39,13 @@ export function createShadcnLoader(modules: ModuleMap): ComponentLoader {
       // form field: aria-invalid + disabled from FormItemContext
       "input": formField,
       "textarea": formField,
-      "checkbox": formField,
-      "switch": formField,
-      "slider": formField,
-      "radio-group": formField,
       "native-select": formField,
       "input-otp": formField,
+      // React form components: also wrap callbacks for auto-submit
+      "checkbox": formFieldChecked,
+      "switch": formFieldChecked,
+      "slider": formFieldValue,
+      "radio-group": formFieldValue,
 
       // single-child render prop via renderTrigger
       "tooltip-trigger": trigger,

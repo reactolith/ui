@@ -24,12 +24,17 @@ export type FormErrorsContextValue = {
 export type FormInteractionContextValue = {
   triggerFormChange: (target: HTMLElement) => void
   triggerFormBlur: (target: HTMLElement) => void
+  /** Submit the form directly (no DOM element needed). Used by React-based
+   *  form components (checkbox, select, combobox, …) that don't fire native
+   *  change/blur events. */
+  submitForm: () => void
 }
 
 export type FormItemContextValue = {
   name: string
   invalid: boolean
   touchErrors: () => void
+  autoSubmit?: string
 }
 
 // ---------------------------------------------------------------------------

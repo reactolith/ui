@@ -868,9 +868,29 @@ const components = [
         </ui-field-content>
       </ui-field>
     </ui-form-item>
+    <ui-form-item name="language" auto-submit="onChange">
+      <ui-field>
+        <ui-field-label html-for="language">Language</ui-field-label>
+        <ui-field-content>
+          <ui-select name="language" json-items='[{"value":"en","label":"English"},{"value":"de","label":"Deutsch"},{"value":"fr","label":"Français"},{"value":"es","label":"Español"}]'>
+            <ui-select-trigger><ui-select-value placeholder="Select language"></ui-select-value></ui-select-trigger>
+            <ui-select-content></ui-select-content>
+          </ui-select>
+        </ui-field-content>
+      </ui-field>
+    </ui-form-item>
+    <ui-form-item name="framework" auto-submit="onChange">
+      <ui-field>
+        <ui-field-label>Framework</ui-field-label>
+        <ui-field-content>
+          <ui-combobox name="framework" json-items='[{"value":"react","label":"React"},{"value":"vue","label":"Vue.js"},{"value":"angular","label":"Angular"},{"value":"svelte","label":"Svelte"}]'>
+          </ui-combobox>
+        </ui-field-content>
+      </ui-field>
+    </ui-form-item>
     <ui-form-item name="notifications" auto-submit="onChange">
       <div class="flex items-center gap-3">
-        <ui-checkbox id="notifications" name="notifications"></ui-checkbox>
+        <ui-checkbox id="notifications" name="notifications" value="1"></ui-checkbox>
         <ui-label for="notifications">Enable notifications</ui-label>
       </div>
     </ui-form-item>
