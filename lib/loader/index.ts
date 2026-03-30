@@ -18,6 +18,8 @@ export {
   overlay,
   closeClick,
   formField,
+  formFieldChecked,
+  formFieldValue,
   type BehaviorDef,
   type WrapperDef,
   type PropTransformDef,

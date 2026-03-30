@@ -140,12 +140,28 @@ function Form({
     [errors, getErrors, getAllErrors, touchErrors],
   )
 
+  const submitForm = React.useCallback(() => {
+    const form = formRef.current
+    if (!form) return
+    if (!userOnSubmit) {
+      form.requestSubmit()
+      return
+    }
+    const submitEvent = new SubmitEvent("submit", { submitter: form })
+    Object.defineProperty(submitEvent, "target", {
+      writable: false,
+      value: form,
+    })
+    handleSubmit(submitEvent)
+  }, [handleSubmit, userOnSubmit])
+
   const interactionCtx = React.useMemo<FormInteractionContextValue>(
     () => ({
       triggerFormChange: (target) => autoSubmit(target, "onChange"),
       triggerFormBlur: (target) => autoSubmit(target, "onBlur"),
+      submitForm,
     }),
-    [autoSubmit],
+    [autoSubmit, submitForm],
   )
 
   const allErrors = getAllErrors()
@@ -213,8 +229,9 @@ function FormItem({
       name,
       invalid,
       touchErrors: () => errorsCtx?.touchErrors(name),
+      autoSubmit,
     }),
-    [name, invalid, errorsCtx],
+    [name, invalid, errorsCtx, autoSubmit],
   )
 
   const handleChange = React.useCallback(() => {

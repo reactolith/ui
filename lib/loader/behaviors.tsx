@@ -4,7 +4,7 @@ import { renderLinkable, renderTrigger, getSingleElement } from "../render-eleme
 import { CloseOverlayProvider, useCloseOverlay } from "../close-overlay"
 import { SelectItemsProvider, useSelectItemsRegister } from "../select-items"
 import { cn } from "../utils"
-import { FormItemContext, FormSubmittingContext } from "../form-context"
+import { FormItemContext, FormSubmittingContext, FormInteractionContext } from "../form-context"
 
 // Optional shadcn item components — loaded async so the library works without them.
 // By the time a combobox actually renders, the import will have resolved.
@@ -103,29 +103,65 @@ export const overlay: BehaviorDef = {
   },
 }
 
-/** Reads FormItemContext to apply aria-invalid and disabled when submitting.
- *  Maps `value` → `defaultValue` so inputs stay uncontrolled — on SSR remount
- *  the fresh server value is picked up automatically (same pattern as reference project). */
-export const formField: BehaviorDef = {
-  hoc: (C) => React.forwardRef(({ is, value, ...props }: any, ref: any) => {
-    const formItem = React.useContext(FormItemContext)
-    const submitting = React.useContext(FormSubmittingContext)
-    // Convert value → defaultValue for uncontrolled behaviour (skip if already set)
-    const valueProps = value !== undefined && props.defaultValue === undefined
-      ? { defaultValue: value }
-      : value !== undefined ? { value } : {}
-    if (!formItem) return <C ref={ref} {...valueProps} {...props} />
-    return (
-      <C
-        ref={ref}
-        {...valueProps}
-        {...props}
-        aria-invalid={formItem.invalid || undefined}
-        disabled={props.disabled || submitting || undefined}
-      />
-    )
-  }),
+/**
+ * Factory for form-field behaviors.
+ * - `mapValueToDefault`: convert `value` → `defaultValue` (for native inputs in SSR)
+ * - `callback`: wrap this callback (e.g. "onCheckedChange") to trigger auto-submit
+ */
+function createFormFieldBehavior(opts?: {
+  mapValueToDefault?: boolean
+  callback?: string
+}): BehaviorDef {
+  const mapValue = opts?.mapValueToDefault ?? false
+  const cbName = opts?.callback
+
+  return {
+    hoc: (C) => React.forwardRef(({ is, ...rawProps }: any, ref: any) => {
+      const formItem = React.useContext(FormItemContext)
+      const submitting = React.useContext(FormSubmittingContext)
+      const interaction = React.useContext(FormInteractionContext)
+
+      let props = rawProps
+
+      // value → defaultValue for native inputs (SSR remount picks up fresh values)
+      if (mapValue && props.value !== undefined && props.defaultValue === undefined) {
+        const { value, ...rest } = props
+        props = { defaultValue: value, ...rest }
+      }
+
+      // Wrap change callback to trigger auto-submit via context
+      const userCb = cbName ? props[cbName] : undefined
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      const wrappedCb = React.useCallback((...args: any[]) => {
+        userCb?.(...args)
+        if (formItem?.autoSubmit === "onChange" && interaction) {
+          interaction.submitForm()
+        }
+      }, [userCb, formItem?.autoSubmit, interaction])
+
+      if (cbName) props = { ...props, [cbName]: wrappedCb }
+
+      if (!formItem) return <C ref={ref} {...props} />
+      return (
+        <C
+          ref={ref}
+          {...props}
+          aria-invalid={formItem.invalid || undefined}
+          disabled={props.disabled || submitting || undefined}
+        />
+      )
+    }),
+  }
 }
+
+/** For native inputs: aria-invalid + disabled + value→defaultValue */
+export const formField: BehaviorDef = createFormFieldBehavior({ mapValueToDefault: true })
+
+/** For checkbox/switch: aria-invalid + disabled + wraps onCheckedChange for auto-submit */
+export const formFieldChecked: BehaviorDef = createFormFieldBehavior({ callback: "onCheckedChange" })
+
+/** For slider/radio-group: aria-invalid + disabled + wraps onValueChange for auto-submit */
+export const formFieldValue: BehaviorDef = createFormFieldBehavior({ callback: "onValueChange" })
 
 /** Calls useCloseOverlay() on click */
 export const closeClick: BehaviorDef = {
@@ -237,9 +273,12 @@ function selectItemsToRecord(items: SelectItemShape[]): Record<string, string> {
   return record
 }
 
-/** Select root with SelectItemsProvider context + items prop support */
+/** Select root with SelectItemsProvider context + items prop support + auto-submit */
 export const selectProvider: WrapperDef = {
-  fn: (C) => React.forwardRef(({ children, is, items: userItems, ...props }: any, ref: any) => {
+  fn: (C) => React.forwardRef(({ children, is, items: userItems, onValueChange, ...props }: any, ref: any) => {
+    const formItem = React.useContext(FormItemContext)
+    const interaction = React.useContext(FormInteractionContext)
+
     // Parse user-provided items (from json-items attribute)
     const parsedRecord = React.useMemo(() => {
       if (!userItems) return undefined
@@ -259,10 +298,18 @@ export const selectProvider: WrapperDef = {
       return { ...parsedRecord, ...registeredItems }
     }, [parsedRecord, registeredItems])
 
+    // Wrap onValueChange to trigger auto-submit
+    const handleValueChange = React.useCallback((...args: any[]) => {
+      onValueChange?.(...args)
+      if (formItem?.autoSubmit === "onChange" && interaction) {
+        interaction.submitForm()
+      }
+    }, [onValueChange, formItem?.autoSubmit, interaction])
+
     return (
       <SelectItemsProvider onItemsChange={handleItemsChange}>
         <SelectItemsDataContext.Provider value={userItems ?? null}>
-          <C ref={ref} items={mergedItems} {...props}>{children}</C>
+          <C ref={ref} items={mergedItems} onValueChange={handleValueChange} {...props}>{children}</C>
         </SelectItemsDataContext.Provider>
       </SelectItemsProvider>
     )
@@ -484,9 +531,23 @@ export const comboboxProvider: WrapperDef = {
       items, src, debounce, "min-length": minLength, children, is,
       placeholder, "show-clear": showClearAttr, "show-trigger": showTriggerAttr,
       "initial-items": initialItems,
-      value, defaultValue,
+      value, defaultValue, onValueChange,
       ...props
     }: any) => {
+      const formItem = React.useContext(FormItemContext)
+      const interaction = React.useContext(FormInteractionContext)
+
+      // Wrap onValueChange to trigger auto-submit
+      const handleValueChange = React.useCallback((...args: any[]) => {
+        onValueChange?.(...args)
+        if (formItem?.autoSubmit === "onChange" && interaction) {
+          interaction.submitForm()
+        }
+      }, [onValueChange, formItem?.autoSubmit, interaction])
+
+      // Re-inject wrapped callback so all code paths pick it up via {...props}
+      props = { ...props, onValueChange: handleValueChange }
+
       const resolvedChildren = children ?? (
         ComboboxInput && ComboboxContent && ComboboxList ? (
           <>
