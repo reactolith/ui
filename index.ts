@@ -65,7 +65,7 @@ export {
   useFormInteraction,
   useFormItem,
   type FormError,
-} from "./lib/components/form"
+} from "./lib/form-context"
 
 // Utilities
 export { renderLinkable, renderTrigger, getSingleElement } from "./lib/render-element"
