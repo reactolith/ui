@@ -280,6 +280,8 @@ function FormItem({
   )
 }
 
+export default Form
+
 export {
   Form,
   FormItem,

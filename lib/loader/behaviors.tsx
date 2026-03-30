@@ -5,7 +5,7 @@ import { CloseOverlayProvider, useCloseOverlay } from "../close-overlay"
 import { SelectItemsProvider, useSelectItemsRegister } from "../select-items"
 import { cn } from "../utils"
 import { Item, ItemContent, ItemTitle, ItemDescription } from "@/components/ui/item"
-import { FormItemContext, FormSubmittingContext } from "@/components/ui/form"
+import { FormItemContext, FormSubmittingContext } from "../components/form"
 
 // ---------------------------------------------------------------------------
 // Types

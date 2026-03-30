@@ -16,6 +16,8 @@ const BUILTIN_COMPONENTS: Record<string, () => Promise<{ default: ComponentType<
   "route-progress-bar": () => import("../components/route-progress-bar"),
   "route-error": () => import("../components/route-error"),
   "icon": () => import("../components/icon"),
+  "form": () => import("../components/form"),
+  "form-item": () => import("../components/form").then(m => ({ default: m.FormItem })),
 }
 
 // ---------------------------------------------------------------------------
