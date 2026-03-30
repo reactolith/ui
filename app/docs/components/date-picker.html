@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Model Selector - Reactolith UI</title>
+    <title>Date Picker - Reactolith UI</title>
     <link rel="icon" href="../../icon.svg" type="image/svg+xml">
     <script type="module" src="../../app.ts"></script>
     <script>
@@ -81,7 +81,7 @@
                   <ui-sidebar-menu-button  size="sm" href="calendar.html">Calendar</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="date-picker.html">Date Picker</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="date-picker.html">Date Picker</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="checkbox.html">Checkbox</ui-sidebar-menu-button>
@@ -339,7 +339,7 @@
                   <ui-sidebar-menu-button  size="sm" href="ai-mic-selector.html">Mic Selector</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button is-active size="sm" href="ai-model-selector.html">Model Selector</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="ai-model-selector.html">Model Selector</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="ai-open-in-chat.html">Open In Chat</ui-sidebar-menu-button>
@@ -431,86 +431,135 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://ai.shadcn.com/docs/components/model-selector" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">AI Elements docs</a>
+                <span class="text-xs bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2 py-1 rounded shrink-0">built-in</span>
               </div>
-              <h1 class="text-3xl font-bold tracking-tight">Model Selector</h1>
-              <p class="text-lg text-muted-foreground">A dialog-based model picker with search, grouping, provider logos, and keyboard shortcuts.</p>
+              <h1 class="text-3xl font-bold tracking-tight">Date Picker</h1>
+              <p class="text-lg text-muted-foreground">A date picker with calendar popup and direct text input. Supports locale-aware formatting and native form values.</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <ui-ai-model-selector>
-  <ui-ai-model-selector-trigger>Select Model</ui-ai-model-selector-trigger>
-  <ui-ai-model-selector-content title="Choose a model">
-    <ui-ai-model-selector-input placeholder="Search models..."></ui-ai-model-selector-input>
-    <ui-ai-model-selector-list>
-      <ui-ai-model-selector-empty>No models found.</ui-ai-model-selector-empty>
-      <ui-ai-model-selector-group>
-        <ui-ai-model-selector-item>
-          <ui-ai-model-selector-logo provider="openai"></ui-ai-model-selector-logo>
-          <ui-ai-model-selector-name>GPT-4o</ui-ai-model-selector-name>
-          <ui-ai-model-selector-shortcut>⌘1</ui-ai-model-selector-shortcut>
-        </ui-ai-model-selector-item>
-        <ui-ai-model-selector-item>
-          <ui-ai-model-selector-logo provider="anthropic"></ui-ai-model-selector-logo>
-          <ui-ai-model-selector-name>Claude 3.5 Sonnet</ui-ai-model-selector-name>
-          <ui-ai-model-selector-shortcut>⌘2</ui-ai-model-selector-shortcut>
-        </ui-ai-model-selector-item>
-      </ui-ai-model-selector-group>
-    </ui-ai-model-selector-list>
-  </ui-ai-model-selector-content>
-</ui-ai-model-selector>
+                    <div class="space-y-6 max-w-sm">
+  <ui-field>
+    <ui-field-label>Date</ui-field-label>
+    <ui-date-picker name="date"></ui-date-picker>
+  </ui-field>
+  <ui-field>
+    <ui-field-label>Time</ui-field-label>
+    <ui-time-picker name="time"></ui-time-picker>
+  </ui-field>
+</div>
                   </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-ai-model-selector&gt;
-  &lt;ui-ai-model-selector-trigger&gt;Select Model&lt;/ui-ai-model-selector-trigger&gt;
-  &lt;ui-ai-model-selector-content title=&quot;Choose a model&quot;&gt;
-    &lt;ui-ai-model-selector-input placeholder=&quot;Search models...&quot;&gt;&lt;/ui-ai-model-selector-input&gt;
-    &lt;ui-ai-model-selector-list&gt;
-      &lt;ui-ai-model-selector-empty&gt;No models found.&lt;/ui-ai-model-selector-empty&gt;
-      &lt;ui-ai-model-selector-group&gt;
-        &lt;ui-ai-model-selector-item&gt;
-          &lt;ui-ai-model-selector-logo provider=&quot;openai&quot;&gt;&lt;/ui-ai-model-selector-logo&gt;
-          &lt;ui-ai-model-selector-name&gt;GPT-4o&lt;/ui-ai-model-selector-name&gt;
-          &lt;ui-ai-model-selector-shortcut&gt;⌘1&lt;/ui-ai-model-selector-shortcut&gt;
-        &lt;/ui-ai-model-selector-item&gt;
-        &lt;ui-ai-model-selector-item&gt;
-          &lt;ui-ai-model-selector-logo provider=&quot;anthropic&quot;&gt;&lt;/ui-ai-model-selector-logo&gt;
-          &lt;ui-ai-model-selector-name&gt;Claude 3.5 Sonnet&lt;/ui-ai-model-selector-name&gt;
-          &lt;ui-ai-model-selector-shortcut&gt;⌘2&lt;/ui-ai-model-selector-shortcut&gt;
-        &lt;/ui-ai-model-selector-item&gt;
-      &lt;/ui-ai-model-selector-group&gt;
-    &lt;/ui-ai-model-selector-list&gt;
-  &lt;/ui-ai-model-selector-content&gt;
-&lt;/ui-ai-model-selector&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;div class=&quot;space-y-6 max-w-sm&quot;&gt;
+  &lt;ui-field&gt;
+    &lt;ui-field-label&gt;Date&lt;/ui-field-label&gt;
+    &lt;ui-date-picker name=&quot;date&quot;&gt;&lt;/ui-date-picker&gt;
+  &lt;/ui-field&gt;
+  &lt;ui-field&gt;
+    &lt;ui-field-label&gt;Time&lt;/ui-field-label&gt;
+    &lt;ui-time-picker name=&quot;time&quot;&gt;&lt;/ui-time-picker&gt;
+  &lt;/ui-field&gt;
+&lt;/div&gt;</code></pre>
               </div>
             </section>
 
             
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Date Time Picker</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <ui-field class="max-w-md">
+  <ui-field-label>Appointment</ui-field-label>
+  <ui-date-time-picker name="appointment"></ui-date-time-picker>
+</ui-field>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;ui-field class=&quot;max-w-md&quot;&gt;
+  &lt;ui-field-label&gt;Appointment&lt;/ui-field-label&gt;
+  &lt;ui-date-time-picker name=&quot;appointment&quot;&gt;&lt;/ui-date-time-picker&gt;
+&lt;/ui-field&gt;</code></pre>
+              </div>
+            </section>
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Date Range Picker</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <ui-field class="max-w-lg">
+  <ui-field-label>Travel Dates</ui-field-label>
+  <ui-date-range-picker name="travel"></ui-date-range-picker>
+</ui-field>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;ui-field class=&quot;max-w-lg&quot;&gt;
+  &lt;ui-field-label&gt;Travel Dates&lt;/ui-field-label&gt;
+  &lt;ui-date-range-picker name=&quot;travel&quot;&gt;&lt;/ui-date-range-picker&gt;
+&lt;/ui-field&gt;</code></pre>
+              </div>
+            </section>
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Custom Display Format</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <ui-field class="max-w-sm">
+  <ui-field-label>Date (custom format)</ui-field-label>
+  <ui-date-picker name="custom-date" displayFormat="dd.MM.yyyy" placeholder="23.04.2026"></ui-date-picker>
+</ui-field>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;!-- Use date-fns format patterns for custom display --&gt;
+&lt;ui-date-picker
+  name=&quot;custom-date&quot;
+  displayFormat=&quot;dd.MM.yyyy&quot;
+  placeholder=&quot;23.04.2026&quot;&gt;
+&lt;/ui-date-picker&gt;
+
+&lt;!-- Custom value format for form submission --&gt;
+&lt;ui-date-picker
+  name=&quot;iso-date&quot;
+  valueFormat=&quot;yyyy-MM-dd'T'HH:mm:ss&quot;&gt;
+&lt;/ui-date-picker&gt;
+
+&lt;!-- Specify locale explicitly --&gt;
+&lt;ui-date-picker
+  name=&quot;de-date&quot;
+  locale=&quot;de-AT&quot;&gt;
+&lt;/ui-date-picker&gt;</code></pre>
+              </div>
+            </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Sub-components</h2>
               <div class="flex flex-wrap gap-2">
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-model-selector&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-model-selector-trigger&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-model-selector-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-model-selector-dialog&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-model-selector-input&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-model-selector-list&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-model-selector-empty&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-model-selector-group&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-model-selector-item&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-model-selector-shortcut&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-model-selector-separator&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-model-selector-logo&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-model-selector-logo-group&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-ai-model-selector-name&gt;</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-date-picker&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-time-picker&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-date-time-picker&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-date-range-picker&gt;</code>
               </div>
             </section>
 
             <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
             <div class="mt-6">
-              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-model-selector-content&gt;</code></h3>
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-date-picker&gt;</code></h3>
               <div class="overflow-x-auto max-w-full">
-                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">title</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">ReactNode</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Dialog title.</td></tr></tbody></table>
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">Date</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The selected date (controlled).</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">defaultValue</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">Date</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Default date (uncontrolled).</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onValueChange</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">(date: Date | undefined) =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback when date changes.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">displayFormat</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">browser locale short date</code></td><td class="py-2 text-muted-foreground">date-fns format pattern for display (e.g. 'dd.MM.yyyy').</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">valueFormat</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;yyyy-MM-dd&quot;</code></td><td class="py-2 text-muted-foreground">date-fns format pattern for the hidden form value. Defaults to native HTML date format.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">locale</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">navigator.language</code></td><td class="py-2 text-muted-foreground">BCP 47 locale string for Intl formatting (e.g. 'de-AT').</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Name for the hidden form input. Enables form submission.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">placeholder</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">current date formatted</code></td><td class="py-2 text-muted-foreground">Placeholder text for the input.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">disabled</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Whether the picker is disabled.</td></tr></tbody></table>
               </div>
             </div>
             <div class="mt-6">
-              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-ai-model-selector-logo&gt;</code></h3>
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-time-picker&gt;</code></h3>
               <div class="overflow-x-auto max-w-full">
-                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">provider</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Provider name for the logo.</td></tr></tbody></table>
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">Date</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The selected time (controlled).</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">defaultValue</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">Date</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Default time (uncontrolled).</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onValueChange</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">(date: Date | undefined) =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback when time changes.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">displayFormat</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">browser locale HH:mm</code></td><td class="py-2 text-muted-foreground">date-fns format pattern for display (e.g. 'hh:mm a').</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">valueFormat</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;HH:mm&quot;</code></td><td class="py-2 text-muted-foreground">date-fns format pattern for the hidden form value. Defaults to native HTML time format.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">locale</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">navigator.language</code></td><td class="py-2 text-muted-foreground">BCP 47 locale string for Intl formatting.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Name for the hidden form input.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">placeholder</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">current time formatted</code></td><td class="py-2 text-muted-foreground">Placeholder text for the input.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">disabled</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Whether the picker is disabled.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-date-time-picker&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">Date</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The selected datetime (controlled).</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">defaultValue</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">Date</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Default datetime (uncontrolled).</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onValueChange</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">(date: Date | undefined) =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback when datetime changes.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">displayFormat</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">browser locale short date</code></td><td class="py-2 text-muted-foreground">date-fns format pattern for date display.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">timeDisplayFormat</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">browser locale HH:mm</code></td><td class="py-2 text-muted-foreground">date-fns format pattern for time display.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">valueFormat</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;yyyy-MM-dd'T'HH:mm&quot;</code></td><td class="py-2 text-muted-foreground">date-fns format pattern for the hidden form value. Defaults to native HTML datetime-local format.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">locale</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">navigator.language</code></td><td class="py-2 text-muted-foreground">BCP 47 locale string for Intl formatting.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Name for the hidden form input.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">placeholder</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">current date formatted</code></td><td class="py-2 text-muted-foreground">Placeholder text for the date input.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">timePlaceholder</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">current time formatted</code></td><td class="py-2 text-muted-foreground">Placeholder text for the time input.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">disabled</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Whether the picker is disabled.</td></tr></tbody></table>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-date-range-picker&gt;</code></h3>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">DateRange</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">The selected range (controlled). Object with from and to Date properties.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">defaultValue</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">DateRange</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Default range (uncontrolled).</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onValueChange</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">(range: DateRange | undefined) =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback when range changes.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">displayFormat</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">browser locale short date</code></td><td class="py-2 text-muted-foreground">date-fns format pattern for display.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">valueFormat</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;yyyy-MM-dd&quot;</code></td><td class="py-2 text-muted-foreground">date-fns format pattern for the hidden form values. Defaults to native HTML date format.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">locale</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">navigator.language</code></td><td class="py-2 text-muted-foreground">BCP 47 locale string for Intl formatting.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Name prefix for the hidden form inputs. Creates {name}-from and {name}-to.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">placeholderFrom</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">current date formatted</code></td><td class="py-2 text-muted-foreground">Placeholder text for the start date input.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">placeholderTo</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">current date formatted</code></td><td class="py-2 text-muted-foreground">Placeholder text for the end date input.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">numberOfMonths</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">2</code></td><td class="py-2 text-muted-foreground">Number of months to display in the calendar popup.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">disabled</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Whether the picker is disabled.</td></tr></tbody></table>
               </div>
             </div></section>
 

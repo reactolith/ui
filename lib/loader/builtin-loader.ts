@@ -18,6 +18,10 @@ const BUILTIN_COMPONENTS: Record<string, () => Promise<{ default: ComponentType<
   "icon": () => import("../components/icon"),
   "form": () => import("../components/form"),
   "form-item": () => import("../components/form").then(m => ({ default: m.FormItem })),
+  "date-picker": () => import("../components/date-picker"),
+  "time-picker": () => import("../components/date-picker").then(m => ({ default: m.TimePicker })),
+  "date-time-picker": () => import("../components/date-picker").then(m => ({ default: m.DateTimePicker })),
+  "date-range-picker": () => import("../components/date-picker").then(m => ({ default: m.DateRangePicker })),
 }
 
 // ---------------------------------------------------------------------------

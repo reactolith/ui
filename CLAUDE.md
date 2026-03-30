@@ -4,13 +4,17 @@
 
 Reactolith UI — a component library built with Vite + React 19 + Base UI + Tailwind CSS v4. Published as an npm package.
 
-### `components/ui/` — Base components (do NOT modify)
+### `components/ui/` — Base components (do NOT modify, do NOT add new files)
 
-Shadcn base component copies. Treat as read-only third-party code.
+Shadcn base component copies. Treat as read-only third-party code. **NEVER create new component files here.** In real projects, developers place their own shadcn components in this folder — it is not the place for custom library components.
 
-### `components/ai-elements/` — AI components (do NOT modify)
+### `components/ai-elements/` — AI components (do NOT modify, do NOT add new files)
 
-AI-specific components (code blocks, messages, canvases, etc.). Also read-only.
+AI-specific components (code blocks, messages, canvases, etc.). Also read-only. Same rule: **never add new files here.**
+
+### `lib/components/` — Custom library components (add new components HERE)
+
+Custom components shipped with reactolith-ui (form, date-picker, sonner, theme-switch, editor, icon, etc.). **All new components must be created in this directory** and registered in `lib/loader/builtin-loader.ts` with a dynamic import. Each file exports a default component plus any named sub-component exports. Sub-components are registered in the builtin-loader using `.then(m => ({ default: m.SubComponent }))`.
 
 ### `lib/loader/` — Loader system
 
@@ -42,23 +46,24 @@ The loader system resolves `<ui-*>` tags to components using a class-based archi
 
 - **`index.ts`** — Re-exports everything
 
-#### How resolution works
+#### How resolution works (priority order)
 
-1. `ui-field-label` → `ComponentLoader.findModule('field-label')` → `components/ui/field.tsx` → `findExport(mod, 'field-label')` → `FieldLabel` (case-insensitive, progressively removes trailing kebab segments)
-2. `ui-ai-message-content` → `AiElementsLoader` strips `ai-` → resolves `message-content` in `components/ai-elements/`
-3. `ui-area-chart` → `ExternalLoader` → `import('recharts')` → `AreaChart`
-4. `ui-sonner` → `OverrideLoader` → `app/overrides/sonner.tsx` default export
+1. `ui-date-picker` → `BuiltinLoader` matches `"date-picker"` in registry → `import("../components/date-picker")` → `DatePicker` default export
+2. `ui-field-label` → `ComponentLoader.findModule('field-label')` → `components/ui/field.tsx` → `findExport(mod, 'field-label')` → `FieldLabel` (case-insensitive, progressively removes trailing kebab segments)
+3. `ui-ai-message-content` → `AiElementsLoader` strips `ai-` → resolves `message-content` in `components/ai-elements/`
+4. `ui-area-chart` → `ExternalLoader` → `import('recharts')` → `AreaChart`
 
 ### `app/overrides/` — Override files (2 files)
 
 Only for components that are standalone implementations (not wrappers around base components): **sonner** (declarative toast firing via `toasts` prop) and **theme-switch** (light/dark/system toggle).
 
-### `lib/` — Shared utilities
+### `lib/` — Shared utilities and contexts
 
 - `utils.ts` — cn() class merge utility
 - `close-overlay.tsx` — CloseOverlayProvider/useCloseOverlay context
 - `render-element.tsx` — renderLinkable, renderTrigger, getSingleElement
 - `select-items.tsx` — SelectItemsProvider/useSelectItemsRegister context
+- `form-context.tsx` — Form error/interaction/item contexts
 
 ## Close-on-Navigation Pattern
 
@@ -82,6 +87,13 @@ Navigation links inside overlays (sidebars, sheets, dropdowns, popovers, command
 - If it needs **unique logic**: create a `WrapperDef` and add it to the loader's `wrappers` config.
 - If it needs **simple prop rewriting**: create a `PropTransformDef` and add it to the loader's `propTransforms` config.
 - Only create an override file in `app/overrides/` if the component is a completely standalone implementation.
+
+### When adding new custom components
+
+1. **Create the component** in `lib/components/` with a `default` export and any named sub-component exports.
+2. **Register** in `lib/loader/builtin-loader.ts` — add entries to `BUILTIN_COMPONENTS` with dynamic imports. For sub-components, use `.then(m => ({ default: m.SubComponent }))`.
+3. **Add documentation** in `scripts/generate-docs.mjs` and run `node scripts/generate-docs.mjs`.
+4. **NEVER** create files in `components/ui/` or `components/ai-elements/` — those are read-only base component directories.
 
 ## Documentation & Web Types
 
