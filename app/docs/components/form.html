@@ -542,85 +542,72 @@
           <ui-label for="notifications">Enable notifications</ui-label>
         </div>
       </ui-form-item>
-      <p id="auto-submit-change-status" class="text-sm text-muted-foreground mt-2">No submissions yet.</p>
     </div>
   </ui-form>
 </div>
 <script>
 (function() {
-  var count = 0;
-  var wrapper = document.getElementById('auto-submit-change-demo');
-  if (!wrapper) return;
-  var form = wrapper.querySelector('form');
-  if (!form) return;
-  form.addEventListener('submit', function() {
-    count++;
-    var el = document.getElementById('auto-submit-change-status');
-    if (el) el.textContent = 'Form submitted ' + count + ' time(s) at ' + new Date().toLocaleTimeString();
+  var n = 0;
+  function toast(msg) {
+    var d = document.createElement('div');
+    d.textContent = msg;
+    d.style.cssText = 'position:fixed;bottom:20px;right:20px;background:#22c55e;color:white;padding:12px 20px;border-radius:8px;z-index:9999;font-size:14px;font-weight:500;box-shadow:0 4px 12px rgba(0,0,0,0.15);transition:opacity 0.5s;pointer-events:none';
+    document.body.appendChild(d);
+    setTimeout(function() { d.style.opacity = '0' }, 2000);
+    setTimeout(function() { d.remove() }, 2500);
+  }
+  document.addEventListener('submit', function(e) {
+    var form = e.target;
+    if (!form || !form.closest('#auto-submit-change-demo')) return;
+    n++;
+    toast('Auto-submitted (' + n + ') — ' + new Date().toLocaleTimeString());
   }, true);
 })();
 </script>
               </div>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;div id=&quot;auto-submit-change-demo&quot;&gt;
-  &lt;ui-form method=&quot;get&quot;&gt;
-    &lt;div class=&quot;space-y-4 max-w-md&quot;&gt;
-      &lt;ui-form-item name=&quot;theme&quot; auto-submit=&quot;onChange&quot;&gt;
-        &lt;ui-field&gt;
-          &lt;ui-field-label html-for=&quot;theme&quot;&gt;Theme&lt;/ui-field-label&gt;
-          &lt;ui-field-content&gt;
-            &lt;ui-native-select id=&quot;theme&quot; name=&quot;theme&quot;&gt;
-              &lt;option value=&quot;light&quot;&gt;Light&lt;/option&gt;
-              &lt;option value=&quot;dark&quot;&gt;Dark&lt;/option&gt;
-              &lt;option value=&quot;system&quot;&gt;System&lt;/option&gt;
-            &lt;/ui-native-select&gt;
-          &lt;/ui-field-content&gt;
-        &lt;/ui-field&gt;
-      &lt;/ui-form-item&gt;
-      &lt;ui-form-item name=&quot;language&quot; auto-submit=&quot;onChange&quot;&gt;
-        &lt;ui-field&gt;
-          &lt;ui-field-label html-for=&quot;language&quot;&gt;Language&lt;/ui-field-label&gt;
-          &lt;ui-field-content&gt;
-            &lt;ui-select name=&quot;language&quot; json-items='[{&quot;value&quot;:&quot;en&quot;,&quot;label&quot;:&quot;English&quot;},{&quot;value&quot;:&quot;de&quot;,&quot;label&quot;:&quot;Deutsch&quot;},{&quot;value&quot;:&quot;fr&quot;,&quot;label&quot;:&quot;Français&quot;},{&quot;value&quot;:&quot;es&quot;,&quot;label&quot;:&quot;Español&quot;}]'&gt;
-              &lt;ui-select-trigger&gt;&lt;ui-select-value placeholder=&quot;Select language&quot;&gt;&lt;/ui-select-value&gt;&lt;/ui-select-trigger&gt;
-              &lt;ui-select-content&gt;&lt;/ui-select-content&gt;
-            &lt;/ui-select&gt;
-          &lt;/ui-field-content&gt;
-        &lt;/ui-field&gt;
-      &lt;/ui-form-item&gt;
-      &lt;ui-form-item name=&quot;framework&quot; auto-submit=&quot;onChange&quot;&gt;
-        &lt;ui-field&gt;
-          &lt;ui-field-label&gt;Framework&lt;/ui-field-label&gt;
-          &lt;ui-field-content&gt;
-            &lt;ui-combobox name=&quot;framework&quot; json-items='[{&quot;value&quot;:&quot;react&quot;,&quot;label&quot;:&quot;React&quot;},{&quot;value&quot;:&quot;vue&quot;,&quot;label&quot;:&quot;Vue.js&quot;},{&quot;value&quot;:&quot;angular&quot;,&quot;label&quot;:&quot;Angular&quot;},{&quot;value&quot;:&quot;svelte&quot;,&quot;label&quot;:&quot;Svelte&quot;}]'&gt;
-            &lt;/ui-combobox&gt;
-          &lt;/ui-field-content&gt;
-        &lt;/ui-field&gt;
-      &lt;/ui-form-item&gt;
-      &lt;ui-form-item name=&quot;notifications&quot; auto-submit=&quot;onChange&quot;&gt;
-        &lt;div class=&quot;flex items-center gap-3&quot;&gt;
-          &lt;ui-checkbox id=&quot;notifications&quot; name=&quot;notifications&quot; value=&quot;1&quot;&gt;&lt;/ui-checkbox&gt;
-          &lt;ui-label for=&quot;notifications&quot;&gt;Enable notifications&lt;/ui-label&gt;
-        &lt;/div&gt;
-      &lt;/ui-form-item&gt;
-      &lt;p id=&quot;auto-submit-change-status&quot; class=&quot;text-sm text-muted-foreground mt-2&quot;&gt;No submissions yet.&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/ui-form&gt;
-&lt;/div&gt;
-&lt;script&gt;
-(function() {
-  var count = 0;
-  var wrapper = document.getElementById('auto-submit-change-demo');
-  if (!wrapper) return;
-  var form = wrapper.querySelector('form');
-  if (!form) return;
-  form.addEventListener('submit', function() {
-    count++;
-    var el = document.getElementById('auto-submit-change-status');
-    if (el) el.textContent = 'Form submitted ' + count + ' time(s) at ' + new Date().toLocaleTimeString();
-  }, true);
-})();
-&lt;/script&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;ui-form method=&quot;get&quot;&gt;
+  &lt;div class=&quot;space-y-4 max-w-md&quot;&gt;
+    &lt;ui-form-item name=&quot;theme&quot; auto-submit=&quot;onChange&quot;&gt;
+      &lt;ui-field&gt;
+        &lt;ui-field-label html-for=&quot;theme&quot;&gt;Theme&lt;/ui-field-label&gt;
+        &lt;ui-field-content&gt;
+          &lt;ui-native-select id=&quot;theme&quot; name=&quot;theme&quot;&gt;
+            &lt;option value=&quot;light&quot;&gt;Light&lt;/option&gt;
+            &lt;option value=&quot;dark&quot;&gt;Dark&lt;/option&gt;
+            &lt;option value=&quot;system&quot;&gt;System&lt;/option&gt;
+          &lt;/ui-native-select&gt;
+        &lt;/ui-field-content&gt;
+      &lt;/ui-field&gt;
+    &lt;/ui-form-item&gt;
+    &lt;ui-form-item name=&quot;language&quot; auto-submit=&quot;onChange&quot;&gt;
+      &lt;ui-field&gt;
+        &lt;ui-field-label html-for=&quot;language&quot;&gt;Language&lt;/ui-field-label&gt;
+        &lt;ui-field-content&gt;
+          &lt;ui-select name=&quot;language&quot; json-items='[...]'&gt;
+            &lt;ui-select-trigger&gt;&lt;ui-select-value placeholder=&quot;Select language&quot;&gt;&lt;/ui-select-value&gt;&lt;/ui-select-trigger&gt;
+            &lt;ui-select-content&gt;&lt;/ui-select-content&gt;
+          &lt;/ui-select&gt;
+        &lt;/ui-field-content&gt;
+      &lt;/ui-field&gt;
+    &lt;/ui-form-item&gt;
+    &lt;ui-form-item name=&quot;framework&quot; auto-submit=&quot;onChange&quot;&gt;
+      &lt;ui-field&gt;
+        &lt;ui-field-label&gt;Framework&lt;/ui-field-label&gt;
+        &lt;ui-field-content&gt;
+          &lt;ui-combobox name=&quot;framework&quot; json-items='[...]'&gt;
+          &lt;/ui-combobox&gt;
+        &lt;/ui-field-content&gt;
+      &lt;/ui-field&gt;
+    &lt;/ui-form-item&gt;
+    &lt;ui-form-item name=&quot;notifications&quot; auto-submit=&quot;onChange&quot;&gt;
+      &lt;div class=&quot;flex items-center gap-3&quot;&gt;
+        &lt;ui-checkbox id=&quot;notifications&quot; name=&quot;notifications&quot; value=&quot;1&quot;&gt;&lt;/ui-checkbox&gt;
+        &lt;ui-label for=&quot;notifications&quot;&gt;Enable notifications&lt;/ui-label&gt;
+      &lt;/div&gt;
+    &lt;/ui-form-item&gt;
+  &lt;/div&gt;
+&lt;/ui-form&gt;</code></pre>
               </div>
             </section>
             <section class="mb-10">
@@ -646,64 +633,51 @@
           </ui-field-content>
         </ui-field>
       </ui-form-item>
-      <p id="auto-submit-blur-status" class="text-sm text-muted-foreground mt-2">No submissions yet.</p>
     </div>
   </ui-form>
 </div>
 <script>
 (function() {
-  var count = 0;
-  var wrapper = document.getElementById('auto-submit-blur-demo');
-  if (!wrapper) return;
-  var form = wrapper.querySelector('form');
-  if (!form) return;
-  form.addEventListener('submit', function() {
-    count++;
-    var el = document.getElementById('auto-submit-blur-status');
-    if (el) el.textContent = 'Form submitted ' + count + ' time(s) at ' + new Date().toLocaleTimeString();
+  var n = 0;
+  function toast(msg) {
+    var d = document.createElement('div');
+    d.textContent = msg;
+    d.style.cssText = 'position:fixed;bottom:20px;right:20px;background:#3b82f6;color:white;padding:12px 20px;border-radius:8px;z-index:9999;font-size:14px;font-weight:500;box-shadow:0 4px 12px rgba(0,0,0,0.15);transition:opacity 0.5s;pointer-events:none';
+    document.body.appendChild(d);
+    setTimeout(function() { d.style.opacity = '0' }, 2000);
+    setTimeout(function() { d.remove() }, 2500);
+  }
+  document.addEventListener('submit', function(e) {
+    var form = e.target;
+    if (!form || !form.closest('#auto-submit-blur-demo')) return;
+    n++;
+    toast('Auto-submitted on blur (' + n + ') — ' + new Date().toLocaleTimeString());
   }, true);
 })();
 </script>
               </div>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;div id=&quot;auto-submit-blur-demo&quot;&gt;
-  &lt;ui-form method=&quot;get&quot;&gt;
-    &lt;div class=&quot;space-y-4 max-w-md&quot;&gt;
-      &lt;ui-form-item name=&quot;username&quot; auto-submit=&quot;onBlur&quot;&gt;
-        &lt;ui-field&gt;
-          &lt;ui-field-label html-for=&quot;username&quot;&gt;Username&lt;/ui-field-label&gt;
-          &lt;ui-field-content&gt;
-            &lt;ui-input id=&quot;username&quot; name=&quot;username&quot; value=&quot;johndoe&quot; placeholder=&quot;Enter username&quot;&gt;&lt;/ui-input&gt;
-          &lt;/ui-field-content&gt;
-          &lt;ui-field-description&gt;Saves automatically when you leave the field.&lt;/ui-field-description&gt;
-        &lt;/ui-field&gt;
-      &lt;/ui-form-item&gt;
-      &lt;ui-form-item name=&quot;bio&quot; auto-submit=&quot;onBlur&quot;&gt;
-        &lt;ui-field&gt;
-          &lt;ui-field-label html-for=&quot;bio&quot;&gt;Bio&lt;/ui-field-label&gt;
-          &lt;ui-field-content&gt;
-            &lt;ui-textarea id=&quot;bio&quot; name=&quot;bio&quot; placeholder=&quot;Tell us about yourself&quot;&gt;&lt;/ui-textarea&gt;
-          &lt;/ui-field-content&gt;
-        &lt;/ui-field&gt;
-      &lt;/ui-form-item&gt;
-      &lt;p id=&quot;auto-submit-blur-status&quot; class=&quot;text-sm text-muted-foreground mt-2&quot;&gt;No submissions yet.&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/ui-form&gt;
-&lt;/div&gt;
-&lt;script&gt;
-(function() {
-  var count = 0;
-  var wrapper = document.getElementById('auto-submit-blur-demo');
-  if (!wrapper) return;
-  var form = wrapper.querySelector('form');
-  if (!form) return;
-  form.addEventListener('submit', function() {
-    count++;
-    var el = document.getElementById('auto-submit-blur-status');
-    if (el) el.textContent = 'Form submitted ' + count + ' time(s) at ' + new Date().toLocaleTimeString();
-  }, true);
-})();
-&lt;/script&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;ui-form method=&quot;get&quot;&gt;
+  &lt;div class=&quot;space-y-4 max-w-md&quot;&gt;
+    &lt;ui-form-item name=&quot;username&quot; auto-submit=&quot;onBlur&quot;&gt;
+      &lt;ui-field&gt;
+        &lt;ui-field-label html-for=&quot;username&quot;&gt;Username&lt;/ui-field-label&gt;
+        &lt;ui-field-content&gt;
+          &lt;ui-input id=&quot;username&quot; name=&quot;username&quot; value=&quot;johndoe&quot; placeholder=&quot;Enter username&quot;&gt;&lt;/ui-input&gt;
+        &lt;/ui-field-content&gt;
+        &lt;ui-field-description&gt;Saves automatically when you leave the field.&lt;/ui-field-description&gt;
+      &lt;/ui-field&gt;
+    &lt;/ui-form-item&gt;
+    &lt;ui-form-item name=&quot;bio&quot; auto-submit=&quot;onBlur&quot;&gt;
+      &lt;ui-field&gt;
+        &lt;ui-field-label html-for=&quot;bio&quot;&gt;Bio&lt;/ui-field-label&gt;
+        &lt;ui-field-content&gt;
+          &lt;ui-textarea id=&quot;bio&quot; name=&quot;bio&quot; placeholder=&quot;Tell us about yourself&quot;&gt;&lt;/ui-textarea&gt;
+        &lt;/ui-field-content&gt;
+      &lt;/ui-field&gt;
+    &lt;/ui-form-item&gt;
+  &lt;/div&gt;
+&lt;/ui-form&gt;</code></pre>
               </div>
             </section>
 
