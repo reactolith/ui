@@ -30,12 +30,6 @@ function getBrowserLocale(): string {
   return "en-US"
 }
 
-function defaultDateDisplayFormat(): string {
-  // Detect from browser locale using Intl — returns pattern-like tokens
-  // We use Intl.DateTimeFormat to format, so this is just a marker
-  return ""
-}
-
 /** Format a Date for display using Intl (locale-aware short) or a date-fns pattern */
 function formatDateDisplay(date: Date | undefined, displayFormat: string, locale: string): string {
   if (!date || !fnsIsValid(date)) return ""
@@ -54,48 +48,36 @@ function formatTimeDisplay(date: Date | undefined, displayFormat: string, locale
   return date.toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit", hour12: false })
 }
 
-/** Format a Date for the hidden form value */
+/** Format a Date for the hidden form value (native HTML date: YYYY-MM-DD) */
 function formatDateValue(date: Date | undefined, valueFormat: string): string {
   if (!date || !fnsIsValid(date)) return ""
-  if (valueFormat) {
-    return fnsFormat(date, valueFormat)
-  }
-  // Native HTML date input format: YYYY-MM-DD
+  if (valueFormat) return fnsFormat(date, valueFormat)
   return fnsFormat(date, "yyyy-MM-dd")
 }
 
-/** Format a datetime for the hidden form value */
+/** Format a datetime for the hidden form value (native HTML datetime-local: YYYY-MM-DDTHH:mm) */
 function formatDateTimeValue(date: Date | undefined, valueFormat: string): string {
   if (!date || !fnsIsValid(date)) return ""
-  if (valueFormat) {
-    return fnsFormat(date, valueFormat)
-  }
-  // Native HTML datetime-local format: YYYY-MM-DDTHH:mm
+  if (valueFormat) return fnsFormat(date, valueFormat)
   return fnsFormat(date, "yyyy-MM-dd'T'HH:mm")
 }
 
-/** Format a time for the hidden form value */
+/** Format a time for the hidden form value (native HTML time: HH:mm) */
 function formatTimeValue(date: Date | undefined, valueFormat: string): string {
   if (!date || !fnsIsValid(date)) return ""
-  if (valueFormat) {
-    return fnsFormat(date, valueFormat)
-  }
-  // Native HTML time input format: HH:mm
+  if (valueFormat) return fnsFormat(date, valueFormat)
   return fnsFormat(date, "HH:mm")
 }
 
 /** Try to parse a user-typed string into a Date */
-function parseUserDate(text: string, displayFormat: string, locale: string): Date | undefined {
+function parseUserDate(text: string, displayFormat: string): Date | undefined {
   if (!text.trim()) return undefined
-  // If a display format is provided, try parsing with date-fns
   if (displayFormat) {
     const parsed = fnsParse(text, displayFormat, new Date())
     if (fnsIsValid(parsed)) return parsed
   }
-  // Try native Date parsing as fallback
   const native = new Date(text)
   if (fnsIsValid(native)) return native
-  // Try parsing common locale patterns (dd.MM.yyyy, dd/MM/yyyy, MM/dd/yyyy)
   for (const fmt of ["dd.MM.yyyy", "dd/MM/yyyy", "MM/dd/yyyy", "yyyy-MM-dd"]) {
     const parsed = fnsParse(text, fmt, new Date())
     if (fnsIsValid(parsed)) return parsed
@@ -134,25 +116,18 @@ function mergeDateAndTime(date: Date | undefined, time: Date | undefined): Date 
 // ---------------------------------------------------------------------------
 
 interface DatePickerProps extends Omit<React.ComponentProps<"div">, "defaultValue"> {
-  /** The selected date (controlled) */
   value?: Date
-  /** Default date (uncontrolled) */
   defaultValue?: Date
-  /** Callback when date changes */
   onValueChange?: (date: Date | undefined) => void
   /** date-fns format pattern for display (default: browser locale short date) */
   displayFormat?: string
   /** date-fns format pattern for the hidden form value (default: yyyy-MM-dd) */
   valueFormat?: string
-  /** Locale string for Intl formatting (default: navigator.language) */
+  /** BCP 47 locale string for Intl formatting (default: navigator.language) */
   locale?: string
-  /** Name for the hidden form input */
   name?: string
-  /** Placeholder text */
   placeholder?: string
-  /** Whether the picker is disabled */
   disabled?: boolean
-  /** Input id */
   id?: string
 }
 
@@ -177,7 +152,6 @@ function DatePicker({
   const [inputValue, setInputValue] = React.useState(formatDateDisplay(date, displayFormat, locale))
   const [month, setMonth] = React.useState<Date | undefined>(date || new Date())
 
-  // Sync input when controlled value changes
   React.useEffect(() => {
     if (controlledValue !== undefined) {
       setInputValue(formatDateDisplay(controlledValue, displayFormat, locale))
@@ -193,7 +167,7 @@ function DatePicker({
   const handleInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const text = e.target.value
     setInputValue(text)
-    const parsed = parseUserDate(text, displayFormat, locale)
+    const parsed = parseUserDate(text, displayFormat)
     if (parsed) {
       setInternalDate(parsed)
       setMonth(parsed)
@@ -202,10 +176,9 @@ function DatePicker({
       setInternalDate(undefined)
       onValueChange?.(undefined)
     }
-  }, [displayFormat, locale, onValueChange])
+  }, [displayFormat, onValueChange])
 
   const handleInputBlur = React.useCallback(() => {
-    // Re-format on blur
     setInputValue(formatDateDisplay(date, displayFormat, locale))
   }, [date, displayFormat, locale])
 
@@ -275,25 +248,17 @@ function DatePicker({
 // ---------------------------------------------------------------------------
 
 interface TimePickerProps extends Omit<React.ComponentProps<"div">, "defaultValue"> {
-  /** The selected time (controlled) */
   value?: Date
-  /** Default time (uncontrolled) */
   defaultValue?: Date
-  /** Callback when time changes */
   onValueChange?: (date: Date | undefined) => void
   /** date-fns format pattern for display (default: browser locale HH:mm) */
   displayFormat?: string
   /** date-fns format pattern for the hidden form value (default: HH:mm) */
   valueFormat?: string
-  /** Locale string for Intl formatting (default: navigator.language) */
   locale?: string
-  /** Name for the hidden form input */
   name?: string
-  /** Placeholder text */
   placeholder?: string
-  /** Whether the picker is disabled */
   disabled?: boolean
-  /** Input id */
   id?: string
 }
 
@@ -368,11 +333,8 @@ function TimePicker({
 // ---------------------------------------------------------------------------
 
 interface DateTimePickerProps extends Omit<React.ComponentProps<"div">, "defaultValue"> {
-  /** The selected datetime (controlled) */
   value?: Date
-  /** Default datetime (uncontrolled) */
   defaultValue?: Date
-  /** Callback when datetime changes */
   onValueChange?: (date: Date | undefined) => void
   /** date-fns format pattern for date display (default: browser locale short date) */
   displayFormat?: string
@@ -380,17 +342,11 @@ interface DateTimePickerProps extends Omit<React.ComponentProps<"div">, "default
   timeDisplayFormat?: string
   /** date-fns format pattern for the hidden form value (default: yyyy-MM-dd'T'HH:mm) */
   valueFormat?: string
-  /** Locale string for Intl formatting (default: navigator.language) */
   locale?: string
-  /** Name for the hidden form input */
   name?: string
-  /** Placeholder text for the date input */
   placeholder?: string
-  /** Placeholder text for the time input */
   timePlaceholder?: string
-  /** Whether the picker is disabled */
   disabled?: boolean
-  /** Input id */
   id?: string
 }
 
@@ -435,7 +391,7 @@ function DateTimePicker({
   const handleDateInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const text = e.target.value
     setDateInputValue(text)
-    const parsed = parseUserDate(text, displayFormat, locale)
+    const parsed = parseUserDate(text, displayFormat)
     if (parsed) {
       const merged = mergeDateAndTime(parsed, dateTime)
       setInternalDate(merged)
@@ -445,7 +401,7 @@ function DateTimePicker({
       setInternalDate(undefined)
       onValueChange?.(undefined)
     }
-  }, [displayFormat, locale, dateTime, onValueChange])
+  }, [displayFormat, dateTime, onValueChange])
 
   const handleTimeInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const text = e.target.value
@@ -457,7 +413,6 @@ function DateTimePicker({
       setInternalDate(merged)
       onValueChange?.(merged)
     } else if (!text.trim()) {
-      // Keep date, clear time
       if (dateTime) {
         const cleared = new Date(dateTime)
         cleared.setHours(0, 0, 0, 0)
@@ -559,29 +514,20 @@ function DateTimePicker({
 // ---------------------------------------------------------------------------
 
 interface DateRangePickerProps extends Omit<React.ComponentProps<"div">, "defaultValue"> {
-  /** The selected range (controlled) */
   value?: DateRange
-  /** Default range (uncontrolled) */
   defaultValue?: DateRange
-  /** Callback when range changes */
   onValueChange?: (range: DateRange | undefined) => void
   /** date-fns format pattern for display (default: browser locale short date) */
   displayFormat?: string
   /** date-fns format pattern for the hidden form values (default: yyyy-MM-dd) */
   valueFormat?: string
-  /** Locale string for Intl formatting (default: navigator.language) */
   locale?: string
   /** Name prefix for the hidden form inputs (creates {name}-from and {name}-to) */
   name?: string
-  /** Placeholder text for the start date */
   placeholderFrom?: string
-  /** Placeholder text for the end date */
   placeholderTo?: string
-  /** Whether the picker is disabled */
   disabled?: boolean
-  /** Input id for start date */
   id?: string
-  /** Number of months to display */
   numberOfMonths?: number
 }
 
@@ -626,7 +572,7 @@ function DateRangePicker({
   const handleFromInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const text = e.target.value
     setFromInputValue(text)
-    const parsed = parseUserDate(text, displayFormat, locale)
+    const parsed = parseUserDate(text, displayFormat)
     if (parsed) {
       const newRange = { from: parsed, to: range?.to }
       setInternalRange(newRange)
@@ -637,12 +583,12 @@ function DateRangePicker({
       setInternalRange(newRange)
       onValueChange?.(newRange)
     }
-  }, [displayFormat, locale, range, onValueChange])
+  }, [displayFormat, range, onValueChange])
 
   const handleToInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const text = e.target.value
     setToInputValue(text)
-    const parsed = parseUserDate(text, displayFormat, locale)
+    const parsed = parseUserDate(text, displayFormat)
     if (parsed) {
       const newRange = { from: range?.from, to: parsed }
       setInternalRange(newRange)
@@ -652,7 +598,7 @@ function DateRangePicker({
       setInternalRange(newRange)
       onValueChange?.(newRange)
     }
-  }, [displayFormat, locale, range, onValueChange])
+  }, [displayFormat, range, onValueChange])
 
   const handleFromBlur = React.useCallback(() => {
     setFromInputValue(formatDateDisplay(range?.from, displayFormat, locale))
@@ -664,7 +610,6 @@ function DateRangePicker({
 
   const handleCalendarSelect = React.useCallback((selected: DateRange | undefined) => {
     updateRange(selected)
-    // Close when both dates are selected
     if (selected?.from && selected?.to) {
       setOpen(false)
     }
@@ -750,4 +695,11 @@ function DateRangePicker({
   )
 }
 
-export { DatePicker, TimePicker, DateTimePicker, DateRangePicker }
+export default DatePicker
+
+export {
+  DatePicker,
+  TimePicker,
+  DateTimePicker,
+  DateRangePicker,
+}

@@ -44,10 +44,6 @@ export function createShadcnLoader(modules: ModuleMap): ComponentLoader {
       "radio-group": formField,
       "native-select": formField,
       "input-otp": formField,
-      "date-picker": formField,
-      "time-picker": formField,
-      "date-time-picker": formField,
-      "date-range-picker": formField,
 
       // single-child render prop via renderTrigger
       "tooltip-trigger": trigger,
