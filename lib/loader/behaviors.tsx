@@ -636,10 +636,3 @@ export const chartTooltipTransform: PropTransformDef = {
     content: children,
   }),
 }
-
-export const formTransform: PropTransformDef = {
-  transform: ({ errors, is, ...rest }: any) => ({
-    ...rest,
-    errors: typeof errors === "string" ? JSON.parse(errors) : errors,
-  }),
-}

@@ -30,7 +30,7 @@ function Form({
   errors?: FormError[]
   errorsTitle?: string
 }) {
-  const errors = propErrors || []
+  const errors: FormError[] = typeof propErrors === "string" ? JSON.parse(propErrors) : (propErrors ?? [])
   const formRef = React.useRef<HTMLFormElement>(null)
   const [touchedMap, setTouchedMap] = React.useState<Record<string, boolean>>({})
   const [submitting, setSubmitting] = React.useState(false)
