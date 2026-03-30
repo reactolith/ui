@@ -4,69 +4,16 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
 import { FieldError } from "@/components/ui/field"
-
-// ---------------------------------------------------------------------------
-// Types
-// ---------------------------------------------------------------------------
-
-export type FormError = {
-  message: string
-  name?: string
-  id?: string
-  label?: string
-  touched?: boolean
-}
-
-// ---------------------------------------------------------------------------
-// Contexts
-// ---------------------------------------------------------------------------
-
-type FormErrorsContextValue = {
-  errors: FormError[]
-  getErrors: (name: string, includeTouched?: boolean) => FormError[]
-  getAllErrors: (includeTouched?: boolean) => FormError[]
-  touchErrors: (name: string) => void
-}
-
-type FormInteractionContextValue = {
-  triggerFormChange: (target: HTMLElement) => void
-  triggerFormBlur: (target: HTMLElement) => void
-}
-
-type FormItemContextValue = {
-  name: string
-  invalid: boolean
-  touchErrors: () => void
-}
-
-const FormSubmittingContext = React.createContext(false)
-const FormErrorsContext = React.createContext<FormErrorsContextValue | null>(null)
-const FormInteractionContext = React.createContext<FormInteractionContextValue | null>(null)
-const FormItemContext = React.createContext<FormItemContextValue | null>(null)
-
-// ---------------------------------------------------------------------------
-// Hooks
-// ---------------------------------------------------------------------------
-
-function useFormSubmitting() {
-  return React.useContext(FormSubmittingContext)
-}
-
-function useFormErrors() {
-  const ctx = React.useContext(FormErrorsContext)
-  if (!ctx) throw new Error("useFormErrors must be used within <Form>")
-  return ctx
-}
-
-function useFormInteraction() {
-  const ctx = React.useContext(FormInteractionContext)
-  if (!ctx) throw new Error("useFormInteraction must be used within <Form>")
-  return ctx
-}
-
-function useFormItem() {
-  return React.useContext(FormItemContext)
-}
+import {
+  type FormError,
+  type FormErrorsContextValue,
+  type FormInteractionContextValue,
+  type FormItemContextValue,
+  FormSubmittingContext,
+  FormErrorsContext,
+  FormInteractionContext,
+  FormItemContext,
+} from "../form-context"
 
 // ---------------------------------------------------------------------------
 // Form
@@ -280,13 +227,9 @@ function FormItem({
   )
 }
 
+export default Form
+
 export {
   Form,
   FormItem,
-  FormSubmittingContext,
-  FormItemContext,
-  useFormSubmitting,
-  useFormErrors,
-  useFormInteraction,
-  useFormItem,
 }

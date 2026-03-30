@@ -4,8 +4,18 @@ import { renderLinkable, renderTrigger, getSingleElement } from "../render-eleme
 import { CloseOverlayProvider, useCloseOverlay } from "../close-overlay"
 import { SelectItemsProvider, useSelectItemsRegister } from "../select-items"
 import { cn } from "../utils"
-import { Item, ItemContent, ItemTitle, ItemDescription } from "@/components/ui/item"
-import { FormItemContext, FormSubmittingContext } from "@/components/ui/form"
+import { FormItemContext, FormSubmittingContext } from "../form-context"
+
+// Optional shadcn item components — loaded async so the library works without them.
+// By the time a combobox actually renders, the import will have resolved.
+let Item: ComponentType<any> | null = null
+let ItemContent: ComponentType<any> | null = null
+let ItemTitle: ComponentType<any> | null = null
+let ItemDescription: ComponentType<any> | null = null
+import("@/components/ui/item").then(mod => {
+  Item = mod.Item; ItemContent = mod.ItemContent
+  ItemTitle = mod.ItemTitle; ItemDescription = mod.ItemDescription
+}).catch(() => {})
 
 // ---------------------------------------------------------------------------
 // Types
@@ -364,7 +374,7 @@ function AsyncCombobox({
               const suffix = typeof item === "object" ? item.suffix : undefined
               return (
                 <ComboboxItem key={value} value={item}>
-                  {description ? (
+                  {description && Item && ItemContent && ItemTitle && ItemDescription ? (
                     <Item size="xs" className="p-0">
                       <ItemContent>
                         <ItemTitle className="whitespace-nowrap">{label}</ItemTitle>
@@ -538,7 +548,7 @@ function renderComboboxItem(ComboboxItem: ComponentType<any>, item: ComboboxItem
   const suffix = typeof item === "object" ? item.suffix : undefined
   return (
     <ComboboxItem key={value} value={item}>
-      {description ? (
+      {description && Item && ItemContent && ItemTitle && ItemDescription ? (
         <Item size="xs" className="p-0">
           <ItemContent>
             <ItemTitle className="whitespace-nowrap">{label}</ItemTitle>
