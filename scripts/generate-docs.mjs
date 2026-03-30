@@ -257,6 +257,113 @@ const components = [
     example: `<ui-calendar mode="single"></ui-calendar>`,
   },
   {
+    name: "Date Picker",
+    slug: "date-picker",
+    description: "A date picker with calendar popup and direct text input. Supports locale-aware formatting and native form values.",
+    category: "Forms",
+    subComponents: [
+      { tag: "ui-date-picker", props: [
+        { name: "value", type: "Date", default: "—", description: "The selected date (controlled)." },
+        { name: "defaultValue", type: "Date", default: "—", description: "Default date (uncontrolled)." },
+        { name: "onValueChange", type: "(date: Date | undefined) => void", default: "—", description: "Callback when date changes." },
+        { name: "displayFormat", type: "string", default: "browser locale short date", description: "date-fns format pattern for display (e.g. 'dd.MM.yyyy')." },
+        { name: "valueFormat", type: "string", default: '"yyyy-MM-dd"', description: "date-fns format pattern for the hidden form value. Defaults to native HTML date format." },
+        { name: "locale", type: "string", default: "navigator.language", description: "BCP 47 locale string for Intl formatting (e.g. 'de-AT')." },
+        { name: "name", type: "string", default: "—", description: "Name for the hidden form input. Enables form submission." },
+        { name: "placeholder", type: "string", default: "current date formatted", description: "Placeholder text for the input." },
+        { name: "disabled", type: "boolean", default: "false", description: "Whether the picker is disabled." },
+      ] },
+      { tag: "ui-time-picker", props: [
+        { name: "value", type: "Date", default: "—", description: "The selected time (controlled)." },
+        { name: "defaultValue", type: "Date", default: "—", description: "Default time (uncontrolled)." },
+        { name: "onValueChange", type: "(date: Date | undefined) => void", default: "—", description: "Callback when time changes." },
+        { name: "displayFormat", type: "string", default: "browser locale HH:mm", description: "date-fns format pattern for display (e.g. 'hh:mm a')." },
+        { name: "valueFormat", type: "string", default: '"HH:mm"', description: "date-fns format pattern for the hidden form value. Defaults to native HTML time format." },
+        { name: "locale", type: "string", default: "navigator.language", description: "BCP 47 locale string for Intl formatting." },
+        { name: "name", type: "string", default: "—", description: "Name for the hidden form input." },
+        { name: "placeholder", type: "string", default: "current time formatted", description: "Placeholder text for the input." },
+        { name: "disabled", type: "boolean", default: "false", description: "Whether the picker is disabled." },
+      ] },
+      { tag: "ui-date-time-picker", props: [
+        { name: "value", type: "Date", default: "—", description: "The selected datetime (controlled)." },
+        { name: "defaultValue", type: "Date", default: "—", description: "Default datetime (uncontrolled)." },
+        { name: "onValueChange", type: "(date: Date | undefined) => void", default: "—", description: "Callback when datetime changes." },
+        { name: "displayFormat", type: "string", default: "browser locale short date", description: "date-fns format pattern for date display." },
+        { name: "timeDisplayFormat", type: "string", default: "browser locale HH:mm", description: "date-fns format pattern for time display." },
+        { name: "valueFormat", type: "string", default: '"yyyy-MM-dd\'T\'HH:mm"', description: "date-fns format pattern for the hidden form value. Defaults to native HTML datetime-local format." },
+        { name: "locale", type: "string", default: "navigator.language", description: "BCP 47 locale string for Intl formatting." },
+        { name: "name", type: "string", default: "—", description: "Name for the hidden form input." },
+        { name: "placeholder", type: "string", default: "current date formatted", description: "Placeholder text for the date input." },
+        { name: "timePlaceholder", type: "string", default: "current time formatted", description: "Placeholder text for the time input." },
+        { name: "disabled", type: "boolean", default: "false", description: "Whether the picker is disabled." },
+      ] },
+      { tag: "ui-date-range-picker", props: [
+        { name: "value", type: "DateRange", default: "—", description: "The selected range (controlled). Object with from and to Date properties." },
+        { name: "defaultValue", type: "DateRange", default: "—", description: "Default range (uncontrolled)." },
+        { name: "onValueChange", type: "(range: DateRange | undefined) => void", default: "—", description: "Callback when range changes." },
+        { name: "displayFormat", type: "string", default: "browser locale short date", description: "date-fns format pattern for display." },
+        { name: "valueFormat", type: "string", default: '"yyyy-MM-dd"', description: "date-fns format pattern for the hidden form values. Defaults to native HTML date format." },
+        { name: "locale", type: "string", default: "navigator.language", description: "BCP 47 locale string for Intl formatting." },
+        { name: "name", type: "string", default: "—", description: "Name prefix for the hidden form inputs. Creates {name}-from and {name}-to." },
+        { name: "placeholderFrom", type: "string", default: "current date formatted", description: "Placeholder text for the start date input." },
+        { name: "placeholderTo", type: "string", default: "current date formatted", description: "Placeholder text for the end date input." },
+        { name: "numberOfMonths", type: "number", default: "2", description: "Number of months to display in the calendar popup." },
+        { name: "disabled", type: "boolean", default: "false", description: "Whether the picker is disabled." },
+      ] },
+    ],
+    example: `<div class="space-y-6 max-w-sm">
+  <ui-field>
+    <ui-field-label>Date</ui-field-label>
+    <ui-date-picker name="date"></ui-date-picker>
+  </ui-field>
+  <ui-field>
+    <ui-field-label>Time</ui-field-label>
+    <ui-time-picker name="time"></ui-time-picker>
+  </ui-field>
+</div>`,
+    additionalExamples: [
+      {
+        title: "Date Time Picker",
+        example: `<ui-field class="max-w-md">
+  <ui-field-label>Appointment</ui-field-label>
+  <ui-date-time-picker name="appointment"></ui-date-time-picker>
+</ui-field>`,
+      },
+      {
+        title: "Date Range Picker",
+        example: `<ui-field class="max-w-lg">
+  <ui-field-label>Travel Dates</ui-field-label>
+  <ui-date-range-picker name="travel"></ui-date-range-picker>
+</ui-field>`,
+      },
+      {
+        title: "Custom Display Format",
+        example: `<ui-field class="max-w-sm">
+  <ui-field-label>Date (custom format)</ui-field-label>
+  <ui-date-picker name="custom-date" displayFormat="dd.MM.yyyy" placeholder="23.04.2026"></ui-date-picker>
+</ui-field>`,
+        readableExample: `<!-- Use date-fns format patterns for custom display -->
+<ui-date-picker
+  name="custom-date"
+  displayFormat="dd.MM.yyyy"
+  placeholder="23.04.2026">
+</ui-date-picker>
+
+<!-- Custom value format for form submission -->
+<ui-date-picker
+  name="iso-date"
+  valueFormat="yyyy-MM-dd'T'HH:mm:ss">
+</ui-date-picker>
+
+<!-- Specify locale explicitly -->
+<ui-date-picker
+  name="de-date"
+  locale="de-AT">
+</ui-date-picker>`,
+      },
+    ],
+  },
+  {
     name: "Card",
     slug: "card",
     description: "Displays a card with header, content, and footer.",
