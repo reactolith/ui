@@ -498,6 +498,106 @@
             </section>
 
             
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Auto-Submit on Change</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <ui-form action="/api/settings" method="post">
+  <div class="space-y-4 max-w-md">
+    <ui-form-item name="theme" auto-submit="onChange">
+      <ui-field>
+        <ui-field-label html-for="theme">Theme</ui-field-label>
+        <ui-field-content>
+          <ui-native-select id="theme" name="theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="system">System</option>
+          </ui-native-select>
+        </ui-field-content>
+      </ui-field>
+    </ui-form-item>
+    <ui-form-item name="notifications" auto-submit="onChange">
+      <div class="flex items-center gap-3">
+        <ui-checkbox id="notifications" name="notifications"></ui-checkbox>
+        <ui-label for="notifications">Enable notifications</ui-label>
+      </div>
+    </ui-form-item>
+  </div>
+</ui-form>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;ui-form action=&quot;/api/settings&quot; method=&quot;post&quot;&gt;
+  &lt;div class=&quot;space-y-4 max-w-md&quot;&gt;
+    &lt;ui-form-item name=&quot;theme&quot; auto-submit=&quot;onChange&quot;&gt;
+      &lt;ui-field&gt;
+        &lt;ui-field-label html-for=&quot;theme&quot;&gt;Theme&lt;/ui-field-label&gt;
+        &lt;ui-field-content&gt;
+          &lt;ui-native-select id=&quot;theme&quot; name=&quot;theme&quot;&gt;
+            &lt;option value=&quot;light&quot;&gt;Light&lt;/option&gt;
+            &lt;option value=&quot;dark&quot;&gt;Dark&lt;/option&gt;
+            &lt;option value=&quot;system&quot;&gt;System&lt;/option&gt;
+          &lt;/ui-native-select&gt;
+        &lt;/ui-field-content&gt;
+      &lt;/ui-field&gt;
+    &lt;/ui-form-item&gt;
+    &lt;ui-form-item name=&quot;notifications&quot; auto-submit=&quot;onChange&quot;&gt;
+      &lt;div class=&quot;flex items-center gap-3&quot;&gt;
+        &lt;ui-checkbox id=&quot;notifications&quot; name=&quot;notifications&quot;&gt;&lt;/ui-checkbox&gt;
+        &lt;ui-label for=&quot;notifications&quot;&gt;Enable notifications&lt;/ui-label&gt;
+      &lt;/div&gt;
+    &lt;/ui-form-item&gt;
+  &lt;/div&gt;
+&lt;/ui-form&gt;</code></pre>
+              </div>
+            </section>
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Auto-Submit on Blur</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <ui-form action="/api/profile" method="post">
+  <div class="space-y-4 max-w-md">
+    <ui-form-item name="username" auto-submit="onBlur">
+      <ui-field>
+        <ui-field-label html-for="username">Username</ui-field-label>
+        <ui-field-content>
+          <ui-input id="username" name="username" value="johndoe" placeholder="Enter username"></ui-input>
+        </ui-field-content>
+        <ui-field-description>Saves automatically when you leave the field.</ui-field-description>
+      </ui-field>
+    </ui-form-item>
+    <ui-form-item name="bio" auto-submit="onBlur">
+      <ui-field>
+        <ui-field-label html-for="bio">Bio</ui-field-label>
+        <ui-field-content>
+          <ui-textarea id="bio" name="bio" placeholder="Tell us about yourself"></ui-textarea>
+        </ui-field-content>
+      </ui-field>
+    </ui-form-item>
+  </div>
+</ui-form>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;ui-form action=&quot;/api/profile&quot; method=&quot;post&quot;&gt;
+  &lt;div class=&quot;space-y-4 max-w-md&quot;&gt;
+    &lt;ui-form-item name=&quot;username&quot; auto-submit=&quot;onBlur&quot;&gt;
+      &lt;ui-field&gt;
+        &lt;ui-field-label html-for=&quot;username&quot;&gt;Username&lt;/ui-field-label&gt;
+        &lt;ui-field-content&gt;
+          &lt;ui-input id=&quot;username&quot; name=&quot;username&quot; value=&quot;johndoe&quot; placeholder=&quot;Enter username&quot;&gt;&lt;/ui-input&gt;
+        &lt;/ui-field-content&gt;
+        &lt;ui-field-description&gt;Saves automatically when you leave the field.&lt;/ui-field-description&gt;
+      &lt;/ui-field&gt;
+    &lt;/ui-form-item&gt;
+    &lt;ui-form-item name=&quot;bio&quot; auto-submit=&quot;onBlur&quot;&gt;
+      &lt;ui-field&gt;
+        &lt;ui-field-label html-for=&quot;bio&quot;&gt;Bio&lt;/ui-field-label&gt;
+        &lt;ui-field-content&gt;
+          &lt;ui-textarea id=&quot;bio&quot; name=&quot;bio&quot; placeholder=&quot;Tell us about yourself&quot;&gt;&lt;/ui-textarea&gt;
+        &lt;/ui-field-content&gt;
+      &lt;/ui-field&gt;
+    &lt;/ui-form-item&gt;
+  &lt;/div&gt;
+&lt;/ui-form&gt;</code></pre>
+              </div>
+            </section>
 
             
 
@@ -518,7 +618,7 @@
             <div class="mt-6">
               <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-form-item&gt;</code></h3>
               <div class="overflow-x-auto max-w-full">
-                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Field name matching error id/name. Auto-displays errors and sets data-invalid.</td></tr></tbody></table>
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Field name matching error id/name. Auto-displays errors and sets data-invalid.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">auto-submit</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;onChange&quot; | &quot;onBlur&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Auto-submit the form when a field inside this item changes (onChange) or loses focus (onBlur).</td></tr></tbody></table>
               </div>
             </div></section>
 
