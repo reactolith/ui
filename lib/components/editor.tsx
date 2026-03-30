@@ -16,12 +16,16 @@
 
 import * as React from "react"
 import { Plate, usePlateEditor } from "platejs/react"
+import { deserializeHtml } from "@platejs/core"
+import { MarkdownPlugin } from "@platejs/markdown"
 import type { EditorProps } from "@/lib/editor/types"
 import { useEditorFormSync } from "@/lib/editor/use-editor-form"
 import { EditorKit } from "@/components/plate/editor/editor-kit"
 import { Editor, EditorContainer } from "@/components/plate/ui/editor"
 import { TooltipProvider } from "@/components/plate/ui/tooltip"
 import { cn } from "@/lib/utils"
+
+const EMPTY_VALUE = [{ type: "p", children: [{ text: "" }] }]
 
 export default function EditorOverride({
   value,
@@ -38,7 +42,28 @@ export default function EditorOverride({
 }: EditorProps) {
   const editor = usePlateEditor({
     plugins: EditorKit,
-    value: value as string | undefined,
+    value: (editor) => {
+      if (!value) return EMPTY_VALUE
+      if (typeof value !== "string") return value as any
+      try {
+        if (format === "json") {
+          const parsed = JSON.parse(value)
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed
+          return EMPTY_VALUE
+        }
+        if (format === "markdown") {
+          const deserialized = editor.getApi(MarkdownPlugin).markdown.deserialize(value)
+          if (Array.isArray(deserialized) && deserialized.length > 0) return deserialized
+          return EMPTY_VALUE
+        }
+        // "html" — explicitly deserialize via HtmlPlugin
+        const nodes = deserializeHtml(editor, { element: value })
+        if (Array.isArray(nodes) && nodes.length > 0) return nodes as any
+        return EMPTY_VALUE
+      } catch {
+        return EMPTY_VALUE
+      }
+    },
   })
 
   React.useEffect(() => {

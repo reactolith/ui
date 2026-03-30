@@ -33,6 +33,10 @@ export default defineConfig({
                 "platejs/react",
                 "platejs/static",
                 /^@platejs\//,
+                // Slate (peer deps of @platejs/*, consumers install separately)
+                "slate",
+                "slate-react",
+                "slate-history",
                 // Built-in component dependencies
                 "sonner",
                 "lucide-react",

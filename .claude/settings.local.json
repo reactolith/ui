@@ -45,7 +45,29 @@
       "Bash(echo \"port $port in use\")",
       "Bash(done)",
       "Bash(grep -r \"handleRangeSelect\\\\|rangeSelect\\\\|from.*to.*undefined\" node_modules/react-day-picker/dist/*.js)",
-      "Bash(grep -r from.*to node_modules/react-day-picker/dist/cjs.js)"
+      "Bash(grep -r from.*to node_modules/react-day-picker/dist/cjs.js)",
+      "Bash(awk:*)",
+      "Bash(grep -r usePlateEditor node_modules/platejs/dist --include=*.d.ts -l)",
+      "Bash(grep -r usePlateEditor node_modules/platejs/react --include=*.d.ts)",
+      "Bash(grep -r usePlateEditor node_modules/@platejs --include=*.d.ts)",
+      "Bash(grep -oP \"setValue=\\\\\\(.{0,500}\" node_modules/@platejs/core/dist/index.js)",
+      "Bash(grep -r decorate node_modules/@platejs/code-block/dist/*.js)",
+      "Bash(grep -r decorate node_modules/@platejs --include=*.js -l)",
+      "Bash(grep -r \"platejs/html\\\\|@platejs/html\\\\|HtmlPlugin\\\\|htmlPlugin\" /Users/franzwilding/Development/reactolith-ui/components/plate/ --include=*.tsx --include=*.ts -l)",
+      "Bash(grep -r \"serializeHtml\\\\|serialize.*html\\\\|html.*serial\" /Users/franzwilding/Development/reactolith-ui/node_modules/@platejs/core/dist/ --include=*.js -l)",
+      "Bash(grep -r serializeHtml /Users/franzwilding/Development/reactolith-ui/node_modules/platejs/dist/ --include=*.js -l)",
+      "Bash(grep -rn useBlockSelectable /Users/franzwilding/Development/reactolith-ui/node_modules/@platejs/ --include=*.js -l)",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(echo \"=== $f ===\")",
+      "Read(//Users/franzwilding/Development/reactolith-ui/components/plate/editor/plugins/**)",
+      "Bash(grep -n \"createPlateEditor\\\\|createEditorWith\" /Users/franzwilding/Development/reactolith-ui/node_modules/platejs/dist/ --include=*.js -r)",
+      "Bash(grep -rn \"PlateView\\\\|usePlateViewEditor\" /Users/franzwilding/Development/reactolith-ui/node_modules/platejs/dist/react/ --include=*.js -l)",
+      "Bash(grep -rn \"PlateView\\\\|usePlateViewEditor\" /Users/franzwilding/Development/reactolith-ui/node_modules/platejs/ --include=*.js -l)",
+      "Bash(grep -rn \"ToggleAboveNodes\\\\|aboveNodes\" /Users/franzwilding/Development/reactolith-ui/node_modules/@platejs/toggle/ --include=*.js)",
+      "Bash(grep -rn aboveNodes /Users/franzwilding/Development/reactolith-ui/node_modules/@platejs/*/dist/react/index.js)",
+      "Bash(grep -rn \"PlateStatic\\\\|EditorStatic\\\\|editor-static\" /Users/franzwilding/Development/reactolith-ui/app/ --include=*.tsx --include=*.ts)",
+      "Bash(grep -rn \"EditorStaticKit\\\\|staticKit\\\\|static.*kit\\\\|StaticKit\" /Users/franzwilding/Development/reactolith-ui/components/ --include=*.tsx --include=*.ts)"
     ]
   }
 }

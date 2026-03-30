@@ -20,6 +20,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react"
 import type { Value } from "platejs"
+import { createSlateEditor } from "platejs"
 import type { PlateEditor } from "platejs/react"
 import { MarkdownPlugin } from "@platejs/markdown"
 import type { EditorFormat } from "./types"
@@ -41,10 +42,28 @@ function serializeToMarkdown(editor: PlateEditor): string {
   }
 }
 
+// Lazily created static editor (no UI plugins with broken hooks).
+let _staticEditor: ReturnType<typeof createSlateEditor> | null = null
+
+async function getStaticEditor(
+  value: Value,
+): Promise<ReturnType<typeof createSlateEditor>> {
+  if (!_staticEditor) {
+    // Dynamic import to avoid circular deps and keep this module lightweight.
+    const { SerializerKit } = await import(
+      "@/components/plate/editor/editor-kit"
+    )
+    _staticEditor = createSlateEditor({ plugins: SerializerKit as any })
+  }
+  _staticEditor.children = value as any
+  return _staticEditor
+}
+
 async function serializeToHtml(editor: PlateEditor): Promise<string> {
   try {
     const { serializeHtml } = await import("platejs/static")
-    return await serializeHtml(editor, {
+    const staticEditor = await getStaticEditor(editor.children as Value)
+    return await serializeHtml(staticEditor as any, {
       stripClassNames: true,
       stripDataAttributes: true,
     })

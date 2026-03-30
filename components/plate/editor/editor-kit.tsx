@@ -5,6 +5,19 @@ import { type TPlateEditor, useEditorRef } from 'platejs/react';
 
 import { AlignKit } from '@/components/plate/editor/plugins/align-kit';
 import { AutoformatKit } from '@/components/plate/editor/plugins/autoformat-kit';
+import { BaseAlignKit } from '@/components/plate/editor/plugins/align-base-kit';
+import { BaseBasicBlocksKit } from '@/components/plate/editor/plugins/basic-blocks-base-kit';
+import { BaseBasicMarksKit } from '@/components/plate/editor/plugins/basic-marks-base-kit';
+import { BaseCalloutKit } from '@/components/plate/editor/plugins/callout-base-kit';
+import { BaseCodeBlockKit } from '@/components/plate/editor/plugins/code-block-base-kit';
+import { BaseFontKit } from '@/components/plate/editor/plugins/font-base-kit';
+import { BaseLineHeightKit } from '@/components/plate/editor/plugins/line-height-base-kit';
+import { BaseLinkKit } from '@/components/plate/editor/plugins/link-base-kit';
+import { BaseListKit } from '@/components/plate/editor/plugins/list-base-kit';
+import { BaseMediaKit } from '@/components/plate/editor/plugins/media-base-kit';
+import { BaseMentionKit } from '@/components/plate/editor/plugins/mention-base-kit';
+import { BaseTableKit } from '@/components/plate/editor/plugins/table-base-kit';
+import { BaseToggleKit } from '@/components/plate/editor/plugins/toggle-base-kit';
 import { BasicBlocksKit } from '@/components/plate/editor/plugins/basic-blocks-kit';
 import { BasicMarksKit } from '@/components/plate/editor/plugins/basic-marks-kit';
 import { BlockMenuKit } from '@/components/plate/editor/plugins/block-menu-kit';
@@ -25,6 +38,34 @@ import { MentionKit } from '@/components/plate/editor/plugins/mention-kit';
 import { SlashKit } from '@/components/plate/editor/plugins/slash-kit';
 import { TableKit } from '@/components/plate/editor/plugins/table-kit';
 import { ToggleKit } from '@/components/plate/editor/plugins/toggle-kit';
+
+/**
+ * Base-only plugins for static HTML serialization and read-only rendering.
+ * No React hooks, no Plate context required — safe for PlateStatic.
+ */
+export const SerializerKit = [
+  // Elements (base variants — no React hooks)
+  ...BaseBasicBlocksKit,
+  ...BaseCodeBlockKit,
+  ...BaseTableKit,
+  ...BaseToggleKit,
+  ...BaseMediaKit,
+  ...BaseCalloutKit,
+  ...BaseLinkKit,
+  ...BaseMentionKit,
+
+  // Marks
+  ...BaseBasicMarksKit,
+  ...BaseFontKit,
+
+  // Block style (BaseListKit includes BaseIndentKit)
+  ...BaseListKit,
+  ...BaseAlignKit,
+  ...BaseLineHeightKit,
+
+  // Parsers
+  ...MarkdownKit,
+];
 
 export const EditorKit = [
   // Elements

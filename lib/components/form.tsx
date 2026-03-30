@@ -71,6 +71,8 @@ function Form({
 
   const handleSubmit = React.useCallback(
     async (event: React.FormEvent<HTMLFormElement> | SubmitEvent) => {
+      // When no custom handler is provided, allow native form submission
+      if (!userOnSubmit) return
       if (submitting) return
       event.preventDefault()
       setSubmitting(true)
@@ -88,6 +90,10 @@ function Form({
 
   const autoSubmit = React.useCallback(
     (target: HTMLElement, triggerType: string) => {
+      // Check the target element itself, then walk up to find data-auto-submit.
+      // Note: custom elements (ui-select etc.) are rendered as React components and
+      // their attributes are not present in the DOM — put data-auto-submit on the
+      // <form> element itself to trigger submission on any field change.
       const submitElement = target.hasAttribute("data-auto-submit")
         ? target
         : target.closest("[data-auto-submit]")
@@ -100,6 +106,12 @@ function Form({
       const form = formRef.current
       if (!form) return
 
+      if (!userOnSubmit) {
+        // No custom handler: trigger native form submission
+        form.requestSubmit()
+        return
+      }
+
       const submitEvent = new SubmitEvent("submit", {
         submitter: submitElement as HTMLElement,
       })
@@ -109,7 +121,7 @@ function Form({
       })
       handleSubmit(submitEvent)
     },
-    [handleSubmit],
+    [handleSubmit, userOnSubmit],
   )
 
   const handleFormChange: React.FormEventHandler<HTMLFormElement> =

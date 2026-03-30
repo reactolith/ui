@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carousel - Reactolith UI</title>
+    <title>Editor Content - Reactolith UI</title>
     <link rel="icon" href="../../icon.svg" type="image/svg+xml">
     <script type="module" src="../../app.ts"></script>
     <script>
@@ -148,7 +148,7 @@
                   <ui-sidebar-menu-button  size="sm" href="badge.html">Badge</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button is-active size="sm" href="carousel.html">Carousel</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button  size="sm" href="carousel.html">Carousel</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
                   <ui-sidebar-menu-button  size="sm" href="chart.html">Chart</ui-sidebar-menu-button>
@@ -278,7 +278,7 @@
                   <ui-sidebar-menu-button  size="sm" href="editor.html">Editor</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
                 <ui-sidebar-menu-item>
-                  <ui-sidebar-menu-button  size="sm" href="editor-content.html">Editor Content</ui-sidebar-menu-button>
+                  <ui-sidebar-menu-button is-active size="sm" href="editor-content.html">Editor Content</ui-sidebar-menu-button>
                 </ui-sidebar-menu-item>
               </ui-sidebar-menu>
             </ui-sidebar-group-content>
@@ -437,70 +437,77 @@
           
             <div class="space-y-2 mb-8">
               <div class="flex items-start justify-end gap-3">
-                <a href="https://ui.shadcn.com/docs/components/base/carousel" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">shadcn/ui docs</a>
+                <span class="text-xs bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 px-2 py-1 rounded shrink-0">built-in</span>
               </div>
-              <h1 class="text-3xl font-bold tracking-tight">Carousel</h1>
-              <p class="text-lg text-muted-foreground">A carousel with motion and swipe built using Embla.</p>
+              <h1 class="text-3xl font-bold tracking-tight">Editor Content</h1>
+              <p class="text-lg text-muted-foreground">Read-only renderer for Plate.js rich text content. No toolbar, no editing UI — renders HTML, JSON, or Markdown content as formatted text. Ideal for displaying saved editor content.</p>
             </div>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Preview</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
-                    <ui-carousel class="w-full max-w-xs mx-auto">
-  <ui-carousel-content>
-    <ui-carousel-item>
-      <ui-card><ui-card-content class="flex items-center justify-center p-6"><span class="text-4xl font-semibold">1</span></ui-card-content></ui-card>
-    </ui-carousel-item>
-    <ui-carousel-item>
-      <ui-card><ui-card-content class="flex items-center justify-center p-6"><span class="text-4xl font-semibold">2</span></ui-card-content></ui-card>
-    </ui-carousel-item>
-    <ui-carousel-item>
-      <ui-card><ui-card-content class="flex items-center justify-center p-6"><span class="text-4xl font-semibold">3</span></ui-card-content></ui-card>
-    </ui-carousel-item>
-  </ui-carousel-content>
-  <ui-carousel-previous></ui-carousel-previous>
-  <ui-carousel-next></ui-carousel-next>
-</ui-carousel>
+                    <ui-editor-content value="&lt;h2&gt;Hello World&lt;/h2&gt;&lt;p&gt;This is &lt;strong&gt;rendered&lt;/strong&gt; rich text content — no editing, just display.&lt;/p&gt;" format="html"></ui-editor-content>
                   </div>
             </section>
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Usage</h2>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-carousel class=&quot;w-full max-w-xs mx-auto&quot;&gt;
-  &lt;ui-carousel-content&gt;
-    &lt;ui-carousel-item&gt;
-      &lt;ui-card&gt;&lt;ui-card-content class=&quot;flex items-center justify-center p-6&quot;&gt;&lt;span class=&quot;text-4xl font-semibold&quot;&gt;1&lt;/span&gt;&lt;/ui-card-content&gt;&lt;/ui-card&gt;
-    &lt;/ui-carousel-item&gt;
-    &lt;ui-carousel-item&gt;
-      &lt;ui-card&gt;&lt;ui-card-content class=&quot;flex items-center justify-center p-6&quot;&gt;&lt;span class=&quot;text-4xl font-semibold&quot;&gt;2&lt;/span&gt;&lt;/ui-card-content&gt;&lt;/ui-card&gt;
-    &lt;/ui-carousel-item&gt;
-    &lt;ui-carousel-item&gt;
-      &lt;ui-card&gt;&lt;ui-card-content class=&quot;flex items-center justify-center p-6&quot;&gt;&lt;span class=&quot;text-4xl font-semibold&quot;&gt;3&lt;/span&gt;&lt;/ui-card-content&gt;&lt;/ui-card&gt;
-    &lt;/ui-carousel-item&gt;
-  &lt;/ui-carousel-content&gt;
-  &lt;ui-carousel-previous&gt;&lt;/ui-carousel-previous&gt;
-  &lt;ui-carousel-next&gt;&lt;/ui-carousel-next&gt;
-&lt;/ui-carousel&gt;</code></pre>
+                <pre class="p-4 text-sm"><code>&lt;!-- Render saved HTML content --&gt;
+&lt;ui-editor-content value=&quot;&lt;h2&gt;Hello&lt;/h2&gt;&lt;p&gt;Rendered &lt;strong&gt;HTML&lt;/strong&gt;.&lt;/p&gt;&quot; format=&quot;html&quot;&gt;&lt;/ui-editor-content&gt;
+
+&lt;!-- Render JSON content --&gt;
+&lt;ui-editor-content value='[{&quot;type&quot;:&quot;p&quot;,&quot;children&quot;:[{&quot;text&quot;:&quot;Hello&quot;}]}]' format=&quot;json&quot;&gt;&lt;/ui-editor-content&gt;
+
+&lt;!-- Render Markdown --&gt;
+&lt;ui-editor-content value=&quot;## Hello
+
+**Bold** and *italic* text.&quot; format=&quot;markdown&quot;&gt;&lt;/ui-editor-content&gt;</code></pre>
               </div>
             </section>
 
             
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">JSON format</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <ui-editor-content value='[{"type":"p","children":[{"text":"This content is rendered from "},{"text":"Plate.js JSON","bold":true},{"text":". No editing — just display."}]},{"type":"p","children":[{"text":"Perfect for "},{"text":"displaying","italic":true},{"text":" stored rich text."}]}]' format="json"></ui-editor-content>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;ui-editor-content
+  value='[{&quot;type&quot;:&quot;p&quot;,&quot;children&quot;:[{&quot;text&quot;:&quot;From &quot;},{&quot;text&quot;:&quot;JSON&quot;,&quot;bold&quot;:true}]}]'
+  format=&quot;json&quot;&gt;
+&lt;/ui-editor-content&gt;</code></pre>
+              </div>
+            </section>
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Markdown format</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <ui-editor-content value="## Markdown Content&#10;&#10;This content is rendered from **Markdown**. Supports *italic*, **bold**, and &gt; blockquotes." format="markdown"></ui-editor-content>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;ui-editor-content
+  value=&quot;## Heading
+
+**Bold** and *italic* text.&quot;
+  format=&quot;markdown&quot;&gt;
+&lt;/ui-editor-content&gt;</code></pre>
+              </div>
+            </section>
 
             
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Sub-components</h2>
               <div class="flex flex-wrap gap-2">
-                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-carousel&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-carousel-content&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-carousel-item&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-carousel-previous&gt;</code> <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-carousel-next&gt;</code>
+                <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-editor-content&gt;</code>
               </div>
             </section>
 
             <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
             <div class="mt-6">
-              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-carousel&gt;</code></h3>
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-editor-content&gt;</code></h3>
               <div class="overflow-x-auto max-w-full">
-                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">orientation</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;horizontal&quot; | &quot;vertical&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;horizontal&quot;</code></td><td class="py-2 text-muted-foreground">The orientation of the carousel.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">opts</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">EmblaOptionsType</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Embla carousel options.</td></tr></tbody></table>
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Content to render (HTML string, JSON string, or Markdown string).</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">format</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;html&quot; | &quot;json&quot; | &quot;markdown&quot;</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">&quot;html&quot;</code></td><td class="py-2 text-muted-foreground">Content format.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">max-height</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Maximum height (CSS value, enables scroll).</td></tr></tbody></table>
               </div>
             </div></section>
 

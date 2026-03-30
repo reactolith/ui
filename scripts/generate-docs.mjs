@@ -3094,6 +3094,190 @@ const components = [
   {"kind":"info","message":"Welcome back!"}
 ]'></ui-sonner>`,
   },
+  {
+    name: "Editor",
+    slug: "editor",
+    description: `A rich text editor powered by <a href="https://platejs.org/" class="underline">Plate.js</a>. Uses standard Plate kits installed via the shadcn CLI. Reactolith provides the integration layer for form sync and HTML-attribute configuration.`,
+    category: "Built-in",
+    subComponents: [
+      { tag: "ui-editor", props: [
+        { name: "value", type: "string", default: "—", description: "Initial content (HTML string, JSON string, or Markdown string)." },
+        { name: "format", type: '"html" | "json" | "markdown"', default: '"html"', description: "Content format for parsing and form sync." },
+        { name: "placeholder", type: "string", default: '"Type / for commands..."', description: "Placeholder text shown when the editor is empty." },
+        { name: "read-only", type: "boolean", default: "false", description: "Enables read-only mode." },
+        { name: "name", type: "string", default: "—", description: "Hidden input name for form submission. Syncs editor content in the configured format." },
+        { name: "form", type: "string", default: "—", description: "Form ID to associate with (like the native form= attribute)." },
+        { name: "min-height", type: "string", default: '"200px"', description: "Minimum editor height (CSS value)." },
+        { name: "max-height", type: "string", default: "—", description: "Maximum editor height (CSS value, enables scroll)." },
+      ] },
+    ],
+    example: `<ui-editor placeholder="Type / for commands..." min-height="400px"></ui-editor>`,
+    readableExample: `<!-- Basic editor -->
+<ui-editor placeholder="Start writing..."></ui-editor>
+
+<!-- With form sync (syncs content to hidden input) -->
+<ui-editor name="content" format="html"></ui-editor>
+
+<!-- JSON format (lossless, recommended for storage) -->
+<ui-editor name="content" format="json"></ui-editor>
+
+<!-- Markdown format -->
+<ui-editor name="content" format="markdown"></ui-editor>
+
+<!-- Read-only display -->
+<ui-editor value="..." read-only></ui-editor>`,
+    additionalExamples: [
+      {
+        title: "HTML format",
+        example: `<ui-editor value="&lt;h2&gt;Getting Started&lt;/h2&gt;&lt;p&gt;This editor is pre-filled with &lt;strong&gt;HTML content&lt;/strong&gt;. Edit freely — on submit the form receives clean HTML.&lt;/p&gt;&lt;p&gt;Supports &lt;em&gt;italic&lt;/em&gt;, &lt;strong&gt;bold&lt;/strong&gt;, &lt;u&gt;underline&lt;/u&gt; and more.&lt;/p&gt;" format="html" name="body" min-height="220px"></ui-editor>`,
+        readableExample: `<ui-editor
+  value="<h2>Getting Started</h2><p>Pre-filled with <strong>HTML</strong> content.</p>"
+  format="html"
+  name="body">
+</ui-editor>`,
+      },
+      {
+        title: "JSON format",
+        example: `<ui-editor value='[{"type":"p","children":[{"text":"This editor is pre-filled with "},{"text":"Plate.js JSON","bold":true},{"text":". Lossless — recommended for storing and reloading rich content."}]},{"type":"p","children":[{"text":"Perfect for "},{"text":"round-tripping","italic":true},{"text":" editor state without any serialization loss."}]}]' format="json" name="body" min-height="220px"></ui-editor>`,
+        readableExample: `<ui-editor
+  value='[{"type":"p","children":[{"text":"Pre-filled with "},{"text":"Plate.js JSON","bold":true},{"text":"."}]}]'
+  format="json"
+  name="body">
+</ui-editor>`,
+      },
+      {
+        title: "Markdown format",
+        example: `<ui-editor value="## Markdown Format&#10;&#10;This editor is pre-filled with **Markdown** content. Edit it and the form value will be serialized back to Markdown.&#10;&#10;Supports *italic*, **bold**, and &gt; blockquotes." format="markdown" name="body" min-height="220px"></ui-editor>`,
+        readableExample: `<ui-editor
+  value="## Markdown Format\n\nPre-filled with **Markdown** content."
+  format="markdown"
+  name="body">
+</ui-editor>`,
+      },
+      {
+        title: "Read-only",
+        example: `<ui-editor value="&lt;h2&gt;Read-only content&lt;/h2&gt;&lt;p&gt;This editor is in &lt;strong&gt;read-only mode&lt;/strong&gt;. Content is rendered but cannot be edited — useful for displaying saved rich text.&lt;/p&gt;&lt;p&gt;No toolbar is shown. No cursor or focus.&lt;/p&gt;" format="html" read-only min-height="180px"></ui-editor>`,
+        readableExample: `<ui-editor
+  value="<h2>Read-only content</h2><p>This is <strong>read-only</strong>.</p>"
+  format="html"
+  read-only>
+</ui-editor>`,
+      },
+    ],
+    afterHtml: `
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Setup</h2>
+              <p class="text-muted-foreground mb-4">The editor uses standard <a href="https://platejs.org/" class="underline">Plate.js</a> components. Install them in your project via the shadcn CLI, then create an override file.</p>
+
+              <h3 class="text-base font-semibold mt-6 mb-3">1. Install Plate components</h3>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code># Install the full editor kit (recommended)
+npx shadcn@latest add @plate/editor-kit
+
+# Or install individual feature kits
+npx shadcn@latest add @plate/basic-blocks-kit
+npx shadcn@latest add @plate/basic-marks-kit
+npx shadcn@latest add @plate/slash-kit
+npx shadcn@latest add @plate/dnd-kit
+npx shadcn@latest add @plate/floating-toolbar-kit
+# ... see platejs.org for all available kits</code></pre>
+              </div>
+
+              <h3 class="text-base font-semibold mt-6 mb-3">2. Create the editor override</h3>
+              <p class="text-sm text-muted-foreground mb-3">Create <code class="text-xs bg-muted px-1.5 py-0.5 rounded">app/overrides/editor.tsx</code> in your project. This makes the editor available as <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;ui-editor&gt;</code>.</p>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>import { Plate, usePlateEditor } from "platejs/react"
+import { useEditorFormSync, type EditorProps } from "reactolith-ui/editor"
+
+// Import the kits you installed
+import { EditorKit } from "@/components/editor/editor-kit"
+import { Editor, EditorContainer } from "@/components/ui/editor"
+
+export default function EditorOverride({
+  value, format = "html", placeholder, readOnly,
+  name, form, className, minHeight, maxHeight, onChange,
+}: EditorProps) {
+  const editor = usePlateEditor({
+    plugins: EditorKit,
+    value: value as string | undefined,
+  })
+
+  const { syncContent, inputProps } = useEditorFormSync({
+    editor, format, name, form, onChange,
+  })
+
+  return (
+    &lt;div className={className}&gt;
+      &lt;Plate editor={editor} readOnly={readOnly}
+        onChange={() =&gt; syncContent()}&gt;
+        &lt;EditorContainer style={{ minHeight, maxHeight }}&gt;
+          &lt;Editor placeholder={placeholder} /&gt;
+        &lt;/EditorContainer&gt;
+      &lt;/Plate&gt;
+      {inputProps &amp;&amp; &lt;input {...inputProps} /&gt;}
+    &lt;/div&gt;
+  )
+}</code></pre>
+              </div>
+
+              <h3 class="text-base font-semibold mt-6 mb-3">3. Use it</h3>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;form action="/api/save" method="POST"&gt;
+  &lt;ui-editor name="content" format="html"
+    placeholder="Start writing..."&gt;&lt;/ui-editor&gt;
+  &lt;button type="submit"&gt;Save&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+              </div>
+            </section>
+
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Features</h2>
+              <p class="text-muted-foreground mb-4">This demo uses the standard Plate.js editor kit which includes:</p>
+              <div class="overflow-x-auto max-w-full">
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Feature</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4 font-medium">Slash commands</td><td class="py-2 text-muted-foreground">Type <code class="text-xs bg-muted px-1.5 py-0.5 rounded">/</code> to insert headings, lists, code blocks, tables, etc.</td></tr><tr class="border-b"><td class="py-2 pr-4 font-medium">Fixed toolbar</td><td class="py-2 text-muted-foreground">Formatting buttons at the top of the editor</td></tr><tr class="border-b"><td class="py-2 pr-4 font-medium">Floating toolbar</td><td class="py-2 text-muted-foreground">Context toolbar appears on text selection</td></tr><tr class="border-b"><td class="py-2 pr-4 font-medium">Drag &amp; drop</td><td class="py-2 text-muted-foreground">Drag blocks to reorder them</td></tr><tr class="border-b"><td class="py-2 pr-4 font-medium">Block selection</td><td class="py-2 text-muted-foreground">Click and drag to select multiple blocks</td></tr><tr class="border-b"><td class="py-2 pr-4 font-medium">Autoformat</td><td class="py-2 text-muted-foreground">Markdown shortcuts: <code class="text-xs bg-muted px-1.5 py-0.5 rounded"># </code> for H1, <code class="text-xs bg-muted px-1.5 py-0.5 rounded">* </code> for lists, <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&gt; </code> for quotes, etc.</td></tr><tr class="border-b"><td class="py-2 pr-4 font-medium">Form sync</td><td class="py-2 text-muted-foreground">Content syncs to a hidden <code class="text-xs bg-muted px-1.5 py-0.5 rounded">&lt;input&gt;</code> in HTML, JSON, or Markdown format</td></tr></tbody></table>
+              </div>
+            </section>`,
+  },
+  {
+    name: "Editor Content",
+    slug: "editor-content",
+    description: `Read-only renderer for Plate.js rich text content. No toolbar, no editing UI — renders HTML, JSON, or Markdown content as formatted text. Ideal for displaying saved editor content.`,
+    category: "Built-in",
+    subComponents: [
+      { tag: "ui-editor-content", props: [
+        { name: "value", type: "string", default: "—", description: "Content to render (HTML string, JSON string, or Markdown string)." },
+        { name: "format", type: '"html" | "json" | "markdown"', default: '"html"', description: "Content format." },
+        { name: "max-height", type: "string", default: "—", description: "Maximum height (CSS value, enables scroll)." },
+      ] },
+    ],
+    example: `<ui-editor-content value="&lt;h2&gt;Hello World&lt;/h2&gt;&lt;p&gt;This is &lt;strong&gt;rendered&lt;/strong&gt; rich text content — no editing, just display.&lt;/p&gt;" format="html"></ui-editor-content>`,
+    readableExample: `<!-- Render saved HTML content -->
+<ui-editor-content value="<h2>Hello</h2><p>Rendered <strong>HTML</strong>.</p>" format="html"></ui-editor-content>
+
+<!-- Render JSON content -->
+<ui-editor-content value='[{"type":"p","children":[{"text":"Hello"}]}]' format="json"></ui-editor-content>
+
+<!-- Render Markdown -->
+<ui-editor-content value="## Hello\n\n**Bold** and *italic* text." format="markdown"></ui-editor-content>`,
+    additionalExamples: [
+      {
+        title: "JSON format",
+        example: `<ui-editor-content value='[{"type":"p","children":[{"text":"This content is rendered from "},{"text":"Plate.js JSON","bold":true},{"text":". No editing — just display."}]},{"type":"p","children":[{"text":"Perfect for "},{"text":"displaying","italic":true},{"text":" stored rich text."}]}]' format="json"></ui-editor-content>`,
+        readableExample: `<ui-editor-content
+  value='[{"type":"p","children":[{"text":"From "},{"text":"JSON","bold":true}]}]'
+  format="json">
+</ui-editor-content>`,
+      },
+      {
+        title: "Markdown format",
+        example: `<ui-editor-content value="## Markdown Content&#10;&#10;This content is rendered from **Markdown**. Supports *italic*, **bold**, and &gt; blockquotes." format="markdown"></ui-editor-content>`,
+        readableExample: `<ui-editor-content
+  value="## Heading\n\n**Bold** and *italic* text."
+  format="markdown">
+</ui-editor-content>`,
+      },
+    ],
+  },
 ];
 
 // ============================================================================
@@ -3318,6 +3502,8 @@ function componentPage(comp) {
                 <pre class="p-4 text-sm"><code>${escapeHtml((ex.readableExample || ex.example).trim())}</code></pre>
               </div>
             </section>`).join('')}
+
+            ${comp.afterHtml || ""}
 
             <section class="mb-10">
               <h2 class="text-xl font-semibold mb-4">Sub-components</h2>
