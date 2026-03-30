@@ -4,7 +4,12 @@ import { renderLinkable, renderTrigger, getSingleElement } from "../render-eleme
 import { CloseOverlayProvider, useCloseOverlay } from "../close-overlay"
 import { SelectItemsProvider, useSelectItemsRegister } from "../select-items"
 import { cn } from "../utils"
-import { Item, ItemContent, ItemTitle, ItemDescription } from "@/components/ui/item"
+// Lightweight inline fallbacks for combobox item rendering.
+// Avoids a hard dependency on the optional shadcn item component.
+const ComboboxItemLayout = ({ children, className, ...props }: any) => <div className={cn("flex items-center gap-2", className)} {...props}>{children}</div>
+const ComboboxItemContent = (props: any) => <div className="flex flex-1 flex-col" {...props} />
+const ComboboxItemTitle = ({ className, ...props }: any) => <div className={cn("text-sm font-medium leading-snug", className)} {...props} />
+const ComboboxItemDescription = (props: any) => <p className="text-muted-foreground text-xs" {...props} />
 import { FormItemContext, FormSubmittingContext } from "../form-context"
 
 // ---------------------------------------------------------------------------
@@ -365,13 +370,13 @@ function AsyncCombobox({
               return (
                 <ComboboxItem key={value} value={item}>
                   {description ? (
-                    <Item size="xs" className="p-0">
-                      <ItemContent>
-                        <ItemTitle className="whitespace-nowrap">{label}</ItemTitle>
-                        <ItemDescription>{description}</ItemDescription>
-                      </ItemContent>
+                    <ComboboxItemLayout className="p-0">
+                      <ComboboxItemContent>
+                        <ComboboxItemTitle className="whitespace-nowrap">{label}</ComboboxItemTitle>
+                        <ComboboxItemDescription>{description}</ComboboxItemDescription>
+                      </ComboboxItemContent>
                       {suffix && <span className="ml-auto text-xs text-muted-foreground tabular-nums">{suffix}</span>}
-                    </Item>
+                    </ComboboxItemLayout>
                   ) : suffix ? (
                     <>{label}<span className="ml-auto text-xs text-muted-foreground tabular-nums">{suffix}</span></>
                   ) : label}
@@ -539,13 +544,13 @@ function renderComboboxItem(ComboboxItem: ComponentType<any>, item: ComboboxItem
   return (
     <ComboboxItem key={value} value={item}>
       {description ? (
-        <Item size="xs" className="p-0">
-          <ItemContent>
-            <ItemTitle className="whitespace-nowrap">{label}</ItemTitle>
-            <ItemDescription>{description}</ItemDescription>
-          </ItemContent>
+        <ComboboxItemLayout className="p-0">
+          <ComboboxItemContent>
+            <ComboboxItemTitle className="whitespace-nowrap">{label}</ComboboxItemTitle>
+            <ComboboxItemDescription>{description}</ComboboxItemDescription>
+          </ComboboxItemContent>
           {suffix && <span className="ml-auto text-xs text-muted-foreground tabular-nums">{suffix}</span>}
-        </Item>
+        </ComboboxItemLayout>
       ) : suffix ? (
         <>
           {label}
