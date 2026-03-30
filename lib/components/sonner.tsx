@@ -42,11 +42,13 @@ function getTheme(): "light" | "dark" {
 }
 
 export default function Toaster({ toasts, theme, ...props }: SonnerProps) {
-  const firedRef = useRef(false)
+  const prevToastsRef = useRef<string | null>(null)
 
   useEffect(() => {
-    if (!toasts?.length || firedRef.current) return
-    firedRef.current = true
+    if (!toasts?.length) return
+    const key = JSON.stringify(toasts)
+    if (key === prevToastsRef.current) return
+    prevToastsRef.current = key
     toasts.forEach(showToast)
   }, [toasts])
 
