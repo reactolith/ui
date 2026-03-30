@@ -854,72 +854,106 @@ const components = [
     additionalExamples: [
       {
         title: "Auto-Submit on Change",
-        example: `<ui-form method="get">
-  <div class="space-y-4 max-w-md">
-    <ui-form-item name="theme" auto-submit="onChange">
-      <ui-field>
-        <ui-field-label html-for="theme">Theme</ui-field-label>
-        <ui-field-content>
-          <ui-native-select id="theme" name="theme">
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-            <option value="system">System</option>
-          </ui-native-select>
-        </ui-field-content>
-      </ui-field>
-    </ui-form-item>
-    <ui-form-item name="language" auto-submit="onChange">
-      <ui-field>
-        <ui-field-label html-for="language">Language</ui-field-label>
-        <ui-field-content>
-          <ui-select name="language" json-items='[{"value":"en","label":"English"},{"value":"de","label":"Deutsch"},{"value":"fr","label":"Français"},{"value":"es","label":"Español"}]'>
-            <ui-select-trigger><ui-select-value placeholder="Select language"></ui-select-value></ui-select-trigger>
-            <ui-select-content></ui-select-content>
-          </ui-select>
-        </ui-field-content>
-      </ui-field>
-    </ui-form-item>
-    <ui-form-item name="framework" auto-submit="onChange">
-      <ui-field>
-        <ui-field-label>Framework</ui-field-label>
-        <ui-field-content>
-          <ui-combobox name="framework" json-items='[{"value":"react","label":"React"},{"value":"vue","label":"Vue.js"},{"value":"angular","label":"Angular"},{"value":"svelte","label":"Svelte"}]'>
-          </ui-combobox>
-        </ui-field-content>
-      </ui-field>
-    </ui-form-item>
-    <ui-form-item name="notifications" auto-submit="onChange">
-      <div class="flex items-center gap-3">
-        <ui-checkbox id="notifications" name="notifications" value="1"></ui-checkbox>
-        <ui-label for="notifications">Enable notifications</ui-label>
-      </div>
-    </ui-form-item>
-  </div>
-</ui-form>`,
+        example: `<div id="auto-submit-change-demo">
+  <ui-form method="get">
+    <div class="space-y-4 max-w-md">
+      <ui-form-item name="theme" auto-submit="onChange">
+        <ui-field>
+          <ui-field-label html-for="theme">Theme</ui-field-label>
+          <ui-field-content>
+            <ui-native-select id="theme" name="theme">
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+              <option value="system">System</option>
+            </ui-native-select>
+          </ui-field-content>
+        </ui-field>
+      </ui-form-item>
+      <ui-form-item name="language" auto-submit="onChange">
+        <ui-field>
+          <ui-field-label html-for="language">Language</ui-field-label>
+          <ui-field-content>
+            <ui-select name="language" json-items='[{"value":"en","label":"English"},{"value":"de","label":"Deutsch"},{"value":"fr","label":"Français"},{"value":"es","label":"Español"}]'>
+              <ui-select-trigger><ui-select-value placeholder="Select language"></ui-select-value></ui-select-trigger>
+              <ui-select-content></ui-select-content>
+            </ui-select>
+          </ui-field-content>
+        </ui-field>
+      </ui-form-item>
+      <ui-form-item name="framework" auto-submit="onChange">
+        <ui-field>
+          <ui-field-label>Framework</ui-field-label>
+          <ui-field-content>
+            <ui-combobox name="framework" json-items='[{"value":"react","label":"React"},{"value":"vue","label":"Vue.js"},{"value":"angular","label":"Angular"},{"value":"svelte","label":"Svelte"}]'>
+            </ui-combobox>
+          </ui-field-content>
+        </ui-field>
+      </ui-form-item>
+      <ui-form-item name="notifications" auto-submit="onChange">
+        <div class="flex items-center gap-3">
+          <ui-checkbox id="notifications" name="notifications" value="1"></ui-checkbox>
+          <ui-label for="notifications">Enable notifications</ui-label>
+        </div>
+      </ui-form-item>
+      <p id="auto-submit-change-status" class="text-sm text-muted-foreground mt-2">No submissions yet.</p>
+    </div>
+  </ui-form>
+</div>
+<script>
+(function() {
+  var count = 0;
+  var wrapper = document.getElementById('auto-submit-change-demo');
+  if (!wrapper) return;
+  var form = wrapper.querySelector('form');
+  if (!form) return;
+  form.addEventListener('submit', function() {
+    count++;
+    var el = document.getElementById('auto-submit-change-status');
+    if (el) el.textContent = 'Form submitted ' + count + ' time(s) at ' + new Date().toLocaleTimeString();
+  }, true);
+})();
+</script>`,
       },
       {
         title: "Auto-Submit on Blur",
-        example: `<ui-form method="get">
-  <div class="space-y-4 max-w-md">
-    <ui-form-item name="username" auto-submit="onBlur">
-      <ui-field>
-        <ui-field-label html-for="username">Username</ui-field-label>
-        <ui-field-content>
-          <ui-input id="username" name="username" value="johndoe" placeholder="Enter username"></ui-input>
-        </ui-field-content>
-        <ui-field-description>Saves automatically when you leave the field.</ui-field-description>
-      </ui-field>
-    </ui-form-item>
-    <ui-form-item name="bio" auto-submit="onBlur">
-      <ui-field>
-        <ui-field-label html-for="bio">Bio</ui-field-label>
-        <ui-field-content>
-          <ui-textarea id="bio" name="bio" placeholder="Tell us about yourself"></ui-textarea>
-        </ui-field-content>
-      </ui-field>
-    </ui-form-item>
-  </div>
-</ui-form>`,
+        example: `<div id="auto-submit-blur-demo">
+  <ui-form method="get">
+    <div class="space-y-4 max-w-md">
+      <ui-form-item name="username" auto-submit="onBlur">
+        <ui-field>
+          <ui-field-label html-for="username">Username</ui-field-label>
+          <ui-field-content>
+            <ui-input id="username" name="username" value="johndoe" placeholder="Enter username"></ui-input>
+          </ui-field-content>
+          <ui-field-description>Saves automatically when you leave the field.</ui-field-description>
+        </ui-field>
+      </ui-form-item>
+      <ui-form-item name="bio" auto-submit="onBlur">
+        <ui-field>
+          <ui-field-label html-for="bio">Bio</ui-field-label>
+          <ui-field-content>
+            <ui-textarea id="bio" name="bio" placeholder="Tell us about yourself"></ui-textarea>
+          </ui-field-content>
+        </ui-field>
+      </ui-form-item>
+      <p id="auto-submit-blur-status" class="text-sm text-muted-foreground mt-2">No submissions yet.</p>
+    </div>
+  </ui-form>
+</div>
+<script>
+(function() {
+  var count = 0;
+  var wrapper = document.getElementById('auto-submit-blur-demo');
+  if (!wrapper) return;
+  var form = wrapper.querySelector('form');
+  if (!form) return;
+  form.addEventListener('submit', function() {
+    count++;
+    var el = document.getElementById('auto-submit-blur-status');
+    if (el) el.textContent = 'Form submitted ' + count + ' time(s) at ' + new Date().toLocaleTimeString();
+  }, true);
+})();
+</script>`,
       },
     ],
   },
