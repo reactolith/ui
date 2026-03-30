@@ -828,7 +828,7 @@ const components = [
     category: "Forms",
     subComponents: [
       { tag: "ui-form", props: [{ name: "errors", type: "FormError[]", default: "[]", description: "Array of form errors to display. Each error has message, name/id, optional label." }, { name: "errors-title", type: "string", default: "—", description: "Optional title for the error summary alert." }] },
-      { tag: "ui-form-item", props: [{ name: "name", type: "string", default: "—", description: "Field name matching error id/name. Auto-displays errors and sets data-invalid." }] },
+      { tag: "ui-form-item", props: [{ name: "name", type: "string", default: "—", description: "Field name matching error id/name. Auto-displays errors and sets data-invalid." }, { name: "auto-submit", type: '"onChange" | "onBlur"', default: "—", description: "Auto-submit the form when a field inside this item changes (onChange) or loses focus (onBlur)." }] },
     ],
     example: `<ui-form errors='[{"id":"email","message":"Email is required"},{"id":"password","message":"Password must be at least 8 characters"}]' errors-title="Please fix the following errors:">
   <div class="space-y-4 max-w-md">
@@ -851,6 +851,57 @@ const components = [
     <ui-button type="submit">Submit</ui-button>
   </div>
 </ui-form>`,
+    additionalExamples: [
+      {
+        title: "Auto-Submit on Change",
+        example: `<ui-form action="/api/settings" method="post">
+  <div class="space-y-4 max-w-md">
+    <ui-form-item name="theme" auto-submit="onChange">
+      <ui-field>
+        <ui-field-label html-for="theme">Theme</ui-field-label>
+        <ui-field-content>
+          <ui-native-select id="theme" name="theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="system">System</option>
+          </ui-native-select>
+        </ui-field-content>
+      </ui-field>
+    </ui-form-item>
+    <ui-form-item name="notifications" auto-submit="onChange">
+      <div class="flex items-center gap-3">
+        <ui-checkbox id="notifications" name="notifications"></ui-checkbox>
+        <ui-label for="notifications">Enable notifications</ui-label>
+      </div>
+    </ui-form-item>
+  </div>
+</ui-form>`,
+      },
+      {
+        title: "Auto-Submit on Blur",
+        example: `<ui-form action="/api/profile" method="post">
+  <div class="space-y-4 max-w-md">
+    <ui-form-item name="username" auto-submit="onBlur">
+      <ui-field>
+        <ui-field-label html-for="username">Username</ui-field-label>
+        <ui-field-content>
+          <ui-input id="username" name="username" value="johndoe" placeholder="Enter username"></ui-input>
+        </ui-field-content>
+        <ui-field-description>Saves automatically when you leave the field.</ui-field-description>
+      </ui-field>
+    </ui-form-item>
+    <ui-form-item name="bio" auto-submit="onBlur">
+      <ui-field>
+        <ui-field-label html-for="bio">Bio</ui-field-label>
+        <ui-field-content>
+          <ui-textarea id="bio" name="bio" placeholder="Tell us about yourself"></ui-textarea>
+        </ui-field-content>
+      </ui-field>
+    </ui-form-item>
+  </div>
+</ui-form>`,
+      },
+    ],
   },
   {
     name: "Hover Card",

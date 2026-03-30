@@ -34,7 +34,6 @@ function Form({
   const formRef = React.useRef<HTMLFormElement>(null)
   const [touchedMap, setTouchedMap] = React.useState<Record<string, boolean>>({})
   const [submitting, setSubmitting] = React.useState(false)
-
   const getErrors = React.useCallback(
     (name: string, includeTouched = false) =>
       errors.filter((e) => {
@@ -200,10 +199,11 @@ function Form({
 
 function FormItem({
   name,
+  autoSubmit,
   className,
   children,
   ...props
-}: React.ComponentProps<"div"> & { name: string }) {
+}: React.ComponentProps<"div"> & { name: string; autoSubmit?: string }) {
   const errorsCtx = React.useContext(FormErrorsContext)
   const errors = errorsCtx ? errorsCtx.getErrors(name) : []
   const invalid = errors.length > 0
@@ -226,6 +226,7 @@ function FormItem({
       <div
         data-slot="form-item"
         data-invalid={invalid || undefined}
+        data-auto-submit={autoSubmit}
         className={cn(className)}
         onChange={handleChange}
         {...props}
