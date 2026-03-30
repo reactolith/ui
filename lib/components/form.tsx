@@ -34,6 +34,7 @@ function Form({
   const formRef = React.useRef<HTMLFormElement>(null)
   const [touchedMap, setTouchedMap] = React.useState<Record<string, boolean>>({})
   const [submitting, setSubmitting] = React.useState(false)
+  const pendingResetRef = React.useRef(false)
 
   const getErrors = React.useCallback(
     (name: string, includeTouched = false) =>
@@ -69,6 +70,15 @@ function Form({
     [errors],
   )
 
+  // After a submit cycle completes and React commits new defaultValues from the
+  // parent, reset the native form so uncontrolled inputs pick up the fresh values.
+  React.useEffect(() => {
+    if (pendingResetRef.current) {
+      pendingResetRef.current = false
+      formRef.current?.reset()
+    }
+  })
+
   const handleSubmit = React.useCallback(
     async (event: React.FormEvent<HTMLFormElement> | SubmitEvent) => {
       // When no custom handler is provided, allow native form submission
@@ -81,6 +91,7 @@ function Form({
           "nativeEvent" in event ? event.nativeEvent : event
         await (userOnSubmit as any)?.(nativeEvent)
       } finally {
+        pendingResetRef.current = true
         setTouchedMap({})
         setSubmitting(false)
       }
@@ -200,10 +211,11 @@ function Form({
 
 function FormItem({
   name,
+  autoSubmit,
   className,
   children,
   ...props
-}: React.ComponentProps<"div"> & { name: string }) {
+}: React.ComponentProps<"div"> & { name: string; autoSubmit?: string }) {
   const errorsCtx = React.useContext(FormErrorsContext)
   const errors = errorsCtx ? errorsCtx.getErrors(name) : []
   const invalid = errors.length > 0
@@ -226,6 +238,7 @@ function FormItem({
       <div
         data-slot="form-item"
         data-invalid={invalid || undefined}
+        data-auto-submit={autoSubmit}
         className={cn(className)}
         onChange={handleChange}
         {...props}
