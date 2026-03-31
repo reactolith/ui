@@ -62,7 +62,10 @@ import { FloatingToolbarKit } from "@/components/plate/editor/plugins/floating-t
 import { BlockPlaceholderKit } from "@/components/plate/editor/plugins/block-placeholder-kit"
 import { MarkdownKit } from "@/components/plate/editor/plugins/markdown-kit"
 
-const EMPTY_VALUE = [{ type: "p", children: [{ text: "" }] }]
+/** Fresh empty value — must be a new object each time (Slate mutates in-place). */
+function emptyValue() {
+  return [{ type: "p", children: [{ text: "" }] }]
+}
 
 // ---------------------------------------------------------------------------
 // Config parsing
@@ -310,25 +313,25 @@ export default function EditorOverride({
   const editor = usePlateEditor({
     plugins,
     value: (editor) => {
-      if (!value) return EMPTY_VALUE
+      if (!value) return emptyValue()
       if (typeof value !== "string") return value as any
       try {
         if (format === "json") {
           const parsed = JSON.parse(value)
           if (Array.isArray(parsed) && parsed.length > 0) return parsed
-          return EMPTY_VALUE
+          return emptyValue()
         }
         if (format === "markdown") {
           const deserialized = editor.getApi(MarkdownPlugin).markdown.deserialize(value)
           if (Array.isArray(deserialized) && deserialized.length > 0) return deserialized
-          return EMPTY_VALUE
+          return emptyValue()
         }
         // "html" — explicitly deserialize via HtmlPlugin
         const nodes = deserializeHtml(editor, { element: value })
         if (Array.isArray(nodes) && nodes.length > 0) return nodes as any
-        return EMPTY_VALUE
+        return emptyValue()
       } catch {
-        return EMPTY_VALUE
+        return emptyValue()
       }
     },
   })
