@@ -3285,6 +3285,9 @@ const components = [
         { name: "form", type: "string", default: "—", description: "Form ID to associate with (like the native form= attribute)." },
         { name: "min-height", type: "string", default: '"200px"', description: "Minimum editor height (CSS value)." },
         { name: "max-height", type: "string", default: "—", description: "Maximum editor height (CSS value, enables scroll)." },
+        { name: "toolbar", type: "boolean", default: "true", description: "Show or hide the fixed toolbar." },
+        { name: "blocks", type: "string", default: "—", description: 'Comma-separated allowed block types. Values: p, h1–h6, blockquote, hr, code-block, table, toggle, callout, list, media, link, mention. Paragraph is always included.' },
+        { name: "marks", type: 'string | "false"', default: "—", description: 'Comma-separated allowed inline marks, or "false" to disable all. Values: bold, italic, underline, strikethrough, code, highlight, subscript, superscript, kbd.' },
       ] },
     ],
     example: `<ui-editor placeholder="Type / for commands..." min-height="400px"></ui-editor>`,
@@ -3328,6 +3331,16 @@ const components = [
   value="## Markdown Format\n\nPre-filled with **Markdown** content."
   format="markdown"
   name="body">
+</ui-editor>`,
+      },
+      {
+        title: "Restricted (headings + text only)",
+        example: `<ui-editor blocks="p,h1,h2" marks="false" toolbar="false" placeholder="Start typing..." min-height="220px"></ui-editor>`,
+        readableExample: `<ui-editor
+  blocks="p,h1,h2"
+  marks="false"
+  toolbar="false"
+  placeholder="Start typing...">
 </ui-editor>`,
       },
       {

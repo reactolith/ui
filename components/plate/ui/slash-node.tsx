@@ -20,6 +20,7 @@ import { PlateElement } from 'platejs/react';
 import type * as React from 'react';
 
 import { insertBlock } from '@/components/plate/editor/transforms';
+import { useEditorConfig, isAllowed } from '@/lib/editor/editor-config';
 
 import {
   InlineCombobox,
@@ -133,6 +134,17 @@ export function SlashInputElement(
   props: PlateElementProps<TComboboxInputElement>
 ) {
   const { editor, element } = props;
+  const { allowedBlocks } = useEditorConfig();
+
+  // Filter groups based on allowed blocks
+  const filteredGroups = allowedBlocks
+    ? groups
+        .map(g => ({
+          ...g,
+          items: g.items.filter(item => isAllowed(allowedBlocks, item.value)),
+        }))
+        .filter(g => g.items.length > 0)
+    : groups;
 
   return (
     <PlateElement {...props} as="span">
@@ -142,7 +154,7 @@ export function SlashInputElement(
         <InlineComboboxContent>
           <InlineComboboxEmpty>No results</InlineComboboxEmpty>
 
-          {groups.map(({ group, items }) => (
+          {filteredGroups.map(({ group, items }) => (
             <InlineComboboxGroup key={group}>
               <InlineComboboxGroupLabel>{group}</InlineComboboxGroupLabel>
 

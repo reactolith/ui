@@ -15,7 +15,7 @@ import { insertEmptyCodeBlock } from '@platejs/code-block';
 import { toggleList } from '@platejs/list';
 import { KEYS } from 'platejs';
 
-const autoformatMarks: AutoformatRule[] = [
+export const autoformatMarks: AutoformatRule[] = [
   {
     match: '***',
     mode: 'mark',
@@ -88,7 +88,7 @@ const autoformatMarks: AutoformatRule[] = [
   },
 ];
 
-const autoformatBlocks: AutoformatRule[] = [
+export const autoformatBlocks: AutoformatRule[] = [
   {
     match: '# ',
     mode: 'block',
@@ -155,7 +155,7 @@ const autoformatBlocks: AutoformatRule[] = [
   },
 ];
 
-const autoformatLists: AutoformatRule[] = [
+export const autoformatLists: AutoformatRule[] = [
   {
     match: ['* ', '- '],
     mode: 'block',

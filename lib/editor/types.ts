@@ -37,6 +37,24 @@ export interface EditorProps {
   /** Maximum editor height (CSS value, enables scroll) */
   maxHeight?: string
 
+  // --- Restrictions ---
+  /** Show/hide the fixed toolbar. Default: true */
+  toolbar?: boolean | string
+  /**
+   * Comma-separated list of allowed block types. Default: all.
+   * Paragraph ("p") is always included automatically.
+   * Values: p, h1, h2, h3, h4, h5, h6, blockquote, hr, code-block, table,
+   *         toggle, callout, list, media, link, mention
+   */
+  blocks?: string
+  /**
+   * Comma-separated list of allowed inline marks, or "false" to disable all.
+   * Default: all marks.
+   * Values: bold, italic, underline, strikethrough, code, highlight,
+   *         subscript, superscript, kbd
+   */
+  marks?: string | boolean
+
   // --- Events (React consumers only) ---
   /** Callback fired on content change (receives serialized string in configured format) */
   onChange?: (value: string) => void
