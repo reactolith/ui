@@ -582,6 +582,56 @@ const components = [
   placeholder="Search..." show-clear>
 </ui-combobox>`,
       },
+      {
+        title: "Multiple Selection (Chips)",
+        example: `<ui-combobox multiple json-items='[{"value":"react","label":"React"},{"value":"vue","label":"Vue.js"},{"value":"angular","label":"Angular"},{"value":"svelte","label":"Svelte"},{"value":"solid","label":"Solid"}]'>
+  <ui-combobox-chips>
+    <ui-combobox-value placeholder="Select frameworks..."></ui-combobox-value>
+  </ui-combobox-chips>
+  <ui-combobox-content>
+    <ui-combobox-empty>No framework found.</ui-combobox-empty>
+    <ui-combobox-list></ui-combobox-list>
+  </ui-combobox-content>
+</ui-combobox>`,
+        readableExample: `<!-- Use multiple + chips for multi-select with tag-style display -->
+<ui-combobox multiple json-items='[
+  {"value":"react","label":"React"},
+  {"value":"vue","label":"Vue.js"},
+  {"value":"angular","label":"Angular"},
+  {"value":"svelte","label":"Svelte"},
+  {"value":"solid","label":"Solid"}
+]'>
+  <ui-combobox-chips>
+    <ui-combobox-value placeholder="Select frameworks..."></ui-combobox-value>
+  </ui-combobox-chips>
+  <ui-combobox-content>
+    <ui-combobox-empty>No framework found.</ui-combobox-empty>
+    <ui-combobox-list></ui-combobox-list>
+  </ui-combobox-content>
+</ui-combobox>`,
+      },
+      {
+        title: "Multiple with Default Values",
+        example: `<ui-combobox multiple json-default-value='["react","svelte"]' json-items='[{"value":"react","label":"React"},{"value":"vue","label":"Vue.js"},{"value":"angular","label":"Angular"},{"value":"svelte","label":"Svelte"},{"value":"solid","label":"Solid"}]'>
+  <ui-combobox-chips>
+    <ui-combobox-value placeholder="Select frameworks..."></ui-combobox-value>
+  </ui-combobox-chips>
+  <ui-combobox-content>
+    <ui-combobox-empty>No framework found.</ui-combobox-empty>
+    <ui-combobox-list></ui-combobox-list>
+  </ui-combobox-content>
+</ui-combobox>`,
+        readableExample: `<!-- Use json-default-value with an array for pre-selected values -->
+<ui-combobox multiple json-default-value='["react","svelte"]' json-items='[...]'>
+  <ui-combobox-chips>
+    <ui-combobox-value placeholder="Select frameworks..."></ui-combobox-value>
+  </ui-combobox-chips>
+  <ui-combobox-content>
+    <ui-combobox-empty>No framework found.</ui-combobox-empty>
+    <ui-combobox-list></ui-combobox-list>
+  </ui-combobox-content>
+</ui-combobox>`,
+      },
     ],
   },
   {
@@ -1257,6 +1307,28 @@ const components = [
     <ui-native-select-option value="svelte">Svelte</ui-native-select-option>
   </ui-native-select>
 </div>`,
+    additionalExamples: [
+      {
+        title: "Multiple Selection",
+        example: `<div class="max-w-sm space-y-2">
+  <ui-label>Languages</ui-label>
+  <ui-native-select multiple name="languages" size="sm">
+    <ui-native-select-option value="javascript">JavaScript</ui-native-select-option>
+    <ui-native-select-option value="typescript">TypeScript</ui-native-select-option>
+    <ui-native-select-option value="python">Python</ui-native-select-option>
+    <ui-native-select-option value="go">Go</ui-native-select-option>
+    <ui-native-select-option value="rust">Rust</ui-native-select-option>
+  </ui-native-select>
+</div>`,
+        readableExample: `<ui-native-select multiple name="languages">
+  <ui-native-select-option value="javascript">JavaScript</ui-native-select-option>
+  <ui-native-select-option value="typescript">TypeScript</ui-native-select-option>
+  <ui-native-select-option value="python">Python</ui-native-select-option>
+  <ui-native-select-option value="go">Go</ui-native-select-option>
+  <ui-native-select-option value="rust">Rust</ui-native-select-option>
+</ui-native-select>`,
+      },
+    ],
   },
   {
     name: "Navigation Menu",
@@ -1512,6 +1584,49 @@ const components = [
 ]'>
   <ui-select-trigger class="max-w-[180px] w-full">
     <ui-select-value placeholder="Select a fruit"></ui-select-value>
+  </ui-select-trigger>
+  <ui-select-content></ui-select-content>
+</ui-select>`,
+      },
+      {
+        title: "Multiple Selection",
+        example: `<ui-select multiple json-items='[{"value":"apple","label":"Apple"},{"value":"banana","label":"Banana"},{"value":"orange","label":"Orange"},{"value":"grape","label":"Grape"},{"value":"mango","label":"Mango"}]'>
+  <ui-select-trigger class="max-w-[280px] w-full">
+    <ui-select-value placeholder="Select fruits..."></ui-select-value>
+  </ui-select-trigger>
+  <ui-select-content></ui-select-content>
+</ui-select>`,
+        readableExample: `<ui-select multiple json-items='[
+  {"value":"apple","label":"Apple"},
+  {"value":"banana","label":"Banana"},
+  {"value":"orange","label":"Orange"},
+  {"value":"grape","label":"Grape"},
+  {"value":"mango","label":"Mango"}
+]'>
+  <ui-select-trigger class="max-w-[280px] w-full">
+    <ui-select-value placeholder="Select fruits..."></ui-select-value>
+  </ui-select-trigger>
+  <ui-select-content></ui-select-content>
+</ui-select>`,
+      },
+      {
+        title: "Multiple with Default Values",
+        example: `<ui-select multiple json-default-value='["banana","grape"]' json-items='[{"value":"apple","label":"Apple"},{"value":"banana","label":"Banana"},{"value":"orange","label":"Orange"},{"value":"grape","label":"Grape"},{"value":"mango","label":"Mango"}]'>
+  <ui-select-trigger class="max-w-[280px] w-full">
+    <ui-select-value placeholder="Select fruits..."></ui-select-value>
+  </ui-select-trigger>
+  <ui-select-content></ui-select-content>
+</ui-select>`,
+        readableExample: `<!-- Use json-default-value for array default values -->
+<ui-select multiple json-default-value='["banana","grape"]' json-items='[
+  {"value":"apple","label":"Apple"},
+  {"value":"banana","label":"Banana"},
+  {"value":"orange","label":"Orange"},
+  {"value":"grape","label":"Grape"},
+  {"value":"mango","label":"Mango"}
+]'>
+  <ui-select-trigger class="max-w-[280px] w-full">
+    <ui-select-value placeholder="Select fruits..."></ui-select-value>
   </ui-select-trigger>
   <ui-select-content></ui-select-content>
 </ui-select>`,

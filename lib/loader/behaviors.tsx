@@ -123,6 +123,13 @@ function createFormFieldBehavior(opts?: {
 
       let props = rawProps
 
+      // Key derived from server-provided value. When the server sends new HTML
+      // with a different value/defaultValue/defaultChecked, the key changes and
+      // the component remounts with the new initial state.
+      const resetKey = String(
+        rawProps.value ?? rawProps.defaultValue ?? rawProps.defaultChecked ?? "",
+      )
+
       // value → defaultValue for native inputs (SSR remount picks up fresh values)
       if (mapValue && props.value !== undefined && props.defaultValue === undefined) {
         const { value, ...rest } = props
@@ -141,9 +148,10 @@ function createFormFieldBehavior(opts?: {
 
       if (cbName) props = { ...props, [cbName]: wrappedCb }
 
-      if (!formItem) return <C ref={ref} {...props} />
+      if (!formItem) return <C key={resetKey} ref={ref} {...props} />
       return (
         <C
+          key={resetKey}
           ref={ref}
           {...props}
           aria-invalid={formItem.invalid || undefined}
@@ -174,6 +182,12 @@ export const closeClick: BehaviorDef = {
     return <C ref={ref} onClick={handleClick} {...props} />
   }),
 }
+
+// ---------------------------------------------------------------------------
+// Combobox anchor context (shared ref between chips container and content)
+// ---------------------------------------------------------------------------
+
+const ComboboxAnchorContext = React.createContext<React.RefObject<HTMLDivElement | null> | null>(null)
 
 // ---------------------------------------------------------------------------
 // Component-specific wrappers
@@ -275,7 +289,7 @@ function selectItemsToRecord(items: SelectItemShape[]): Record<string, string> {
 
 /** Select root with SelectItemsProvider context + items prop support + auto-submit */
 export const selectProvider: WrapperDef = {
-  fn: (C) => React.forwardRef(({ children, is, items: userItems, onValueChange, ...props }: any, ref: any) => {
+  fn: (C) => React.forwardRef(({ children, is, items: userItems, onValueChange, value, defaultValue, ...props }: any, ref: any) => {
     const formItem = React.useContext(FormItemContext)
     const interaction = React.useContext(FormInteractionContext)
 
@@ -306,10 +320,15 @@ export const selectProvider: WrapperDef = {
       }
     }, [onValueChange, formItem?.autoSubmit, interaction])
 
+    // Key derived from the server-provided value. When defaultValue/value
+    // changes (e.g. server reset removes it), the component remounts so the
+    // uncontrolled Base UI Select picks up the new initial state.
+    const resetKey = String(value ?? defaultValue ?? "")
+
     return (
       <SelectItemsProvider onItemsChange={handleItemsChange}>
         <SelectItemsDataContext.Provider value={userItems ?? null}>
-          <C ref={ref} items={mergedItems} onValueChange={handleValueChange} {...props}>{children}</C>
+          <C key={resetKey} ref={ref} items={mergedItems} value={value} defaultValue={defaultValue} onValueChange={handleValueChange} {...props}>{children}</C>
         </SelectItemsDataContext.Provider>
       </SelectItemsProvider>
     )
@@ -334,6 +353,42 @@ export const selectContentRenderer: WrapperDef = {
         </C>
       )
     }
+  },
+}
+
+/** Select value that renders labels for multiple selections using items context */
+export const selectValueRenderer: WrapperDef = {
+  fn: (C) => ({ children, is, placeholder, ...props }: any) => {
+    const items = React.useContext(SelectItemsDataContext)
+
+    // User provided children → pass through
+    if (children) return <C placeholder={placeholder} {...props}>{children}</C>
+
+    // No items context → render normally (single select without json-items)
+    if (!items) return <C placeholder={placeholder} {...props} />
+
+    // Build value→label map from items
+    const labelMap = React.useMemo(() => {
+      const map = new Map<string, string>()
+      for (const item of items) {
+        if (typeof item === "string") map.set(item, item)
+        else map.set(String(item.value), item.label)
+      }
+      return map
+    }, [items])
+
+    return (
+      <C {...props}>
+        {(value: any) => {
+          if (value === null || value === undefined) return placeholder ?? null
+          if (Array.isArray(value)) {
+            if (value.length === 0) return placeholder ?? null
+            return value.map((v: any) => labelMap.get(String(v)) ?? String(v)).join(", ")
+          }
+          return labelMap.get(String(value)) ?? String(value)
+        }}
+      </C>
+    )
   },
 }
 
@@ -536,6 +591,7 @@ export const comboboxProvider: WrapperDef = {
     }: any) => {
       const formItem = React.useContext(FormItemContext)
       const interaction = React.useContext(FormInteractionContext)
+      const anchorRef = React.useRef<HTMLDivElement | null>(null)
 
       // Wrap onValueChange to trigger auto-submit
       const handleValueChange = React.useCallback((...args: any[]) => {
@@ -547,6 +603,10 @@ export const comboboxProvider: WrapperDef = {
 
       // Re-inject wrapped callback so all code paths pick it up via {...props}
       props = { ...props, onValueChange: handleValueChange }
+
+      // Key derived from server-provided value. When the server sends new HTML
+      // with a different value/defaultValue, the component remounts.
+      const resetKey = String(value ?? defaultValue ?? "")
 
       const resolvedChildren = children ?? (
         ComboboxInput && ComboboxContent && ComboboxList ? (
@@ -564,8 +624,14 @@ export const comboboxProvider: WrapperDef = {
         ) : undefined
       )
 
+      const wrapWithAnchor = (node: React.ReactNode) => (
+        <ComboboxAnchorContext.Provider value={anchorRef}>
+          {node}
+        </ComboboxAnchorContext.Provider>
+      )
+
       if (src) {
-        return (
+        return wrapWithAnchor(
           <AsyncCombobox
             C={C} src={src} debounce={debounce} min-length={minLength}
             ComboboxInput={ComboboxInput}
@@ -584,13 +650,14 @@ export const comboboxProvider: WrapperDef = {
           />
         )
       }
-      if (!items) return <C value={value} defaultValue={defaultValue} {...props}>{resolvedChildren}</C>
+      if (!items) return wrapWithAnchor(<C key={resetKey} value={value} defaultValue={defaultValue} {...props}>{resolvedChildren}</C>)
       const hasObjects = items.length > 0 && typeof items[0] === "object"
       const resolvedValue = resolveItemValue(value, items, hasObjects)
       const resolvedDefault = resolveItemValue(defaultValue, items, hasObjects)
-      return (
+      return wrapWithAnchor(
         <ComboboxItemsContext.Provider value={items}>
           <C
+            key={resetKey}
             items={items}
             value={resolvedValue}
             defaultValue={resolvedDefault}
@@ -643,6 +710,76 @@ export const comboboxListRenderer: WrapperDef = {
       return (
         <C {...props}>
           {(item: ComboboxItemShape) => renderComboboxItem(ComboboxItem, item)}
+        </C>
+      )
+    }
+  },
+}
+
+/** Combobox chips container with automatic anchor ref for dropdown positioning */
+export const comboboxChipsAnchor: WrapperDef = {
+  fn: (C) => React.forwardRef(({ is, ...props }: any, ref: any) => {
+    const anchorRef = React.useContext(ComboboxAnchorContext)
+    return <C ref={anchorRef ?? ref} {...props} />
+  }),
+}
+
+/** Combobox content that reads anchor from context for proper dropdown width */
+export const comboboxContentAnchor: WrapperDef = {
+  fn: (C) => ({ anchor, is, ...props }: any) => {
+    const anchorRef = React.useContext(ComboboxAnchorContext)
+    return <C anchor={anchor ?? anchorRef} {...props} />
+  },
+}
+
+/** Combobox value that auto-renders chips for multiple mode */
+export const comboboxValueRenderer: WrapperDef = {
+  fn: (C, mod) => {
+    const ComboboxChip = mod.ComboboxChip as ComponentType<any>
+    const ComboboxChipsInput = mod.ComboboxChipsInput as ComponentType<any>
+
+    return ({ children, is, placeholder, ...props }: any) => {
+      const items = React.useContext(ComboboxItemsContext)
+
+      // User provided children → pass through
+      if (children) return <C placeholder={placeholder} {...props}>{children}</C>
+
+      // No items + no chips components → render normally
+      if (!items || !ComboboxChip || !ComboboxChipsInput) return <C placeholder={placeholder} {...props} />
+
+      // Build value→label map
+      const labelMap = React.useMemo(() => {
+        const map = new Map<string, string>()
+        for (const item of items) {
+          if (typeof item === "string") map.set(item, item)
+          else map.set(String(item.value), item.label)
+        }
+        return map
+      }, [items])
+
+      return (
+        <C {...props}>
+          {(values: any) => {
+            if (Array.isArray(values)) {
+              // Multiple mode: render chips + input
+              return (
+                <>
+                  {values.map((v: any) => {
+                    const key = typeof v === "object" ? v.value : v
+                    const label = typeof v === "string"
+                      ? labelMap.get(v) ?? v
+                      : typeof v === "object" && v?.label ? v.label : String(v)
+                    return <ComboboxChip key={key}>{label}</ComboboxChip>
+                  })}
+                  <ComboboxChipsInput placeholder={values.length === 0 ? placeholder : undefined} />
+                </>
+              )
+            }
+            // Single mode: return label
+            if (values === null || values === undefined) return placeholder ?? null
+            const strVal = typeof values === "object" && values?.value ? values.value : String(values)
+            return labelMap.get(strVal) ?? strVal
+          }}
         </C>
       )
     }

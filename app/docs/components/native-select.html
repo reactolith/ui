@@ -476,6 +476,30 @@
             </section>
 
             
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Multiple Selection</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <div class="max-w-sm space-y-2">
+  <ui-label>Languages</ui-label>
+  <ui-native-select multiple name="languages" size="sm">
+    <ui-native-select-option value="javascript">JavaScript</ui-native-select-option>
+    <ui-native-select-option value="typescript">TypeScript</ui-native-select-option>
+    <ui-native-select-option value="python">Python</ui-native-select-option>
+    <ui-native-select-option value="go">Go</ui-native-select-option>
+    <ui-native-select-option value="rust">Rust</ui-native-select-option>
+  </ui-native-select>
+</div>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;ui-native-select multiple name=&quot;languages&quot;&gt;
+  &lt;ui-native-select-option value=&quot;javascript&quot;&gt;JavaScript&lt;/ui-native-select-option&gt;
+  &lt;ui-native-select-option value=&quot;typescript&quot;&gt;TypeScript&lt;/ui-native-select-option&gt;
+  &lt;ui-native-select-option value=&quot;python&quot;&gt;Python&lt;/ui-native-select-option&gt;
+  &lt;ui-native-select-option value=&quot;go&quot;&gt;Go&lt;/ui-native-select-option&gt;
+  &lt;ui-native-select-option value=&quot;rust&quot;&gt;Rust&lt;/ui-native-select-option&gt;
+&lt;/ui-native-select&gt;</code></pre>
+              </div>
+            </section>
 
             
 

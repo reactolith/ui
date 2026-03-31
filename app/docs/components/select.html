@@ -509,6 +509,57 @@
 &lt;/ui-select&gt;</code></pre>
               </div>
             </section>
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Multiple Selection</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <ui-select multiple json-items='[{"value":"apple","label":"Apple"},{"value":"banana","label":"Banana"},{"value":"orange","label":"Orange"},{"value":"grape","label":"Grape"},{"value":"mango","label":"Mango"}]'>
+  <ui-select-trigger class="max-w-[280px] w-full">
+    <ui-select-value placeholder="Select fruits..."></ui-select-value>
+  </ui-select-trigger>
+  <ui-select-content></ui-select-content>
+</ui-select>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;ui-select multiple json-items='[
+  {&quot;value&quot;:&quot;apple&quot;,&quot;label&quot;:&quot;Apple&quot;},
+  {&quot;value&quot;:&quot;banana&quot;,&quot;label&quot;:&quot;Banana&quot;},
+  {&quot;value&quot;:&quot;orange&quot;,&quot;label&quot;:&quot;Orange&quot;},
+  {&quot;value&quot;:&quot;grape&quot;,&quot;label&quot;:&quot;Grape&quot;},
+  {&quot;value&quot;:&quot;mango&quot;,&quot;label&quot;:&quot;Mango&quot;}
+]'&gt;
+  &lt;ui-select-trigger class=&quot;max-w-[280px] w-full&quot;&gt;
+    &lt;ui-select-value placeholder=&quot;Select fruits...&quot;&gt;&lt;/ui-select-value&gt;
+  &lt;/ui-select-trigger&gt;
+  &lt;ui-select-content&gt;&lt;/ui-select-content&gt;
+&lt;/ui-select&gt;</code></pre>
+              </div>
+            </section>
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Multiple with Default Values</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <ui-select multiple json-default-value='["banana","grape"]' json-items='[{"value":"apple","label":"Apple"},{"value":"banana","label":"Banana"},{"value":"orange","label":"Orange"},{"value":"grape","label":"Grape"},{"value":"mango","label":"Mango"}]'>
+  <ui-select-trigger class="max-w-[280px] w-full">
+    <ui-select-value placeholder="Select fruits..."></ui-select-value>
+  </ui-select-trigger>
+  <ui-select-content></ui-select-content>
+</ui-select>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;!-- Use json-default-value for array default values --&gt;
+&lt;ui-select multiple json-default-value='[&quot;banana&quot;,&quot;grape&quot;]' json-items='[
+  {&quot;value&quot;:&quot;apple&quot;,&quot;label&quot;:&quot;Apple&quot;},
+  {&quot;value&quot;:&quot;banana&quot;,&quot;label&quot;:&quot;Banana&quot;},
+  {&quot;value&quot;:&quot;orange&quot;,&quot;label&quot;:&quot;Orange&quot;},
+  {&quot;value&quot;:&quot;grape&quot;,&quot;label&quot;:&quot;Grape&quot;},
+  {&quot;value&quot;:&quot;mango&quot;,&quot;label&quot;:&quot;Mango&quot;}
+]'&gt;
+  &lt;ui-select-trigger class=&quot;max-w-[280px] w-full&quot;&gt;
+    &lt;ui-select-value placeholder=&quot;Select fruits...&quot;&gt;&lt;/ui-select-value&gt;
+  &lt;/ui-select-trigger&gt;
+  &lt;ui-select-content&gt;&lt;/ui-select-content&gt;
+&lt;/ui-select&gt;</code></pre>
+              </div>
+            </section>
 
             
 

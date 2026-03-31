@@ -518,6 +518,64 @@
 &lt;/ui-combobox&gt;</code></pre>
               </div>
             </section>
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Multiple Selection (Chips)</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <ui-combobox multiple json-items='[{"value":"react","label":"React"},{"value":"vue","label":"Vue.js"},{"value":"angular","label":"Angular"},{"value":"svelte","label":"Svelte"},{"value":"solid","label":"Solid"}]'>
+  <ui-combobox-chips>
+    <ui-combobox-value placeholder="Select frameworks..."></ui-combobox-value>
+  </ui-combobox-chips>
+  <ui-combobox-content>
+    <ui-combobox-empty>No framework found.</ui-combobox-empty>
+    <ui-combobox-list></ui-combobox-list>
+  </ui-combobox-content>
+</ui-combobox>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;!-- Use multiple + chips for multi-select with tag-style display --&gt;
+&lt;ui-combobox multiple json-items='[
+  {&quot;value&quot;:&quot;react&quot;,&quot;label&quot;:&quot;React&quot;},
+  {&quot;value&quot;:&quot;vue&quot;,&quot;label&quot;:&quot;Vue.js&quot;},
+  {&quot;value&quot;:&quot;angular&quot;,&quot;label&quot;:&quot;Angular&quot;},
+  {&quot;value&quot;:&quot;svelte&quot;,&quot;label&quot;:&quot;Svelte&quot;},
+  {&quot;value&quot;:&quot;solid&quot;,&quot;label&quot;:&quot;Solid&quot;}
+]'&gt;
+  &lt;ui-combobox-chips&gt;
+    &lt;ui-combobox-value placeholder=&quot;Select frameworks...&quot;&gt;&lt;/ui-combobox-value&gt;
+  &lt;/ui-combobox-chips&gt;
+  &lt;ui-combobox-content&gt;
+    &lt;ui-combobox-empty&gt;No framework found.&lt;/ui-combobox-empty&gt;
+    &lt;ui-combobox-list&gt;&lt;/ui-combobox-list&gt;
+  &lt;/ui-combobox-content&gt;
+&lt;/ui-combobox&gt;</code></pre>
+              </div>
+            </section>
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Multiple with Default Values</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <ui-combobox multiple json-default-value='["react","svelte"]' json-items='[{"value":"react","label":"React"},{"value":"vue","label":"Vue.js"},{"value":"angular","label":"Angular"},{"value":"svelte","label":"Svelte"},{"value":"solid","label":"Solid"}]'>
+  <ui-combobox-chips>
+    <ui-combobox-value placeholder="Select frameworks..."></ui-combobox-value>
+  </ui-combobox-chips>
+  <ui-combobox-content>
+    <ui-combobox-empty>No framework found.</ui-combobox-empty>
+    <ui-combobox-list></ui-combobox-list>
+  </ui-combobox-content>
+</ui-combobox>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;!-- Use json-default-value with an array for pre-selected values --&gt;
+&lt;ui-combobox multiple json-default-value='[&quot;react&quot;,&quot;svelte&quot;]' json-items='[...]'&gt;
+  &lt;ui-combobox-chips&gt;
+    &lt;ui-combobox-value placeholder=&quot;Select frameworks...&quot;&gt;&lt;/ui-combobox-value&gt;
+  &lt;/ui-combobox-chips&gt;
+  &lt;ui-combobox-content&gt;
+    &lt;ui-combobox-empty&gt;No framework found.&lt;/ui-combobox-empty&gt;
+    &lt;ui-combobox-list&gt;&lt;/ui-combobox-list&gt;
+  &lt;/ui-combobox-content&gt;
+&lt;/ui-combobox&gt;</code></pre>
+              </div>
+            </section>
 
             
 
