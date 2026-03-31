@@ -41,22 +41,22 @@ export interface EditorProps {
   /** Show/hide the fixed toolbar. Default: true */
   toolbar?: boolean | string
   /**
-   * Allowed block types as JSON array (string) or string[].
-   * Paragraph ("p") is always included automatically. Default: all.
+   * Allowed block types. Paragraph ("p") is always included automatically.
+   * Default: all.
    * Values: p, h1, h2, h3, h4, h5, h6, blockquote, hr, code-block, table,
    *         toggle, callout, list, media, link, mention
-   * @example blocks='["p","h1","h2"]'
+   * @example blocks={["p","h1","h2"]}
    */
-  blocks?: string | string[]
+  blocks?: string[]
   /**
-   * Allowed inline marks as JSON array (string), string[], or "false" / false to disable all.
+   * Allowed inline marks, or false / "false" to disable all.
    * Default: all marks.
    * Values: bold, italic, underline, strikethrough, code, highlight,
    *         subscript, superscript, kbd
-   * @example marks='["bold","italic"]'
+   * @example marks={["bold","italic"]}
    * @example marks="false"
    */
-  marks?: string | string[] | boolean
+  marks?: string[] | boolean | string
 
   // --- Events (React consumers only) ---
   /** Callback fired on content change (receives serialized string in configured format) */
