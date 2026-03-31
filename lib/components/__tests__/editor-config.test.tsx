@@ -212,6 +212,42 @@ describe("buildPlugins", () => {
     expect(keys.has("indent")).toBe(true)
   })
 
+  it("excludes slash menu when blocks are restricted", () => {
+    const blockNames = new Set(["p", "h1", "h2"])
+    const blockKeys = expandBlockKeys(blockNames)
+    const plugins = buildPlugins(blockNames, blockKeys, null, true)
+    const keys = pluginKeys(plugins)
+
+    // Slash menu items are hardcoded in components/ — can't be filtered,
+    // so the entire slash kit is excluded when blocks are restricted
+    expect(keys.has("slash_command")).toBe(false)
+  })
+
+  it("includes slash menu when blocks are unrestricted", () => {
+    const plugins = buildPlugins(null, null, false, false)
+    const keys = pluginKeys(plugins)
+
+    expect(keys.has("slash_command")).toBe(true)
+  })
+
+  it("uses full AutoformatKit when blocks and marks are unrestricted", () => {
+    // Only toolbar is restricted — autoformat should use the original kit
+    const plugins = buildPlugins(null, null, null, false)
+    const keys = pluginKeys(plugins)
+
+    expect(keys.has("autoformat")).toBe(true)
+  })
+
+  it("includes heading autoformat for allowed headings", () => {
+    const blockNames = new Set(["p", "h1", "h2"])
+    const blockKeys = expandBlockKeys(blockNames)
+    const plugins = buildPlugins(blockNames, blockKeys, false, false)
+    const keys = pluginKeys(plugins)
+
+    // Autoformat plugin should still be present (with filtered rules)
+    expect(keys.has("autoformat")).toBe(true)
+  })
+
   it("always includes markdown and exit-break plugins", () => {
     const blockNames = new Set(["p"])
     const blockKeys = expandBlockKeys(blockNames)

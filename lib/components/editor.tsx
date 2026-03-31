@@ -13,7 +13,7 @@
  * <ui-editor name="content" format="html" placeholder="Start writing..."></ui-editor>
  *
  * <!-- Restricted editor: only headings + text, no marks, no toolbar -->
- * <ui-editor blocks="p,h1,h2" marks="false" toolbar="false"></ui-editor>
+ * <ui-editor blocks='["p","h1","h2"]' marks="false" toolbar="false"></ui-editor>
  * ```
  */
 
@@ -33,7 +33,6 @@ import {
 } from "@platejs/autoformat"
 import type { EditorProps } from "@/lib/editor/types"
 import { useEditorFormSync } from "@/lib/editor/use-editor-form"
-import { EditorConfigContext, type EditorConfig } from "@/lib/editor/editor-config"
 import { EditorKit } from "@/components/plate/editor/editor-kit"
 import { Editor, EditorContainer } from "@/components/plate/ui/editor"
 import { TooltipProvider } from "@/components/plate/ui/tooltip"
@@ -54,6 +53,7 @@ import { FontKit } from "@/components/plate/editor/plugins/font-kit"
 import { AlignKit } from "@/components/plate/editor/plugins/align-kit"
 import { LineHeightKit } from "@/components/plate/editor/plugins/line-height-kit"
 import { SlashKit } from "@/components/plate/editor/plugins/slash-kit"
+import { AutoformatKit } from "@/components/plate/editor/plugins/autoformat-kit"
 import { BlockMenuKit } from "@/components/plate/editor/plugins/block-menu-kit"
 import { DndKit } from "@/components/plate/editor/plugins/dnd-kit"
 import { ExitBreakKit } from "@/components/plate/editor/plugins/exit-break-kit"
@@ -61,11 +61,6 @@ import { FixedToolbarKit } from "@/components/plate/editor/plugins/fixed-toolbar
 import { FloatingToolbarKit } from "@/components/plate/editor/plugins/floating-toolbar-kit"
 import { BlockPlaceholderKit } from "@/components/plate/editor/plugins/block-placeholder-kit"
 import { MarkdownKit } from "@/components/plate/editor/plugins/markdown-kit"
-import {
-  autoformatMarks as autoformatMarkRules,
-  autoformatBlocks as autoformatBlockRules,
-  autoformatLists as autoformatListRules,
-} from "@/components/plate/editor/plugins/autoformat-kit"
 
 const EMPTY_VALUE = [{ type: "p", children: [{ text: "" }] }]
 
@@ -136,6 +131,40 @@ const FEATURE_KITS: Record<string, readonly any[]> = {
 }
 
 // ---------------------------------------------------------------------------
+// Autoformat rules (defined here so we don't modify components/)
+// ---------------------------------------------------------------------------
+
+const HEADING_AUTOFORMAT = [
+  { match: "# ", mode: "block" as const, type: KEYS.h1 },
+  { match: "## ", mode: "block" as const, type: KEYS.h2 },
+  { match: "### ", mode: "block" as const, type: KEYS.h3 },
+  { match: "#### ", mode: "block" as const, type: KEYS.h4 },
+  { match: "##### ", mode: "block" as const, type: KEYS.h5 },
+  { match: "###### ", mode: "block" as const, type: KEYS.h6 },
+]
+
+const BLOCK_AUTOFORMAT = [
+  ...HEADING_AUTOFORMAT,
+  { match: "> ", mode: "block" as const, type: KEYS.blockquote },
+]
+
+const MARK_AUTOFORMAT = [
+  { match: "***", mode: "mark" as const, type: [KEYS.bold, KEYS.italic] },
+  { match: "__*", mode: "mark" as const, type: [KEYS.underline, KEYS.italic] },
+  { match: "__**", mode: "mark" as const, type: [KEYS.underline, KEYS.bold] },
+  { match: "___***", mode: "mark" as const, type: [KEYS.underline, KEYS.bold, KEYS.italic] },
+  { match: "**", mode: "mark" as const, type: KEYS.bold },
+  { match: "__", mode: "mark" as const, type: KEYS.underline },
+  { match: "*", mode: "mark" as const, type: KEYS.italic },
+  { match: "_", mode: "mark" as const, type: KEYS.italic },
+  { match: "~~", mode: "mark" as const, type: KEYS.strikethrough },
+  { match: "^", mode: "mark" as const, type: KEYS.sup },
+  { match: "~", mode: "mark" as const, type: KEYS.sub },
+  { match: "==", mode: "mark" as const, type: KEYS.highlight },
+  { match: "`", mode: "mark" as const, type: KEYS.code },
+]
+
+// ---------------------------------------------------------------------------
 // Plugin builder
 // ---------------------------------------------------------------------------
 
@@ -190,55 +219,50 @@ export function buildPlugins(
   plugins.push(...ExitBreakKit, TrailingBlockPlugin, ...MarkdownKit, ...BlockPlaceholderKit)
   plugins.push(...BlockMenuKit, ...DndKit)
 
-  // Slash menu — include when there are enough block types for it to be useful
-  if (!blockNames || blockNames.size > 3) {
+  // Slash menu — only when unrestricted (the slash menu items in components/
+  // are hardcoded; when blocks are restricted, autoformat covers headings)
+  if (!blockNames) {
     plugins.push(...SlashKit)
   }
 
   // === Autoformat ===
 
-  const autoRules: any[] = []
+  if (!blockNames && marksParsed === null) {
+    // Unrestricted — use the full autoformat kit from components/
+    plugins.push(...AutoformatKit)
+  } else {
+    // Restricted — build filtered autoformat inline
+    const autoRules: any[] = []
 
-  // Block rules (headings, blockquote, code-block, hr)
-  for (const rule of autoformatBlockRules) {
-    if (!blockKeys || blockKeys.has(rule.type as string)) {
-      autoRules.push(rule)
+    // Block rules (headings, blockquote)
+    for (const rule of BLOCK_AUTOFORMAT) {
+      if (!blockKeys || blockKeys.has(rule.type)) {
+        autoRules.push(rule)
+      }
+    }
+
+    // Mark rules
+    if (marksParsed !== false) autoRules.push(...MARK_AUTOFORMAT)
+
+    // Text replacement rules (always)
+    autoRules.push(
+      ...autoformatSmartQuotes,
+      ...autoformatPunctuation,
+      ...autoformatLegal,
+      ...autoformatLegalHtml,
+      ...autoformatArrow,
+      ...autoformatMath,
+    )
+
+    if (autoRules.length > 0) {
+      plugins.push(AutoformatPlugin.configure({
+        options: {
+          enableUndoOnDelete: true,
+          rules: autoRules,
+        },
+      }))
     }
   }
-
-  // List rules
-  if (hasBlock("list")) autoRules.push(...autoformatListRules)
-
-  // Mark rules
-  if (marksParsed !== false) autoRules.push(...autoformatMarkRules)
-
-  // Text replacement rules (always)
-  autoRules.push(
-    ...autoformatSmartQuotes,
-    ...autoformatPunctuation,
-    ...autoformatLegal,
-    ...autoformatLegalHtml,
-    ...autoformatArrow,
-    ...autoformatMath,
-  )
-
-  plugins.push(AutoformatPlugin.configure({
-    options: {
-      enableUndoOnDelete: true,
-      rules: autoRules.map(rule => ({
-        ...rule,
-        query: (editor: any) => {
-          try {
-            return !editor.api.some({
-              match: { type: editor.getType(KEYS.codeBlock) },
-            })
-          } catch {
-            return true
-          }
-        },
-      })),
-    },
-  }))
 
   // === Toolbars ===
 
@@ -288,12 +312,6 @@ export default function EditorOverride({
     [blockNames, blockKeys, marksParsed, showToolbar]
   )
 
-  // Context for UI components (slash menu, toolbars)
-  const editorConfig = React.useMemo<EditorConfig>(
-    () => ({ allowedBlocks: blockKeys, allowedMarks: marksParsed === false ? new Set<string>() : marksParsed }),
-    [blockKeys, marksParsed]
-  )
-
   const defaultPlaceholder = blockNames && blockNames.size <= 3
     ? "Start typing..."
     : "Type / for commands..."
@@ -337,27 +355,25 @@ export default function EditorOverride({
   })
 
   return (
-    <EditorConfigContext.Provider value={editorConfig}>
-      <TooltipProvider>
-        <div className={cn("rounded-md border border-input shadow-xs", className)}>
-          <Plate
-            editor={editor}
-            readOnly={readOnly}
-            onChange={() => syncContent()}
+    <TooltipProvider>
+      <div className={cn("rounded-md border border-input shadow-xs", className)}>
+        <Plate
+          editor={editor}
+          readOnly={readOnly}
+          onChange={() => syncContent()}
+        >
+          <EditorContainer
+            style={{ minHeight, maxHeight: maxHeight ?? undefined }}
           >
-            <EditorContainer
-              style={{ minHeight, maxHeight: maxHeight ?? undefined }}
-            >
-              <Editor
-                placeholder={placeholder ?? defaultPlaceholder}
-                variant="default"
-              />
-            </EditorContainer>
-          </Plate>
+            <Editor
+              placeholder={placeholder ?? defaultPlaceholder}
+              variant="default"
+            />
+          </EditorContainer>
+        </Plate>
 
-          {inputProps && <input {...inputProps} />}
-        </div>
-      </TooltipProvider>
-    </EditorConfigContext.Provider>
+        {inputProps && <input {...inputProps} />}
+      </div>
+    </TooltipProvider>
   )
 }
