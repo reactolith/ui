@@ -3286,8 +3286,8 @@ const components = [
         { name: "min-height", type: "string", default: '"200px"', description: "Minimum editor height (CSS value)." },
         { name: "max-height", type: "string", default: "—", description: "Maximum editor height (CSS value, enables scroll)." },
         { name: "toolbar", type: "boolean", default: "true", description: "Show or hide the fixed toolbar." },
-        { name: "blocks", type: "string", default: "—", description: 'Comma-separated allowed block types. Values: p, h1–h6, blockquote, hr, code-block, table, toggle, callout, list, media, link, mention. Paragraph is always included.' },
-        { name: "marks", type: 'string | "false"', default: "—", description: 'Comma-separated allowed inline marks, or "false" to disable all. Values: bold, italic, underline, strikethrough, code, highlight, subscript, superscript, kbd.' },
+        { name: "blocks", type: "JSON array", default: "—", description: 'JSON array of allowed block types, e.g. \'["p","h1","h2"]\'. Values: p, h1–h6, blockquote, hr, code-block, table, toggle, callout, list, media, link, mention. Paragraph is always included.' },
+        { name: "marks", type: 'JSON array | "false"', default: "—", description: 'JSON array of allowed inline marks (e.g. \'["bold","italic"]\'), or "false" to disable all. Values: bold, italic, underline, strikethrough, code, highlight, subscript, superscript, kbd.' },
       ] },
     ],
     example: `<ui-editor placeholder="Type / for commands..." min-height="400px"></ui-editor>`,
@@ -3335,9 +3335,9 @@ const components = [
       },
       {
         title: "Restricted (headings + text only)",
-        example: `<ui-editor blocks="p,h1,h2" marks="false" toolbar="false" placeholder="Start typing..." min-height="220px"></ui-editor>`,
+        example: `<ui-editor blocks='["p","h1","h2"]' marks="false" toolbar="false" placeholder="Start typing..." min-height="220px"></ui-editor>`,
         readableExample: `<ui-editor
-  blocks="p,h1,h2"
+  blocks='["p","h1","h2"]'
   marks="false"
   toolbar="false"
   placeholder="Start typing...">

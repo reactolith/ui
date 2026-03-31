@@ -79,10 +79,15 @@ function parseBool(v: boolean | string | undefined, def: boolean): boolean {
   return v !== "false"
 }
 
-function parseSet(v: string | undefined): Set<string> | null {
+/** Parse a JSON array string or string[] into a Set. Returns null if empty/undefined. */
+function parseArrayProp(v: string | string[] | undefined): Set<string> | null {
   if (!v) return null
-  const items = v.split(",").map(s => s.trim()).filter(Boolean)
-  return items.length > 0 ? new Set(items) : null
+  if (Array.isArray(v)) return v.length > 0 ? new Set(v) : null
+  try {
+    const parsed = JSON.parse(v)
+    if (Array.isArray(parsed) && parsed.length > 0) return new Set(parsed)
+  } catch { /* not valid JSON */ }
+  return null
 }
 
 /**
@@ -269,14 +274,15 @@ export default function EditorOverride({
   // Parse config
   const showToolbar = parseBool(toolbarProp, true)
 
-  const blockNames = React.useMemo(() => parseSet(blocksProp), [blocksProp])
+  const blockNames = React.useMemo(() => parseArrayProp(blocksProp), [blocksProp])
   const blockKeys = React.useMemo(
     () => blockNames ? expandBlockKeys(blockNames) : null,
     [blockNames]
   )
   const marksParsed = React.useMemo<Set<string> | null | false>(() => {
     if (marksProp === false || marksProp === "false") return false
-    if (typeof marksProp === "string") return parseSet(marksProp)
+    if (Array.isArray(marksProp)) return marksProp.length > 0 ? new Set(marksProp) : null
+    if (typeof marksProp === "string") return parseArrayProp(marksProp)
     return null
   }, [marksProp])
 
