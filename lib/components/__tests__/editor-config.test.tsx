@@ -1,31 +1,6 @@
 import { describe, it, expect } from "vitest"
 import { KEYS } from "platejs"
-import { parseBool, toSet, expandBlockKeys, buildPlugins } from "../editor"
-
-// ---------------------------------------------------------------------------
-// parseBool
-// ---------------------------------------------------------------------------
-
-describe("parseBool", () => {
-  it("returns default when undefined", () => {
-    expect(parseBool(undefined, true)).toBe(true)
-    expect(parseBool(undefined, false)).toBe(false)
-  })
-
-  it("passes through boolean values", () => {
-    expect(parseBool(true, false)).toBe(true)
-    expect(parseBool(false, true)).toBe(false)
-  })
-
-  it('treats string "false" as false', () => {
-    expect(parseBool("false", true)).toBe(false)
-  })
-
-  it('treats any other string as true', () => {
-    expect(parseBool("true", false)).toBe(true)
-    expect(parseBool("yes", false)).toBe(true)
-  })
-})
+import { toSet, expandBlockKeys, buildPlugins } from "../editor"
 
 // ---------------------------------------------------------------------------
 // toSet

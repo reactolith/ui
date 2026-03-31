@@ -1,5 +1,56 @@
 # CLAUDE.md
 
+## Reactolith Runtime
+
+This library is built on top of **[reactolith](https://github.com/reactolith/reactolith)** — a framework that lets you write React components directly in HTML. The backend (Symfony/Twig, Rails, etc.) returns HTML, and reactolith hydrates `<ui-*>` tags into live React components.
+
+### Prop Passing (IMPORTANT)
+
+Reactolith automatically parses HTML attributes into typed React props. **You do NOT need to manually parse props** — they arrive as the correct JS type:
+
+| HTML attribute | React prop | Type |
+|---|---|---|
+| `name="test"` | `name: "test"` | string |
+| `enabled` (no value) | `enabled: true` | boolean |
+| `data-foo="bar"` | `foo: "bar"` | string |
+| `json-config='{"a":1}'` | `config: { a: 1 }` | object |
+| `json-items='["a","b"]'` | `items: ["a", "b"]` | string[] |
+| `json-count="42"` | `count: 42` | number |
+| `json-active="false"` | `active: false` | boolean |
+| `as="{my-component}"` | `as: <MyComponent />` | ReactElement |
+
+**Key rules:**
+- **`json-*` prefix** = parsed JSON. The prefix is stripped and the value is `JSON.parse()`d. Use this for arrays, objects, numbers, and boolean `false`.
+- **Boolean attributes** (no value) = `true`. E.g. `<ui-editor read-only>` → `readOnly: true`.
+- **String attributes** = always strings. `enabled="false"` is the string `"false"`, NOT boolean. Use `json-enabled="false"` for boolean false.
+- **Never write manual parsing** (`JSON.parse`, string-to-boolean conversion, etc.) in components. Reactolith handles it.
+
+### Slots
+
+Children with a `slot` attribute become named props:
+
+```html
+<my-component>
+  <template slot="header"><h1>Title</h1></template>
+  <div slot="footer">Footer</div>
+</my-component>
+```
+→ `{ header: <h1>Title</h1>, footer: <div>Footer</div> }`
+
+### Navigation & State
+
+- Links are intercepted — fetches next HTML via AJAX, React reconciles only differences
+- Component state is preserved across navigations
+- Forms work with `method="get"` and `method="post"`
+- `data-scroll="preserve"` on links/forms keeps scroll position
+
+### Real-time (Mercure SSE)
+
+- `data-mercure-hub-url` on root element enables Server-Sent Events
+- Backend pushes HTML updates, UI updates automatically via React reconciliation
+- `useMercureTopic(topic, initialValue)` hook for live JSON data (notification counts, statuses, etc.)
+- Empty Mercure messages trigger automatic page refetch
+
 ## Project Structure
 
 Reactolith UI — a component library built with Vite + React 19 + Base UI + Tailwind CSS v4. Published as an npm package.

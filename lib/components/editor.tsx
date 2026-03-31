@@ -13,7 +13,7 @@
  * <ui-editor name="content" format="html" placeholder="Start writing..."></ui-editor>
  *
  * <!-- Restricted editor: only headings + text, no marks, no toolbar -->
- * <ui-editor blocks='["p","h1","h2"]' marks="false" toolbar="false"></ui-editor>
+ * <ui-editor json-blocks='["p","h1","h2"]' json-marks="false" json-toolbar="false"></ui-editor>
  * ```
  */
 
@@ -67,13 +67,6 @@ const EMPTY_VALUE = [{ type: "p", children: [{ text: "" }] }]
 // ---------------------------------------------------------------------------
 // Config parsing
 // ---------------------------------------------------------------------------
-
-/** @internal — exported for testing */
-export function parseBool(v: boolean | string | undefined, def: boolean): boolean {
-  if (v === undefined) return def
-  if (typeof v === "boolean") return v
-  return v !== "false"
-}
 
 /** @internal — exported for testing */
 export function toSet(v: string[] | undefined): Set<string> | null {
@@ -288,28 +281,26 @@ export default function EditorOverride({
   maxHeight,
   onChange,
   onEditorReady,
-  toolbar: toolbarProp,
+  toolbar = true,
   blocks: blocksProp,
   marks: marksProp,
 }: EditorProps) {
-  // Parse config
-  const showToolbar = parseBool(toolbarProp, true)
-
+  // Parse config — reactolith delivers typed values, no manual parsing needed
   const blockNames = React.useMemo(() => toSet(blocksProp), [blocksProp])
   const blockKeys = React.useMemo(
     () => blockNames ? expandBlockKeys(blockNames) : null,
     [blockNames]
   )
   const marksParsed = React.useMemo<Set<string> | null | false>(() => {
-    if (marksProp === false || marksProp === "false") return false
+    if (marksProp === false) return false
     if (Array.isArray(marksProp)) return toSet(marksProp)
     return null
   }, [marksProp])
 
   // Build plugins (memoized on raw props)
   const plugins = React.useMemo(
-    () => buildPlugins(blockNames, blockKeys, marksParsed, showToolbar),
-    [blockNames, blockKeys, marksParsed, showToolbar]
+    () => buildPlugins(blockNames, blockKeys, marksParsed, toolbar),
+    [blockNames, blockKeys, marksParsed, toolbar]
   )
 
   const defaultPlaceholder = blockNames && blockNames.size <= 3

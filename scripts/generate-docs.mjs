@@ -3335,11 +3335,11 @@ const components = [
       },
       {
         title: "Restricted (headings + text only)",
-        example: `<ui-editor blocks='["p","h1","h2"]' marks="false" toolbar="false" placeholder="Start typing..." min-height="220px"></ui-editor>`,
+        example: `<ui-editor json-blocks='["p","h1","h2"]' json-marks="false" json-toolbar="false" placeholder="Start typing..." min-height="220px"></ui-editor>`,
         readableExample: `<ui-editor
-  blocks='["p","h1","h2"]'
-  marks="false"
-  toolbar="false"
+  json-blocks='["p","h1","h2"]'
+  json-marks="false"
+  json-toolbar="false"
   placeholder="Start typing...">
 </ui-editor>`,
       },
