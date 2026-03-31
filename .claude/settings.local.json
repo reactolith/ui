@@ -67,7 +67,9 @@
       "Bash(grep -rn \"ToggleAboveNodes\\\\|aboveNodes\" /Users/franzwilding/Development/reactolith-ui/node_modules/@platejs/toggle/ --include=*.js)",
       "Bash(grep -rn aboveNodes /Users/franzwilding/Development/reactolith-ui/node_modules/@platejs/*/dist/react/index.js)",
       "Bash(grep -rn \"PlateStatic\\\\|EditorStatic\\\\|editor-static\" /Users/franzwilding/Development/reactolith-ui/app/ --include=*.tsx --include=*.ts)",
-      "Bash(grep -rn \"EditorStaticKit\\\\|staticKit\\\\|static.*kit\\\\|StaticKit\" /Users/franzwilding/Development/reactolith-ui/components/ --include=*.tsx --include=*.ts)"
+      "Bash(grep -rn \"EditorStaticKit\\\\|staticKit\\\\|static.*kit\\\\|StaticKit\" /Users/franzwilding/Development/reactolith-ui/components/ --include=*.tsx --include=*.ts)",
+      "Bash(grep -n \"auto.submit\\\\|autoSubmit\\\\|auto_submit\" /Users/franzwilding/Development/reactolith-ui/app/docs/*.html)",
+      "Bash(npx vitest:*)"
     ]
   }
 }
