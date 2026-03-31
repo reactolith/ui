@@ -73,13 +73,15 @@ const EMPTY_VALUE = [{ type: "p", children: [{ text: "" }] }]
 // Config parsing
 // ---------------------------------------------------------------------------
 
-function parseBool(v: boolean | string | undefined, def: boolean): boolean {
+/** @internal — exported for testing */
+export function parseBool(v: boolean | string | undefined, def: boolean): boolean {
   if (v === undefined) return def
   if (typeof v === "boolean") return v
   return v !== "false"
 }
 
-function toSet(v: string[] | undefined): Set<string> | null {
+/** @internal — exported for testing */
+export function toSet(v: string[] | undefined): Set<string> | null {
   if (!v || v.length === 0) return null
   return new Set(v)
 }
@@ -109,8 +111,8 @@ const BLOCK_NAME_TO_KEYS: Record<string, string[]> = {
   "mention": [KEYS.mention],
 }
 
-/** Expand user-friendly block names to Plate KEYS values. */
-function expandBlockKeys(names: Set<string>): Set<string> {
+/** @internal — exported for testing */
+export function expandBlockKeys(names: Set<string>): Set<string> {
   const keys = new Set<string>()
   keys.add(KEYS.p) // paragraph is always included
 
@@ -137,7 +139,8 @@ const FEATURE_KITS: Record<string, readonly any[]> = {
 // Plugin builder
 // ---------------------------------------------------------------------------
 
-function buildPlugins(
+/** @internal — exported for testing */
+export function buildPlugins(
   blockNames: Set<string> | null,
   blockKeys: Set<string> | null,
   marksParsed: Set<string> | null | false,
