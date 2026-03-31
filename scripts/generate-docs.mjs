@@ -314,50 +314,53 @@ const components = [
     example: `<div class="space-y-6 max-w-sm">
   <ui-field>
     <ui-field-label>Date</ui-field-label>
-    <ui-date-picker name="date"></ui-date-picker>
+    <ui-date-picker name="date" default-value="2026-06-15"></ui-date-picker>
   </ui-field>
   <ui-field>
     <ui-field-label>Time</ui-field-label>
-    <ui-time-picker name="time"></ui-time-picker>
+    <ui-time-picker name="time" default-value="14:30"></ui-time-picker>
   </ui-field>
 </div>`,
     additionalExamples: [
       {
-        title: "Date Time Picker",
+        title: "Date Time Picker with Default",
         example: `<ui-field class="max-w-md">
   <ui-field-label>Appointment</ui-field-label>
-  <ui-date-time-picker name="appointment"></ui-date-time-picker>
+  <ui-date-time-picker name="appointment" default-value="2026-06-15T14:30"></ui-date-time-picker>
 </ui-field>`,
       },
       {
-        title: "Date Range Picker",
+        title: "Date Range Picker with Default",
         example: `<ui-field class="max-w-lg">
   <ui-field-label>Travel Dates</ui-field-label>
-  <ui-date-range-picker name="travel"></ui-date-range-picker>
+  <ui-date-range-picker name="travel" json-default-value='{"from":"2026-06-15","to":"2026-06-22"}'></ui-date-range-picker>
 </ui-field>`,
       },
       {
         title: "Custom Display Format",
         example: `<ui-field class="max-w-sm">
   <ui-field-label>Date (custom format)</ui-field-label>
-  <ui-date-picker name="custom-date" displayFormat="dd.MM.yyyy" placeholder="23.04.2026"></ui-date-picker>
+  <ui-date-picker name="custom-date" displayFormat="dd.MM.yyyy" default-value="2026-04-23" placeholder="23.04.2026"></ui-date-picker>
 </ui-field>`,
         readableExample: `<!-- Use date-fns format patterns for custom display -->
 <ui-date-picker
   name="custom-date"
   displayFormat="dd.MM.yyyy"
+  default-value="2026-04-23"
   placeholder="23.04.2026">
 </ui-date-picker>
 
 <!-- Custom value format for form submission -->
 <ui-date-picker
   name="iso-date"
+  default-value="2026-04-23"
   valueFormat="yyyy-MM-dd'T'HH:mm:ss">
 </ui-date-picker>
 
 <!-- Specify locale explicitly -->
 <ui-date-picker
   name="de-date"
+  default-value="2026-04-23"
   locale="de-AT">
 </ui-date-picker>`,
       },

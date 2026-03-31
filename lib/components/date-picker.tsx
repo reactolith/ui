@@ -21,6 +21,22 @@ import {
 } from "@/components/ui/popover"
 
 // ---------------------------------------------------------------------------
+// Coerce string/Date into a Date (for HTML attribute compatibility)
+// ---------------------------------------------------------------------------
+
+function coerceDate(v: Date | string | undefined): Date | undefined {
+  if (!v) return undefined
+  if (v instanceof Date) return fnsIsValid(v) ? v : undefined
+  const d = new Date(v)
+  return fnsIsValid(d) ? d : undefined
+}
+
+function coerceDateRange(v: any): { from?: Date; to?: Date } | undefined {
+  if (!v) return undefined
+  return { from: coerceDate(v.from), to: coerceDate(v.to) }
+}
+
+// ---------------------------------------------------------------------------
 // Locale-aware formatting helpers
 // ---------------------------------------------------------------------------
 
@@ -109,7 +125,7 @@ interface DatePickerProps extends Omit<React.ComponentProps<"div">, "defaultValu
 
 function DatePicker({
   value: controlledValue,
-  defaultValue,
+  defaultValue: defaultValueRaw,
   onValueChange,
   displayFormat = "",
   valueFormat = "",
@@ -122,11 +138,23 @@ function DatePicker({
   ...props
 }: DatePickerProps) {
   const locale = localeProp || getBrowserLocale()
+  const defaultValue = coerceDate(defaultValueRaw as Date | string | undefined)
   const [open, setOpen] = React.useState(false)
   const [internalDate, setInternalDate] = React.useState<Date | undefined>(defaultValue)
   const date = controlledValue !== undefined ? controlledValue : internalDate
   const [inputValue, setInputValue] = React.useState(formatDateDisplay(date, displayFormat, locale))
   const [month, setMonth] = React.useState<Date | undefined>(date || new Date())
+
+  // Reset internal state when defaultValue changes (e.g. server sends new HTML)
+  const defaultValueTs = defaultValue?.getTime()
+  React.useEffect(() => {
+    if (controlledValue === undefined) {
+      setInternalDate(defaultValue)
+      setInputValue(formatDateDisplay(defaultValue, displayFormat, locale))
+      setMonth(defaultValue || new Date())
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [defaultValueTs])
 
   React.useEffect(() => {
     if (controlledValue !== undefined) {
@@ -259,7 +287,7 @@ interface DateTimePickerProps extends Omit<React.ComponentProps<"div">, "default
 
 function DateTimePicker({
   value: controlledValue,
-  defaultValue,
+  defaultValue: defaultValueRaw,
   onValueChange,
   displayFormat = "",
   valueFormat = "",
@@ -272,6 +300,7 @@ function DateTimePicker({
   ...props
 }: DateTimePickerProps) {
   const locale = localeProp || getBrowserLocale()
+  const defaultValue = coerceDate(defaultValueRaw as Date | string | undefined)
   const [open, setOpen] = React.useState(false)
   const [internalDate, setInternalDate] = React.useState<Date | undefined>(defaultValue)
   const dateTime = controlledValue !== undefined ? controlledValue : internalDate
@@ -279,6 +308,17 @@ function DateTimePicker({
   const [month, setMonth] = React.useState<Date | undefined>(dateTime || new Date())
 
   const timeValue = dateTime && fnsIsValid(dateTime) ? fnsFormat(dateTime, "HH:mm") : ""
+
+  // Reset internal state when defaultValue changes (e.g. server sends new HTML)
+  const defaultValueTs = defaultValue?.getTime()
+  React.useEffect(() => {
+    if (controlledValue === undefined) {
+      setInternalDate(defaultValue)
+      setDateInputValue(formatDateDisplay(defaultValue, displayFormat, locale))
+      setMonth(defaultValue || new Date())
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [defaultValueTs])
 
   React.useEffect(() => {
     if (controlledValue !== undefined) {
@@ -425,7 +465,7 @@ interface DateRangePickerProps extends Omit<React.ComponentProps<"div">, "defaul
 
 function DateRangePicker({
   value: controlledValue,
-  defaultValue,
+  defaultValue: defaultValueRaw,
   onValueChange,
   displayFormat = "",
   valueFormat = "",
@@ -440,12 +480,26 @@ function DateRangePicker({
   ...props
 }: DateRangePickerProps) {
   const locale = localeProp || getBrowserLocale()
+  const defaultValue = coerceDateRange(defaultValueRaw)
   const [open, setOpen] = React.useState(false)
   const [internalRange, setInternalRange] = React.useState<DateRange | undefined>(defaultValue)
   const range = controlledValue !== undefined ? controlledValue : internalRange
   const [fromInputValue, setFromInputValue] = React.useState(formatDateDisplay(range?.from, displayFormat, locale))
   const [toInputValue, setToInputValue] = React.useState(formatDateDisplay(range?.to, displayFormat, locale))
   const [month, setMonth] = React.useState<Date | undefined>(range?.from || new Date())
+
+  // Reset internal state when defaultValue changes (e.g. server sends new HTML)
+  const defaultFromTs = defaultValue?.from?.getTime()
+  const defaultToTs = defaultValue?.to?.getTime()
+  React.useEffect(() => {
+    if (controlledValue === undefined) {
+      setInternalRange(defaultValue)
+      setFromInputValue(formatDateDisplay(defaultValue?.from, displayFormat, locale))
+      setToInputValue(formatDateDisplay(defaultValue?.to, displayFormat, locale))
+      setMonth(defaultValue?.from || new Date())
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [defaultFromTs, defaultToTs])
 
   React.useEffect(() => {
     if (controlledValue !== undefined) {
