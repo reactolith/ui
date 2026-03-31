@@ -23,17 +23,21 @@ function Form({
   errors: propErrors,
   errorsTitle,
   onSubmit: userOnSubmit,
+  dataScroll,
   className,
   children,
   ...props
 }: React.ComponentProps<"form"> & {
   errors?: FormError[]
   errorsTitle?: string
+  dataScroll?: string
 }) {
   const errors: FormError[] = typeof propErrors === "string" ? JSON.parse(propErrors) : (propErrors ?? [])
+  const formId = React.useId()
   const formRef = React.useRef<HTMLFormElement>(null)
   const [touchedMap, setTouchedMap] = React.useState<Record<string, boolean>>({})
   const [submitting, setSubmitting] = React.useState(false)
+  const [pendingSubmit, setPendingSubmit] = React.useState(false)
   const getErrors = React.useCallback(
     (name: string, includeTouched = false) =>
       errors.filter((e) => {
@@ -87,6 +91,10 @@ function Form({
     [submitting, userOnSubmit],
   )
 
+  const getFormElement = React.useCallback((): HTMLFormElement | null => {
+    return formRef.current ?? document.querySelector<HTMLFormElement>(`[data-form-id="${formId}"]`)
+  }, [formId])
+
   const autoSubmit = React.useCallback(
     (target: HTMLElement, triggerType: string) => {
       // Check the target element itself, then walk up to find data-auto-submit.
@@ -102,7 +110,7 @@ function Form({
       )
         return
 
-      const form = formRef.current
+      const form = getFormElement()
       if (!form) return
 
       if (!userOnSubmit) {
@@ -120,12 +128,17 @@ function Form({
       })
       handleSubmit(submitEvent)
     },
-    [handleSubmit, userOnSubmit],
+    [getFormElement, handleSubmit, userOnSubmit],
   )
 
   const handleFormChange: React.FormEventHandler<HTMLFormElement> =
     React.useCallback(
-      (event) => autoSubmit(event.target as HTMLElement, "onChange"),
+      (event) => {
+        // Only trigger auto-submit for native 'change' events (select, checkbox, radio).
+        // Skip 'input' events (text typing in input/textarea/combobox search).
+        if ((event.nativeEvent as Event).type !== "change") return
+        autoSubmit(event.target as HTMLElement, "onChange")
+      },
       [autoSubmit],
     )
 
@@ -141,7 +154,16 @@ function Form({
   )
 
   const submitForm = React.useCallback(() => {
-    const form = formRef.current
+    // Set pending flag — the actual submission happens in useEffect after
+    // React has committed the new value to the DOM.
+    setPendingSubmit(true)
+  }, [])
+
+  React.useEffect(() => {
+    if (!pendingSubmit) return
+    setPendingSubmit(false)
+
+    const form = getFormElement()
     if (!form) return
     if (!userOnSubmit) {
       form.requestSubmit()
@@ -153,7 +175,7 @@ function Form({
       value: form,
     })
     handleSubmit(submitEvent)
-  }, [handleSubmit, userOnSubmit])
+  }, [pendingSubmit, getFormElement, handleSubmit, userOnSubmit])
 
   const interactionCtx = React.useMemo<FormInteractionContextValue>(
     () => ({
@@ -177,6 +199,8 @@ function Form({
         <FormSubmittingContext.Provider value={submitting}>
           <form
             ref={formRef}
+            data-form-id={formId}
+            data-scroll={dataScroll}
             onSubmit={handleSubmit}
             onChange={handleFormChange}
             onBlur={handleFormBlur}
@@ -191,7 +215,17 @@ function Form({
                     {allErrors.map((e) => (
                       <li key={e.id ?? e.name ?? e.label ?? e.message}>
                         {e.id ? (
-                          <a href={`#${e.id}`}>{formatError(e)}</a>
+                          <button
+                            type="button"
+                            className="underline underline-offset-3 hover:text-foreground cursor-pointer text-left"
+                            onClick={() => {
+                              const el = document.getElementById(e.id!)
+                              el?.scrollIntoView({ behavior: "smooth", block: "center" })
+                              el?.focus()
+                            }}
+                          >
+                            {formatError(e)}
+                          </button>
                         ) : (
                           <span>{formatError(e)}</span>
                         )}

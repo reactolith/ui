@@ -12,7 +12,7 @@ Reactolith automatically parses HTML attributes into typed React props. **You do
 |---|---|---|
 | `name="test"` | `name: "test"` | string |
 | `enabled` (no value) | `enabled: true` | boolean |
-| `data-foo="bar"` | `foo: "bar"` | string |
+| `data-foo="bar"` | `dataFoo: "bar"` | string |
 | `json-config='{"a":1}'` | `config: { a: 1 }` | object |
 | `json-items='["a","b"]'` | `items: ["a", "b"]` | string[] |
 | `json-count="42"` | `count: 42` | number |

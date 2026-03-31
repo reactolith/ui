@@ -854,7 +854,7 @@ const components = [
     additionalExamples: [
       {
         title: "Auto-Submit on Change",
-        readableExample: `<ui-form method="get">
+        readableExample: `<ui-form method="get" data-scroll="preserve">
   <div class="space-y-4 max-w-md">
     <ui-form-item name="theme" auto-submit="onChange">
       <ui-field>
@@ -897,7 +897,7 @@ const components = [
   </div>
 </ui-form>`,
         example: `<div id="auto-submit-change-demo">
-  <ui-form method="get">
+  <ui-form method="get" data-scroll="preserve">
     <div class="space-y-4 max-w-md">
       <ui-form-item name="theme" auto-submit="onChange">
         <ui-field>
@@ -927,6 +927,11 @@ const components = [
           <ui-field-label>Framework</ui-field-label>
           <ui-field-content>
             <ui-combobox name="framework" json-items='[{"value":"react","label":"React"},{"value":"vue","label":"Vue.js"},{"value":"angular","label":"Angular"},{"value":"svelte","label":"Svelte"}]'>
+              <ui-combobox-input placeholder="Select framework..." show-clear></ui-combobox-input>
+              <ui-combobox-content>
+                <ui-combobox-empty>No framework found.</ui-combobox-empty>
+                <ui-combobox-list></ui-combobox-list>
+              </ui-combobox-content>
             </ui-combobox>
           </ui-field-content>
         </ui-field>
@@ -962,7 +967,7 @@ const components = [
       },
       {
         title: "Auto-Submit on Blur",
-        readableExample: `<ui-form method="get">
+        readableExample: `<ui-form method="get" data-scroll="preserve">
   <div class="space-y-4 max-w-md">
     <ui-form-item name="username" auto-submit="onBlur">
       <ui-field>
@@ -984,7 +989,7 @@ const components = [
   </div>
 </ui-form>`,
         example: `<div id="auto-submit-blur-demo">
-  <ui-form method="get">
+  <ui-form method="get" data-scroll="preserve">
     <div class="space-y-4 max-w-md">
       <ui-form-item name="username" auto-submit="onBlur">
         <ui-field>

@@ -502,7 +502,7 @@
               <h2 class="text-xl font-semibold mb-4">Auto-Submit on Change</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
                 <div id="auto-submit-change-demo">
-  <ui-form method="get">
+  <ui-form method="get" data-scroll="preserve">
     <div class="space-y-4 max-w-md">
       <ui-form-item name="theme" auto-submit="onChange">
         <ui-field>
@@ -532,6 +532,11 @@
           <ui-field-label>Framework</ui-field-label>
           <ui-field-content>
             <ui-combobox name="framework" json-items='[{"value":"react","label":"React"},{"value":"vue","label":"Vue.js"},{"value":"angular","label":"Angular"},{"value":"svelte","label":"Svelte"}]'>
+              <ui-combobox-input placeholder="Select framework..." show-clear></ui-combobox-input>
+              <ui-combobox-content>
+                <ui-combobox-empty>No framework found.</ui-combobox-empty>
+                <ui-combobox-list></ui-combobox-list>
+              </ui-combobox-content>
             </ui-combobox>
           </ui-field-content>
         </ui-field>
@@ -566,7 +571,7 @@
 </script>
               </div>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-form method=&quot;get&quot;&gt;
+                <pre class="p-4 text-sm"><code>&lt;ui-form method=&quot;get&quot; data-scroll=&quot;preserve&quot;&gt;
   &lt;div class=&quot;space-y-4 max-w-md&quot;&gt;
     &lt;ui-form-item name=&quot;theme&quot; auto-submit=&quot;onChange&quot;&gt;
       &lt;ui-field&gt;
@@ -614,7 +619,7 @@
               <h2 class="text-xl font-semibold mb-4">Auto-Submit on Blur</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
                 <div id="auto-submit-blur-demo">
-  <ui-form method="get">
+  <ui-form method="get" data-scroll="preserve">
     <div class="space-y-4 max-w-md">
       <ui-form-item name="username" auto-submit="onBlur">
         <ui-field>
@@ -657,7 +662,7 @@
 </script>
               </div>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
-                <pre class="p-4 text-sm"><code>&lt;ui-form method=&quot;get&quot;&gt;
+                <pre class="p-4 text-sm"><code>&lt;ui-form method=&quot;get&quot; data-scroll=&quot;preserve&quot;&gt;
   &lt;div class=&quot;space-y-4 max-w-md&quot;&gt;
     &lt;ui-form-item name=&quot;username&quot; auto-submit=&quot;onBlur&quot;&gt;
       &lt;ui-field&gt;
