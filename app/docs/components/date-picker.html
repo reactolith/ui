@@ -449,11 +449,11 @@
                     <div class="space-y-6 max-w-sm">
   <ui-field>
     <ui-field-label>Date</ui-field-label>
-    <ui-date-picker name="date"></ui-date-picker>
+    <ui-date-picker name="date" default-value="2026-06-15"></ui-date-picker>
   </ui-field>
   <ui-field>
     <ui-field-label>Time</ui-field-label>
-    <ui-time-picker name="time"></ui-time-picker>
+    <ui-time-picker name="time" default-value="14:30"></ui-time-picker>
   </ui-field>
 </div>
                   </div>
@@ -465,11 +465,11 @@
                 <pre class="p-4 text-sm"><code>&lt;div class=&quot;space-y-6 max-w-sm&quot;&gt;
   &lt;ui-field&gt;
     &lt;ui-field-label&gt;Date&lt;/ui-field-label&gt;
-    &lt;ui-date-picker name=&quot;date&quot;&gt;&lt;/ui-date-picker&gt;
+    &lt;ui-date-picker name=&quot;date&quot; default-value=&quot;2026-06-15&quot;&gt;&lt;/ui-date-picker&gt;
   &lt;/ui-field&gt;
   &lt;ui-field&gt;
     &lt;ui-field-label&gt;Time&lt;/ui-field-label&gt;
-    &lt;ui-time-picker name=&quot;time&quot;&gt;&lt;/ui-time-picker&gt;
+    &lt;ui-time-picker name=&quot;time&quot; default-value=&quot;14:30&quot;&gt;&lt;/ui-time-picker&gt;
   &lt;/ui-field&gt;
 &lt;/div&gt;</code></pre>
               </div>
@@ -477,32 +477,32 @@
 
             
             <section class="mb-10">
-              <h2 class="text-xl font-semibold mb-4">Date Time Picker</h2>
+              <h2 class="text-xl font-semibold mb-4">Date Time Picker with Default</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
                 <ui-field class="max-w-md">
   <ui-field-label>Appointment</ui-field-label>
-  <ui-date-time-picker name="appointment"></ui-date-time-picker>
+  <ui-date-time-picker name="appointment" default-value="2026-06-15T14:30"></ui-date-time-picker>
 </ui-field>
               </div>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-field class=&quot;max-w-md&quot;&gt;
   &lt;ui-field-label&gt;Appointment&lt;/ui-field-label&gt;
-  &lt;ui-date-time-picker name=&quot;appointment&quot;&gt;&lt;/ui-date-time-picker&gt;
+  &lt;ui-date-time-picker name=&quot;appointment&quot; default-value=&quot;2026-06-15T14:30&quot;&gt;&lt;/ui-date-time-picker&gt;
 &lt;/ui-field&gt;</code></pre>
               </div>
             </section>
             <section class="mb-10">
-              <h2 class="text-xl font-semibold mb-4">Date Range Picker</h2>
+              <h2 class="text-xl font-semibold mb-4">Date Range Picker with Default</h2>
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
                 <ui-field class="max-w-lg">
   <ui-field-label>Travel Dates</ui-field-label>
-  <ui-date-range-picker name="travel"></ui-date-range-picker>
+  <ui-date-range-picker name="travel" json-default-value='{"from":"2026-06-15","to":"2026-06-22"}'></ui-date-range-picker>
 </ui-field>
               </div>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;ui-field class=&quot;max-w-lg&quot;&gt;
   &lt;ui-field-label&gt;Travel Dates&lt;/ui-field-label&gt;
-  &lt;ui-date-range-picker name=&quot;travel&quot;&gt;&lt;/ui-date-range-picker&gt;
+  &lt;ui-date-range-picker name=&quot;travel&quot; json-default-value='{&quot;from&quot;:&quot;2026-06-15&quot;,&quot;to&quot;:&quot;2026-06-22&quot;}'&gt;&lt;/ui-date-range-picker&gt;
 &lt;/ui-field&gt;</code></pre>
               </div>
             </section>
@@ -511,7 +511,7 @@
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
                 <ui-field class="max-w-sm">
   <ui-field-label>Date (custom format)</ui-field-label>
-  <ui-date-picker name="custom-date" displayFormat="dd.MM.yyyy" placeholder="23.04.2026"></ui-date-picker>
+  <ui-date-picker name="custom-date" displayFormat="dd.MM.yyyy" default-value="2026-04-23" placeholder="23.04.2026"></ui-date-picker>
 </ui-field>
               </div>
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
@@ -519,18 +519,21 @@
 &lt;ui-date-picker
   name=&quot;custom-date&quot;
   displayFormat=&quot;dd.MM.yyyy&quot;
+  default-value=&quot;2026-04-23&quot;
   placeholder=&quot;23.04.2026&quot;&gt;
 &lt;/ui-date-picker&gt;
 
 &lt;!-- Custom value format for form submission --&gt;
 &lt;ui-date-picker
   name=&quot;iso-date&quot;
+  default-value=&quot;2026-04-23&quot;
   valueFormat=&quot;yyyy-MM-dd'T'HH:mm:ss&quot;&gt;
 &lt;/ui-date-picker&gt;
 
 &lt;!-- Specify locale explicitly --&gt;
 &lt;ui-date-picker
   name=&quot;de-date&quot;
+  default-value=&quot;2026-04-23&quot;
   locale=&quot;de-AT&quot;&gt;
 &lt;/ui-date-picker&gt;</code></pre>
               </div>
