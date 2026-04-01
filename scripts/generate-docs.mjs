@@ -1786,16 +1786,159 @@ const components = [
   {
     name: "Slider",
     slug: "slider",
-    description: "An input where the user selects a value from within a given range.",
+    description: "An input where the user selects a value from within a given range. Supports native form submission via hidden inputs, range sliders with Symfony-compatible field names, and auto-submit.",
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/slider",
     subComponents: [
-      { tag: "ui-slider", props: [{ name: "value", type: "number[]", default: "—", description: "Controlled value." }, { name: "defaultValue", type: "number[]", default: "[0]", description: "Default value." }, { name: "min", type: "number", default: "0", description: "Minimum value." }, { name: "max", type: "number", default: "100", description: "Maximum value." }, { name: "step", type: "number", default: "1", description: "Step increment." }], enhancedBy: "formField behavior — auto-applies aria-invalid and disabled inside ui-form-item" },
+      { tag: "ui-slider", props: [
+        { name: "value", type: "number | number[]", default: "—", description: "Controlled value. Single number or array." },
+        { name: "defaultValue", type: "number | number[]", default: "—", description: "Default value (uncontrolled). Single number or array. Component resets when this changes." },
+        { name: "min", type: "number", default: "0", description: "Minimum value." },
+        { name: "max", type: "number", default: "100", description: "Maximum value." },
+        { name: "step", type: "number", default: "1", description: "Step increment." },
+        { name: "name", type: "string", default: "—", description: "Name for hidden form input(s). For single slider: one hidden input. For range slider (2 thumbs): two inputs named {name}[from] and {name}[to] (Symfony-compatible)." },
+        { name: "nameFrom", type: "string", default: "—", description: "Explicit name for the 'from' hidden input (range slider). Overrides {name}[from]." },
+        { name: "nameTo", type: "string", default: "—", description: "Explicit name for the 'to' hidden input (range slider). Overrides {name}[to]." },
+        { name: "disabled", type: "boolean", default: "false", description: "Whether the slider is disabled." },
+        { name: "onValueChange", type: "(value: number[], thumb: number) => void", default: "—", description: "Callback fired on every value change (during drag)." },
+        { name: "onValueCommitted", type: "(value: number[], thumb: number) => void", default: "—", description: "Callback fired when the user finishes dragging." },
+      ] },
     ],
     example: `<div class="space-y-4 max-w-md">
   <ui-slider json-default-value="[33]"></ui-slider>
-  <ui-slider json-default-value="[66]"></ui-slider>
+  <ui-slider json-default-value="[25, 75]"></ui-slider>
 </div>`,
+    additionalExamples: [
+      {
+        title: "Single Slider with Form Name",
+        example: `<form method="post" action="/save" class="space-y-4 max-w-md">
+  <ui-field>
+    <ui-field-label>Volume</ui-field-label>
+    <ui-slider name="volume" json-default-value="[50]" json-max="100"></ui-slider>
+  </ui-field>
+  <ui-button type="submit">Save</ui-button>
+</form>`,
+        readableExample: `<!-- Single slider syncs its value to a hidden input named "volume" -->
+<ui-slider name="volume" json-default-value="[50]"></ui-slider>
+
+<!-- Submitted form data: volume=50 -->`,
+      },
+      {
+        title: "Range Slider with Symfony-Compatible Names",
+        example: `<form method="get" action="/search" class="space-y-4 max-w-md">
+  <ui-field>
+    <ui-field-label>Price Range</ui-field-label>
+    <ui-slider name="price" json-default-value="[200, 800]" json-min="0" json-max="1000" json-step="10"></ui-slider>
+  </ui-field>
+  <ui-button type="submit">Filter</ui-button>
+</form>`,
+        readableExample: `<!-- Range slider (2 thumbs) auto-creates two hidden inputs:
+     price[from]=200 and price[to]=800 (Symfony-compatible) -->
+<ui-slider
+  name="price"
+  json-default-value="[200, 800]"
+  json-min="0"
+  json-max="1000"
+  json-step="10">
+</ui-slider>`,
+      },
+      {
+        title: "Range Slider with Custom Field Names",
+        example: `<form method="get" action="/search" class="space-y-4 max-w-md">
+  <ui-field>
+    <ui-field-label>Age Range</ui-field-label>
+    <ui-slider name-from="age_min" name-to="age_max" json-default-value="[18, 65]" json-min="0" json-max="100"></ui-slider>
+  </ui-field>
+  <ui-button type="submit">Search</ui-button>
+</form>`,
+        readableExample: `<!-- Use nameFrom/nameTo for custom hidden input names -->
+<ui-slider
+  name-from="age_min"
+  name-to="age_max"
+  json-default-value="[18, 65]"
+  json-min="0"
+  json-max="100">
+</ui-slider>
+
+<!-- Submitted form data: age_min=18, age_max=65 -->`,
+      },
+      {
+        title: "Auto-Submit on Change",
+        example: `<ui-form method="get" action="/filter">
+  <ui-form-item name="brightness" auto-submit="onChange">
+    <ui-field>
+      <ui-field-label>Brightness</ui-field-label>
+      <ui-slider name="brightness" json-default-value="[75]"></ui-slider>
+    </ui-field>
+  </ui-form-item>
+</ui-form>`,
+        readableExample: `<!-- Auto-submit when the user finishes dragging the thumb -->
+<ui-form method="get" action="/filter">
+  <ui-form-item name="brightness" auto-submit="onChange">
+    <ui-slider name="brightness" json-default-value="[75]"></ui-slider>
+  </ui-form-item>
+</ui-form>`,
+      },
+      {
+        title: "Auto-Submit on Blur",
+        example: `<ui-form method="get" action="/filter">
+  <ui-form-item name="quality" auto-submit="onBlur">
+    <ui-field>
+      <ui-field-label>Quality</ui-field-label>
+      <ui-slider name="quality" json-default-value="[50]"></ui-slider>
+    </ui-field>
+  </ui-form-item>
+</ui-form>`,
+        readableExample: `<!-- Auto-submit when the slider loses focus -->
+<ui-form method="get" action="/filter">
+  <ui-form-item name="quality" auto-submit="onBlur">
+    <ui-slider name="quality" json-default-value="[50]"></ui-slider>
+  </ui-form-item>
+</ui-form>`,
+      },
+      {
+        title: "Range Slider with Auto-Submit and Form Validation",
+        example: `<ui-form method="get" action="/products">
+  <ui-form-item name="price" auto-submit="onChange">
+    <ui-field>
+      <ui-field-label>Price Range (€)</ui-field-label>
+      <ui-slider name="price" json-default-value="[100, 500]" json-min="0" json-max="1000" json-step="10"></ui-slider>
+    </ui-field>
+  </ui-form-item>
+</ui-form>`,
+        readableExample: `<!-- Range slider with auto-submit.
+     Submits price[from] and price[to] when the user stops dragging. -->
+<ui-form method="get" action="/products">
+  <ui-form-item name="price" auto-submit="onChange">
+    <ui-slider
+      name="price"
+      json-default-value="[100, 500]"
+      json-min="0"
+      json-max="1000"
+      json-step="10">
+    </ui-slider>
+  </ui-form-item>
+</ui-form>`,
+      },
+      {
+        title: "Server-Driven Initial Value",
+        example: `<div class="space-y-4 max-w-md">
+  <ui-field>
+    <ui-field-label>Opacity (server value: 80)</ui-field-label>
+    <ui-slider name="opacity" json-default-value="[80]"></ui-slider>
+  </ui-field>
+</div>`,
+        readableExample: `<!-- The backend sets the initial value via defaultValue.
+     When the server sends new HTML with a different defaultValue,
+     the slider resets automatically. -->
+
+<!-- Twig example: -->
+<!-- <ui-slider name="opacity" json-default-value="[{{ entity.opacity }}]"></ui-slider> -->
+
+<!-- Rails example: -->
+<!-- <ui-slider name="opacity" json-default-value="[<%= @record.opacity %>]"></ui-slider> -->`,
+      },
+    ],
   },
   {
     name: "Spinner",
