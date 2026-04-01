@@ -440,7 +440,7 @@
                 <a href="https://ui.shadcn.com/docs/components/base/slider" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground border rounded px-2 py-1 shrink-0">shadcn/ui docs</a>
               </div>
               <h1 class="text-3xl font-bold tracking-tight">Slider</h1>
-              <p class="text-lg text-muted-foreground">An input where the user selects a value from within a given range.</p>
+              <p class="text-lg text-muted-foreground">An input where the user selects a value from within a given range. Supports native form submission via hidden inputs, range sliders with Symfony-compatible field names, and auto-submit.</p>
             </div>
 
             <section class="mb-10">
@@ -448,7 +448,7 @@
               <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full">
                     <div class="space-y-4 max-w-md">
   <ui-slider json-default-value="[33]"></ui-slider>
-  <ui-slider json-default-value="[66]"></ui-slider>
+  <ui-slider json-default-value="[25, 75]"></ui-slider>
 </div>
                   </div>
             </section>
@@ -458,12 +458,169 @@
               <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
                 <pre class="p-4 text-sm"><code>&lt;div class=&quot;space-y-4 max-w-md&quot;&gt;
   &lt;ui-slider json-default-value=&quot;[33]&quot;&gt;&lt;/ui-slider&gt;
-  &lt;ui-slider json-default-value=&quot;[66]&quot;&gt;&lt;/ui-slider&gt;
+  &lt;ui-slider json-default-value=&quot;[25, 75]&quot;&gt;&lt;/ui-slider&gt;
 &lt;/div&gt;</code></pre>
               </div>
             </section>
 
             
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Single Slider with Form Name</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <form method="post" action="/save" class="space-y-4 max-w-md">
+  <ui-field>
+    <ui-field-label>Volume</ui-field-label>
+    <ui-slider name="volume" json-default-value="[50]" json-max="100"></ui-slider>
+  </ui-field>
+  <ui-button type="submit">Save</ui-button>
+</form>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;!-- Single slider syncs its value to a hidden input named &quot;volume&quot; --&gt;
+&lt;ui-slider name=&quot;volume&quot; json-default-value=&quot;[50]&quot;&gt;&lt;/ui-slider&gt;
+
+&lt;!-- Submitted form data: volume=50 --&gt;</code></pre>
+              </div>
+            </section>
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Range Slider with Symfony-Compatible Names</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <form method="get" action="/search" class="space-y-4 max-w-md">
+  <ui-field>
+    <ui-field-label>Price Range</ui-field-label>
+    <ui-slider name="price" json-default-value="[200, 800]" json-min="0" json-max="1000" json-step="10"></ui-slider>
+  </ui-field>
+  <ui-button type="submit">Filter</ui-button>
+</form>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;!-- Range slider (2 thumbs) auto-creates two hidden inputs:
+     price[from]=200 and price[to]=800 (Symfony-compatible) --&gt;
+&lt;ui-slider
+  name=&quot;price&quot;
+  json-default-value=&quot;[200, 800]&quot;
+  json-min=&quot;0&quot;
+  json-max=&quot;1000&quot;
+  json-step=&quot;10&quot;&gt;
+&lt;/ui-slider&gt;</code></pre>
+              </div>
+            </section>
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Range Slider with Custom Field Names</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <form method="get" action="/search" class="space-y-4 max-w-md">
+  <ui-field>
+    <ui-field-label>Age Range</ui-field-label>
+    <ui-slider name-from="age_min" name-to="age_max" json-default-value="[18, 65]" json-min="0" json-max="100"></ui-slider>
+  </ui-field>
+  <ui-button type="submit">Search</ui-button>
+</form>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;!-- Use nameFrom/nameTo for custom hidden input names --&gt;
+&lt;ui-slider
+  name-from=&quot;age_min&quot;
+  name-to=&quot;age_max&quot;
+  json-default-value=&quot;[18, 65]&quot;
+  json-min=&quot;0&quot;
+  json-max=&quot;100&quot;&gt;
+&lt;/ui-slider&gt;
+
+&lt;!-- Submitted form data: age_min=18, age_max=65 --&gt;</code></pre>
+              </div>
+            </section>
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Auto-Submit on Change</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <ui-form method="get" action="/filter">
+  <ui-form-item name="brightness" auto-submit="onChange">
+    <ui-field>
+      <ui-field-label>Brightness</ui-field-label>
+      <ui-slider name="brightness" json-default-value="[75]"></ui-slider>
+    </ui-field>
+  </ui-form-item>
+</ui-form>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;!-- Auto-submit when the user finishes dragging the thumb --&gt;
+&lt;ui-form method=&quot;get&quot; action=&quot;/filter&quot;&gt;
+  &lt;ui-form-item name=&quot;brightness&quot; auto-submit=&quot;onChange&quot;&gt;
+    &lt;ui-slider name=&quot;brightness&quot; json-default-value=&quot;[75]&quot;&gt;&lt;/ui-slider&gt;
+  &lt;/ui-form-item&gt;
+&lt;/ui-form&gt;</code></pre>
+              </div>
+            </section>
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Auto-Submit on Blur</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <ui-form method="get" action="/filter">
+  <ui-form-item name="quality" auto-submit="onBlur">
+    <ui-field>
+      <ui-field-label>Quality</ui-field-label>
+      <ui-slider name="quality" json-default-value="[50]"></ui-slider>
+    </ui-field>
+  </ui-form-item>
+</ui-form>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;!-- Auto-submit when the slider loses focus --&gt;
+&lt;ui-form method=&quot;get&quot; action=&quot;/filter&quot;&gt;
+  &lt;ui-form-item name=&quot;quality&quot; auto-submit=&quot;onBlur&quot;&gt;
+    &lt;ui-slider name=&quot;quality&quot; json-default-value=&quot;[50]&quot;&gt;&lt;/ui-slider&gt;
+  &lt;/ui-form-item&gt;
+&lt;/ui-form&gt;</code></pre>
+              </div>
+            </section>
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Range Slider with Auto-Submit and Form Validation</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <ui-form method="get" action="/products">
+  <ui-form-item name="price" auto-submit="onChange">
+    <ui-field>
+      <ui-field-label>Price Range (€)</ui-field-label>
+      <ui-slider name="price" json-default-value="[100, 500]" json-min="0" json-max="1000" json-step="10"></ui-slider>
+    </ui-field>
+  </ui-form-item>
+</ui-form>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;!-- Range slider with auto-submit.
+     Submits price[from] and price[to] when the user stops dragging. --&gt;
+&lt;ui-form method=&quot;get&quot; action=&quot;/products&quot;&gt;
+  &lt;ui-form-item name=&quot;price&quot; auto-submit=&quot;onChange&quot;&gt;
+    &lt;ui-slider
+      name=&quot;price&quot;
+      json-default-value=&quot;[100, 500]&quot;
+      json-min=&quot;0&quot;
+      json-max=&quot;1000&quot;
+      json-step=&quot;10&quot;&gt;
+    &lt;/ui-slider&gt;
+  &lt;/ui-form-item&gt;
+&lt;/ui-form&gt;</code></pre>
+              </div>
+            </section>
+            <section class="mb-10">
+              <h2 class="text-xl font-semibold mb-4">Server-Driven Initial Value</h2>
+              <div class="rounded-lg border p-6 bg-background overflow-x-auto max-w-full mb-4">
+                <div class="space-y-4 max-w-md">
+  <ui-field>
+    <ui-field-label>Opacity (server value: 80)</ui-field-label>
+    <ui-slider name="opacity" json-default-value="[80]"></ui-slider>
+  </ui-field>
+</div>
+              </div>
+              <div class="rounded-lg border bg-muted/30 overflow-x-auto max-w-full">
+                <pre class="p-4 text-sm"><code>&lt;!-- The backend sets the initial value via defaultValue.
+     When the server sends new HTML with a different defaultValue,
+     the slider resets automatically. --&gt;
+
+&lt;!-- Twig example: --&gt;
+&lt;!-- &lt;ui-slider name=&quot;opacity&quot; json-default-value=&quot;[{{ entity.opacity }}]&quot;&gt;&lt;/ui-slider&gt; --&gt;
+
+&lt;!-- Rails example: --&gt;
+&lt;!-- &lt;ui-slider name=&quot;opacity&quot; json-default-value=&quot;[&lt;%= @record.opacity %&gt;]&quot;&gt;&lt;/ui-slider&gt; --&gt;</code></pre>
+              </div>
+            </section>
 
             
 
@@ -476,9 +633,9 @@
 
             <section class="mb-10"><h2 class="text-xl font-semibold mb-4">Props</h2>
             <div class="mt-6">
-              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-slider&gt;</code> <span class="text-xs bg-blue-500/15 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded ml-2">formField behavior — auto-applies aria-invalid and disabled inside ui-form-item</span></h3>
+              <h3 class="text-lg font-semibold mb-3"><code class="text-sm bg-muted px-2 py-1 rounded">&lt;ui-slider&gt;</code></h3>
               <div class="overflow-x-auto max-w-full">
-                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number[]</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Controlled value.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">defaultValue</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number[]</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">[0]</code></td><td class="py-2 text-muted-foreground">Default value.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">min</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">0</code></td><td class="py-2 text-muted-foreground">Minimum value.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">max</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">100</code></td><td class="py-2 text-muted-foreground">Maximum value.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">step</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">1</code></td><td class="py-2 text-muted-foreground">Step increment.</td></tr></tbody></table>
+                <table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-2 pr-4 font-medium">Prop</th><th class="text-left py-2 pr-4 font-medium">Type</th><th class="text-left py-2 pr-4 font-medium">Default</th><th class="text-left py-2 font-medium">Description</th></tr></thead><tbody><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">value</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number | number[]</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Controlled value. Single number or array.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">defaultValue</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number | number[]</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Default value (uncontrolled). Single number or array. Component resets when this changes.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">min</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">0</code></td><td class="py-2 text-muted-foreground">Minimum value.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">max</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">100</code></td><td class="py-2 text-muted-foreground">Maximum value.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">step</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">number</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">1</code></td><td class="py-2 text-muted-foreground">Step increment.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">name</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Name for hidden form input(s). For single slider: one hidden input. For range slider (2 thumbs): two inputs named {name}[from] and {name}[to] (Symfony-compatible).</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">nameFrom</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Explicit name for the 'from' hidden input (range slider). Overrides {name}[from].</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">nameTo</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">string</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Explicit name for the 'to' hidden input (range slider). Overrides {name}[to].</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">disabled</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">boolean</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">false</code></td><td class="py-2 text-muted-foreground">Whether the slider is disabled.</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onValueChange</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">(value: number[], thumb: number) =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback fired on every value change (during drag).</td></tr><tr class="border-b"><td class="py-2 pr-4"><code class="text-xs bg-muted px-1.5 py-0.5 rounded">onValueCommitted</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">(value: number[], thumb: number) =&gt; void</code></td><td class="py-2 pr-4 text-muted-foreground"><code class="text-xs">—</code></td><td class="py-2 text-muted-foreground">Callback fired when the user finishes dragging.</td></tr></tbody></table>
               </div>
             </div></section>
 

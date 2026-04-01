@@ -23,6 +23,7 @@ const BUILTIN_COMPONENTS: Record<string, () => Promise<{ default: ComponentType<
   "time-picker": () => import("../components/date-picker").then(m => ({ default: m.TimePicker })),
   "date-time-picker": () => import("../components/date-picker").then(m => ({ default: m.DateTimePicker })),
   "date-range-picker": () => import("../components/date-picker").then(m => ({ default: m.DateRangePicker })),
+  "slider": () => import("../components/slider"),
 }
 
 // ---------------------------------------------------------------------------
