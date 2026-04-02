@@ -51,7 +51,7 @@ async function getStaticEditor(
   if (!_staticEditor) {
     // Dynamic import to avoid circular deps and keep this module lightweight.
     const { SerializerKit } = await import(
-      "@/components/plate/editor/editor-kit"
+      "@/lib/plate/editor/editor-kit"
     )
     _staticEditor = createSlateEditor({ plugins: SerializerKit as any })
   }

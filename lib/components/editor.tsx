@@ -1,11 +1,7 @@
 /**
- * Plate.js Rich Text Editor — docs demo override.
+ * Plate.js Rich Text Editor — built-in `<ui-editor>` component.
  *
- * This file is the `<ui-editor>` override for the docs site.
- * It uses standard Plate.js kits from `components/plate/`.
- *
- * In YOUR project, you would create a similar file using whatever
- * Plate kits/components you installed via `npx shadcn@latest add @plate/...`.
+ * Uses Plate.js kits from `lib/plate/` which are shipped with reactolith-ui.
  *
  * ## Usage (HTML attributes)
  *
@@ -33,34 +29,34 @@ import {
 } from "@platejs/autoformat"
 import type { EditorProps } from "@/lib/editor/types"
 import { useEditorFormSync } from "@/lib/editor/use-editor-form"
-import { EditorKit } from "@/components/plate/editor/editor-kit"
-import { Editor, EditorContainer } from "@/components/plate/ui/editor"
-import { TooltipProvider } from "@/components/plate/ui/tooltip"
+import { EditorKit } from "@/lib/plate/editor/editor-kit"
+import { Editor, EditorContainer } from "@/lib/plate/ui/editor"
+import { TooltipProvider } from "@/lib/plate/ui/tooltip"
 import { cn } from "@/lib/utils"
 
 // Individual kits for restricted mode
-import { BasicBlocksKit } from "@/components/plate/editor/plugins/basic-blocks-kit"
-import { BasicMarksKit } from "@/components/plate/editor/plugins/basic-marks-kit"
-import { CodeBlockKit } from "@/components/plate/editor/plugins/code-block-kit"
-import { TableKit } from "@/components/plate/editor/plugins/table-kit"
-import { ToggleKit } from "@/components/plate/editor/plugins/toggle-kit"
-import { MediaKit } from "@/components/plate/editor/plugins/media-kit"
-import { CalloutKit } from "@/components/plate/editor/plugins/callout-kit"
-import { LinkKit } from "@/components/plate/editor/plugins/link-kit"
-import { MentionKit } from "@/components/plate/editor/plugins/mention-kit"
-import { ListKit } from "@/components/plate/editor/plugins/list-kit"
-import { FontKit } from "@/components/plate/editor/plugins/font-kit"
-import { AlignKit } from "@/components/plate/editor/plugins/align-kit"
-import { LineHeightKit } from "@/components/plate/editor/plugins/line-height-kit"
-import { SlashKit } from "@/components/plate/editor/plugins/slash-kit"
-import { AutoformatKit } from "@/components/plate/editor/plugins/autoformat-kit"
-import { BlockMenuKit } from "@/components/plate/editor/plugins/block-menu-kit"
-import { DndKit } from "@/components/plate/editor/plugins/dnd-kit"
-import { ExitBreakKit } from "@/components/plate/editor/plugins/exit-break-kit"
-import { FixedToolbarKit } from "@/components/plate/editor/plugins/fixed-toolbar-kit"
-import { FloatingToolbarKit } from "@/components/plate/editor/plugins/floating-toolbar-kit"
-import { BlockPlaceholderKit } from "@/components/plate/editor/plugins/block-placeholder-kit"
-import { MarkdownKit } from "@/components/plate/editor/plugins/markdown-kit"
+import { BasicBlocksKit } from "@/lib/plate/editor/plugins/basic-blocks-kit"
+import { BasicMarksKit } from "@/lib/plate/editor/plugins/basic-marks-kit"
+import { CodeBlockKit } from "@/lib/plate/editor/plugins/code-block-kit"
+import { TableKit } from "@/lib/plate/editor/plugins/table-kit"
+import { ToggleKit } from "@/lib/plate/editor/plugins/toggle-kit"
+import { MediaKit } from "@/lib/plate/editor/plugins/media-kit"
+import { CalloutKit } from "@/lib/plate/editor/plugins/callout-kit"
+import { LinkKit } from "@/lib/plate/editor/plugins/link-kit"
+import { MentionKit } from "@/lib/plate/editor/plugins/mention-kit"
+import { ListKit } from "@/lib/plate/editor/plugins/list-kit"
+import { FontKit } from "@/lib/plate/editor/plugins/font-kit"
+import { AlignKit } from "@/lib/plate/editor/plugins/align-kit"
+import { LineHeightKit } from "@/lib/plate/editor/plugins/line-height-kit"
+import { SlashKit } from "@/lib/plate/editor/plugins/slash-kit"
+import { AutoformatKit } from "@/lib/plate/editor/plugins/autoformat-kit"
+import { BlockMenuKit } from "@/lib/plate/editor/plugins/block-menu-kit"
+import { DndKit } from "@/lib/plate/editor/plugins/dnd-kit"
+import { ExitBreakKit } from "@/lib/plate/editor/plugins/exit-break-kit"
+import { FixedToolbarKit } from "@/lib/plate/editor/plugins/fixed-toolbar-kit"
+import { FloatingToolbarKit } from "@/lib/plate/editor/plugins/floating-toolbar-kit"
+import { BlockPlaceholderKit } from "@/lib/plate/editor/plugins/block-placeholder-kit"
+import { MarkdownKit } from "@/lib/plate/editor/plugins/markdown-kit"
 
 /** Fresh empty value — must be a new object each time (Slate mutates in-place). */
 function emptyValue() {
