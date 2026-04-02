@@ -1786,7 +1786,7 @@ const components = [
   {
     name: "Slider",
     slug: "slider",
-    description: "An input where the user selects a value from within a given range. Supports native form submission via hidden inputs, range sliders with Symfony-compatible field names, and auto-submit.",
+    description: "An input where the user selects a value from within a given range. Supports native form submission, range sliders with Symfony-compatible field names, auto-submit, and value tooltips on thumbs.",
     category: "Forms",
     shadcnUrl: "https://ui.shadcn.com/docs/components/base/slider",
     subComponents: [
@@ -1796,9 +1796,10 @@ const components = [
         { name: "min", type: "number", default: "0", description: "Minimum value." },
         { name: "max", type: "number", default: "100", description: "Maximum value." },
         { name: "step", type: "number", default: "1", description: "Step increment." },
-        { name: "name", type: "string", default: "—", description: "Name for hidden form input(s). For single slider: one hidden input. For range slider (2 thumbs): two inputs named {name}[from] and {name}[to] (Symfony-compatible)." },
+        { name: "name", type: "string", default: "—", description: "Name for form submission. Single slider: uses native Base UI form input. Range slider (2 thumbs): creates hidden inputs named {name}[from] and {name}[to] (Symfony-compatible)." },
         { name: "nameFrom", type: "string", default: "—", description: "Explicit name for the 'from' hidden input (range slider). Overrides {name}[from]." },
         { name: "nameTo", type: "string", default: "—", description: "Explicit name for the 'to' hidden input (range slider). Overrides {name}[to]." },
+        { name: "showValue", type: 'boolean | "always" | "hover"', default: "false", description: "Show value indicators above each thumb. true or 'always' = always visible. 'hover' = only visible when hovering over the slider." },
         { name: "disabled", type: "boolean", default: "false", description: "Whether the slider is disabled." },
         { name: "onValueChange", type: "(value: number[], thumb: number) => void", default: "—", description: "Callback fired on every value change (during drag)." },
         { name: "onValueCommitted", type: "(value: number[], thumb: number) => void", default: "—", description: "Callback fired when the user finishes dragging." },
@@ -1809,6 +1810,29 @@ const components = [
   <ui-slider json-default-value="[25, 75]"></ui-slider>
 </div>`,
     additionalExamples: [
+      {
+        title: "Value Display (Always)",
+        example: `<div class="space-y-8 max-w-md pt-8">
+  <ui-slider json-default-value="[50]" show-value></ui-slider>
+  <ui-slider json-default-value="[25, 75]" show-value></ui-slider>
+</div>`,
+        readableExample: `<!-- Show value indicators above each thumb (always visible) -->
+<ui-slider json-default-value="[50]" show-value></ui-slider>
+
+<!-- Also works with range sliders — each thumb shows its value -->
+<ui-slider json-default-value="[25, 75]" show-value></ui-slider>`,
+      },
+      {
+        title: "Value Display (Hover Only)",
+        example: `<div class="space-y-8 max-w-md pt-8">
+  <ui-slider json-default-value="[50]" show-value="hover"></ui-slider>
+  <ui-slider json-default-value="[25, 75]" show-value="hover"></ui-slider>
+</div>`,
+        readableExample: `<!-- Value indicators appear only when hovering over the slider -->
+<ui-slider json-default-value="[50]" show-value="hover"></ui-slider>
+
+<ui-slider json-default-value="[25, 75]" show-value="hover"></ui-slider>`,
+      },
       {
         title: "Single Slider with Form Name",
         example: `<form method="post" action="/save" class="space-y-4 max-w-md">
@@ -1876,23 +1900,6 @@ const components = [
 <ui-form method="get" action="/filter">
   <ui-form-item name="brightness" auto-submit="onChange">
     <ui-slider name="brightness" json-default-value="[75]"></ui-slider>
-  </ui-form-item>
-</ui-form>`,
-      },
-      {
-        title: "Auto-Submit on Blur",
-        example: `<ui-form method="get" action="/filter">
-  <ui-form-item name="quality" auto-submit="onBlur">
-    <ui-field>
-      <ui-field-label>Quality</ui-field-label>
-      <ui-slider name="quality" json-default-value="[50]"></ui-slider>
-    </ui-field>
-  </ui-form-item>
-</ui-form>`,
-        readableExample: `<!-- Auto-submit when the slider loses focus -->
-<ui-form method="get" action="/filter">
-  <ui-form-item name="quality" auto-submit="onBlur">
-    <ui-slider name="quality" json-default-value="[50]"></ui-slider>
   </ui-form-item>
 </ui-form>`,
       },

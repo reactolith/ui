@@ -12,10 +12,25 @@ import {
 // Helpers
 // ---------------------------------------------------------------------------
 
-/** Normalise a single number or number[] into a number[] */
 function toArray(v: number | number[] | undefined): number[] | undefined {
   if (v === undefined) return undefined
   return Array.isArray(v) ? v : [v]
+}
+
+// ---------------------------------------------------------------------------
+// ValueIndicator — positioned label above the slider track
+// ---------------------------------------------------------------------------
+
+function ValueIndicator({ value, min, max }: { value: number; min: number; max: number }) {
+  const pct = max === min ? 0 : ((value - min) / (max - min)) * 100
+  return (
+    <span
+      className="absolute -translate-x-1/2 px-2 py-0.5 rounded-md bg-primary text-primary-foreground text-xs font-medium tabular-nums whitespace-nowrap"
+      style={{ left: `${pct}%` }}
+    >
+      {value}
+    </span>
+  )
 }
 
 // ---------------------------------------------------------------------------
@@ -35,15 +50,17 @@ interface SliderProps {
   max?: number
   step?: number
   /**
-   * Name for hidden form input(s). For a single-thumb slider this renders one
-   * hidden `<input>`. For a range slider (2 thumbs) it renders two hidden
-   * inputs named `{name}[from]` and `{name}[to]` (Symfony-compatible).
+   * Name for hidden form input(s).
+   * Single slider: uses Base UI's native name prop (no manual hidden input).
+   * Range slider: renders hidden inputs named `{name}[from]` and `{name}[to]`.
    */
   name?: string
   /** Explicit name for the "from" hidden input (range slider). Overrides `{name}[from]`. */
   nameFrom?: string
   /** Explicit name for the "to" hidden input (range slider). Overrides `{name}[to]`. */
   nameTo?: string
+  /** Show value indicators above each thumb. "always" = always visible, "hover" = only on hover/drag. */
+  showValue?: boolean | "always" | "hover"
   disabled?: boolean
   className?: string
 }
@@ -59,10 +76,12 @@ function Slider({
   name,
   nameFrom,
   nameTo,
+  showValue: showValueProp = false,
   disabled: disabledProp = false,
   className,
+  is: _is,
   ...props
-}: SliderProps) {
+}: SliderProps & { is?: string }) {
   const formItem = React.useContext(FormItemContext)
   const interaction = React.useContext(FormInteractionContext)
   const submitting = React.useContext(FormSubmittingContext)
@@ -70,12 +89,16 @@ function Slider({
   const controlledValue = toArray(valueProp)
   const rawDefault = toArray(defaultValueProp)
 
-  // Internal state for uncontrolled mode
   const [internalValue, setInternalValue] = React.useState<number[]>(
     () => rawDefault ?? [min],
   )
 
+  // showValue: true/"always" → always visible, "hover" → only on hover/drag
+  const showMode = showValueProp === true || showValueProp === "always" ? "always" : showValueProp === "hover" ? "hover" : null
+
   const currentValue = controlledValue ?? internalValue
+  const isRange = currentValue.length >= 2
+  const disabled = disabledProp || submitting || false
 
   // Reset internal state when defaultValue changes (server sends new HTML)
   const defaultKey = rawDefault?.join(",") ?? ""
@@ -86,17 +109,13 @@ function Slider({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultKey])
 
-  const isRange = currentValue.length >= 2
-  const disabled = disabledProp || submitting || false
-
   // --- Callbacks -----------------------------------------------------------
 
-  const containerRef = React.useRef<HTMLDivElement>(null)
-
   const onValueChange = React.useCallback(
-    (value: number[], thumb: number) => {
-      setInternalValue(value)
-      userOnValueChange?.(value, thumb)
+    (value: number | number[], thumb: number) => {
+      const arr = Array.isArray(value) ? value : [value]
+      setInternalValue(arr)
+      userOnValueChange?.(arr, thumb)
     },
     [userOnValueChange],
   )
@@ -106,7 +125,6 @@ function Slider({
       userOnValueCommitted?.(value, thumb)
       formItem?.touchErrors()
 
-      // Auto-submit on "onChange" triggers when the user finishes dragging
       if (formItem?.autoSubmit === "onChange" && interaction) {
         interaction.submitForm()
       }
@@ -114,48 +132,27 @@ function Slider({
     [userOnValueCommitted, formItem, interaction],
   )
 
-  const handleBlur = React.useCallback(
-    (e: React.FocusEvent<HTMLDivElement>) => {
-      // Only trigger if focus leaves the entire slider container
-      if (containerRef.current?.contains(e.relatedTarget as Node)) return
+  // --- Form inputs ---------------------------------------------------------
+  // Always use <input type="hidden"> (not Base UI's native name prop which
+  // renders <input type="range"> that steals focus and breaks blur handling).
 
-      if (formItem?.autoSubmit === "onBlur" && interaction) {
-        interaction.submitForm()
-      }
-    },
-    [formItem, interaction],
-  )
-
-  // --- Hidden inputs -------------------------------------------------------
-
-  const hiddenInputs = React.useMemo(() => {
-    const hasName = name || nameFrom || nameTo
-    if (!hasName) return null
-
-    if (isRange) {
-      const fromName = nameFrom || (name ? `${name}[from]` : "")
-      const toName = nameTo || (name ? `${name}[to]` : "")
-      return (
-        <>
-          {fromName && (
-            <input type="hidden" name={fromName} value={String(currentValue[0])} />
-          )}
-          {toName && (
-            <input type="hidden" name={toName} value={String(currentValue[1])} />
-          )}
-        </>
-      )
-    }
-
-    return name ? (
-      <input type="hidden" name={name} value={String(currentValue[0])} />
-    ) : null
-  }, [name, nameFrom, nameTo, isRange, currentValue])
+  const needsRangeInputs = isRange && (name || nameFrom || nameTo)
+  const needsSingleInput = !isRange && name
 
   // --- Render --------------------------------------------------------------
 
   return (
-    <div ref={containerRef} onBlur={handleBlur} data-slot="form-slider">
+    <div data-slot="form-slider" className={showMode === "hover" ? "group/slider" : undefined}>
+      {showMode && (
+        <div
+          className={`relative w-full h-6 mb-1 ${showMode === "hover" ? "opacity-0 group-hover/slider:opacity-100 transition-opacity" : ""}`}
+          aria-hidden="true"
+        >
+          {currentValue.map((v, i) => (
+            <ValueIndicator key={i} value={v} min={min} max={max} />
+          ))}
+        </div>
+      )}
       <BaseSlider
         value={controlledValue}
         defaultValue={rawDefault}
@@ -169,7 +166,15 @@ function Slider({
         className={className}
         {...props}
       />
-      {hiddenInputs}
+      {needsSingleInput && (
+        <input type="hidden" name={name} value={String(currentValue[0])} />
+      )}
+      {needsRangeInputs && (
+        <>
+          <input type="hidden" name={nameFrom || (name ? `${name}[from]` : "")} value={String(currentValue[0])} />
+          <input type="hidden" name={nameTo || (name ? `${name}[to]` : "")} value={String(currentValue[1])} />
+        </>
+      )}
     </div>
   )
 }
