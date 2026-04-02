@@ -67,6 +67,10 @@ AI-specific components (code blocks, messages, canvases, etc.). Also read-only. 
 
 Custom components shipped with reactolith-ui (form, date-picker, sonner, theme-switch, editor, icon, etc.). **All new components must be created in this directory** and registered in `lib/loader/builtin-loader.ts` with a dynamic import. Each file exports a default component plus any named sub-component exports. Sub-components are registered in the builtin-loader using `.then(m => ({ default: m.SubComponent }))`.
 
+### `lib/plate/` — Plate.js editor internals (do NOT modify, do NOT add new files)
+
+Plate.js UI components and plugin kits shipped with reactolith-ui. Originally generated via `npx shadcn@latest add @plate/...`, now maintained as library code. These are **internal dependencies** of the `<ui-editor>` and `<ui-editor-content>` built-in components — they live in `lib/` because they are shipped with the library, not installed by the user. **NEVER create new files here** — treat as read-only generated code.
+
 ### `lib/loader/` — Loader system
 
 The loader system resolves `<ui-*>` tags to components using a class-based architecture with reusable behaviors.
@@ -104,10 +108,6 @@ The loader system resolves `<ui-*>` tags to components using a class-based archi
 3. `ui-ai-message-content` → `AiElementsLoader` strips `ai-` → resolves `message-content` in `components/ai-elements/`
 4. `ui-area-chart` → `ExternalLoader` → `import('recharts')` → `AreaChart`
 
-### `app/overrides/` — Override files (2 files)
-
-Only for components that are standalone implementations (not wrappers around base components): **sonner** (declarative toast firing via `toasts` prop) and **theme-switch** (light/dark/system toggle).
-
 ### `lib/` — Shared utilities and contexts
 
 - `utils.ts` — cn() class merge utility
@@ -137,7 +137,7 @@ Navigation links inside overlays (sidebars, sheets, dropdowns, popovers, command
 - If the component is a **trigger with single-child render prop**: assign the `trigger` behavior.
 - If it needs **unique logic**: create a `WrapperDef` and add it to the loader's `wrappers` config.
 - If it needs **simple prop rewriting**: create a `PropTransformDef` and add it to the loader's `propTransforms` config.
-- Only create an override file in `app/overrides/` if the component is a completely standalone implementation.
+- If the component is a **completely standalone implementation**: create it in `lib/components/` and register in `builtin-loader.ts`.
 
 ### When adding new custom components
 

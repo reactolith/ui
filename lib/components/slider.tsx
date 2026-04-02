@@ -100,14 +100,8 @@ function Slider({
   const isRange = currentValue.length >= 2
   const disabled = disabledProp || submitting || false
 
-  // Reset internal state when defaultValue changes (server sends new HTML)
+  // Key changes when server sends new HTML with different defaults → full remount.
   const defaultKey = rawDefault?.join(",") ?? ""
-  React.useEffect(() => {
-    if (controlledValue === undefined && rawDefault !== undefined) {
-      setInternalValue(rawDefault)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [defaultKey])
 
   // --- Callbacks -----------------------------------------------------------
 
@@ -143,7 +137,7 @@ function Slider({
   // --- Render --------------------------------------------------------------
 
   return (
-    <div data-slot="form-slider" className={showMode === "hover" ? "group/slider" : undefined}>
+    <div key={defaultKey} data-slot="form-slider" className={showMode === "hover" ? "group/slider" : undefined}>
       {showMode && (
         <div
           className={`relative w-full h-6 mb-1 ${showMode === "hover" ? "opacity-0 group-hover/slider:opacity-100 transition-opacity" : ""}`}
