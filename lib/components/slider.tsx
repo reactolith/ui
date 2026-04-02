@@ -65,7 +65,7 @@ interface SliderProps {
   className?: string
 }
 
-function Slider({
+function SliderInner({
   value: valueProp,
   defaultValue: defaultValueProp,
   onValueChange: userOnValueChange,
@@ -99,9 +99,6 @@ function Slider({
   const currentValue = controlledValue ?? internalValue
   const isRange = currentValue.length >= 2
   const disabled = disabledProp || submitting || false
-
-  // Key changes when server sends new HTML with different defaults → full remount.
-  const defaultKey = rawDefault?.join(",") ?? ""
 
   // --- Callbacks -----------------------------------------------------------
 
@@ -137,7 +134,7 @@ function Slider({
   // --- Render --------------------------------------------------------------
 
   return (
-    <div key={defaultKey} data-slot="form-slider" className={showMode === "hover" ? "group/slider" : undefined}>
+    <div data-slot="form-slider" className={showMode === "hover" ? "group/slider" : undefined}>
       {showMode && (
         <div
           className={`relative w-full h-6 mb-1 ${showMode === "hover" ? "opacity-0 group-hover/slider:opacity-100 transition-opacity" : ""}`}
@@ -172,6 +169,12 @@ function Slider({
       )}
     </div>
   )
+}
+
+/** Outer wrapper — remounts SliderInner when default values change (server navigation). */
+function Slider(props: SliderProps & { is?: string }) {
+  const defaultKey = toArray(props.defaultValue)?.join(",") ?? ""
+  return <SliderInner key={defaultKey} {...props} />
 }
 
 export default Slider
