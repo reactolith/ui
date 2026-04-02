@@ -112,17 +112,18 @@ function Slider({
   // --- Callbacks -----------------------------------------------------------
 
   const onValueChange = React.useCallback(
-    (value: number | number[], thumb: number) => {
-      const arr = Array.isArray(value) ? value : [value]
+    (value: number | readonly number[], event: { activeThumbIndex: number }) => {
+      const arr = Array.isArray(value) ? [...value] : [value]
       setInternalValue(arr)
-      userOnValueChange?.(arr, thumb)
+      userOnValueChange?.(arr, event.activeThumbIndex)
     },
     [userOnValueChange],
   )
 
   const onValueCommitted = React.useCallback(
-    (value: number[], thumb: number) => {
-      userOnValueCommitted?.(value, thumb)
+    (value: number | readonly number[], _event: any) => {
+      const arr = Array.isArray(value) ? [...value] : [value]
+      userOnValueCommitted?.(arr, 0)
       formItem?.touchErrors()
 
       if (formItem?.autoSubmit === "onChange" && interaction) {

@@ -171,13 +171,20 @@ export function buildPlugins(
   marksParsed: Set<string> | null | false,
   showToolbar: boolean,
 ) {
-  // No restrictions — use full EditorKit (zero overhead)
+  // No restrictions — use full EditorKit with BlockMenuKit moved to front
+  // (BlockSelectionPlugin must precede plugins that override selectAll)
   if (!blockNames && marksParsed === null && showToolbar) {
-    return EditorKit
+    return [
+      ...BlockMenuKit,
+      ...EditorKit.filter(p => !BlockMenuKit.includes(p)),
+    ]
   }
 
   const plugins: any[] = []
   const hasBlock = (name: string) => !blockNames || blockNames.has(name)
+
+  // Block selection & context menu — must be first (overrides selectAll)
+  plugins.push(...BlockMenuKit)
 
   // === Block elements ===
 
@@ -213,7 +220,7 @@ export function buildPlugins(
   // === Editing helpers (always included) ===
 
   plugins.push(...ExitBreakKit, TrailingBlockPlugin, ...MarkdownKit, ...BlockPlaceholderKit)
-  plugins.push(...BlockMenuKit, ...DndKit)
+  plugins.push(...DndKit)
 
   // Slash menu — only when unrestricted (the slash menu items in components/
   // are hardcoded; when blocks are restricted, autoformat covers headings)

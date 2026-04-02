@@ -31,7 +31,7 @@ function coerceDate(v: Date | string | undefined): Date | undefined {
   return fnsIsValid(d) ? d : undefined
 }
 
-function coerceDateRange(v: any): { from?: Date; to?: Date } | undefined {
+function coerceDateRange(v: any): DateRange | undefined {
   if (!v) return undefined
   return { from: coerceDate(v.from), to: coerceDate(v.to) }
 }

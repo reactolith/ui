@@ -70,7 +70,13 @@
       "Bash(grep -rn \"EditorStaticKit\\\\|staticKit\\\\|static.*kit\\\\|StaticKit\" /Users/franzwilding/Development/reactolith-ui/components/ --include=*.tsx --include=*.ts)",
       "Bash(grep -n \"auto.submit\\\\|autoSubmit\\\\|auto_submit\" /Users/franzwilding/Development/reactolith-ui/app/docs/*.html)",
       "Bash(npx vitest:*)",
-      "Bash(find /Users/franzwilding/Development/reactolith-ui -type f \\\\\\(-name *.test.tsx -o -name *.spec.tsx -o -name *.demo.* -o -name *.example.* \\\\\\) ! -path */node_modules/*)"
+      "Bash(find /Users/franzwilding/Development/reactolith-ui -type f \\\\\\(-name *.test.tsx -o -name *.spec.tsx -o -name *.demo.* -o -name *.example.* \\\\\\) ! -path */node_modules/*)",
+      "WebFetch(domain:platejs.org)",
+      "Bash(find /Users/franzwilding/Development/reactolith-ui -type f \\\\\\(-name *editor* -o -name *plate* \\\\\\))",
+      "Bash(grep -rn slate-selectable --include=*.tsx --include=*.ts --include=*.js /Users/franzwilding/Development/reactolith-ui/node_modules/@platejs/selection/)",
+      "Bash(2)",
+      "Bash(git checkout:*)",
+      "Bash(npx tailwindcss:*)"
     ]
   }
 }
